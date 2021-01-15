@@ -19,6 +19,7 @@
         "laravel/sanctum": "^2.8",
         "laravel/telescope": "^4.4",
         "laravel/tinker": "^2.5",
+        "laravel/ui": "^3.2",
         "maatwebsite/excel": "^3.1",
         "marcin-orlowski/laravel-api-response-builder": "^9.2",
         "mckenziearts/laravel-notify": "^2.1",
