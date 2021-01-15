@@ -16,11 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     if (empty(auth()->user())) {
         return redirect('/login');
-    } else {
-        return redirect('/home');
     }
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/profile-polda/{id}/{any}', [App\Http\Controllers\ProfileController::class, 'profile'])->name('profile');
+});
