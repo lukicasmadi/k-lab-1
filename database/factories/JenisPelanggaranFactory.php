@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
+use Illuminate\Support\Str;
 use App\Models\JenisPelanggaran;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,7 +24,10 @@ class JenisPelanggaranFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'uuid' => Str::uuid(),
+            'name' => $this->faker->catchPhrase(),
+            'desc' => $this->faker->paragraph(5, false),
+            'created_by' => User::all()->random()->id,
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use App\Models\SlideBanner;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,7 +23,9 @@ class SlideBannerFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'img' => $this->faker->domainWord().".jpg",
+            'name' => $this->faker->word(),
+            'created_by' => User::all()->random()->id,
         ];
     }
 }

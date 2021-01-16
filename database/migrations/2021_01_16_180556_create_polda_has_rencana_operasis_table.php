@@ -22,6 +22,11 @@ class CreatePoldaHasRencanaOperasisTable extends Migration
             $table->foreign('polda_id')->references('id')->on('poldas');
             $table->string('polda_operation_name');
             $table->longText('detail_operation');
+            $table->unsignedBigInteger('created_by');
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->foreign('updated_by')->references('id')->on('users');
+            $table->string('document_attach')->nullable();
             $table->timestamps();
         });
     }

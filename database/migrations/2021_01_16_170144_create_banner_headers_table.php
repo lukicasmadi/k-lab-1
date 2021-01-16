@@ -18,6 +18,10 @@ class CreateBannerHeadersTable extends Migration
             $table->string('img');
             $table->enum('status',['active', 'nonactive'])->default('active');
             $table->string('link')->nullable();
+            $table->unsignedBigInteger('created_by');
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->foreign('updated_by')->references('id')->on('users');
             $table->timestamps();
         });
     }

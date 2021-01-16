@@ -2,6 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
+use App\Models\Polda;
+use Illuminate\Support\Str;
+use App\Models\RencanaOperasi;
 use App\Models\PoldaHasRencanaOperasi;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,7 +26,12 @@ class PoldaHasRencanaOperasiFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'uuid' => Str::uuid(),
+            'rencana_operasi_id' => RencanaOperasi::all()->random()->id,
+            'polda_id' => Polda::all()->random()->id,
+            'polda_operation_name' => $this->faker->catchPhrase(),
+            'detail_operation' => $this->faker->sentence(6, true),
+            'created_by' => User::all()->random()->id,
         ];
     }
 }

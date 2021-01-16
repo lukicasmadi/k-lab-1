@@ -25,6 +25,10 @@ class CreatePoldasTable extends Migration
             $table->string('big_img')->nullable();
             $table->string('logo')->nullable();
             $table->text('profile')->nullable();
+            $table->unsignedBigInteger('created_by');
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->foreign('updated_by')->references('id')->on('users');
             $table->timestamps();
         });
     }

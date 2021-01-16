@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
+use Illuminate\Support\Str;
 use App\Models\RencanaOperasi;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,7 +24,13 @@ class RencanaOperasiFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'uuid' => Str::uuid(),
+            'name' => $this->faker->catchPhrase(),
+            'operation_type' => $this->faker->sentence(6, true),
+            'start_date' => $this->faker->date($format = 'Y-m-d', 'now'),
+            'end_date' => $this->faker->date($format = 'Y-m-d', 'now'),
+            'desc' => $this->faker->paragraph(3, true),
+            'created_by' => User::all()->random()->id,
         ];
     }
 }

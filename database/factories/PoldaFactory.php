@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use App\Models\Polda;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PoldaFactory extends Factory
@@ -21,8 +23,14 @@ class PoldaFactory extends Factory
      */
     public function definition()
     {
+        $city = Str::upper($this->faker->city());
         return [
-            //
+            'uuid' => Str::uuid(),
+            'name' => 'POLDA '.$city,
+            'aka' => Str::upper(Str::of($city)->slug('-')),
+            'city' => $city,
+            'address' => Str::upper($this->faker->address()),
+            'created_by' => User::first()->id,
         ];
     }
 }

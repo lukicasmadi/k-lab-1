@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use App\Models\BannerHeader;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,7 +23,8 @@ class BannerHeaderFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'img' => $this->faker->domainWord().".jpg",
+            'created_by' => User::all()->random()->id,
         ];
     }
 }

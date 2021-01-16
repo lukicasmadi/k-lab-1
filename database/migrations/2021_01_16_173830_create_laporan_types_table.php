@@ -15,7 +15,7 @@ class CreateLaporanTypesTable extends Migration
     {
         Schema::create('laporan_types', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['hq', 'polda']);
+            $table->enum('type', ['PUSAT', 'POLDA']);
             $table->timestamps();
         });
     }
