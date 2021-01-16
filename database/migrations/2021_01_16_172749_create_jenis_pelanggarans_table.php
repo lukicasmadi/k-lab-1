@@ -15,6 +15,10 @@ class CreateJenisPelanggaransTable extends Migration
     {
         Schema::create('jenis_pelanggarans', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid');
+            $table->string('name');
+            $table->text('desc');
+            $table->string('img')->nullable();
             $table->timestamps();
         });
     }

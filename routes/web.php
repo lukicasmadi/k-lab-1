@@ -23,5 +23,5 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/profile-polda/{id}/{any}', [App\Http\Controllers\ProfileController::class, 'profile'])->name('profile');
+    Route::get('/polda/{id}/{any}', [App\Http\Controllers\ProfileController::class, 'profile'])->name('profile');
 });

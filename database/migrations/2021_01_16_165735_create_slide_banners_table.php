@@ -15,6 +15,11 @@ class CreateSlideBannersTable extends Migration
     {
         Schema::create('slide_banners', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
+            $table->string('desc')->nullable();
+            $table->string('img');
+            $table->enum('status',['active', 'nonactive'])->default('active');
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }

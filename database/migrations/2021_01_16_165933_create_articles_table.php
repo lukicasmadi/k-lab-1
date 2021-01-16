@@ -15,6 +15,12 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid');
+            $table->string('topic');
+            $table->longText('desc');
+            $table->enum('status',['active', 'nonactive'])->default('active');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

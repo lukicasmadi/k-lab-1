@@ -15,6 +15,9 @@ class CreateBannerHeadersTable extends Migration
     {
         Schema::create('banner_headers', function (Blueprint $table) {
             $table->id();
+            $table->string('img');
+            $table->enum('status',['active', 'nonactive'])->default('active');
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }

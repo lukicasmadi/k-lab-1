@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHeaderNotifsTable extends Migration
+class CreateLaporanTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateHeaderNotifsTable extends Migration
      */
     public function up()
     {
-        Schema::create('header_notifs', function (Blueprint $table) {
+        Schema::create('laporan_types', function (Blueprint $table) {
             $table->id();
-            $table->string('desc');
-            $table->enum('status',['active', 'nonactive'])->default('active');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateHeaderNotifsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('header_notifs');
+        Schema::dropIfExists('laporan_types');
     }
 }
