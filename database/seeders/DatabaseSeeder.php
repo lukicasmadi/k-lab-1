@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Bertho',
             'email' => 'berthojoris@gmail.com',
             'email_verified_at' => now(),
-            'password' => bcrypt('malaquena'),
+            'password' => '$2y$10$Yc2mL4kXARZrXkGB2ISfk.3gUB.E/oO7mq3iCnkT5REeELwrRBp6K',
             'remember_token' => Str::random(10),
         ]);
 
