@@ -15,6 +15,13 @@ class CreatePoldaHasRencanaOperasisTable extends Migration
     {
         Schema::create('polda_has_rencana_operasis', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid');
+            $table->unsignedBigInteger('rencana_operasi_id');
+            $table->foreign('rencana_operasi_id')->references('id')->on('rencana_operasis');
+            $table->unsignedBigInteger('polda_id');
+            $table->foreign('polda_id')->references('id')->on('poldas');
+            $table->string('polda_operation_name');
+            $table->longText('detail_operation');
             $table->timestamps();
         });
     }

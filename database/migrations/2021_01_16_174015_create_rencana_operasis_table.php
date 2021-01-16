@@ -15,6 +15,12 @@ class CreateRencanaOperasisTable extends Migration
     {
         Schema::create('rencana_operasis', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid');
+            $table->string('name');
+            $table->string('operation_type');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->longText('desc');
             $table->timestamps();
         });
     }
