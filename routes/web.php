@@ -36,4 +36,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::match(['post', 'get'], '/article/add', 'ArticleController@add')->name('article_add');
     Route::match(['post', 'get'], '/article/edit/{id}', 'CategoryController@edit')->name('article_edit');
     Route::post('/article/delete/{id}', 'CategoryController@delete')->name('article_delete');
+
+    Route::group(['prefix' => 'data'], function () {
+        Route::get('/category', 'CategoryController@data')->name('category_data');
+        Route::get('/article', 'ArticleController@data')->name('article_data');
+    });
 });

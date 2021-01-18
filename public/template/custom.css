@@ -1,0 +1,45 @@
+.circle-inner {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(133, 224, 242);
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 55%;
+    margin-left: -50px;
+    margin-top: -120px;
+    border-radius: 80px;
+    -moz-animation: pulse 1.5s infinite ease-in;
+    -webkit-animation: pulse 1.5s infinite ease-in;
+    animation: pulse 1.5s infinite ease-in;
+    opacity: 1;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.circle-inner-inner {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(74, 124, 134);
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    border-radius: 100px;
+    -moz-animation: pulse 1.5s infinite ease-in;
+    -webkit-animation: pulse 1.5s infinite ease-in;
+    animation: pulse 1.5s infinite ease-in;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.table>tbody>tr>td {
+    border: none;
+    border-top-color: currentcolor;
+    border-right-color: currentcolor;
+    border-bottom-color: currentcolor;
+    border-left-color: currentcolor;
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 1px;
+}

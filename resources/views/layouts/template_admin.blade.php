@@ -15,13 +15,10 @@
     <link href="{{ secure_asset('template/assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
 
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
-    <link href="{{ secure_asset('template/plugins/apex/apexcharts.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ secure_asset('template/assets/css/dashboard/dash_2.css') }}" rel="stylesheet" type="text/css" />
-    <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+    @stack('library_css')
     @routes
 </head>
-<body class="alt-menu sidebar-noneoverflow">
+<body class="sidebar-noneoverflow">
     <!-- BEGIN LOADER -->
     <div id="load_screen"> <div class="loader"> <div class="loader-content">
         <div class="spinner-grow align-self-center"></div>
@@ -59,6 +56,7 @@
     <script src="{{ secure_asset('template/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ secure_asset('template/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ secure_asset('template/assets/js/app.js') }}"></script>
+    <script src="{{ secure_asset('js/app.js') }}"></script>
     <script>
         $(document).ready(function() {
             App.init();
@@ -67,10 +65,7 @@
     <script src="{{ secure_asset('template/assets/js/custom.js') }}"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-    <script src="{{ secure_asset('template/plugins/apex/apexcharts.min.js') }}"></script>
-    <script src="{{ secure_asset('template/assets/js/dashboard/dash_2.js') }}"></script>
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-
+    @stack('library_js')
+    @stack('page_js')
 </body>
 </html>

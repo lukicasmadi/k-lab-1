@@ -10,8 +10,11 @@ class CategoryController extends Controller
 {
     public function data()
     {
-        $model = Category::query();
-        return app('datatables')->eloquent($model)->toJson();
+        $model = Category::with(['user' => function ($query) {
+            $query->select('id', 'email', 'name');
+        }]);
+
+        return datatables()->eloquent($model)->toJson();
     }
 
     public function index()
@@ -21,7 +24,7 @@ class CategoryController extends Controller
 
     public function add(Request $request)
     {
-        //
+        return view('category.add');
     }
 
     public function edit(Request $request, $id)

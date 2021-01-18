@@ -426,3 +426,13 @@
 
 </div>
 @endsection
+
+@push('library_js')
+<script src="{{ secure_asset('template/plugins/apex/apexcharts.min.js') }}"></script>
+<script src="{{ secure_asset('template/assets/js/dashboard/dash_2.js') }}"></script>
+@endpush
+
+@push('library_css')
+<link href="{{ secure_asset('template/plugins/apex/apexcharts.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ secure_asset('template/assets/css/dashboard/dash_2.css') }}" rel="stylesheet" type="text/css" />
+@endpush
