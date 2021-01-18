@@ -14,9 +14,6 @@
     <link href="{{ secure_asset('template/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ secure_asset('template/assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
-    <script>
-        var baseURL = "{{ env('APP_URL') }}";
-    </script>
     @stack('library_css')
     @routes
 </head>
