@@ -42,8 +42,6 @@
         <div id="content" class="main-content">
             <div class="layout-px-spacing">
 
-                @include('include.page_header')
-
                 @yield('content')
 
                 @include('include.footer_wrapper')
