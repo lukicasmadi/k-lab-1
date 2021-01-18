@@ -49,5 +49,5 @@
 @endpush
 
 @push('page_js')
-<script src="{{ asset('js/article.js') }}"></script>
+<script src="{{ secure_asset('js/article.js') }}"></script>
 @endpush
