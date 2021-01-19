@@ -22,8 +22,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/', 'HomeController@index')->name('home');
-    Route::get('/polda/{id}/{any}', 'ProfileController@profile')->name('profile');
+    Route::get('/', 'HomeController@index')->name('dashboard');
 });
 
 Route::group(['prefix' => 'admin'], function () {
