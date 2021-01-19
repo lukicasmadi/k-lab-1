@@ -36,12 +36,8 @@
 
         <!--  BEGIN CONTENT PART  -->
         <div id="content" class="main-content">
-            <div class="layout-px-spacing">
-                @include('flash::message')
-                @yield('content')
-                @include('include.footer_wrapper')
-
-            </div>
+            @yield('content')
+            @include('include.footer_wrapper')
         </div>
         <!--  END CONTENT PART  -->
 

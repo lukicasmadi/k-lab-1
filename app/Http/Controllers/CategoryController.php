@@ -29,17 +29,19 @@ class CategoryController extends Controller
 
         if ($request->isMethod('post')) {
 
+            $data = [
+                'name' => request('name'),
+                'created_by' => auth()->user()->id
+            ];
+
             if(request()->hasFile('image')) {
                 $file = $request->file('image');
                 $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
                 $file->move(storage_path()."/app/public/upload", $randomName);
+                $data['img'] = $randomName;
             }
 
-            Category::create([
-                'name' => request('name'),
-                'img' => $randomName,
-                'created_by' => auth()->user()->id
-            ]);
+            Category::create($data);
 
             flash('Your data has been saved')->success();
             return redirect()->route('category_index');
@@ -48,13 +50,43 @@ class CategoryController extends Controller
         return view('category.add');
     }
 
-    public function edit(Request $request, $id)
+    public function edit(Request $request, Category $categoryId)
     {
-        //
+        if ($request->isMethod('post')) {
+
+            $data = [
+                'name' => request('name'),
+                'created_by' => auth()->user()->id
+            ];
+
+            if(request()->hasFile('image')) {
+                $file = $request->file('image');
+                $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
+                $file->move(storage_path()."/app/public/upload", $randomName);
+                $data['img'] = $randomName;
+            }
+
+            $data = Category::whereId($request->id)->update($data);
+
+            flash('Your data has been updated')->success();
+            return redirect()->route('category_index');
+
+        }
+
+        return view('category.edit', compact('categoryId'));
     }
 
-    public function delete(Request $request, $id)
+    public function delete(Category $categoryId)
     {
-        //
+        $data = Category::has('article')->whereId($categoryId->id)->count();
+
+        if($data > 0) {
+            flash("Can't delete data. This category is still used in articles")->error();
+        } else {
+            Category::whereId($categoryId->id)->delete();
+            flash('Your data has been deleted')->success();
+        }
+
+        return redirect()->back();
     }
 }

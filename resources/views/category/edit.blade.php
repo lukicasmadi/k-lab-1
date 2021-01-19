@@ -16,11 +16,12 @@
                 </div>
 
                 <div class="widget-content widget-content-area">
-                    <form method="POST" action="{{ route('category_add') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('category_edit', $categoryId) }}" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="id" value="{{ $categoryId->id }}">
                         <div class="form-group mb-4">
                             <label>Name</label>
-                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Name" autocomplete="off" value="{{ old('name') }}">
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Name" autocomplete="off" value="{{ $categoryId->name }}">
                         </div>
                         <div class="form-group mb-4">
                             <label>Image (Leave blank if you don't want to use an image)</label>
