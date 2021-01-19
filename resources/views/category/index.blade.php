@@ -4,8 +4,11 @@
 <div class="row layout-top-spacing" id="cancel-row">
 
     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
-        <div class="widget-content widget-content-area br-6">
-            <div class="table-responsive mb-4 mt-4">
+        <div class="widget-content widget-content-area">
+            <div class="col-md-12 text-right mb-3">
+                <a href="{{ route('category_add') }}" class="btn btn-primary">Add New</a>
+            </div>
+            <div class="table-responsive">
                 <table id="tbl_category" class="table" style="width:100%">
                     <thead>
                         <tr>

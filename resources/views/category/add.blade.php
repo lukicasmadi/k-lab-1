@@ -5,6 +5,7 @@
 
     <div class="col-lg-6 col-12  layout-spacing">
         <div class="statbox widget box box-shadow">
+
             <div class="widget-header">
                 <div class="row">
                     <div class="col-xl-6 col-md-12 col-sm-12 col-12">
@@ -12,17 +13,19 @@
                     </div>
                 </div>
             </div>
+
             <div class="widget-content widget-content-area">
-                <form>
+                <form method="POST" action="{{ route('category_add') }}" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group mb-4">
                         <label>Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Name" autocomplete="off">
                     </div>
                     <div class="form-group mb-4">
-                        <label for="formGroupExampleInput2">Image</label>
-                        <input type="text" class="form-control" id="image" name="image" placeholder="Image">
+                        <label for="formGroupExampleInput2">Image (Leave blank if you don't want to use an image)</label>
+                        <input type="file" class="form-control" id="image" name="image" @error('image') is-invalid @enderror>
                     </div>
-                    <input type="submit" name="time" class="btn btn-primary mt-3" value="Submit">
+                    <input type="submit" name="submit" class="btn btn-primary mt-3" value="Submit">
                 </form>
             </div>
         </div>

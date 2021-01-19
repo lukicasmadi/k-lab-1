@@ -4,8 +4,8 @@
 <div class="row layout-top-spacing" id="cancel-row">
 
     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
-        <div class="widget-content widget-content-area br-6">
-            <div class="table-responsive mb-4 mt-4">
+        <div class="widget-content widget-content-area">
+            <div class="table-responsive">
                 <table id="tbl_article" class="table" style="width:100%">
                     <thead>
                         <tr>

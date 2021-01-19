@@ -42,3 +42,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/article', 'ArticleController@data')->name('article_data');
     });
 });
+
+Route::match(['post', 'get'], 'change-password', 'UserController@changePassword')->name('changePassword');
+Route::match(['post', 'get'], 'profile', 'UserController@profile')->name('profile');
