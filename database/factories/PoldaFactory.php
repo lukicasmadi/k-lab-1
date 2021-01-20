@@ -24,10 +24,13 @@ class PoldaFactory extends Factory
     public function definition()
     {
         $city = Str::upper($this->faker->city());
+        $province = Str::upper($this->faker->country());
+
         return [
             'uuid' => Str::uuid(),
             'name' => 'POLDA '.$city,
             'aka' => Str::upper(Str::of($city)->slug('-')),
+            'province' => $province,
             'city' => $city,
             'address' => Str::upper($this->faker->address()),
             'created_by' => User::first()->id,

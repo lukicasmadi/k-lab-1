@@ -34,8 +34,14 @@ if (! function_exists('genUuid')) {
     }
 }
 
-if (! function_exists('userRandom')) {
+if (! function_exists('userGetRandom')) {
     function userGetRandom() {
         return User::all()->random()->id;
+    }
+}
+
+if (! function_exists('myUserId')) {
+    function myUserId() {
+        return auth()->user()->id;
     }
 }

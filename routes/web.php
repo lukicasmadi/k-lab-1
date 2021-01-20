@@ -40,9 +40,22 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/article/edit/{articleUuid}', 'ArticleController@update')->name('article_update');
     Route::get('/article/delete/{articleUuid}', 'ArticleController@delete')->name('article_delete');
 
+    Route::resource('polda', 'PoldaController', [
+        'names' => [
+            'index' => 'polda_index',
+            'create' => 'polda_create',
+            'store' => 'polda_store',
+            'show' => 'polda_show',
+            'edit' => 'polda_edit',
+            'update' => 'polda_update',
+            'destroy' => 'polda_destroy',
+        ]
+    ]);
+
     Route::group(['prefix' => 'data'], function () {
         Route::get('/category', 'CategoryController@data')->name('category_data');
         Route::get('/article', 'ArticleController@data')->name('article_data');
+        Route::get('/polda', 'PoldaController@data')->name('polda_data');
     });
 });
 

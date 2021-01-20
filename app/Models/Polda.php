@@ -9,4 +9,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Polda extends Model
 {
     use HasFactory, LogsActivity;
+
+    public function getRouteKeyName()
+    {
+        return 'uuid';
+    }
 }

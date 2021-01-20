@@ -38,6 +38,9 @@
                     <li class="{{ request()->is('admin/article/*') || request()->is('admin/article') ? 'active' : '' }}">
                         <a href="{{ route('article_index') }}"> Article </a>
                     </li>
+                    <li class="{{ request()->is('admin/polda/*') || request()->is('admin/polda') ? 'active' : '' }}">
+                        <a href="{{ route('polda_index') }}"> Polda </a>
+                    </li>
                 </ul>
             </li>
 
