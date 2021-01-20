@@ -35,7 +35,7 @@
                     <li class="{{ request()->is('admin/category/*') || request()->is('admin/category') ? 'active' : '' }}">
                         <a href="{{ route('category_index') }}"> Category </a>
                     </li>
-                    <li class="{{ request()->is('admin/article') ? 'active' : '' }}">
+                    <li class="{{ request()->is('admin/article/*') || request()->is('admin/article') ? 'active' : '' }}">
                         <a href="{{ route('article_index') }}"> Article </a>
                     </li>
                 </ul>
