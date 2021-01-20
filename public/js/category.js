@@ -29,9 +29,9 @@ $(document).ready(function () {
       data: 'img',
       render: function render(data, type, row) {
         if (data == null) {
-          return "- No Image -";
+          return '<td class="text-center"><span><img src="' + route('dashboard') + '/template/assets/img/90x90.jpg" class="profile-img" width="40" height="40"></span></td>';
         } else {
-          return data;
+          return '<td class="text-center"><span><img src="' + route('dashboard') + '/storage/upload/' + data + '" class="profile-img" width="40" height="40"></span></td>';
         }
       },
       searchable: false

@@ -1,4 +1,10 @@
 $(document).ready(function() {
+
+    new SimpleMDE({
+        element: document.getElementById("desc"),
+        spellChecker: false,
+    });
+
     var table = $('#tbl_article').DataTable({
         processing: true,
         serverSide: true,

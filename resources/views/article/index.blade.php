@@ -41,6 +41,7 @@
 @push('library_js')
 <script src="{{ secure_asset('template/plugins/table/datatable/datatables.js') }}"></script>
 <script src="{{ secure_asset('template/plugins/font-icons/feather/feather.min.js') }}"></script>
+<script src="{{ secure_asset('template/plugins/editors/markdown/simplemde.min.js') }}"></script>
 <script type="text/javascript">
     feather.replace();
 </script>

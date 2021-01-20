@@ -36,9 +36,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/article', 'ArticleController@index')->name('article_index');
     Route::get('/article/add', 'ArticleController@add')->name('article_add');
     Route::post('/article/add/process', 'ArticleController@save_process')->name('article_save');
-    Route::get('/article/edit/{uuid}', 'CategoryController@edit')->name('article_edit');
-    Route::post('/article/edit/{uuid}', 'ArticleController@update')->name('article_update');
-    Route::post('/article/delete/{id}', 'CategoryController@delete')->name('article_delete');
+    Route::get('/article/edit/{articleUuid}', 'ArticleController@edit')->name('article_edit');
+    Route::post('/article/edit/{articleUuid}', 'ArticleController@update')->name('article_update');
+    Route::get('/article/delete/{articleUuid}', 'ArticleController@delete')->name('article_delete');
 
     Route::group(['prefix' => 'data'], function () {
         Route::get('/category', 'CategoryController@data')->name('category_data');

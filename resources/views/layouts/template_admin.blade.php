@@ -15,6 +15,7 @@
     <link href="{{ secure_asset('template/assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
     @stack('library_css')
+    @stack('page_css')
     @routes
 </head>
 <body class="sidebar-noneoverflow">
