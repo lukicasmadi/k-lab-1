@@ -16,10 +16,9 @@
                 </div>
 
                 <div class="widget-content widget-content-area">
-                    <form method="POST" action="{{ route('category_edit', $uuid) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('update', $uuid) }}" enctype="multipart/form-data">
                         @csrf
 
-                        <input type="hidden" name="uuid" value="{{ $uuid->id }}">
                         <div class="form-group mb-4">
                             <label>Name</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Name" autocomplete="off" value="{{ $uuid->name }}">

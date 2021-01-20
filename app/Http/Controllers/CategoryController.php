@@ -31,7 +31,7 @@ class CategoryController extends Controller
         return view('category.add');
     }
 
-    public function process(CategoryRequest $request)
+    public function save_process(CategoryRequest $request)
     {
         $data = [
             'name' => request('name'),
@@ -52,36 +52,35 @@ class CategoryController extends Controller
         return redirect()->route('category_index');
     }
 
-    public function edit(Request $request, Category $uuid)
+    public function update(CategoryRequest $request, Category $uuid)
     {
-        if ($request->isMethod('post')) {
+        $data = [
+            'name' => request('name'),
+            'created_by' => auth()->user()->id
+        ];
 
-            $data = [
-                'name' => request('name'),
-                'created_by' => auth()->user()->id
-            ];
+        if(request()->hasFile('category_image')) {
+            $file = $request->file('category_image');
 
-            if(request()->hasFile('category_image')) {
-                $file = $request->file('category_image');
+            $fileCheck = Storage::exists('/public/upload/'.$uuid->img);
 
-                $fileCheck = Storage::exists('/public/upload/'.$uuid->img);
-
-                if($fileCheck) {
-                    Storage::delete('/public/upload/'.$uuid->img);
-                }
-
-                $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-                Storage::put("/public/upload/".$randomName, File::get($file));
-                $data['img'] = $randomName;
+            if($fileCheck) {
+                Storage::delete('/public/upload/'.$uuid->img);
             }
 
-            $data = Category::whereId($request->uuid)->update($data);
-
-            flash('Your data has been updated')->success();
-            return redirect()->route('category_index');
-
+            $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
+            Storage::put("/public/upload/".$randomName, File::get($file));
+            $data['img'] = $randomName;
         }
 
+        $data = Category::whereUuid($uuid->uuid)->update($data);
+
+        flash('Your data has been updated')->success();
+        return redirect()->route('category_index');
+    }
+
+    public function edit(Category $uuid)
+    {
         return view('category.edit', compact('uuid'));
     }
 
