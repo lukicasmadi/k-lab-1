@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="widget-content widget-content-area">
-                    <form method="POST" action="{{ route('update', $uuid) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('category_update', $uuid) }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group mb-4">

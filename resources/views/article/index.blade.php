@@ -18,7 +18,7 @@
                                 <th>Status</th>
                                 <th>Category</th>
                                 <th>Creator</th>
-                                <th class="no-content"></th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -33,11 +33,17 @@
 @push('library_css')
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/datatables.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/dt-global_style.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/font-icons/fontawesome/css/regular.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/font-icons/fontawesome/css/fontawesome.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/custom.css') }}">
 @endpush
 
 @push('library_js')
 <script src="{{ secure_asset('template/plugins/table/datatable/datatables.js') }}"></script>
+<script src="{{ secure_asset('template/plugins/font-icons/feather/feather.min.js') }}"></script>
+<script type="text/javascript">
+    feather.replace();
+</script>
 @endpush
 
 @push('page_js')

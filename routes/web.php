@@ -30,12 +30,14 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/category/add', 'CategoryController@add')->name('category_add');
     Route::post('/category/add/process', 'CategoryController@save_process')->name('category_save');
     Route::get('/category/edit/{uuid}', 'CategoryController@edit')->name('category_edit');
-    Route::post('/category/update/{uuid}', 'CategoryController@update')->name('update');
+    Route::post('/category/update/{uuid}', 'CategoryController@update')->name('category_update');
     Route::get('/category/delete/{uuid}', 'CategoryController@delete')->name('category_delete');
 
     Route::get('/article', 'ArticleController@index')->name('article_index');
-    Route::match(['post', 'get'], '/article/add', 'ArticleController@add')->name('article_add');
-    Route::match(['post', 'get'], '/article/edit/{id}', 'CategoryController@edit')->name('article_edit');
+    Route::get('/article/add', 'ArticleController@add')->name('article_add');
+    Route::post('/article/add/process', 'ArticleController@save_process')->name('article_save');
+    Route::get('/article/edit/{uuid}', 'CategoryController@edit')->name('article_edit');
+    Route::post('/article/edit/{uuid}', 'ArticleController@update')->name('article_update');
     Route::post('/article/delete/{id}', 'CategoryController@delete')->name('article_delete');
 
     Route::group(['prefix' => 'data'], function () {

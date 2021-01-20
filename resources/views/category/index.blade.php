@@ -17,7 +17,7 @@
                                 <th>Name</th>
                                 <th>Image</th>
                                 <th>Creator</th>
-                                <th class="no-content"></th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -32,11 +32,8 @@
 @push('library_css')
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/datatables.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/dt-global_style.css') }}">
-
-<link href="{{ secure_asset('template/assets/css/scrollspyNav.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ secure_asset('template/plugins/font-icons/fontawesome/css/regular.css') }}" rel="stylesheet">
-<link href="{{ secure_asset('template/plugins/font-icons/fontawesome/css/fontawesome.css') }}" rel="stylesheet">
-
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/font-icons/fontawesome/css/regular.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/font-icons/fontawesome/css/fontawesome.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/custom.css') }}">
 @endpush
 

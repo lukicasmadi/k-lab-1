@@ -33,7 +33,8 @@ $(document).ready(function () {
         } else {
           return data;
         }
-      }
+      },
+      searchable: false
     }, {
       data: 'user.name',
       name: 'user.name'
@@ -42,7 +43,8 @@ $(document).ready(function () {
       render: function render(data, type, row) {
         return '<div class="icon-container"><a href="' + route('category_edit', data) + '"><i class="far fa-edit"></i><span class="icon-name"></span></a> <a href="' + route('category_delete', data) + '"><i class="far fa-trash-alt"></i><span class="icon-name"></span></a></div>';
       },
-      searchable: false
+      searchable: false,
+      sortable: false
     }]
   });
 });

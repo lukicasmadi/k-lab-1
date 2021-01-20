@@ -29,12 +29,19 @@ $(document).ready(function () {
       data: 'desc',
       render: function render(data, type, row) {
         return _.truncate(data, {
-          'length': 180,
+          'length': 150,
           'separator': '...'
         });
       }
     }, {
-      data: 'status'
+      data: 'status',
+      render: function render(data, type, row) {
+        if (data == "active") {
+          return '<td class="text-center"><span class="shadow-none badge badge-success">' + data + '</span></td>';
+        } else {
+          return '<td class="text-center"><span class="shadow-none badge badge-danger">' + data + '</span></td>';
+        }
+      }
     }, {
       data: 'category.name',
       name: 'category.name'
@@ -42,11 +49,12 @@ $(document).ready(function () {
       data: 'user.name',
       name: 'user.name'
     }, {
-      data: 'id',
+      data: 'uuid',
       render: function render(data, type, row) {
-        return '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle table-cancel"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>';
+        return '<div class="icon-container"><a href="' + route('article_edit', data) + '"><i class="far fa-edit"></i><span class="icon-name"></span></a> <a href="' + route('article_delete', data) + '"><i class="far fa-trash-alt"></i><span class="icon-name"></span></a></div>';
       },
-      searchable: false
+      searchable: false,
+      sortable: false
     }]
   });
 });
