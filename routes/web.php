@@ -28,8 +28,8 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/category', 'CategoryController@index')->name('category_index');
     Route::match(['post', 'get'], '/category/add', 'CategoryController@add')->name('category_add');
-    Route::match(['post', 'get'], '/category/edit/{categoryId}', 'CategoryController@edit')->name('category_edit');
-    Route::get('/category/delete/{categoryId}', 'CategoryController@delete')->name('category_delete');
+    Route::match(['post', 'get'], '/category/edit/{uuid}', 'CategoryController@edit')->name('category_edit');
+    Route::get('/category/delete/{uuid}', 'CategoryController@delete')->name('category_delete');
 
     Route::get('/article', 'ArticleController@index')->name('article_index');
     Route::match(['post', 'get'], '/article/add', 'ArticleController@add')->name('article_add');

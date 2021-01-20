@@ -24,7 +24,8 @@ class CategoryFactory extends Factory
     {
         return [
             'name' => $this->faker->jobTitle,
-            'created_by' => User::all()->random()->id,
+            'created_by' => userGetRandom(),
+            'uuid' => genUuid(),
         ];
     }
 }

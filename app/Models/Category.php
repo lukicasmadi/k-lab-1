@@ -13,6 +13,11 @@ class Category extends Model
 
     protected $guarded = ['id'];
 
+    public function getRouteKeyName()
+    {
+        return 'uuid';
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class, 'created_by', 'id');

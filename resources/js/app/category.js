@@ -37,7 +37,7 @@ $(document).ready(function() {
                 name: 'user.name'
             },
             {
-                data: 'id',
+                data: 'uuid',
                 render: function(data, type, row) {
                     return '<div class="icon-container"><a href="' + route('category_edit', data) + '"><i class="far fa-edit"></i><span class="icon-name"></span></a> <a href="' + route('category_delete', data) + '"><i class="far fa-trash-alt"></i><span class="icon-name"></span></a></div>';
                 },

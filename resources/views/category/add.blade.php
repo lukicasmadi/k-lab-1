@@ -27,6 +27,7 @@
                             <input type="file" class="form-control" id="image" name="image" @error('image') is-invalid @enderror>
                         </div>
                         <input type="submit" name="submit" class="btn btn-primary mt-3" value="Submit">
+                        <a href="{{ route('category_index') }}" class="btn btn-warning mt-3">Back</a>
                     </form>
                 </div>
             </div>

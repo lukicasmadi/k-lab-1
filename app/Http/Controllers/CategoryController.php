@@ -31,7 +31,8 @@ class CategoryController extends Controller
 
             $data = [
                 'name' => request('name'),
-                'created_by' => auth()->user()->id
+                'created_by' => auth()->user()->id,
+                'uuid' => genUuid(),
             ];
 
             if(request()->hasFile('image')) {
@@ -50,7 +51,7 @@ class CategoryController extends Controller
         return view('category.add');
     }
 
-    public function edit(Request $request, Category $categoryId)
+    public function edit(Request $request, Category $uuid)
     {
         if ($request->isMethod('post')) {
 
@@ -66,24 +67,24 @@ class CategoryController extends Controller
                 $data['img'] = $randomName;
             }
 
-            $data = Category::whereId($request->id)->update($data);
+            $data = Category::whereId($request->uuid)->update($data);
 
             flash('Your data has been updated')->success();
             return redirect()->route('category_index');
 
         }
 
-        return view('category.edit', compact('categoryId'));
+        return view('category.edit', compact('uuid'));
     }
 
-    public function delete(Category $categoryId)
+    public function delete(Category $uuid)
     {
-        $data = Category::has('article')->whereId($categoryId->id)->count();
+        $data = Category::has('article')->whereId($uuid->id)->count();
 
         if($data > 0) {
             flash("Can't delete data. This category is still used in articles")->error();
         } else {
-            Category::whereId($categoryId->id)->delete();
+            Category::whereId($uuid->id)->delete();
             flash('Your data has been deleted')->success();
         }
 
