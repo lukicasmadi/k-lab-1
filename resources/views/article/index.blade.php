@@ -19,17 +19,6 @@
                             </tr>
                         </thead>
                         <tbody></tbody>
-                        <tfoot>
-                            <tr>
-                                <th>ID</th>
-                                <th>Topic</th>
-                                <th>Desc</th>
-                                <th>Status</th>
-                                <th>Category</th>
-                                <th>Creator</th>
-                                <th></th>
-                            </tr>
-                        </tfoot>
                     </table>
                 </div>
             </div>
