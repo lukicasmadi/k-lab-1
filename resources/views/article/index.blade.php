@@ -5,8 +5,11 @@
     <div class="row layout-top-spacing" id="cancel-row">
         <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
             <div class="widget-content widget-content-area">
+                <div class="col-md-12 text-right mb-3">
+                    <a href="{{ route('article_add') }}" class="btn btn-success">Add New</a>
+                </div>
                 <div class="table-responsive">
-                    <table id="tbl_article" class="table" style="width:100%">
+                    <table id="tbl_article" class="table">
                         <thead>
                             <tr>
                                 <th>ID</th>

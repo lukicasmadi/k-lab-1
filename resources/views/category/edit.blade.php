@@ -18,15 +18,28 @@
                 <div class="widget-content widget-content-area">
                     <form method="POST" action="{{ route('category_edit', $uuid) }}" enctype="multipart/form-data">
                         @csrf
+
                         <input type="hidden" name="uuid" value="{{ $uuid->id }}">
                         <div class="form-group mb-4">
                             <label>Name</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Name" autocomplete="off" value="{{ $uuid->name }}">
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
+
                         <div class="form-group mb-4">
-                            <label>Image (Leave blank if you don't want to use an image)</label>
-                            <input type="file" class="form-control" id="image" name="image" @error('image') is-invalid @enderror>
+                            <label>Image (Not Require)</label>
+                            <input type="file" class="form-control @error('category_image') is-invalid @enderror" id="category_image" name="category_image">
+                            @error('category_image')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
+
                         <input type="submit" name="submit" class="btn btn-primary mt-3" value="Submit">
                         <a href="{{ route('category_index') }}" class="btn btn-warning mt-3">Back</a>
                     </form>

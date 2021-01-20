@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use App\Http\Requests\CategoryRequest;
+use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 
 class CategoryController extends Controller
@@ -23,32 +26,30 @@ class CategoryController extends Controller
         return view('category.index');
     }
 
-    public function add(Request $request)
+    public function add()
     {
-        $method = $request->method();
+        return view('category.add');
+    }
 
-        if ($request->isMethod('post')) {
+    public function process(CategoryRequest $request)
+    {
+        $data = [
+            'name' => request('name'),
+            'uuid' => genUuid(),
+            'created_by' => auth()->user()->id,
+        ];
 
-            $data = [
-                'name' => request('name'),
-                'created_by' => auth()->user()->id,
-                'uuid' => genUuid(),
-            ];
-
-            if(request()->hasFile('image')) {
-                $file = $request->file('image');
-                $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-                $file->move(storage_path()."/app/public/upload", $randomName);
-                $data['img'] = $randomName;
-            }
-
-            Category::create($data);
-
-            flash('Your data has been saved')->success();
-            return redirect()->route('category_index');
+        if(request()->hasFile('category_image')) {
+            $file = $request->file('category_image');
+            $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
+            Storage::put("/public/upload/".$randomName, File::get($file));
+            $data['img'] = $randomName;
         }
 
-        return view('category.add');
+        Category::create($data);
+
+        flash('Your data has been saved')->success();
+        return redirect()->route('category_index');
     }
 
     public function edit(Request $request, Category $uuid)
@@ -60,10 +61,17 @@ class CategoryController extends Controller
                 'created_by' => auth()->user()->id
             ];
 
-            if(request()->hasFile('image')) {
-                $file = $request->file('image');
+            if(request()->hasFile('category_image')) {
+                $file = $request->file('category_image');
+
+                $fileCheck = Storage::exists('/public/upload/'.$uuid->img);
+
+                if($fileCheck) {
+                    Storage::delete('/public/upload/'.$uuid->img);
+                }
+
                 $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-                $file->move(storage_path()."/app/public/upload", $randomName);
+                Storage::put("/public/upload/".$randomName, File::get($file));
                 $data['img'] = $randomName;
             }
 
@@ -84,7 +92,14 @@ class CategoryController extends Controller
         if($data > 0) {
             flash("Can't delete data. This category is still used in articles")->error();
         } else {
+            $fileCheck = Storage::exists('/public/upload/'.$uuid->img);
+
+            if($fileCheck) {
+                Storage::delete('/public/upload/'.$uuid->img);
+            }
+
             Category::whereId($uuid->id)->delete();
+
             flash('Your data has been deleted')->success();
         }
 

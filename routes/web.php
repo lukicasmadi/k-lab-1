@@ -27,7 +27,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/category', 'CategoryController@index')->name('category_index');
-    Route::match(['post', 'get'], '/category/add', 'CategoryController@add')->name('category_add');
+    Route::get('/category/add', 'CategoryController@add')->name('category_add');
+    Route::post('/category/process', 'CategoryController@process')->name('category_process');
+
     Route::match(['post', 'get'], '/category/edit/{uuid}', 'CategoryController@edit')->name('category_edit');
     Route::get('/category/delete/{uuid}', 'CategoryController@delete')->name('category_delete');
 
