@@ -36,7 +36,7 @@ class CategoryController extends Controller
         $data = [
             'name' => request('name'),
             'uuid' => genUuid(),
-            'created_by' => auth()->user()->id,
+            'created_by' => myUserId(),
         ];
 
         if(request()->hasFile('category_image')) {
@@ -56,7 +56,7 @@ class CategoryController extends Controller
     {
         $data = [
             'name' => request('name'),
-            'created_by' => auth()->user()->id
+            'created_by' => myUserId()
         ];
 
         if(request()->hasFile('category_image')) {

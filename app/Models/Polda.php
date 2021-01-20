@@ -10,6 +10,8 @@ class Polda extends Model
 {
     use HasFactory, LogsActivity;
 
+    protected $guarded = ['id'];
+
     public function getRouteKeyName()
     {
         return 'uuid';

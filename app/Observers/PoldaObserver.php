@@ -12,7 +12,7 @@ class PoldaObserver
      * @param  \App\Models\Polda  $polda
      * @return void
      */
-    public function created(Polda $polda)
+    public function creating(Polda $polda)
     {
         $polda->uuid = genUuid();
         $polda->created_by = myUserId();
@@ -25,7 +25,7 @@ class PoldaObserver
      * @param  \App\Models\Polda  $polda
      * @return void
      */
-    public function updated(Polda $polda)
+    public function updating(Polda $polda)
     {
         $polda->updated_by = myUserId();
     }

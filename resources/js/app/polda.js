@@ -37,7 +37,7 @@ $(document).ready(function() {
             {
                 data: 'small_img',
                 render: function(data, type, row) {
-                    if (data == null) {
+                    if (_.isEmpty(data)) {
                         return '<td class="text-center"><span><img src="' + route('dashboard') + '/template/assets/img/90x90.jpg" class="profile-img" width="40" height="40"></span></td>'
                     }
                 },
@@ -47,7 +47,7 @@ $(document).ready(function() {
             {
                 data: 'logo',
                 render: function(data, type, row) {
-                    if (data == null) {
+                    if (_.isEmpty(data)) {
                         return '<td class="text-center"><span><img src="' + route('dashboard') + '/template/assets/img/90x90.jpg" class="profile-img" width="40" height="40"></span></td>'
                     }
                 },
@@ -57,8 +57,10 @@ $(document).ready(function() {
             {
                 data: 'profile',
                 render: function(data, type, row) {
-                    if (data == null) {
+                    if (_.isEmpty(data)) {
                         return '<span class="text-center">-</span>'
+                    } else {
+                        return '<span class="text-center">' + data + '</span>'
                     }
                 },
             },

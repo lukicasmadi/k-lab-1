@@ -29,6 +29,11 @@ class PoldaRequest extends FormRequest
             'city' => 'required',
             'address' => 'required',
             'logo' => 'required|image',
+            'aka' => 'present',
+            'small_img' => 'present',
+            'big_img' => 'present',
+            'logo' => 'present',
+            'profile' => 'present',
         ];
     }
 }
