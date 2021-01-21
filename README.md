@@ -1,6 +1,6 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-## Cara install laravel di local
+## How to install and run laravel on local computer
 
 -   Jalankan perintah `git clone https://github.com/berthojoris/k-lab.git` harusnya akan muncul folder `k-lab`
 -   Setelah clone project berhasil, jalankan composer install dengan ketik perintah `composer install`
@@ -43,7 +43,7 @@ Contohnya sudah ada di project, ikutin aja caranya
 
 Untuk tabel yg ada butuh `created_by` dan `updated_by` bisa menggunakan helper `genUuid()` buat uuid dan `myUserId()` untuk ambil current id yg login
 
-## Error ketika migration
+## Error when migration?
 
 Tutup dulu / Remark codingan Observer di file `PoldaObserver` di bagian
 
@@ -66,3 +66,31 @@ public function updating(Polda $polda)
 ```
 
 Tapi setelah itu di buka lagi codingannya
+
+## How to use datatable
+
+-   Setiap halaman yg menggunakan datatable harus dibuat 1 file `.js` dan di taroh di `resources\js\app\nama_file.js`
+-   Setelah itu tambahkan/daftarkan filenya di file `webpack.mix.js`. Contohin yang sudah ada.
+    Jika yang sekarang isi filenya
+
+```js
+mix.js("resources/js/app.js", "public/js")
+    .js("resources/js/app/category.js", "public/js")
+    .js("resources/js/app/article.js", "public/js")
+    .js("resources/js/app/polda.js", "public/js")
+    .sass("resources/sass/app.scss", "public/css");
+```
+
+Mau ditambah file baru berarti jadi
+
+```js
+mix.js("resources/js/app.js", "public/js")
+    .js("resources/js/app/category.js", "public/js")
+    .js("resources/js/app/article.js", "public/js")
+    .js("resources/js/app/polda.js", "public/js")
+    .js("resources/js/app/file_baru_disini.js", "public/js")
+    .sass("resources/sass/app.scss", "public/css");
+```
+
+Setelah itu run `npm run watch` atau `yarn run watch`
+Kemudian bikin file js-nya contoh `file_baru_disini.js` diatas
