@@ -116,12 +116,24 @@ class PoldaController extends Controller
 
     public function destroy($uuid)
     {
-        $data = Polda::whereUuid($uuid)->firstOrFail();
+        $validation = Polda::has('rencanaOperation')->whereUuid($uuid)->count();
 
-        Storage::delete('/public/upload/polda/'.$data->small_img);
-        Storage::delete('/public/upload/polda/'.$data->big_img);
-        Storage::delete('/public/upload/polda/'.$data->logo);
+        if($validation > 0) {
+            return response()->json([
+                'message' => 'Delete fail! Your data still related to another data.',
+            ], 403);
+        } else {
+            $data = Polda::whereUuid($uuid)->firstOrFail();
 
-        $data->delete();
+            Storage::delete('/public/upload/polda/'.$data->small_img);
+            Storage::delete('/public/upload/polda/'.$data->big_img);
+            Storage::delete('/public/upload/polda/'.$data->logo);
+
+            $data->delete();
+
+            return response()->json([
+                'message' => 'Your data has been deleted.',
+            ], 200);
+        }
     }
 }

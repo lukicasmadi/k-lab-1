@@ -85,9 +85,23 @@ $(document).ready(function () {
 
       if (result.value) {
         axios["delete"](route('polda_destroy', uuid)).then(function (response) {
-          swal('Deleted!', 'Your data has been deleted.', 'success');
+          table.ajax.reload();
+          swal('Deleted!', result.message, 'success');
         })["catch"](function (error) {
-          swal("Error deleting!", "Please try again", "error");
+          swal("Error deleting!", error.message, "error");
+
+          if (error.response) {
+            // Request made and server responded
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+          } else if (error.request) {
+            // The request was made but no response was received
+            console.log(error.request);
+          } else {
+            // Something happened in setting up the request that triggered an Error
+            console.log('Error', error.message);
+          }
         });
       }
     });
