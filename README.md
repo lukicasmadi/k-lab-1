@@ -97,3 +97,23 @@ Setelah itu run `npm run watch` atau `yarn run watch`
 Kemudian bikin file js-nya contoh `file_baru_disini.js` diatas
 
 Pastikan jika ingin menambahkan file js baru, matikan dulu `npm run watch` atau `yarn run watch` dengan perintah `ctrl+c`
+
+## How to provide JSON DATA for datatable
+
+-   Tambah route untuk API di file `web.php`
+-   Edit bagian `Route::group(['prefix' => 'data']`
+-   Call api dengan method `GET` (Liat contoh di file web.php)
+-   Contoh yang sekarang seperti ini
+
+```php
+Route::group(['prefix' => 'data'], function () {
+    Route::get('/contoh', 'ContohController@data')->name('contoh_data');
+});
+```
+
+Jadi routenya akan seperti ini jika diakses http://domain.com/data/contoh
+
+## Relational in Model
+
+-   Untuk model (database) relasi ini coba baca dokumentasi di [Eloquent Relationship](https://laravel.com/docs/8.x/eloquent-relationships)
+-   Untuk query relasi tabel, pakai fungsi `with` di modelnya. Liat contoh di project file-file controllernya di bagian `public function data()`
