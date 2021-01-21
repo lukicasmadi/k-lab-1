@@ -2,10 +2,10 @@
 
 ## Cara install laravel di local
 
--   Jalankan perintah `git clone https://github.com/berthojoris/k-lab.git`
+-   Jalankan perintah `git clone https://github.com/berthojoris/k-lab.git` harusnya akan muncul folder `k-lab`
 -   Setelah clone project berhasil, jalankan composer install dengan ketik perintah `composer install`
 -   Setelah composer install berhasil, jalankan perintah `npm install` atau `yarn install`
--   Setelah npm install selesai, copy file .env.example dengan perintah `copy .env.example .env`
+-   Setelah npm install selesai, copy file .env.example dengan perintah `copy .env.example .env` atau jika perinta `copy` tidak ada, jalankan perintah `cp .env.example .env`
 -   Seletah selesai, edit file `.env` [bukan file .env.example] , agar sesuai dengan laravel project. Misalnya `APP_URL` , `DB_DATABASE` , `DB_USERNAME` , `DB_PASSWORD` , dll
 -   Seletah itu jalankan `php artisan key:generate` untuk generate random key di project
 -   Setelah itu jalan perintah `php artisan migrate --seed` untuk menggenarate tabel dan dummy data
