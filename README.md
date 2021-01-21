@@ -129,3 +129,13 @@ public function user()
 ```
 
 Dibaca aja dokumentasinya
+
+## Melakukan pull request di github
+
+-   Lakukan `fork` project yang baru dari repository asli
+-   Dari hasil fork ke repository pribadi, download project ke local computer dengan perintah `git clone link_repositorynya`
+-   Install seperti biasa [Ikutin langkah-langkah di readme paling atas]
+-   Jika sudah selesai, buat branch baru dengan nama terserah. Pastikan branch dibuat/checkout dari branch `master`
+-   Coding sampai selesai, lakukan `commit`, lalu `push` ke repository dengan perintah `git push origin nama_branch_baru`
+-   Kemudian lakukan `pull request` ke repository asli
+-   Jika kesulitan ikutin tutorial ini : [Pull-Request di github](https://www.youtube.com/watch?v=6_UhNE5qVX4)
