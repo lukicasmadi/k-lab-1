@@ -67,6 +67,8 @@ public function updating(Polda $polda)
 
 Di tutup dulu, abis running migration, setelah itu di unmark/dibuka codingannya
 
+Atau jika ada kebutuhan re-migrate database dan mulai dari awal dummy datanya, jalankan perintah `php artisan migrate:fresh --seed`
+
 ## How to use datatable
 
 -   Setiap halaman yg menggunakan datatable **harus** dibuat 1 file `.js` dan di taroh di `resources\js\app\nama_file.js`
