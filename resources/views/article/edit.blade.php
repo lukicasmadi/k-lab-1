@@ -81,10 +81,6 @@
 <script src="{{ secure_asset('template/plugins/editors/markdown/simplemde.min.js') }}"></script>
 @endpush
 
-@push('page_js')
-<script src="{{ secure_asset('js/article.js') }}"></script>
-@endpush
-
 @push('page_css')
 <link rel="stylesheet" href="{{ secure_asset('template/custom.css') }}">
 @endpush

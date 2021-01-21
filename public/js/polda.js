@@ -3,7 +3,7 @@
   !*** ./resources/js/app/polda.js ***!
   \***********************************/
 $(document).ready(function () {
-  $('#tbl_polda').DataTable({
+  var table = $('#tbl_polda').DataTable({
     processing: true,
     serverSide: true,
     ajax: route('polda_data'),
@@ -63,11 +63,34 @@ $(document).ready(function () {
     }, {
       data: 'uuid',
       render: function render(data, type, row) {
-        return '<div class="icon-container"><a href="' + route('polda_edit', data) + '"><i class="far fa-edit"></i><span class="icon-name"></span></a> <a href="' + route('polda_destroy', data) + '"><i class="far fa-trash-alt"></i><span class="icon-name"></span></a></div>';
+        return '<div class="icon-container"><a href="' + route('polda_edit', data) + '"><i class="far fa-edit"></i><span class="icon-name"></span></a> <a href="" uuid="' + data + '" class="confirm"><i class="far fa-trash-alt"></i><span class="icon-name"></span></a></div>';
       },
       searchable: false,
       sortable: false
     }]
+  });
+  $('#tbl_polda tbody').on('click', '.confirm', function (e) {
+    // var data = table.row(this).data();
+    e.preventDefault();
+    var uuid = $(this).attr('uuid');
+    swal({
+      title: 'Are you sure?',
+      text: "Detele this data!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Delete',
+      padding: '2em'
+    }).then(function (result) {
+      swal.showLoading();
+
+      if (result.value) {
+        axios["delete"](route('polda_destroy', uuid)).then(function (response) {
+          swal('Deleted!', 'Your data has been deleted.', 'success');
+        })["catch"](function (error) {
+          swal("Error deleting!", "Please try again", "error");
+        });
+      }
+    });
   });
 });
 /******/ })()

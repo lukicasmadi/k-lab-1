@@ -72,16 +72,56 @@ class PoldaController extends Controller
 
     public function edit($uuid)
     {
-        //
+        $data = Polda::whereUuid($uuid)->firstOrFail();
+        return view('polda.edit', compact('data'));
     }
 
     public function update(PoldaRequest $request, $uuid)
     {
-        //
+        $data = [
+            'name' => request('name'),
+            'aka' => request('aka'),
+            'province' => request('province'),
+            'city' => request('city'),
+            'address' => request('address'),
+            'profile' => request('profile'),
+        ];
+
+        if(request()->hasFile('small_img')) {
+            $file = $request->file('small_img');
+            $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
+            Storage::put("/public/upload/polda/".$randomName, File::get($file));
+            $data['small_img'] = $randomName;
+        }
+
+        if(request()->hasFile('big_img')) {
+            $file = $request->file('big_img');
+            $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
+            Storage::put("/public/upload/polda/".$randomName, File::get($file));
+            $data['big_img'] = $randomName;
+        }
+
+        if(request()->hasFile('logo')) {
+            $file = $request->file('logo');
+            $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
+            Storage::put("/public/upload/polda/".$randomName, File::get($file));
+            $data['logo'] = $randomName;
+        }
+
+        Polda::whereUuid($uuid)->update($data);
+
+        flash('Your data has been updated')->success();
+        return redirect()->route('polda_index');
     }
 
     public function destroy($uuid)
     {
-        //
+        $data = Polda::whereUuid($uuid)->firstOrFail();
+
+        Storage::delete('/public/upload/polda/'.$data->small_img);
+        Storage::delete('/public/upload/polda/'.$data->big_img);
+        Storage::delete('/public/upload/polda/'.$data->logo);
+
+        $data->delete();
     }
 }

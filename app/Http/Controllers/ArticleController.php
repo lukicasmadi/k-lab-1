@@ -37,7 +37,7 @@ class ArticleController extends Controller
             'desc' => $request->desc,
             'status' => $request->status,
             'category_id' => $request->category_id,
-            'created_by' => auth()->user()->id,
+            'created_by' => myUserId(),
         ]);
 
         flash('Your data has been saved')->success();

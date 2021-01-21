@@ -20,18 +20,18 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-6 col-md-12 col-sm-12 col-12">
-                            <h4>Input Data Polda</h4>
+                            <h4>Edit Data Polda</h4>
                         </div>
                     </div>
                 </div>
 
                 <div class="widget-content widget-content-area">
-                    <form method="POST" action="{{ route('polda_store') }}">
+                    <form method="POST" action="{{ route('polda_update', $data->uuid) }}">
                         @csrf
-
+                        @method('PATCH')
                         <div class="form-group mb-4">
                             <label>Name</label>
-                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Name" autocomplete="off">
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Name" autocomplete="off" value="{{ $data->name }}">
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -41,7 +41,7 @@
 
                         <div class="form-group mb-4">
                             <label>Called Name</label>
-                            <input type="text" class="form-control @error('aka') is-invalid @enderror" id="aka" name="aka" placeholder="Called Name" autocomplete="off">
+                            <input type="text" class="form-control @error('aka') is-invalid @enderror" id="aka" name="aka" placeholder="Called Name" autocomplete="off" value="{{ $data->aka }}">
                             @error('aka')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -51,7 +51,7 @@
 
                         <div class="form-group mb-4">
                             <label>Province</label>
-                            <input type="text" class="form-control @error('province') is-invalid @enderror" id="province" name="province" placeholder="Province" autocomplete="off">
+                            <input type="text" class="form-control @error('province') is-invalid @enderror" id="province" name="province" placeholder="Province" autocomplete="off" value="{{ $data->province }}">
                             @error('province')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -61,7 +61,7 @@
 
                         <div class="form-group mb-4">
                             <label>City</label>
-                            <input type="text" class="form-control @error('city') is-invalid @enderror" id="city" name="city" placeholder="City" autocomplete="off">
+                            <input type="text" class="form-control @error('city') is-invalid @enderror" id="city" name="city" placeholder="City" autocomplete="off" value="{{ $data->city }}">
                             @error('city')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -71,7 +71,7 @@
 
                         <div class="form-group mb-4">
                             <label>Address</label>
-                            <textarea class="form-control @error('address') is-invalid @enderror" id="address" name="address" rows="3"></textarea>
+                            <textarea class="form-control @error('address') is-invalid @enderror" id="address" name="address" rows="3">{{ $data->address }}</textarea>
                             @error('address')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -111,7 +111,7 @@
 
                         <div class="form-group mb-4">
                             <label>Profile</label>
-                            <textarea class="form-control @error('profile') is-invalid @enderror" id="profile" name="profile" rows="3"></textarea>
+                            <textarea class="form-control @error('profile') is-invalid @enderror" id="profile" name="profile" rows="3">{{ $data->profile }}</textarea>
                             @error('profile')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

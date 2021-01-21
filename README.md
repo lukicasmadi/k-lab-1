@@ -33,6 +33,32 @@ Route::resource('test', 'TestController', [
 
 Generatenya pakai `php artisan make:controller TestController --resource`
 
+## Model
+
+-   Model mengharuskan menggunakan UUID sebagai key
+-   Tiap model yang baru dibuat wajib ditambahkan `$guarded` dan di set ID. Contohnya seperti ini
+
+```php
+protected $guarded = ['id'];
+```
+
+-   Dan harus di tambahkan `getRouteKeyName()`. Contohnya seperti ini
+
+```php
+public function getRouteKeyName()
+{
+    return 'uuid';
+}
+```
+
+Lihat contoh yang sudah ada di model
+
+-   Setiap pencarian data menggunakan method `firstOrFail()`. Contohnya seperti ini
+
+```php
+$data = Polda::whereUuid($uuid)->firstOrFail();
+```
+
 ## Request Validation
 
 Untuk request validation pakai class terpisah. Baca disini [Larevel Request Validation](https://laravel.com/docs/8.x/validation#creating-form-requests)
