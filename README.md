@@ -69,9 +69,10 @@ Tapi setelah itu di buka lagi codingannya
 
 ## How to use datatable
 
--   Setiap halaman yg menggunakan datatable harus dibuat 1 file `.js` dan di taroh di `resources\js\app\nama_file.js`
--   Setelah itu tambahkan/daftarkan filenya di file `webpack.mix.js`. Contohin yang sudah ada.
-    Jika yang sekarang isi filenya
+-   Setiap halaman yg menggunakan datatable **harus** dibuat 1 file `.js` dan di taroh di `resources\js\app\nama_file.js`
+-   Misalnya halaman yang mau dibuat adalah halaman profile, yang akan diakses http://domain.com/profile , maka harus dibuat file `profile.js` untuk kebutuhan jika di halaman profile membutuhkan list datatable
+-   Setelah itu tambahkan/daftarkan filenya di file `webpack.mix.js`. Contohin yang sudah ada
+-   Cara penambahan list seperti ini
 
 ```js
 mix.js("resources/js/app.js", "public/js")
@@ -94,3 +95,5 @@ mix.js("resources/js/app.js", "public/js")
 
 Setelah itu run `npm run watch` atau `yarn run watch`
 Kemudian bikin file js-nya contoh `file_baru_disini.js` diatas
+
+Pastikan jika ingin menambahkan file js baru, matikan dulu `npm run watch` atau `yarn run watch` dengan perintah `ctrl+c`
