@@ -35,7 +35,7 @@ Generatenya pakai `php artisan make:controller TestController --resource`
 
 ## Request Validation
 
-Untuk request validation pakai class terpisah. Baca disini [Larevel Request Validation](https://laravel.com/docs/8.x/validation#form-request-validation)
+Untuk request validation pakai class terpisah. Baca disini [Larevel Request Validation](https://laravel.com/docs/8.x/validation#creating-form-requests)
 
 Contohnya sudah ada di project, ikutin aja caranya
 
