@@ -86,9 +86,9 @@ $(document).ready(function () {
       if (result.value) {
         axios["delete"](route('polda_destroy', uuid)).then(function (response) {
           table.ajax.reload();
-          swal('Deleted!', result.message, 'success');
+          swal('Deleted!', response.data.output, 'success');
         })["catch"](function (error) {
-          swal("Error deleting!", error.message, "error");
+          swal("Error deleting!", error.response.data.output, "error");
 
           if (error.response) {
             // Request made and server responded
