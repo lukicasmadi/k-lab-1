@@ -45,7 +45,7 @@ Untuk tabel yg ada butuh `created_by` dan `updated_by` bisa menggunakan helper `
 
 ## Error when migration?
 
-Tutup dulu / Remark codingan Observer di file `PoldaObserver` di bagian
+Tutup dulu / Remark codingan Observer di file `PoldaObserver.php` di bagian
 
 ```php
 public function creating(Polda $polda)
