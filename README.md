@@ -117,3 +117,13 @@ Jadi routenya akan seperti ini jika diakses http://domain.com/data/contoh
 
 -   Untuk model (database) relasi ini coba baca dokumentasi di [Eloquent Relationship](https://laravel.com/docs/8.x/eloquent-relationships)
 -   Untuk query relasi tabel, pakai fungsi `with` di modelnya. Liat contoh di project file-file controllernya di bagian `public function data()`
+-   Sebelum menggunakan fungsi `with`, harus dibuatkan dulu fungsi relasinya di file modelnya. Contohnya gini
+
+```php
+public function user()
+{
+    return $this->belongsTo(User::class, 'created_by', 'id');
+}
+```
+
+Dibaca aja dokumentasinya
