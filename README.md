@@ -13,7 +13,7 @@
 
 ## Routing
 
-Untuk route pakai resource. Baca disini https://laravel.com/docs/8.x/controllers#resource-controllers
+Untuk route pakai resource. Baca disini [Laravel Resource Controller](https://laravel.com/docs/8.x/controllers#resource-controllers)
 
 Contoh define route di file `web.php`
 
@@ -35,7 +35,7 @@ Generatenya pakai `php artisan make:controller TestController --resource`
 
 ## Request Validation
 
-Untuk request validation pakai class terpisah. Baca disini https://laravel.com/docs/8.x/validation#form-request-validation
+Untuk request validation pakai class terpisah. Baca disini [Larevel Request Validation](https://laravel.com/docs/8.x/validation#form-request-validation)
 
 Contohnya sudah ada di project, ikutin aja caranya
 
