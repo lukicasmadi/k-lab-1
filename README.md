@@ -45,7 +45,7 @@ Untuk tabel yg ada butuh `created_by` dan `updated_by` bisa menggunakan helper `
 
 ## Error when migration?
 
-Tutup dulu / Remark codingan Observer di file `PoldaObserver.php` di bagian
+Tutup dulu / Remark codingan Observer di folder `app\Observers`. Semua file di folder itu dicek. Contoh salah satunya file `PoldaObserver.php` di bagian
 
 ```php
 public function creating(Polda $polda)
@@ -65,7 +65,7 @@ public function updating(Polda $polda)
 }
 ```
 
-Tapi setelah itu di buka lagi codingannya
+Di tutup dulu, abis running migration, setelah itu di unmark/dibuka codingannya
 
 ## How to use datatable
 
