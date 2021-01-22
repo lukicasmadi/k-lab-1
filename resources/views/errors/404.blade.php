@@ -27,7 +27,7 @@
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
     <script src="{{ secure_asset('template/assets/js/libs/jquery-3.1.1.min.js') }}"></script>
     <script src="{{ secure_asset('template/bootstrap/js/popper.min.js') }}"></script>
-    <script src="{{ secure_asset('templare/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ secure_asset('template/bootstrap/js/bootstrap.min.js') }}"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 </body>
 </html>
