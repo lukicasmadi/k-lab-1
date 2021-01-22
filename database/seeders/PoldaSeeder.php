@@ -14,6 +14,8 @@ class PoldaSeeder extends Seeder
      */
     public function run()
     {
-        Polda::factory(34)->create();
+        Polda::withoutEvents(function () {
+            return Polda::factory(34)->create();
+        });
     }
 }

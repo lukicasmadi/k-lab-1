@@ -63,4 +63,4 @@ Route::get('change-password', 'UserController@changePassword')->name('change_pas
 Route::post('change-password/process', 'UserController@change_password_process')->name('change_password_process');
 
 Route::get('profile', 'UserController@profile')->name('profile');
-Route::post('profile/process', 'UserController@profileProcess')->name('update_profile');
+Route::post('profile/process', 'UserController@profile_process')->name('profile_process');

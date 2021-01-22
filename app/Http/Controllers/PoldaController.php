@@ -45,13 +45,6 @@ class PoldaController extends Controller
             $data['small_img'] = $randomName;
         }
 
-        if(request()->hasFile('big_img')) {
-            $file = $request->file('big_img');
-            $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-            Storage::put("/public/upload/polda/".$randomName, File::get($file));
-            $data['big_img'] = $randomName;
-        }
-
         if(request()->hasFile('logo')) {
             $file = $request->file('logo');
             $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
@@ -94,13 +87,6 @@ class PoldaController extends Controller
             $data['small_img'] = $randomName;
         }
 
-        if(request()->hasFile('big_img')) {
-            $file = $request->file('big_img');
-            $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-            Storage::put("/public/upload/polda/".$randomName, File::get($file));
-            $data['big_img'] = $randomName;
-        }
-
         if(request()->hasFile('logo')) {
             $file = $request->file('logo');
             $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
@@ -126,7 +112,6 @@ class PoldaController extends Controller
             $data = Polda::whereUuid($uuid)->firstOrFail();
 
             Storage::delete('/public/upload/polda/'.$data->small_img);
-            Storage::delete('/public/upload/polda/'.$data->big_img);
             Storage::delete('/public/upload/polda/'.$data->logo);
 
             $data->delete();

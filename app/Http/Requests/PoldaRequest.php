@@ -28,10 +28,9 @@ class PoldaRequest extends FormRequest
             'province' => 'required',
             'city' => 'required',
             'address' => 'required',
-            'logo' => 'required|image',
+            'logo' => 'required|image|mimes:jpg,bmp,png',
             'aka' => 'present',
             'small_img' => 'present',
-            'big_img' => 'present',
             'logo' => 'present',
             'profile' => 'present',
         ];

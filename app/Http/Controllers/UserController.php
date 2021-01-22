@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Http\Requests\ChangePassword;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\UpdateProfileRequest;
+use App\Http\Requests\ChangePasswordRequest;
 
 class UserController extends Controller
 {
@@ -14,7 +18,7 @@ class UserController extends Controller
         return view('user.change_password');
     }
 
-    public function change_password_process(ChangePassword $request)
+    public function change_password_process(ChangePasswordRequest $request)
     {
         $credential = [
             'email' => auth()->user()->email,
@@ -35,9 +39,31 @@ class UserController extends Controller
         }
     }
 
-    public function profile(Request $request)
+    public function profile()
     {
-        //
+        $profile = User::whereId(myUserId())->first();
+        return view('user.profile_update', compact('profile'));
+    }
+
+    public function profile_process(UpdateProfileRequest $request)
+    {
+        $data = [
+            'name' => request('name'),
+            'email' => request('email'),
+            'profile' => request('profile'),
+        ];
+
+        if(request()->hasFile('avatar')) {
+            $file = $request->file('avatar');
+            $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
+            Storage::put("/public/upload/profile/".$randomName, File::get($file));
+            $data['avatar'] = $randomName;
+        }
+
+        User::whereId(myUserId())->first()->update($data);
+
+        flash('Your profile has been updated')->success();
+        return back();
     }
 
     public function index()

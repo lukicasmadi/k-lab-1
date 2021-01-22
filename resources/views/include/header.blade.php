@@ -73,7 +73,14 @@
             <li class="nav-item dropdown user-profile-dropdown order-lg-0 order-1">
                 <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="user-profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="media">
-                        <img src="{{ secure_asset('img/profile/digital.png') }}" class="img-fluid" alt="admin-profile">
+                        @php
+                            $user = App\Models\User::whereId(myUserId())->first();
+                            if(empty($user->avatar)) {
+                                echo "<img src='".secure_asset('storage/upload/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";
+                            } else {
+                                echo "<img src='".secure_asset('storage/upload/profile/'.$user->avatar)."' class='img-fluid' alt='admin-profile' />";
+                            }
+                        @endphp
                         <div class="media-body align-self-center">
                             <h6><span>Hi,</span> Bertho</h6>
                         </div>
@@ -84,7 +91,7 @@
                     <div class="">
 
                         <div class="dropdown-item">
-                            <a class="" href="{{ route('profile') }}">
+                            <a class="active" href="{{ route('profile') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>
                                 </svg>
                                 Profile

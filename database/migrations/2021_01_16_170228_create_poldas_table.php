@@ -22,7 +22,6 @@ class CreatePoldasTable extends Migration
             $table->string('city')->nullable();
             $table->string('address')->nullable();
             $table->string('small_img')->nullable();
-            $table->string('big_img')->nullable();
             $table->string('logo')->nullable();
             $table->text('profile')->nullable();
             $table->unsignedBigInteger('created_by');

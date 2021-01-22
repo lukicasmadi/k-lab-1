@@ -30,7 +30,7 @@
                         @csrf
                         @method('PATCH')
                         <div class="form-group mb-4">
-                            <label>Name</label>
+                            <label><span class="require">*</span>Name</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Name" autocomplete="off" value="{{ $data->name }}">
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="form-group mb-4">
-                            <label>Province</label>
+                            <label><span class="require">*</span>Province</label>
                             <input type="text" class="form-control @error('province') is-invalid @enderror" id="province" name="province" placeholder="Province" autocomplete="off" value="{{ $data->province }}">
                             @error('province')
                                 <span class="invalid-feedback" role="alert">
@@ -60,7 +60,7 @@
                         </div>
 
                         <div class="form-group mb-4">
-                            <label>City</label>
+                            <label><span class="require">*</span>City</label>
                             <input type="text" class="form-control @error('city') is-invalid @enderror" id="city" name="city" placeholder="City" autocomplete="off" value="{{ $data->city }}">
                             @error('city')
                                 <span class="invalid-feedback" role="alert">
@@ -70,7 +70,7 @@
                         </div>
 
                         <div class="form-group mb-4">
-                            <label>Address</label>
+                            <label><span class="require">*</span>Address</label>
                             <textarea class="form-control @error('address') is-invalid @enderror" id="address" name="address" rows="3">{{ $data->address }}</textarea>
                             @error('address')
                                 <span class="invalid-feedback" role="alert">
@@ -90,17 +90,7 @@
                         </div>
 
                         <div class="form-group mb-4">
-                            <label>Big Image</label>
-                            <input type="file" class="form-control @error('big_img') is-invalid @enderror" id="big_img" name="big_img">
-                            @error('big_img')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group mb-4">
-                            <label>Big Image</label>
+                            <label><span class="require">*</span>Logo</label>
                             <input type="file" class="form-control @error('logo') is-invalid @enderror" id="logo" name="logo">
                             @error('logo')
                                 <span class="invalid-feedback" role="alert">
