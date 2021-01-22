@@ -52,6 +52,23 @@ Route::group(['prefix' => 'admin'], function () {
         ]
     ]);
 
+    Route::resource('operasi', 'RencanaOperasiController', [
+        'names' => [
+            'index' => 'rencana_operasi_index',
+            'create' => 'rencana_operasi_create',
+            'store' => 'rencana_operasi_store',
+            'show' => 'rencana_operasi_show',
+            'edit' => 'rencana_operasi_edit',
+            'update' => 'rencana_operasi_update',
+            'destroy' => 'rencana_operasi_destroy',
+        ]
+    ]);
+
+    Route::get('/laporan/all', 'ReportController@all')->name('laporan_all');
+    Route::get('/laporan/polda/{aka}', 'ReportController@byAka')->name('laporan_by_aka');
+    Route::get('/laporan/polda/{date}', 'ReportController@byOneDate')->name('laporan_by_one_date');
+    Route::get('/laporan/polda/{daterange}', 'ReportController@dateRange')->name('laporan_by_date_range');
+
     Route::group(['prefix' => 'data'], function () {
         Route::get('/category', 'CategoryController@data')->name('category_data');
         Route::get('/article', 'ArticleController@data')->name('article_data');
