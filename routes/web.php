@@ -59,5 +59,8 @@ Route::group(['prefix' => 'admin'], function () {
     });
 });
 
-Route::match(['post', 'get'], 'change-password', 'UserController@changePassword')->name('changePassword');
-Route::match(['post', 'get'], 'profile', 'UserController@profile')->name('profile');
+Route::get('change-password', 'UserController@changePassword')->name('change_password');
+Route::post('change-password/process', 'UserController@change_password_process')->name('change_password_process');
+
+Route::get('profile', 'UserController@profile')->name('profile');
+Route::post('profile/process', 'UserController@profileProcess')->name('update_profile');

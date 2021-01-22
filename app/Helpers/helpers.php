@@ -42,10 +42,6 @@ if (! function_exists('userGetRandom')) {
 
 if (! function_exists('myUserId')) {
     function myUserId() {
-        if(!empty(auth()->user())) {
-            return auth()->user()->id;
-        } else {
-            return 1;
-        }
+        return auth()->user()->id;
     }
 }
