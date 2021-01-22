@@ -69,6 +69,21 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/laporan/polda/{date}', 'ReportController@byOneDate')->name('laporan_by_one_date');
     Route::get('/laporan/polda/{daterange}', 'ReportController@dateRange')->name('laporan_by_date_range');
 
+    Route::get('/acl/role', 'AclController@role')->name('role');
+    Route::get('/acl/role/create', 'AclController@create')->name('role_create');
+    Route::post('/acl/role/store', 'AclController@store')->name('role_store');
+    Route::get('/acl/role/{id}/edit', 'AclController@edit')->name('role_edit');
+    Route::patch('/acl/role/{id}/update', 'AclController@update')->name('role_update');
+    Route::delete('/acl/role/{id}/delete', 'AclController@destroy')->name('role_delete');
+
+    Route::get('/acl/premission', 'AclController@premission')->name('premission');
+    Route::get('/acl/premission/create', 'AclController@premission_create')->name('premission_create');
+    Route::get('/acl/premission/delete/{id}', 'AclController@premission_delete')->name('premission_delete');
+
+    Route::get('/acl/user-has-role', 'AclController@userHasRole')->name('user_has_role');
+    Route::get('/acl/user-has-role/create', 'AclController@userHasRoleCreate')->name('user_has_role_create');
+    Route::get('/acl/user-has-role/delete/{id}', 'AclController@userHasRoleDelete')->name('user_has_role_delete');
+
     Route::group(['prefix' => 'data'], function () {
         Route::get('/category', 'CategoryController@data')->name('category_data');
         Route::get('/article', 'ArticleController@data')->name('article_data');

@@ -30,17 +30,17 @@
                         @csrf
                         <input type="hidden" name="id" value="{{ $articleUuid->id }}">
                         <div class="form-group mb-4">
-                            <label>Topic</label>
+                            <label><span class="require">*</span>Topic</label>
                             <input type="text" class="form-control @error('topic') is-invalid @enderror" id="topic" name="topic" placeholder="Topic" autocomplete="off" value="{{ $articleUuid->topic }}">
                         </div>
 
                         <div class="form-group mb-4">
-                            <label>Description</label>
+                            <label><span class="require">*</span>Description</label>
                             <textarea id="desc" name="desc" class="@error('desc') is-invalid @enderror">{{ $articleUuid->desc }}</textarea>
                         </div>
 
                         <div class="form-group mb-4">
-                            <label>Status</label>
+                            <label><span class="require">*</span>Status</label>
                             <select name="status" id="status" class="form-control @error('status') is-invalid @enderror">
                                 <option value="">== Select Status ==</option>
                                 <option value="active" @if ($articleUuid->status == "active") selected @endif>Active</option>
@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="form-group mb-4">
-                            <label>Category</label>
+                            <label><span class="require">*</span>Category</label>
                             <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror">
                                 <option value="">== Select Category ==</option>
                                 @foreach ($category as $id => $name)

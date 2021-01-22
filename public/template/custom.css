@@ -33,17 +33,6 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.table>tbody>tr>td {
-    border: none;
-    border-top-color: currentcolor;
-    border-right-color: currentcolor;
-    border-bottom-color: currentcolor;
-    border-left-color: currentcolor;
-    color: #fff;
-    font-size: 13px;
-    letter-spacing: 1px;
-}
-
 .feather-icon .icon-section {
     padding: 30px;
 }
@@ -224,4 +213,8 @@
     color: red;
     font-weight: bold;
     margin-right: 5px;
+}
+
+.iconSize {
+    font-size: 25px;
 }

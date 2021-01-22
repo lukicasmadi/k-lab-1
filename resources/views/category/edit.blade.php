@@ -20,7 +20,7 @@
                         @csrf
 
                         <div class="form-group mb-4">
-                            <label>Name</label>
+                            <label><span class="require">*</span>Name</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Name" autocomplete="off" value="{{ $uuid->name }}">
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
