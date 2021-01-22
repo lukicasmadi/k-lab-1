@@ -76,7 +76,7 @@
                         @php
                             $user = App\Models\User::whereId(myUserId())->first();
                             if(empty($user->avatar)) {
-                                echo "<img src='".secure_asset('storage/upload/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";
+                                echo "<img src='".secure_asset('img/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";
                             } else {
                                 echo "<img src='".secure_asset('storage/upload/profile/'.$user->avatar)."' class='img-fluid' alt='admin-profile' />";
                             }
