@@ -17,17 +17,17 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                            <h4>Create Role</h4>
+                            <h4>Edit Permission</h4>
                         </div>
                     </div>
                 </div>
                 <div class="widget-content widget-content-area">
-                    <form action="{{ route('role_store') }}" method="POST">
+                    <form action="{{ route('permission_update', $permission->id) }}" method="POST">
                         @csrf
-
+                        @method('PATCH')
                         <div class="form-group mb-4">
-                            <label>Role Name</label>
-                            <input type="text" class="form-control @error('role_name') is-invalid @enderror" id="role_name" name="role_name" placeholder="Role Name" autocomplete="off">
+                            <label>Permission Name</label>
+                            <input type="text" class="form-control @error('permission_name') is-invalid @enderror" id="permission_name" name="permission_name" placeholder="Permission Name" autocomplete="off" value="{{ $permission->name }}">
                         </div>
 
                         <input type="submit" name="submit" class="mt-4 mb-4 btn btn-primary" value="Submit">

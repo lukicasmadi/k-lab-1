@@ -129,10 +129,10 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="acl" data-parent="#topAccordion">
                     <li class="{{ request()->is('admin/acl/role') || request()->is('admin/acl/role/*') ? 'active' : '' }}">
-                        <a href="{{ route('role') }}"> Manage Role </a>
+                        <a href="{{ route('role_index') }}"> Manage Role </a>
                     </li>
                     <li class="{{ request()->is('admin/acl/permission') || request()->is('admin/acl/permission/*') ? 'active' : '' }}">
-                        <a href="{{ route('premission') }}"> Manage Permission </a>
+                        <a href="{{ route('permission_index') }}"> Manage Permission </a>
                     </li>
                     <li class="{{ request()->is('admin/acl/user-has-role') || request()->is('admin/acl/user-has-role/*') ? 'active' : '' }}">
                         <a href="{{ route('user_has_role') }}"> Attach User To Role </a>
