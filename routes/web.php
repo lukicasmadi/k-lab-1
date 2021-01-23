@@ -83,14 +83,16 @@ Route::group(['prefix' => 'admin'], function () {
     Route::patch('/acl/permission/{id}/update', 'AclController@permission_update')->name('permission_update');
     Route::delete('/acl/permission/{id}/delete', 'AclController@permission_delete')->name('permission_delete');
 
-    Route::get('/acl/user-has-role', 'AclController@userHasRole')->name('user_has_role');
-    Route::get('/acl/user-has-role/create', 'AclController@userHasRoleCreate')->name('user_has_role_create');
-    Route::get('/acl/user-has-role/{id}/delete', 'AclController@userHasRoleDelete')->name('user_has_role_delete');
+    Route::get('/acl/user-to-role', 'AclController@user_to_role_index')->name('user_to_role_index');
+    Route::post('/acl/user-to-role/add', 'AclController@user_to_role_add')->name('user_to_role_add');
+    Route::post('/acl/user-to-role/delete', 'AclController@user_to_role_delete')->name('user_to_role_delete');
 
     Route::group(['prefix' => 'data'], function () {
         Route::get('/category', 'CategoryController@data')->name('category_data');
         Route::get('/article', 'ArticleController@data')->name('article_data');
         Route::get('/polda', 'PoldaController@data')->name('polda_data');
+        Route::get('/user', 'AclController@user_data')->name('user_data');
+        Route::get('/role-has-permission/{id}', 'AclController@get_role_has_permission')->name('get_role_has_permission');
     });
 });
 

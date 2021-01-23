@@ -218,3 +218,13 @@
 .iconSize {
     font-size: 25px;
 }
+
+.dtIconSize {
+    font-size: 24px;
+}
+
+.checkboxRole {
+    height: 21px;
+    margin-bottom: 0;
+    margin-right: 0
+}

@@ -135,7 +135,7 @@
                         <a href="{{ route('permission_index') }}"> Manage Permission </a>
                     </li>
                     <li class="{{ request()->is('admin/acl/user-has-role') || request()->is('admin/acl/user-has-role/*') ? 'active' : '' }}">
-                        <a href="{{ route('user_has_role') }}"> Attach User To Role </a>
+                        <a href="{{ route('user_to_role_index') }}"> Attach User To Role </a>
                     </li>
                     <li class="{{ request()->is('admin/acl/user/*') || request()->is('admin/acl/user') ? 'active' : '' }}">
                         <a href="{{ route('polda_index') }}"> Manage User </a>

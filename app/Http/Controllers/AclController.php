@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Requests\CreateRoleRequest;
+use App\Http\Requests\UserToRoleRequest;
 use Spatie\Permission\Models\Permission;
 use App\Http\Requests\CreatePermissionRequest;
 
@@ -101,5 +104,57 @@ class AclController extends Controller
         return response()->json([
             'output' => 'Your data has been deleted.',
         ], 200);
+    }
+
+    public function user_data()
+    {
+        $model = User::query();
+        return datatables()->eloquent($model)->toJson();
+    }
+
+    public function role_data()
+    {
+        $model = Role::query();
+        return datatables()->eloquent($model)->toJson();
+    }
+
+    public function get_role_has_permission()
+    {
+        $emptyRoles = [];
+        $userID = request('id');
+
+        $userWithRole = User::with('roles')->whereId($userID)->first();
+        $hasRoles = $userWithRole->roles;
+
+        if(count($hasRoles) > 0) {
+            foreach($hasRoles as $r) {
+                array_push($emptyRoles, $r->name);
+            }
+        }
+
+        $allRoles = Role::all();
+
+        $allRoles->map(function ($item) use ($emptyRoles) {
+            if(in_array($item->name, $emptyRoles)) {
+                $item['checked_if'] = "checked";
+            } else {
+                $item['checked_if'] = "no_checked";
+            }
+        });
+
+        return response()->json([
+            'output' => 'Roles user show for id '.$userID,
+            'roles' => $allRoles
+        ], 200);
+    }
+
+    public function user_to_role_index()
+    {
+        return view('acl.user_to_role');
+    }
+
+    public function user_to_role_add(UserToRoleRequest $request)
+    {
+        //
     }
 }
