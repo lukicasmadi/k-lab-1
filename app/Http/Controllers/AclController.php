@@ -7,7 +7,6 @@ use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Requests\CreateRoleRequest;
-use App\Http\Requests\UserToRoleRequest;
 use Spatie\Permission\Models\Permission;
 use App\Http\Requests\CreatePermissionRequest;
 
@@ -174,8 +173,5 @@ class AclController extends Controller
 
         flash('User has attached to roles')->success();
         return redirect()->back();
-
-        // logger($id);
-        // return $request->all();
     }
 }
