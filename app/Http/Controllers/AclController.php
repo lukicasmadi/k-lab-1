@@ -92,6 +92,7 @@ class AclController extends Controller
         Permission::find($id)->update([
             'name' => request('permission_name')
         ]);
+
         flash('Permission name updated')->success();
         return redirect()->route('permission_index');
     }
@@ -153,8 +154,28 @@ class AclController extends Controller
         return view('acl.user_to_role');
     }
 
-    public function user_to_role_add(UserToRoleRequest $request)
+    public function user_to_role_add(Request $request)
     {
-        //
+        $data = $request->all();
+        $newRoles = [];
+
+        foreach($data as $key => $val) {
+            if($key == "_token" || $key == "id_user") {
+                continue;
+            } else {
+                $exp = explode("_", $key);
+                array_push($newRoles, $exp[1]);
+            }
+        }
+
+        $user = User::findOrFail($data['id_user']);
+
+        $user->syncRoles($newRoles);
+
+        flash('User has attached to roles')->success();
+        return redirect()->back();
+
+        // logger($id);
+        // return $request->all();
     }
 }

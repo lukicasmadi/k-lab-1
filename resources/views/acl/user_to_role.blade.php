@@ -2,37 +2,39 @@
 
 @section('content')
 <div class="layout-px-spacing">
-    <div class="row layout-top-spacing">
+    @include('flash::message')
 
-            <div class="col-lg-6 col-12  layout-spacing">
-                <div class="statbox widget box box-shadow">
-                    @include('flash::message')
-                    <div class="widget-header">
-                        <div class="row">
-                            <div class="col-xl-6 col-md-12 col-sm-12 col-12">
-                                <h4>Attach User To Role</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="widget-content widget-content-area">
-                        <div class="table-responsive">
-                            <table id="tbl_user_acl" class="table">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Choose User</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
+    <div class="row layout-top-spacing">
+        <div class="col-lg-6 col-12  layout-spacing">
+            <div class="statbox widget box box-shadow">
+                <div class="widget-header">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-12 col-sm-12 col-12">
+                            <h4>Attach User To Role</h4>
                         </div>
                     </div>
                 </div>
+                <div class="widget-content widget-content-area">
+                    <div class="table-responsive">
+                        <table id="tbl_user_acl" class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Choose User</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="col-lg-6 col-12  layout-spacing roleData">
+        <div class="col-lg-6 col-12  layout-spacing roleData">
+            <form action="{{ route('user_to_role_add') }}" method="POST">
+                @csrf
                 <div class="statbox widget box box-shadow">
                     <div class="widget-header">
                         <div class="row">
@@ -43,9 +45,11 @@
                     </div>
                     <div class="widget-content widget-content-area">
 
-                        <div id="dataRoles">
+                        <input type="hidden" name="id_user" id="id_user" value="">
 
-                        </div>
+                        <div id="dataRoles"></div>
+
+                        <input type="submit" class="btn btn-success mb-2 d-none btnSubmit" value="Submit">
 
                         <div class="col-md-12 text-center d-none" id="loadingPanel">
                             <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
@@ -53,8 +57,8 @@
 
                     </div>
                 </div>
-            </div>
-
+            </form>
+        </div>
     </div>
 </div>
 @endsection
@@ -128,9 +132,10 @@ $(document).ready(function() {
 $('#tbl_user_acl tbody').on('click', '.confirm', function(e) {
     e.preventDefault()
     var id = $(this).attr('data-id')
+    $("#id_user").val(id)
 
     $("#dataRoles").empty()
-    $("#dataRoles").addClass("d-none")
+    $("#dataRoles, .btnSubmit").addClass("d-none")
 
     $("#loadingPanel").removeClass("d-none")
 
@@ -148,9 +153,9 @@ $('#tbl_user_acl tbody').on('click', '.confirm', function(e) {
                         <div class="input-group-text">
                             <div class="n-chk align-self-end">
                                 <label class="new-control new-checkbox checkbox-danger checkboxRole">
-                            <input type="checkbox" class="new-control-input" checked>
-                            <span class="new-control-indicator"></span>
-                            </label>
+                                    <input type="checkbox" class="new-control-input" name="roleid_`+value.id+`" checked>
+                                    <span class="new-control-indicator"></span>
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -164,9 +169,9 @@ $('#tbl_user_acl tbody').on('click', '.confirm', function(e) {
                         <div class="input-group-text">
                             <div class="n-chk align-self-end">
                                 <label class="new-control new-checkbox checkbox-danger checkboxRole">
-                            <input type="checkbox" class="new-control-input">
-                            <span class="new-control-indicator"></span>
-                            </label>
+                                    <input type="checkbox" class="new-control-input" name="roleid_`+value.id+`">
+                                    <span class="new-control-indicator"></span>
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -178,7 +183,7 @@ $('#tbl_user_acl tbody').on('click', '.confirm', function(e) {
             $("#dataRoles").append(html);
         });
 
-        $("#dataRoles").removeClass("d-none");
+        $("#dataRoles, .btnSubmit").removeClass("d-none");
         $("#loadingPanel").addClass("d-none");
 
     })
