@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateProfileRequest;
 use App\Http\Requests\ChangePasswordRequest;
 
@@ -66,38 +67,64 @@ class UserController extends Controller
         return back();
     }
 
+    public function data()
+    {
+        $model = User::query();
+        return datatables()->eloquent($model)->toJson();
+    }
+
     public function index()
     {
-        //
+        return view('user.index');
     }
 
-    public function create()
+    public function user_detail($id)
     {
-        //
+        $model = User::findOrFail($id);
+
+        return response()->json([
+            'output' => $model,
+        ], 200);
     }
 
-    public function store(Request $request)
+    public function store(CreateUserRequest $request)
     {
-        //
-    }
+        if(empty($request->id_user)) {
 
-    public function show($id)
-    {
-        //
-    }
+            User::create([
+                'name' => request('name'),
+                'email' => request('email'),
+                'password' => request('password'),
+            ]);
 
-    public function edit($id)
-    {
-        //
-    }
+            flash('Your data has been created')->success();
+        } else {
+            $data = User::findOrFail(request('id_user'));
 
-    public function update(Request $request, $id)
-    {
-        //
+            $newData = [
+                'name' => request('name'),
+                'email' => request('email'),
+            ];
+
+            if(!empty(request('password'))) {
+                $newData['password'] = bcrypt(request('password'));
+            }
+
+            $data->update($newData);
+            flash('Your data has been updated')->success();
+        }
+
+        return back();
     }
 
     public function destroy($id)
     {
-        //
+        $data = User::findOrFail($id);
+
+        $data->delete();
+
+        return response()->json([
+            'output' => 'Your data has been deleted.',
+        ], 200);
     }
 }

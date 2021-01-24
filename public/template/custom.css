@@ -228,3 +228,8 @@
     margin-bottom: 0;
     margin-right: 0
 }
+
+.pNotif {
+    font-size: 12px;
+    font-style: italic;
+}

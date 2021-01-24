@@ -42,6 +42,7 @@ class AclController extends Controller
         Role::find($id)->update([
             'name' => request('role_name')
         ]);
+
         flash('Role name updated')->success();
         return redirect()->route('role_index');
     }

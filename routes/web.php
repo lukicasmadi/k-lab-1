@@ -40,6 +40,11 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/article/edit/{articleUuid}', 'ArticleController@update')->name('article_update');
     Route::get('/article/delete/{articleUuid}', 'ArticleController@delete')->name('article_delete');
 
+    Route::get('/user', 'UserController@index')->name('user_index');
+    Route::post('/user/store', 'UserController@store')->name('user_store');
+    Route::get('/user/{id}/detail', 'UserController@user_detail')->name('user_detail');
+    Route::delete('/user/{id}/delete', 'UserController@destroy')->name('user_delete');
+
     Route::resource('polda', 'PoldaController', [
         'names' => [
             'index' => 'polda_index',
@@ -75,17 +80,14 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/acl/role/{id}/edit', 'AclController@role_edit')->name('role_edit');
     Route::patch('/acl/role/{id}/update', 'AclController@role_update')->name('role_update');
     Route::delete('/acl/role/{id}/delete', 'AclController@role_delete')->name('role_delete');
-
     Route::get('/acl/permission', 'AclController@permission_index')->name('permission_index');
     Route::get('/acl/permission/create', 'AclController@permission_create')->name('permission_create');
     Route::post('/acl/permission/store', 'AclController@permission_store')->name('permission_store');
     Route::get('/acl/permission/{id}/edit', 'AclController@permission_edit')->name('permission_edit');
     Route::patch('/acl/permission/{id}/update', 'AclController@permission_update')->name('permission_update');
     Route::delete('/acl/permission/{id}/delete', 'AclController@permission_delete')->name('permission_delete');
-
     Route::get('/acl/user-to-role', 'AclController@user_to_role_index')->name('user_to_role_index');
     Route::post('/acl/user-to-role/add', 'AclController@user_to_role_add')->name('user_to_role_add');
-    Route::post('/acl/user-to-role/delete', 'AclController@user_to_role_delete')->name('user_to_role_delete');
 
     Route::group(['prefix' => 'data'], function () {
         Route::get('/category', 'CategoryController@data')->name('category_data');
