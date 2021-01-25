@@ -117,7 +117,7 @@
 @push('page_js')
 <script>
 $(document).ready(function() {
-    $('#tbl_user').DataTable({
+    var table = $('#tbl_user').DataTable({
         processing: true,
         serverSide: true,
         ajax: route('user_data'),
@@ -150,12 +150,36 @@ $(document).ready(function() {
             {
                 data: 'id',
                 render: function(data, type, row) {
-                    return '<div class="icon-container"><a href="'+route('user_detail', data)+'" data-id="'+data+'" class="confirm"><i class="fas fa-link"></i><span class="icon-name"></span></a>';
+                    return '<div class="icon-container"><a href="'+route('user_detail', data)+'" data-id="'+data+'" class="confirm"><i class="fas fa-link"></i><span class="ml-5"></span><a href="'+route('user_delete', data)+'" data-id="'+data+'" class="delete"><i class="far fa-trash-alt"></i></a>';
                 },
                 searchable: false,
                 sortable: false,
             }
         ]
+    })
+
+    $('#tbl_user tbody').on('click', '.delete', function(e) {
+        e.preventDefault()
+        var id = $(this).attr('data-id')
+
+        swal({
+            title: 'Are you sure?',
+            text: "Detele this data!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Delete',
+            padding: '2em',
+        }).then(function(result) {
+            if (result.value) {
+                axios.delete(route('user_delete', id)).then(function(response) {
+                    table.ajax.reload()
+                    swal('Deleted!', response.data.output, 'success')
+                })
+                .catch(function(error) {
+                    swal("Error delete! Please refresh the page and try again", error.response.data.output, "error")
+                })
+            }
+        })
     })
 })
 
@@ -184,7 +208,7 @@ $('#tbl_user tbody').on('click', '.confirm', function(e) {
         $("#panelForm").removeClass("d-none")
         $(".showhide").removeClass("d-none")
         $(".cancelupdate").removeClass("d-none")
-        swal("Error load user roles! Please refresh the page and try again", error.response.data.output, "error")
+        swal("Error load user list! Please refresh the page and try again", error.response.data.output, "error")
         if (error.response) {
             console.log(error.response.data)
             console.log(error.response.status)
