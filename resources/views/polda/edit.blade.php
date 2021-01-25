@@ -8,7 +8,7 @@
             <div class="statbox widget box box-shadow">
 
                 @if ($errors->any())
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger custom">
                         <ul>
                             @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="widget-content widget-content-area">
-                    <form method="POST" action="{{ route('polda_update', $data->uuid) }}">
+                    <form method="POST" action="{{ route('polda_update', $data->uuid) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
                         <div class="form-group mb-4">

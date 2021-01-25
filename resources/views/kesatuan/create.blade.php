@@ -20,13 +20,13 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-6 col-md-12 col-sm-12 col-12">
-                            <h4>Create Polda</h4>
+                            <h4>Create Unit</h4>
                         </div>
                     </div>
                 </div>
 
                 <div class="widget-content widget-content-area">
-                    <form method="POST" action="{{ route('polda_store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('unit_store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group mb-4">
@@ -50,56 +50,6 @@
                         </div>
 
                         <div class="form-group mb-4">
-                            <label><span class="require">*</span>Province</label>
-                            <input type="text" class="form-control @error('province') is-invalid @enderror" id="province" name="province" placeholder="Province" autocomplete="off">
-                            @error('province')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group mb-4">
-                            <label><span class="require">*</span>City</label>
-                            <input type="text" class="form-control @error('city') is-invalid @enderror" id="city" name="city" placeholder="City" autocomplete="off">
-                            @error('city')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group mb-4">
-                            <label><span class="require">*</span>Address</label>
-                            <textarea class="form-control @error('address') is-invalid @enderror" id="address" name="address" rows="3"></textarea>
-                            @error('address')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group mb-4">
-                            <label>Small Image</label>
-                            <input type="file" class="form-control @error('small_img') is-invalid @enderror" id="small_img" name="small_img">
-                            @error('small_img')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group mb-4">
-                            <label><span class="require">*</span>Logo</label>
-                            <input type="file" class="form-control @error('logo') is-invalid @enderror" id="logo" name="logo">
-                            @error('logo')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group mb-4">
                             <label>Profile</label>
                             <textarea class="form-control @error('profile') is-invalid @enderror" id="profile" name="profile" rows="3"></textarea>
                             @error('profile')
@@ -109,8 +59,18 @@
                             @enderror
                         </div>
 
+                        <div class="form-group mb-4">
+                            <label>Logo</label>
+                            <input type="file" class="form-control @error('logo') is-invalid @enderror" id="logo" name="logo">
+                            @error('logo')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
                         <input type="submit" name="submit" class="btn btn-primary mt-3" value="Submit">
-                        <a href="{{ route('polda_index') }}" class="btn btn-warning mt-3">Back</a>
+                        <a href="{{ route('unit_index') }}" class="btn btn-warning mt-3">Back</a>
                     </form>
                 </div>
             </div>

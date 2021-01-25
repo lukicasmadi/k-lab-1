@@ -8,7 +8,7 @@
             <div class="statbox widget box box-shadow">
 
                 @if ($errors->any())
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger custom">
                         <ul>
                             @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>
@@ -20,7 +20,7 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-6 col-md-12 col-sm-12 col-12">
-                            <h4>Input Data Article</h4>
+                            <h4>Create Article</h4>
                         </div>
                     </div>
                 </div>

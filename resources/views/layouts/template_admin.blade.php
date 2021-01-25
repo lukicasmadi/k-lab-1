@@ -59,6 +59,7 @@
         });
     </script>
     <script src="{{ secure_asset('template/assets/js/custom.js') }}"></script>
+    <script src="{{ secure_asset('template/globalfunction.js') }}"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
     @stack('library_js')

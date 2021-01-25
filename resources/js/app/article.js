@@ -35,7 +35,7 @@ $(document).ready(function() {
                 {
                     data: 'desc',
                     render: function(data, type, row) {
-                        return _.truncate(data, { 'length': 150, 'separator': '...' })
+                        return trimString(data)
                     },
                 },
                 {

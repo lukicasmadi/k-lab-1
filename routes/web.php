@@ -45,6 +45,18 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/user/{id}/detail', 'UserController@user_detail')->name('user_detail');
     Route::delete('/user/{id}/delete', 'UserController@destroy')->name('user_delete');
 
+    Route::resource('unit', 'UnitController', [
+        'names' => [
+            'index' => 'unit_index',
+            'create' => 'unit_create',
+            'store' => 'unit_store',
+            'show' => 'unit_show',
+            'edit' => 'unit_edit',
+            'update' => 'unit_update',
+            'destroy' => 'unit_destroy',
+        ]
+    ]);
+
     Route::resource('polda', 'PoldaController', [
         'names' => [
             'index' => 'polda_index',
@@ -95,6 +107,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/polda', 'PoldaController@data')->name('polda_data');
         Route::get('/user', 'AclController@user_data')->name('user_data');
         Route::get('/role-has-permission/{id}', 'AclController@get_role_has_permission')->name('get_role_has_permission');
+        Route::get('/unit', 'UnitController@data')->name('unit_data');
     });
 });
 

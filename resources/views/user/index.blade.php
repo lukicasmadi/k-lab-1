@@ -162,6 +162,8 @@ $(document).ready(function() {
         e.preventDefault()
         var id = $(this).attr('data-id')
 
+        $(".alert").remove()
+
         swal({
             title: 'Are you sure?',
             text: "Detele this data!",
@@ -186,6 +188,8 @@ $(document).ready(function() {
 $('#tbl_user tbody').on('click', '.confirm', function(e) {
     e.preventDefault()
     var id = $(this).attr('data-id')
+
+    $(".alert").remove()
 
     $("#id_user").val(id)
     $("#loadingPanel").removeClass("d-none")

@@ -19,8 +19,6 @@ class CreateKesatuansTable extends Migration
             $table->string('name');
             $table->string('aka')->nullable();
             $table->text('profile')->nullable();
-            $table->string('small_img')->nullable();
-            $table->string('big_img')->nullable();
             $table->string('logo')->nullable();
             $table->timestamps();
         });

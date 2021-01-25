@@ -9,4 +9,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Kesatuan extends Model
 {
     use HasFactory, LogsActivity;
+
+    protected $guarded = ['id'];
+
+    public function getRouteKeyName()
+    {
+        return 'uuid';
+    }
 }

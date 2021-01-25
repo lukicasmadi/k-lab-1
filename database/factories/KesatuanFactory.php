@@ -22,7 +22,11 @@ class KesatuanFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'uuid' => genUuid(),
+            'name' => "Kesatuan ".$this->faker->streetName,
+            'aka' => null,
+            'profile' => null,
+            'logo' => null,
         ];
     }
 }

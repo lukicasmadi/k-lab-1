@@ -10,7 +10,7 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-6 col-md-12 col-sm-12 col-12">
-                            <h4>Input Data Category</h4>
+                            <h4>Create Category</h4>
                         </div>
                     </div>
                 </div>

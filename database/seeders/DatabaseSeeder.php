@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
             PoldaHasRencanaSeeder::class,
             JenisPelanggaranSeeder::class,
             LaporanTypeSeeder::class,
+            KesatuanSeeder::class,
         ]);
     }
 }

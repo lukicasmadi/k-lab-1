@@ -194,21 +194,6 @@
     }
 }
 
-
-/* .alert {
-    position: relative;
-    padding: .75rem 1.25rem .10rem .75rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-    border-radius: .25rem;
-    padding-top: 17px;
-    font-weight: bold;
-} */
-
 .require {
     color: red;
     font-weight: bold;
@@ -217,6 +202,12 @@
 
 .iconSize {
     font-size: 25px;
+}
+
+.menuIconSize {
+    font-size: 27px;
+    margin-right: 6px;
+    margin-bottom: 6px;
 }
 
 .dtIconSize {
@@ -232,4 +223,34 @@
 .pNotif {
     font-size: 12px;
     font-style: italic;
+}
+
+.page-item.active .page-link {
+    background-color: #009688;
+    margin-top: 3px;
+}
+
+.page-item .page-link {
+    margin-top: 3px;
+}
+
+.navbar {
+    z-index: 1030;
+    padding: 10px 0 10px 0;
+    background: transparent;
+    margin: 0 32px;
+}
+
+.custom {
+    position: relative;
+    padding: .75rem 1.25rem .10rem .75rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: .25rem;
+    padding-top: 17px;
+    font-weight: bold;
 }
