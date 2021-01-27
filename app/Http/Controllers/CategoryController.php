@@ -42,7 +42,7 @@ class CategoryController extends Controller
         if(request()->hasFile('category_image')) {
             $file = $request->file('category_image');
             $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-            Storage::put("/public/upload/".$randomName, File::get($file));
+            Storage::put("/public/upload/category/".$randomName, File::get($file));
             $data['img'] = $randomName;
         }
 
@@ -62,14 +62,14 @@ class CategoryController extends Controller
         if(request()->hasFile('category_image')) {
             $file = $request->file('category_image');
 
-            $fileCheck = Storage::exists('/public/upload/'.$uuid->img);
+            $fileCheck = Storage::exists('/public/upload/category/'.$uuid->img);
 
             if($fileCheck) {
-                Storage::delete('/public/upload/'.$uuid->img);
+                Storage::delete('/public/upload/category/'.$uuid->img);
             }
 
             $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-            Storage::put("/public/upload/".$randomName, File::get($file));
+            Storage::put("/public/upload/category/".$randomName, File::get($file));
             $data['img'] = $randomName;
         }
 
@@ -91,10 +91,10 @@ class CategoryController extends Controller
         if($data > 0) {
             flash("Can't delete data. This category is still used in articles")->error();
         } else {
-            $fileCheck = Storage::exists('/public/upload/'.$uuid->img);
+            $fileCheck = Storage::exists('/public/upload/category/'.$uuid->img);
 
             if($fileCheck) {
-                Storage::delete('/public/upload/'.$uuid->img);
+                Storage::delete('/public/upload/category/'.$uuid->img);
             }
 
             Category::whereId($uuid->id)->delete();

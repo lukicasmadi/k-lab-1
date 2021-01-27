@@ -31,7 +31,9 @@
                 request()->is('admin/polda') ||
                 request()->is('admin/polda/*') ||
                 request()->is('admin/unit') ||
-                request()->is('admin/unit/*')
+                request()->is('admin/unit/*') ||
+                request()->is('admin/violation') ||
+                request()->is('admin/violation/*')
                 ? 'active' : ''
             }}">
                 <a href="#dashboard" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
@@ -53,6 +55,9 @@
                     </li>
                     <li class="{{ request()->is('admin/unit/*') || request()->is('admin/unit') ? 'active' : '' }}">
                         <a href="{{ route('unit_index') }}"> Unit </a>
+                    </li>
+                    <li class="{{ request()->is('admin/violation/*') || request()->is('admin/violation') ? 'active' : '' }}">
+                        <a href="{{ route('violation_index') }}"> Violation </a>
                     </li>
                 </ul>
             </li>

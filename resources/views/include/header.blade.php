@@ -74,14 +74,15 @@
                 <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="user-profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="media">
                         @php
-                            $user = App\Models\User::whereId(myUserId())->first();
-                            if(empty($user->avatar)) {
-                                echo "<img src='".secure_asset('img/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";
-                            } else {
-                                echo "<img src='".secure_asset('storage/upload/profile/'.$user->avatar)."' class='img-fluid' alt='admin-profile' />";
+                            if(!empty(auth()->user())) {
+                                $user = App\Models\User::whereId(myUserId())->first();
+                                if(empty($user->avatar)) {
+                                    echo "<img src='".secure_asset('img/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";
+                                } else {
+                                    echo "<img src='".secure_asset('storage/upload/profile/'.$user->avatar)."' class='img-fluid' alt='admin-profile' />";
+                                }
+                                echo '<div class="media-body align-self-center"><h6><span>Hi,</span> '.$user->name.'</h6></div>';
                             }
-
-                        echo '<div class="media-body align-self-center"><h6><span>Hi,</span> '.$user->name.'</h6></div>'
                         @endphp
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
