@@ -29,14 +29,14 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/category/add', 'CategoryController@add')->name('category_add');
         Route::post('/category/add/process', 'CategoryController@save_process')->name('category_save');
         Route::get('/category/{uuid}/edit', 'CategoryController@edit')->name('category_edit');
-        Route::post('/category/{uuid}/update', 'CategoryController@update')->name('category_update');
+        Route::patch('/category/{uuid}/update', 'CategoryController@update')->name('category_update');
         Route::get('/category/{uuid}/delete', 'CategoryController@delete')->name('category_delete');
 
         Route::get('/article', 'ArticleController@index')->name('article_index');
         Route::get('/article/add', 'ArticleController@add')->name('article_add');
         Route::post('/article/add/process', 'ArticleController@save_process')->name('article_save');
         Route::get('/article/{articleUuid}/edit', 'ArticleController@edit')->name('article_edit');
-        Route::post('/article/{articleUuid}/edit', 'ArticleController@update')->name('article_update');
+        Route::patch('/article/{articleUuid}/update', 'ArticleController@update')->name('article_update');
         Route::get('/article/{articleUuid}/delete', 'ArticleController@delete')->name('article_delete');
 
         Route::get('/user', 'UserController@index')->name('user_index');
@@ -47,9 +47,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/violation', 'ViolationController@index')->name('violation_index');
         Route::get('/violation/create', 'ViolationController@create')->name('violation_create');
         Route::post('/violation/store', 'ViolationController@store')->name('violation_store');
-        Route::get('/violation/{violationUuid}/edit', 'ViolationController@edit')->name('violation_edit');
-        Route::post('/violation/{violationUuid}/edit', 'ViolationController@update')->name('violation_update');
-        Route::delete('/violation/{id}/delete', 'ViolationController@destroy')->name('violation_destroy');
+        Route::get('/violation/{uuid}/edit', 'ViolationController@edit')->name('violation_edit');
+        Route::patch('/violation/{uuid}/update', 'ViolationController@update')->name('violation_update');
+        Route::delete('/violation/{uuid}/delete', 'ViolationController@destroy')->name('violation_destroy');
 
         Route::resource('unit', 'UnitController', [
             'names' => [

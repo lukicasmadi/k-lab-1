@@ -23,12 +23,10 @@ class ViolationController extends Controller
         return view('violation.index');
     }
 
-
     public function create()
     {
         return view('violation.create');
     }
-
 
     public function store(ViolationRequest $request)
     {
@@ -50,27 +48,41 @@ class ViolationController extends Controller
         return redirect()->route('violation_index');
     }
 
-
-    public function show($id)
-    {
-        //
-    }
-
-
     public function edit($id)
     {
-        //
+        $pelanggaran = JenisPelanggaran::whereUuid($id)->firstOrFail();
+        return view('violation.edit', compact('pelanggaran'));
     }
 
-
-    public function update(Request $request, $id)
+    public function update(ViolationRequest $request, $uuid)
     {
-        //
+        $data = [
+            'name' => request('name'),
+            'desc' => request('desc'),
+        ];
+
+        if(request()->hasFile('img')) {
+            $file = $request->file('img');
+            $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
+            Storage::put("/public/upload/violation/".$randomName, File::get($file));
+            $data['img'] = $randomName;
+        }
+
+        JenisPelanggaran::whereUuid($uuid)->firstOrFail()->update($data);
+
+        flash('Your data has been updated')->success();
+        return redirect()->route('violation_index');
     }
 
-
-    public function destroy($id)
+    public function destroy($uuid)
     {
-        //
+        $data = JenisPelanggaran::whereUuid($uuid)->firstOrFail();
+        $data->delete();
+
+        Storage::delete('/public/upload/violation/'.$data->img);
+
+        return response()->json([
+            'output' => 'Your data has been deleted.',
+        ], 200);
     }
 }

@@ -102,7 +102,7 @@ $(document).ready(function () {
         ]
     })
 
-    $('#tbl_unit tbody').on('click', '.delete', function(e) {
+    $('#tbl_violation tbody').on('click', '.delete', function(e) {
         e.preventDefault()
         var id = $(this).attr('data-id')
 

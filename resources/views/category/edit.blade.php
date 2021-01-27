@@ -18,7 +18,7 @@
                 <div class="widget-content widget-content-area">
                     <form method="POST" action="{{ route('category_update', $uuid) }}" enctype="multipart/form-data">
                         @csrf
-
+                        @method('PATCH')
                         <div class="form-group mb-4">
                             <label><span class="require">*</span>Name</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Name" autocomplete="off" value="{{ $uuid->name }}">

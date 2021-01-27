@@ -28,6 +28,7 @@
                 <div class="widget-content widget-content-area">
                     <form method="POST" action="{{ route('article_update', $articleUuid->uuid) }}">
                         @csrf
+                        @method('PATCH')
                         <input type="hidden" name="id" value="{{ $articleUuid->id }}">
                         <div class="form-group mb-4">
                             <label><span class="require">*</span>Topic</label>
