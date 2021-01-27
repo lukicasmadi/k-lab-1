@@ -23,6 +23,14 @@ class DatabaseSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
+        User::create([
+            'name' => 'Cas',
+            'email' => 'lukicasmadi@gmail.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('10dunia'),
+            'remember_token' => Str::random(10),
+        ]);
+
         $this->call([
             UserSeeder::class,
             CategorySeeder::class,
