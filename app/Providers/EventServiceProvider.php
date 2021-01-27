@@ -3,10 +3,12 @@
 namespace App\Providers;
 
 use App\Models\Polda;
+use App\Models\RencanaOperasi;
 use App\Models\JenisPelanggaran;
 use App\Observers\PoldaObserver;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
+use App\Observers\RencanaOperasiObserver;
 use App\Observers\JenisPelanggaranObserver;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -33,5 +35,6 @@ class EventServiceProvider extends ServiceProvider
     {
         Polda::observe(PoldaObserver::class);
         JenisPelanggaran::observe(JenisPelanggaranObserver::class);
+        RencanaOperasi::observe(RencanaOperasiObserver::class);
     }
 }

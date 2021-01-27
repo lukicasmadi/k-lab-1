@@ -14,6 +14,8 @@ class RencanaOperasiSeeder extends Seeder
      */
     public function run()
     {
-        RencanaOperasi::factory(15)->create();
+        RencanaOperasi::withoutEvents(function () {
+            return RencanaOperasi::factory(3)->create();
+        });
     }
 }

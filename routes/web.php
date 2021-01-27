@@ -75,7 +75,7 @@ Route::group(['middleware' => 'auth'], function () {
             ]
         ]);
 
-        Route::resource('operasi', 'RencanaOperasiController', [
+        Route::resource('operation-plan', 'RencanaOperasiController', [
             'names' => [
                 'index' => 'rencana_operasi_index',
                 'create' => 'rencana_operasi_create',
@@ -86,6 +86,7 @@ Route::group(['middleware' => 'auth'], function () {
                 'destroy' => 'rencana_operasi_destroy',
             ]
         ]);
+        Route::get('/operation-plan/download/{filePath}', 'RencanaOperasiController@download')->name('downloadOperationPlan');
 
         Route::get('/laporan/all', 'ReportController@all')->name('laporan_all');
         Route::get('/laporan/polda/{aka}', 'ReportController@byAka')->name('laporan_by_aka');
@@ -115,6 +116,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('/role-has-permission/{id}', 'AclController@get_role_has_permission')->name('get_role_has_permission');
             Route::get('/unit', 'UnitController@data')->name('unit_data');
             Route::get('/violation', 'ViolationController@data')->name('violation_data');
+            Route::get('/operation-plan', 'RencanaOperasiController@data')->name('operation_plan_data');
         });
     });
 

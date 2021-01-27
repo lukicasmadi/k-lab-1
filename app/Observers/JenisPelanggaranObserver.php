@@ -12,11 +12,11 @@ class JenisPelanggaranObserver
      * @param  \App\Models\JenisPelanggaran  $jenisPelanggaran
      * @return void
      */
-    public function creating(JenisPelanggaran $polda)
+    public function creating(JenisPelanggaran $jenisPelanggaran)
     {
-        $polda->uuid = genUuid();
-        $polda->created_by = myUserId();
-        $polda->updated_by = myUserId();
+        $jenisPelanggaran->uuid = genUuid();
+        $jenisPelanggaran->created_by = myUserId();
+        $jenisPelanggaran->updated_by = myUserId();
     }
 
     public function created(JenisPelanggaran $jenisPelanggaran)
@@ -24,9 +24,9 @@ class JenisPelanggaranObserver
         //
     }
 
-    public function updating(JenisPelanggaran $polda)
+    public function updating(JenisPelanggaran $jenisPelanggaran)
     {
-        $polda->updated_by = myUserId();
+        $jenisPelanggaran->updated_by = myUserId();
     }
 
     /**

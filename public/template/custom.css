@@ -254,3 +254,11 @@
     padding-top: 17px;
     font-weight: bold;
 }
+
+.far {
+    font-size: 20px;
+}
+
+td.tengah {
+    text-align: center;
+}

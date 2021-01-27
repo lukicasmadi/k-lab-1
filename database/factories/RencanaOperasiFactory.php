@@ -23,9 +23,11 @@ class RencanaOperasiFactory extends Factory
      */
     public function definition()
     {
+        $name = $this->faker->catchPhrase();
         return [
             'uuid' => Str::uuid(),
-            'name' => $this->faker->catchPhrase(),
+            'name' => $name,
+            'slug_name' => Str::slug($name, '-'),
             'operation_type' => $this->faker->sentence(6, true),
             'start_date' => $this->faker->date($format = 'Y-m-d', 'now'),
             'end_date' => $this->faker->date($format = 'Y-m-d', 'now'),

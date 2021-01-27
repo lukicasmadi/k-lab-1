@@ -8,7 +8,7 @@
 -   Setelah npm install selesai, copy file .env.example dengan perintah `copy .env.example .env` atau jika perinta `copy` tidak ada, jalankan perintah `cp .env.example .env`
 -   Seletah selesai, edit file `.env` [bukan file .env.example] , agar sesuai dengan laravel project. Misalnya `APP_URL` , `DB_DATABASE` , `DB_USERNAME` , `DB_PASSWORD` , dll
 -   Seletah itu jalankan `php artisan key:generate` untuk generate random key di project
--   Setelah itu jalan perintah `php artisan migrate --seed` untuk menggenarate tabel dan dummy data
+-   Setelah itu jalan perintah `php artisan migrate:fresh --seed` untuk menggenarate tabel dan dummy data
 -   Setelah itu coba akses websitenya, jika tidak ada kendala pasti sudah sesuai dengan keiinginan
 
 ## Routing
