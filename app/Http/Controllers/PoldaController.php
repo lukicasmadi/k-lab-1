@@ -106,7 +106,7 @@ class PoldaController extends Controller
 
         if($validation > 0) {
             return response()->json([
-                'output' => 'Delete fail! Your data is still related to other data.',
+                'output' => 'This data is still related to other data',
             ], 403);
         } else {
             $data = Polda::whereUuid($uuid)->firstOrFail();

@@ -121,7 +121,7 @@ $(document).ready(function () {
                     swal('Deleted!', response.data.output, 'success')
                 })
                 .catch(function(error) {
-                    swal("Error delete! Please refresh the page and try again", error.response.data.output, "error")
+                    swal("Deletion failed! Maybe you miss something", error.response.data.output, "error")
                 })
             }
         })
