@@ -24,16 +24,16 @@
             </li>
 
             <li class="menu single-menu {{
-                request()->is('admin/category') ||
-                request()->is('admin/category/*') ||
-                request()->is('admin/article') ||
-                request()->is('admin/article/*') ||
-                request()->is('admin/polda') ||
-                request()->is('admin/polda/*') ||
-                request()->is('admin/unit') ||
-                request()->is('admin/unit/*') ||
-                request()->is('admin/violation') ||
-                request()->is('admin/violation/*')
+                request()->is('category') ||
+                request()->is('category/*') ||
+                request()->is('article') ||
+                request()->is('article/*') ||
+                request()->is('polda') ||
+                request()->is('polda/*') ||
+                request()->is('unit') ||
+                request()->is('unit/*') ||
+                request()->is('violation') ||
+                request()->is('violation/*')
                 ? 'active' : ''
             }}">
                 <a href="#dashboard" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
@@ -44,27 +44,27 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </a>
                 <ul class="collapse submenu list-unstyled" id="dashboard" data-parent="#topAccordion">
-                    <li class="{{ request()->is('admin/category/*') || request()->is('admin/category') ? 'active' : '' }}">
+                    <li class="{{ request()->is('category/*') || request()->is('category') ? 'active' : '' }}">
                         <a href="{{ route('category_index') }}"> Category </a>
                     </li>
-                    <li class="{{ request()->is('admin/article/*') || request()->is('admin/article') ? 'active' : '' }}">
+                    <li class="{{ request()->is('article/*') || request()->is('article') ? 'active' : '' }}">
                         <a href="{{ route('article_index') }}"> Article </a>
                     </li>
-                    <li class="{{ request()->is('admin/polda/*') || request()->is('admin/polda') ? 'active' : '' }}">
+                    <li class="{{ request()->is('polda/*') || request()->is('polda') ? 'active' : '' }}">
                         <a href="{{ route('polda_index') }}"> Polda </a>
                     </li>
-                    <li class="{{ request()->is('admin/unit/*') || request()->is('admin/unit') ? 'active' : '' }}">
+                    <li class="{{ request()->is('unit/*') || request()->is('unit') ? 'active' : '' }}">
                         <a href="{{ route('unit_index') }}"> Unit </a>
                     </li>
-                    <li class="{{ request()->is('admin/violation/*') || request()->is('admin/violation') ? 'active' : '' }}">
+                    <li class="{{ request()->is('violation/*') || request()->is('violation') ? 'active' : '' }}">
                         <a href="{{ route('violation_index') }}"> Violation </a>
                     </li>
                 </ul>
             </li>
 
             <li class="menu single-menu {{
-                request()->is('admin/operation-plan') ||
-                request()->is('admin/operation-plan/*')
+                request()->is('operation-plan') ||
+                request()->is('operation-plan/*')
                 ? 'active' : ''
             }}">
                 <a href="#operation" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
@@ -75,16 +75,16 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </a>
                 <ul class="collapse submenu list-unstyled" id="operation" data-parent="#topAccordion">
-                    <li class="{{ request()->is('admin/operation-plan') || request()->is('admin/operation-plan/*') ? 'active' : '' }}">
+                    <li class="{{ request()->is('operation-plan') || request()->is('operation-plan/*') ? 'active' : '' }}">
                         <a href="{{ route('rencana_operasi_index') }}"> List and Create Operation </a>
                     </li>
-                    <li class="{{ request()->is('admin/running-operation-plan') ? 'active' : '' }}">
+                    <li class="{{ request()->is('running-operation-plan') ? 'active' : '' }}">
                         <a href="{{ route('rencana_operasi_index') }}"> Create Operation </a>
                     </li>
                 </ul>
             </li>
 
-            <li class="menu single-menu {{ request()->is('admin/operasi/*') ? 'active' : '' }}">
+            <li class="menu single-menu {{ request()->is('operasi/*') ? 'active' : '' }}">
                 <a href="#reportpusat" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
@@ -93,28 +93,28 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </a>
                 <ul class="collapse submenu list-unstyled" id="reportpusat" data-parent="#topAccordion">
-                    <li class="{{ request()->is('admin/rencana-operasi') ? 'active' : '' }}">
+                    <li class="{{ request()->is('rencana-operasi') ? 'active' : '' }}">
                         <a href="{{ route('rencana_operasi_index') }}"> This Week </a>
                     </li>
-                    <li class="{{ request()->is('admin/rencana-operasi') ? 'active' : '' }}">
+                    <li class="{{ request()->is('rencana-operasi') ? 'active' : '' }}">
                         <a href="{{ route('rencana_operasi_index') }}"> This Month </a>
                     </li>
-                    <li class="{{ request()->is('admin/rencana-operasi') ? 'active' : '' }}">
+                    <li class="{{ request()->is('rencana-operasi') ? 'active' : '' }}">
                         <a href="{{ route('rencana_operasi_index') }}"> By Date </a>
                     </li>
-                    <li class="{{ request()->is('admin/rencana-operasi') ? 'active' : '' }}">
+                    <li class="{{ request()->is('rencana-operasi') ? 'active' : '' }}">
                         <a href="{{ route('rencana_operasi_index') }}"> By Date Range </a>
                     </li>
-                    <li class="{{ request()->is('admin/rencana-operasi') ? 'active' : '' }}">
+                    <li class="{{ request()->is('rencana-operasi') ? 'active' : '' }}">
                         <a href="{{ route('rencana_operasi_index') }}"> By Polda </a>
                     </li>
-                    <li class="{{ request()->is('admin/rencana-operasi') ? 'active' : '' }}">
+                    <li class="{{ request()->is('rencana-operasi') ? 'active' : '' }}">
                         <a href="{{ route('rencana_operasi_index') }}"> By Status </a>
                     </li>
-                    <li class="{{ request()->is('admin/rencana-operasi') ? 'active' : '' }}">
+                    <li class="{{ request()->is('rencana-operasi') ? 'active' : '' }}">
                         <a href="{{ route('rencana_operasi_index') }}"> By Filter Week </a>
                     </li>
-                    <li class="{{ request()->is('admin/rencana-operasi') ? 'active' : '' }}">
+                    <li class="{{ request()->is('rencana-operasi') ? 'active' : '' }}">
                         <a href="{{ route('rencana_operasi_index') }}"> By Filter Month </a>
                     </li>
                 </ul>
@@ -129,19 +129,19 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </a>
                 <ul class="collapse submenu list-unstyled" id="reportpolda" data-parent="#topAccordion">
-                    <li class="{{ request()->is('admin/rencana-operasi') ? 'active' : '' }}">
+                    <li class="{{ request()->is('rencana-operasi') ? 'active' : '' }}">
                         <a href="{{ route('rencana_operasi_index') }}"> By Date </a>
                     </li>
-                    <li class="{{ request()->is('admin/rencana-operasi') ? 'active' : '' }}">
+                    <li class="{{ request()->is('rencana-operasi') ? 'active' : '' }}">
                         <a href="{{ route('rencana_operasi_index') }}"> By Date Range </a>
                     </li>
-                    <li class="{{ request()->is('admin/rencana-operasi') ? 'active' : '' }}">
+                    <li class="{{ request()->is('rencana-operasi') ? 'active' : '' }}">
                         <a href="{{ route('rencana_operasi_index') }}"> By Month </a>
                     </li>
                 </ul>
             </li>
 
-            <li id="menuAcl" class="menu single-menu {{ request()->is('/acl') ? 'active' : '' }}">
+            <li id="menuAcl" class="menu single-menu {{ request()->is('access/*') ? 'active' : '' }}">
                 <a href="#acl" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
@@ -150,16 +150,19 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </a>
                 <ul class="collapse submenu list-unstyled" id="acl" data-parent="#topAccordion">
-                    <li class="{{ request()->is('admin/acl/role') || request()->is('admin/acl/role/*') ? 'active' : '' }}">
+                    <li class="{{ request()->is('access/role') || request()->is('access/role/*') ? 'active' : '' }}">
                         <a href="{{ route('role_index') }}"> Manage Role </a>
                     </li>
-                    <li class="{{ request()->is('admin/acl/permission') || request()->is('admin/acl/permission/*') ? 'active' : '' }}">
+                    <li class="{{ request()->is('access/permission') || request()->is('access/permission/*') ? 'active' : '' }}">
                         <a href="{{ route('permission_index') }}"> Manage Permission </a>
                     </li>
-                    <li class="{{ request()->is('admin/acl/user-has-role') || request()->is('admin/acl/user-has-role/*') ? 'active' : '' }}">
+                    <li class="{{ request()->is('access/permission-to-role') || request()->is('access/permission-to-role/*') ? 'active' : '' }}">
+                        <a href="{{ route('permission_to_role_index') }}"> Attach Permission To Role </a>
+                    </li>
+                    <li class="{{ request()->is('access/user-to-role') || request()->is('access/user-to-role/*') ? 'active' : '' }}">
                         <a href="{{ route('user_to_role_index') }}"> Attach User To Role </a>
                     </li>
-                    <li class="{{ request()->is('admin/acl/user/*') || request()->is('admin/acl/user') ? 'active' : '' }}">
+                    <li class="{{ request()->is('access/user/*') || request()->is('access/user') ? 'active' : '' }}">
                         <a href="{{ route('user_index') }}"> Manage User </a>
                     </li>
                 </ul>

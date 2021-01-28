@@ -24,8 +24,7 @@ Auth::routes(['register' => false]);
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index')->name('dashboard');
 
-    Route::group(['prefix' => 'admin'], function () {
-        Route::get('/category', 'CategoryController@index')->name('category_index');
+    Route::get('/category', 'CategoryController@index')->name('category_index');
         Route::get('/category/add', 'CategoryController@add')->name('category_add');
         Route::post('/category/add/process', 'CategoryController@save_process')->name('category_save');
         Route::get('/category/{uuid}/edit', 'CategoryController@edit')->name('category_edit');
@@ -38,11 +37,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/article/{articleUuid}/edit', 'ArticleController@edit')->name('article_edit');
         Route::patch('/article/{articleUuid}/update', 'ArticleController@update')->name('article_update');
         Route::get('/article/{articleUuid}/delete', 'ArticleController@delete')->name('article_delete');
-
-        Route::get('/user', 'UserController@index')->name('user_index');
-        Route::post('/user/store', 'UserController@store')->name('user_store');
-        Route::get('/user/{id}/detail', 'UserController@user_detail')->name('user_detail');
-        Route::delete('/user/{id}/delete', 'UserController@destroy')->name('user_delete');
 
         Route::get('/violation', 'ViolationController@index')->name('violation_index');
         Route::get('/violation/create', 'ViolationController@create')->name('violation_create');
@@ -93,20 +87,27 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/laporan/polda/{date}', 'ReportController@byOneDate')->name('laporan_by_one_date');
         Route::get('/laporan/polda/{daterange}', 'ReportController@dateRange')->name('laporan_by_date_range');
 
-        Route::get('/acl/role', 'AclController@role_index')->name('role_index');
-        Route::get('/acl/role/create', 'AclController@role_create')->name('role_create');
-        Route::post('/acl/role/store', 'AclController@role_store')->name('role_store');
-        Route::get('/acl/role/{id}/edit', 'AclController@role_edit')->name('role_edit');
-        Route::patch('/acl/role/{id}/update', 'AclController@role_update')->name('role_update');
-        Route::delete('/acl/role/{id}/delete', 'AclController@role_delete')->name('role_delete');
-        Route::get('/acl/permission', 'AclController@permission_index')->name('permission_index');
-        Route::get('/acl/permission/create', 'AclController@permission_create')->name('permission_create');
-        Route::post('/acl/permission/store', 'AclController@permission_store')->name('permission_store');
-        Route::get('/acl/permission/{id}/edit', 'AclController@permission_edit')->name('permission_edit');
-        Route::patch('/acl/permission/{id}/update', 'AclController@permission_update')->name('permission_update');
-        Route::delete('/acl/permission/{id}/delete', 'AclController@permission_delete')->name('permission_delete');
-        Route::get('/acl/user-to-role', 'AclController@user_to_role_index')->name('user_to_role_index');
-        Route::post('/acl/user-to-role/add', 'AclController@user_to_role_add')->name('user_to_role_add');
+        Route::get('/access/role', 'AclController@role_index')->name('role_index');
+        Route::get('/access/role/create', 'AclController@role_create')->name('role_create');
+        Route::post('/access/role/store', 'AclController@role_store')->name('role_store');
+        Route::get('/access/role/{id}/edit', 'AclController@role_edit')->name('role_edit');
+        Route::patch('/access/role/{id}/update', 'AclController@role_update')->name('role_update');
+        Route::delete('/access/role/{id}/delete', 'AclController@role_delete')->name('role_delete');
+        Route::get('/access/permission', 'AclController@permission_index')->name('permission_index');
+        Route::get('/access/permission/create', 'AclController@permission_create')->name('permission_create');
+        Route::post('/access/permission/store', 'AclController@permission_store')->name('permission_store');
+        Route::get('/access/permission/{id}/edit', 'AclController@permission_edit')->name('permission_edit');
+        Route::patch('/access/permission/{id}/update', 'AclController@permission_update')->name('permission_update');
+        Route::delete('/acaccessl/permission/{id}/delete', 'AclController@permission_delete')->name('permission_delete');
+        Route::get('/access/user-to-role', 'AclController@user_to_role_index')->name('user_to_role_index');
+        Route::post('/access/user-to-role/add', 'AclController@user_to_role_add')->name('user_to_role_add');
+        Route::get('/access/user', 'UserController@index')->name('user_index');
+        Route::post('/access/user/store', 'UserController@store')->name('user_store');
+        Route::get('/access/user/{id}/detail', 'UserController@user_detail')->name('user_detail');
+        Route::delete('/access/user/{id}/delete', 'UserController@destroy')->name('user_delete');
+
+        Route::get('/access/permission-to-role', 'AclController@permission_to_role_index')->name('permission_to_role_index');
+        Route::post('/access/permission-to-role/add', 'AclController@permission_to_role_add')->name('permission_to_role_add');
 
         Route::group(['prefix' => 'data'], function () {
             Route::get('/category', 'CategoryController@data')->name('category_data');
@@ -117,8 +118,9 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('/unit', 'UnitController@data')->name('unit_data');
             Route::get('/violation', 'ViolationController@data')->name('violation_data');
             Route::get('/operation-plan', 'RencanaOperasiController@data')->name('operation_plan_data');
+            Route::get('/role', 'AclController@role_data')->name('role_data');
+            Route::get('/get-permission-by-role/{id}', 'AclController@get_permission_by_role')->name('get_permission_by_role');
         });
-    });
 
     Route::get('change-password', 'UserController@changePassword')->name('change_password');
     Route::post('change-password/process', 'UserController@change_password_process')->name('change_password_process');

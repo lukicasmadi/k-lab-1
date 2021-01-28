@@ -10,19 +10,19 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-6 col-md-12 col-sm-12 col-12">
-                            <h4>Attach User To Role</h4>
+                            <h4>Attach Permissions To Role</h4>
                         </div>
                     </div>
                 </div>
                 <div class="widget-content widget-content-area">
                     <div class="table-responsive">
-                        <table id="tbl_user_acl" class="table">
+                        <table id="tbl_permission_to_role" class="table">
                             <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Choose User</th>
+                                    <th>Guard</th>
+                                    <th>Choose</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
@@ -33,28 +33,30 @@
         </div>
 
         <div class="col-lg-6 col-12  layout-spacing roleData">
-            <form action="{{ route('user_to_role_add') }}" method="POST">
+            <form action="{{ route('permission_to_role_add') }}" method="POST">
                 @csrf
                 <div class="statbox widget box box-shadow">
                     <div class="widget-header">
                         <div class="row">
                             <div class="col-xl-6 col-md-12 col-sm-12 col-12">
-                                <h4>Attach Role</h4>
+                                <h4>Permission</h4>
                             </div>
                         </div>
                     </div>
                     <div class="widget-content widget-content-area">
-
-                        <input type="hidden" name="id_user" id="id_user" value="">
-
-                        <div id="dataRoles"></div>
-
-                        <input type="submit" class="btn btn-success mb-2 d-none btnSubmit" value="Submit">
-
+                        <input type="hidden" name="id_role" id="id_role">
+                        <div id="dataPermission" class="parmissionPanel">
+                            <div class="col-xl-12 mx-auto">
+                                <blockquote class="blockquote">
+                                   <p class="d-inline">Choose your role first to get all permission list</p>
+                                    <small>Administrator</small>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn btn-success d-none btnSubmit" value="Submit">
                         <div class="col-md-12 text-center d-none" id="loadingPanel">
                             <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
                         </div>
-
                     </div>
                 </div>
             </form>
@@ -66,11 +68,9 @@
 @push('library_css')
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/datatables.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/dt-global_style.css') }}">
-
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/sweetalerts/sweetalert.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/components/custom-sweetalert.css') }}" />
-
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/forms/theme-checkbox-radio.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/forms/switches.css') }}">
 @endpush
@@ -87,10 +87,10 @@
 @push('page_js')
 <script>
 $(document).ready(function() {
-    $('#tbl_user_acl').DataTable({
+    $('#tbl_permission_to_role').DataTable({
         processing: true,
         serverSide: true,
-        ajax: route('user_data'),
+        ajax: route('role_data'),
         "oLanguage": {
             "oPaginate": {
                 "sPrevious": '<i class="fas fa-arrow-circle-left dtIconSize"></i>',
@@ -115,7 +115,7 @@ $(document).ready(function() {
                 data: 'name',
             },
             {
-                data: 'email',
+                data: 'guard_name',
             },
             {
                 data: 'id',
@@ -129,24 +129,23 @@ $(document).ready(function() {
     })
 })
 
-$('#tbl_user_acl tbody').on('click', '.confirm', function(e) {
+$('body').on('click', '.checkboxRole', function(e) {
+    var id = $(this).find('.new-control-input').val()
+})
+
+$('#tbl_permission_to_role tbody').on('click', '.confirm', function(e) {
     e.preventDefault()
     var id = $(this).attr('data-id')
-    $("#id_user").val(id)
+    $("#id_role").val(id)
 
-    $("#dataRoles").empty()
+    $("#dataPermission").empty()
     $("div.alert").hide()
-    $("#dataRoles, .btnSubmit").addClass("d-none")
+    $("#dataPermission, .btnSubmit").addClass("d-none")
 
     $("#loadingPanel").removeClass("d-none")
 
-    axios.get(route('get_role_has_permission', id)).then(function(response) {
-
-        // Using lodash : http://jsbin.com/wohuwejiqo/edit?html,js,output
-        // Lodash : https://lodash.com/docs/#template
-
+    axios.get(route('get_permission_by_role', id)).then(function(response) {
         $.each(response.data.roles, function(key, value) {
-
             if(value.checked_if == "checked") {
                 var html = `
                 <div class="input-group mb-4">
@@ -154,7 +153,7 @@ $('#tbl_user_acl tbody').on('click', '.confirm', function(e) {
                         <div class="input-group-text">
                             <div class="n-chk align-self-end">
                                 <label class="new-control new-checkbox checkbox-danger checkboxRole">
-                                    <input type="checkbox" class="new-control-input" name="roleid_`+value.id+`" checked>
+                                    <input type="checkbox" class="new-control-input" name="permissionid[]" value="`+value.id+`" checked>
                                     <span class="new-control-indicator"></span>
                                 </label>
                             </div>
@@ -170,7 +169,7 @@ $('#tbl_user_acl tbody').on('click', '.confirm', function(e) {
                         <div class="input-group-text">
                             <div class="n-chk align-self-end">
                                 <label class="new-control new-checkbox checkbox-danger checkboxRole">
-                                    <input type="checkbox" class="new-control-input" name="roleid_`+value.id+`">
+                                    <input type="checkbox" class="new-control-input" name="permissionid[]" value="`+value.id+`">
                                     <span class="new-control-indicator"></span>
                                 </label>
                             </div>
@@ -181,10 +180,11 @@ $('#tbl_user_acl tbody').on('click', '.confirm', function(e) {
                 `;
             }
 
-            $("#dataRoles").append(html);
+            $("#dataPermission").append(html)
         });
 
-        $("#dataRoles, .btnSubmit").removeClass("d-none");
+        $("#dataPermission").animate({ scrollTop: 0 }, "fast")
+        $("#dataPermission, .btnSubmit").removeClass("d-none");
         $("#loadingPanel").addClass("d-none");
 
     })
@@ -192,15 +192,12 @@ $('#tbl_user_acl tbody').on('click', '.confirm', function(e) {
         $("#loadingPanel").addClass("d-none")
         swal("Error load user roles! Please refresh the page and try again", error.response.data.output, "error")
         if (error.response) {
-            // Request made and server responded
             console.log(error.response.data)
             console.log(error.response.status)
             console.log(error.response.headers)
         } else if (error.request) {
-            // The request was made but no response was received
             console.log(error.request)
         } else {
-            // Something happened in setting up the request that triggered an Error
             console.log('Error', error.message)
         }
     })
