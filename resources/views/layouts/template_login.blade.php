@@ -14,6 +14,14 @@
     <!-- END GLOBAL MANDATORY STYLES -->
     <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/forms/theme-checkbox-radio.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/forms/switches.css') }}">
+    <style>
+        .form-form .form-form-wrap form .field-wrapper label {
+            font-size: 15px;
+            font-weight: 700;
+            color: #bfc9d4;
+            margin-bottom: 8px;
+        }
+    </style>
 </head>
 <body class="form">
     @yield('content')
