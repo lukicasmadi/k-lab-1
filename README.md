@@ -96,37 +96,6 @@ Di tutup dulu, abis running migration, setelah itu di unmark/dibuka codingannya
 
 Atau jika ada kebutuhan re-migrate database dan mulai dari awal dummy datanya, jalankan perintah `php artisan migrate:fresh --seed`
 
-## How to use datatable
-
--   Setiap halaman yg menggunakan datatable **harus** dibuat 1 file `.js` dan di taroh di `resources\js\app\nama_file.js`
--   Misalnya halaman yang mau dibuat adalah halaman profile, yang akan diakses http://domain.com/profile , maka harus dibuat file `profile.js` untuk kebutuhan jika di halaman profile membutuhkan list datatable
--   Setelah itu tambahkan/daftarkan filenya di file `webpack.mix.js`. Contohin yang sudah ada
--   Cara penambahan list seperti ini
-
-```js
-mix.js("resources/js/app.js", "public/js")
-    .js("resources/js/app/category.js", "public/js")
-    .js("resources/js/app/article.js", "public/js")
-    .js("resources/js/app/polda.js", "public/js")
-    .sass("resources/sass/app.scss", "public/css");
-```
-
-Mau ditambah file baru berarti jadi
-
-```js
-mix.js("resources/js/app.js", "public/js")
-    .js("resources/js/app/category.js", "public/js")
-    .js("resources/js/app/article.js", "public/js")
-    .js("resources/js/app/polda.js", "public/js")
-    .js("resources/js/app/file_baru_disini.js", "public/js")
-    .sass("resources/sass/app.scss", "public/css");
-```
-
-Setelah itu run `npm run watch` atau `yarn run watch`
-Kemudian bikin file js-nya contoh `file_baru_disini.js` diatas
-
-Pastikan jika ingin menambahkan file js baru, matikan dulu `npm run watch` atau `yarn run watch` dengan perintah `ctrl+c`
-
 ## Directive blade
 
 -   Pelajari apa itu directive di blade template [Blade Directives](https://laravel.com/docs/8.x/blade#blade-directives)
@@ -134,6 +103,12 @@ Pastikan jika ingin menambahkan file js baru, matikan dulu `npm run watch` atau 
 -   Ada 4 directive yg dibuat di project ini `@push('page_css')` , `@push('page_js')` , `@push('library_js')` , `@push('library_css')`
 -   Keempat directive beda-beda peruntukannya untuk posisi code
 -   Pelajari di salah satu file direktori `resources\views`
+
+## How to use datatable
+
+-   Setiap halaman yg menggunakan datatable **harus** dibuat codenya didalam `directive`
+-   Daftarkan directive `@push('page_js')` untuk code datatablenya
+-   Contoh yang sudah ada silahkan lihat di salah satu file `resources\views\nama_folder\index.blade.php`
 
 ## How to provide JSON DATA for datatable
 
