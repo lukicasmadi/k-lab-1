@@ -25,7 +25,7 @@ class RencanaOperasiFactory extends Factory
     {
         $name = $this->faker->catchPhrase();
         return [
-            'uuid' => Str::uuid(),
+            'uuid' => genUuid(),
             'name' => $name,
             'slug_name' => Str::slug($name, '-'),
             'operation_type' => $this->faker->sentence(6, true),

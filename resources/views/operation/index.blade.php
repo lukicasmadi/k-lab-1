@@ -101,7 +101,7 @@
                     sortable: false
                 },
                 {
-                    data: 'document_attach',
+                    data: 'attachement',
                     render: function(data, type, row) {
                         return operationDownload(data);
                     },

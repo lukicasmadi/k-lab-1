@@ -28,7 +28,7 @@ class RencanaOperasiRequest extends FormRequest
             'operation_type' => 'required',
             'operation_periode' => 'required|regex:/to/i',
             'desc' => 'required',
-            'document_attach' => 'nullable|file|mimes:jpg,jpeg,png,gif,rar,zip,txt,doc,docx,pdf,xls,xlsx,ppt,pptx,html',
+            'attachement' => 'nullable|file|mimes:jpg,jpeg,png,gif,rar,zip,txt,doc,docx,pdf,xls,xlsx,ppt,pptx,html',
         ];
     }
 }

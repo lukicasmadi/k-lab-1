@@ -71,8 +71,8 @@
 
                         <div class="form-group mb-4">
                             <label>Document Attachment</label>
-                            <input type="file" class="form-control @error('document_attach') is-invalid @enderror" id="document_attach" name="document_attach">
-                            @error('document_attach')
+                            <input type="file" class="form-control @error('attachement') is-invalid @enderror" id="attachement" name="attachement">
+                            @error('attachement')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

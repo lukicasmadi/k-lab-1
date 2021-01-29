@@ -19,7 +19,7 @@ class PoldaSeeder extends Seeder
         Polda::withoutEvents(function () {
             // return Polda::factory(3)->create();
             Polda::create([
-                'uuid' => Str::uuid(),
+                'uuid' => genUuid(),
                 'name' => 'Kepolisian Daerah Aceh',
                 'jurisdiction' => 'Aceh',
                 'headquarters' => 'Banda Aceh',
@@ -29,7 +29,7 @@ class PoldaSeeder extends Seeder
             ]);
 
             Polda::create([
-                'uuid' => Str::uuid(),
+                'uuid' => genUuid(),
                 'name' => 'Kepolisian Daerah Jambi',
                 'jurisdiction' => 'Jambi',
                 'headquarters' => 'Jambi',
@@ -39,7 +39,7 @@ class PoldaSeeder extends Seeder
             ]);
 
             Polda::create([
-                'uuid' => Str::uuid(),
+                'uuid' => genUuid(),
                 'name' => 'Kepolisian Daerah Istimewa Yogyakarta',
                 'jurisdiction' => 'DI Yogyakarta',
                 'headquarters' => 'Sleman',
@@ -49,7 +49,7 @@ class PoldaSeeder extends Seeder
             ]);
 
             Polda::create([
-                'uuid' => Str::uuid(),
+                'uuid' => genUuid(),
                 'name' => 'Kepolisian Daerah Jawa Barat',
                 'jurisdiction' => 'Jawa Barat (tanpa Depok, dan Bekasi)',
                 'headquarters' => 'Bandung',
@@ -59,7 +59,7 @@ class PoldaSeeder extends Seeder
             ]);
 
             Polda::create([
-                'uuid' => Str::uuid(),
+                'uuid' => genUuid(),
                 'name' => 'Kepolisian Daerah Metropolitan Jakarta Raya',
                 'jurisdiction' => 'DKI Jakarta',
                 'headquarters' => 'Jakarta Selatan',

@@ -27,7 +27,7 @@ class CreatePoldaHasRencanaOperasisTable extends Migration
             $table->foreign('created_by')->references('id')->on('users');
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->foreign('updated_by')->references('id')->on('users');
-            $table->string('document_attach')->nullable();
+            $table->string('attachement')->nullable();
             $table->timestamps();
         });
     }

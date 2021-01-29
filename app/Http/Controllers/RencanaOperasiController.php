@@ -31,7 +31,7 @@ class RencanaOperasiController extends Controller
 
     public function download($filePath)
     {
-        RencanaOperasi::where("document_attach", $filePath)->firstOrFail();
+        RencanaOperasi::where("attachement", $filePath)->firstOrFail();
         return response()->download(storage_path("app/public/upload/rencana_operasi/{$filePath}"));
     }
 
@@ -51,11 +51,11 @@ class RencanaOperasiController extends Controller
             'desc' => request('desc'),
         ];
 
-        if(request()->hasFile('document_attach')) {
-            $file = $request->file('document_attach');
+        if(request()->hasFile('attachement')) {
+            $file = $request->file('attachement');
             $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
             Storage::put("/public/upload/rencana_operasi/".$randomName, File::get($file));
-            $data['document_attach'] = $randomName;
+            $data['attachement'] = $randomName;
         }
 
         RencanaOperasi::create($data);
@@ -86,11 +86,11 @@ class RencanaOperasiController extends Controller
             'desc' => request('desc'),
         ];
 
-        if(request()->hasFile('document_attach')) {
-            $file = $request->file('document_attach');
+        if(request()->hasFile('attachement')) {
+            $file = $request->file('attachement');
             $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
             Storage::put("/public/upload/rencana_operasi/".$randomName, File::get($file));
-            $data['document_attach'] = $randomName;
+            $data['attachement'] = $randomName;
         }
 
         RencanaOperasi::whereUuid($uuid)->update($data);
@@ -110,7 +110,7 @@ class RencanaOperasiController extends Controller
         } else {
             $data = RencanaOperasi::whereUuid($uuid)->firstOrFail();
 
-            Storage::delete('/public/upload/rencana_operasi/'.$data->document_attach);
+            Storage::delete('/public/upload/rencana_operasi/'.$data->attachement);
 
             $data->delete();
 
