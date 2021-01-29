@@ -80,8 +80,23 @@
 
 @push('library_js')
 <script src="{{ secure_asset('template/plugins/editors/markdown/simplemde.min.js') }}"></script>
+<script src="{{ secure_asset('template/plugins/font-icons/feather/feather.min.js') }}"></script>
+<script type="text/javascript">
+    feather.replace();
+</script>
 @endpush
 
 @push('page_css')
 <link rel="stylesheet" href="{{ secure_asset('template/custom.css') }}">
+@endpush
+
+@push('page_js')
+<script>
+$(document).ready(function() {
+    new SimpleMDE({
+        element: document.getElementById("desc"),
+        spellChecker: false,
+    })
+})
+</script>
 @endpush

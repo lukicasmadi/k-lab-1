@@ -26,10 +26,10 @@ class DatabaseSeeder extends Seeder
             BannerHeaderSeeder::class,
             SlideBannerSeeder::class,
             RencanaOperasiSeeder::class,
-            PoldaHasRencanaSeeder::class,
             JenisPelanggaranSeeder::class,
             LaporanTypeSeeder::class,
             KesatuanSeeder::class,
+            // PoldaHasRencanaSeeder::class,
         ]);
     }
 }

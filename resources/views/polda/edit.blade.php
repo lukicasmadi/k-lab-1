@@ -29,6 +29,7 @@
                     <form method="POST" action="{{ route('polda_update', $data->uuid) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
+
                         <div class="form-group mb-4">
                             <label><span class="require">*</span>Name</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Name" autocomplete="off" value="{{ $data->name }}">
@@ -40,58 +41,9 @@
                         </div>
 
                         <div class="form-group mb-4">
-                            <label>Called Name</label>
-                            <input type="text" class="form-control @error('aka') is-invalid @enderror" id="aka" name="aka" placeholder="Called Name" autocomplete="off" value="{{ $data->aka }}">
-                            @error('aka')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group mb-4">
-                            <label><span class="require">*</span>Province</label>
-                            <input type="text" class="form-control @error('province') is-invalid @enderror" id="province" name="province" placeholder="Province" autocomplete="off" value="{{ $data->province }}">
-                            @error('province')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group mb-4">
-                            <label><span class="require">*</span>City</label>
-                            <input type="text" class="form-control @error('city') is-invalid @enderror" id="city" name="city" placeholder="City" autocomplete="off" value="{{ $data->city }}">
-                            @error('city')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group mb-4">
-                            <label><span class="require">*</span>Address</label>
-                            <textarea class="form-control @error('address') is-invalid @enderror" id="address" name="address" rows="3">{{ $data->address }}</textarea>
-                            @error('address')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group mb-4">
-                            <label>Small Image</label>
-                            <input type="file" class="form-control @error('small_img') is-invalid @enderror" id="small_img" name="small_img">
-                            @error('small_img')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group mb-4">
-                            <label><span class="require">*</span>Logo</label>
+                            <label>Logo</label>
                             <input type="file" class="form-control @error('logo') is-invalid @enderror" id="logo" name="logo">
+                            <p class="pNotif">Leave it blank if you don't want to change the logo</p>
                             @error('logo')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -100,9 +52,39 @@
                         </div>
 
                         <div class="form-group mb-4">
-                            <label>Profile</label>
-                            <textarea class="form-control @error('profile') is-invalid @enderror" id="profile" name="profile" rows="3">{{ $data->profile }}</textarea>
-                            @error('profile')
+                            <label>Jurisdiction</label>
+                            <input type="text" class="form-control @error('jurisdiction') is-invalid @enderror" id="jurisdiction" name="jurisdiction" placeholder="Jurisdiction" autocomplete="off" value="{{ $data->jurisdiction }}">
+                            @error('jurisdiction')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Headquarters</label>
+                            <input type="text" class="form-control @error('headquarters') is-invalid @enderror" id="headquarters" name="headquarters" placeholder="Headquarters" autocomplete="off" value="{{ $data->headquarters }}">
+                            @error('headquarters')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Type</label>
+                            <input type="text" class="form-control @error('type') is-invalid @enderror" id="type" name="type" placeholder="Type" autocomplete="off" value="{{ $data->type }}">
+                            @error('type')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Official Site</label>
+                            <input type="text" class="form-control @error('official_site') is-invalid @enderror" id="official_site" name="official_site" placeholder="Official Site" autocomplete="off" value="{{ $data->official_site }}">
+                            @error('official_site')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

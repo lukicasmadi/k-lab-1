@@ -23,16 +23,14 @@ class PoldaRequest extends FormRequest
      */
     public function rules()
     {
+        $logo = request()->isMethod('patch') ? 'nullable|mimes:jpeg,jpg,png|max:8000' : 'required|mimes:jpeg,jpg,png|max:8000';
         return [
             'name' => 'required',
-            'province' => 'required',
-            'city' => 'required',
-            'address' => 'required',
-            'logo' => 'required|image|mimes:jpg,bmp,png',
-            'aka' => 'present',
-            'small_img' => 'present',
-            'logo' => 'present',
-            'profile' => 'present',
+            'logo' => $logo,
+            'jurisdiction' => 'required',
+            'headquarters' => 'nullable',
+            'type' => 'nullable',
+            'official_site' => 'nullable',
         ];
     }
 }
