@@ -138,7 +138,20 @@ public function user()
 }
 ```
 
-Dibaca aja dokumentasinya
+Untuk penggunaannya seperti contoh
+
+```php
+public function data()
+{
+    $model = Article::with(['user' => function ($query) {
+        $query->select('id', 'email', 'name');
+    }, 'category']);
+
+    return datatables()->eloquent($model)->toJson();
+}
+```
+
+Code diatas akan mengambil data dari tabel `artikel` dan sekaligus relasi ke tabel `user` berdasarkan `user_id` di tabel artikel. Baca aja dokumentasinya
 
 ## Melakukan pull request di github
 
@@ -149,3 +162,7 @@ Dibaca aja dokumentasinya
 -   Coding sampai selesai, lakukan `commit`, lalu `push` ke repository dengan perintah `git push origin nama_branch_baru`
 -   Kemudian lakukan `pull request` ke repository asli
 -   Jika kesulitan ikutin tutorial ini : [Pull-Request di github](https://www.youtube.com/watch?v=6_UhNE5qVX4)
+
+```
+
+```
