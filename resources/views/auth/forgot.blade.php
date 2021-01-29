@@ -41,11 +41,8 @@
                                 @enderror
                             </div>
 
-                            <div class="d-sm-flex justify-content-between">
-                                <div class="field-wrapper">
-                                    <button type="submit" class="btn btn-primary" value="">Reset Password</button>
-                                </div>
-                            </div>
+                            <button type="submit" class="btn btn-primary" value="">Reset Password</button>
+                            <a href="{{ route('dashboard') }}" class="btn btn-warning">Back to login</a>
                         </div>
                     </form>
 

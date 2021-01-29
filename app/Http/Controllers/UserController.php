@@ -22,7 +22,7 @@ class UserController extends Controller
     public function forgot_password_process(Request $request)
     {
         flash('Your request has been sent')->success();
-        return redirect()->route('dashboard');
+        return redirect()->back();
     }
 
     public function forgot_password_request()
