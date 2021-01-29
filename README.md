@@ -127,6 +127,14 @@ Kemudian bikin file js-nya contoh `file_baru_disini.js` diatas
 
 Pastikan jika ingin menambahkan file js baru, matikan dulu `npm run watch` atau `yarn run watch` dengan perintah `ctrl+c`
 
+## Directive blade
+
+-   Pelajari apa itu directive di blade template [Blade Directives](https://laravel.com/docs/8.x/blade#blade-directives)
+-   Buat directive `@push('page_css')` untuk memasukan coding `css` dan directive `@push('page_js')` untuk code javascript
+-   Ada 4 directive yg dibuat di project ini `@push('page_css')` , `@push('page_js')` , `@push('library_js')` , `@push('library_css')`
+-   Keempat directive beda-beda peruntukannya untuk posisi code
+-   Pelajari di salah satu file direktori `resources\views`
+
 ## How to provide JSON DATA for datatable
 
 -   Tambah route untuk API di file `web.php`
