@@ -9,7 +9,8 @@
 -   Seletah selesai, edit file `.env` [bukan file .env.example] , agar sesuai dengan laravel project. Misalnya `APP_URL` , `DB_DATABASE` , `DB_USERNAME` , `DB_PASSWORD` , dll
 -   Seletah itu jalankan `php artisan key:generate` untuk generate random key di project
 -   Setelah itu jalan perintah `php artisan migrate:fresh --seed` untuk menggenarate tabel dan dummy data
--   Setelah itu coba akses websitenya, jika tidak ada kendala pasti sudah sesuai dengan keiinginan
+-   Setelah itu coba akses websitenya, jika tidak ada kendala pasti sudah sesuai dengan keinginan
+-   Jika banyak perbedaan code dan mau melakukan reset branch tanpa peduli perubahan dan pull yg code terbaru, jalankan `git reset --hard origin/master`
 
 ## Routing
 
