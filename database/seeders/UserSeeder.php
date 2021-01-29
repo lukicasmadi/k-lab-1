@@ -35,32 +35,48 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'Korlantas Pusat',
-            'email' => 'pusat@gmail.com',
+            'name' => 'User Korlantas Pusat',
+            'email' => 'korlantas_pusat@gmail.com',
             'email_verified_at' => now(),
             'password' => bcrypt('admin'),
             'remember_token' => Str::random(10),
         ]);
 
         User::create([
-            'name' => 'Polda Metro Jaya',
-            'email' => 'poldametrojaya@gmail.com',
+            'name' => 'User Polda Metro Jaya',
+            'email' => 'polda_metro_jaya@gmail.com',
             'email_verified_at' => now(),
             'password' => bcrypt('admin'),
             'remember_token' => Str::random(10),
         ]);
 
         User::create([
-            'name' => 'Polda Bandung',
-            'email' => 'poldabandung@gmail.com',
+            'name' => 'User Polda Bandung',
+            'email' => 'polda_bandung@gmail.com',
             'email_verified_at' => now(),
             'password' => bcrypt('admin'),
             'remember_token' => Str::random(10),
         ]);
 
         User::create([
-            'name' => 'Polda Semarang',
-            'email' => 'poldasemarang@gmail.com',
+            'name' => 'User Polda Jogja',
+            'email' => 'polda_jogja@gmail.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('admin'),
+            'remember_token' => Str::random(10),
+        ]);
+
+        User::create([
+            'name' => 'User Polda Jambi',
+            'email' => 'polda_jambi@gmail.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('admin'),
+            'remember_token' => Str::random(10),
+        ]);
+
+        User::create([
+            'name' => 'User Polda Aceh',
+            'email' => 'polda_aceh@gmail.com',
             'email_verified_at' => now(),
             'password' => bcrypt('admin'),
             'remember_token' => Str::random(10),
@@ -110,16 +126,16 @@ class UserSeeder extends Seeder
         $admin = User::whereEmail("lukicasmadi@gmail.com")->first();
         $admin->assignRole('administrator');
 
-        $access_pusat = User::whereEmail("pusat@gmail.com")->first();
+        $access_pusat = User::whereEmail("korlantas_pusat@gmail.com")->first();
         $access_pusat->assignRole('access_pusat');
 
-        $access_daerah = User::whereEmail("poldametrojaya@gmail.com")->first();
+        $access_daerah = User::whereEmail("polda_metro_jaya@gmail.com")->first();
         $access_daerah->assignRole('access_daerah');
 
-        $access_daerah = User::whereEmail("poldabandung@gmail.com")->first();
+        $access_daerah = User::whereEmail("polda_bandung@gmail.com")->first();
         $access_daerah->assignRole('access_daerah');
 
-        $access_daerah = User::whereEmail("poldasemarang@gmail.com")->first();
+        $access_daerah = User::whereEmail("polda_jogja@gmail.com")->first();
         $access_daerah->assignRole('access_daerah');
     }
 }

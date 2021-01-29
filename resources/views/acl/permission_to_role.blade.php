@@ -48,7 +48,7 @@
                         <div id="dataPermission" class="parmissionPanel">
                             <div class="col-xl-12 mx-auto">
                                 <blockquote class="blockquote">
-                                   <p class="d-inline">Choose your role first to get all permission list</p>
+                                    <p class="d-inline">Use the arrows to open data in the right pane</p>
                                     <small>Administrator</small>
                                 </blockquote>
                             </div>
@@ -120,7 +120,7 @@ $(document).ready(function() {
             {
                 data: 'id',
                 render: function(data, type, row) {
-                    return '<div class="icon-container"><a href="'+route('get_role_has_permission', data)+'" data-id="'+data+'" class="confirm"><i class="fas fa-link"></i><span class="icon-name"></span></a>';
+                    return '<div class="icon-container"><a href="'+route('get_role_has_permission', data)+'" data-id="'+data+'" class="confirm"><i class="far fa-arrow-alt-circle-right"></i></a>';
                 },
                 searchable: false,
                 sortable: false,
