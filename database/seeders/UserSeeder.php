@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\PermissionRegistrar;
 
 class UserSeeder extends Seeder
 {
@@ -64,6 +65,8 @@ class UserSeeder extends Seeder
             'password' => bcrypt('admin'),
             'remember_token' => Str::random(10),
         ]);
+
+        app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         $administrator  = Role::create(['name' => 'administrator']);
         $access_pusat   = Role::create(['name' => 'access_pusat']);

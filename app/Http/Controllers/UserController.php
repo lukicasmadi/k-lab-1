@@ -14,6 +14,22 @@ use App\Http\Requests\ChangePasswordRequest;
 class UserController extends Controller
 {
 
+    public function forgot_password_index()
+    {
+        return view('auth.forgot');
+    }
+
+    public function forgot_password_process(Request $request)
+    {
+        flash('Your request has been sent')->success();
+        return redirect()->route('dashboard');
+    }
+
+    public function forgot_password_request()
+    {
+        return view('user.forgot_password_request');
+    }
+
     public function changePassword()
     {
         return view('user.change_password');
@@ -64,7 +80,7 @@ class UserController extends Controller
         User::whereId(myUserId())->first()->update($data);
 
         flash('Your profile has been updated')->success();
-        return back();
+        return redirect()->back();
     }
 
     public function data()

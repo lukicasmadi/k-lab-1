@@ -21,8 +21,12 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 
+Route::get('/forgot-password', 'UserController@forgot_password_index')->name('forgot_password_index');
+Route::post('/forgot-password/process', 'UserController@forgot_password_process')->name('forgot_password_process');
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index')->name('dashboard');
+    Route::get('/forgot-password/request', 'UserController@forgot_password_request')->name('forgot_password_request');
 
     Route::get('/category', 'CategoryController@index')->name('category_index');
         Route::get('/category/add', 'CategoryController@add')->name('category_add');

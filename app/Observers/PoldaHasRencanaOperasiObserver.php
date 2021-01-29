@@ -2,62 +2,55 @@
 
 namespace App\Observers;
 
+use App\Models\Notification;
 use App\Models\PoldaHasRencanaOperasi;
 
 class PoldaHasRencanaOperasiObserver
 {
-    /**
-     * Handle the PoldaHasRencanaOperasi "created" event.
-     *
-     * @param  \App\Models\PoldaHasRencanaOperasi  $poldaHasRencanaOperasi
-     * @return void
-     */
+
+    public function creating(PoldaHasRencanaOperasi $poldaHasRencanaOperasi)
+    {
+        //
+    }
+
     public function created(PoldaHasRencanaOperasi $poldaHasRencanaOperasi)
     {
-        //
+        Notification::create([
+            'uuid' => genUuid(),
+            'source' => myName(),
+            'status' => myName().' Sudah Mengirim'
+        ]);
     }
 
-    /**
-     * Handle the PoldaHasRencanaOperasi "updated" event.
-     *
-     * @param  \App\Models\PoldaHasRencanaOperasi  $poldaHasRencanaOperasi
-     * @return void
-     */
     public function updated(PoldaHasRencanaOperasi $poldaHasRencanaOperasi)
     {
-        //
+        Notification::create([
+            'uuid' => genUuid(),
+            'source' => myName(),
+            'status' => myName().' Mengupdate Data'
+        ]);
     }
 
-    /**
-     * Handle the PoldaHasRencanaOperasi "deleted" event.
-     *
-     * @param  \App\Models\PoldaHasRencanaOperasi  $poldaHasRencanaOperasi
-     * @return void
-     */
     public function deleted(PoldaHasRencanaOperasi $poldaHasRencanaOperasi)
     {
-        //
+        Notification::create([
+            'uuid' => genUuid(),
+            'source' => myName(),
+            'status' => myName().' Menghapus Data'
+        ]);
     }
 
-    /**
-     * Handle the PoldaHasRencanaOperasi "restored" event.
-     *
-     * @param  \App\Models\PoldaHasRencanaOperasi  $poldaHasRencanaOperasi
-     * @return void
-     */
     public function restored(PoldaHasRencanaOperasi $poldaHasRencanaOperasi)
     {
         //
     }
 
-    /**
-     * Handle the PoldaHasRencanaOperasi "force deleted" event.
-     *
-     * @param  \App\Models\PoldaHasRencanaOperasi  $poldaHasRencanaOperasi
-     * @return void
-     */
     public function forceDeleted(PoldaHasRencanaOperasi $poldaHasRencanaOperasi)
     {
-        //
+        Notification::create([
+            'uuid' => genUuid(),
+            'source' => myName(),
+            'status' => myName().' Menghapus Data'
+        ]);
     }
 }

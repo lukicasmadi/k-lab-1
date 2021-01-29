@@ -49,3 +49,9 @@ if (! function_exists('myUserId')) {
         }
     }
 }
+
+if (! function_exists('myName')) {
+    function myName() {
+        return auth()->user()->name;
+    }
+}

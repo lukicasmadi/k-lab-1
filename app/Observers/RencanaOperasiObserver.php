@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use Illuminate\Support\Str;
+use App\Models\Notification;
 use App\Models\RencanaOperasi;
 
 class RencanaOperasiObserver
@@ -18,7 +19,11 @@ class RencanaOperasiObserver
 
     public function created(RencanaOperasi $rencanaOperasi)
     {
-        //
+        Notification::create([
+            'uuid' => genUuid(),
+            'source' => myName(),
+            'status' => 'Menginput Rencana '.$rencanaOperasi->name
+        ]);
     }
 
     public function updating(RencanaOperasi $rencanaOperasi)
@@ -29,39 +34,33 @@ class RencanaOperasiObserver
 
     public function updated(RencanaOperasi $rencanaOperasi)
     {
-        //
+        Notification::create([
+            'uuid' => genUuid(),
+            'source' => myName(),
+            'status' => 'Mengupdate Rencana '.$rencanaOperasi->name
+        ]);
     }
 
-    /**
-     * Handle the RencanaOperasi "deleted" event.
-     *
-     * @param  \App\Models\RencanaOperasi  $rencanaOperasi
-     * @return void
-     */
     public function deleted(RencanaOperasi $rencanaOperasi)
     {
-        //
+        Notification::create([
+            'uuid' => genUuid(),
+            'source' => myName(),
+            'status' => 'Menghapus Data'
+        ]);
     }
 
-    /**
-     * Handle the RencanaOperasi "restored" event.
-     *
-     * @param  \App\Models\RencanaOperasi  $rencanaOperasi
-     * @return void
-     */
     public function restored(RencanaOperasi $rencanaOperasi)
     {
         //
     }
 
-    /**
-     * Handle the RencanaOperasi "force deleted" event.
-     *
-     * @param  \App\Models\RencanaOperasi  $rencanaOperasi
-     * @return void
-     */
     public function forceDeleted(RencanaOperasi $rencanaOperasi)
     {
-        //
+        Notification::create([
+            'uuid' => genUuid(),
+            'source' => myName(),
+            'status' => 'Menghapus Data'
+        ]);
     }
 }
