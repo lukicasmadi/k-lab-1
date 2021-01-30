@@ -27,7 +27,9 @@
 
             <li class="menu single-menu {{
                 request()->is('operation-plan') ||
-                request()->is('operation-plan/*')
+                request()->is('operation-plan/*') ||
+                request()->is('operation-onsite') ||
+                request()->is('operation-onsite/*')
                 ? 'active' : ''
                 }}">
                 <a href="#operation" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
@@ -45,8 +47,8 @@
                     @endrole
 
                     @role('access_daerah|administrator')
-                        <li class="{{ request()->is('running-operation-plan') ? 'active' : '' }}">
-                            <a href="{{ route('rencana_operasi_index') }}"> Input Data Operasi </a>
+                        <li class="{{ request()->is('operation-onsite') || request()->is('operation-onsite/*') ? 'active' : '' }}">
+                            <a href="{{ route('phro_index') }}"> Laporan Operasi </a>
                         </li>
                     @endrole
                 </ul>

@@ -4,9 +4,11 @@ namespace App\Providers;
 
 use App\Models\Polda;
 use App\Models\RencanaOperasi;
+use App\Observers\PHROObserver;
 use App\Models\JenisPelanggaran;
 use App\Observers\PoldaObserver;
 use Illuminate\Support\Facades\Event;
+use App\Models\PoldaHasRencanaOperasi;
 use Illuminate\Auth\Events\Registered;
 use App\Observers\RencanaOperasiObserver;
 use App\Observers\JenisPelanggaranObserver;
@@ -36,5 +38,6 @@ class EventServiceProvider extends ServiceProvider
         Polda::observe(PoldaObserver::class);
         JenisPelanggaran::observe(JenisPelanggaranObserver::class);
         RencanaOperasi::observe(RencanaOperasiObserver::class);
+        PoldaHasRencanaOperasi::observe(PHROObserver::class);
     }
 }

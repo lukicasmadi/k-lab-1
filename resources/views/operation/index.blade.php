@@ -104,7 +104,8 @@
                     render: function(data, type, row) {
                         return operationDownload(data);
                     },
-                    sortable: false
+                    sortable: false,
+                    searchable: false,
                 },
                 {
                     data: 'uuid',

@@ -86,6 +86,19 @@ Route::group(['middleware' => 'auth'], function () {
     ]);
     Route::get('/operation-plan/download/{filePath}', 'RencanaOperasiController@download')->name('downloadOperationPlan');
 
+    Route::resource('operation-onsite', 'PoldaHasRencanaOperasiController', [
+        'names' => [
+            'index' => 'phro_index',
+            'create' => 'phro_create',
+            'store' => 'phro_store',
+            'show' => 'phro_show',
+            'edit' => 'phro_edit',
+            'update' => 'phro_update',
+            'destroy' => 'phro_destroy',
+        ]
+    ]);
+    Route::get('/operation-onsite/download/{filePath}', 'PoldaHasRencanaOperasiController@download')->name('downloadPrho');
+
     Route::get('/laporan/all', 'ReportController@all')->name('laporan_all');
     Route::get('/laporan/polda/{aka}', 'ReportController@byAka')->name('laporan_by_aka');
     Route::get('/laporan/polda/{date}', 'ReportController@byOneDate')->name('laporan_by_one_date');
@@ -128,6 +141,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/get-permission-by-role/{id}', 'AclController@get_permission_by_role')->name('get_permission_by_role');
         Route::get('/user-has-polda', 'UserHasPoldaController@data')->name('uhp_data');
         Route::get('/get-polda-list/{id}', 'UserHasPoldaController@check_user_polda')->name('check_user_polda');
+        Route::get('/phro', 'PoldaHasRencanaOperasiController@data')->name('phro_data');
     });
 
     Route::get('/polda-access', 'UserHasPoldaController@polda_access_index')->name('polda_access_index');

@@ -17,3 +17,11 @@ function operationDownload(file) {
         return "<a href='" + route('downloadOperationPlan', file) + "'><i class='far fa-download'></i></a>";
     }
 }
+
+function phroDownload(file) {
+    if (_.isEmpty(file)) {
+        return "-";
+    } else {
+        return "<a href='" + route('downloadPrho', file) + "'><i class='far fa-download'></i></a>";
+    }
+}

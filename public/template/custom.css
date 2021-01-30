@@ -276,3 +276,31 @@ td.tengah {
     margin-right: auto;
     width: 40%;
 }
+
+.new-control.new-radio.radio-info>input:checked~span.new-control-indicator {
+    background: #4CAF50;
+}
+
+.new-control.new-radio .new-control-indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    display: block;
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    border-radius: 50%;
+}
+
+.mark,
+mark {
+    background-color: #ffffff;
+}
