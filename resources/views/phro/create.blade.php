@@ -17,6 +17,12 @@
                     </div>
                 @endif
 
+
+                <blockquote class="blockquote">
+                    <p class="d-inline">The operation that is currently running is <mark>{{ $op->name }}</mark></p>
+                    <small>Administrator</small>
+                </blockquote>
+
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12">

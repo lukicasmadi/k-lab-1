@@ -30,6 +30,13 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function create()
     {
+        $op = operationPlans();
+
+        if(empty($op)) {
+            flash('There are currently no operations in progress')->error();
+            return redirect()->route('phro_index');
+        }
+
         $check = UserHasPolda::where("user_id", myUserId())->first();
 
         if(empty($check)) {
@@ -37,7 +44,7 @@ class PoldaHasRencanaOperasiController extends Controller
             return redirect()->route('phro_index');
         }
 
-        return view('phro.create');
+        return view('phro.create', compact('op'));
     }
 
     public function store(PHRORequest $request)

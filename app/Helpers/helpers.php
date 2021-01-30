@@ -3,6 +3,7 @@
 use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Str;
+use App\Models\RencanaOperasi;
 
 if (! function_exists('humanDateRead')) {
     function humanDateRead($date) {
@@ -53,5 +54,13 @@ if (! function_exists('myUserId')) {
 if (! function_exists('myName')) {
     function myName() {
         return auth()->user()->name;
+    }
+}
+
+if (! function_exists('operationPlans')) {
+    function operationPlans() {
+        $now = now()->format('Y-m-d');
+        $checkOperasi = RencanaOperasi::where("start_date", "<=", $now)->where("end_date", ">=", $now)->first();
+        return $checkOperasi;
     }
 }

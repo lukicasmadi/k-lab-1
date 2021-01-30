@@ -304,3 +304,21 @@ td.tengah {
 mark {
     background-color: #ffffff;
 }
+
+blockquote.blockquote {
+    color: #009688;
+    padding: 20px 20px 20px 14px;
+    font-size: 18px;
+    background-color: #1b2e4b;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    border: 1px solid #1b2e4b;
+    border-left-color: rgb(27, 46, 75);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: rgb(27, 46, 75);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left: 5px solid #009688;
+    font-weight: bold;
+}

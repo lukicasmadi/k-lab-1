@@ -12,7 +12,7 @@ class PHROObserver
     public function creating(PoldaHasRencanaOperasi $phro)
     {
         $phro->uuid = genUuid();
-        $phro->rencana_operasi_id = 2;
+        $phro->rencana_operasi_id = operationPlans()->id;
         $phro->polda_id = UserHasPolda::where("user_id", myUserId())->first()->polda_id;
         $phro->slug_operation_name = Str::slug($phro->operation_name, '-');
         $phro->created_by = myUserId();
