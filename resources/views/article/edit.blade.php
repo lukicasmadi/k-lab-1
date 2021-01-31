@@ -28,6 +28,7 @@
                 <div class="widget-content widget-content-area">
                     <form method="POST" action="{{ route('article_update', $articleUuid->uuid) }}">
                         @csrf
+                        @method('PATCH')
                         <input type="hidden" name="id" value="{{ $articleUuid->id }}">
                         <div class="form-group mb-4">
                             <label><span class="require">*</span>Topic</label>
@@ -83,4 +84,15 @@
 
 @push('page_css')
 <link rel="stylesheet" href="{{ secure_asset('template/custom.css') }}">
+@endpush
+
+@push('page_js')
+<script>
+$(document).ready(function() {
+    new SimpleMDE({
+        element: document.getElementById("desc"),
+        spellChecker: false,
+    })
+})
+</script>
 @endpush

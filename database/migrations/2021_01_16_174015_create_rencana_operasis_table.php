@@ -17,15 +17,16 @@ class CreateRencanaOperasisTable extends Migration
             $table->id();
             $table->uuid('uuid');
             $table->string('name');
-            $table->string('operation_type');
+            $table->string('slug_name');
+            $table->longText('desc');
             $table->date('start_date');
             $table->date('end_date');
-            $table->longText('desc');
+            $table->string('operation_type')->nullable();
+            $table->string('attachement')->nullable();
             $table->unsignedBigInteger('created_by');
             $table->foreign('created_by')->references('id')->on('users');
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->foreign('updated_by')->references('id')->on('users');
-            $table->string('document_attach')->nullable();
             $table->timestamps();
         });
     }

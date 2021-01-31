@@ -31,12 +31,12 @@
 
                         <div class="form-group mb-4">
                             <label><span class="require">*</span>Topic</label>
-                            <input type="text" class="form-control @error('topic') is-invalid @enderror" id="topic" name="topic" placeholder="Topic" autocomplete="off">
+                            <input type="text" class="form-control @error('topic') is-invalid @enderror" id="topic" name="topic" placeholder="Topic" autocomplete="off" value="{{ old('topic') }}">
                         </div>
 
                         <div class="form-group mb-4">
                             <label><span class="require">*</span>Description</label>
-                            <textarea id="desc" name="desc" class="@error('desc') is-invalid @enderror"></textarea>
+                            <textarea id="desc" name="desc" class="@error('desc') is-invalid @enderror">{{ old('desc') }}</textarea>
                         </div>
 
                         <div class="form-group mb-4">
@@ -82,5 +82,12 @@
 @endpush
 
 @push('page_js')
-<script src="{{ secure_asset('js/article.js') }}"></script>
+<script>
+$(document).ready(function() {
+    new SimpleMDE({
+        element: document.getElementById("desc"),
+        spellChecker: false,
+    })
+})
+</script>
 @endpush

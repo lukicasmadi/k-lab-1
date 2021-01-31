@@ -25,11 +25,13 @@ class PoldaHasRencanaOperasiFactory extends Factory
      */
     public function definition()
     {
+        $name = $this->faker->catchPhrase();
         return [
             'uuid' => Str::uuid(),
             'rencana_operasi_id' => RencanaOperasi::all()->random()->id,
             'polda_id' => Polda::all()->random()->id,
-            'polda_operation_name' => $this->faker->catchPhrase(),
+            'operation_name' => $name,
+            'slug_operation_name' => Str::slug($name, '-'),
             'detail_operation' => $this->faker->sentence(6, true),
             'created_by' => User::all()->random()->id,
         ];

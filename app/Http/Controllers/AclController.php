@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
+use App\Models\RoleHasPermission;
 use Spatie\Permission\Models\Role;
 use App\Http\Requests\CreateRoleRequest;
 use Spatie\Permission\Models\Permission;
@@ -154,6 +155,39 @@ class AclController extends Controller
         return view('acl.user_to_role');
     }
 
+    public function permission_to_role_index()
+    {
+        return view('acl.permission_to_role');
+    }
+
+    public function get_permission_by_role($id)
+    {
+        $permission = Permission::select('id', 'name')->get();
+
+        $roleHasPermission = RoleHasPermission::with(['permission' => function ($query) {
+            $query->select('id', 'name', 'guard_name');
+        }])->where('role_id', $id)->get();
+
+        $rhs = [];
+
+        foreach($roleHasPermission as $data) {
+            array_push($rhs, $data->permission->name);
+        }
+
+        $permission->map(function ($item) use ($rhs) {
+            if(in_array($item->name, $rhs)) {
+                $item['checked_if'] = "checked";
+            } else {
+                $item['checked_if'] = "no_checked";
+            }
+        });
+
+        return response()->json([
+            'output' => 'Permission for role id '.$id,
+            'roles' => $permission
+        ], 200);
+    }
+
     public function user_to_role_add(Request $request)
     {
         $data = $request->all();
@@ -173,6 +207,23 @@ class AclController extends Controller
         $user->syncRoles($newRoles);
 
         flash('User has attached to roles')->success();
+        return redirect()->back();
+    }
+
+    public function permission_to_role_add(Request $request)
+    {
+        $role = Role::where("id", $request->id_role)->firstOrFail();
+        $allPermission = [];
+
+        if(!empty($request->permissionid)) {
+            foreach($request->permissionid as $key => $val) {
+                array_push($allPermission, $val);
+            }
+        }
+
+        $role->syncPermissions($allPermission);
+
+        flash('Permissions attached to role')->success();
         return redirect()->back();
     }
 }

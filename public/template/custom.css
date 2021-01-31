@@ -254,3 +254,71 @@
     padding-top: 17px;
     font-weight: bold;
 }
+
+.far {
+    font-size: 20px;
+}
+
+td.tengah {
+    text-align: center;
+}
+
+.parmissionPanel {
+    height: 300px;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.centerLoading {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.new-control.new-radio.radio-info>input:checked~span.new-control-indicator {
+    background: #4CAF50;
+}
+
+.new-control.new-radio .new-control-indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    display: block;
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    border-radius: 50%;
+}
+
+.mark,
+mark {
+    background-color: #ffffff;
+}
+
+blockquote.blockquote {
+    color: #009688;
+    padding: 20px 20px 20px 14px;
+    font-size: 18px;
+    background-color: #1b2e4b;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    border: 1px solid #1b2e4b;
+    border-left-color: rgb(27, 46, 75);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: rgb(27, 46, 75);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left: 5px solid #009688;
+    font-weight: bold;
+}

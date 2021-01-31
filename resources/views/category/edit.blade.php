@@ -18,6 +18,7 @@
                 <div class="widget-content widget-content-area">
                     <form method="POST" action="{{ route('category_update', $uuid) }}" enctype="multipart/form-data">
                         @csrf
+                        @method('PATCH')
 
                         <div class="form-group mb-4">
                             <label><span class="require">*</span>Name</label>
@@ -30,7 +31,7 @@
                         </div>
 
                         <div class="form-group mb-4">
-                            <label>Image (Not Require)</label>
+                            <label>Image</label>
                             <input type="file" class="form-control @error('category_image') is-invalid @enderror" id="category_image" name="category_image">
                             @error('category_image')
                                 <span class="invalid-feedback" role="alert">
@@ -49,3 +50,7 @@
     </div>
 </div>
 @endsection
+
+@push('page_css')
+<link rel="stylesheet" href="{{ secure_asset('template/custom.css') }}">
+@endpush

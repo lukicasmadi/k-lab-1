@@ -8,8 +8,9 @@
 -   Setelah npm install selesai, copy file .env.example dengan perintah `copy .env.example .env` atau jika perinta `copy` tidak ada, jalankan perintah `cp .env.example .env`
 -   Seletah selesai, edit file `.env` [bukan file .env.example] , agar sesuai dengan laravel project. Misalnya `APP_URL` , `DB_DATABASE` , `DB_USERNAME` , `DB_PASSWORD` , dll
 -   Seletah itu jalankan `php artisan key:generate` untuk generate random key di project
--   Setelah itu jalan perintah `php artisan migrate --seed` untuk menggenarate tabel dan dummy data
--   Setelah itu coba akses websitenya, jika tidak ada kendala pasti sudah sesuai dengan keiinginan
+-   Setelah itu jalan perintah `php artisan migrate:fresh --seed` untuk menggenarate tabel dan dummy data
+-   Setelah itu coba akses websitenya, jika tidak ada kendala pasti sudah sesuai dengan keinginan
+-   Jika banyak perbedaan code dan mau melakukan reset branch tanpa peduli perubahan dan pull yg code terbaru, jalankan `git reset --hard origin/master`
 
 ## Routing
 
@@ -95,36 +96,19 @@ Di tutup dulu, abis running migration, setelah itu di unmark/dibuka codingannya
 
 Atau jika ada kebutuhan re-migrate database dan mulai dari awal dummy datanya, jalankan perintah `php artisan migrate:fresh --seed`
 
+## Directive blade
+
+-   Pelajari apa itu directive di blade template [Blade Directives](https://laravel.com/docs/8.x/blade#blade-directives)
+-   Buat directive `@push('page_css')` untuk memasukan coding `css` dan directive `@push('page_js')` untuk code javascript
+-   Ada 4 directive yg dibuat di project ini `@push('page_css')` , `@push('page_js')` , `@push('library_js')` , `@push('library_css')`
+-   Keempat directive beda-beda peruntukannya untuk posisi code
+-   Pelajari di salah satu file direktori `resources\views`
+
 ## How to use datatable
 
--   Setiap halaman yg menggunakan datatable **harus** dibuat 1 file `.js` dan di taroh di `resources\js\app\nama_file.js`
--   Misalnya halaman yang mau dibuat adalah halaman profile, yang akan diakses http://domain.com/profile , maka harus dibuat file `profile.js` untuk kebutuhan jika di halaman profile membutuhkan list datatable
--   Setelah itu tambahkan/daftarkan filenya di file `webpack.mix.js`. Contohin yang sudah ada
--   Cara penambahan list seperti ini
-
-```js
-mix.js("resources/js/app.js", "public/js")
-    .js("resources/js/app/category.js", "public/js")
-    .js("resources/js/app/article.js", "public/js")
-    .js("resources/js/app/polda.js", "public/js")
-    .sass("resources/sass/app.scss", "public/css");
-```
-
-Mau ditambah file baru berarti jadi
-
-```js
-mix.js("resources/js/app.js", "public/js")
-    .js("resources/js/app/category.js", "public/js")
-    .js("resources/js/app/article.js", "public/js")
-    .js("resources/js/app/polda.js", "public/js")
-    .js("resources/js/app/file_baru_disini.js", "public/js")
-    .sass("resources/sass/app.scss", "public/css");
-```
-
-Setelah itu run `npm run watch` atau `yarn run watch`
-Kemudian bikin file js-nya contoh `file_baru_disini.js` diatas
-
-Pastikan jika ingin menambahkan file js baru, matikan dulu `npm run watch` atau `yarn run watch` dengan perintah `ctrl+c`
+-   Setiap halaman yg menggunakan datatable **harus** dibuat codenya didalam `directive`
+-   Daftarkan directive `@push('page_js')` untuk code datatablenya
+-   Contoh yang sudah ada silahkan lihat di salah satu file `resources\views\nama_folder\index.blade.php`
 
 ## How to provide JSON DATA for datatable
 
@@ -154,7 +138,20 @@ public function user()
 }
 ```
 
-Dibaca aja dokumentasinya
+Untuk penggunaannya seperti contoh
+
+```php
+public function data()
+{
+    $model = Article::with(['user' => function ($query) {
+        $query->select('id', 'email', 'name');
+    }, 'category']);
+
+    return datatables()->eloquent($model)->toJson();
+}
+```
+
+Code diatas akan mengambil data dari tabel `artikel` dan sekaligus relasi ke tabel `user` berdasarkan `user_id` di tabel artikel. Baca aja dokumentasinya
 
 ## Melakukan pull request di github
 
@@ -165,3 +162,7 @@ Dibaca aja dokumentasinya
 -   Coding sampai selesai, lakukan `commit`, lalu `push` ke repository dengan perintah `git push origin nama_branch_baru`
 -   Kemudian lakukan `pull request` ke repository asli
 -   Jika kesulitan ikutin tutorial ini : [Pull-Request di github](https://www.youtube.com/watch?v=6_UhNE5qVX4)
+
+```
+
+```

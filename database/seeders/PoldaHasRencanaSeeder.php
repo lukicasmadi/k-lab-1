@@ -14,6 +14,8 @@ class PoldaHasRencanaSeeder extends Seeder
      */
     public function run()
     {
-        PoldaHasRencanaOperasi::factory(35)->create();
+        PoldaHasRencanaOperasi::withoutEvents(function () {
+            return PoldaHasRencanaOperasi::factory(35)->create();
+        });
     }
 }

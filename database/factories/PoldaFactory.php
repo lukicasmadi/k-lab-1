@@ -23,16 +23,16 @@ class PoldaFactory extends Factory
      */
     public function definition()
     {
-        $city = Str::upper($this->faker->city());
-        $province = Str::upper($this->faker->country());
+        $kota = ['Aceh', 'Sumatra Utara', 'Sumatra Barat'];
+        $random_keys = array_rand($kota, 3);
 
         return [
             'uuid' => Str::uuid(),
-            'name' => 'POLDA '.$city,
-            'aka' => Str::upper(Str::of($city)->slug('-')),
-            'province' => $province,
-            'city' => $city,
-            'address' => Str::upper($this->faker->address()),
+            'name' => 'Kepolisian Daerah '.$kota[$random_keys[0]],
+            'jurisdiction' => '-',
+            'headquarters' => '-',
+            'type' => '-',
+            'official_site' => '-',
             'created_by' => User::first()->id,
         ];
     }

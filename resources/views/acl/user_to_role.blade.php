@@ -47,7 +47,14 @@
 
                         <input type="hidden" name="id_user" id="id_user" value="">
 
-                        <div id="dataRoles"></div>
+                        <div id="dataRoles">
+                            <div class="col-xl-12 mx-auto">
+                                <blockquote class="blockquote">
+                                    <p class="d-inline">Use the arrows to open data in the right pane</p>
+                                    <small>Administrator</small>
+                                </blockquote>
+                            </div>
+                        </div>
 
                         <input type="submit" class="btn btn-success mb-2 d-none btnSubmit" value="Submit">
 
@@ -68,7 +75,6 @@
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/dt-global_style.css') }}">
 
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/sweetalerts/sweetalert.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/components/custom-sweetalert.css') }}" />
 
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/forms/theme-checkbox-radio.css') }}">
@@ -120,7 +126,7 @@ $(document).ready(function() {
             {
                 data: 'id',
                 render: function(data, type, row) {
-                    return '<div class="icon-container"><a href="'+route('get_role_has_permission', data)+'" data-id="'+data+'" class="confirm"><i class="fas fa-link"></i><span class="icon-name"></span></a>';
+                    return '<div class="icon-container"><a href="'+route('get_role_has_permission', data)+'" data-id="'+data+'" class="confirm"><i class="far fa-arrow-alt-circle-right"></i></a>';
                 },
                 searchable: false,
                 sortable: false,
@@ -135,6 +141,7 @@ $('#tbl_user_acl tbody').on('click', '.confirm', function(e) {
     $("#id_user").val(id)
 
     $("#dataRoles").empty()
+    $("div.alert").hide()
     $("#dataRoles, .btnSubmit").addClass("d-none")
 
     $("#loadingPanel").removeClass("d-none")

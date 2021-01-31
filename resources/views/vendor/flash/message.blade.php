@@ -19,7 +19,7 @@
                 >&times;</button>
             @endif
 
-            <strong>{!! $message['message'] !!}</strong>
+            <strong><b>{!! $message['message'] !!}</b></strong>
         </div>
     @endif
 @endforeach

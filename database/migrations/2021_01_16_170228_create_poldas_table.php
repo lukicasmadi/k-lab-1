@@ -17,13 +17,11 @@ class CreatePoldasTable extends Migration
             $table->id();
             $table->uuid('uuid');
             $table->string('name');
-            $table->string('aka')->nullable();
-            $table->string('province')->nullable();
-            $table->string('city')->nullable();
-            $table->string('address')->nullable();
-            $table->string('small_img')->nullable();
             $table->string('logo')->nullable();
-            $table->text('profile')->nullable();
+            $table->string('jurisdiction');
+            $table->string('headquarters')->nullable();
+            $table->string('type')->nullable();
+            $table->string('official_site')->nullable();
             $table->unsignedBigInteger('created_by');
             $table->foreign('created_by')->references('id')->on('users');
             $table->unsignedBigInteger('updated_by')->nullable();

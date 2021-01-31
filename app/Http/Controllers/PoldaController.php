@@ -31,19 +31,11 @@ class PoldaController extends Controller
     {
         $data = [
             'name' => request('name'),
-            'aka' => request('aka'),
-            'province' => request('province'),
-            'city' => request('city'),
-            'address' => request('address'),
-            'profile' => request('profile'),
+            'jurisdiction' => request('jurisdiction'),
+            'headquarters' => request('headquarters'),
+            'type' => request('type'),
+            'official_site' => request('official_site'),
         ];
-
-        if(request()->hasFile('small_img')) {
-            $file = $request->file('small_img');
-            $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-            Storage::put("/public/upload/polda/".$randomName, File::get($file));
-            $data['small_img'] = $randomName;
-        }
 
         if(request()->hasFile('logo')) {
             $file = $request->file('logo');
@@ -73,19 +65,11 @@ class PoldaController extends Controller
     {
         $data = [
             'name' => request('name'),
-            'aka' => request('aka'),
-            'province' => request('province'),
-            'city' => request('city'),
-            'address' => request('address'),
-            'profile' => request('profile'),
+            'jurisdiction' => request('jurisdiction'),
+            'headquarters' => request('headquarters'),
+            'type' => request('type'),
+            'official_site' => request('official_site'),
         ];
-
-        if(request()->hasFile('small_img')) {
-            $file = $request->file('small_img');
-            $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-            Storage::put("/public/upload/polda/".$randomName, File::get($file));
-            $data['small_img'] = $randomName;
-        }
 
         if(request()->hasFile('logo')) {
             $file = $request->file('logo');
@@ -106,12 +90,11 @@ class PoldaController extends Controller
 
         if($validation > 0) {
             return response()->json([
-                'output' => 'Delete fail! Your data still related to another data.',
+                'output' => 'This data is still related to other data',
             ], 403);
         } else {
             $data = Polda::whereUuid($uuid)->firstOrFail();
 
-            Storage::delete('/public/upload/polda/'.$data->small_img);
             Storage::delete('/public/upload/polda/'.$data->logo);
 
             $data->delete();

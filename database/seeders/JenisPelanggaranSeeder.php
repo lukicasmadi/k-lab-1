@@ -14,6 +14,8 @@ class JenisPelanggaranSeeder extends Seeder
      */
     public function run()
     {
-        JenisPelanggaran::factory(25)->create();
+        JenisPelanggaran::withoutEvents(function () {
+            return JenisPelanggaran::factory(25)->create();
+        });
     }
 }
