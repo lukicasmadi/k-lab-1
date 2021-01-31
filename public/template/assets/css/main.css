@@ -307,15 +307,17 @@ label {
 
 .form-control {
     height: auto;
-    border: 1px solid #1b2e4b;
+    border: 1px solid #00adef;
     color: #009688;
     font-size: 15px;
     padding: 8px 10px;
     letter-spacing: 1px;
     height: calc(1.4em + 1.4rem + 2px);
     padding: .75rem 1.25rem;
-    border-radius: 6px;
-    background: #1b2e4b;
+    background: rgba(0, 0, 0, 0);
+    outline: none;
+    /* border-radius: 6px; */
+    /* background: #1b2e4b; */
 }
 
 .form-control[type="range"] {
@@ -993,8 +995,9 @@ select.form-control.form-custom {
 
 .btn-primary {
     color: #fff !important;
-    background-color: #1b55e2 !important;
-    border-color: #1b55e2;
+    background-color: #00adef !important;
+    border-color: #00adef;
+    text-transform: uppercase;
 }
 
 .btn-primary:hover,
