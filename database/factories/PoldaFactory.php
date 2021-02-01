@@ -28,7 +28,8 @@ class PoldaFactory extends Factory
 
         return [
             'uuid' => Str::uuid(),
-            'name' => 'Kepolisian Daerah '.$kota[$random_keys[0]],
+            // 'name' => 'Polda '.$kota[$random_keys[0]],
+            'name' => 'Polda '.$this->faker->city(),
             'jurisdiction' => '-',
             'headquarters' => '-',
             'type' => '-',

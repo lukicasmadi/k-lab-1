@@ -15,7 +15,7 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function data()
     {
-        $model = PoldaHasRencanaOperasi::with('rencanaOperasi');
+        $model = PoldaHasRencanaOperasi::perpolda()->with('rencanaOperasi');
 
         return datatables()->eloquent($model)
         ->addColumn('op_name', function (PoldaHasRencanaOperasi $phro) {

@@ -25,6 +25,7 @@
                 </a>
             </li>
 
+            @hasanyrole('administrator|access_daerah|access_pusat')
             <li class="menu single-menu {{
                 request()->is('operation-plan') ||
                 request()->is('operation-plan/*') ||
@@ -53,6 +54,7 @@
                     @endrole
                 </ul>
             </li>
+            @endhasanyrole
 
             @role('access_pusat|administrator')
                 <li class="menu single-menu {{

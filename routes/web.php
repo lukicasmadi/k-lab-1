@@ -2,17 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     if (empty(auth()->user())) {
         return redirect('/login');
@@ -48,6 +37,21 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/violation/{uuid}/edit', 'ViolationController@edit')->name('violation_edit');
     Route::patch('/violation/{uuid}/update', 'ViolationController@update')->name('violation_update');
     Route::delete('/violation/{uuid}/delete', 'ViolationController@destroy')->name('violation_destroy');
+
+    Route::group(['middleware' => 'user-has-polda'], function () {
+        Route::resource('operation-onsite', 'PoldaHasRencanaOperasiController', [
+            'names' => [
+                'index' => 'phro_index',
+                'create' => 'phro_create',
+                'store' => 'phro_store',
+                'show' => 'phro_show',
+                'edit' => 'phro_edit',
+                'update' => 'phro_update',
+                'destroy' => 'phro_destroy',
+            ]
+        ]);
+        Route::get('/operation-onsite/download/{filePath}', 'PoldaHasRencanaOperasiController@download')->name('downloadPrho');
+    });
 
     Route::resource('unit', 'UnitController', [
         'names' => [
@@ -85,19 +89,6 @@ Route::group(['middleware' => 'auth'], function () {
         ]
     ]);
     Route::get('/operation-plan/download/{filePath}', 'RencanaOperasiController@download')->name('downloadOperationPlan');
-
-    Route::resource('operation-onsite', 'PoldaHasRencanaOperasiController', [
-        'names' => [
-            'index' => 'phro_index',
-            'create' => 'phro_create',
-            'store' => 'phro_store',
-            'show' => 'phro_show',
-            'edit' => 'phro_edit',
-            'update' => 'phro_update',
-            'destroy' => 'phro_destroy',
-        ]
-    ]);
-    Route::get('/operation-onsite/download/{filePath}', 'PoldaHasRencanaOperasiController@download')->name('downloadPrho');
 
     Route::get('/laporan/all', 'ReportController@all')->name('laporan_all');
     Route::get('/laporan/polda/{aka}', 'ReportController@byAka')->name('laporan_by_aka');

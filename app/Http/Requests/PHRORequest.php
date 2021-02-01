@@ -24,7 +24,7 @@ class PHRORequest extends FormRequest
     public function rules()
     {
         return [
-            'operation_name' => 'required',
+            'operation_name' => 'required|max:255',
             'detail_operation' => 'required',
             'additional_info' => 'nullable',
             'attachement' => 'nullable|file|mimes:jpeg,jpg,png,pdf,zip,rar,doc,docx,xls,xlsx,ppt,pptx',

@@ -64,3 +64,39 @@ if (! function_exists('operationPlans')) {
         return $checkOperasi;
     }
 }
+
+if (! function_exists('isAdmin')) {
+    function isAdmin() {
+        $user = auth()->user();
+        if($user->hasRole('administrator')) {
+            return true;
+        }
+        return false;
+    }
+}
+
+if (! function_exists('isPusat')) {
+    function isPusat() {
+        $user = auth()->user();
+        if($user->hasRole('access_pusat')) {
+            return true;
+        }
+        return false;
+    }
+}
+
+if (! function_exists('isPolda')) {
+    function isPolda() {
+        $user = auth()->user();
+        if($user->hasRole('access_daerah')) {
+            return true;
+        }
+        return false;
+    }
+}
+
+if (! function_exists('poldaId')) {
+    function poldaId() {
+        return auth()->user()->polda()->first()->polda_id;
+    }
+}

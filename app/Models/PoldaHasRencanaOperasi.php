@@ -28,4 +28,11 @@ class PoldaHasRencanaOperasi extends Model
     {
         return $this->belongsTo(RencanaOperasi::class);
     }
+
+    public function scopePerpolda($query)
+    {
+        return $query->when(isPolda(), function ($q) {
+            return $q->where('polda_id', poldaId());
+        });
+    }
 }

@@ -322,3 +322,7 @@ blockquote.blockquote {
     border-left: 5px solid #009688;
     font-weight: bold;
 }
+
+.loadingWhite {
+    color: white;
+}

@@ -6,11 +6,14 @@
 
 
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+            @include('flash::message')
             <div class="widget widget-chart-one">
                 <div class="widget-heading">
-                    <h5 class="">Laporan Kegitan Tiap Polda</h5>
+                    <h5 class="">Laporan Kegiatan Tiap Polda</h5>
                     <ul class="tabs tab-pills">
                         <li><a href="#" id="filter_daily" class="tabmenu">Daily</a></li>
+                        <li><a href="#" id="filter_weekly" class="tabmenu">Weekly</a></li>
+                        <li><a href="#" id="filter_weekly" class="tabmenu">Monthly</a></li>
                     </ul>
                 </div>
 

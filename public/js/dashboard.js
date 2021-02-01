@@ -23,32 +23,17 @@ $(document).ready(function() {
         dataLabels: {
             enabled: false
         },
-        // subtitle: {
-        //     text: '100 Laporan Masuk',
-        //     align: 'left',
-        //     margin: 0,
-        //     offsetX: -10,
-        //     offsetY: 35,
-        //     floating: false,
-        //     style: {
-        //         fontSize: '14px',
-        //         color: '#888ea8'
-        //     }
-        // },
-        // title: {
-        //     text: '100',
-        //     align: 'left',
-        //     margin: 0,
-        //     offsetX: -10,
-        //     offsetY: 0,
-        //     floating: false,
-        //     style: {
-        //         fontSize: '25px',
-        //         color: '#bfc9d4'
-        //     },
-        // },
         noData: {
-            text: 'Loading...'
+            text: "Loading Data",
+            align: 'center',
+            verticalAlign: 'middle',
+            offsetX: 0,
+            offsetY: 0,
+            style: {
+                color: "#ffffff",
+                fontSize: '16px',
+                fontFamily: "Quicksand, sans-serif"
+            }
         },
         stroke: {
             show: true,
@@ -69,7 +54,7 @@ $(document).ready(function() {
             },
             labels: {
                 offsetX: 0,
-                offsetY: 5,
+                offsetY: 0,
                 style: {
                     fontSize: '12px',
                     fontFamily: 'Quicksand, sans-serif',
