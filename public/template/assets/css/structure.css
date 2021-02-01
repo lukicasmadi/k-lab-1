@@ -19,7 +19,7 @@ body {
     color: #888ea8;
     height: 100%;
     font-size: 0.875rem;
-    background: #060818;
+    background: #13232d;
     overflow-x: hidden;
     overflow-y: auto;
     letter-spacing: 0.0312rem;
@@ -1209,7 +1209,7 @@ code {
         margin: 0 32px;
         width: 100%;
         border-radius: 8px;
-        background: #191e3a;
+        background: #13232d;
         min-height: 51px;
     }
     .topbar-nav.header nav#topbar ul.menu-categories {
@@ -1243,8 +1243,8 @@ code {
         stroke-width: 1.3px;
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu a>div span {
-        font-size: 13px;
-        font-weight: 400;
+        font-size: 16px;
+        font-weight: bold;
         color: #fafafa;
         vertical-align: text-bottom;
     }
@@ -1260,7 +1260,7 @@ code {
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu.active>a>div span {
         color: #25d5e4;
-        font-weight: 600;
+        font-weight: bold;
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu:hover .submenu {
         visibility: visible;
@@ -1277,7 +1277,7 @@ code {
         text-align: left;
         margin-right: auto;
         margin-left: auto;
-        width: 200px;
+        width: 240px;
         padding: 15px 0;
         border-radius: 4px;
         border: 1px solid #0d1029;
@@ -1306,7 +1306,7 @@ code {
         align-items: center;
         transition: all 0.2s ease-in-out;
         padding: 4px 24px;
-        font-size: 13px;
+        font-size: 16px;
         font-weight: 600;
         color: #888ea8;
         letter-spacing: 0px;
