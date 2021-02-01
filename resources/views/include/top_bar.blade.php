@@ -81,7 +81,7 @@
                 </li>
             @endrole
 
-            @role('access_daerah|administrator')
+            @role('access_daerah')
                 <li class="menu single-menu {{
                     request()->is('operasi/*') ? 'active' : ''
                     }}">
