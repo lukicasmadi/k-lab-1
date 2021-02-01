@@ -124,7 +124,7 @@
                     </a>
                     <ul class="collapse submenu list-unstyled" id="dashboard" data-parent="#topAccordion">
                         <li class="{{ request()->is('category/*') || request()->is('category') ? 'active' : '' }}">
-                            <a href="{{ route('category_index') }}"> Kategori Artikel </a>
+                            <a href="{{ route('category_index') }}"> Master Kategori Artikel </a>
                         </li>
                         <li class="{{ request()->is('article/*') || request()->is('article') ? 'active' : '' }}">
                             <a href="{{ route('article_index') }}"> Artikel </a>
@@ -137,9 +137,6 @@
                         </li>
                         <li class="{{ request()->is('violation/*') || request()->is('violation') ? 'active' : '' }}">
                             <a href="{{ route('violation_index') }}"> Master Pelanggaran </a>
-                        </li>
-                        <li class="{{ request()->is('polda-access/*') || request()->is('polda-access') ? 'active' : '' }}">
-                            <a href="{{ route('polda_access_index') }}"> Master Akses Polda </a>
                         </li>
                     </ul>
                 </li>
@@ -171,6 +168,9 @@
                         </li>
                         <li class="{{ request()->is('access/user/*') || request()->is('access/user') ? 'active' : '' }}">
                             <a href="{{ route('user_index') }}"> Manajement User </a>
+                        </li>
+                        <li class="{{ request()->is('access/polda/*') || request()->is('access/polda') ? 'active' : '' }}">
+                            <a href="{{ route('polda_access_index') }}"> Akses Polda </a>
                         </li>
                     </ul>
                 </li>

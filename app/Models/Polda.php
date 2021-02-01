@@ -20,7 +20,7 @@ class Polda extends Model
 
     public function rencanaOperation()
     {
-        return $this->hasMany(PoldaHasRencanaOperasi::class);
+        return $this->hasMany(PoldaHasRencanaOperasi::class, "polda_id", "id");
     }
 
     public function operation()

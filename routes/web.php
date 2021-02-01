@@ -142,14 +142,15 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/user-has-polda', 'UserHasPoldaController@data')->name('uhp_data');
         Route::get('/get-polda-list/{id}', 'UserHasPoldaController@check_user_polda')->name('check_user_polda');
         Route::get('/phro', 'PoldaHasRencanaOperasiController@data')->name('phro_data');
+        Route::get('/totalinputan', 'HomeController@totalinputan')->name('totalinputan');
     });
 
-    Route::get('/polda-access', 'UserHasPoldaController@polda_access_index')->name('polda_access_index');
-    Route::get('/polda-access/create', 'UserHasPoldaController@polda_access_create')->name('polda_access_create');
-    Route::post('/polda-access/store', 'UserHasPoldaController@polda_access_store')->name('polda_access_store');
-    Route::get('/polda-access/{id}/edit', 'UserHasPoldaController@polda_access_edit')->name('polda_access_edit');
-    Route::patch('/polda-access/{id}/update', 'UserHasPoldaController@polda_access_update')->name('polda_access_update');
-    Route::delete('/polda-access/{id}/delete', 'UserHasPoldaController@polda_access_delete')->name('polda_access_delete');
+    Route::get('/access/polda', 'UserHasPoldaController@polda_access_index')->name('polda_access_index');
+    Route::get('/access/polda/create', 'UserHasPoldaController@polda_access_create')->name('polda_access_create');
+    Route::post('/access/polda/store', 'UserHasPoldaController@polda_access_store')->name('polda_access_store');
+    Route::get('/access/polda/{id}/edit', 'UserHasPoldaController@polda_access_edit')->name('polda_access_edit');
+    Route::patch('/access/polda/{id}/update', 'UserHasPoldaController@polda_access_update')->name('polda_access_update');
+    Route::delete('/access/polda/{id}/delete', 'UserHasPoldaController@polda_access_delete')->name('polda_access_delete');
 
     Route::get('change-password', 'UserController@changePassword')->name('change_password');
     Route::post('change-password/process', 'UserController@change_password_process')->name('change_password_process');
