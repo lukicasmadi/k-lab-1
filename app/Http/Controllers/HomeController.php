@@ -18,15 +18,13 @@ class HomeController extends Controller
         });
 
         $totalInputPolda = $model->map(function ($total) {
-            return $total->rencana_operation_count;
+            return (int)$total->rencana_operation_count;
         });
 
         return response()->json([
             'polda' => $dataPolda,
             'total' => $totalInputPolda
         ], 200);
-
-        return $model;
     }
 
     public function index()
