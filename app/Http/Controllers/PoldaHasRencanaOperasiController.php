@@ -47,25 +47,20 @@ class PoldaHasRencanaOperasiController extends Controller
         return view('phro.create', compact('op'));
     }
 
-    public function store(PHRORequest $request)
+    public function store(Request $request)
     {
-        $data = [
-            'operation_name' => request('operation_name'),
-            'detail_operation' => request('detail_operation'),
-            'additional_info' => request('additional_info'),
-        ];
+        // $data = [
+        //     'pelanggaran_lalu_lintas' => request('pelanggaran_lalu_lintas'),
+        //     'jenis_pelanggaran_lalu_lintas' => request('jenis_pelanggaran_lalu_lintas'),
+        //     'barang_bukti_yang_disita' => request('barang_bukti_yang_disita'),
+        // ];
 
-        if(request()->hasFile('attachement')) {
-            $file = $request->file('attachement');
-            $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-            Storage::put("/public/upload/phro/".$randomName, File::get($file));
-            $data['attachement'] = $randomName;
-        }
+        // PoldaHasRencanaOperasi::create($data);
 
-        PoldaHasRencanaOperasi::create($data);
+        // flash('Your data has been saved')->success();
+        // return redirect()->route('phro_index');
 
-        flash('Your data has been saved')->success();
-        return redirect()->route('phro_index');
+        return $request->all();
     }
 
     public function download($filePath)

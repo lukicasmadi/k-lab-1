@@ -100,3 +100,9 @@ if (! function_exists('poldaId')) {
         return auth()->user()->polda()->first()->polda_id;
     }
 }
+
+if (! function_exists('hariIni')) {
+    function hariIni() {
+        return now()->format("d-m-Y");
+    }
+}
