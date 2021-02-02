@@ -25,6 +25,7 @@ body {
 body::after {
   content: "";
   background: url(/img/futuristic.jpg);
+  min-height: 100%;
   background-size: cover;
   background-blend-mode: screen;
   opacity: 0.1;
@@ -34,6 +35,9 @@ body::after {
   right: 0;
   position: absolute;
   z-index: -1; }
+
+body .overflow{
+  overflow-x: hidden; }
 
 .form-form {
   width: 50%;

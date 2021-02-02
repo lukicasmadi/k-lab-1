@@ -5,9 +5,9 @@
 <img style="display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
+  margin-top: 35px;
   margin-bottom: 25px;
-  width: 125px;" src="{{ asset('/img/korlantas.png') }}">
+  width: 125px;" src="{{ secure_asset('/img/korlantas.png') }}">
     <div style="margin-top: 18px; text-align: center;">
         <h1 class="" style="font-size: 30px; color: #00adef; letter-spacing: 1px;">SISTEM PELAPORAN</h1>
         <h1 class="" style="font-size: 30px;  color: #00adef; letter-spacing: 1px;">OPERASI ONLINE BIDANG LALU LINTAS KORLANTAS POLRI</h1>
