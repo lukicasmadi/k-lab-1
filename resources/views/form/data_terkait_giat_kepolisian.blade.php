@@ -55,6 +55,8 @@
                 @enderror
             </div>
 
+            <input type="submit" name="submit" class="btn btn-primary mt-3" value="Submit">
+
         </div>
     </div>
 </div>
