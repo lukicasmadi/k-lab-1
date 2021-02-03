@@ -23,6 +23,18 @@
         @include('form.usia_pelaku_kecelakaan_lalin')
         @include('form.sim_pelaku_kecelakaan_lalin')
         @include('form.lokasi_kecelakaan_lalin')
+        @include('form.faktor_penyebab_kecelakaan')
+        @include('form.waktu_kejadian_kecelakaan_lalin')
+        @include('form.kecelakaan_lalin_menonjol')
+        @include('form.kecelakaan_lalin_tunggal')
+        @include('form.kecelakaan_lalin_tabrak_pejalan_kaki')
+        @include('form.kecelakaan_lalin_tabrak_lari')
+        @include('form.kecelakaan_lalin_tabrak_sepeda_motor')
+        @include('form.kecelakaan_lalin_tabrak_roda_empat')
+        @include('form.kecelakaan_lalin_tabrak_tidak_bermotor')
+        @include('form.kecelakaan_lalin_perlintasan_ka')
+        @include('form.kecelakaan_transportasi')
+        @include('form.data_terkait_dimas_lantas')
 
     </div>
 </div>
