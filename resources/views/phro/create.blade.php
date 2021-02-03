@@ -17,6 +17,8 @@
         @include('form.profesi_korban_kecelakaan')
         @include('form.usia_korban_kecelakaan')
         @include('form.sim_korban_kecelakaan')
+        @include('form.kendaraan_yang_terlibat_kecelakaan_lalin')
+        @include('form.jenis_kecelakaan_lalin')
 
     </div>
 </div>
