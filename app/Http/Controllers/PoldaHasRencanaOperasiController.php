@@ -49,18 +49,32 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function store(PHRORequest $request)
     {
-        // $data = [
-        //     'pelanggaran_lalu_lintas' => request('pelanggaran_lalu_lintas'),
-        //     'jenis_pelanggaran_lalu_lintas' => request('jenis_pelanggaran_lalu_lintas'),
-        //     'barang_bukti_yang_disita' => request('barang_bukti_yang_disita'),
-        // ];
+        $payload = [];
 
-        // PoldaHasRencanaOperasi::create($data);
+        $poldaId = UserHasPolda::where("user_id", myUserId())->first()->polda_id;
 
-        // flash('Your data has been saved')->success();
-        // return redirect()->route('phro_index');
+        foreach($request->all() as $key => $val) {
+            if($key == "_token" || $key == "submit") {
+                continue;
+            } else {
+                array_push($payload, [
+                    'uuid' => genUuid(),
+                    'rencana_operasi_id' => operationPlans()->id,
+                    'polda_id' => $poldaId,
+                    'type_name' => $key,
+                    'type_value' => $val,
+                    'created_by' => myUserId(),
+                    'updated_by' => myUserId(),
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            }
+        }
 
-        return $request->all();
+        PoldaHasRencanaOperasi::insert($payload);
+
+        flash('Your data has been saved')->success();
+        return redirect()->route('phro_create');
     }
 
     public function download($filePath)
