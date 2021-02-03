@@ -10,13 +10,16 @@
             @include('form.jenis_pelanggaran_lalin')
             @include('form.pelanggaran_barang_bukti_yang_disita')
             @include('form.kendaraan_terlibat_pelanggaran')
+
             @include('form.profesi_pelaku_pelanggaran')
             @include('form.usia_pelaku_pelanggaran')
             @include('form.sim_pelaku_pelanggaran')
+
             @include('form.lokasi_pelanggaran_lalin')
             @include('form.kecelakaan_lalin')
             @include('form.kecelakaan_barang_bukti_yang_disita')
-            @include('form.profesi_korban_kecelakaan')
+
+            {{-- @include('form.profesi_korban_kecelakaan')
             @include('form.usia_korban_kecelakaan')
             @include('form.sim_korban_kecelakaan')
             @include('form.kendaraan_yang_terlibat_kecelakaan_lalin')
@@ -37,7 +40,8 @@
             @include('form.kecelakaan_lalin_perlintasan_ka')
             @include('form.kecelakaan_transportasi')
             @include('form.data_terkait_dimas_lantas')
-            @include('form.data_terkait_giat_kepolisian')
+            @include('form.data_terkait_giat_kepolisian') --}}
+            @include('form.button')
 
         </div>
     </div>

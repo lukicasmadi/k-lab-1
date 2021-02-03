@@ -1,5 +1,13 @@
 <div class="col-lg-12 layout-spacing">
 
+    @if ($errors->any())
+        <div class="alert alert-danger custom">
+            <ul>
+                <li>Inputan anda belum lengkap. Silahkan diperiksa lagi</li>
+            </ul>
+        </div>
+    @endif
+
     <blockquote class="blockquote">
         <p class="d-inline">DATA TERKAIT MASALAH PELANGGARAN LALU LINTAS</p>
     </blockquote>

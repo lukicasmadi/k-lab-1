@@ -47,7 +47,7 @@ class PoldaHasRencanaOperasiController extends Controller
         return view('phro.create', compact('op'));
     }
 
-    public function store(Request $request)
+    public function store(PHRORequest $request)
     {
         // $data = [
         //     'pelanggaran_lalu_lintas' => request('pelanggaran_lalu_lintas'),

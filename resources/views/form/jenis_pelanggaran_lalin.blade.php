@@ -150,7 +150,7 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>7) LAIN - LAIN</label>
-                <input type="number" class="form-control @error('pelanggaran_mobil_lain_lain') is-invalid @enderror" name="pelanggaran_mobil_lainlain" autocomplete="off" value="{{ old('pelanggaran_mobil_lain_lain') }}">
+                <input type="number" class="form-control @error('pelanggaran_mobil_lain_lain') is-invalid @enderror" name="pelanggaran_mobil_lain_lain" autocomplete="off" value="{{ old('pelanggaran_mobil_lain_lain') }}">
                 @error('pelanggaran_mobil_lainlain')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

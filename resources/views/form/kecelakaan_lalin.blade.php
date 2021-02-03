@@ -58,8 +58,8 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>e. KERUGIAN MATERIIL</label>
-                <input type="number" class="form-control @error('kecelakaan_lalin_jumlah_kerugian_materil') is-invalid @enderror" name="kecelakaan_lalin_jumlah_kerugian_materil" autocomplete="off" value="{{ old('kecelakaan_lalin_jumlah_kerugian_materil') }}">
-                @error('kecelakaan_lalin_jumlah_kerugian_materil')
+                <input type="number" class="form-control @error('kecelakaan_lalin_jumlah_kerugian_materiil') is-invalid @enderror" name="kecelakaan_lalin_jumlah_kerugian_materiil" autocomplete="off" value="{{ old('kecelakaan_lalin_jumlah_kerugian_materiil') }}">
+                @error('kecelakaan_lalin_jumlah_kerugian_materiil')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
