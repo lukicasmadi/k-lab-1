@@ -70,8 +70,8 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>1) NASIONAL</label>
-                <input type="number" class="form-control @error('status_jalan_nasional') is-invalid @enderror" name="status_jalan_nasional" autocomplete="off" value="{{ old('status_jalan_nasional') }}">
-                @error('status_jalan_nasional')
+                <input type="number" class="form-control @error('lokasi_pelanggaran_status_jalan_nasional') is-invalid @enderror" name="lokasi_pelanggaran_status_jalan_nasional" autocomplete="off" value="{{ old('lokasi_pelanggaran_status_jalan_nasional') }}">
+                @error('lokasi_pelanggaran_status_jalan_nasional')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -80,8 +80,8 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>2) PROPINSI</label>
-                <input type="number" class="form-control @error('status_jalan_propinsi') is-invalid @enderror" name="status_jalan_propinsi" autocomplete="off" value="{{ old('status_jalan_propinsi') }}">
-                @error('status_jalan_propinsi')
+                <input type="number" class="form-control @error('lokasi_pelanggaran_status_jalan_propinsi') is-invalid @enderror" name="lokasi_pelanggaran_status_jalan_propinsi" autocomplete="off" value="{{ old('lokasi_pelanggaran_status_jalan_propinsi') }}">
+                @error('lokasi_pelanggaran_status_jalan_propinsi')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -90,8 +90,8 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>3) KAB/KOTA</label>
-                <input type="number" class="form-control @error('status_jalan_kab_kota') is-invalid @enderror" name="status_jalan_kab_kota" autocomplete="off" value="{{ old('status_jalan_kab_kota') }}">
-                @error('status_jalan_kab_kota')
+                <input type="number" class="form-control @error('lokasi_pelanggaran_status_jalan_kab_kota') is-invalid @enderror" name="lokasi_pelanggaran_status_jalan_kab_kota" autocomplete="off" value="{{ old('lokasi_pelanggaran_status_jalan_kab_kota') }}">
+                @error('lokasi_pelanggaran_status_jalan_kab_kota')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -100,8 +100,8 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>4) DESA / LINGKUNGAN</label>
-                <input type="number" class="form-control @error('status_jalan_desa_lingkungan') is-invalid @enderror" name="status_jalan_desa_lingkungan" autocomplete="off" value="{{ old('status_jalan_desa_lingkungan') }}">
-                @error('status_jalan_desa_lingkungan')
+                <input type="number" class="form-control @error('lokasi_pelanggaran_status_jalan_desa_lingkungan') is-invalid @enderror" name="lokasi_pelanggaran_status_jalan_desa_lingkungan" autocomplete="off" value="{{ old('lokasi_pelanggaran_status_jalan_desa_lingkungan') }}">
+                @error('lokasi_pelanggaran_status_jalan_desa_lingkungan')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -114,8 +114,8 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>1) ARTERI</label>
-                <input type="number" class="form-control @error('fungsi_jalan_arteri') is-invalid @enderror" name="fungsi_jalan_arteri" autocomplete="off" value="{{ old('fungsi_jalan_arteri') }}">
-                @error('fungsi_jalan_arteri')
+                <input type="number" class="form-control @error('lokasi_pelanggaran_fungsi_jalan_arteri') is-invalid @enderror" name="lokasi_pelanggaran_fungsi_jalan_arteri" autocomplete="off" value="{{ old('lokasi_pelanggaran_fungsi_jalan_arteri') }}">
+                @error('lokasi_pelanggaran_fungsi_jalan_arteri')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -124,8 +124,8 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>2) KOLEKTOR</label>
-                <input type="number" class="form-control @error('fungsi_jalan_kolektor') is-invalid @enderror" name="fungsi_jalan_kolektor" autocomplete="off" value="{{ old('fungsi_jalan_kolektor') }}">
-                @error('fungsi_jalan_kolektor')
+                <input type="number" class="form-control @error('lokasi_pelanggaran_fungsi_jalan_kolektor') is-invalid @enderror" name="lokasi_pelanggaran_fungsi_jalan_kolektor" autocomplete="off" value="{{ old('lokasi_pelanggaran_fungsi_jalan_kolektor') }}">
+                @error('lokasi_pelanggaran_fungsi_jalan_kolektor')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -134,8 +134,8 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>3) LOKAL</label>
-                <input type="number" class="form-control @error('fungsi_jalan_lokal') is-invalid @enderror" name="fungsi_jalan_lokal" autocomplete="off" value="{{ old('fungsi_jalan_lokal') }}">
-                @error('fungsi_jalan_lokal')
+                <input type="number" class="form-control @error('lokasi_pelanggaran_fungsi_jalan_lokal') is-invalid @enderror" name="lokasi_pelanggaran_fungsi_jalan_lokal" autocomplete="off" value="{{ old('lokasi_pelanggaran_fungsi_jalan_lokal') }}">
+                @error('lokasi_pelanggaran_fungsi_jalan_lokal')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -144,8 +144,8 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>4) LINGKUNGAN</label>
-                <input type="number" class="form-control @error('fungsi_jalan_lingkungan') is-invalid @enderror" name="fungsi_jalan_lingkungan" autocomplete="off" value="{{ old('fungsi_jalan_lingkungan') }}">
-                @error('fungsi_jalan_lingkungan')
+                <input type="number" class="form-control @error('lokasi_pelanggaran_fungsi_jalan_lingkungan') is-invalid @enderror" name="lokasi_pelanggaran_fungsi_jalan_lingkungan" autocomplete="off" value="{{ old('lokasi_pelanggaran_fungsi_jalan_lingkungan') }}">
+                @error('lokasi_pelanggaran_fungsi_jalan_lingkungan')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>

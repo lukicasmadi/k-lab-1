@@ -53,6 +53,12 @@
     <script src="{{ secure_asset('js/app.js') }}"></script>
     <script src="{{ secure_asset('template/assets/js/custom.js') }}"></script>
     <script src="{{ secure_asset('template/globalfunction.js') }}"></script>
+    <script src="{{ secure_asset('template/assets/js/app.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            App.init();
+        });
+    </script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
     @stack('library_js')
