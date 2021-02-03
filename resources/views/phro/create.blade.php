@@ -6,7 +6,7 @@
 
         @include('form.pelanggaran_lalin')
         @include('form.jenis_pelanggaran_lalin')
-        @include('form.barang_bukti_yang_disita')
+        @include('form.pelanggaran_barang_bukti_yang_disita')
         @include('form.kendaraan_terlibat_pelanggaran')
         @include('form.profesi_pelaku_pelanggaran')
         @include('form.usia_pelaku_pelanggaran')
@@ -14,6 +14,9 @@
         @include('form.lokasi_pelanggaran_lalin')
         @include('form.kecelakaan_lalin')
         @include('form.kecelakaan_barang_bukti_yang_disita')
+        @include('form.profesi_korban_kecelakaan')
+        @include('form.usia_korban_kecelakaan')
+        @include('form.sim_korban_kecelakaan')
 
     </div>
 </div>

@@ -1,6 +1,8 @@
 <div class="col-lg-12 layout-spacing">
 
-    <div class="alert alert-dark mb-5" role="alert">DATA TERKAIT MASALAH KECELAKAAN LALU LINTAS</div>
+    <blockquote class="blockquote">
+        <p class="d-inline">DATA TERKAIT MASALAH KECELAKAAN LALU LINTAS</p>
+    </blockquote>
 
     <div class="statbox widget box box-shadow">
 
