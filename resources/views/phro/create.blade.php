@@ -35,6 +35,7 @@
         @include('form.kecelakaan_lalin_perlintasan_ka')
         @include('form.kecelakaan_transportasi')
         @include('form.data_terkait_dimas_lantas')
+        @include('form.data_terkait_giat_kepolisian')
 
     </div>
 </div>
