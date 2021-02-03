@@ -11,6 +11,9 @@
         @include('form.profesi_pelaku_pelanggaran')
         @include('form.usia_pelaku_pelanggaran')
         @include('form.sim_pelaku_pelanggaran')
+        @include('form.lokasi_pelanggaran_lalin')
+        @include('form.kecelakaan_lalin')
+        @include('form.kecelakaan_barang_bukti_yang_disita')
 
     </div>
 </div>
@@ -18,4 +21,10 @@
 
 @push('page_css')
 <link rel="stylesheet" href="{{ secure_asset('template/custom.css') }}">
+@endpush
+
+@push('page_js')
+<script>
+$("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast");
+</script>
 @endpush

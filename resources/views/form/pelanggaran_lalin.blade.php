@@ -1,10 +1,13 @@
 <div class="col-lg-12 layout-spacing">
+
+    <div class="alert alert-dark mb-5" role="alert">DATA TERKAIT MASALAH PELANGGARAN LALU LINTAS</div>
+
     <div class="statbox widget box box-shadow">
+
         <div class="widget-header">
             <div class="row">
                 <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                    <h4>DATA TERKAIT MASALAH PELANGGARAN LALU LINTAS</h4>
-                    <p class="ml-3">PELANGGARAN LALU LINTAS</p>
+                    <h4>PELANGGARAN LALU LINTAS</h4>
                 </div>
             </div>
         </div>
