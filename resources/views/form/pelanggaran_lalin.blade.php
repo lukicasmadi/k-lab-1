@@ -8,6 +8,8 @@
         </div>
     @endif
 
+    @include('flash::message')
+
     <blockquote class="blockquote">
         <p class="d-inline">DATA TERKAIT MASALAH PELANGGARAN LALU LINTAS</p>
     </blockquote>

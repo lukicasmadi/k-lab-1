@@ -7,7 +7,7 @@
         <div class="row layout-top-spacing">
 
             @include('form.pelanggaran_lalin')
-            {{-- @include('form.jenis_pelanggaran_lalin')
+            @include('form.jenis_pelanggaran_lalin')
             @include('form.pelanggaran_barang_bukti_yang_disita')
             @include('form.kendaraan_terlibat_pelanggaran')
 
@@ -19,7 +19,7 @@
             @include('form.kecelakaan_lalin')
             @include('form.kecelakaan_barang_bukti_yang_disita')
 
-            @include('form.profesi_korban_kecelakaan')
+            {{-- @include('form.profesi_korban_kecelakaan')
             @include('form.usia_korban_kecelakaan')
             @include('form.sim_korban_kecelakaan')
             @include('form.kendaraan_yang_terlibat_kecelakaan_lalin')
@@ -41,6 +41,7 @@
             @include('form.kecelakaan_transportasi')
             @include('form.data_terkait_dimas_lantas')
             @include('form.data_terkait_giat_kepolisian') --}}
+
             @include('form.button')
 
         </div>
@@ -55,5 +56,10 @@
 @push('page_js')
 <script>
 // $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast");
+
+$(function () {
+    $("input[type=number]").val("123")
+    // $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast");
+});
 </script>
 @endpush

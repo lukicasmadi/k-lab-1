@@ -73,7 +73,7 @@ class PoldaHasRencanaOperasiController extends Controller
 
         PoldaHasRencanaOperasi::insert($payload);
 
-        flash('Your data has been saved')->success();
+        flash('Seluruh data berhasil dikirim ke pusat')->success();
         return redirect()->route('phro_create');
     }
 
