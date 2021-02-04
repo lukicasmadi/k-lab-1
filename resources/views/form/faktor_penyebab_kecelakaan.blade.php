@@ -86,8 +86,8 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>h. MENDAHULUI/BERBELOK/BERPINDAH JALUR (PSL 294)</label>
-                <input type="number" class="form-control @error('faktor_penyebab_kecelakaan_mendahului_berberlok_pindah_jalur') is-invalid @enderror" name="faktor_penyebab_kecelakaan_mendahului_berberlok_pindah_jalur" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_mendahului_berberlok_pindah_jalur') }}">
-                @error('faktor_penyebab_kecelakaan_mendahului_berberlok_pindah_jalur')
+                <input type="number" class="form-control @error('faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur') is-invalid @enderror" name="faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur') }}">
+                @error('faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>

@@ -14,11 +14,10 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Operation</th>
-                                <th>Report</th>
-                                <th>Detail</th>
-                                <th>Info</th>
-                                <th>Attachment</th>
+                                <th>Nama Kesatuan</th>
+                                <th>Status Laporan</th>
+                                <th>Tanggal</th>
+                                <th>Preview</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -37,7 +36,6 @@
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/sweetalerts/sweetalert.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/components/custom-sweetalert.css') }}" />
-
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/custom.css') }}">
 @endpush
 
@@ -74,31 +72,26 @@ $(document).ready(function () {
                 searchable: false
             },
             {
-                data: 'op_name',
-                name: 'rencanaOperasi.name'
+                data: 'polda_name',
+                name: 'polda.name'
             },
             {
-                data: 'operation_name',
+                data: 'status',
             },
             {
-                data: 'detail_operation',
+                data: 'submited_date',
+            },
+            {
+                data: 'uuid',
                 render: function(data, type, row) {
-                    return ifEmptyData(data);
+                    return `
+                    <div class="icon-container">
+                        <a href="`+route('previewPhro', data)+`"><i class="far fa-file-search"></i></a>
+                    </div>
+                    `;
                 },
-            },
-            {
-                data: 'additional_info',
-                render: function(data, type, row) {
-                    return ifEmptyData(data);
-                },
-            },
-            {
-                data: 'attachement',
-                render: function(data, type, row) {
-                    return phroDownload(data);
-                },
-                sortable: false,
                 searchable: false,
+                sortable: false,
             },
             {
                 data: 'uuid',

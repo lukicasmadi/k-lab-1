@@ -50,7 +50,8 @@ Route::group(['middleware' => 'auth'], function () {
                 'destroy' => 'phro_destroy',
             ]
         ]);
-        Route::get('/operation-onsite/download/{filePath}', 'PoldaHasRencanaOperasiController@download')->name('downloadPrho');
+        Route::get('/operation-onsite/{uuid}/download', 'PoldaHasRencanaOperasiController@download')->name('downloadPrho');
+        Route::get('/operation-onsite/{uuid}/preview', 'PoldaHasRencanaOperasiController@preview')->name('previewPhro');
     });
 
     Route::resource('unit', 'UnitController', [

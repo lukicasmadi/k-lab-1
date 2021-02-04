@@ -17,7 +17,7 @@ class UserHasPolda
         } else {
             $find = UHP::where("user_id", $user->id)->first();
             if(empty($find)) {
-                flash('Your account has not been connected to any Polda data. Please contact the admin')->error();
+                flash('Your account has not been attached to any polda')->error();
                 return redirect('/');
             } else {
                 return $next($request);

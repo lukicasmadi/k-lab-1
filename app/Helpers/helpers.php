@@ -3,6 +3,7 @@
 use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Str;
+use App\Models\PoldaSubmited;
 use App\Models\RencanaOperasi;
 
 if (! function_exists('humanDateRead')) {
@@ -62,6 +63,18 @@ if (! function_exists('operationPlans')) {
         $now = now()->format('Y-m-d');
         $checkOperasi = RencanaOperasi::where("start_date", "<=", $now)->where("end_date", ">=", $now)->first();
         return $checkOperasi;
+    }
+}
+
+if (! function_exists('alreadyInput')) {
+    function alreadyInput() {
+        $now = now()->format('Y-m-d');
+        $submited = PoldaSubmited::where("submited_date", $now)->first();
+        if(empty($submited)) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
 

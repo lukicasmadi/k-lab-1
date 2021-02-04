@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Polda;
 use Illuminate\Support\Str;
 use App\Models\UserHasPolda;
 use Illuminate\Http\Request;
+use App\Models\PoldaSubmited;
 use App\Http\Requests\PHRORequest;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use App\Models\PoldaHasRencanaOperasi;
 use Illuminate\Support\Facades\Storage;
@@ -15,11 +18,11 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function data()
     {
-        $model = PoldaHasRencanaOperasi::perpolda()->with('rencanaOperasi');
+        $model = PoldaSubmited::perpolda()->with('polda');
 
         return datatables()->eloquent($model)
-        ->addColumn('op_name', function (PoldaHasRencanaOperasi $phro) {
-            return $phro->rencanaOperasi->name;
+        ->addColumn('polda_name', function (PoldaSubmited $ps) {
+            return $ps->polda->name;
         })->toJson();
     }
 
@@ -37,10 +40,12 @@ class PoldaHasRencanaOperasiController extends Controller
             return redirect()->route('phro_index');
         }
 
-        $check = UserHasPolda::where("user_id", myUserId())->first();
+        $poldaId = UserHasPolda::where("user_id", myUserId())->first()->polda_id;
 
-        if(empty($check)) {
-            flash('Your account has not been linked to any Polda data. Please contact the authorized officer')->error();
+        $todayInsert = PoldaSubmited::where("polda_id", $poldaId)->where("submited_date", date("Y-m-d"))->first();
+
+        if(!empty($todayInsert)) {
+            flash('Polda sudah menginput data hari ini!')->error();
             return redirect()->route('phro_index');
         }
 
@@ -53,12 +58,14 @@ class PoldaHasRencanaOperasiController extends Controller
 
         $poldaId = UserHasPolda::where("user_id", myUserId())->first()->polda_id;
 
+        $uuid = genUuid();
+
         foreach($request->all() as $key => $val) {
             if($key == "_token" || $key == "submit") {
                 continue;
             } else {
                 array_push($payload, [
-                    'uuid' => genUuid(),
+                    'uuid' => $uuid,
                     'rencana_operasi_id' => operationPlans()->id,
                     'polda_id' => $poldaId,
                     'type_name' => $key,
@@ -71,15 +78,43 @@ class PoldaHasRencanaOperasiController extends Controller
             }
         }
 
-        PoldaHasRencanaOperasi::insert($payload);
+        if(count($payload) == 255) {
+            DB::beginTransaction();
 
-        flash('Seluruh data berhasil dikirim ke pusat')->success();
-        return redirect()->route('phro_create');
+            try {
+                PoldaHasRencanaOperasi::insert($payload);
+
+                PoldaSubmited::create([
+                    'uuid' => $uuid,
+                    'polda_id' => poldaId(),
+                    'status' => "SUDAH MENGIRIM LAPORAN",
+                    'submited_date' => date("Y-m-d")
+                ]);
+
+                DB::commit();
+                flash('Seluruh data berhasil dikirim ke pusat')->success();
+
+                return redirect()->route('phro_index');
+            } catch (\Exception $e) {
+                DB::rollback();
+                flash('Data gagal dikirim. Silahkan dicoba kembali atau hubungi admin jika masih gagal')->error();
+                return redirect()->back();
+            }
+        } else {
+            flash('Data yang anda proses tidak lengkap')->error();
+            return redirect()->back();
+        }
+
+
     }
 
     public function download($filePath)
     {
-        PoldaHasRencanaOperasi::where("attachement", $filePath)->firstOrFail();
-        return response()->download(storage_path("app/public/upload/phro/{$filePath}"));
+        //
+    }
+
+    public function preview($uuid)
+    {
+        //
     }
 }
