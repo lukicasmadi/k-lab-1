@@ -20,6 +20,7 @@
                                 <th>Status Laporan</th>
                                 <th>Tanggal</th>
                                 <th>Preview</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -94,6 +95,19 @@ $(document).ready(function () {
                 searchable: false,
                 sortable: false,
             },
+            {
+                data: 'uuid',
+                render: function(data, type, row) {
+                    return `
+                    <div class="icon-container">
+                        <a href="`+route('phro_edit', data)+`"><i class="far fa-edit"></i></a>
+                        <a href="`+route('phro_destroy', data)+`" class="delete" data-id="`+data+`"><i class="far fa-trash-alt"></i></a>
+                    </div>
+                    `;
+                },
+                searchable: false,
+                sortable: false,
+            }
         ]
     })
 

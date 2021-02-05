@@ -58,6 +58,12 @@ if (! function_exists('myName')) {
     }
 }
 
+if (! function_exists('authUser')) {
+    function authUser() {
+        return auth()->user();
+    }
+}
+
 if (! function_exists('operationPlans')) {
     function operationPlans() {
         $now = now()->format('Y-m-d');

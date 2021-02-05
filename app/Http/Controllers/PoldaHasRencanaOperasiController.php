@@ -28,7 +28,11 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function index()
     {
-        return view('phro.index');
+        if(authUser()->hasRole('access_daerah') || authUser()->hasRole('administrator')) {
+            return view('phro.index_polda');
+        } else {
+            return view('phro.index');
+        }
     }
 
     public function create()
