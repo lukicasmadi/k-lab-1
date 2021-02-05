@@ -30,20 +30,42 @@
         </div>
     </div>
 </div>
+
+<div class="modal bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myLargeModalLabel"><span id="status"></span></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 text-center">
+                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                </div>
+                <div id="dataPreview">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @push('library_css')
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/datatables.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/dt-global_style.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/sweetalerts/sweetalert.css') }}"/>
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/components/custom-sweetalert.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/custom.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/datatables.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/dt-global_style.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/animate/animate.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/components/custom-modal.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/custom.css') }}"/>
 @endpush
 
 @push('library_js')
 <script src="{{ secure_asset('template/plugins/table/datatable/datatables.js') }}"></script>
-<script src="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
 @endpush
 
 @push('page_js')
@@ -88,7 +110,7 @@ $(document).ready(function () {
                 render: function(data, type, row) {
                     return `
                     <div class="icon-container">
-                        <a href="`+route('previewPhro', data)+`"><i class="far fa-file-search"></i></a>
+                        <a href="`+route('previewPhro', data)+`" class="previewPhro" data-id="`+data+`"><i class="far fa-file-search"></i></a>
                     </div>
                     `;
                 },
@@ -101,7 +123,6 @@ $(document).ready(function () {
                     return `
                     <div class="icon-container">
                         <a href="`+route('phro_edit', data)+`"><i class="far fa-edit"></i></a>
-                        <a href="`+route('phro_destroy', data)+`" class="delete" data-id="`+data+`"><i class="far fa-trash-alt"></i></a>
                     </div>
                     `;
                 },
@@ -109,6 +130,23 @@ $(document).ready(function () {
                 sortable: false,
             }
         ]
+    })
+
+    $('#tbl_phro tbody').on('click', '.previewPhro', function(e) {
+        e.preventDefault()
+        var uuid = $(this).attr('data-id')
+        $("#dataPreview").hide()
+        $(".lds-ring").show()
+        $("#status").html("Memuat Data...")
+        $('.bd-example-modal-lg').modal('show')
+
+        axios.get(route('previewPhro', uuid)).then(function(response) {
+            $('#dataPreview').html(response.data)
+            $('#dataPreview').show()
+            $("input").attr('type', 'text').attr("readonly", "readonly");
+            $(".lds-ring").hide()
+            $("#status").html("Preview")
+        })
     })
 
     $('#tbl_phro tbody').on('click', '.delete', function(e) {

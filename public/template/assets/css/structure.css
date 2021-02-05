@@ -1244,7 +1244,6 @@ code {
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu a>div span {
         font-size: 16px;
-        font-weight: bold;
         color: #fafafa;
         vertical-align: text-bottom;
     }
@@ -1260,7 +1259,6 @@ code {
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu.active>a>div span {
         color: #25d5e4;
-        font-weight: bold;
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu:hover .submenu {
         visibility: visible;

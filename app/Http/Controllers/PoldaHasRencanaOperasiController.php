@@ -40,7 +40,7 @@ class PoldaHasRencanaOperasiController extends Controller
         $op = operationPlans();
 
         if(empty($op)) {
-            flash('There are currently no operations in progress')->error();
+            flash('Tidak ada operasi yang sedang berjalan')->error();
             return redirect()->route('phro_index');
         }
 
@@ -121,7 +121,8 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function preview($uuid)
     {
-        return PoldaSubmited::with('dailyInput')->whereUuid($uuid)->where("submited_date", date('Y-m-d'))->firstOrFail();
+        $data = PoldaSubmited::with('dailyInput')->whereUuid($uuid)->where("submited_date", date('Y-m-d'))->firstOrFail();
+        return view('phro.preview_load', compact('data'));
     }
 
     public function download($filePath)
