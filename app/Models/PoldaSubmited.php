@@ -13,11 +13,6 @@ class PoldaSubmited extends Model
 
     protected $guarded = ['id'];
 
-    public function getRouteKeyName()
-    {
-        return 'uuid';
-    }
-
     protected $casts = [
         'submited_date' => 'date:d-m-Y',
     ];
@@ -36,6 +31,6 @@ class PoldaSubmited extends Model
 
     public function dailyInput()
     {
-        return $this->hasMany(DailyInput::class);
+        return $this->hasOne(DailyInput::class);
     }
 }

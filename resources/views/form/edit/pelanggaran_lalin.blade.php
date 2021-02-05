@@ -27,7 +27,7 @@
         <div class="widget-content widget-content-area">
             <div class="form-group mb-4">
                 <label><span class="require">*</span>TILANG</label>
-                <input type="number" class="form-control @error('pelanggaran_lalu_lintas_tilang') is-invalid @enderror" name="pelanggaran_lalu_lintas_tilang" autocomplete="off" value="{{ old('pelanggaran_lalu_lintas_tilang') }}">
+                <input type="number" class="form-control @error('pelanggaran_lalu_lintas_tilang') is-invalid @enderror" name="pelanggaran_lalu_lintas_tilang" autocomplete="off" value="{{ $data->dailyInput->pelanggaran_lalu_lintas_tilang }}">
                 @error('pelanggaran_lalu_lintas_tilang')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -37,7 +37,7 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>TEGURAN</label>
-                <input type="number" class="form-control @error('pelanggaran_lalu_lintas_teguran') is-invalid @enderror" name="pelanggaran_lalu_lintas_teguran" autocomplete="off" value="{{ old('pelanggaran_lalu_lintas_teguran') }}">
+                <input type="number" class="form-control @error('pelanggaran_lalu_lintas_teguran') is-invalid @enderror" name="pelanggaran_lalu_lintas_teguran" autocomplete="off" value="{{ $data->dailyInput->pelanggaran_lalu_lintas_teguran }}">
                 @error('pelanggaran_lalu_lintas_teguran')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

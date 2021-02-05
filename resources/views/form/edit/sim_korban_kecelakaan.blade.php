@@ -12,7 +12,7 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>a. A</label>
-                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_a') is-invalid @enderror" name="sim_korban_kecelakaan_sim_a" autocomplete="off" value="{{ old('sim_korban_kecelakaan_sim_a') }}">
+                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_a') is-invalid @enderror" name="sim_korban_kecelakaan_sim_a" autocomplete="off" value="{{ $data->dailyInput->sim_korban_kecelakaan_sim_a }}">
                 @error('sim_korban_kecelakaan_sim_a')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -22,7 +22,7 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>b. A UMUM</label>
-                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_a_umum') is-invalid @enderror" name="sim_korban_kecelakaan_sim_a_umum" autocomplete="off" value="{{ old('sim_korban_kecelakaan_sim_a_umum') }}">
+                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_a_umum') is-invalid @enderror" name="sim_korban_kecelakaan_sim_a_umum" autocomplete="off" value="{{ $data->dailyInput->sim_korban_kecelakaan_sim_a_umum }}">
                 @error('sim_korban_kecelakaan_sim_a_umum')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -32,7 +32,7 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>c. B1</label>
-                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_b1') is-invalid @enderror" name="sim_korban_kecelakaan_sim_b1" autocomplete="off" value="{{ old('sim_korban_kecelakaan_sim_b1') }}">
+                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_b1') is-invalid @enderror" name="sim_korban_kecelakaan_sim_b1" autocomplete="off" value="{{ $data->dailyInput->sim_korban_kecelakaan_sim_b1 }}">
                 @error('sim_korban_kecelakaan_sim_b1')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -42,7 +42,7 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>d. B1 UMUM</label>
-                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_b1_umum') is-invalid @enderror" name="sim_korban_kecelakaan_sim_b1_umum" autocomplete="off" value="{{ old('sim_korban_kecelakaan_sim_b1_umum') }}">
+                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_b1_umum') is-invalid @enderror" name="sim_korban_kecelakaan_sim_b1_umum" autocomplete="off" value="{{ $data->dailyInput->sim_korban_kecelakaan_sim_b1_umum }}">
                 @error('sim_korban_kecelakaan_sim_b1_umum')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -52,7 +52,7 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>e. BII</label>
-                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_b2') is-invalid @enderror" name="sim_korban_kecelakaan_sim_b2" autocomplete="off" value="{{ old('sim_korban_kecelakaan_sim_b2') }}">
+                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_b2') is-invalid @enderror" name="sim_korban_kecelakaan_sim_b2" autocomplete="off" value="{{ $data->dailyInput->sim_korban_kecelakaan_sim_b2 }}">
                 @error('sim_korban_kecelakaan_sim_b2')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -62,7 +62,7 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>f. BII UMUM</label>
-                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_b2_umum') is-invalid @enderror" name="sim_korban_kecelakaan_sim_b2_umum" autocomplete="off" value="{{ old('sim_korban_kecelakaan_sim_b2_umum') }}">
+                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_b2_umum') is-invalid @enderror" name="sim_korban_kecelakaan_sim_b2_umum" autocomplete="off" value="{{ $data->dailyInput->sim_korban_kecelakaan_sim_b2_umum }}">
                 @error('sim_korban_kecelakaan_sim_b2_umum')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -72,7 +72,7 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>g. C</label>
-                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_c') is-invalid @enderror" name="sim_korban_kecelakaan_sim_c" autocomplete="off" value="{{ old('sim_korban_kecelakaan_sim_c') }}">
+                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_c') is-invalid @enderror" name="sim_korban_kecelakaan_sim_c" autocomplete="off" value="{{ $data->dailyInput->sim_korban_kecelakaan_sim_c }}">
                 @error('sim_korban_kecelakaan_sim_c')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -82,7 +82,7 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>h. D</label>
-                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_d') is-invalid @enderror" name="sim_korban_kecelakaan_sim_d" autocomplete="off" value="{{ old('sim_korban_kecelakaan_sim_d') }}">
+                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_d') is-invalid @enderror" name="sim_korban_kecelakaan_sim_d" autocomplete="off" value="{{ $data->dailyInput->sim_korban_kecelakaan_sim_d }}">
                 @error('sim_korban_kecelakaan_sim_d')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -92,7 +92,7 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>I. SIM INTERNASIONAL</label>
-                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_internasional') is-invalid @enderror" name="sim_korban_kecelakaan_sim_internasional" autocomplete="off" value="{{ old('sim_korban_kecelakaan_sim_internasional') }}">
+                <input type="number" class="form-control @error('sim_korban_kecelakaan_sim_internasional') is-invalid @enderror" name="sim_korban_kecelakaan_sim_internasional" autocomplete="off" value="{{ $data->dailyInput->sim_korban_kecelakaan_sim_internasional }}">
                 @error('sim_korban_kecelakaan_sim_internasional')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -102,7 +102,7 @@
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>j. TANPA SIM</label>
-                <input type="number" class="form-control @error('sim_korban_kecelakaan_tanpa_sim') is-invalid @enderror" name="sim_korban_kecelakaan_tanpa_sim" autocomplete="off" value="{{ old('sim_korban_kecelakaan_tanpa_sim') }}">
+                <input type="number" class="form-control @error('sim_korban_kecelakaan_tanpa_sim') is-invalid @enderror" name="sim_korban_kecelakaan_tanpa_sim" autocomplete="off" value="{{ $data->dailyInput->sim_korban_kecelakaan_tanpa_sim }}">
                 @error('sim_korban_kecelakaan_tanpa_sim')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

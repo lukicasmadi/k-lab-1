@@ -135,6 +135,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/get-polda-list/{id}', 'UserHasPoldaController@check_user_polda')->name('check_user_polda');
         Route::get('/phro', 'PoldaHasRencanaOperasiController@data')->name('phro_data');
         Route::get('/totalinputan', 'HomeController@totalinputan')->name('totalinputan');
+        Route::get('/phro/{uuid}/preview', 'PoldaHasRencanaOperasiController@preview')->name('phro_preview');
     });
 
     Route::get('/access/polda', 'UserHasPoldaController@polda_access_index')->name('polda_access_index');

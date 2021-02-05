@@ -49,7 +49,7 @@ class PoldaHasRencanaOperasiController extends Controller
         $todayInsert = PoldaSubmited::where("polda_id", $poldaId)->where("submited_date", date("Y-m-d"))->first();
 
         if(!empty($todayInsert)) {
-            flash('Polda sudah menginput data hari ini!')->error();
+            flash('Maaf, anda udah menginput laporan hari ini! Silahkan gunakan menu edit')->error();
             return redirect()->route('phro_index');
         }
 
@@ -69,12 +69,10 @@ class PoldaHasRencanaOperasiController extends Controller
                 'submited_date' => date("Y-m-d")
             ]);
 
-            $payload = $request->all();
-            unset($payload["_token"]);
-            unset($payload["submit"]);
+            $payload = $request->except(['_token', 'submit']);
             $payload["polda_submited_id"] = $poldaSubmit->id;
 
-            DailyInput::insert($payload);
+            DailyInput::create($payload);
 
             DB::commit();
             flash('Seluruh data berhasil dikirim ke pusat')->success();
@@ -88,12 +86,45 @@ class PoldaHasRencanaOperasiController extends Controller
         }
     }
 
-    public function download($filePath)
+    public function edit($uuid)
     {
-        //
+        $data = PoldaSubmited::with('dailyInput')->whereUuid($uuid)->where("submited_date", date('Y-m-d'))->firstOrFail();
+
+        return view('phro.edit', compact('data', 'uuid'));
+    }
+
+    public function update(PHRORequest $request, $uuid)
+    {
+        DB::beginTransaction();
+
+        try {
+
+            $payload = $request->except(['_token', 'submit', '_method']);
+
+            $poldaSubmited = PoldaSubmited::whereUuid($uuid)->firstOrFail();
+
+            DailyInput::where("polda_submited_id", $poldaSubmited->id)
+                ->where(DB::raw('DATE(created_at)'), $poldaSubmited->submited_date)
+                ->update($payload);
+
+            DB::commit();
+            flash('Seluruh data berhasil diupdate')->success();
+
+            return redirect()->route('phro_index');
+        } catch (\Exception $e) {
+            DB::rollback();
+            logger($e);
+            flash('Data gagal diupdate. Silahkan dicoba kembali atau hubungi admin jika masih gagal')->error();
+            return redirect()->back();
+        }
     }
 
     public function preview($uuid)
+    {
+        return PoldaSubmited::with('dailyInput')->whereUuid($uuid)->where("submited_date", date('Y-m-d'))->firstOrFail();
+    }
+
+    public function download($filePath)
     {
         //
     }

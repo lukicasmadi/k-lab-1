@@ -1,7 +1,7 @@
 @extends('layouts.template_admin')
 
 @section('content')
-<form method="POST" action="{{ route('phro_update') }}">
+<form method="POST" action="{{ route('phro_update', $uuid) }}">
     @csrf
     @method('PATCH')
     <div class="layout-px-spacing">
@@ -12,12 +12,14 @@
             @include('form.edit.pelanggaran_barang_bukti_yang_disita')
             @include('form.edit.kendaraan_terlibat_pelanggaran')
             @include('form.edit.profesi_pelaku_pelanggaran')
+
             @include('form.edit.usia_pelaku_pelanggaran')
             @include('form.edit.sim_pelaku_pelanggaran')
             @include('form.edit.lokasi_pelanggaran_lalin')
             @include('form.edit.kecelakaan_lalin')
             @include('form.edit.kecelakaan_barang_bukti_yang_disita')
             @include('form.edit.profesi_korban_kecelakaan')
+
             @include('form.edit.usia_korban_kecelakaan')
             @include('form.edit.sim_korban_kecelakaan')
             @include('form.edit.kendaraan_yang_terlibat_kecelakaan_lalin')
@@ -25,6 +27,7 @@
             @include('form.edit.profesi_pelaku_kecelakaan_lalin')
             @include('form.edit.usia_pelaku_kecelakaan_lalin')
             @include('form.edit.sim_pelaku_kecelakaan_lalin')
+
             @include('form.edit.lokasi_kecelakaan_lalin')
             @include('form.edit.faktor_penyebab_kecelakaan')
             @include('form.edit.waktu_kejadian_kecelakaan_lalin')
@@ -40,7 +43,7 @@
             @include('form.edit.data_terkait_dimas_lantas')
             @include('form.edit.data_terkait_giat_kepolisian')
 
-            @include('form.button')
+            @include('form.edit.button')
 
         </div>
     </div>

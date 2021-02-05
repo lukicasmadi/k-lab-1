@@ -51,7 +51,7 @@
                         <div id="userList">
                             <div class="col-xl-12 mx-auto">
                                 <blockquote class="blockquote">
-                                    <p class="d-inline">Use the arrows to open data in the right pane</p>
+                                    <p class="d-inline">Use the arrows to open data in the right panel</p>
                                     <small>Administrator</small>
                                 </blockquote>
                             </div>
