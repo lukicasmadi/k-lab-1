@@ -49,7 +49,7 @@ class PoldaHasRencanaOperasiController extends Controller
         $todayInsert = PoldaSubmited::where("polda_id", $poldaId)->where("submited_date", date("Y-m-d"))->first();
 
         if(!empty($todayInsert)) {
-            flash('Maaf, anda udah menginput laporan hari ini! Silahkan gunakan menu edit')->error();
+            flash('Maaf, anda sudah menginput laporan hari ini! Silahkan gunakan menu edit')->error();
             return redirect()->route('phro_index');
         }
 
