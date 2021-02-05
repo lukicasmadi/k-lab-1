@@ -33,4 +33,9 @@ class PoldaSubmited extends Model
     {
         return $this->belongsTo(Polda::class);
     }
+
+    public function dailyInput()
+    {
+        return $this->hasMany(DailyInput::class);
+    }
 }

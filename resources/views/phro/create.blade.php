@@ -31,7 +31,6 @@
             @include('form.kecelakaan_lalin_tunggal')
             @include('form.kecelakaan_lalin_tabrak_pejalan_kaki')
             @include('form.kecelakaan_lalin_tabrak_lari')
-
             @include('form.kecelakaan_lalin_tabrak_sepeda_motor')
             @include('form.kecelakaan_lalin_tabrak_roda_empat')
             @include('form.kecelakaan_lalin_tabrak_tidak_bermotor')
