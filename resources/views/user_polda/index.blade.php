@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div class="col-lg-6 col-12  layout-spacing roleData">
+        <div class="col-lg-6 col-12 roleData">
             <form action="{{ route('polda_access_store') }}" method="POST">
                 @csrf
                 <div class="statbox widget box box-shadow">
@@ -51,7 +51,7 @@
                         <div id="userList">
                             <div class="col-xl-12 mx-auto">
                                 <blockquote class="blockquote">
-                                    <p class="d-inline">Use the arrows to open data in the right panel</p>
+                                    <p class="d-inline">Pilih data polda untuk memberikan akses ke user</p>
                                     <small>Administrator</small>
                                 </blockquote>
                             </div>
@@ -94,6 +94,7 @@ $(document).ready(function() {
     var table = $('#tbl_user_polda').DataTable({
         processing: true,
         serverSide: true,
+        pageLength : 5,
         ajax: route('uhp_data'),
         "oLanguage": {
             "oPaginate": {

@@ -18,10 +18,11 @@ class CreatePoldasTable extends Migration
             $table->uuid('uuid');
             $table->string('name');
             $table->string('logo')->nullable();
-            $table->string('jurisdiction');
+            $table->string('jurisdiction')->nullable();
             $table->string('headquarters')->nullable();
             $table->string('type')->nullable();
             $table->string('official_site')->nullable();
+
             $table->unsignedBigInteger('created_by');
             $table->foreign('created_by')->references('id')->on('users');
             $table->unsignedBigInteger('updated_by')->nullable();

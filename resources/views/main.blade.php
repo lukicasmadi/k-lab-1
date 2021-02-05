@@ -9,12 +9,10 @@
             @include('flash::message')
             <div class="widget widget-chart-one">
                 <div class="widget-heading">
-                    <h5 class="">Laporan Kegiatan Harian <span id="projectName"></span></h5>
-                    {{-- <ul class="tabs tab-pills">
-                        <li><a href="#" id="filter_daily" class="tabmenu">Daily</a></li>
-                        <li><a href="#" id="filter_weekly" class="tabmenu">Weekly</a></li>
-                        <li><a href="#" id="filter_weekly" class="tabmenu">Monthly</a></li>
-                    </ul> --}}
+                    <h5 class="">Data Statistik <span id="projectName"></span></h5>
+                    <ul class="tabs tab-pills">
+                        <li><a href="#" id="filterOperasi" class="tabmenu">Filter Operasi <i class="far fa-filter" style="font-size: 12px;"></i></a></li>
+                    </ul>
                 </div>
 
                 <div class="widget-content">
@@ -223,11 +221,9 @@ $(document).ready(function () {
 
     chartRequest.render()
 
-    callDataFromServer()
-
-    // setInterval(function() {
-    //     callDataFromServer()
-    // }, 2000)
+    setInterval(function() {
+        callDataFromServer()
+    }, 2000)
 
     var table = $('#tbl_daily_submited').DataTable({
         processing: true,
@@ -263,7 +259,7 @@ $(document).ready(function () {
                     if(data == "BELUM MENGIRIMKAN LAPORAN") {
                         return `<p class="red">`+data+`</p>`
                     } else {
-                        return `<p class="teal">`+data+`</p>`
+                        return `<p>`+data+`</p>`
                     }
                 },
             },
@@ -299,6 +295,11 @@ $(document).ready(function () {
             }
         ]
     })
+
+    $("#filterOperasi").click(function (e) {
+        e.preventDefault();
+        alert("filter")
+    });
 
     function callDataFromServer() {
         axios.get(route('dashboardChart')).then(function(response) {

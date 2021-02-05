@@ -12,7 +12,7 @@ class UserHasPoldaController extends Controller
 {
     public function data()
     {
-        $model = Polda::query();
+        $model = Polda::orderBy("name", "asc");
         return datatables()->eloquent($model)->toJson();
     }
 

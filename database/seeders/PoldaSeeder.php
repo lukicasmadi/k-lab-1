@@ -17,56 +17,349 @@ class PoldaSeeder extends Seeder
     public function run()
     {
         Polda::withoutEvents(function () {
-            return Polda::factory(34)->create();
-            // Polda::create([
-            //     'uuid' => genUuid(),
-            //     'name' => 'Kepolisian Daerah Aceh',
-            //     'jurisdiction' => 'Aceh',
-            //     'headquarters' => 'Banda Aceh',
-            //     'type' => 'A',
-            //     'official_site' => 'https://aceh.polri.go.id/',
-            //     'created_by' => User::first()->id,
-            // ]);
 
-            // Polda::create([
-            //     'uuid' => genUuid(),
-            //     'name' => 'Kepolisian Daerah Jambi',
-            //     'jurisdiction' => 'Jambi',
-            //     'headquarters' => 'Jambi',
-            //     'type' => 'A',
-            //     'official_site' => 'http://jambi.polri.go.id/',
-            //     'created_by' => User::first()->id,
-            // ]);
+            $firstID = User::first()->id;
 
-            // Polda::create([
-            //     'uuid' => genUuid(),
-            //     'name' => 'Kepolisian Daerah Istimewa Yogyakarta',
-            //     'jurisdiction' => 'DI Yogyakarta',
-            //     'headquarters' => 'Sleman',
-            //     'type' => 'A',
-            //     'official_site' => 'https://jogja.polri.go.id/',
-            //     'created_by' => User::first()->id,
-            // ]);
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Aceh',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
 
-            // Polda::create([
-            //     'uuid' => genUuid(),
-            //     'name' => 'Kepolisian Daerah Jawa Barat',
-            //     'jurisdiction' => 'Jawa Barat (tanpa Depok, dan Bekasi)',
-            //     'headquarters' => 'Bandung',
-            //     'type' => 'A',
-            //     'official_site' => 'http://jabar.polri.go.id/',
-            //     'created_by' => User::first()->id,
-            // ]);
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Sumatera Utara',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
 
-            // Polda::create([
-            //     'uuid' => genUuid(),
-            //     'name' => 'Kepolisian Daerah Metropolitan Jakarta Raya',
-            //     'jurisdiction' => 'DKI Jakarta',
-            //     'headquarters' => 'Jakarta Selatan',
-            //     'type' => 'A-K (A+)',
-            //     'official_site' => 'http://tribratametro.com/',
-            //     'created_by' => User::first()->id,
-            // ]);
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Sumatera Barat',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Riau',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Kepulauan Riau',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Jambi',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Bengkulu',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Sumatera Selatan',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Kepulauan Bangka Belitung',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Lampung',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Metropolitan Jakarta Raya',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Banten',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Jawa Barat',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Jawa Tengah',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Daerah Istimewa Yogyakarta',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Jawa Timur',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Kalimantan Barat',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Kalimantan Tengah',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Kalimantan Selatan',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Kalimantan Timur',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Kalimantan Utara',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Sulawesi Utara',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Gorontalo',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Sulawesi Tengah',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Sulawesi Barat',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Sulawesi Selatan',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Sulawesi Tenggara',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Bali',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Nusa Tenggara Barat',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Nusa Tenggara Timur',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Maluku Utara',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Maluku',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Papua Barat',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
+            Polda::create([
+                'uuid' => genUuid(),
+                'name' => 'Polda Papua',
+                'jurisdiction' => null,
+                'headquarters' => null,
+                'type' => null,
+                'official_site' => null,
+                'created_by' => $firstID,
+            ]);
+
         });
     }
 }

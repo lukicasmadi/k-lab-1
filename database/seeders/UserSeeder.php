@@ -43,24 +43,16 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'User Polda AAA',
-            'email' => 'polda_aaa@gmail.com',
+            'name' => 'Brian - Polda Jabar',
+            'email' => 'polda_jabar@gmail.com',
             'email_verified_at' => now(),
             'password' => bcrypt('admin'),
             'remember_token' => Str::random(10),
         ]);
 
         User::create([
-            'name' => 'User Polda BBB',
-            'email' => 'polda_bbb@gmail.com',
-            'email_verified_at' => now(),
-            'password' => bcrypt('admin'),
-            'remember_token' => Str::random(10),
-        ]);
-
-        User::create([
-            'name' => 'User Polda CCC',
-            'email' => 'polda_ccc@gmail.com',
+            'name' => 'Gede - Polda Bali',
+            'email' => 'polda_bali@gmail.com',
             'email_verified_at' => now(),
             'password' => bcrypt('admin'),
             'remember_token' => Str::random(10),
@@ -113,13 +105,10 @@ class UserSeeder extends Seeder
         $access_pusat = User::whereEmail("korlantas_pusat@gmail.com")->first();
         $access_pusat->assignRole('access_pusat');
 
-        $access_daerah = User::whereEmail("polda_aaa@gmail.com")->first();
+        $access_daerah = User::whereEmail("polda_jabar@gmail.com")->first();
         $access_daerah->assignRole('access_daerah');
 
-        $access_daerah = User::whereEmail("polda_bbb@gmail.com")->first();
-        $access_daerah->assignRole('access_daerah');
-
-        $access_daerah = User::whereEmail("polda_ccc@gmail.com")->first();
+        $access_daerah = User::whereEmail("polda_bali@gmail.com")->first();
         $access_daerah->assignRole('access_daerah');
     }
 }
