@@ -65,7 +65,7 @@ class PoldaHasRencanaOperasiController extends Controller
             $poldaSubmit = PoldaSubmited::create([
                 'uuid' => genUuid(),
                 'polda_id' => poldaId(),
-                'status' => "SUDAH MENGIRIM LAPORAN",
+                'status' => "SUDAH MENGIRIMKAN LAPORAN",
                 'submited_date' => date("Y-m-d")
             ]);
 
@@ -125,7 +125,7 @@ class PoldaHasRencanaOperasiController extends Controller
         return view('phro.preview_load', compact('data'));
     }
 
-    public function download($filePath)
+    public function download($uuid)
     {
         //
     }

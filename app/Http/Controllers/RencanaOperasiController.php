@@ -12,6 +12,10 @@ use App\Http\Requests\RencanaOperasiRequest;
 
 class RencanaOperasiController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can-create-plan')->only('create', 'store', 'edit', 'update');
+    }
 
     public function data()
     {

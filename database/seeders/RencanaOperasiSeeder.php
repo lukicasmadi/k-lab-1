@@ -28,7 +28,7 @@ class RencanaOperasiSeeder extends Seeder
                 'slug_name' => Str::slug($pl, '-'),
                 'desc' => "Operasi untuk menindak pengguna roda 2 di jalan raya yang tidak membawa kelengkapan SIM dan STNK",
                 'start_date' => now(),
-                'end_date' => $now->addDays(14),
+                'end_date' => $now->addDays(13),
                 'created_by' => User::whereEmail('korlantas_pusat@gmail.com')->first()->id,
                 'updated_by' => User::whereEmail('korlantas_pusat@gmail.com')->first()->id,
             ]);

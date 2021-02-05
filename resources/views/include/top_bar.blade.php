@@ -129,7 +129,7 @@
                             <a href="{{ route('category_index') }}"> Master Kategori Artikel </a>
                         </li>
                         <li class="{{ request()->is('article/*') || request()->is('article') ? 'active' : '' }}">
-                            <a href="{{ route('article_index') }}"> Artikel </a>
+                            <a href="{{ route('article_index') }}"> Master Artikel </a>
                         </li>
                         <li class="{{ request()->is('polda/*') || request()->is('polda') ? 'active' : '' }}">
                             <a href="{{ route('polda_index') }}"> Master Polda </a>

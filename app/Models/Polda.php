@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\PoldaSubmited;
 use App\Models\PoldaHasRencanaOperasi;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
@@ -26,5 +27,10 @@ class Polda extends Model
     public function operation()
     {
         return $this->belongsTo(RencanaOperasi::class);
+    }
+
+    public function dailyInput()
+    {
+        return $this->hasOne(PoldaSubmited::class);
     }
 }

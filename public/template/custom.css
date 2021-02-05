@@ -329,3 +329,11 @@ blockquote.blockquote {
 hr.dashed {
     border-top: 2px dashed #999;
 }
+
+.red {
+    color: #dc3545;
+}
+
+.teal {
+    color: #28a745;
+}
