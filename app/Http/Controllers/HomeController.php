@@ -11,6 +11,14 @@ use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
+    public function notifikasi()
+    {
+        $model = PoldaSubmited::with(['polda' => function($query) {
+            $query->select('id', 'name', 'uuid', 'logo');
+        }])->where("submited_date", date("Y-m-d"))->get();
+
+        return $model;
+    }
 
     public function donut()
     {

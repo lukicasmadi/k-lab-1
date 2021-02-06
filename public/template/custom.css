@@ -346,3 +346,8 @@ hr.dashed {
     color: #0989bd;
     border-radius: 4px;
 }
+
+.centered {
+    font-size: 16px;
+    text-align: center;
+}
