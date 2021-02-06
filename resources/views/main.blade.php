@@ -210,7 +210,7 @@
 $(document).ready(function () {
 
     projectDaily()
-    donutChart()
+    donutData()
     loadDataTable()
 
     setInterval(function() {
@@ -224,6 +224,62 @@ $(document).ready(function () {
 
     const ps = new PerfectScrollbar(document.querySelector('.mt-container'));
 })
+
+function donutData() {
+    axios.get(route('donut')).then(function(response) {
+        var filled = response.data.filled
+        var nofilled = response.data.nofilled
+
+        var donutChart = {
+        chart: {
+            height: 350,
+            type: 'donut',
+            toolbar: {
+                show: false,
+            }
+        },
+        dataLabels: {
+            enabled: true,
+            formatter: function (val) {
+                return val + "%"
+            },
+        },
+        tooltip: {
+            y: {
+                formatter: function(value) {
+                    return value + " %";
+                }
+            }
+        },
+        colors:['#136487', '#bc1d26'],
+        stroke: {
+            colors: '#0e1726'
+        },
+        series: [filled, nofilled],
+        labels: ['SUDAH MASUK', 'BELUM MASUK'],
+        responsive: [{
+            breakpoint: 480,
+            options: {
+                chart: {
+                    width: 200
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }]
+    }
+
+    var donut = new ApexCharts(
+        document.querySelector("#donut-chart"),
+        donutChart
+    )
+
+    donut.render()
+    }).catch(function(error) {
+
+    })
+}
 
 function loadDataTable() {
     var table = $('#tbl_daily_submited').DataTable({
@@ -456,85 +512,55 @@ function projectDaily() {
     chartRequest.render()
 
     axios.get(route('dashboardChart')).then(function(response) {
-            var rangeDate = response.data.rangeDate
-            var totalPerDate = response.data.totalPerDate
-            var projectName = response.data.projectName
+        var rangeDate = response.data.rangeDate
+        var totalPerDate = response.data.totalPerDate
+        var projectName = response.data.projectName
 
-            $("#projectName").html("[ "+projectName+" ]")
+        $("#projectName").html("[ "+projectName+" ]")
 
-            chartRequest.updateSeries([{
-                name: 'Total',
-                data: totalPerDate
-            }])
+        chartRequest.updateSeries([{
+            name: 'Total',
+            data: totalPerDate
+        }])
 
-            chartRequest.updateOptions({
-                xaxis: {
-                    axisBorder: {
-                        show: false
-                    },
-                    axisTicks: {
-                        show: false
-                    },
-                    crosshairs: {
-                        show: true
-                    },
-                    labels: {
-                        offsetX: 0,
-                        offsetY: 5,
-                        style: {
-                            fontSize: '12px',
-                            fontFamily: 'Quicksand, sans-serif',
-                            cssClass: 'apexcharts-xaxis-title',
-                        },
-                    },
-                    categories: rangeDate
+        chartRequest.updateOptions({
+            xaxis: {
+                axisBorder: {
+                    show: false
                 },
-            })
-        }).catch(function(error) {
-            if (error.response) {
-                console.log(error.response.data)
-                console.log(error.response.status)
-                console.log(error.response.headers)
-            } else if (error.request) {
-                console.log(error.request)
-            } else {
-                console.log('Error', error.message)
-            }
+                axisTicks: {
+                    show: false
+                },
+                crosshairs: {
+                    show: true
+                },
+                labels: {
+                    offsetX: 0,
+                    offsetY: 5,
+                    style: {
+                        fontSize: '12px',
+                        fontFamily: 'Quicksand, sans-serif',
+                        cssClass: 'apexcharts-xaxis-title',
+                    },
+                },
+                categories: rangeDate
+            },
         })
+    }).catch(function(error) {
+        if (error.response) {
+            console.log(error.response.data)
+            console.log(error.response.status)
+            console.log(error.response.headers)
+        } else if (error.request) {
+            console.log(error.request)
+        } else {
+            console.log('Error', error.message)
+        }
+    })
 }
 
 function donutChart() {
-    var donutChart = {
-        chart: {
-            height: 350,
-            type: 'donut',
-            toolbar: {
-            show: false,
-            }
-        },
-        stroke: {
-        colors: '#0e1726'
-        },
-        series: [10, 90],
-        responsive: [{
-            breakpoint: 480,
-            options: {
-                chart: {
-                    width: 200
-                },
-                legend: {
-                    position: 'bottom'
-                }
-            }
-        }]
-    }
 
-    var donut = new ApexCharts(
-        document.querySelector("#donut-chart"),
-        donutChart
-    )
-
-    donut.render()
 }
 </script>
 @endpush

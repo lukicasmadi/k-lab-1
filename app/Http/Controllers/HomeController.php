@@ -12,6 +12,26 @@ use Illuminate\Support\Facades\Storage;
 class HomeController extends Controller
 {
 
+    public function donut()
+    {
+        $model = PoldaSubmited::where("submited_date", date("Y-m-d"))->count();
+
+        if(empty($model)) {
+            $data = [
+                "filled" => 0,
+                "nofilled" => 100
+            ];
+        } else {
+            $percentage = round((100 * $model) / 34);
+            $data = [
+                "filled" => $percentage,
+                "nofilled" => 100 - $percentage
+            ];
+        }
+
+        return $data;
+    }
+
     public function dailycheck()
     {
         $model = Polda::with('dailyInput')->orderBy("name", "asc");

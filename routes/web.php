@@ -137,6 +137,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/totalinputan', 'HomeController@dashboardChart')->name('dashboardChart');
         Route::get('/phro/{uuid}/preview', 'PoldaHasRencanaOperasiController@preview')->name('phro_preview');
         Route::get('/phro/dailycheck', 'HomeController@dailycheck')->name('dailycheck');
+        Route::get('/dashboard/donut', 'HomeController@donut')->name('donut');
     });
 
     Route::get('/access/polda', 'UserHasPoldaController@polda_access_index')->name('polda_access_index');
