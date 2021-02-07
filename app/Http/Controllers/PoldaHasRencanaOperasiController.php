@@ -10,7 +10,9 @@ use Illuminate\Http\Request;
 use App\Models\PoldaSubmited;
 use App\Http\Requests\PHRORequest;
 use Illuminate\Support\Facades\DB;
+use App\Exports\PoldaSubmitedExport;
 use Illuminate\Support\Facades\File;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
 
 class PoldaHasRencanaOperasiController extends Controller
@@ -134,6 +136,6 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function download($uuid)
     {
-        //
+        return Excel::download(new PoldaSubmitedExport, 'polda_submited.xlsx');
     }
 }
