@@ -15,6 +15,7 @@ Route::post('/forgot-password/process', 'UserController@forgot_password_process'
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index')->name('dashboard');
+    Route::get('/preview/{uuid}/report', 'HomeController@previewReport')->name('previewReport');
     Route::get('/forgot-password/request', 'UserController@forgot_password_request')->name('forgot_password_request');
 
     Route::get('/category', 'CategoryController@index')->name('category_index');

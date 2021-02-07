@@ -44,9 +44,7 @@
                 <div class="col-md-12 text-center">
                     <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
                 </div>
-                <div id="dataPreview">
-
-                </div>
+                <div id="dataPreview"></div>
             </div>
             <div class="modal-footer">
                 <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Close</button>

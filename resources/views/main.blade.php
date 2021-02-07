@@ -75,6 +75,28 @@
 
     </div>
 </div>
+
+<div class="modal bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myLargeModalLabel"><span id="status"></span></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 text-center">
+                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                </div>
+                <div id="dataPreview"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @push('library_js')
@@ -144,39 +166,62 @@ $(document).ready(function () {
         alert("filter")
     })
 
-    const ps = new PerfectScrollbar(document.querySelector('.mt-container'));
+    const ps = new PerfectScrollbar(document.querySelector('.mt-container'))
+
+    $('#tbl_daily_submited tbody').on('click', '.previewPhro', function(e) {
+        e.preventDefault()
+        var uuid = $(this).attr('data-id')
+        $("#dataPreview").hide()
+        $(".lds-ring").show()
+        $("#status").html("Memuat Data...")
+        $('.bd-example-modal-lg').modal('show')
+
+        axios.get(route('previewPhro', uuid)).then(function(response) {
+            $('#dataPreview').html(response.data)
+            $('#dataPreview').show()
+            $("input").attr('type', 'text').attr("readonly", "readonly");
+            $(".lds-ring").hide()
+            $("#status").html("Preview")
+        })
+    })
 })
 
 function notificationLoad() {
     axios.get(route('notifikasi'))
     .then(res => {
-        $.each(res.data, function(key, value) {
-            var status = value.status
-            var created_at = value.created_at
-            var polda_name = value.polda.name
-
-            var html = `
-            <div class="item-timeline timeline-new">
-                <div class="t-dot">
-                    <div class="t-success">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    </div>
-                </div>
-                <div class="t-content">
-                    <div class="t-uppercontent">
-                        <h5>`+polda_name+`</h5>
-                        <span class="">`+moment(created_at).fromNow()+`</span>
-                    </div>
-                    <p>STATUS : `+status+`</p>
-                </div>
-            </div>
-            `;
-
-            $(".timeline-line").append(html)
-
+        if(_.isEmpty(res.data)) {
+            $(".timeline-line").append("<p class='centered'>Belum ada polda yang mengirim data hari ini</p>")
             $("#loadingPanel").addClass("invisible")
             $("#dataPanel").removeClass("invisible")
-        })
+        } else {
+            $.each(res.data, function(key, value) {
+                var status = value.status
+                var created_at = value.created_at
+                var polda_name = value.polda.name
+
+                var html = `
+                <div class="item-timeline timeline-new">
+                    <div class="t-dot">
+                        <div class="t-success">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="t-content">
+                        <div class="t-uppercontent">
+                            <h5>`+polda_name+`</h5>
+                            <span class="">`+moment(created_at).fromNow()+`</span>
+                        </div>
+                        <p>STATUS : `+status+`</p>
+                    </div>
+                </div>
+                `;
+
+                $(".timeline-line").append(html)
+
+                $("#loadingPanel").addClass("invisible")
+                $("#dataPanel").removeClass("invisible")
+            })
+        }
     })
     .catch(err => {
         console.error(err);
@@ -286,7 +331,7 @@ function loadDataTable() {
                     } else {
                         return `
                         <div class="icon-container">
-                            <a href="`+route('previewPhro', data)+`"><i class="far fa-eye"></i></a>
+                            <a href="`+route('previewPhro', data)+`" class="previewPhro" data-id="`+data+`"><i class="far fa-eye"></i></a>
                         </div>
                         `;
                     }

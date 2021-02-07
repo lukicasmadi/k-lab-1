@@ -121,7 +121,7 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function preview($uuid)
     {
-        $data = PoldaSubmited::with('dailyInput')->whereUuid($uuid)->where("submited_date", date('Y-m-d'))->firstOrFail();
+        $data = PoldaSubmited::with('dailyInput')->whereUuid($uuid)->firstOrFail();
         return view('phro.preview_load', compact('data'));
     }
 

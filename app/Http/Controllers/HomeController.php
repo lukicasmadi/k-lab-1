@@ -44,12 +44,20 @@ class HomeController extends Controller
     {
         $model = Polda::with('dailyInput')->orderBy("name", "asc");
 
+        // $model = Polda::whereHas('dailyInput', function($q){
+        //     $q->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
+        // })->orderBy("name", "asc");
+
         return datatables()->eloquent($model)
         ->addColumn('has_submited', function (Polda $polda) {
             if(empty($polda->dailyInput)) {
                 return "BELUM MENGIRIMKAN LAPORAN";
             } else {
-                return "SUDAH MENGIRIMKAN LAPORAN";
+                if($polda->dailyInput->submited_date->format('Y-m-d') != date("Y-m-d")) {
+                    return "BELUM MENGIRIMKAN LAPORAN";
+                } else {
+                    return "SUDAH MENGIRIMKAN LAPORAN";
+                }
             }
         })->toJson();
     }
@@ -90,5 +98,10 @@ class HomeController extends Controller
             return view('empty_project');
         }
         return view('main');
+    }
+
+    public function previewReport($uuid)
+    {
+        //
     }
 }
