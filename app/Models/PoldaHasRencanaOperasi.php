@@ -5,12 +5,12 @@ namespace App\Models;
 use App\Models\Polda;
 use App\Models\RencanaOperasi;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Activitylog\Traits\LogsActivity;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class PoldaHasRencanaOperasi extends Model
 {
-    use HasFactory, LogsActivity;
+    use HasFactory;
 
     protected $guarded = ['id'];
 

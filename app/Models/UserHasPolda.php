@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class UserHasPolda extends Model
 {
-    use HasFactory, LogsActivity;
+    use HasFactory;
 
     protected $guarded = ['id'];
 

@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class SlideBanner extends Model
 {
-    use HasFactory, LogsActivity;
+    use HasFactory;
 }

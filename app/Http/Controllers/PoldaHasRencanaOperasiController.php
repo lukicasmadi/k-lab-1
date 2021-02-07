@@ -125,6 +125,13 @@ class PoldaHasRencanaOperasiController extends Controller
         return view('phro.preview_load', compact('data'));
     }
 
+    public function previewPhroDashboard($uuid)
+    {
+        $polda = Polda::whereUuid($uuid)->firstOrFail();
+        $data = PoldaSubmited::with('dailyInput')->where("polda_id", $polda->id)->firstOrFail();
+        return view('phro.preview_load', compact('data'));
+    }
+
     public function download($uuid)
     {
         //

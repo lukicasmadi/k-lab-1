@@ -110,7 +110,9 @@
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/dt-global_style.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/apex/apexcharts.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/dashboard/dash_2.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/custom.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/animate/animate.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/components/custom-modal.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/custom.css') }}"/>
 @endpush
 
 @push('page_css')
@@ -176,7 +178,7 @@ $(document).ready(function () {
         $("#status").html("Memuat Data...")
         $('.bd-example-modal-lg').modal('show')
 
-        axios.get(route('previewPhro', uuid)).then(function(response) {
+        axios.get(route('previewPhroDashboard', uuid)).then(function(response) {
             $('#dataPreview').html(response.data)
             $('#dataPreview').show()
             $("input").attr('type', 'text').attr("readonly", "readonly");
@@ -331,7 +333,7 @@ function loadDataTable() {
                     } else {
                         return `
                         <div class="icon-container">
-                            <a href="`+route('previewPhro', data)+`" class="previewPhro" data-id="`+data+`"><i class="far fa-eye"></i></a>
+                            <a href="`+route('previewPhroDashboard', data)+`" class="previewPhro" data-id="`+data+`"><i class="far fa-eye"></i></a>
                         </div>
                         `;
                     }

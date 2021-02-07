@@ -4,12 +4,12 @@ namespace App\Models;
 
 use App\Models\PoldaSubmited;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Activitylog\Traits\LogsActivity;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class DailyInput extends Model
 {
-    use HasFactory, LogsActivity;
+    use HasFactory;
 
     protected $guarded = ['id'];
 
