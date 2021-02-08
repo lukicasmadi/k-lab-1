@@ -136,6 +136,6 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function download($uuid)
     {
-        return Excel::download(new PoldaSubmitedExport, 'polda_submited.xlsx');
+        return Excel::download(new PoldaSubmitedExport($uuid), 'polda_submited.xlsx');
     }
 }
