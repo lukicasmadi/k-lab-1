@@ -9,9 +9,9 @@
     padding: 0;
     border-radius: 6px;
     border: none;
-    -webkit-box-shadow: 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12), 0 3px 5px -1px rgba(0,0,0,.2);
+    /* -webkit-box-shadow: 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12), 0 3px 5px -1px rgba(0,0,0,.2);
     -moz-box-shadow: 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12), 0 3px 5px -1px rgba(0,0,0,.2);
-    box-shadow: 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12), 0 3px 5px -1px rgba(0,0,0,.2);
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12), 0 3px 5px -1px rgba(0,0,0,.2); */
 }
 
 .apexcharts-xaxis text {
@@ -151,11 +151,12 @@
     margin-bottom: 0;
     padding-bottom: 20px;
 }
-.widget.widget-chart-three .widget-heading h5 {
+.widget-heading h5 {
     font-size: 17px;
     display: block;
     color: #e0e6ed;
     margin-bottom: 0;
+    text-transform: uppercase;
 }
 .widget.widget-chart-three .widget-heading .dropdown {
     align-self: center;
@@ -190,23 +191,28 @@
 
 .widget.widget-activity-three {
     position: relative;
-    background: #0e1726;
-    border-radius: 8px;
+    /* background: #0e1726;
+    background: transparent; */
+    border-radius: 0px;
     height: 100%;
+}
+.widget.widget-activity-three.bgblue {
+    background: rgba(0, 173, 239, 0.1);
 }
 .widget.widget-activity-three .widget-heading {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px dashed #3b3f5c;
+    /* border-bottom: 1px dashed #3b3f5c; */
     padding: 20px 20px;
     padding-bottom: 20px;
 }
 .widget.widget-activity-three .widget-heading h5 {
     font-size: 17px;
     display: block;
-    color: #e0e6ed;
-    font-weight: 600;
+    color: #fff;
+    /* font-weight: 600; */
     margin-bottom: 0;
+    text-transform: uppercase;
 }
 .widget-activity-three .widget-content {
     padding: 20px 10px 20px 20px
