@@ -3,14 +3,152 @@
 @section('content')
 <div class="layout-px-spacing">
     <div class="row layout-top-spacing">
-
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="grid-polda line glowred">
+                <p>aceh</p>
+                <img src="{{ secure_asset('/img/polda/aceh.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>sumut</p>
+                <img src="{{ secure_asset('/img/polda/sumut.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>sumbar</p>
+                <img src="{{ secure_asset('/img/polda/sumbar.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>riau</p>
+                <img src="{{ secure_asset('/img/polda/riau.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>kepri</p>
+                <img src="{{ secure_asset('/img/polda/kepri.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>jambi</p>
+                <img src="{{ secure_asset('/img/polda/jambi.png') }}">
+            </div>
+            <div class="grid-polda line glowred">
+                <p>babel</p>
+                <img src="{{ secure_asset('/img/polda/babel.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>bengkulu</p>
+                <img src="{{ secure_asset('/img/polda/bengkulu.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>sumsel</p>
+                <img src="{{ secure_asset('/img/polda/sumsel.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>lampung</p>
+                <img src="{{ secure_asset('/img/polda/lampung.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>banten</p>
+                <img src="{{ secure_asset('/img/polda/banten.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>metro jaya</p>
+                <img src="{{ secure_asset('/img/polda/metro_jaya.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>jabar</p>
+                <img src="{{ secure_asset('/img/polda/jabar.png') }}">
+            </div>
+            <div class="grid-polda line glowred">
+                <p>jateng</p>
+                <img src="{{ secure_asset('/img/polda/jateng.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>diy</p>
+                <img src="{{ secure_asset('/img/polda/diy.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>jatim</p>
+                <img src="{{ secure_asset('/img/polda/jatim.png') }}">
+            </div>
+            <div class="grid-polda glowblue">
+                <p>bali</p>
+                <img src="{{ secure_asset('/img/polda/bali.png') }}">
+            </div>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+            <div class="grid-polda line glowblue">
+                <p>kaltim</p>
+                <img src="{{ secure_asset('/img/polda/kaltim.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>kalsel</p>
+                <img src="{{ secure_asset('/img/polda/kalsel.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>kalteng</p>
+                <img src="{{ secure_asset('/img/polda/kalteng.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>kalbar</p>
+                <img src="{{ secure_asset('/img/polda/kalbar.png') }}">
+            </div>
+            <div class="grid-polda line glowred">
+                <p>kaltara</p>
+                <img src="{{ secure_asset('/img/polda/kaltara.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>ntb</p>
+                <img src="{{ secure_asset('/img/polda/ntb.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>ntt</p>
+                <img src="{{ secure_asset('/img/polda/ntt.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>sulsel</p>
+                <img src="{{ secure_asset('/img/polda/sulsel.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>sulteng</p>
+                <img src="{{ secure_asset('/img/polda/sulteng.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>sultra</p>
+                <img src="{{ secure_asset('/img/polda/sultra.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>sulbar</p>
+                <img src="{{ secure_asset('/img/polda/sulbar.png') }}">
+            </div>
+            <div class="grid-polda line glowred">
+                <p>sulut</p>
+                <img src="{{ secure_asset('/img/polda/sulut.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>gorontalo</p>
+                <img src="{{ secure_asset('/img/polda/gorontalo.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>maluku</p>
+                <img src="{{ secure_asset('/img/polda/maluku.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>malut</p>
+                <img src="{{ secure_asset('/img/polda/malut.png') }}">
+            </div>
+            <div class="grid-polda line glowblue">
+                <p>papua</p>
+                <img src="{{ secure_asset('/img/polda/papua.png') }}">
+            </div>
+            <div class="grid-polda glowred">
+                <p>pabar</p>
+                <img src="{{ secure_asset('/img/polda/pabar.png') }}">
+            </div>
+        </div>
+        
         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-            <div class="widget widget-activity-three">
-
+            <div class="">
                 <div class="widget-heading">
                     <h5 class="">Total Laporan</h5>
                 </div>
-
                 <div class="widget-content">
                     <div class="mx-auto">
                         <div id="donut-chart" class=""></div>
@@ -20,19 +158,16 @@
         </div>
 
         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-            <div class="widget widget-activity-three">
-
+            <div class="widget widget-activity-three bgblue">
                 <div class="widget-heading">
                     <h5 class="">Notifikasi</h5>
                 </div>
-
                 <div class="widget-content">
                     <div id="loadingPanel" class="centered">Loading Data</div>
                     <div id="dataPanel" class="mt-container mx-auto invisible">
                         <div class="timeline-line"></div>
                     </div>
                 </div>
-
             </div>
         </div>
 

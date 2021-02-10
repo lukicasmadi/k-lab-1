@@ -190,6 +190,19 @@ blockquote.media-object .media .usr-img img {
     width: 55px;
 }
 
+#footer-login {
+    position:absolute;
+    bottom:0;
+    font-size:11px;
+    color:#fff;
+    text-transform:uppercase;
+    text-align:center;
+    padding-top:11px;
+    width:100%;
+    height:38px;
+    background:#113e51;
+  }
+
 
 /* Icon List */
 
@@ -312,10 +325,11 @@ label {
     font-size: 15px;
     padding: 8px 10px;
     letter-spacing: 1px;
-    height: calc(1.4em + 1.4rem + 2px);
+    height: calc(1.1em + 1.1rem + 2px);
     padding: .75rem 1.25rem;
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 173, 239, 0.1);
     outline: none;
+    box-shadow: 0 0 8px 0 rgba(81, 203, 238, 0.1), 0 0 20px 0 rgba(81, 203, 238, 0.09);
     /* border-radius: 6px; */
     /* background: #1b2e4b; */
 }
@@ -581,8 +595,8 @@ select.form-control.form-custom {
 
 .invalid-feedback {
     color: #e7515a;
-    font-size: 13px;
-    letter-spacing: 1px;
+    font-size: 10px;
+    /* letter-spacing: 1px; */
 }
 
 .valid-feedback {

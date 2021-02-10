@@ -8,6 +8,10 @@ Route::get('/', function () {
     }
 });
 
+Route::get('/home', function () {
+    return view('index');
+});
+
 Auth::routes(['register' => false]);
 
 Route::get('/forgot-password', 'UserController@forgot_password_index')->name('forgot_password_index');

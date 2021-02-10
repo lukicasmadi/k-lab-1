@@ -5,7 +5,7 @@
         <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
 
         <div class="nav-logo align-self-center">
-            <a class="navbar-brand" href="{{ route('dashboard') }}"><img alt="logo" src="{{ secure_asset('img/logo-korlantas.png') }}"> <span class="navbar-brand-name">{{ env('APP_NAME') }}</span></a>
+            <a class="navbar-brand" href="{{ route('dashboard') }}"><img alt="logo" src="{{ secure_asset('img/korlantas.png') }}"> <span class="navbar-brand-name">KORLANTAS POLRI</span></a>
         </div>
 
         <ul class="navbar-item flex-row mr-auto"></ul>
@@ -14,7 +14,16 @@
 
             <li class="nav-item dropdown notification-dropdown">
                 <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="notificationDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><span class="badge badge-success"></span>
+                <svg id="notification-dot" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+                <defs>
+                    <clipPath id="clip-path">
+                    <rect id="Rectangle_1929" data-name="Rectangle 1929" width="30" height="30" fill="#fff"/>
+                    </clipPath>
+                </defs>
+                <path id="notification_dot" d="M13.362,25.406a2.341,2.341,0,0,1-2.341-2.341H15.7A2.341,2.341,0,0,1,13.362,25.406Zm9.362-3.511H4V19.554l2.341-1.17V11.947A9.438,9.438,0,0,1,7.422,7.2a5.447,5.447,0,0,1,3.6-2.645V2h4.267a5.266,5.266,0,0,0,5.032,8.66c.041.418.061.851.061,1.287v6.437l2.341,1.17v2.341Z" transform="translate(1.635 1.297)" fill="#fff"/>
+                <path id="notification_dot-2" data-name="notification_dot" d="M19.214,9.022a3.511,3.511,0,1,1,.8-.09A3.551,3.551,0,0,1,19.214,9.022Z" transform="translate(1.635 1.297)" fill="#ea1c26"/>
+                </svg>    
+                <span class="badge badge-success"></span>
                 </a>
                 <div class="dropdown-menu position-absolute animated fadeInUp" aria-labelledby="notificationDropdown">
                     <div class="notification-scroll">
@@ -76,12 +85,12 @@
                         @php
                             if(!empty(auth()->user())) {
                                 $user = App\Models\User::whereId(myUserId())->first();
+                                echo '<div class="media-body align-self-center"><h6><span>Hi,</span> '.$user->name.'</h6></div>';
                                 if(empty($user->avatar)) {
                                     echo "<img src='".secure_asset('img/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";
                                 } else {
                                     echo "<img src='".secure_asset('storage/upload/profile/'.$user->avatar)."' class='img-fluid' alt='admin-profile' />";
                                 }
-                                echo '<div class="media-body align-self-center"><h6><span>Hi,</span> '.$user->name.'</h6></div>';
                             }
                         @endphp
                     </div>

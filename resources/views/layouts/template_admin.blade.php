@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>{{ config('app.app_name') }}</title>
-    <link rel="icon" type="image/x-icon" href="{{ secure_asset('template/assets/img/favicon.ico') }}"/>
+    <link rel="icon" type="image/x-icon" href="{{ secure_asset('template/assets/img/korlantas.png') }}"/>
     <link href="{{ secure_asset('template/assets/css/loader.css') }}" rel="stylesheet" type="text/css" />
     <script src="{{ secure_asset('template/assets/js/loader.js') }}"></script>
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
+    <link href="{{ secure_asset('template/assets/font/stylesheet.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ secure_asset('template/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ secure_asset('template/fontawesome5.15.1/css/all.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ secure_asset('template/assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
