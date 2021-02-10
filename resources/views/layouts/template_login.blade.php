@@ -24,7 +24,6 @@
     <script src="{{ secure_asset('template/bootstrap/js/popper.min.js') }}"></script>
     <script src="{{ secure_asset('template/bootstrap/js/bootstrap.min.js') }}"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
-    <script src="{{ secure_asset('template/assets/js/authentication/form-2.js') }}"></script>
 </div>
 <div id="footer-login">Sistem pelaporan operasi online LALU LINTAS | Korlantas Polri &copy; 2021</div>
 </body>
