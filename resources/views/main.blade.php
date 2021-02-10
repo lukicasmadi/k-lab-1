@@ -143,13 +143,13 @@
                 <img src="{{ secure_asset('/img/polda/pabar.png') }}">
             </div>
         </div>
-        
+
         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
             <div class="">
                 <div class="widget-heading">
                     <h5 class="">Total Laporan</h5>
                 </div>
-                <div class="widget-content">
+                <div class="widget-content" style="margin-top: 5%;">
                     <div class="mx-auto">
                         <div id="donut-chart" class=""></div>
                     </div>

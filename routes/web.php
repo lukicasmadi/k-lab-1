@@ -2,15 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    if (empty(auth()->user())) {
-        return redirect('/login');
-    }
-});
 
 Route::get('/home', function () {
+    if (!empty(auth()->user())) {
+        return redirect('/');
+    }
     return view('index');
-});
+})->name('home_before_login');
 
 Auth::routes(['register' => false]);
 

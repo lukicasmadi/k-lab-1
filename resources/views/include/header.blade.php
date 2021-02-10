@@ -22,7 +22,7 @@
                 </defs>
                 <path id="notification_dot" d="M13.362,25.406a2.341,2.341,0,0,1-2.341-2.341H15.7A2.341,2.341,0,0,1,13.362,25.406Zm9.362-3.511H4V19.554l2.341-1.17V11.947A9.438,9.438,0,0,1,7.422,7.2a5.447,5.447,0,0,1,3.6-2.645V2h4.267a5.266,5.266,0,0,0,5.032,8.66c.041.418.061.851.061,1.287v6.437l2.341,1.17v2.341Z" transform="translate(1.635 1.297)" fill="#fff"/>
                 <path id="notification_dot-2" data-name="notification_dot" d="M19.214,9.022a3.511,3.511,0,1,1,.8-.09A3.551,3.551,0,0,1,19.214,9.022Z" transform="translate(1.635 1.297)" fill="#ea1c26"/>
-                </svg>    
+                </svg>
                 <span class="badge badge-success"></span>
                 </a>
                 <div class="dropdown-menu position-absolute animated fadeInUp" aria-labelledby="notificationDropdown">
@@ -85,7 +85,7 @@
                         @php
                             if(!empty(auth()->user())) {
                                 $user = App\Models\User::whereId(myUserId())->first();
-                                echo '<div class="media-body align-self-center"><h6><span>Hi,</span> '.$user->name.'</h6></div>';
+                                echo '<div class="media-body align-self-center" style="margin-right: 10px;"><h6><span>Hi,</span> '.$user->name.'</h6></div>';
                                 if(empty($user->avatar)) {
                                     echo "<img src='".secure_asset('img/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";
                                 } else {
