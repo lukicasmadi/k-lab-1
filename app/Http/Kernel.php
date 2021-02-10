@@ -64,5 +64,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'user-has-polda' => \App\Http\Middleware\UserHasPolda::class,
         'can-create-plan' => \App\Http\Middleware\CreateOperationPlan::class,
+        'admin-or-pusat-only' => \App\Http\Middleware\AdminOrPusatOnly::class,
     ];
 }
