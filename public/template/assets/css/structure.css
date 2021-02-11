@@ -1223,8 +1223,8 @@ code {
         padding: 0;
         z-index: 500;
         width: 100%;
-        top: -54px;
-        left: 300px;
+        /* top: -54px; */
+        /* left: 300px; */
         margin: 0;
     }
     .topbar-nav.header #topbar {
@@ -1713,6 +1713,7 @@ code {
   */
 
 .grid-polda {
+    width: 5.25%;
     text-align: center;    
     padding: 7px 10px;
     margin-bottom: 5px;
@@ -1736,11 +1737,11 @@ code {
 }
 
 .grid-polda img {
-    width: 41.5px;
+    width: 100%;
     margin-top: -7px;
 }
 
 .grid-polda p {
-    font-size: 7px;
+    font-size: 6px;
     text-transform: uppercase;
 }
