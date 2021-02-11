@@ -152,10 +152,22 @@
     padding-bottom: 20px;
 }
 .widget-heading h5 {
-    font-size: 17px;
+    font-size: 15px;
     display: block;
     color: #e0e6ed;
     margin-bottom: 0;
+    text-transform: uppercase;
+}
+.mar20{
+    margin-top: 20px;
+}
+.widget-heading h5 span {
+    padding-left: 20px;
+}
+.widget-heading p {
+    padding-left: 42px;
+    font-size: 11px;
+    color: #79859b;
     text-transform: uppercase;
 }
 .widget.widget-chart-three .widget-heading .dropdown {
@@ -207,7 +219,7 @@
     padding-bottom: 20px;
 }
 .widget.widget-activity-three .widget-heading h5 {
-    font-size: 17px;
+    font-size: 15px;
     display: block;
     color: #fff;
     /* font-weight: 600; */

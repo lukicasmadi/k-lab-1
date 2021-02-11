@@ -2,6 +2,27 @@
 
 @section('content')
 <div class="layout-px-spacing">
+    <div class="page-header">
+        <div class="page-title">
+            <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15.556" viewBox="0 0 20 15.556">
+            <path id="text_align_left" d="M16.333,20.556H3V18.333H16.333ZM23,16.111H3V13.889H23Zm-6.667-4.444H3V9.444H16.333ZM23,7.222H3V5H23Z" transform="translate(-3 -5)" fill="#00adef"/>
+            </svg>
+            <span>daftar polda</span>
+            </h3>
+        </div>                    
+        <div class="toggle-switch">
+            <label class="switch s-icons s-outline  s-outline-secondary">
+                <input type="checkbox" checked="" class="theme-shifter">
+                <span class="slider round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </span>
+            </label>
+        </div>
+    </div>
+</div>
+<div class="layout-px-spacing">
     <div class="row layout-top-spacing">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="grid-polda line glowred">
@@ -147,7 +168,13 @@
         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
             <div class="">
                 <div class="widget-heading">
-                    <h5 class="">Total Laporan</h5>
+                    <h5 class="mar20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <path id="pie_chart_outline" d="M12,22A10,10,0,1,1,22,12,10,10,0,0,1,12,22ZM11,4.062A8,8,0,1,0,16.419,18.67l-.1.071.094-.065.059-.041.064-.045.016-.011.009-.007-5.128-5.13A1.51,1.51,0,0,1,11,12.379ZM13.829,13l4.227,4.227.007-.008.005-.006-.01.011A7.944,7.944,0,0,0,19.938,13ZM13,4.062V11h6.938A8,8,0,0,0,13,4.062Z" transform="translate(-2 -2)" fill="#00adef"/>
+                    </svg>
+                    <span>Total Laporan</span>
+                    </h5>
+                    <p>data laporan harian setiap polda</p>
                 </div>
                 <div class="widget-content" style="margin-top: 5%;">
                     <div class="mx-auto">
@@ -160,7 +187,13 @@
         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
             <div class="widget widget-activity-three bgblue">
                 <div class="widget-heading">
-                    <h5 class="">Notifikasi</h5>
+                    <h5 class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20.002" height="25.002" viewBox="0 0 20.002 25.002">
+                    <path id="notification_outline" d="M14,27a2.5,2.5,0,0,1-2.5-2.5h5A2.5,2.5,0,0,1,14,27Zm10-3.75H4v-2.5L6.5,19.5V12.626c0-4.328,1.776-7.134,5-7.9V2h5V4.725c3.224.765,5,3.57,5,7.9V19.5l2.5,1.25ZM14,6.688A4.5,4.5,0,0,0,10.094,8.5,7.116,7.116,0,0,0,9,12.626v8.126H19V12.626A7.117,7.117,0,0,0,17.907,8.5,4.5,4.5,0,0,0,14,6.688Z" transform="translate(-4 -2)" fill="#00adef"/>
+                    </svg>
+                    <span>Notifikasi</span>
+                    <p>info laporan harian setiap polda</p>
+                    </h5>
                 </div>
                 <div class="widget-content">
                     <div id="loadingPanel" class="centered">Loading Data</div>

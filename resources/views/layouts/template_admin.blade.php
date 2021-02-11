@@ -34,8 +34,6 @@
         <div class="overlay"></div>
         <div class="search-overlay"></div>
 
-        @include('include.top_bar')
-
         <!--  BEGIN CONTENT PART  -->
         <div id="content" class="main-content">
             @yield('content')
