@@ -22,7 +22,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Aceh',
+                'name' => 'Aceh',
+                'short_name' => 'aceh',
+                'logo' => 'aceh.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -32,7 +34,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Sumatera Utara',
+                'name' => 'Sumatera Utara',
+                'short_name' => 'sumut',
+                'logo' => 'sumut.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -42,7 +46,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Sumatera Barat',
+                'name' => 'Sumatera Barat',
+                'short_name' => 'sumbar',
+                'logo' => 'sumbar.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -52,7 +58,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Riau',
+                'name' => 'Riau',
+                'short_name' => 'riau',
+                'logo' => 'riau.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -62,7 +70,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Kepulauan Riau',
+                'name' => 'Kepulauan Riau',
+                'short_name' => 'kepri',
+                'logo' => 'kepri.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -72,7 +82,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Jambi',
+                'name' => 'Jambi',
+                'short_name' => 'jambi',
+                'logo' => 'jambi.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -82,7 +94,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Bengkulu',
+                'name' => 'Bengkulu',
+                'short_name' => 'bengkulu',
+                'logo' => 'bengkulu.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -92,7 +106,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Sumatera Selatan',
+                'name' => 'Sumatera Selatan',
+                'short_name' => 'sumsel',
+                'logo' => 'sumsel.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -102,7 +118,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Kepulauan Bangka Belitung',
+                'name' => 'Kepulauan Bangka Belitung',
+                'short_name' => 'babel',
+                'logo' => 'babel.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -112,7 +130,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Lampung',
+                'name' => 'Lampung',
+                'short_name' => 'lampung',
+                'logo' => 'lampung.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -122,7 +142,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Metropolitan Jakarta Raya',
+                'name' => 'Metropolitan Jakarta Raya',
+                'short_name' => 'metro jaya',
+                'logo' => 'metro_jaya.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -132,7 +154,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Banten',
+                'name' => 'Banten',
+                'short_name' => 'banten',
+                'logo' => 'banten.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -142,7 +166,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Jawa Barat',
+                'name' => 'Jawa Barat',
+                'short_name' => 'jabar',
+                'logo' => 'jabar.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -152,7 +178,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Jawa Tengah',
+                'name' => 'Jawa Tengah',
+                'short_name' => 'jateng',
+                'logo' => 'jateng.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -162,7 +190,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Daerah Istimewa Yogyakarta',
+                'name' => 'Daerah Istimewa Yogyakarta',
+                'short_name' => 'diy',
+                'logo' => 'diy.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -172,7 +202,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Jawa Timur',
+                'name' => 'Jawa Timur',
+                'short_name' => 'jatim',
+                'logo' => 'jatim.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -182,7 +214,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Kalimantan Barat',
+                'name' => 'Kalimantan Barat',
+                'short_name' => 'kalbar',
+                'logo' => 'kalbar.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -192,7 +226,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Kalimantan Tengah',
+                'name' => 'Kalimantan Tengah',
+                'short_name' => 'kalteng',
+                'logo' => 'kalteng.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -202,7 +238,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Kalimantan Selatan',
+                'name' => 'Kalimantan Selatan',
+                'short_name' => 'kalsel',
+                'logo' => 'kalsel.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -212,7 +250,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Kalimantan Timur',
+                'name' => 'Kalimantan Timur',
+                'short_name' => 'kaltim',
+                'logo' => 'kaltim.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -222,7 +262,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Kalimantan Utara',
+                'name' => 'Kalimantan Utara',
+                'short_name' => 'kaltara',
+                'logo' => 'kaltara.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -232,7 +274,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Sulawesi Utara',
+                'name' => 'Sulawesi Utara',
+                'short_name' => 'sulut',
+                'logo' => 'sulut.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -242,7 +286,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Gorontalo',
+                'name' => 'Gorontalo',
+                'short_name' => 'gorontalo',
+                'logo' => 'gorontalo.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -252,7 +298,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Sulawesi Tengah',
+                'name' => 'Sulawesi Tengah',
+                'short_name' => 'sulteng',
+                'logo' => 'sulteng.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -262,7 +310,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Sulawesi Barat',
+                'name' => 'Sulawesi Barat',
+                'short_name' => 'sulbar',
+                'logo' => 'sulbar.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -272,7 +322,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Sulawesi Selatan',
+                'name' => 'Sulawesi Selatan',
+                'short_name' => 'sulsel',
+                'logo' => 'sulsel.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -282,7 +334,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Sulawesi Tenggara',
+                'name' => 'Sulawesi Tenggara',
+                'short_name' => 'sulteng',
+                'logo' => 'sulteng.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -292,7 +346,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Bali',
+                'name' => 'Bali',
+                'short_name' => 'bali',
+                'logo' => 'bali.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -302,7 +358,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Nusa Tenggara Barat',
+                'name' => 'Nusa Tenggara Barat',
+                'short_name' => 'ntb',
+                'logo' => 'ntb.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -312,7 +370,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Nusa Tenggara Timur',
+                'name' => 'Nusa Tenggara Timur',
+                'short_name' => 'ntt',
+                'logo' => 'ntt.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -322,7 +382,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Maluku Utara',
+                'name' => 'Maluku Utara',
+                'short_name' => 'malut',
+                'logo' => 'malut.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -332,7 +394,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Maluku',
+                'name' => 'Maluku',
+                'short_name' => 'maluku',
+                'logo' => 'maluku.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -342,7 +406,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Papua Barat',
+                'name' => 'Papua Barat',
+                'short_name' => 'pabar',
+                'logo' => 'pabar.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
@@ -352,7 +418,9 @@ class PoldaSeeder extends Seeder
 
             Polda::create([
                 'uuid' => genUuid(),
-                'name' => 'Polda Papua',
+                'name' => 'Papua',
+                'short_name' => 'papua',
+                'logo' => 'papua.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,

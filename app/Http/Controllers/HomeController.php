@@ -94,10 +94,12 @@ class HomeController extends Controller
 
     public function index()
     {
+        $polda = Polda::select("id", "uuid", "name", "short_name", "logo")->with('dailyInput')->orderBy("name", "asc")->get();
+
         if(empty(operationPlans())) {
             return view('empty_project');
         }
-        return view('main');
+        return view('main', compact('polda'));
     }
 
     public function previewReport($uuid)

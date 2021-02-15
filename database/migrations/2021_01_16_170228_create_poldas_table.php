@@ -17,6 +17,7 @@ class CreatePoldasTable extends Migration
             $table->id();
             $table->uuid('uuid');
             $table->string('name');
+            $table->string('short_name');
             $table->string('logo')->nullable();
             $table->string('jurisdiction')->nullable();
             $table->string('headquarters')->nullable();

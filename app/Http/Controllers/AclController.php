@@ -28,7 +28,7 @@ class AclController extends Controller
     public function role_store(CreateRoleRequest $request)
     {
         Role::create(['name' => request('role_name')]);
-        flash('New role created')->success();
+        flash('Role baru didaftarkan')->success();
         return redirect()->route('role_index');
     }
 
@@ -44,7 +44,7 @@ class AclController extends Controller
             'name' => request('role_name')
         ]);
 
-        flash('Role name updated')->success();
+        flash('Nama role diupdate')->success();
         return redirect()->route('role_index');
     }
 
@@ -60,7 +60,7 @@ class AclController extends Controller
         $data->delete();
 
         return response()->json([
-            'output' => 'Your data has been deleted.',
+            'output' => 'Role yang dipilih telah dihapus.',
         ], 200);
     }
 
@@ -78,7 +78,7 @@ class AclController extends Controller
     public function permission_store(CreatePermissionRequest $request)
     {
         Permission::create(['name' => request('permission_name')]);
-        flash('New permission created')->success();
+        flash('Permission baru berhasil didaftarkan')->success();
         return redirect()->route('permission_index');
     }
 
@@ -94,7 +94,7 @@ class AclController extends Controller
             'name' => request('permission_name')
         ]);
 
-        flash('Permission name updated')->success();
+        flash('Nama permission diupdate')->success();
         return redirect()->route('permission_index');
     }
 
@@ -104,7 +104,7 @@ class AclController extends Controller
         $data->delete();
 
         return response()->json([
-            'output' => 'Your data has been deleted.',
+            'output' => 'Permission yang dipilih telah dihapus.',
         ], 200);
     }
 
@@ -145,7 +145,7 @@ class AclController extends Controller
         });
 
         return response()->json([
-            'output' => 'Roles user show for id '.$userID,
+            'output' => 'Roles user dengan id '.$userID,
             'roles' => $allRoles
         ], 200);
     }
@@ -206,7 +206,7 @@ class AclController extends Controller
 
         $user->syncRoles($newRoles);
 
-        flash('User has attached to roles')->success();
+        flash('User telah didaftarkan ke roles')->success();
         return redirect()->back();
     }
 
@@ -223,7 +223,7 @@ class AclController extends Controller
 
         $role->syncPermissions($allPermission);
 
-        flash('Permissions attached to role')->success();
+        flash('Permissions telah ditambahkan ke role')->success();
         return redirect()->back();
     }
 }
