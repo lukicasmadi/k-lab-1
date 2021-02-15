@@ -21,7 +21,7 @@ class AdminOrPusatOnly
         if($user->hasRole('administrator') || $user->hasRole('access_pusat')) {
             return $next($request);
         } else {
-            flash('Akun anda tidak diberikan akses ke halaman tersebut. Silahkan hubungi admin')->error();
+            flash('Akun anda belum diberikan akses ke halaman tersebut. Silahkan hubungi admin')->error();
             return redirect('/');
         }
     }
