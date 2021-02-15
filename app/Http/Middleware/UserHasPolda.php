@@ -17,7 +17,7 @@ class UserHasPolda
         } else {
             $find = UHP::where("user_id", $user->id)->first();
             if(empty($find)) {
-                flash('Akun anda tidak diberikan akses ke halaman tersebut. Silahkan hubungi admin')->error();
+                flash('Akun anda belum diberikan akses ke halaman tersebut. Silahkan hubungi admin')->error();
                 return redirect('/');
             } else {
                 return $next($request);
