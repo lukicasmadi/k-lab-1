@@ -20,7 +20,7 @@ class PoldaSubmitedExport implements FromView
         $polda = Polda::whereUuid($this->uuid)->firstOrFail();
         $data = PoldaSubmited::with('dailyInput')->where("polda_id", $polda->id)->where("submited_date", date("Y-m-d"))->firstOrFail();
 
-        return view('exports.daily_by_polda', [
+        return view('exports.report_daily', [
             'data' => $data
         ]);
     }
