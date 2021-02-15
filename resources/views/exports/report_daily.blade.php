@@ -1,6 +1,54 @@
 <table>
     <thead>
         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center;">KEPOLISIAN NEGARA REPUBLIK INDONESIA</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center;">KORP LALU LINTAS</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center;">LAPORAN HARIAN OPERASI ZEBRA</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center;">TANGGAL: 26 October   2020 S/D 09 November  2020</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center;">KORLANTAS</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
             <th>NO</th>
             <th>URAIAN</th>
             <th>REKAP HARIAN</th>
@@ -9,16 +57,16 @@
     </thead>
     <tbody>
         <tr>
-            <td>I</td>
-            <td>DATA TERKAIT MASALAH PELANGGARAN LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">I</td>
+            <td style="background-color: #c6efcd;">DATA TERKAIT MASALAH PELANGGARAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
-            <td>1</td>
-            <td>PELANGGARAN LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">1</td>
+            <td style="background-color: #c6efcd;">PELANGGARAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -34,7 +82,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>45136</td>
             <td></td>
         </tr>
@@ -45,16 +93,16 @@
             <td></td>
         </tr>
         <tr>
-            <td>2</td>
-            <td>JENIS PELANGGARAN LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">2</td>
+            <td style="background-color: #c6efcd;">JENIS PELANGGARAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
-            <td></td>
-            <td>a. SEPEDA MOTOR</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;">a. SEPEDA MOTOR</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -100,7 +148,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>29158</td>
             <td></td>
         </tr>
@@ -111,10 +159,10 @@
             <td></td>
         </tr>
         <tr>
-            <td></td>
-            <td>b. MOBIL DAN KENDARAAN KHUSUS</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;">b. MOBIL DAN KENDARAAN KHUSUS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -160,7 +208,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>5594</td>
             <td></td>
         </tr>
@@ -171,10 +219,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>3</td>
-            <td>BARANGBUKTI YANG DISITA</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">3</td>
+            <td style="background-color: #c6efcd;">BARANGBUKTI YANG DISITA</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -196,7 +244,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>35433</td>
             <td></td>
         </tr>
@@ -207,10 +255,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>4</td>
-            <td>KENDARAAN YANG TERLIBAT PELANGGARAN</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">4</td>
+            <td style="background-color: #c6efcd;">KENDARAAN YANG TERLIBAT PELANGGARAN</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -244,7 +292,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>35465</td>
             <td></td>
         </tr>
@@ -255,10 +303,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>5</td>
-            <td>PROFESI PELAKU PELANGGARAN</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">5</td>
+            <td style="background-color: #c6efcd;">PROFESI PELAKU PELANGGARAN</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -304,7 +352,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>35562</td>
             <td></td>
         </tr>
@@ -315,10 +363,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>6</td>
-            <td>USIA PELAKU PELANGGARAN</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">6</td>
+            <td style="background-color: #c6efcd;">USIA PELAKU PELANGGARAN</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -388,7 +436,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>35794</td>
             <td></td>
         </tr>
@@ -399,10 +447,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>7</td>
-            <td>SIM PELAKU PELANGGARAN</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">7</td>
+            <td style="background-color: #c6efcd;">SIM PELAKU PELANGGARAN</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -466,7 +514,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>35470</td>
             <td></td>
         </tr>
@@ -477,16 +525,16 @@
             <td></td>
         </tr>
         <tr>
-            <td>8</td>
-            <td>LOKASI PELANGGARAN LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">8</td>
+            <td style="background-color: #c6efcd;">LOKASI PELANGGARAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
-            <td></td>
-            <td>a. BERDASARKAN KAWASAN</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;">a. BERDASARKAN KAWASAN</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -520,7 +568,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>35173</td>
             <td></td>
         </tr>
@@ -531,10 +579,10 @@
             <td></td>
         </tr>
         <tr>
-            <td></td>
-            <td>b. STATUS JALAN</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;">b. STATUS JALAN</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -562,7 +610,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>35152</td>
             <td></td>
         </tr>
@@ -573,10 +621,10 @@
             <td></td>
         </tr>
         <tr>
-            <td></td>
-            <td>c. BERDASARKAN FUNGSI JALAN</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;">c. BERDASARKAN FUNGSI JALAN</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -604,7 +652,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>46264</td>
             <td></td>
         </tr>
@@ -615,16 +663,16 @@
             <td></td>
         </tr>
         <tr>
-            <td>II</td>
-            <td>DATA TERKAIT MASALAH KECELAKAAN LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">II</td>
+            <td style="background-color: #c6efcd;">DATA TERKAIT MASALAH KECELAKAAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
-            <td>9</td>
-            <td>KECELAKAAN LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">9</td>
+            <td style="background-color: #c6efcd;">KECELAKAAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -663,10 +711,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>10</td>
-            <td>BARANGBUKTI YANG DISITA</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">10</td>
+            <td style="background-color: #c6efcd;">BARANGBUKTI YANG DISITA</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -688,7 +736,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>123</td>
             <td></td>
         </tr>
@@ -699,10 +747,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>11</td>
-            <td>PROFESI KORBAN KECELAKAAN LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">11</td>
+            <td style="background-color: #c6efcd;">PROFESI KORBAN KECELAKAAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -748,7 +796,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>71</td>
             <td></td>
         </tr>
@@ -759,10 +807,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>12</td>
-            <td>USIA KORBAN KECELAKAAN LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">12</td>
+            <td style="background-color: #c6efcd;">USIA KORBAN KECELAKAAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -832,7 +880,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>81</td>
             <td></td>
         </tr>
@@ -843,10 +891,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>13</td>
-            <td>SIM KORBAN KECELAKAAN LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">13</td>
+            <td style="background-color: #c6efcd;">SIM KORBAN KECELAKAAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -910,7 +958,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>77</td>
             <td></td>
         </tr>
@@ -921,10 +969,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>14</td>
-            <td>KENDARAAN YANG TERLIBAT KECELAKAAN LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">14</td>
+            <td style="background-color: #c6efcd;">KENDARAAN YANG TERLIBAT KECELAKAAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -964,7 +1012,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>81</td>
             <td></td>
         </tr>
@@ -975,10 +1023,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>15</td>
-            <td>JENIS KECELAKAAN LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">15</td>
+            <td style="background-color: #c6efcd;">JENIS KECELAKAAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -1042,7 +1090,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>45</td>
             <td></td>
         </tr>
@@ -1053,10 +1101,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>16</td>
-            <td>PROFESI PELAKU KECELAKAAN LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">16</td>
+            <td style="background-color: #c6efcd;">PROFESI PELAKU KECELAKAAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -1102,7 +1150,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>44</td>
             <td></td>
         </tr>
@@ -1113,10 +1161,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>17</td>
-            <td>USIA PELAKU KECELAKAAN LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">17</td>
+            <td style="background-color: #c6efcd;">USIA PELAKU KECELAKAAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -1186,7 +1234,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>43</td>
             <td></td>
         </tr>
@@ -1197,10 +1245,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>18</td>
-            <td>SIM PELAKU KECELAKAAN LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">18</td>
+            <td style="background-color: #c6efcd;">SIM PELAKU KECELAKAAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -1264,7 +1312,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>43</td>
             <td></td>
         </tr>
@@ -1275,16 +1323,16 @@
             <td></td>
         </tr>
         <tr>
-            <td>19</td>
-            <td>LOKASI KECELAKAAN LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">19</td>
+            <td style="background-color: #c6efcd;">LOKASI KECELAKAAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
-            <td></td>
-            <td>a. BERDASARKAN KAWASAN</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;">a. BERDASARKAN KAWASAN</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -1324,7 +1372,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>46</td>
             <td></td>
         </tr>
@@ -1335,10 +1383,10 @@
             <td></td>
         </tr>
         <tr>
-            <td></td>
-            <td>b. BERDASARKAN STATUS JALAN</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;">b. BERDASARKAN STATUS JALAN</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -1366,7 +1414,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>49</td>
             <td></td>
         </tr>
@@ -1377,10 +1425,10 @@
             <td></td>
         </tr>
         <tr>
-            <td></td>
-            <td>c. BERDASARKAN FUNGSI JALAN</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;">c. BERDASARKAN FUNGSI JALAN</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -1408,7 +1456,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>44</td>
             <td></td>
         </tr>
@@ -1419,10 +1467,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>20</td>
-            <td>FAKTOR PENYEBAB KECELAKAAN</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">20</td>
+            <td style="background-color: #c6efcd;">FAKTOR PENYEBAB KECELAKAAN</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -1552,7 +1600,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>44</td>
             <td></td>
         </tr>
@@ -1563,10 +1611,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>21</td>
-            <td>WAKTU KEJADIAN KECELAKAAN LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">21</td>
+            <td style="background-color: #c6efcd;">WAKTU KEJADIAN KECELAKAAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -1618,7 +1666,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>48</td>
             <td></td>
         </tr>
@@ -1629,10 +1677,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>22</td>
-            <td>KECELAKAAN LALU LINTAS MENONJOL</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">22</td>
+            <td style="background-color: #c6efcd;">KECELAKAAN LALU LINTAS MENONJOL</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -1671,10 +1719,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>23</td>
-            <td>KECELAKAAN LALU LINTAS TUNGGAL / OUT OF CONTROL</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">23</td>
+            <td style="background-color: #c6efcd;">KECELAKAAN LALU LINTAS TUNGGAL / OUT OF CONTROL</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -1713,10 +1761,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>24</td>
-            <td>TABRAK PEJALAN KAKI</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">24</td>
+            <td style="background-color: #c6efcd;">TABRAK PEJALAN KAKI</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -1755,10 +1803,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>25</td>
-            <td>TABRAK LARI</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">25</td>
+            <td style="background-color: #c6efcd;">TABRAK LARI</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -1797,10 +1845,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>26</td>
-            <td>TABRAK SEPEDA MOTOR ( R2 )</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">26</td>
+            <td style="background-color: #c6efcd;">TABRAK SEPEDA MOTOR ( R2 )</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -1839,10 +1887,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>27</td>
-            <td>TABRAK RANMOR RODA EMPAT ( R4 )</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">27</td>
+            <td >TABRAK RANMOR RODA EMPAT ( R4 )</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -1881,10 +1929,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>28</td>
-            <td>TABRAK KENDARAAN TIDAK BERMOTOR (SEPEDA,BECAK DAYUNG, DELMAN, DOKAR DLL)</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">28</td>
+            <td style="background-color: #c6efcd;">TABRAK KENDARAAN TIDAK BERMOTOR (SEPEDA,BECAK DAYUNG, DELMAN, DOKAR DLL)</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -1923,10 +1971,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>29</td>
-            <td>KECELAKAAN DI PERLINTASAN KA</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">29</td>
+            <td style="background-color: #c6efcd;">KECELAKAAN DI PERLINTASAN KA</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -1977,10 +2025,10 @@
             <td></td>
         </tr>
         <tr>
-            <td>30</td>
-            <td>KECELAKAAN TRANSPORTASI</td>
-            <td></td>
-            <td></td>
+            <td style="background-color: #c6efcd;">30</td>
+            <td style="background-color: #c6efcd;">KECELAKAAN TRANSPORTASI</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
@@ -2002,7 +2050,7 @@
         </tr>
         <tr>
             <td></td>
-            <td>JUMLAH</td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td>0</td>
             <td></td>
         </tr>
@@ -2013,9 +2061,249 @@
             <td></td>
         </tr>
         <tr>
-            <td>III</td>
-            <td>DATA TERKAIT DIKMAS LANTAS</td>
+            <td style="background-color: #c6efcd;">III</td>
+            <td style="background-color: #c6efcd;">DATA TERKAIT DIKMAS LANTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+        </tr>
+        <tr>
+            <td style="background-color: #c6efcd;">31</td>
+            <td style="background-color: #c6efcd;">DIKMAS LANTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+        </tr>
+        <tr>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;">a. PENLUH</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+        </tr>
+        <tr>
             <td></td>
+            <td>1) MELALUI MEDIA CETAK</td>
+            <td>221</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>2) MELALUI MEDIA ELEKTRONIK</td>
+            <td>1069</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>3) TEMPAT KERAMAIAN</td>
+            <td>690</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>4) TEMPAT ISTIRAHAT</td>
+            <td>154</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>5) DAERAH RAWAN LAKA &amp; LANGGAR</td>
+            <td>1093</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
+            <td>3227</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;">b. PENYEBARAN / PEMASANGAN</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>1) SPANDUK</td>
+            <td>667</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>2) LEAFLET</td>
+            <td>5917</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>3) STICKER</td>
+            <td>2365</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>4) BILBOARD</td>
+            <td>94</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
+            <td>9043</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;">c. PROGRAM NASIONAL KEAMANAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>1) POLISI SAHABAT ANAK</td>
+            <td>1</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>2) CARA AMAN SEKOLAH</td>
+            <td>13</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>3) PATROLI KEAMANAN SEKOLAH</td>
+            <td>1</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>4) PRAMUKA SAKA BHAYANGKARA KRIDA LALU LINTAS</td>
+            <td>6</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
+            <td>21</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;">d. PROGRAM NASIONAL KESELAMATAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>1) POLICE GOES TO CAMPUS</td>
+            <td>0</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>2) SAFETY RIDING &amp; DRIVING</td>
+            <td>0</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>3) FORUM LALU LINTAS &amp; ANGKUTAN JALAN</td>
+            <td>0</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>4) KAMPANYE KESELAMATAN</td>
+            <td>54</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>5) SEKOLAH MENGEMUDI</td>
+            <td>2</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>6) TAMAN LALU LINTAS</td>
+            <td>0</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>7) GLOBAL ROAD SAFETY PARTNERSHIP ACTION</td>
+            <td>1</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
+            <td>57</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="background-color: #c6efcd;">32</td>
+            <td style="background-color: #c6efcd;">DATA TERKAIT GIAT KEPOLISIAN</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+        </tr>
+        <tr>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;">GIAT LANTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>a. PENGATURAN</td>
+            <td>18866</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>b. PENJAGAAN</td>
+            <td>6283</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>c. PENGAWALAN</td>
+            <td>554</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>d. PATROLI</td>
+            <td>10950</td>
+            <td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
+            <td>36653</td>
             <td></td>
         </tr>
     </tbody>
