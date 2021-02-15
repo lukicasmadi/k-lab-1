@@ -94,8 +94,8 @@ table.dataTable thead .sorting_desc:after {
 }
 
 .table>thead>tr>th {
-    color: #009688;
-    font-weight: 700;
+    color: #fff;
+    font-weight: bolder;
     font-size: 13px;
     border: none;
     letter-spacing: 1px;
