@@ -50,10 +50,9 @@ Route::group(['middleware' => 'auth'], function () {
     ]);
     Route::get('/operation-plan/download/{filePath}', 'RencanaOperasiController@download')->name('downloadOperationPlan');
 
-    Route::get('/laporan/all', 'ReportController@all')->name('laporan_all');
-    Route::get('/laporan/polda/{aka}', 'ReportController@byAka')->name('laporan_by_aka');
-    Route::get('/laporan/polda/{date}', 'ReportController@byOneDate')->name('laporan_by_one_date');
-    Route::get('/laporan/polda/{daterange}', 'ReportController@dateRange')->name('laporan_by_date_range');
+    Route::get('/report/daily', 'ReportController@dailyAllPolda')->name('report_daily_all_polda');
+    Route::get('/report/daily/polda/{poldaUuid}', 'ReportController@poldaUuid')->name('report_bypolda');
+    Route::get('/report/comparison', 'ReportController@comparison')->name('report_comparison');
 
 
     // Route Hanya Bisa Diakses Oleh Administrator atau Korlantas Pusat

@@ -78,13 +78,10 @@
                                 </a>
                                 <ul class="collapse submenu list-unstyled" id="reportpusat" data-parent="#topAccordion">
                                     <li class="{{ request()->is('rencana-operasi') ? 'active' : '' }}">
-                                        <a href="{{ route('rencana_operasi_index') }}"> Filter Tanggal </a>
+                                        <a href="{{ route('report_daily_all_polda') }}"> Rekap Laporan Harian </a>
                                     </li>
                                     <li class="{{ request()->is('rencana-operasi') ? 'active' : '' }}">
-                                        <a href="{{ route('rencana_operasi_index') }}"> Filter Bulan </a>
-                                    </li>
-                                    <li class="{{ request()->is('rencana-operasi') ? 'active' : '' }}">
-                                        <a href="{{ route('rencana_operasi_index') }}"> Filter Polda </a>
+                                        <a href="{{ route('report_comparison') }}"> Laporan Pembanding </a>
                                     </li>
                                 </ul>
                             </li>
