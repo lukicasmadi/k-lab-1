@@ -26,13 +26,13 @@
         </tr>
         <tr>
             <td></td>
-            <td style="text-align: center;">LAPORAN HARIAN OPERASI ZEBRA</td>
+            <td style="text-align: center;">LAPORAN HARIAN {{ \Illuminate\Support\Str::upper(operationPlans()->name) }}</td>
             <td></td>
             <td></td>
         </tr>
         <tr>
             <td></td>
-            <td style="text-align: center;">TANGGAL: 26 October   2020 S/D 09 November  2020</td>
+            <td style="text-align: center;">TANGGAL: {{ operationPlans()->start_date->format("d-m-Y") }} S/D {{ operationPlans()->end_date->format("d-m-Y") }}</td>
             <td></td>
             <td></td>
         </tr>
@@ -71,19 +71,22 @@
         <tr>
             <td></td>
             <td>a. TILANG</td>
-            <td>35093</td>
+            <td>{{ $data->dailyInput->pelanggaran_lalu_lintas_tilang }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>b. TEGURAN</td>
-            <td>10043</td>
+            <td>{{ $data->dailyInput->pelanggaran_lalu_lintas_teguran }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>45136</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->pelanggaran_lalu_lintas_teguran, 
+                $data->dailyInput->pelanggaran_lalu_lintas_teguran
+            ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -107,49 +110,57 @@
         <tr>
             <td></td>
             <td>1) GUN HELM SNI</td>
-            <td>10420</td>
+            <td>{{ $data->dailyInput->pelanggaran_sepeda_motor_gun_helm_sni }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>2) MELAWAN ARUS</td>
-            <td>4451</td>
+            <td>{{ $data->dailyInput->pelanggaran_sepeda_motor_melawan_arus }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>3) GUN HP SAAT BERKENDARA</td>
-            <td>587</td>
+            <td>{{ $data->dailyInput->pelanggaran_sepeda_motor_gun_hp_saat_berkendara }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>4) BERKENDARA DI BAWAH PENGARUH ALKOHOL</td>
-            <td>8</td>
+            <td>{{ $data->dailyInput->pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>5) MELEBIHI BATAS KECEPATAN</td>
-            <td>94</td>
+            <td>{{ $data->dailyInput->pelanggaran_sepeda_motor_melebihi_batas_kecepatan }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>6) BERKENDARA DI BAWAH UMUR</td>
-            <td>6036</td>
+            <td>{{ $data->dailyInput->pelanggaran_sepeda_motor_berkendara_dibawah_umur }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>7) LAIN - LAIN</td>
-            <td>7562</td>
+            <td>{{ $data->dailyInput->pelanggaran_sepeda_motor_lain_lain }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>29158</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->pelanggaran_sepeda_motor_gun_helm_sni,
+                $data->dailyInput->pelanggaran_sepeda_motor_melawan_arus,
+                $data->dailyInput->pelanggaran_sepeda_motor_gun_hp_saat_berkendara,
+                $data->dailyInput->pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol,
+                $data->dailyInput->pelanggaran_sepeda_motor_melebihi_batas_kecepatan,
+                $data->dailyInput->pelanggaran_sepeda_motor_berkendara_dibawah_umur,
+                $data->dailyInput->pelanggaran_sepeda_motor_lain_lain
+            ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -167,49 +178,57 @@
         <tr>
             <td></td>
             <td>1) MELAWAN ARUS</td>
-            <td>289</td>
+            <td>{{ $data->dailyInput->pelanggaran_mobil_melawan_arus }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>2) GUN HP SAAT BERKENDARA</td>
-            <td>314</td>
+            <td>{{ $data->dailyInput->pelanggaran_mobil_gun_hp_saat_berkendara }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>3) BERKENDARA DI BAWAH PENGARUH ALKOHOL</td>
-            <td>2</td>
+            <td>{{ $data->dailyInput->pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>4) MELEBIHI BATAS KECEPATAN</td>
-            <td>106</td>
+            <td>{{ $data->dailyInput->pelanggaran_mobil_melebihi_batas_kecepatan }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>5) BERKENDARA DI BAWAH UMUR</td>
-            <td>433</td>
+            <td>{{ $data->dailyInput->pelanggaran_mobil_berkendara_dibawah_umur }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>6) GUN SAFETY BELT</td>
-            <td>2246</td>
+            <td>{{ $data->dailyInput->pelanggaran_mobil_gun_safety_belt }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>7) LAIN - LAIN</td>
-            <td>2204</td>
+            <td>{{ $data->dailyInput->pelanggaran_mobil_lain_lain }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>5594</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->pelanggaran_mobil_melawan_arus,
+                $data->dailyInput->pelanggaran_mobil_gun_hp_saat_berkendara,
+                $data->dailyInput->pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol,
+                $data->dailyInput->pelanggaran_mobil_melebihi_batas_kecepatan,
+                $data->dailyInput->pelanggaran_mobil_berkendara_dibawah_umur,
+                $data->dailyInput->pelanggaran_mobil_gun_safety_belt,
+                $data->dailyInput->pelanggaran_mobil_lain_lain
+            ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -227,25 +246,29 @@
         <tr>
             <td></td>
             <td>a. SIM</td>
-            <td>9526</td>
+            <td>{{ $data->dailyInput->barang_bukti_yg_disita_sim }}</td>
             <td>Unit</td>
         </tr>
         <tr>
             <td></td>
             <td>b. STNK</td>
-            <td>23615</td>
+            <td>{{ $data->dailyInput->barang_bukti_yg_disita_stnk }}</td>
             <td>Unit</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KENDARAAN</td>
-            <td>2292</td>
+            <td>{{ $data->dailyInput->barang_bukti_yg_disita_kendaraan }}</td>
             <td>Unit</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>35433</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->barang_bukti_yg_disita_sim,
+                $data->dailyInput->barang_bukti_yg_disita_stnk,
+                $data->dailyInput->barang_bukti_yg_disita_kendaraan
+            ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -263,37 +286,43 @@
         <tr>
             <td></td>
             <td>a. SEPEDA MOTOR</td>
-            <td>29679</td>
+            <td>{{ $data->dailyInput->kendaraan_yang_terlibat_pelanggaran_sepeda_motor }}</td>
             <td>Unit</td>
         </tr>
         <tr>
             <td></td>
             <td>b. MOBIL PENUMPANG</td>
-            <td>3296</td>
+            <td>{{ $data->dailyInput->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang }}</td>
             <td>Unit</td>
         </tr>
         <tr>
             <td></td>
             <td>c. MOBIL BUS</td>
-            <td>237</td>
+            <td>{{ $data->dailyInput->kendaraan_yang_terlibat_pelanggaran_mobil_bus }}</td>
             <td>Unit</td>
         </tr>
         <tr>
             <td></td>
             <td>d. MOBIL BARANG</td>
-            <td>2173</td>
+            <td>{{ $data->dailyInput->kendaraan_yang_terlibat_pelanggaran_mobil_barang }}</td>
             <td>Unit</td>
         </tr>
         <tr>
             <td></td>
             <td>e. KENDARAAN KHUSUS</td>
-            <td>80</td>
+            <td>{{ $data->dailyInput->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus }}</td>
             <td>Unit</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>35465</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->kendaraan_yang_terlibat_pelanggaran_sepeda_motor,
+                $data->dailyInput->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang,
+                $data->dailyInput->kendaraan_yang_terlibat_pelanggaran_mobil_bus,
+                $data->dailyInput->kendaraan_yang_terlibat_pelanggaran_mobil_barang,
+                $data->dailyInput->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus
+            ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -311,49 +340,57 @@
         <tr>
             <td></td>
             <td>a. PEGAWAI NEGERI SIPIL</td>
-            <td>1615</td>
+            <td>{{ $data->dailyInput->profesi_pelaku_pelanggaran_pns }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>b. KARYAWAN / SWASTA</td>
-            <td>17413</td>
+            <td>{{ $data->dailyInput->profesi_pelaku_pelanggaran_karyawan_swasta }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>c. PELAJAR / MAHASISWA</td>
-            <td>10405</td>
+            <td>{{ $data->dailyInput->profesi_pelaku_pelanggaran_pelajar_mahasiswa }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>d. PENGEMUDI (SUPIR)</td>
-            <td>2402</td>
+            <td>{{ $data->dailyInput->profesi_pelaku_pelanggaran_pengemudi_supir }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>e. TNI</td>
-            <td>7</td>
+            <td>{{ $data->dailyInput->profesi_pelaku_pelanggaran_tni }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>f. POLRI</td>
-            <td>9</td>
+            <td>{{ $data->dailyInput->profesi_pelaku_pelanggaran_polri }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>g LAIN-LAIN</td>
-            <td>3711</td>
+            <td>{{ $data->dailyInput->profesi_pelaku_pelanggaran_lain_lain }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>35562</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->profesi_pelaku_pelanggaran_pns,
+                $data->dailyInput->profesi_pelaku_pelanggaran_karyawan_swasta,
+                $data->dailyInput->profesi_pelaku_pelanggaran_pelajar_mahasiswa,
+                $data->dailyInput->profesi_pelaku_pelanggaran_pengemudi_supir,
+                $data->dailyInput->profesi_pelaku_pelanggaran_tni,
+                $data->dailyInput->profesi_pelaku_pelanggaran_polri,
+                $data->dailyInput->profesi_pelaku_pelanggaran_lain_lain
+            ]) }}</td>
             <td></td>
         </tr>
         <tr>
