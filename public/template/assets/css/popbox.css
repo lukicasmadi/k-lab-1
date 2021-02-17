@@ -1,0 +1,112 @@
+/* <body> overlays to disable the content scrolling */
+.popbox-no-overflow {
+  overflow: hidden !important;
+  outline: none;
+}
+.popbox-no-overflow.popbox-fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* overflow-y: scroll!important; */
+}
+
+.popbox {
+  display: none;
+}
+
+.popbox .dimmer {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  background:rgba(22,36,47,.7); /*#252525*/
+}
+.popbox .moda {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0;
+  overflow-y: auto;
+  z-index: 99999;
+  overflow: hidden !important;
+}
+.popbox .outgap {
+  margin: 15% auto 0 auto;
+  max-width: 1000px;
+  min-height: 110px;
+  padding: 0;
+  outline: 0;
+}
+.popbox .workarea {
+  position: relative;
+    padding: 3em;
+    background-color: rgba(0, 173, 239, 0.1);
+    border-radius: 0px;
+    box-shadow: 0px 10px 30px rgba(0, 173, 239, 0.);
+    border: solid 1px #00adef;
+}
+
+.close_button {
+  background-color: rgba(255,255,255,.8);
+  border: 3px solid #999;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: arial;
+  font-weight: bold;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 25px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.cicrlepop {
+  margin: -50px -50px 0 0;
+  right: 0;
+  position: absolute;
+  height: 660px;
+}
+
+.polwan{
+  position: absolute;
+  right: 0;
+  width: 400px;
+  margin-top: -120px;
+}
+
+@media only screen and (min-width: 1300px) {
+  .cicrlepop {
+    margin: -50px -50px 0 0;
+    right: 0;
+    position: absolute;
+    height: 960px;
+  }
+
+  .popbox .workarea {
+    position: relative;
+    padding: 3em;
+    background-color: rgba(0, 173, 239, 0.1);
+    border-radius: 0px;
+    box-shadow: 0px 10px 30px rgba(0, 173, 239, 0.);
+    border: solid 1px #00adef;
+  }
+
+  .polwan{
+    position: absolute;
+    right: -175px;
+    width: 550px;
+    margin-top: -150px;
+    
+  }
+}

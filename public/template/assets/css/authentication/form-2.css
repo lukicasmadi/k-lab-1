@@ -165,6 +165,16 @@ body .overflow {
   width: 35px;
 }
 
+.title-news{
+  border-bottom: 1px solid #174868;
+  color: #fff;
+  margin-bottom: 5px;
+  font-size: 2px;
+}
+
+
+
+
 .head-logo h3 {
   margin: 10px 10px 8px 0;
   padding-top: 5px;
@@ -173,19 +183,7 @@ body .overflow {
   text-transform: uppercase;
 }
 
-.title-news{
-  border-bottom: 1px solid #174868;
-  color: #fff;
-  margin-bottom: 5px;
-  font-size: 11px;
-}
 
-.more-article{
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 10px;
-  margin-bottom: -8px;
-}
 
 #footer-login {
   position:absolute;
@@ -415,3 +413,95 @@ body .overflow {
 @supports (-ms-ime-align: auto) {
   .form-form .form-form-wrap {
     height: 100%; } }
+
+    @media (min-width: 1300px) {
+      .head-logo img {
+        margin-top: 22px;
+        width: 66px;
+      }
+    
+      .head-logo h3 {
+        padding-top: 40px;
+        font-size: 24px;
+    }
+    
+      .button-login {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        margin-bottom: 40px;
+        width: 180px;
+        animation-name: spin;
+        animation-duration: 5000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear; 
+      }
+    
+      .logo-presisi {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 70px;
+        margin-bottom: 30px;
+        width: 680px;
+      }
+    
+      .text-login {
+        font-size: 20px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        position: absolute;
+        color: #fff;
+        margin-top: -130px;
+        margin-left: 0.2px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 28px 12px;
+        background-image: linear-gradient(#0B6992, #16374B);
+        border-radius: 50%;
+      }
+    
+      .title-news{
+        border-bottom: 1px solid #174868;
+        color: #fff;
+        margin-bottom: 5px;
+        font-size: 20px;
+      }
+    
+      .more-article{
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 14px;
+        margin-bottom: -8px;
+      }
+
+      .logo-login {
+        margin-top: 35px;
+        margin-bottom: 30px;
+        width: 200px;
+    }
+
+      .text-logo {
+        font-size: 35px;
+    }
+
+    .form-form .form-form-wrap {
+      max-width: 380px;
+  }
+
+  .text-slogan {
+    font-size: 14px;
+    margin: 10px 0 20px 0;
+    padding: 2px 45px;
+}
+
+.text-slogan span#lefts {
+  margin-left: -122px;
+}
+
+.text-slogan span#rights {
+  margin-right: -133px;
+}
+    
+    }

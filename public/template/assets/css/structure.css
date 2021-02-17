@@ -1898,6 +1898,40 @@ transform: translateX(34px);
       =============
   */
 
+  .grid-polda {
+    width: 5.25%;
+    text-align: center;
+    padding: 7px 10px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.grid-polda.glowred {
+    border: solid 0.5px #ea1c26;
+    background: rgba(234, 28, 38, 0.2);
+    box-shadow: 0 0 8px 0 rgba(234, 28, 38, 0.1), 0 0 20px 0 rgba(234, 28, 38, 0.09);
+}
+
+.grid-polda.glowblue {
+    border: solid 0.5px #00adef;
+    background: rgba(0, 173, 239, 0.2);
+    box-shadow: 0 0 8px 0 rgba(81, 203, 238, 0.1), 0 0 20px 0 rgba(81, 203, 238, 0.09);
+}
+
+.grid-polda.line {
+    margin-right: 5px;
+}
+
+.grid-polda img {
+    width: 100%;
+    margin-top: -7px;
+}
+
+.grid-polda p {
+    font-size: 6px;
+    text-transform: uppercase;
+}
+
   @media only screen and (min-width: 1300px) {
 
     .grid-polda {
