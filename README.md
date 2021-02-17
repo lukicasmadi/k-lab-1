@@ -103,6 +103,10 @@ Atau jika ada kebutuhan re-migrate database dan mulai dari awal dummy datanya, j
 -   Ada 4 directive yg dibuat di project ini `@push('page_css')` , `@push('page_js')` , `@push('library_js')` , `@push('library_css')`
 -   Keempat directive beda-beda peruntukannya untuk posisi code
 -   Pelajari di salah satu file direktori `resources\views`
+-   Fungsi `@stack('library_css')` untuk import library css. Contohnya bootstrap.css
+-   Fungsi `@stack('page_css')` untuk import file custom css yg hanya dipake di halaman itu
+-   Fungsi `@stack('library_js')` untuk import library js. Contohnya jquery.js
+-   Fungsi `@stack('page_js')` untuk import file custom js
 
 ## How to use datatable
 

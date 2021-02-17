@@ -5,14 +5,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home', function () {
     if (!empty(auth()->user())) {
-        return redirect('/');
+        return redirect('/dashboard');
+    } else {
+        return view('index');
     }
-    return view('index');
-})->name('home_before_login');
-
-Route::get('/info', function () {
-    return view('info');
-});
+})->name('home');
 
 Auth::routes(['register' => false]);
 
@@ -21,6 +18,7 @@ Route::post('/forgot-password/process', 'UserController@forgot_password_process'
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index')->name('dashboard');
+    Route::get('/info', 'HomeController@info')->name('info');
     Route::get('/preview/{uuid}/report', 'HomeController@previewReport')->name('previewReport');
     Route::get('/forgot-password/request', 'UserController@forgot_password_request')->name('forgot_password_request');
     Route::get('/dashboard/{uuid}/preview', 'PoldaHasRencanaOperasiController@previewPhroDashboard')->name('previewPhroDashboard');
