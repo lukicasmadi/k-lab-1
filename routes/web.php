@@ -10,6 +10,10 @@ Route::get('/home', function () {
     return view('index');
 })->name('home_before_login');
 
+Route::get('/info', function () {
+    return view('info');
+});
+
 Auth::routes(['register' => false]);
 
 Route::get('/forgot-password', 'UserController@forgot_password_index')->name('forgot_password_index');
