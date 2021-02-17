@@ -84,7 +84,7 @@
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td style="font-weight: bold;">{{ calculation([
-                $data->dailyInput->pelanggaran_lalu_lintas_teguran, 
+                $data->dailyInput->pelanggaran_lalu_lintas_teguran,
                 $data->dailyInput->pelanggaran_lalu_lintas_teguran
             ]) }}</td>
             <td></td>
@@ -408,73 +408,85 @@
         <tr>
             <td></td>
             <td>a. &lt; 15 TAHUN</td>
-            <td>3546</td>
+            <td>{{ $data->dailyInput->usia_pelaku_pelanggaran_kurang_dari_15_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>b. 16 - 20 TAHUN</td>
-            <td>6387</td>
+            <td>{{ $data->dailyInput->usia_pelaku_pelanggaran_16_20_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>c. 21 - 25 TAHUN</td>
-            <td>6599</td>
+            <td>{{ $data->dailyInput->usia_pelaku_pelanggaran_21_25_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>d. 26 - 30 TAHUN</td>
-            <td>5925</td>
+            <td>{{ $data->dailyInput->usia_pelaku_pelanggaran_26_30_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>e. 31 - 35 TAHUN</td>
-            <td>4513</td>
+            <td>{{ $data->dailyInput->usia_pelaku_pelanggaran_31_35_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>f. 36 - 40 TAHUN</td>
-            <td>3333</td>
+            <td>{{ $data->dailyInput->usia_pelaku_pelanggaran_36_40_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>g. 41 - 45 TAHUN</td>
-            <td>2357</td>
+            <td>{{ $data->dailyInput->usia_pelaku_pelanggaran_41_45_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>h. 46 - 50 TAHUN</td>
-            <td>1544</td>
+            <td>{{ $data->dailyInput->usia_pelaku_pelanggaran_46_50_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>I. 51 - 55 TAHUN</td>
-            <td>968</td>
+            <td>{{ $data->dailyInput->usia_pelaku_pelanggaran_51_55_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>j. 56 - 60 TAHUN</td>
-            <td>472</td>
+            <td>{{ $data->dailyInput->usia_pelaku_pelanggaran_56_60_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>k. > 60 TAHUN</td>
-            <td>150</td>
+            <td>{{ $data->dailyInput->usia_pelaku_pelanggaran_diatas_60_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>35794</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->usia_pelaku_pelanggaran_kurang_dari_15_tahun,
+                $data->dailyInput->usia_pelaku_pelanggaran_16_20_tahun,
+                $data->dailyInput->usia_pelaku_pelanggaran_21_25_tahun,
+                $data->dailyInput->usia_pelaku_pelanggaran_26_30_tahun,
+                $data->dailyInput->usia_pelaku_pelanggaran_31_35_tahun,
+                $data->dailyInput->usia_pelaku_pelanggaran_36_40_tahun,
+                $data->dailyInput->usia_pelaku_pelanggaran_41_45_tahun,
+                $data->dailyInput->usia_pelaku_pelanggaran_46_50_tahun,
+                $data->dailyInput->usia_pelaku_pelanggaran_51_55_tahun,
+                $data->dailyInput->usia_pelaku_pelanggaran_56_60_tahun,
+                $data->dailyInput->usia_pelaku_pelanggaran_diatas_60_tahun
+            ]) }}</td>
             <td></td>
         </tr>
         <tr>
