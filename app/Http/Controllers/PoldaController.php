@@ -31,6 +31,7 @@ class PoldaController extends Controller
     {
         $data = [
             'name' => request('name'),
+            'short_name' => request('short_name'),
             'jurisdiction' => request('jurisdiction'),
             'headquarters' => request('headquarters'),
             'type' => request('type'),
@@ -65,6 +66,7 @@ class PoldaController extends Controller
     {
         $data = [
             'name' => request('name'),
+            'short_name' => request('short_name'),
             'jurisdiction' => request('jurisdiction'),
             'headquarters' => request('headquarters'),
             'type' => request('type'),

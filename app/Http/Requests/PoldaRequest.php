@@ -26,6 +26,7 @@ class PoldaRequest extends FormRequest
         $logo = request()->isMethod('patch') ? 'nullable|mimes:jpeg,jpg,png|max:8000' : 'required|mimes:jpeg,jpg,png|max:8000';
         return [
             'name' => 'required',
+            'short_name' => 'required',
             'logo' => $logo,
             'jurisdiction' => 'required',
             'headquarters' => 'nullable',

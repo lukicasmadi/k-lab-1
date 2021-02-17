@@ -15,11 +15,8 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
+                                <th>Short Name</th>
                                 <th>Logo</th>
-                                <th>Jurisdiction</th>
-                                <th>Headquarters</th>
-                                <th>Type</th>
-                                <th>Official Site</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -75,28 +72,20 @@
                 data: 'name',
             },
             {
+                data: 'short_name',
+            },
+            {
                 data: 'logo',
                 render: function(data, type, row) {
                     if (_.isEmpty(data)) {
-                        return '<td class="text-center"><span><img src="' + route('dashboard') + '/template/assets/img/90x90.jpg" class="profile-img" width="40" height="40"></span></td>'
+                        return '<td class="text-center"><span><img src="' + route('index') + '/template/assets/img/90x90.jpg" class="profile-img" width="40" height="40"></span></td>'
+                    } else {
+                        return '<td class="text-center"><span><img src="' + route('index') + '/img/polda/'+data+'" class="profile-img" width="40" height="50"></span></td>'
                     }
                 },
                 searchable: false,
                 sortable: false
             },
-            {
-                data: 'jurisdiction',
-            },
-            {
-                data: 'headquarters',
-            },
-            {
-                data: 'type',
-            },
-            {
-                data: 'official_site',
-            },
-
             {
                 data: 'uuid',
                 render: function(data, type, row) {
