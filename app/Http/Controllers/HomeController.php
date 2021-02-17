@@ -11,6 +11,27 @@ use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
+
+    public function index()
+    {
+        $polda = Polda::select("id", "uuid", "name", "short_name", "logo")
+            ->with(['dailyInput' => function($query) {
+                $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
+            }])
+            ->orderBy("name", "asc")
+            ->get();
+
+        if(empty(operationPlans())) {
+            return view('empty_project');
+        }
+        return view('main', compact('polda'));
+    }
+
+    public function info()
+    {
+        return view('info');
+    }
+
     public function notifikasi()
     {
         $model = PoldaSubmited::with(['polda' => function($query) {
@@ -88,20 +109,5 @@ class HomeController extends Controller
             'totalPerDate' => $totalPerDate,
             'projectName' => $projectRunning->name
         ], 200);
-    }
-
-    public function index()
-    {
-        $polda = Polda::select("id", "uuid", "name", "short_name", "logo")
-            ->with(['dailyInput' => function($query) {
-                $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
-            }])
-            ->orderBy("name", "asc")
-            ->get();
-
-        if(empty(operationPlans())) {
-            return view('empty_project');
-        }
-        return view('main', compact('polda'));
     }
 }
