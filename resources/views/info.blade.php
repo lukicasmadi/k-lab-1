@@ -1852,7 +1852,7 @@
     function redirectAfter() {
         setTimeout(function () {
             window.location.href = route("dashboard");
-        }, 5000);
+        }, 3000);
     }
 </script>
 @endpush

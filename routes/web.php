@@ -17,8 +17,8 @@ Route::get('/forgot-password', 'UserController@forgot_password_index')->name('fo
 Route::post('/forgot-password/process', 'UserController@forgot_password_process')->name('forgot_password_process');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/', 'HomeController@index')->name('dashboard');
-    Route::get('/info', 'HomeController@info')->name('info');
+    Route::get('/', 'HomeController@index')->name('index');
+    Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
     Route::get('/preview/{uuid}/report', 'HomeController@previewReport')->name('previewReport');
     Route::get('/forgot-password/request', 'UserController@forgot_password_request')->name('forgot_password_request');
     Route::get('/dashboard/{uuid}/preview', 'PoldaHasRencanaOperasiController@previewPhroDashboard')->name('previewPhroDashboard');

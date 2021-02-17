@@ -15,7 +15,7 @@
         <ul class="list-unstyled menu-categories" id="topAccordion">
 
             <li class="menu single-menu {{
-                request()->is('/') ? 'active' : ''
+                request()->is('/dashboard') ? 'active' : ''
                 }}">
                 <a href="{{ route('dashboard') }}">
                     <div>

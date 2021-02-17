@@ -14,6 +14,11 @@ class HomeController extends Controller
 
     public function index()
     {
+        return view('info');
+    }
+
+    public function dashboard()
+    {
         $polda = Polda::select("id", "uuid", "name", "short_name", "logo")
             ->with(['dailyInput' => function($query) {
                 $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
@@ -25,11 +30,6 @@ class HomeController extends Controller
             return view('empty_project');
         }
         return view('main', compact('polda'));
-    }
-
-    public function info()
-    {
-        return view('info');
     }
 
     public function notifikasi()
