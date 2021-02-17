@@ -42,11 +42,9 @@ class HomeController extends Controller
 
     public function dailycheck()
     {
-        $model = Polda::with('dailyInput')->orderBy("name", "asc");
-
-        // $model = Polda::whereHas('dailyInput', function($q){
-        //     $q->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
-        // })->orderBy("name", "asc");
+        $model = Polda::with(['dailyInput' => function($query) {
+            $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
+        }])->orderBy("name", "asc");
 
         return datatables()->eloquent($model)
         ->addColumn('has_submited', function (Polda $polda) {
@@ -94,16 +92,16 @@ class HomeController extends Controller
 
     public function index()
     {
-        $polda = Polda::select("id", "uuid", "name", "short_name", "logo")->with('dailyInput')->orderBy("name", "asc")->get();
+        $polda = Polda::select("id", "uuid", "name", "short_name", "logo")
+            ->with(['dailyInput' => function($query) {
+                $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
+            }])
+            ->orderBy("name", "asc")
+            ->get();
 
         if(empty(operationPlans())) {
             return view('empty_project');
         }
         return view('main', compact('polda'));
-    }
-
-    public function previewReport($uuid)
-    {
-        //
     }
 }

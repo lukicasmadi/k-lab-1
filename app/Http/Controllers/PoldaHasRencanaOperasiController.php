@@ -140,6 +140,9 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function download($uuid)
     {
-        return Excel::download(new PoldaSubmitedExport($uuid), 'polda_submited.xlsx');
+        $polda = Polda::whereUuid($uuid)->firstOrFail();
+        $now = now()->format("Y-m-d");
+        $filename = 'daily-report-'.$polda->short_name.'-'.$now.'.xlsx';
+        return Excel::download(new PoldaSubmitedExport($uuid), $filename);
     }
 }

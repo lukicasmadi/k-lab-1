@@ -125,3 +125,9 @@ if (! function_exists('hariIni')) {
         return now()->format("d-m-Y");
     }
 }
+
+if (! function_exists('calculation')) {
+    function calculation($arrayData) {
+        return array_sum($arrayData);
+    }
+}
