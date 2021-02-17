@@ -840,49 +840,57 @@
         <tr>
             <td></td>
             <td>a. PEGAWAI NEGERI SIPIL</td>
-            <td>{{ $data->dailyInput->xxxxxxxx }}</td>
+            <td>{{ $data->dailyInput->profesi_korban_kecelakaan_lalin_pns }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>b. KARYAWAN / SWASTA</td>
-            <td>{{ $data->dailyInput->xxxxxxxx }}</td>
+            <td>{{ $data->dailyInput->profesi_korban_kecelakaan_lalin_karwayan_swasta }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>c. MAHASISWA / PELAJAR</td>
-            <td>{{ $data->dailyInput->xxxxxxxx }}</td>
+            <td>{{ $data->dailyInput->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>d. PENGEMUDI</td>
-            <td>{{ $data->dailyInput->xxxxxxxx }}</td>
+            <td>{{ $data->dailyInput->profesi_korban_kecelakaan_lalin_pengemudi }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>e. TNI</td>
-            <td>{{ $data->dailyInput->xxxxxxxx }}</td>
+            <td>{{ $data->dailyInput->profesi_korban_kecelakaan_lalin_tni }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>f. POLRI</td>
-            <td>{{ $data->dailyInput->xxxxxxxx }}</td>
+            <td>{{ $data->dailyInput->profesi_korban_kecelakaan_lalin_polri }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>g. LAIN-LAIN</td>
-            <td>{{ $data->dailyInput->xxxxxxxx }}</td>
+            <td>{{ $data->dailyInput->profesi_korban_kecelakaan_lalin_lain_lain }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>71</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->profesi_korban_kecelakaan_lalin_pns,
+                $data->dailyInput->profesi_korban_kecelakaan_lalin_karwayan_swasta,
+                $data->dailyInput->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa,
+                $data->dailyInput->profesi_korban_kecelakaan_lalin_pengemudi,
+                $data->dailyInput->profesi_korban_kecelakaan_lalin_tni,
+                $data->dailyInput->profesi_korban_kecelakaan_lalin_polri,
+                $data->dailyInput->profesi_korban_kecelakaan_lalin_lain_lain
+                ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -900,73 +908,85 @@
         <tr>
             <td></td>
             <td>a. &lt; 15 TAHUN</td>
-            <td>7</td>
+            <td>{{ $data->dailyInput->usia_korban_kecelakaan_kurang_15 }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>b. 16 - 20 TAHUN</td>
-            <td>24</td>
+            <td>{{ $data->dailyInput->usia_korban_kecelakaan_16_20 }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>c. 21 - 25 TAHUN</td>
-            <td>10</td>
+            <td>{{ $data->dailyInput->usia_korban_kecelakaan_21_25 }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>d. 26 - 30 TAHUN</td>
-            <td>2</td>
+            <td>{{ $data->dailyInput->usia_korban_kecelakaan_26_30 }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>e. 31 - 35 TAHUN</td>
-            <td>3</td>
+            <td>{{ $data->dailyInput->usia_korban_kecelakaan_31_35 }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>f. 36 - 40 TAHUN</td>
-            <td>4</td>
+            <td>{{ $data->dailyInput->usia_korban_kecelakaan_36_40 }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>g. 41 - 45 TAHUN</td>
-            <td>3</td>
+            <td>{{ $data->dailyInput->usia_korban_kecelakaan_41_45 }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>h. 46 - 50 TAHUN</td>
-            <td>4</td>
+            <td>{{ $data->dailyInput->usia_korban_kecelakaan_45_50 }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>I. 51 - 55 TAHUN</td>
-            <td>4</td>
+            <td>{{ $data->dailyInput->usia_korban_kecelakaan_51_55 }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>j. 56 - 60 TAHUN</td>
-            <td>6</td>
+            <td>{{ $data->dailyInput->usia_korban_kecelakaan_56_60 }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>k. > 60 TAHUN</td>
-            <td>14</td>
+            <td>{{ $data->dailyInput->usia_korban_kecelakaan_diatas_60 }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>81</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->usia_korban_kecelakaan_kurang_15,
+                $data->dailyInput->usia_korban_kecelakaan_16_20,
+                $data->dailyInput->usia_korban_kecelakaan_21_25,
+                $data->dailyInput->usia_korban_kecelakaan_26_30,
+                $data->dailyInput->usia_korban_kecelakaan_31_35,
+                $data->dailyInput->usia_korban_kecelakaan_36_40,
+                $data->dailyInput->usia_korban_kecelakaan_41_45,
+                $data->dailyInput->usia_korban_kecelakaan_45_50,
+                $data->dailyInput->usia_korban_kecelakaan_51_55,
+                $data->dailyInput->usia_korban_kecelakaan_56_60,
+                $data->dailyInput->usia_korban_kecelakaan_diatas_60
+                ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -984,67 +1004,78 @@
         <tr>
             <td></td>
             <td>a. A</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->sim_korban_kecelakaan_sim_a }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>b. A UMUM</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->sim_korban_kecelakaan_sim_a_umum }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>c. B1</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->sim_korban_kecelakaan_sim_b1 }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>d. B1 UMUM</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->sim_korban_kecelakaan_sim_b1_umum }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>e. BII</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->sim_korban_kecelakaan_sim_b2 }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>f. BII UMUM</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->sim_korban_kecelakaan_sim_b2_umum }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>g. C</td>
-            <td>6</td>
+            <td>{{ $data->dailyInput->sim_korban_kecelakaan_sim_c }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>h. D</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->sim_korban_kecelakaan_sim_d }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>I. SIM INTERNASIONAL</td>
-            <td>6</td>
+            <td>{{ $data->dailyInput->sim_korban_kecelakaan_sim_internasional }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>j. TANPA SIM</td>
-            <td>65</td>
+            <td>{{ $data->dailyInput->sim_korban_kecelakaan_tanpa_sim }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>77</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->sim_korban_kecelakaan_sim_a,
+                $data->dailyInput->sim_korban_kecelakaan_sim_a_umum,
+                $data->dailyInput->sim_korban_kecelakaan_sim_b1,
+                $data->dailyInput->sim_korban_kecelakaan_sim_b1_umum,
+                $data->dailyInput->sim_korban_kecelakaan_sim_b2,
+                $data->dailyInput->sim_korban_kecelakaan_sim_b2_umum,
+                $data->dailyInput->sim_korban_kecelakaan_sim_c,
+                $data->dailyInput->sim_korban_kecelakaan_sim_d,
+                $data->dailyInput->sim_korban_kecelakaan_sim_internasional,
+                $data->dailyInput->sim_korban_kecelakaan_tanpa_sim
+                ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -1062,43 +1093,50 @@
         <tr>
             <td></td>
             <td>a. SEPEDA MOTOR</td>
-            <td>56</td>
+            <td>{{ $data->dailyInput->kendaraan_yg_terlibat_kecelakaan_sepeda_motor }}</td>
             <td>Unit</td>
         </tr>
         <tr>
             <td></td>
             <td>b. MOBIL PENUMPANG</td>
-            <td>10</td>
+            <td>{{ $data->dailyInput->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang }}</td>
             <td>Unit</td>
         </tr>
         <tr>
             <td></td>
             <td>c. MOBIL BUS</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->kendaraan_yg_terlibat_kecelakaan_mobil_bus }}</td>
             <td>Unit</td>
         </tr>
         <tr>
             <td></td>
             <td>d. MOBIL BARANG</td>
-            <td>8</td>
+            <td>{{ $data->dailyInput->kendaraan_yg_terlibat_kecelakaan_mobil_barang }}</td>
             <td>Unit</td>
         </tr>
         <tr>
             <td></td>
             <td>e. KENDARAAN KHUSUS</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus }}</td>
             <td>Unit</td>
         </tr>
         <tr>
             <td></td>
             <td>f. KENDARAAN TIDAK BERMOTOR</td>
-            <td>6</td>
+            <td>{{ $data->dailyInput->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor }}</td>
             <td>Unit</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>81</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->kendaraan_yg_terlibat_kecelakaan_sepeda_motor,
+                $data->dailyInput->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang,
+                $data->dailyInput->kendaraan_yg_terlibat_kecelakaan_mobil_bus,
+                $data->dailyInput->kendaraan_yg_terlibat_kecelakaan_mobil_barang,
+                $data->dailyInput->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus,
+                $data->dailyInput->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor
+                ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -1116,67 +1154,78 @@
         <tr>
             <td></td>
             <td>a. TUNGGAL / OUT OF CONTROL</td>
-            <td>2</td>
+            <td>{{ $data->dailyInput->jenis_kecelakaan_tunggal_ooc }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>b. DEPAN-DEPAN</td>
-            <td>9</td>
+            <td>{{ $data->dailyInput->jenis_kecelakaan_depan_depan }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>c. DEPAN-BELAKANG</td>
-            <td>12</td>
+            <td>{{ $data->dailyInput->jenis_kecelakaan_depan_belakang }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>d. DEPAN-SAMPING</td>
-            <td>11</td>
+            <td>{{ $data->dailyInput->jenis_kecelakaan_depan_samping }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>e. BERUNTUN</td>
-            <td>2</td>
+            <td>{{ $data->dailyInput->jenis_kecelakaan_beruntun }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>f. TABRAK PEJALAN KAKI</td>
-            <td>5</td>
+            <td>{{ $data->dailyInput->jenis_kecelakaan_pejalan_kaki }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>g. TABRAK LARI</td>
-            <td>4</td>
+            <td>{{ $data->dailyInput->jenis_kecelakaan_tabrak_lari }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>h. TABRAK HEWAN</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->jenis_kecelakaan_tabrak_hewan }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>I. SAMPING-SAMPING</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->jenis_kecelakaan_samping_samping }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>j. LAINNYA</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->jenis_kecelakaan_lainnya }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>45</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->jenis_kecelakaan_tunggal_ooc,
+                $data->dailyInput->jenis_kecelakaan_depan_depan,
+                $data->dailyInput->jenis_kecelakaan_depan_belakang,
+                $data->dailyInput->jenis_kecelakaan_depan_samping,
+                $data->dailyInput->jenis_kecelakaan_beruntun,
+                $data->dailyInput->jenis_kecelakaan_pejalan_kaki,
+                $data->dailyInput->jenis_kecelakaan_tabrak_lari,
+                $data->dailyInput->jenis_kecelakaan_tabrak_hewan,
+                $data->dailyInput->jenis_kecelakaan_samping_samping,
+                $data->dailyInput->jenis_kecelakaan_lainnya
+                ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -1194,49 +1243,57 @@
         <tr>
             <td></td>
             <td>a. PEGAWAI NEGERI SIPIL</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->profesi_pelaku_kecelakaan_lalin_pns }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>b. KARYAWAN / SWASTA</td>
-            <td>25</td>
+            <td>{{ $data->dailyInput->profesi_pelaku_kecelakaan_lalin_karyawan_swasta }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>c. MAHASISWA / PELAJAR</td>
-            <td>10</td>
+            <td>{{ $data->dailyInput->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>d. PENGEMUDI</td>
-            <td>6</td>
+            <td>{{ $data->dailyInput->profesi_pelaku_kecelakaan_lalin_pengemudi }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>e. TNI</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->profesi_pelaku_kecelakaan_lalin_tni }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>f. POLRI</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->profesi_pelaku_kecelakaan_lalin_polri }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>g. LAIN-LAIN</td>
-            <td>3</td>
+            <td>{{ $data->dailyInput->profesi_pelaku_kecelakaan_lalin_lain_lain }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>44</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->profesi_pelaku_kecelakaan_lalin_pns,
+                $data->dailyInput->profesi_pelaku_kecelakaan_lalin_karyawan_swasta,
+                $data->dailyInput->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelaja,
+                $data->dailyInput->profesi_pelaku_kecelakaan_lalin_pengemudi,
+                $data->dailyInput->profesi_pelaku_kecelakaan_lalin_tni,
+                $data->dailyInput->profesi_pelaku_kecelakaan_lalin_polri,
+                $data->dailyInput->profesi_pelaku_kecelakaan_lalin_lain_lain
+                ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -1254,73 +1311,85 @@
         <tr>
             <td></td>
             <td>a. &lt; 15 TAHUN</td>
-            <td>2</td>
+            <td>{{ $data->dailyInput->usia_pelaku_kecelakaan_kurang_dari_15_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>b. 16 - 20 TAHUN</td>
-            <td>11</td>
+            <td>{{ $data->dailyInput->usia_pelaku_kecelakaan_16_20_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>c. 21 - 25 TAHUN</td>
-            <td>9</td>
+            <td>{{ $data->dailyInput->usia_pelaku_kecelakaan_21_25_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>d. 26 - 30 TAHUN</td>
-            <td>5</td>
+            <td>{{ $data->dailyInput->usia_pelaku_kecelakaan_26_30_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>e. 31 - 35 TAHUN</td>
-            <td>3</td>
+            <td>{{ $data->dailyInput->usia_pelaku_kecelakaan_31_35_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>f. 36 - 40 TAHUN</td>
-            <td>3</td>
+            <td>{{ $data->dailyInput->usia_pelaku_kecelakaan_36_40_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>g. 41 - 45 TAHUN</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->usia_pelaku_kecelakaan_41_45_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>h. 46 - 50 TAHUN</td>
-            <td>2</td>
+            <td>{{ $data->dailyInput->usia_pelaku_kecelakaan_46_50_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>I. 51 - 55 TAHUN</td>
-            <td>3</td>
+            <td>{{ $data->dailyInput->usia_pelaku_kecelakaan_51_55_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>j. 56 - 60 TAHUN</td>
-            <td>2</td>
+            <td>{{ $data->dailyInput->usia_pelaku_kecelakaan_56_60_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>k. > 60 TAHUN</td>
-            <td>2</td>
+            <td>{{ $data->dailyInput->usia_pelaku_kecelakaan_diatas_60_tahun }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>43</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->usia_pelaku_kecelakaan_kurang_dari_15_tahun,
+                $data->dailyInput->usia_pelaku_kecelakaan_16_20_tahun,
+                $data->dailyInput->usia_pelaku_kecelakaan_21_25_tahun,
+                $data->dailyInput->usia_pelaku_kecelakaan_26_30_tahun,
+                $data->dailyInput->usia_pelaku_kecelakaan_31_35_tahun,
+                $data->dailyInput->usia_pelaku_kecelakaan_36_40_tahun,
+                $data->dailyInput->usia_pelaku_kecelakaan_41_45_tahun,
+                $data->dailyInput->usia_pelaku_kecelakaan_46_50_tahun,
+                $data->dailyInput->usia_pelaku_kecelakaan_51_55_tahun,
+                $data->dailyInput->usia_pelaku_kecelakaan_56_60_tahun,
+                $data->dailyInput->usia_pelaku_kecelakaan_diatas_60_tahun
+                ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -1338,67 +1407,78 @@
         <tr>
             <td></td>
             <td>a. A</td>
-            <td>5</td>
+            <td>{{ $data->dailyInput->sim_pelaku_kecelakaan_sim_a }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>b. A UMUM</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->sim_pelaku_kecelakaan_sim_a_umum }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>c. B1</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->sim_pelaku_kecelakaan_sim_b1 }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>d. B1 UMUM</td>
-            <td>4</td>
+            <td>{{ $data->dailyInput->sim_pelaku_kecelakaan_sim_b1_umum }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>e. BII</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->sim_pelaku_kecelakaan_sim_b2 }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>f. B II UMUM</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->sim_pelaku_kecelakaan_sim_b2_umum }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>g. C</td>
-            <td>9</td>
+            <td>{{ $data->dailyInput->sim_pelaku_kecelakaan_sim_c }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>h. D</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->sim_pelaku_kecelakaan_sim_d }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>I. SIM INTERNASIONAL</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->sim_pelaku_kecelakaan_sim_internasional }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>j. TANPA SIM</td>
-            <td>24</td>
+            <td>{{ $data->dailyInput->sim_pelaku_kecelakaan_tanpa_sim }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>43</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->sim_pelaku_kecelakaan_sim_a,
+                $data->dailyInput->sim_pelaku_kecelakaan_sim_a_umum,
+                $data->dailyInput->sim_pelaku_kecelakaan_sim_b1,
+                $data->dailyInput->sim_pelaku_kecelakaan_sim_b1_umum,
+                $data->dailyInput->sim_pelaku_kecelakaan_sim_b2,
+                $data->dailyInput->sim_pelaku_kecelakaan_sim_b2_umum,
+                $data->dailyInput->sim_pelaku_kecelakaan_sim_c,
+                $data->dailyInput->sim_pelaku_kecelakaan_sim_d,
+                $data->dailyInput->sim_pelaku_kecelakaan_sim_internasional,
+                $data->dailyInput->sim_pelaku_kecelakaan_tanpa_sim
+                ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -1422,43 +1502,50 @@
         <tr>
             <td></td>
             <td>1) KAWASAN PEMUKIMAN</td>
-            <td>38</td>
+            <td>{{ $data->dailyInput->lokasi_kecelakaan_lalin_pemukiman }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>2) KAWASAN PERBELANJAAN</td>
-            <td>5</td>
+            <td>{{ $data->dailyInput->lokasi_kecelakaan_lalin_perbelanjaan }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>3) PERKANTORAN</td>
-            <td>2</td>
+            <td>{{ $data->dailyInput->lokasi_kecelakaan_lalin_perkantoran }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>4) KAWASAN WISATA</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->lokasi_kecelakaan_lalin_wisata }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>5) KAWASAN INDUTRI</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->lokasi_kecelakaan_lalin_industri }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>6) LAIN - LAIN</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->lokasi_kecelakaan_lalin_lain_lain }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>46</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->lokasi_kecelakaan_lalin_pemukiman,
+                $data->dailyInput->lokasi_kecelakaan_lalin_perbelanjaan,
+                $data->dailyInput->lokasi_kecelakaan_lalin_perkantoran,
+                $data->dailyInput->lokasi_kecelakaan_lalin_wisata,
+                $data->dailyInput->lokasi_kecelakaan_lalin_industri,
+                $data->dailyInput->lokasi_kecelakaan_lalin_lain_lain
+                ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -1476,31 +1563,37 @@
         <tr>
             <td></td>
             <td>1) NASIONAL</td>
-            <td>21</td>
+            <td>{{ $data->dailyInput->lokasi_kecelakaan_status_jalan_nasional }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>2) PROPINSI</td>
-            <td>14</td>
+            <td>{{ $data->dailyInput->lokasi_kecelakaan_status_jalan_propinsi }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>3) KAB/KOTA</td>
-            <td>6</td>
+            <td>{{ $data->dailyInput->lokasi_kecelakaan_status_jalan_kab_kota }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>4) DESA / LINGKUNGAN</td>
-            <td>8</td>
+            <td>{{ $data->dailyInput->lokasi_kecelakaan_status_jalan_desa_lingkungan }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>49</td>
+            <td style="font-weight: bold;">
+                {{ calculation([
+                $data->dailyInput->lokasi_kecelakaan_status_jalan_nasional,
+                $data->dailyInput->lokasi_kecelakaan_status_jalan_propinsi,
+                $data->dailyInput->lokasi_kecelakaan_status_jalan_kab_kota,
+                $data->dailyInput->lokasi_kecelakaan_status_jalan_desa_lingkungan
+                ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -1509,6 +1602,9 @@
             <td></td>
             <td></td>
         </tr>
+
+
+
         <tr>
             <td style="background-color: #c6efcd;"></td>
             <td style="background-color: #c6efcd;">c. BERDASARKAN FUNGSI JALAN</td>
@@ -1518,31 +1614,36 @@
         <tr>
             <td></td>
             <td>1) ARTERI</td>
-            <td>25</td>
+            <td>{{ $data->dailyInput->lokasi_kecelakaan_fungsi_jalan_arteri }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>2) KOLEKTOR</td>
-            <td>9</td>
+            <td>{{ $data->dailyInput->lokasi_kecelakaan_fungsi_jalan_kolektor }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>3) LOKAL</td>
-            <td>8</td>
+            <td>{{ $data->dailyInput->lokasi_kecelakaan_fungsi_jalan_lokal }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>4) LINGKUNGAN</td>
-            <td>2</td>
+            <td>{{ $data->dailyInput->lokasi_kecelakaan_fungsi_jalan_lingkungan }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>44</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->lokasi_kecelakaan_fungsi_jalan_arteri,
+                $data->dailyInput->lokasi_kecelakaan_fungsi_jalan_kolektor,
+                $data->dailyInput->lokasi_kecelakaan_fungsi_jalan_lokal,
+                $data->dailyInput->lokasi_kecelakaan_fungsi_jalan_lingkungan
+            ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -1551,6 +1652,8 @@
             <td></td>
             <td></td>
         </tr>
+
+
         <tr>
             <td style="background-color: #c6efcd;">20</td>
             <td style="background-color: #c6efcd;">FAKTOR PENYEBAB KECELAKAAN</td>
@@ -1560,133 +1663,153 @@
         <tr>
             <td></td>
             <td>1) MANUSIA</td>
-            <td>0</td>
+            <td>TAMBAHIN DI DATABASE</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>a. NGANTUK/LELAH (PSL 283)</td>
-            <td>2</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_ngantuk_lelah }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>b. MABUK /PENGARUH ALKOHOL DAN OBAT (PSL 283)</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_mabuk_obat }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>c. SAKIT (PSL 283)</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_sakit }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>d. HAND PHONE/ ALAT ELEKTRONIK LAIN (PSL 283)</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_handphone_elektronik }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>e. MENEROBOS LAMPU MERAH(PSL 287 AY 2)</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_menerobos_lampu_merah }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>f. MELANGGAR BATAS KECEPATAN (PSL 287 AY 7)</td>
-            <td>5</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_melanggar_batas_kecepatan }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>g. TIDAK MENJAGA JARAK</td>
-            <td>7</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_tidak_menjaga_jarak }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>h. MENDAHULUI/BERBELOK/BERPINDAH JALUR (PSL 294)</td>
-            <td>12</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>I. BERPINDAH LAJUR ( PSL 295)</td>
-            <td>4</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_berpindah_jalur }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>j. TIDAK MEMBERIKAN LAMPU ISYARAT BERHENTI/BERBELOK   /BERUBAH ARAH</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>k. TIDAK MENGUTAMAKAN PEJALAN KAKI (PSL 284 JO 106 AY 2)</td>
-            <td>10</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>l. LAINNYA</td>
-            <td>3</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_lainnya }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>2) ALAM</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_alam }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>3) KELAIKAN KENDARAAN</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_kelaikan_kendaraan }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>4) JALAN (KONDISI JALAN)</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_kondisi_jalan }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>5) PRASARANA JALAN</td>
-            <td>0</td>
+            <td>TIDAK ADA DI DATABASE</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>a. RAMBU</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_rambu }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>b. MARKA</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_marka }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>c. APIL</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_apil }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>d. PERLINTASAN KA TANPA PALANG PINTU</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>44</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->faktor_penyebab_kecelakaan_ngantuk_lelah,
+                $data->dailyInput->faktor_penyebab_kecelakaan_mabuk_obat,
+                $data->dailyInput->faktor_penyebab_kecelakaan_sakit,
+                $data->dailyInput->faktor_penyebab_kecelakaan_handphone_elektronik,
+                $data->dailyInput->faktor_penyebab_kecelakaan_menerobos_lampu_merah,
+                $data->dailyInput->faktor_penyebab_kecelakaan_melanggar_batas_kecepatan,
+                $data->dailyInput->faktor_penyebab_kecelakaan_tidak_menjaga_jarak,
+                $data->dailyInput->faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur,
+                $data->dailyInput->faktor_penyebab_kecelakaan_berpindah_jalur,
+                $data->dailyInput->faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat,
+                $data->dailyInput->faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki,
+                $data->dailyInput->faktor_penyebab_kecelakaan_lainnya,
+                $data->dailyInput->faktor_penyebab_kecelakaan_alam,
+                $data->dailyInput->faktor_penyebab_kecelakaan_kelaikan_kendaraan,
+                $data->dailyInput->faktor_penyebab_kecelakaan_kondisi_jalan,
+                $data->dailyInput->faktor_penyebab_kecelakaan_rambu,
+                $data->dailyInput->faktor_penyebab_kecelakaan_marka,
+                $data->dailyInput->faktor_penyebab_kecelakaan_apil,
+                $data->dailyInput->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu
+                ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -1704,55 +1827,64 @@
         <tr>
             <td></td>
             <td>a. 00.00 - 03.00</td>
-            <td>5</td>
+            <td>{{ $data->dailyInput->waktu_kejadian_kecelakaan_00_03 }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>b. 03.00 - 06.00</td>
-            <td>4</td>
+            <td>{{ $data->dailyInput->waktu_kejadian_kecelakaan_03_06 }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>c. 06.00- 09.00</td>
-            <td>6</td>
+            <td>{{ $data->dailyInput->waktu_kejadian_kecelakaan_06_09 }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>d. 09.00 - 12.00</td>
-            <td>8</td>
+            <td>{{ $data->dailyInput->waktu_kejadian_kecelakaan_09_12 }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>e. 12.00 - 15.00</td>
-            <td>3</td>
+            <td>{{ $data->dailyInput->waktu_kejadian_kecelakaan_12_15 }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>f. 15.00 - 18.00</td>
-            <td>8</td>
+            <td>{{ $data->dailyInput->waktu_kejadian_kecelakaan_15_18 }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>g. 18.00 - 21.00</td>
-            <td>5</td>
+            <td>{{ $data->dailyInput->waktu_kejadian_kecelakaan_18_21 }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>h. 21.00 - 24.00</td>
-            <td>9</td>
+            <td>{{ $data->dailyInput->waktu_kejadian_kecelakaan_21_24 }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>48</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->waktu_kejadian_kecelakaan_00_03,
+                $data->dailyInput->waktu_kejadian_kecelakaan_03_06,
+                $data->dailyInput->waktu_kejadian_kecelakaan_06_09,
+                $data->dailyInput->waktu_kejadian_kecelakaan_09_12,
+                $data->dailyInput->waktu_kejadian_kecelakaan_12_15,
+                $data->dailyInput->waktu_kejadian_kecelakaan_15_18,
+                $data->dailyInput->waktu_kejadian_kecelakaan_18_21,
+                $data->dailyInput->waktu_kejadian_kecelakaan_21_24
+                ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -1770,31 +1902,31 @@
         <tr>
             <td></td>
             <td>a. JUMLAH KEJADIAN</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_menonjol_jumlah_kejadian }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>b. KORBAN MENINGGAL DUNIA</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_menonjol_korban_meninggal }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KORBAN LUKA BERAT</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_menonjol_korban_luka_berat }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>d. KORBAN LUKA RINGAN</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_menonjol_korban_luka_ringan }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>e. MATERIIL</td>
-            <td>2000000</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_menonjol_materiil }}</td>
             <td>Rp</td>
         </tr>
         <tr>
@@ -1812,31 +1944,31 @@
         <tr>
             <td></td>
             <td>a. JUMLAH KEJADIAN</td>
-            <td>2</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tunggal_jumlah_kejadian }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>b. KORBAN MENINGGAL DUNIA</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tunggal_korban_meninggal }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KORBAN LUKA BERAT</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tunggal_korban_luka_berat }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>d. KORBAN LUKA RINGAN</td>
-            <td>2</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tunggal_korban_luka_ringan }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>e. MATERIIL</td>
-            <td>1200000</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tunggal_materiil }}</td>
             <td>Rp</td>
         </tr>
         <tr>
@@ -1854,31 +1986,31 @@
         <tr>
             <td></td>
             <td>a. JUMLAH KEJADIAN</td>
-            <td>7</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_pejalan_kaki_jumlah_kejadian }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>b. KORBAN MENINGGAL DUNIA</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_pejalan_kaki_korban_meninggal }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KORBAN LUKA BERAT</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_berat }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>d. KORBAN LUKA RINGAN</td>
-            <td>3</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_ringan }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>e. MATERIIL</td>
-            <td>1300000</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_pejalan_kaki_materiil }}</td>
             <td>Rp</td>
         </tr>
         <tr>
@@ -1896,31 +2028,31 @@
         <tr>
             <td></td>
             <td>a. JUMLAH KEJADIAN</td>
-            <td>4</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_lari_jumlah_kejadian }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>b. KORBAN MENINGGAL DUNIA</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_lari_korban_meninggal }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KORBAN LUKA BERAT</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_lari_korban_luka_berat }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>d. KORBAN LUKA RINGAN</td>
-            <td>4</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_lari_korban_luka_ringan }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>e. MATERIIL</td>
-            <td>500000</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_lari_materiil }}</td>
             <td>Rp</td>
         </tr>
         <tr>
@@ -1938,32 +2070,32 @@
         <tr>
             <td></td>
             <td>a. JUMLAH KEJADIAN</td>
-            <td>19</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_sepeda_motor_jumlah_kejadian }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>b. KORBAN MENINGGAL DUNIA</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_sepeda_motor_korban_meninggal }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KORBAN LUKA BERAT</td>
-            <td>6</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_berat }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>d. KORBAN LUKA RINGAN</td>
-            <td>22</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_ringan }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>e. MATERIIL</td>
             <td>22900000</td>
-            <td>Rp</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_sepeda_motor_materiil }}</td>
         </tr>
         <tr>
             <td></td>
@@ -1973,38 +2105,38 @@
         </tr>
         <tr>
             <td style="background-color: #c6efcd;">27</td>
-            <td >TABRAK RANMOR RODA EMPAT ( R4 )</td>
+            <td style="background-color: #c6efcd;">TABRAK RANMOR RODA EMPAT ( R4 )</td>
             <td style="background-color: #c6efcd;"></td>
             <td style="background-color: #c6efcd;"></td>
         </tr>
         <tr>
             <td></td>
             <td>a. JUMLAH KEJADIAN</td>
-            <td>4</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_roda_empat_jumlah_kejadian }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>b. KORBAN MENINGGAL DUNIA</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_roda_empat_korban_meninggal }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KORBAN LUKA BERAT</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_roda_empat_korban_luka_berat }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>d. KORBAN LUKA RINGAN</td>
-            <td>5</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_roda_empat_korban_luka_ringan }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>e. MATERIIL</td>
-            <td>2800000</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_roda_empat_materiil }}</td>
             <td>Rp</td>
         </tr>
         <tr>
@@ -2022,31 +2154,31 @@
         <tr>
             <td></td>
             <td>a. JUMLAH KEJADIAN</td>
-            <td>2</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_tidak_bermotor_jumlah_kejadian }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>b. KORBAN MENINGGAL DUNIA</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_tidak_bermotor_korban_meninggal }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KORBAN LUKA BERAT</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_berat }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>d. KORBAN LUKA RINGAN</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_ringan }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>e. MATERIIL</td>
-            <td>100000</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_tidak_bermotor_materiil }}</td>
             <td>Rp</td>
         </tr>
         <tr>
@@ -2064,43 +2196,43 @@
         <tr>
             <td></td>
             <td>a. JUMLAH KEJADIAN</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_perlintasan_ka_jumlah_kejadian }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>b. BERPALANG PINTU</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_perlintasan_ka_berpalang_pintu }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>c. TIDAK BERPALANG PINTU</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_perlintasan_ka_tidak_berpalang_pintu }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>d. KORBAN LUKA RINGAN</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_perlintasan_ka_korban_luka_ringan }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>e. KORBAN LUKA BERAT</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_perlintasan_ka_korban_luka_berat }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>f. KORBAN MENINGGAL DUNIA</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_perlintasan_ka_korban_meninggal }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>g. MATERIIL</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_perlintasan_ka_materiil }}</td>
             <td>Rp</td>
         </tr>
         <tr>
@@ -2118,25 +2250,30 @@
         <tr>
             <td></td>
             <td>a. KECELAKAAN KERETA API</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kecelakaan_transportasi_kereta_api }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>b. KECELAKAAN LAUT / PERAIRAN</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kecelakaan_transportasi_laut_perairan }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KECELAKAAN UDARA</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->kecelakaan_transportasi_udara }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>0</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->kecelakaan_transportasi_kereta_api,
+                $data->dailyInput->kecelakaan_transportasi_laut_perairan,
+                $data->dailyInput->kecelakaan_transportasi_udara
+                ]) }}
+            </td>
             <td></td>
         </tr>
         <tr>
@@ -2166,37 +2303,43 @@
         <tr>
             <td></td>
             <td>1) MELALUI MEDIA CETAK</td>
-            <td>221</td>
+            <td>{{ $data->dailyInput->penlu_melalui_media_cetak }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>2) MELALUI MEDIA ELEKTRONIK</td>
-            <td>1069</td>
+            <td>{{ $data->dailyInput->penlu_melalui_media_elektronik }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>3) TEMPAT KERAMAIAN</td>
-            <td>690</td>
+            <td>{{ $data->dailyInput->penlu_melalui_tempat_keramaian }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>4) TEMPAT ISTIRAHAT</td>
-            <td>154</td>
+            <td>{{ $data->dailyInput->penlu_melalui_tempat_istirahat }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>5) DAERAH RAWAN LAKA &amp; LANGGAR</td>
-            <td>1093</td>
+            <td>{{ $data->dailyInput->penlu_melalui_daerah_rawan_laka_dan_langgar }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>3227</td>
+            <td>{{ calculation([
+                $data->dailyInput->penlu_melalui_media_cetak,
+                $data->dailyInput->penlu_melalui_media_elektronik,
+                $data->dailyInput->penlu_melalui_tempat_keramaian,
+                $data->dailyInput->penlu_melalui_tempat_istirahat,
+                $data->dailyInput->penlu_melalui_daerah_rawan_laka_dan_langgar
+                ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -2214,31 +2357,37 @@
         <tr>
             <td></td>
             <td>1) SPANDUK</td>
-            <td>667</td>
+            <td>{{ $data->dailyInput->penyebaran_pemasangan_spanduk }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>2) LEAFLET</td>
-            <td>5917</td>
+            <td>{{ $data->dailyInput->penyebaran_pemasangan_leaflet }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>3) STICKER</td>
-            <td>2365</td>
+            <td>{{ $data->dailyInput->penyebaran_pemasangan_sticker }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>4) BILBOARD</td>
-            <td>94</td>
+            <td>{{ $data->dailyInput->penyebaran_pemasangan_bilboard }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>9043</td>
+            <td>{{ calculation([
+                    $data->dailyInput->penyebaran_pemasangan_spanduk,
+                    $data->dailyInput->penyebaran_pemasangan_leaflet,
+                    $data->dailyInput->penyebaran_pemasangan_sticker,
+                    $data->dailyInput->penyebaran_pemasangan_bilboard
+                ]) }}
+            </td>
             <td></td>
         </tr>
         <tr>
