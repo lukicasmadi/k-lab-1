@@ -417,12 +417,12 @@ body .overflow {
     @media (min-width: 1300px) {
       .head-logo img {
         margin-top: 22px;
-        width: 66px;
+        width: 44px;
       }
     
       .head-logo h3 {
-        padding-top: 40px;
-        font-size: 24px;
+        padding-top: 30px;
+        font-size: 18px;
     }
     
       .button-login {
@@ -479,11 +479,11 @@ body .overflow {
       .logo-login {
         margin-top: 35px;
         margin-bottom: 30px;
-        width: 200px;
+        width: 165px;
     }
 
       .text-logo {
-        font-size: 35px;
+        font-size: 30px;
     }
 
     .form-form .form-form-wrap {
