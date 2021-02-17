@@ -599,37 +599,43 @@
         <tr>
             <td></td>
             <td>1) KAWASAN PEMUKIMAN</td>
-            <td>18360</td>
+            <td>{{ $data->dailyInput->lokasi_pelanggaran_pemukiman }}</td>
             <td>Lokasi</td>
         </tr>
         <tr>
             <td></td>
             <td>2) KAWASAN PERBELANJAAN</td>
-            <td>7754</td>
+            <td>{{ $data->dailyInput->lokasi_pelanggaran_perbelanjaan }}</td>
             <td>Lokasi</td>
         </tr>
         <tr>
             <td></td>
             <td>3) PERKANTORAN</td>
-            <td>5205</td>
+            <td>{{ $data->dailyInput->lokasi_pelanggaran_perkantoran }}</td>
             <td>Lokasi</td>
         </tr>
         <tr>
             <td></td>
             <td>4) KAWASAN WISATA</td>
-            <td>2035</td>
+            <td>{{ $data->dailyInput->lokasi_pelanggaran_wisata }}</td>
             <td>Lokasi</td>
         </tr>
         <tr>
             <td></td>
             <td>5) KAWASAN INDUTRI</td>
-            <td>1819</td>
+            <td>{{ $data->dailyInput->lokasi_pelanggaran_industri }}</td>
             <td>Lokasi</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>35173</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->lokasi_pelanggaran_pemukiman,
+                $data->dailyInput->lokasi_pelanggaran_perbelanjaan,
+                $data->dailyInput->lokasi_pelanggaran_perkantoran,
+                $data->dailyInput->lokasi_pelanggaran_wisata,
+                $data->dailyInput->lokasi_pelanggaran_industri
+            ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -647,31 +653,36 @@
         <tr>
             <td></td>
             <td>1) NASIONAL</td>
-            <td>13112</td>
+            <td>{{ $data->dailyInput->lokasi_pelanggaran_status_jalan_nasional }}</td>
             <td>Lokasi</td>
         </tr>
         <tr>
             <td></td>
             <td>2) PROPINSI</td>
-            <td>10126</td>
+            <td>{{ $data->dailyInput->lokasi_pelanggaran_status_jalan_propinsi }}</td>
             <td>Lokasi</td>
         </tr>
         <tr>
             <td></td>
             <td>3) KAB/KOTA</td>
-            <td>10924</td>
+            <td>{{ $data->dailyInput->lokasi_pelanggaran_status_jalan_kab_kota }}</td>
             <td>Lokasi</td>
         </tr>
         <tr>
             <td></td>
             <td>4) DESA / LINGKUNGAN</td>
-            <td>990</td>
+            <td>{{ $data->dailyInput->lokasi_pelanggaran_status_jalan_desa_lingkungan }}</td>
             <td>Lokasi</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>35152</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->lokasi_pelanggaran_status_jalan_nasional,
+                $data->dailyInput->lokasi_pelanggaran_status_jalan_propinsi,
+                $data->dailyInput->lokasi_pelanggaran_status_jalan_kab_kota,
+                $data->dailyInput->lokasi_pelanggaran_status_jalan_desa_lingkungan
+            ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -689,31 +700,36 @@
         <tr>
             <td></td>
             <td>1) ARTERI</td>
-            <td>28143</td>
+            <td>{{ $data->dailyInput->lokasi_pelanggaran_fungsi_jalan_arteri }}</td>
             <td>Lokasi</td>
         </tr>
         <tr>
             <td></td>
             <td>2) KOLEKTOR</td>
-            <td>9318</td>
+            <td>{{ $data->dailyInput->lokasi_pelanggaran_fungsi_jalan_kolektor }}</td>
             <td>Lokasi</td>
         </tr>
         <tr>
             <td></td>
             <td>3) LOKAL</td>
-            <td>7927</td>
+            <td>{{ $data->dailyInput->lokasi_pelanggaran_fungsi_jalan_lokal }}</td>
             <td>Lokasi</td>
         </tr>
         <tr>
             <td></td>
             <td>4) LINGKUNGAN</td>
-            <td>876</td>
+            <td>{{ $data->dailyInput->lokasi_pelanggaran_fungsi_jalan_lingkungan }}</td>
             <td>Lokasi</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>46264</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->lokasi_pelanggaran_fungsi_jalan_arteri,
+                $data->dailyInput->lokasi_pelanggaran_fungsi_jalan_kolektor,
+                $data->dailyInput->lokasi_pelanggaran_fungsi_jalan_lokal,
+                $data->dailyInput->lokasi_pelanggaran_fungsi_jalan_lingkungan
+            ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -737,31 +753,31 @@
         <tr>
             <td></td>
             <td>a. JUMLAH KEJADIAN</td>
-            <td>47</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_jumlah_kejadian }}</td>
             <td>Kasus</td>
         </tr>
         <tr>
             <td></td>
             <td>b. KORBAN MENINGGAL DUNIA</td>
-            <td>12</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_jumlah_korban_meninggal }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KORBAN LUKA BERAT</td>
-            <td>11</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_jumlah_korban_luka_berat }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>d. KORBAN LUKA RINGAN</td>
-            <td>51</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_jumlah_korban_luka_ringan }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>e. KERUGIAN MATERIIL</td>
-            <td>59520000</td>
+            <td>{{ $data->dailyInput->kecelakaan_lalin_jumlah_kerugian_materiil }}</td>
             <td>Rp</td>
         </tr>
         <tr>
@@ -779,25 +795,34 @@
         <tr>
             <td></td>
             <td>a. SIM</td>
-            <td>19</td>
+            <td>{{ $data->dailyInput->kecelakaan_barang_bukti_yg_disita_sim }}</td>
             <td>Unit</td>
         </tr>
         <tr>
             <td></td>
             <td>b. STNK</td>
-            <td>30</td>
+            <td>{{ $data->dailyInput->kecelakaan_barang_bukti_yg_disita_stnk }}</td>
             <td>Unit</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KENDARAAN</td>
-            <td>74</td>
+            <td>{{ $data->dailyInput->kecelakaan_barang_bukti_yg_disita_kendaraan }}</td>
             <td>Unit</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>123</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->kecelakaan_lalin_jumlah_kejadian,
+                $data->dailyInput->kecelakaan_lalin_jumlah_korban_meninggal,
+                $data->dailyInput->kecelakaan_lalin_jumlah_korban_luka_berat,
+                $data->dailyInput->kecelakaan_lalin_jumlah_korban_luka_ringan,
+                $data->dailyInput->kecelakaan_lalin_jumlah_kerugian_materiil,
+                $data->dailyInput->kecelakaan_barang_bukti_yg_disita_sim,
+                $data->dailyInput->kecelakaan_barang_bukti_yg_disita_stnk,
+                $data->dailyInput->kecelakaan_barang_bukti_yg_disita_kendaraan
+            ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -815,43 +840,43 @@
         <tr>
             <td></td>
             <td>a. PEGAWAI NEGERI SIPIL</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->xxxxxxxx }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>b. KARYAWAN / SWASTA</td>
-            <td>37</td>
+            <td>{{ $data->dailyInput->xxxxxxxx }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>c. MAHASISWA / PELAJAR</td>
-            <td>19</td>
+            <td>{{ $data->dailyInput->xxxxxxxx }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>d. PENGEMUDI</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->xxxxxxxx }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>e. TNI</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->xxxxxxxx }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>f. POLRI</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->xxxxxxxx }}</td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>g. LAIN-LAIN</td>
-            <td>14</td>
+            <td>{{ $data->dailyInput->xxxxxxxx }}</td>
             <td>Orang</td>
         </tr>
         <tr>

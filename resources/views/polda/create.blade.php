@@ -40,6 +40,16 @@
                         </div>
 
                         <div class="form-group mb-4">
+                            <label><span class="require">*</span>Short Name</label>
+                            <input type="text" class="form-control @error('short_name') is-invalid @enderror" id="short_name" name="short_name" placeholder="Short Name" autocomplete="off" value="{{ old('short_name') }}">
+                            @error('short_name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group mb-4">
                             <label><span class="require">*</span>Logo</label>
                             <input type="file" class="form-control @error('logo') is-invalid @enderror" id="logo" name="logo">
                             @error('logo')

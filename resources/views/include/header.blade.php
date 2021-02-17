@@ -9,13 +9,13 @@
         </div>
 
         <ul class="navbar-item flex-row mr-auto">
-                
+
           <!--  BEGIN TOPBAR  -->
             <div class="topbar-nav header navbar" role="banner">
                 <nav id="topbar">
                     <ul class="navbar-nav theme-brand flex-row  text-center">
                         <li class="nav-item theme-logo">
-                            <a href="index.html">
+                            <a href="{{ route('dashboard') }}">
                                 <img src="{{ secure_asset('img/logo-korlantas.png') }}" class="navbar-logo" alt="logo">
                             </a>
                         </li>
@@ -26,9 +26,7 @@
 
                     <ul class="list-unstyled menu-categories" id="topAccordion">
 
-                        <li class="menu single-menu {{
-                            request()->is('/') ? 'active' : ''
-                            }}">
+                        <li class="menu single-menu {{ request()->is('dashboard') ? 'active' : '' }}">
                             <a href="{{ route('dashboard') }}">
                                 <div>
                                     <span>Dashboard</span>
@@ -191,7 +189,7 @@
                     </ul>
                 </nav>
             </div>
-            <!--  END TOPBAR  -->      
+            <!--  END TOPBAR  -->
 
         </ul>
 
