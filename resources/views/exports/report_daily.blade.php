@@ -504,67 +504,78 @@
         <tr>
             <td></td>
             <td>a. A</td>
-            <td>2475</td>
+            <td>{{ $data->dailyInput->sim_pelaku_pelanggaran_sim_a }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>b. A UMUM</td>
-            <td>218</td>
+            <td>{{ $data->dailyInput->sim_pelaku_pelanggaran_sim_a_umum }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>c. B1</td>
-            <td>573</td>
+            <td>{{ $data->dailyInput->sim_pelaku_pelanggaran_sim_b1 }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>d. B1 UMUM</td>
-            <td>445</td>
+            <td>{{ $data->dailyInput->sim_pelaku_pelanggaran_sim_b1_umum }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>e. BII</td>
-            <td>228</td>
+            <td>{{ $data->dailyInput->sim_pelaku_pelanggaran_sim_b2 }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>f. B II UMUM</td>
-            <td>1046</td>
+            <td>{{ $data->dailyInput->sim_pelaku_pelanggaran_sim_b2_umum }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>g. C</td>
-            <td>14486</td>
+            <td>{{ $data->dailyInput->sim_pelaku_pelanggaran_sim_c }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>h. D</td>
-            <td>8</td>
+            <td>{{ $data->dailyInput->sim_pelaku_pelanggaran_sim_d }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>I. SIM INTERNASIONAL</td>
-            <td>11</td>
+            <td>{{ $data->dailyInput->sim_pelaku_pelanggaran_sim_internasional }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td>j. TANPA SIM</td>
-            <td>15980</td>
+            <td>{{ $data->dailyInput->sim_pelaku_pelanggaran_tanpa_sim }}</td>
             <td>Buah</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>35470</td>
+            <td style="font-weight: bold;">{{ calculation([
+                    $data->dailyInput->sim_pelaku_pelanggaran_sim_a,
+                    $data->dailyInput->sim_pelaku_pelanggaran_sim_a_umum,
+                    $data->dailyInput->sim_pelaku_pelanggaran_sim_b1,
+                    $data->dailyInput->sim_pelaku_pelanggaran_sim_b1_umum,
+                    $data->dailyInput->sim_pelaku_pelanggaran_sim_b2,
+                    $data->dailyInput->sim_pelaku_pelanggaran_sim_b2_umum,
+                    $data->dailyInput->sim_pelaku_pelanggaran_sim_c,
+                    $data->dailyInput->sim_pelaku_pelanggaran_sim_d,
+                    $data->dailyInput->sim_pelaku_pelanggaran_sim_internasional,
+                    $data->dailyInput->sim_pelaku_pelanggaran_tanpa_sim
+                ]) }}</td>
             <td></td>
         </tr>
         <tr>
