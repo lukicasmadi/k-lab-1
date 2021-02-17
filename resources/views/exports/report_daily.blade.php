@@ -2381,7 +2381,7 @@
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>{{ calculation([
+            <td style="font-weight: bold;">{{ calculation([
                     $data->dailyInput->penyebaran_pemasangan_spanduk,
                     $data->dailyInput->penyebaran_pemasangan_leaflet,
                     $data->dailyInput->penyebaran_pemasangan_sticker,
@@ -2405,31 +2405,36 @@
         <tr>
             <td></td>
             <td>1) POLISI SAHABAT ANAK</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->polisi_sahabat_anak }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>2) CARA AMAN SEKOLAH</td>
-            <td>13</td>
+            <td>{{ $data->dailyInput->cara_aman_sekolah }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>3) PATROLI KEAMANAN SEKOLAH</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->patroli_keamanan_sekolah }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>4) PRAMUKA SAKA BHAYANGKARA KRIDA LALU LINTAS</td>
-            <td>6</td>
+            <td>{{ $data->dailyInput->pramuka_bhayangkara_krida_lalu_lintas }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>21</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->polisi_sahabat_anak,
+                $data->dailyInput->cara_aman_sekolah,
+                $data->dailyInput->patroli_keamanan_sekolah,
+                $data->dailyInput->pramuka_bhayangkara_krida_lalu_lintas
+                ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -2447,49 +2452,57 @@
         <tr>
             <td></td>
             <td>1) POLICE GOES TO CAMPUS</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->police_goes_to_campus }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>2) SAFETY RIDING &amp; DRIVING</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->safety_riding_driving }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>3) FORUM LALU LINTAS &amp; ANGKUTAN JALAN</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->forum_lalu_lintas_angkutan_umum }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>4) KAMPANYE KESELAMATAN</td>
-            <td>54</td>
+            <td>{{ $data->dailyInput->kampanye_keselamatan }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>5) SEKOLAH MENGEMUDI</td>
-            <td>2</td>
+            <td>{{ $data->dailyInput->sekolah_mengemudi }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>6) TAMAN LALU LINTAS</td>
-            <td>0</td>
+            <td>{{ $data->dailyInput->taman_lalu_lintas }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>7) GLOBAL ROAD SAFETY PARTNERSHIP ACTION</td>
-            <td>1</td>
+            <td>{{ $data->dailyInput->global_road_safety_partnership_action }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>57</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $data->dailyInput->police_goes_to_campus,
+                $data->dailyInput->safety_riding_driving,
+                $data->dailyInput->forum_lalu_lintas_angkutan_umum,
+                $data->dailyInput->kampanye_keselamatan,
+                $data->dailyInput->sekolah_mengemudi,
+                $data->dailyInput->taman_lalu_lintas,
+                $data->dailyInput->global_road_safety_partnership_action
+                ]) }}</td>
             <td></td>
         </tr>
         <tr>
@@ -2513,31 +2526,36 @@
         <tr>
             <td></td>
             <td>a. PENGATURAN</td>
-            <td>18866</td>
+            <td>{{ $data->dailyInput->giat_lantas_pengaturan }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>b. PENJAGAAN</td>
-            <td>6283</td>
+            <td>{{ $data->dailyInput->giat_lantas_penjagaan }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>c. PENGAWALAN</td>
-            <td>554</td>
+            <td>{{ $data->dailyInput->giat_lantas_pengawalan }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td>d. PATROLI</td>
-            <td>10950</td>
+            <td>{{ $data->dailyInput->giat_lantas_patroli }}</td>
             <td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
-            <td>36653</td>
+            <td style="font-weight: bold;">{{ calculation([
+               $data->dailyInput->giat_lantas_pengaturan,
+               $data->dailyInput->giat_lantas_penjagaan,
+               $data->dailyInput->giat_lantas_pengawalan,
+               $data->dailyInput->giat_lantas_patroli
+                ]) }}</td>
             <td></td>
         </tr>
     </tbody>
