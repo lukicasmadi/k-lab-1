@@ -1805,8 +1805,13 @@
                         <h3>PELAPORAN OPERASI ONLINE BIDANG</h3>
                         <h3>LALU LINTAS KORLANTAS POLRI</h3>
                     </div>
-                    <p class="text-slogan">Giat Operasi Ketupat</p>
-                    <!-- <div class="close_msg" style="text-align: center;">Popup will be auto closed in <b class="close_countdown"></b> seconds.</div> -->
+                    <p class="text-slogan">
+                        @if (is_null(operationPlans()))
+                            TIDAK ADA OPERASI SAAT INI
+                        @else
+                            GIAT {{ operationPlans()->name }}
+                        @endif
+                    </p>
                 </div>
             </div>
         </div>
@@ -1852,7 +1857,7 @@
     function redirectAfter() {
         setTimeout(function () {
             window.location.href = route("dashboard");
-        }, 3000);
+        }, 5000);
     }
 </script>
 @endpush
