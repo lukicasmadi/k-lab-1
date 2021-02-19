@@ -124,14 +124,46 @@
                     <table id="tbl_daily_submited" class="table">
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>Nama Kesatuan</th>
                                 <th>Status Laporan</th>
                                 <th>Preview</th>
                                 <th>Pilihan</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                            @foreach ($dailyInput as $daily)
+                                <tr>
+                                    <td>{{ $daily->name }}</td>
+                                    <td>
+                                        @php
+                                            if(empty($daily->dailyInput)) {
+                                                echo "<p class='red'>BELUM MENGIRIM LAPORAN</p>";
+                                            } else {
+                                                echo "<p>SUDAH MENGIRIM LAPORAN</p>";
+                                            }
+                                        @endphp
+                                    </td>
+                                    <td>
+                                        @if (!empty($daily->dailyInput))
+                                            <div class="icon-container">
+                                                <a href="{{ route('previewPhroDashboard', $daily->uuid) }}" class="previewPhro" data-id="{{ $daily->uuid }}"><i class="far fa-eye"></i></a>
+                                            </div>
+                                        @else
+                                            -
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if (!empty($daily->dailyInput))
+                                            <div class="icon-container">
+                                                <a href="{{ route('downloadPrho', $daily->uuid) }}"><i class="far fa-download"></i></a>
+                                            </div>
+                                        @else
+                                            -
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -233,7 +265,6 @@ $(document).ready(function () {
     notificationLoad()
     projectDaily()
     donutData()
-    loadDataTable()
 
     $("#filterOperasi").click(function (e) {
         e.preventDefault();

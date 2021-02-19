@@ -29,7 +29,12 @@ class HomeController extends Controller
         if(empty(operationPlans())) {
             return view('empty_project');
         }
-        return view('main', compact('polda'));
+
+        $dailyInput = Polda::with(['dailyInput' => function($query) {
+            $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
+        }])->orderBy("name", "asc")->get();
+
+        return view('main', compact('polda', 'dailyInput'));
     }
 
     public function notifikasi()
