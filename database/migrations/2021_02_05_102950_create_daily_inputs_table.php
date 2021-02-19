@@ -17,6 +17,8 @@ class CreateDailyInputsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('polda_submited_id');
             $table->foreign('polda_submited_id')->references('id')->on('polda_submiteds');
+            $table->unsignedBigInteger('rencana_operasi_id');
+            $table->foreign('rencana_operasi_id')->references('id')->on('rencana_operasis');
             $table->float("pelanggaran_lalu_lintas_tilang", 8, 0)->default(0);
             $table->float("pelanggaran_lalu_lintas_teguran", 8, 0)->default(0);
             $table->float("pelanggaran_sepeda_motor_gun_helm_sni", 8, 0)->default(0);
