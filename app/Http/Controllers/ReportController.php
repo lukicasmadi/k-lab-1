@@ -24,7 +24,7 @@ class ReportController extends Controller
             ->get();
 
         logger($polda);
-        
+
         return view('report.daily_all');
     }
 
