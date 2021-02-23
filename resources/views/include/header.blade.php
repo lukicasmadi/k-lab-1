@@ -66,7 +66,7 @@
 
                         @role('access_pusat|administrator')
                             <li class="menu single-menu {{
-                                request()->is('operasi/*') ? 'active' : ''
+                                request()->is('report/*') ? 'active' : ''
                                 }}">
                                 <a href="#reportpusat" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
                                     <div>

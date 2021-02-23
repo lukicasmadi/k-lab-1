@@ -14,7 +14,25 @@
                     </div>
                 </div>
                 <div class="widget-content widget-content-area">
-                    <p>Test</p>
+                    <form action="{{ route('report_daily_process') }}" method="POST">
+                        @csrf
+
+                        <div class="form-group mb-4">
+                            <label>Tahun</label>
+                            <input id="year" name="year" class="form-control flatpickr flatpickr-input active" type="text" placeholder="= Pilih Tanggal =">
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Operasi</label>
+                            <select class="form-control form-control-lg" name="operation_name" id="operation_name">
+                                @foreach($rencanaOperasi as $key => $val)
+                                    <option value="{{$key}}">{{$val}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <input type="submit" name="submit" class="mt-4 mb-4 btn btn-primary" value="Generate">
+                    </form>
                 </div>
             </div>
         </div>
@@ -22,3 +40,20 @@
     </div>
 </div>
 @endsection
+
+@push('library_css')
+<link href="{{ secure_asset('template/plugins/flatpickr/flatpickr.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ secure_asset('template/plugins/flatpickr/custom-flatpickr.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ secure_asset('template/plugins/bootstrap-range-Slider/bootstrap-slider.css') }}" rel="stylesheet" type="text/css">
+@endpush
+
+@push('library_js')
+<script src="{{ secure_asset('template/plugins/flatpickr/flatpickr.js') }}"></script>
+<script src="{{ secure_asset('template/plugins/bootstrap-range-Slider/bootstrap-rangeSlider.js') }}"></script>
+@endpush
+
+@push('page_js')
+<script>
+var f1 = flatpickr(document.getElementById('year'));
+</script>
+@endpush

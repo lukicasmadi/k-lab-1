@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Polda;
+use App\Models\DailyInput;
 use Illuminate\Http\Request;
+use App\Models\RencanaOperasi;
 use Illuminate\Support\Facades\DB;
 
 class ReportController extends Controller
@@ -23,9 +25,18 @@ class ReportController extends Controller
             ->orderBy("name", "asc")
             ->get();
 
-        logger($polda);
+        $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");
 
-        return view('report.daily_all');
+        return view('report.daily_all', compact('rencanaOperasi'));
+    }
+
+    public function dailyProcess()
+    {
+        $dailyInput = DailyInput::select("*")->where(DB::raw('DATE(created_at)'), request('year'))->get();
+
+        logger($dailyInput);
+
+        return redirect()->back();
     }
 
     public function poldaUuid($uuid)
