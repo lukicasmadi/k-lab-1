@@ -1663,7 +1663,7 @@
         <tr>
             <td></td>
             <td>1) MANUSIA</td>
-            <td>TAMBAHIN DI DATABASE</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_manusia }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
@@ -1759,7 +1759,7 @@
         <tr>
             <td></td>
             <td>5) PRASARANA JALAN</td>
-            <td>TIDAK ADA DI DATABASE</td>
+            <td>{{ $data->dailyInput->faktor_penyebab_kecelakaan_prasarana_jalan }}</td>
             <td>Perkara</td>
         </tr>
         <tr>
@@ -2094,8 +2094,8 @@
         <tr>
             <td></td>
             <td>e. MATERIIL</td>
-            <td>22900000</td>
             <td>{{ $data->dailyInput->kecelakaan_lalin_tabrak_sepeda_motor_materiil }}</td>
+            <td>Rp</td>
         </tr>
         <tr>
             <td></td>

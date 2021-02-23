@@ -178,6 +178,7 @@ class CreateDailyInputsTable extends Migration
             $table->float("lokasi_kecelakaan_fungsi_jalan_kolektor", 8, 0)->default(0);
             $table->float("lokasi_kecelakaan_fungsi_jalan_lokal", 8, 0)->default(0);
             $table->float("lokasi_kecelakaan_fungsi_jalan_lingkungan", 8, 0)->default(0);
+            $table->float("faktor_penyebab_kecelakaan_manusia", 8, 0)->default(0);
             $table->float("faktor_penyebab_kecelakaan_ngantuk_lelah", 8, 0)->default(0);
             $table->float("faktor_penyebab_kecelakaan_mabuk_obat", 8, 0)->default(0);
             $table->float("faktor_penyebab_kecelakaan_sakit", 8, 0)->default(0);
@@ -193,6 +194,7 @@ class CreateDailyInputsTable extends Migration
             $table->float("faktor_penyebab_kecelakaan_alam", 8, 0)->default(0);
             $table->float("faktor_penyebab_kecelakaan_kelaikan_kendaraan", 8, 0)->default(0);
             $table->float("faktor_penyebab_kecelakaan_kondisi_jalan", 8, 0)->default(0);
+            $table->float("faktor_penyebab_kecelakaan_prasarana_jalan", 8, 0)->default(0);
             $table->float("faktor_penyebab_kecelakaan_rambu", 8, 0)->default(0);
             $table->float("faktor_penyebab_kecelakaan_marka", 8, 0)->default(0);
             $table->float("faktor_penyebab_kecelakaan_apil", 8, 0)->default(0);
