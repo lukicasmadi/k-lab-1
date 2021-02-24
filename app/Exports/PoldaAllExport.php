@@ -5,6 +5,7 @@ namespace App\Exports;
 use App\Models\Polda;
 use App\Models\DailyInput;
 use App\Models\PoldaSubmited;
+use App\Models\RencanaOperasi;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
@@ -12,13 +13,16 @@ use Maatwebsite\Excel\Concerns\FromView;
 class PoldaAllExport implements FromView
 {
 
-    public function __construct(string $tanggal)
+    public function __construct(string $tanggal, int $operation)
     {
         $this->tanggal = $tanggal;
+        $this->operation = $operation;
     }
 
     public function view(): View
     {
+        $operation = RencanaOperasi::find($this->operation);
+
         $data = DailyInput::selectRaw('
             sum(pelanggaran_lalu_lintas_tilang) as pelanggaran_lalu_lintas_tilang,
             sum(pelanggaran_lalu_lintas_teguran) as pelanggaran_lalu_lintas_teguran,
@@ -277,15 +281,11 @@ class PoldaAllExport implements FromView
             sum(giat_lantas_penjagaan) as giat_lantas_penjagaan,
             sum(giat_lantas_pengawalan) as giat_lantas_pengawalan,
             sum(giat_lantas_patroli) as giat_lantas_patroli
-        ')->whereRaw('DATE(created_at) = ?', [date("Y-m-d")])->where('rencana_operasi_id', operationPlans()->id)->first();
+        ')->whereRaw('DATE(created_at) = ? AND rencana_operasi_id = ?', [$this->tanggal, $this->operation])->first();
 
-        if(empty($data)) {
-            flash('Tidak ada data berdasarkan kategori yang dicari')->warning();
-            return redirect()->back();
-        } else {
-            return view('exports.report_daily_all', [
-                'data' => $data
-            ]);
-        }
+        return view('exports.report_daily_all', [
+            'data' => $data,
+            'operation' => $operation
+        ]);
     }
 }

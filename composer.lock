@@ -845,16 +845,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.160.0",
+            "version": "v0.161.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "b8a448056ced89d1bc2d68ca10c22e7b2ed06512"
+                "reference": "776dcac9250497024c778c71c70bb39de5427223"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/b8a448056ced89d1bc2d68ca10c22e7b2ed06512",
-                "reference": "b8a448056ced89d1bc2d68ca10c22e7b2ed06512",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/776dcac9250497024c778c71c70bb39de5427223",
+                "reference": "776dcac9250497024c778c71c70bb39de5427223",
                 "shasum": ""
             },
             "require": {
@@ -878,7 +878,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2021-02-13T12:20:02+00:00"
+            "time": "2021-02-20T12:20:06+00:00"
         },
         {
             "name": "google/auth",
@@ -1285,16 +1285,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.28.1",
+            "version": "v8.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "73dd43d92fcde6c6abc00658ae33391397ca119d"
+                "reference": "d2eba352b3b3a3c515b18c5726b373fe5026733e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/73dd43d92fcde6c6abc00658ae33391397ca119d",
-                "reference": "73dd43d92fcde6c6abc00658ae33391397ca119d",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d2eba352b3b3a3c515b18c5726b373fe5026733e",
+                "reference": "d2eba352b3b3a3c515b18c5726b373fe5026733e",
                 "shasum": ""
             },
             "require": {
@@ -1402,7 +1402,7 @@
                 "phpunit/phpunit": "Required to use assertions and run tests (^8.5.8|^9.3.3).",
                 "predis/predis": "Required to use the predis connector (^1.1.2).",
                 "psr/http-message": "Required to allow Storage::put to accept a StreamInterface (^1.0).",
-                "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (^4.0).",
+                "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (^4.0|^5.0).",
                 "symfony/cache": "Required to PSR-6 cache bridge (^5.1.4).",
                 "symfony/filesystem": "Required to enable support for relative symbolic links (^5.1.4).",
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^2.0).",
@@ -1445,7 +1445,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2021-02-16T18:07:44+00:00"
+            "time": "2021-02-23T14:27:41+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -1509,21 +1509,21 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "2544c879631e1d8e48aef1c7ee79b3dee8cbb833"
+                "reference": "7f8baf54e76a1a291c1f0efda638beb4a24feb82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/2544c879631e1d8e48aef1c7ee79b3dee8cbb833",
-                "reference": "2544c879631e1d8e48aef1c7ee79b3dee8cbb833",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/7f8baf54e76a1a291c1f0efda638beb4a24feb82",
+                "reference": "7f8baf54e76a1a291c1f0efda638beb4a24feb82",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "laravel/framework": "^8.2",
+                "laravel/framework": "^8.29",
                 "php": "^7.3|^8.0",
                 "symfony/var-dumper": "^5.0"
             },
@@ -1565,7 +1565,7 @@
                 "laravel",
                 "monitoring"
             ],
-            "time": "2021-02-16T17:12:37+00:00"
+            "time": "2021-02-23T20:48:25+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1883,23 +1883,23 @@
         },
         {
             "name": "maatwebsite/excel",
-            "version": "3.1.26",
+            "version": "3.1.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
-                "reference": "66f7c9584304ad0b6a267a5d8ffbfa2ff4272e85"
+                "reference": "584d65427eae4de0ba072297c8fac9b0d63dbc37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/66f7c9584304ad0b6a267a5d8ffbfa2ff4272e85",
-                "reference": "66f7c9584304ad0b6a267a5d8ffbfa2ff4272e85",
+                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/584d65427eae4de0ba072297c8fac9b0d63dbc37",
+                "reference": "584d65427eae4de0ba072297c8fac9b0d63dbc37",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "illuminate/support": "5.8.*|^6.0|^7.0|^8.0",
                 "php": "^7.0|^8.0",
-                "phpoffice/phpspreadsheet": "^1.15"
+                "phpoffice/phpspreadsheet": "^1.16"
             },
             "require-dev": {
                 "orchestra/testbench": "^6.0",
@@ -1943,7 +1943,7 @@
                 "php",
                 "phpspreadsheet"
             ],
-            "time": "2020-11-27T16:17:38+00:00"
+            "time": "2021-02-22T16:58:19+00:00"
         },
         {
             "name": "maennchen/zipstream-php",
@@ -6600,19 +6600,20 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.3.1",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "a18519e96c32894ac3f8775fa8eb6de5750aca5a"
+                "reference": "87c63c2956749f66e43467d4a730b917ef7428b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/a18519e96c32894ac3f8775fa8eb6de5750aca5a",
-                "reference": "a18519e96c32894ac3f8775fa8eb6de5750aca5a",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/87c63c2956749f66e43467d4a730b917ef7428b7",
+                "reference": "87c63c2956749f66e43467d4a730b917ef7428b7",
                 "shasum": ""
             },
             "require": {
+                "illuminate/console": "^8.0|^9.0",
                 "illuminate/contracts": "^8.0|^9.0",
                 "illuminate/support": "^8.0|^9.0",
                 "php": "^7.3|^8.0"
@@ -6651,7 +6652,7 @@
                 "docker",
                 "laravel"
             ],
-            "time": "2021-02-09T16:44:58+00:00"
+            "time": "2021-02-23T22:04:12+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -6897,16 +6898,16 @@
         },
         {
             "name": "phar-io/version",
-            "version": "3.0.4",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phar-io/version.git",
-                "reference": "e4782611070e50613683d2b9a57730e9a3ba5451"
+                "reference": "bae7c545bef187884426f042434e561ab1ddb182"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phar-io/version/zipball/e4782611070e50613683d2b9a57730e9a3ba5451",
-                "reference": "e4782611070e50613683d2b9a57730e9a3ba5451",
+                "url": "https://api.github.com/repos/phar-io/version/zipball/bae7c545bef187884426f042434e561ab1ddb182",
+                "reference": "bae7c545bef187884426f042434e561ab1ddb182",
                 "shasum": ""
             },
             "require": {
@@ -6940,7 +6941,7 @@
                 }
             ],
             "description": "Library for handling version information and constraints",
-            "time": "2020-12-13T23:18:30+00:00"
+            "time": "2021-02-23T14:00:09+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",

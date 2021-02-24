@@ -24,7 +24,7 @@
 
                         <div class="form-group mb-4">
                             <label>Operasi</label>
-                            <select class="form-control form-control-lg" name="operation_name" id="operation_name">
+                            <select class="form-control form-control-lg" name="operation_id" id="operation_id">
                                 @foreach($rencanaOperasi as $key => $val)
                                     <option value="{{$key}}">{{$val}}</option>
                                 @endforeach

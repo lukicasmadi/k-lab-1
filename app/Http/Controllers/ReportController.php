@@ -36,17 +36,6 @@ class ReportController extends Controller
         $now = now()->format("Y-m-d");
         $filename = 'daily-report-all-polda-'.$now.'.xlsx';
 
-
-        return Excel::download(new PoldaAllExport(request('tanggal')), $filename);
-    }
-
-    public function poldaUuid($uuid)
-    {
-        //
-    }
-
-    public function comparison()
-    {
-        //
+        return Excel::download(new PoldaAllExport(request('tanggal'), request('operation_id')), $filename);
     }
 }

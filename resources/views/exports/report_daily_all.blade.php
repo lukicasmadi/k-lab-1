@@ -26,13 +26,13 @@
         </tr>
         <tr>
             <td></td>
-            <td style="text-align: center;">LAPORAN HARIAN {{ \Illuminate\Support\Str::upper(operationPlans()->name) }} AKUMULASI SELURUH POLDA</td>
+            <td style="text-align: center;">LAPORAN HARIAN {{ \Illuminate\Support\Str::upper($operation->name) }} AKUMULASI SELURUH POLDA</td>
             <td></td>
             <td></td>
         </tr>
         <tr>
             <td></td>
-            <td style="text-align: center;">TANGGAL: {{ operationPlans()->start_date->format("d-m-Y") }} S/D {{ operationPlans()->end_date->format("d-m-Y") }}</td>
+            <td style="text-align: center;">TANGGAL: {{ $operation->start_date->format("Y-m-d") }} S/D {{ $operation->end_date->format("Y-m-d") }}</td>
             <td></td>
             <td></td>
         </tr>
