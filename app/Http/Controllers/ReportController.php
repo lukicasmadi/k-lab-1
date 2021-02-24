@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Polda;
-use App\Models\DailyInput;
 use Illuminate\Http\Request;
 use App\Models\RencanaOperasi;
+use App\Exports\PoldaAllExport;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ReportController extends Controller
 {
@@ -32,11 +33,11 @@ class ReportController extends Controller
 
     public function dailyProcess()
     {
-        $dailyInput = DailyInput::select("*")->where(DB::raw('DATE(created_at)'), request('year'))->get();
+        $now = now()->format("Y-m-d");
+        $filename = 'daily-report-all-polda-'.$now.'.xlsx';
 
-        logger($dailyInput);
 
-        return redirect()->back();
+        return Excel::download(new PoldaAllExport(request('tanggal')), $filename);
     }
 
     public function poldaUuid($uuid)

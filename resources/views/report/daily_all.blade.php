@@ -18,8 +18,8 @@
                         @csrf
 
                         <div class="form-group mb-4">
-                            <label>Tahun</label>
-                            <input id="year" name="year" class="form-control flatpickr flatpickr-input active" type="text" placeholder="= Pilih Tanggal =">
+                            <label>Tanggal</label>
+                            <input id="tanggal" name="tanggal" class="form-control flatpickr flatpickr-input active" type="text" placeholder="- Pilih Tanggal -">
                         </div>
 
                         <div class="form-group mb-4">
@@ -54,6 +54,6 @@
 
 @push('page_js')
 <script>
-var f1 = flatpickr(document.getElementById('year'));
+var f1 = flatpickr(document.getElementById('tanggal'));
 </script>
 @endpush
