@@ -68,7 +68,11 @@ if (! function_exists('operationPlans')) {
     function operationPlans() {
         $now = now()->format('Y-m-d');
         $checkOperasi = RencanaOperasi::where("start_date", "<=", $now)->where("end_date", ">=", $now)->first();
-        return $checkOperasi;
+        if(empty($checkOperasi)) {
+            return null;
+        } else {
+            return $checkOperasi;
+        }
     }
 }
 

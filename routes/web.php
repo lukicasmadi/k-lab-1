@@ -57,6 +57,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/operation-plan/download/{filePath}', 'RencanaOperasiController@download')->name('downloadOperationPlan');
 
     Route::get('/report/daily', 'ReportController@dailyAllPolda')->name('report_daily_all_polda');
+    Route::post('/report/daily/process', 'ReportController@dailyProcess')->name('report_daily_process');
     Route::get('/report/daily/polda/{poldaUuid}', 'ReportController@poldaUuid')->name('report_bypolda');
     Route::get('/report/comparison', 'ReportController@comparison')->name('report_comparison');
 

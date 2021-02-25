@@ -287,6 +287,8 @@ class PHRORequest extends FormRequest
             'giat_lantas_penjagaan' => 'required|numeric',
             'giat_lantas_pengawalan' => 'required|numeric',
             'giat_lantas_patroli' => 'required|numeric',
+            'faktor_penyebab_kecelakaan_manusia' => 'required|numeric',
+            'faktor_penyebab_kecelakaan_prasarana_jalan' => 'required|numeric',
         ];
     }
 }

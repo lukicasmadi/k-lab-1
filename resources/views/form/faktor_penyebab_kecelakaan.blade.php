@@ -10,9 +10,15 @@
 
         <div class="widget-content widget-content-area">
 
-            <blockquote class="blockquote">
-                <p class="d-inline">1) MANUSIA</p>
-            </blockquote>
+            <div class="form-group mb-4">
+                <label><span class="require">*</span>1) MANUSIA</label>
+                <input type="number" class="form-control @error('faktor_penyebab_kecelakaan_manusia') is-invalid @enderror" name="faktor_penyebab_kecelakaan_manusia" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_manusia') }}">
+                @error('faktor_penyebab_kecelakaan_manusia')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>a. NGANTUK/LELAH (PSL 283)</label>
@@ -164,9 +170,15 @@
                 @enderror
             </div>
 
-            <blockquote class="blockquote">
-                <p class="d-inline">5) PRASARANA JALAN</p>
-            </blockquote>
+            <div class="form-group mb-4">
+                <label><span class="require">*</span>5) PRASARANA JALAN</label>
+                <input type="number" class="form-control @error('faktor_penyebab_kecelakaan_prasarana_jalan') is-invalid @enderror" name="faktor_penyebab_kecelakaan_prasarana_jalan" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_prasarana_jalan') }}">
+                @error('faktor_penyebab_kecelakaan_prasarana_jalan')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>a. RAMBU</label>

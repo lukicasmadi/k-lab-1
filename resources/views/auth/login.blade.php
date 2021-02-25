@@ -16,7 +16,13 @@
     <div class="text-center">
         <h1 class="text-logo">SISTEM PELAPORAN</h1>
         <h1 class="text-logo">OPERASI ONLINE BIDANG LALU LINTAS KORLANTAS POLRI</h1>
-        <p class="text-slogan"><span id="lefts">&#91;</span> Giat Operasi Ketupat <span id="rights">]</span></p>
+        <p class="text-slogan"><span id="lefts">&#91;</span>
+            @if (is_null(operationPlans()))
+                TIDAK ADA OPERASI SAAT INI
+            @else
+                GIAT {{ operationPlans()->name }} <span id="rights">]</span>
+            @endif
+        </p>
     </div>
     <div class="form-form">
         <div class="form-form-wrap">
