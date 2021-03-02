@@ -534,66 +534,99 @@
             <td>a. &lt; 15 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_kurang_dari_15_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. 16 - 20 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_16_20_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. 21 - 25 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_21_25_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. 26 - 30 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_26_30_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. 31 - 35 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_31_35_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>f. 36 - 40 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_36_40_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>g. 41 - 45 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_41_45_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>h. 46 - 50 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_46_50_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>I. 51 - 55 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_51_55_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>j. 56 - 60 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_56_60_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>k. > 60 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_diatas_60_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -636,60 +669,90 @@
             <td>a. A</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_a }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. A UMUM</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_a_umum }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. B1</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_b1 }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. B1 UMUM</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_b1_umum }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. BII</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_b2 }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>f. B II UMUM</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_b2_umum }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>g. C</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_c }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>h. D</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_d }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>I. SIM INTERNASIONAL</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_internasional }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>j. TANPA SIM</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_tanpa_sim }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -740,30 +803,45 @@
             <td>1) KAWASAN PEMUKIMAN</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_pemukiman }}</td>
             <td>Lokasi</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>2) KAWASAN PERBELANJAAN</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_perbelanjaan }}</td>
             <td>Lokasi</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>3) PERKANTORAN</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_perkantoran }}</td>
             <td>Lokasi</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>4) KAWASAN WISATA</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_wisata }}</td>
             <td>Lokasi</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>5) KAWASAN INDUTRI</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_industri }}</td>
             <td>Lokasi</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -800,24 +878,36 @@
             <td>1) NASIONAL</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_status_jalan_nasional }}</td>
             <td>Lokasi</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>2) PROPINSI</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_status_jalan_propinsi }}</td>
             <td>Lokasi</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>3) KAB/KOTA</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_status_jalan_kab_kota }}</td>
             <td>Lokasi</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>4) DESA / LINGKUNGAN</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_status_jalan_desa_lingkungan }}</td>
             <td>Lokasi</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -853,24 +943,36 @@
             <td>1) ARTERI</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_fungsi_jalan_arteri }}</td>
             <td>Lokasi</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>2) KOLEKTOR</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_fungsi_jalan_kolektor }}</td>
             <td>Lokasi</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>3) LOKAL</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_fungsi_jalan_lokal }}</td>
             <td>Lokasi</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>4) LINGKUNGAN</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_fungsi_jalan_lingkungan }}</td>
             <td>Lokasi</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -921,24 +1023,36 @@
             <td>b. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_jumlah_korban_meninggal }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_jumlah_korban_luka_berat }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_jumlah_korban_luka_ringan }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. KERUGIAN MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_jumlah_kerugian_materiil }}</td>
             <td>Rp</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1020,42 +1134,63 @@
             <td>a. PEGAWAI NEGERI SIPIL</td>
             <td>{{ $tahunPertama->profesi_korban_kecelakaan_lalin_pns }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. KARYAWAN / SWASTA</td>
             <td>{{ $tahunPertama->profesi_korban_kecelakaan_lalin_karwayan_swasta }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. MAHASISWA / PELAJAR</td>
             <td>{{ $tahunPertama->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. PENGEMUDI</td>
             <td>{{ $tahunPertama->profesi_korban_kecelakaan_lalin_pengemudi }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. TNI</td>
             <td>{{ $tahunPertama->profesi_korban_kecelakaan_lalin_tni }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>f. POLRI</td>
             <td>{{ $tahunPertama->profesi_korban_kecelakaan_lalin_polri }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>g. LAIN-LAIN</td>
             <td>{{ $tahunPertama->profesi_korban_kecelakaan_lalin_lain_lain }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1094,66 +1229,99 @@
             <td>a. &lt; 15 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_kurang_15 }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. 16 - 20 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_16_20 }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. 21 - 25 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_21_25 }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. 26 - 30 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_26_30 }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. 31 - 35 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_31_35 }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>f. 36 - 40 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_36_40 }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>g. 41 - 45 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_41_45 }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>h. 46 - 50 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_45_50 }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>I. 51 - 55 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_51_55 }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>j. 56 - 60 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_56_60 }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>k. > 60 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_diatas_60 }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1196,60 +1364,90 @@
             <td>a. A</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_a }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. A UMUM</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_a_umum }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. B1</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_b1 }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. B1 UMUM</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_b1_umum }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. BII</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_b2 }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>f. BII UMUM</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_b2_umum }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>g. C</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_c }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>h. D</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_d }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>I. SIM INTERNASIONAL</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_internasional }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>j. TANPA SIM</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_tanpa_sim }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1376,60 +1574,90 @@
             <td>a. TUNGGAL / OUT OF CONTROL</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_tunggal_ooc }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. DEPAN-DEPAN</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_depan_depan }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. DEPAN-BELAKANG</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_depan_belakang }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. DEPAN-SAMPING</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_depan_samping }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. BERUNTUN</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_beruntun }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>f. TABRAK PEJALAN KAKI</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_pejalan_kaki }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>g. TABRAK LARI</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_tabrak_lari }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>h. TABRAK HEWAN</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_tabrak_hewan }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>I. SAMPING-SAMPING</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_samping_samping }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>j. LAINNYA</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_lainnya }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1471,42 +1699,63 @@
             <td>a. PEGAWAI NEGERI SIPIL</td>
             <td>{{ $tahunPertama->profesi_pelaku_kecelakaan_lalin_pns }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. KARYAWAN / SWASTA</td>
             <td>{{ $tahunPertama->profesi_pelaku_kecelakaan_lalin_karyawan_swasta }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. MAHASISWA / PELAJAR</td>
             <td>{{ $tahunPertama->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. PENGEMUDI</td>
             <td>{{ $tahunPertama->profesi_pelaku_kecelakaan_lalin_pengemudi }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. TNI</td>
             <td>{{ $tahunPertama->profesi_pelaku_kecelakaan_lalin_tni }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>f. POLRI</td>
             <td>{{ $tahunPertama->profesi_pelaku_kecelakaan_lalin_polri }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>g. LAIN-LAIN</td>
             <td>{{ $tahunPertama->profesi_pelaku_kecelakaan_lalin_lain_lain }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1545,66 +1794,99 @@
             <td>a. &lt; 15 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_kurang_dari_15_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. 16 - 20 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_16_20_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. 21 - 25 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_21_25_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. 26 - 30 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_26_30_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. 31 - 35 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_31_35_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>f. 36 - 40 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_36_40_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>g. 41 - 45 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_41_45_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>h. 46 - 50 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_46_50_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>I. 51 - 55 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_51_55_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>j. 56 - 60 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_56_60_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>k. > 60 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_diatas_60_tahun }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1647,60 +1929,90 @@
             <td>a. A</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_a }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. A UMUM</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_a_umum }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. B1</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_b1 }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. B1 UMUM</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_b1_umum }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. BII</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_b2 }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>f. B II UMUM</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_b2_umum }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>g. C</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_c }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>h. D</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_d }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>I. SIM INTERNASIONAL</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_internasional }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>j. TANPA SIM</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_tanpa_sim }}</td>
             <td>Buah</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2319,24 +2631,36 @@
             <td>b. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_menonjol_korban_meninggal }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_menonjol_korban_luka_berat }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_menonjol_korban_luka_ringan }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_menonjol_materiil }}</td>
             <td>Rp</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2367,24 +2691,36 @@
             <td>b. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tunggal_korban_meninggal }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tunggal_korban_luka_berat }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tunggal_korban_luka_ringan }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tunggal_materiil }}</td>
             <td>Rp</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2415,24 +2751,36 @@
             <td>b. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_korban_meninggal }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_berat }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_ringan }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_materiil }}</td>
             <td>Rp</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2463,24 +2811,36 @@
             <td>b. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_lari_korban_meninggal }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_lari_korban_luka_berat }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_lari_korban_luka_ringan }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_lari_materiil }}</td>
             <td>Rp</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2511,24 +2871,36 @@
             <td>b. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_korban_meninggal }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_berat }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_ringan }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_materiil }}</td>
             <td>Rp</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2559,24 +2931,36 @@
             <td>b. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_korban_meninggal }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_korban_luka_berat }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_korban_luka_ringan }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_materiil }}</td>
             <td>Rp</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2607,24 +2991,36 @@
             <td>b. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_korban_meninggal }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_berat }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_ringan }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_materiil }}</td>
             <td>Rp</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2673,24 +3069,36 @@
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_perlintasan_ka_korban_luka_ringan }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_perlintasan_ka_korban_luka_berat }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>f. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_perlintasan_ka_korban_meninggal }}</td>
             <td>Orang</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>g. MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_perlintasan_ka_materiil }}</td>
             <td>Rp</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2783,30 +3191,45 @@
             <td>1) MELALUI MEDIA CETAK</td>
             <td>{{ $tahunPertama->penlu_melalui_media_cetak }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>2) MELALUI MEDIA ELEKTRONIK</td>
             <td>{{ $tahunPertama->penlu_melalui_media_elektronik }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>3) TEMPAT KERAMAIAN</td>
             <td>{{ $tahunPertama->penlu_melalui_tempat_keramaian }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>4) TEMPAT ISTIRAHAT</td>
             <td>{{ $tahunPertama->penlu_melalui_tempat_istirahat }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>5) DAERAH RAWAN LAKA &amp; LANGGAR</td>
             <td>{{ $tahunPertama->penlu_melalui_daerah_rawan_laka_dan_langgar }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2843,24 +3266,36 @@
             <td>1) SPANDUK</td>
             <td>{{ $tahunPertama->penyebaran_pemasangan_spanduk }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>2) LEAFLET</td>
             <td>{{ $tahunPertama->penyebaran_pemasangan_leaflet }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>3) STICKER</td>
             <td>{{ $tahunPertama->penyebaran_pemasangan_sticker }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>4) BILBOARD</td>
             <td>{{ $tahunPertama->penyebaran_pemasangan_bilboard }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2894,24 +3329,36 @@
             <td>1) POLISI SAHABAT ANAK</td>
             <td>{{ $tahunPertama->polisi_sahabat_anak }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>2) CARA AMAN SEKOLAH</td>
             <td>{{ $tahunPertama->cara_aman_sekolah }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>3) PATROLI KEAMANAN SEKOLAH</td>
             <td>{{ $tahunPertama->patroli_keamanan_sekolah }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>4) PRAMUKA SAKA BHAYANGKARA KRIDA LALU LINTAS</td>
             <td>{{ $tahunPertama->pramuka_bhayangkara_krida_lalu_lintas }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2947,42 +3394,63 @@
             <td>1) POLICE GOES TO CAMPUS</td>
             <td>{{ $tahunPertama->police_goes_to_campus }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>2) SAFETY RIDING &amp; DRIVING</td>
             <td>{{ $tahunPertama->safety_riding_driving }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>3) FORUM LALU LINTAS &amp; ANGKUTAN JALAN</td>
             <td>{{ $tahunPertama->forum_lalu_lintas_angkutan_umum }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>4) KAMPANYE KESELAMATAN</td>
             <td>{{ $tahunPertama->kampanye_keselamatan }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>5) SEKOLAH MENGEMUDI</td>
             <td>{{ $tahunPertama->sekolah_mengemudi }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>6) TAMAN LALU LINTAS</td>
             <td>{{ $tahunPertama->taman_lalu_lintas }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>7) GLOBAL ROAD SAFETY PARTNERSHIP ACTION</td>
             <td>{{ $tahunPertama->global_road_safety_partnership_action }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -3030,24 +3498,36 @@
             <td>a. PENGATURAN</td>
             <td>{{ $tahunPertama->giat_lantas_pengaturan }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. PENJAGAAN</td>
             <td>{{ $tahunPertama->giat_lantas_penjagaan }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. PENGAWALAN</td>
             <td>{{ $tahunPertama->giat_lantas_pengawalan }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. PATROLI</td>
             <td>{{ $tahunPertama->giat_lantas_patroli }}</td>
             <td>Kali</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
