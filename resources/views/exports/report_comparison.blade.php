@@ -65,12 +65,18 @@
             <td>a. TILANG</td>
             <td>{{ $tahunPertama->pelanggaran_lalu_lintas_tilang }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. TEGURAN</td>
             <td>{{ $tahunPertama->pelanggaran_lalu_lintas_teguran }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -80,6 +86,9 @@
                 $tahunPertama->pelanggaran_lalu_lintas_teguran
             ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -110,42 +119,63 @@
             <td>1) GUN HELM SNI</td>
             <td>{{ $tahunPertama->pelanggaran_sepeda_motor_gun_helm_sni }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>2) MELAWAN ARUS</td>
             <td>{{ $tahunPertama->pelanggaran_sepeda_motor_melawan_arus }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>3) GUN HP SAAT BERKENDARA</td>
             <td>{{ $tahunPertama->pelanggaran_sepeda_motor_gun_hp_saat_berkendara }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>4) BERKENDARA DI BAWAH PENGARUH ALKOHOL</td>
             <td>{{ $tahunPertama->pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>5) MELEBIHI BATAS KECEPATAN</td>
             <td>{{ $tahunPertama->pelanggaran_sepeda_motor_melebihi_batas_kecepatan }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>6) BERKENDARA DI BAWAH UMUR</td>
             <td>{{ $tahunPertama->pelanggaran_sepeda_motor_berkendara_dibawah_umur }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>7) LAIN - LAIN</td>
             <td>{{ $tahunPertama->pelanggaran_sepeda_motor_lain_lain }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -160,6 +190,9 @@
                 $tahunPertama->pelanggaran_sepeda_motor_lain_lain
             ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -181,42 +214,63 @@
             <td>1) MELAWAN ARUS</td>
             <td>{{ $tahunPertama->pelanggaran_mobil_melawan_arus }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>2) GUN HP SAAT BERKENDARA</td>
             <td>{{ $tahunPertama->pelanggaran_mobil_gun_hp_saat_berkendara }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>3) BERKENDARA DI BAWAH PENGARUH ALKOHOL</td>
             <td>{{ $tahunPertama->pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>4) MELEBIHI BATAS KECEPATAN</td>
             <td>{{ $tahunPertama->pelanggaran_mobil_melebihi_batas_kecepatan }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>5) BERKENDARA DI BAWAH UMUR</td>
             <td>{{ $tahunPertama->pelanggaran_mobil_berkendara_dibawah_umur }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>6) GUN SAFETY BELT</td>
             <td>{{ $tahunPertama->pelanggaran_mobil_gun_safety_belt }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>7) LAIN - LAIN</td>
             <td>{{ $tahunPertama->pelanggaran_mobil_lain_lain }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -231,6 +285,9 @@
                 $tahunPertama->pelanggaran_mobil_lain_lain
             ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -240,7 +297,7 @@
         </tr>
         <tr>
             <td style="background-color: #c6efcd;">3</td>
-            <td style="background-color: #c6efcd;">BARANGBUKTI YANG DISITA</td>
+            <td style="background-color: #c6efcd;">BARANG BUKTI YANG DISITA</td>
             <td style="background-color: #c6efcd;"></td>
             <td style="background-color: #c6efcd;"></td>
             <td style="background-color: #c6efcd;"></td>
@@ -252,18 +309,27 @@
             <td>a. SIM</td>
             <td>{{ $tahunPertama->barang_bukti_yg_disita_sim }}</td>
             <td>Unit</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. STNK</td>
             <td>{{ $tahunPertama->barang_bukti_yg_disita_stnk }}</td>
             <td>Unit</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KENDARAAN</td>
             <td>{{ $tahunPertama->barang_bukti_yg_disita_kendaraan }}</td>
             <td>Unit</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -274,6 +340,9 @@
                 $tahunPertama->barang_bukti_yg_disita_kendaraan
             ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -295,30 +364,45 @@
             <td>a. SEPEDA MOTOR</td>
             <td>{{ $tahunPertama->kendaraan_yang_terlibat_pelanggaran_sepeda_motor }}</td>
             <td>Unit</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. MOBIL PENUMPANG</td>
             <td>{{ $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang }}</td>
             <td>Unit</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. MOBIL BUS</td>
             <td>{{ $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_bus }}</td>
             <td>Unit</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. MOBIL BARANG</td>
             <td>{{ $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_barang }}</td>
             <td>Unit</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. KENDARAAN KHUSUS</td>
             <td>{{ $tahunPertama->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus }}</td>
             <td>Unit</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -331,6 +415,9 @@
                 $tahunPertama->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus
             ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -352,42 +439,63 @@
             <td>a. PEGAWAI NEGERI SIPIL</td>
             <td>{{ $tahunPertama->profesi_pelaku_pelanggaran_pns }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. KARYAWAN / SWASTA</td>
             <td>{{ $tahunPertama->profesi_pelaku_pelanggaran_karyawan_swasta }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. PELAJAR / MAHASISWA</td>
             <td>{{ $tahunPertama->profesi_pelaku_pelanggaran_pelajar_mahasiswa }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. PENGEMUDI (SUPIR)</td>
             <td>{{ $tahunPertama->profesi_pelaku_pelanggaran_pengemudi_supir }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. TNI</td>
             <td>{{ $tahunPertama->profesi_pelaku_pelanggaran_tni }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>f. POLRI</td>
             <td>{{ $tahunPertama->profesi_pelaku_pelanggaran_polri }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>g LAIN-LAIN</td>
             <td>{{ $tahunPertama->profesi_pelaku_pelanggaran_lain_lain }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -402,6 +510,9 @@
                 $tahunPertama->profesi_pelaku_pelanggaran_lain_lain
             ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -501,6 +612,9 @@
                 $tahunPertama->usia_pelaku_pelanggaran_diatas_60_tahun
             ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -593,6 +707,9 @@
                     $tahunPertama->sim_pelaku_pelanggaran_tanpa_sim
                 ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -659,6 +776,9 @@
                 $tahunPertama->lokasi_pelanggaran_industri
             ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -709,6 +829,9 @@
                 $tahunPertama->lokasi_pelanggaran_status_jalan_desa_lingkungan
             ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -759,6 +882,9 @@
                 $tahunPertama->lokasi_pelanggaran_fungsi_jalan_lingkungan
             ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -834,18 +960,27 @@
             <td>a. SIM</td>
             <td>{{ $tahunPertama->kecelakaan_barang_bukti_yg_disita_sim }}</td>
             <td>Unit</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. STNK</td>
             <td>{{ $tahunPertama->kecelakaan_barang_bukti_yg_disita_stnk }}</td>
             <td>Unit</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KENDARAAN</td>
             <td>{{ $tahunPertama->kecelakaan_barang_bukti_yg_disita_kendaraan }}</td>
             <td>Unit</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -861,6 +996,9 @@
                 $tahunPertama->kecelakaan_barang_bukti_yg_disita_kendaraan
             ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -932,6 +1070,9 @@
                 $tahunPertama->profesi_korban_kecelakaan_lalin_lain_lain
                 ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1031,6 +1172,9 @@
                 $tahunPertama->usia_korban_kecelakaan_diatas_60
                 ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1123,6 +1267,9 @@
                 $tahunPertama->sim_korban_kecelakaan_tanpa_sim
                 ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1144,36 +1291,54 @@
             <td>a. SEPEDA MOTOR</td>
             <td>{{ $tahunPertama->kendaraan_yg_terlibat_kecelakaan_sepeda_motor }}</td>
             <td>Unit</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. MOBIL PENUMPANG</td>
             <td>{{ $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang }}</td>
             <td>Unit</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. MOBIL BUS</td>
             <td>{{ $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_bus }}</td>
             <td>Unit</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. MOBIL BARANG</td>
             <td>{{ $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_barang }}</td>
             <td>Unit</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. KENDARAAN KHUSUS</td>
             <td>{{ $tahunPertama->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus }}</td>
             <td>Unit</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>f. KENDARAAN TIDAK BERMOTOR</td>
             <td>{{ $tahunPertama->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor }}</td>
             <td>Unit</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1187,6 +1352,9 @@
                 $tahunPertama->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor
                 ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1279,6 +1447,9 @@
                 $tahunPertama->jenis_kecelakaan_lainnya
                 ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1350,6 +1521,9 @@
                 $tahunPertama->profesi_pelaku_kecelakaan_lalin_lain_lain
                 ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1449,6 +1623,9 @@
                 $tahunPertama->usia_pelaku_kecelakaan_diatas_60_tahun
                 ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1541,6 +1718,9 @@
                 $tahunPertama->sim_pelaku_kecelakaan_tanpa_sim
                 ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1571,36 +1751,54 @@
             <td>1) KAWASAN PEMUKIMAN</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_lalin_pemukiman }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>2) KAWASAN PERBELANJAAN</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_lalin_perbelanjaan }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>3) PERKANTORAN</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_lalin_perkantoran }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>4) KAWASAN WISATA</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_lalin_wisata }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>5) KAWASAN INDUTRI</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_lalin_industri }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>6) LAIN - LAIN</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_lalin_lain_lain }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1614,6 +1812,9 @@
                 $tahunPertama->lokasi_kecelakaan_lalin_lain_lain
                 ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1635,24 +1836,36 @@
             <td>1) NASIONAL</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_status_jalan_nasional }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>2) PROPINSI</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_status_jalan_propinsi }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>3) KAB/KOTA</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_status_jalan_kab_kota }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>4) DESA / LINGKUNGAN</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_status_jalan_desa_lingkungan }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1665,6 +1878,9 @@
                 $tahunPertama->lokasi_kecelakaan_status_jalan_desa_lingkungan
                 ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1689,24 +1905,36 @@
             <td>1) ARTERI</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_fungsi_jalan_arteri }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>2) KOLEKTOR</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_fungsi_jalan_kolektor }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>3) LOKAL</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_fungsi_jalan_lokal }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>4) LINGKUNGAN</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_fungsi_jalan_lingkungan }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1718,6 +1946,9 @@
                 $tahunPertama->lokasi_kecelakaan_fungsi_jalan_lingkungan
             ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1741,126 +1972,189 @@
             <td>1) MANUSIA</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_manusia }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>a. NGANTUK/LELAH (PSL 283)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_ngantuk_lelah }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. MABUK /PENGARUH ALKOHOL DAN OBAT (PSL 283)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_mabuk_obat }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. SAKIT (PSL 283)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_sakit }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. HAND PHONE/ ALAT ELEKTRONIK LAIN (PSL 283)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_handphone_elektronik }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. MENEROBOS LAMPU MERAH(PSL 287 AY 2)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_menerobos_lampu_merah }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>f. MELANGGAR BATAS KECEPATAN (PSL 287 AY 7)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_melanggar_batas_kecepatan }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>g. TIDAK MENJAGA JARAK</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_tidak_menjaga_jarak }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>h. MENDAHULUI/BERBELOK/BERPINDAH JALUR (PSL 294)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>I. BERPINDAH LAJUR ( PSL 295)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_berpindah_jalur }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>j. TIDAK MEMBERIKAN LAMPU ISYARAT BERHENTI/BERBELOK   /BERUBAH ARAH</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>k. TIDAK MENGUTAMAKAN PEJALAN KAKI (PSL 284 JO 106 AY 2)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>l. LAINNYA</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_lainnya }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>2) ALAM</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_alam }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>3) KELAIKAN KENDARAAN</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_kelaikan_kendaraan }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>4) JALAN (KONDISI JALAN)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_kondisi_jalan }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>5) PRASARANA JALAN</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_prasarana_jalan }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>a. RAMBU</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_rambu }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. MARKA</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_marka }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. APIL</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_apil }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. PERLINTASAN KA TANPA PALANG PINTU</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1887,6 +2181,9 @@
                 $tahunPertama->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu
                 ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1908,48 +2205,72 @@
             <td>a. 00.00 - 03.00</td>
             <td>{{ $tahunPertama->waktu_kejadian_kecelakaan_00_03 }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. 03.00 - 06.00</td>
             <td>{{ $tahunPertama->waktu_kejadian_kecelakaan_03_06 }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. 06.00- 09.00</td>
             <td>{{ $tahunPertama->waktu_kejadian_kecelakaan_06_09 }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>d. 09.00 - 12.00</td>
             <td>{{ $tahunPertama->waktu_kejadian_kecelakaan_09_12 }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>e. 12.00 - 15.00</td>
             <td>{{ $tahunPertama->waktu_kejadian_kecelakaan_12_15 }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>f. 15.00 - 18.00</td>
             <td>{{ $tahunPertama->waktu_kejadian_kecelakaan_15_18 }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>g. 18.00 - 21.00</td>
             <td>{{ $tahunPertama->waktu_kejadian_kecelakaan_18_21 }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>h. 21.00 - 24.00</td>
             <td>{{ $tahunPertama->waktu_kejadian_kecelakaan_21_24 }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1965,6 +2286,9 @@
                 $tahunPertama->waktu_kejadian_kecelakaan_21_24
                 ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -1986,6 +2310,9 @@
             <td>a. JUMLAH KEJADIAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_menonjol_jumlah_kejadian }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2031,6 +2358,9 @@
             <td>a. JUMLAH KEJADIAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tunggal_jumlah_kejadian }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2076,6 +2406,9 @@
             <td>a. JUMLAH KEJADIAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_jumlah_kejadian }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2121,6 +2454,9 @@
             <td>a. JUMLAH KEJADIAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_lari_jumlah_kejadian }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2166,6 +2502,9 @@
             <td>a. JUMLAH KEJADIAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_jumlah_kejadian }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2211,6 +2550,9 @@
             <td>a. JUMLAH KEJADIAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_jumlah_kejadian }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2256,6 +2598,9 @@
             <td>a. JUMLAH KEJADIAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_jumlah_kejadian }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2301,18 +2646,27 @@
             <td>a. JUMLAH KEJADIAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_perlintasan_ka_jumlah_kejadian }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. BERPALANG PINTU</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_perlintasan_ka_berpalang_pintu }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. TIDAK BERPALANG PINTU</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_perlintasan_ka_tidak_berpalang_pintu }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2358,18 +2712,27 @@
             <td>a. KECELAKAAN KERETA API</td>
             <td>{{ $tahunPertama->kecelakaan_transportasi_kereta_api }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>b. KECELAKAAN LAUT / PERAIRAN</td>
             <td>{{ $tahunPertama->kecelakaan_transportasi_laut_perairan }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
             <td>c. KECELAKAAN UDARA</td>
             <td>{{ $tahunPertama->kecelakaan_transportasi_udara }}</td>
             <td>Perkara</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2456,6 +2819,9 @@
                 $tahunPertama->penlu_melalui_daerah_rawan_laka_dan_langgar
                 ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2557,6 +2923,9 @@
                 $tahunPertama->pramuka_bhayangkara_krida_lalu_lintas
                 ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2628,6 +2997,9 @@
                 $tahunPertama->global_road_safety_partnership_action
                 ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
         <tr>
             <td></td>
@@ -2687,6 +3059,9 @@
                $tahunPertama->giat_lantas_patroli
                 ]) }}</td>
             <td></td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
         </tr>
     </tbody>
 </table>
