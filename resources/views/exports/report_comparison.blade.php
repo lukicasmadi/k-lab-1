@@ -1,52 +1,28 @@
 <table>
     <thead>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td colspan="7"></td>
         </tr>
         <tr>
-            <td></td>
-            <td style="text-align: center;">KEPOLISIAN NEGARA REPUBLIK INDONESIA</td>
-            <td></td>
-            <td></td>
+            <td style="text-align: center;" colspan="7">KEPOLISIAN NEGARA REPUBLIK INDONESIA</td>
         </tr>
         <tr>
-            <td></td>
-            <td style="text-align: center;">KORP LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="text-align: center;" colspan="7">KORP LALU LINTAS</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td colspan="7"></td>
         </tr>
         <tr>
-            <td></td>
-            <td style="text-align: center;">LAPORAN PERBANDINGAN {{ \Illuminate\Support\Str::upper($operation->name) }} SELURUH POLDA</td>
-            <td></td>
-            <td></td>
+            <td style="text-align: center;" colspan="7">LAPORAN PERBANDINGAN {{ \Illuminate\Support\Str::upper($operation->name) }} SELURUH POLDA</td>
         </tr>
         <tr>
-            <td></td>
-            <td style="text-align: center;">TANGGAL: {{ $operation->start_date->format("Y-m-d") }} S/D {{ $operation->end_date->format("Y-m-d") }}</td>
-            <td></td>
-            <td></td>
+            <td style="text-align: center;" colspan="7">TANGGAL: {{ $operation->start_date->format("Y-m-d") }} S/D {{ $operation->end_date->format("Y-m-d") }}</td>
         </tr>
         <tr>
-            <td></td>
-            <td style="text-align: center;">KORLANTAS</td>
-            <td></td>
-            <td></td>
+            <td style="text-align: center;" colspan="7">KORLANTAS</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td colspan="7"></td>
         </tr>
         <tr>
             <th style="background-color: #eeeeee; text-align: center;" rowspan="3">NO</th>
