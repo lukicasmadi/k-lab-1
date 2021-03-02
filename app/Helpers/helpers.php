@@ -135,3 +135,31 @@ if (! function_exists('calculation')) {
         return array_sum($arrayData);
     }
 }
+
+if (! function_exists('percentageValue')) {
+    function percentageValue($tahunKedua, $tahunPertama) {
+        $output1 = $tahunKedua - $tahunPertama;
+        $output2 = $output1 / $tahunPertama;
+        $output3 = $output2 * 100;
+        $output4 = round($output3, 2);
+
+        return $output4;
+    }
+}
+
+if (! function_exists('percentageStatus')) {
+    function percentageStatus($tahunKedua, $tahunPertama) {
+
+        if($tahunKedua > $tahunPertama) {
+            $tanda = "NAIK";
+        } else if($tahunKedua < $tahunPertama) {
+            $tanda = "TURUN";
+        } else if($tahunKedua == $tahunPertama) {
+            $tanda = "SAMA";
+        } else {
+            $tanda = "";
+        }
+
+        return $tanda;
+    }
+}
