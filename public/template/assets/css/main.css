@@ -2325,6 +2325,7 @@ textarea[readonly] {
     color: #515365;
     font-size: 13px;
     letter-spacing: 1px;
+    padding: 10px 30px 5px 30px;
 }
 
 .table>thead>tr>th {
@@ -2333,6 +2334,7 @@ textarea[readonly] {
     font-size: 13px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    margin-bottom: 100px;
 }
 
 .table>tbody>tr>td .usr-img-frame {
@@ -2392,6 +2394,7 @@ textarea[readonly] {
 .table thead th {
     vertical-align: bottom;
     border-bottom: none;
+    padding: 10px 30px;
 }
 
 .table-hover:not(.table-light) tbody tr:hover {
@@ -2417,7 +2420,8 @@ textarea[readonly] {
 /*  Table   */
 
 .table {
-    background-color: #060818;
+    /* background-color: #060818; */
+    text-transform: uppercase;
 }
 
 .table>thead>tr>th {
@@ -2426,6 +2430,7 @@ textarea[readonly] {
 
 .table>tbody>tr>td {
     color: #bfc9d4;
+    /* padding: 0; */
 }
 
 .table.table-hover tbody tr {

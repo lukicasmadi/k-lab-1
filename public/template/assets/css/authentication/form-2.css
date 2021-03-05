@@ -24,34 +24,31 @@ body .overflow {
   overflow-x: hidden; }
 
 .logo-login {
+  margin-bottom: 30px;
+  width: 90%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 35px;
-  margin-bottom: 30px;
-  width: 125px;
 }
 
 .logo-presisi {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 40px;
-  margin-bottom: 30px;
-  width: 355px;
+  margin: 45px auto 0px auto;
+  /* width: 355px; */
+  width: 75%;
 }
 
 .button-login {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
-  margin-bottom: 40px;
-  width: 85px;
+  margin: 50px auto;
+  width: 50%;
+}
+
+.button-login:hover {
   animation-name: spin;
   animation-duration: 5000ms;
   animation-iteration-count: infinite;
-  animation-timing-function: linear; 
+  animation-timing-function: linear;
 }
 
 @keyframes spin {
@@ -76,13 +73,93 @@ body .overflow {
   text-transform: uppercase;
   border: 1.5px solid #00adef;
   margin: 10px 0 20px 0;
-  padding: 2px 25px;
+  padding: 4px 15px;
   background: rgba(0, 173, 239, 0.2);
   /* box-shadow: (0 0 5px rgba(81, 203, 238, 1)); */
   box-shadow: 0 0 8px 0 rgba(81, 203, 238, 0.1), 0 0 20px 0 rgba(81, 203, 238, 0.09);
 }
 
-.text-slogan span#lefts {
+.left-kurung {
+  position: absolute;
+  width: 10px;
+  margin: -1.5px 0 0 3px;
+}
+
+.right-kurung {
+  position: absolute;
+  width: 10px;
+  margin: -1.5px 0 0 -13px;
+}
+
+.checktainer {
+  display: block;
+  position: relative;
+  padding-left: 23px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checktainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  /* background-color: #eee; */
+  border: 1px solid #00adef;
+}
+
+/* On mouse-over, add a grey background color */
+.checktainer:hover input ~ .checkmark {
+  border: 1px solid #00adef;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checktainer input:checked ~ .checkmark {
+  background-color: #00adef;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checktainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checktainer .checkmark:after {
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 1px 1px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* .text-slogan span#lefts {
   position: absolute;
   color: #00adef;
   margin-top: 10px;
@@ -102,7 +179,7 @@ body .overflow {
   transform: translate(-50%, -50%);
   font-size: 30px;
   box-shadow: 0 0 8px 0 rgba(81, 203, 238, 0.1), 0 0 20px 0 rgba(81, 203, 238, 0.09);
-}
+} */
 
 .text-login {
   font-size: 9px;
@@ -110,35 +187,42 @@ body .overflow {
   text-transform: uppercase;
   position: absolute;
   color: #fff;
-  margin-top: -82.5px;
+  margin-top: -88px;
   margin-left: 0.2px;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 13px 5px;
+  padding: 15px;
   background-image: linear-gradient(#0B6992, #16374B);
   border-radius: 50%;
+  z-index: -1;
 }
 
 .home-article {
   display: inline-flex;
   font-size: 11px;
   color: #fff;
-  background: #125572;
-  border: 1px solid #00adef;
+  background:  #125572; 
+  border: 12px solid transparent;   
+  border-image: url(/img/border.png);
+  border-image-slice: 30;
+  border-image-repeat: stretch;
+  /* padding: 0;
+  margin: 0; */
+  /* border: 1px solid #00adef; */
   margin: 10px 0 20px 0;
-  padding: 0 0 0 15px;
+    /* padding: 0 0 0 5px; */
   box-shadow: 0 0 8px 0 rgba(81, 203, 238, 0.2), 0 0 20px 0 rgba(81, 203, 238, 0.19);
 }
 
 .home-article img {
   float: left;
   padding: 0;
-  margin: 15px 15px 15px 0;
-  width: 150px;
+  margin: -2px -15px;
+  width: 130px;
 }
 
 .home-article p {
-  margin: 15px 15px 8px 0;
+  margin: 0px -5px -2px 30px;
   line-height: 1.39;
   text-transform: capitalize;
 }
@@ -158,28 +242,52 @@ body .overflow {
   color: #fff;
 }
 
+.centered {
+  display: flex;
+  /* background: #ff0000; */
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
 .head-logo img {
+  top: 0;
   float: left;
   padding: 0;
-  margin: 0px 10px 5px 0;
-  width: 35px;
+  margin: 0px 8px 5px 0;
+  width: 33px;
+  /* margin-bottom: 35px; */
 }
 
 .title-news{
-  border-bottom: 1px solid #174868;
   color: #fff;
-  margin-bottom: 5px;
-  font-size: 2px;
+  text-align: center;
+  margin-top: -5px;
+  font-size: 13px;
 }
 
+.more-article{
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 9px;
+  margin-bottom: -5px;
+  margin-right: 10px;
+}
 
-
+.more-article span {
+  position: absolute;
+  font-size: 15px;
+  margin: -4px 0 0 3px;
+  font-weight: lighter;
+  color: #fff;
+}
 
 .head-logo h3 {
-  margin: 10px 10px 8px 0;
-  padding-top: 5px;
+  margin: 0;
+  padding-top: 8px;
   line-height: 1.39;
-  font-size: 15px;
+  font-size: 13px;
   text-transform: uppercase;
 }
 
@@ -205,7 +313,7 @@ body .overflow {
   min-height: 100%;
   margin: 0 auto; }
   .form-form .form-form-wrap {
-    max-width: 290px;
+    max-width: 325px;
     margin: 0 auto;
     min-width: 200px;
     min-height: 100%;
@@ -222,7 +330,7 @@ body .overflow {
     .form-form .form-container .form-content {
       display: block;
       width: 100%;
-      padding: 25px;
+      padding: 20px 25px;
       /* background: #060818; */
       text-align: center;
       /* border-radius: 15px;
@@ -386,7 +494,7 @@ body .overflow {
       .form-form .form-form-wrap form .social a.social-fb svg, .form-form .form-form-wrap form .social a.social-fb .brand-name {
         color: #2196f3; }
 
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
   .form-form {
     width: 100%; }
     .form-form .form-form-wrap {
@@ -413,13 +521,13 @@ body .overflow {
 
 @supports (-ms-ime-align: auto) {
   .form-form .form-form-wrap {
-    height: 100%; } }
+    height: 100%; } } */
 
-    @media (min-width: 1300px) {
+    /* @media (min-width: 1300px) {
       .head-logo img {
         margin-top: 22px;
         width: 44px;
-      }
+      } 
     
       .head-logo h3 {
         padding-top: 30px;
@@ -494,15 +602,15 @@ body .overflow {
   .text-slogan {
     font-size: 14px;
     margin: 10px 0 20px 0;
-    padding: 2px 45px;
+    padding: 2px 45px; 
 }
 
-.text-slogan span#lefts {
+ .text-slogan span#lefts {
   margin-left: -122px;
 }
 
 .text-slogan span#rights {
   margin-right: -133px;
-}
+} 
     
-    }
+    } */
