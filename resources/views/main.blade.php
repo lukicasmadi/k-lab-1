@@ -268,13 +268,13 @@
     }
 .widget.widget-activity-three .timeline-line .item-timeline .t-content p {
     margin-bottom: 8px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
-    color: #888ea8;
+    color: #00adef;
 }
 .widget.widget-activity-three .timeline-line .item-timeline .t-content .t-uppercontent span {
     margin-bottom: 0;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     color: #888ea8;
 }
@@ -371,7 +371,7 @@ function donutData() {
 
         var donutChart = {
         chart: {
-            height: 350,
+            height: 325,
             type: 'donut',
             toolbar: {
                 show: false,
@@ -395,7 +395,7 @@ function donutData() {
             colors: '#0e1726'
         },
         series: [filled, nofilled],
-        labels: ['SUDAH MASUK', 'BELUM MASUK'],
+        labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
         responsive: [{
             breakpoint: 480,
             options: {

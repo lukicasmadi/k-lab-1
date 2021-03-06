@@ -2,25 +2,48 @@
 
 @section('content')
 <div class="layout-px-spacing">
+    <div class="page-header">
+        <div class="page-title">
+            <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15.556" viewBox="0 0 20 15.556">
+            <path id="text_align_left" d="M16.333,20.556H3V18.333H16.333ZM23,16.111H3V13.889H23Zm-6.667-4.444H3V9.444H16.333ZM23,7.222H3V5H23Z" transform="translate(-3 -5)" fill="#00adef"/>
+            </svg>
+            <span>rencana operasi</span>
+            </h3>
+        </div>                    
+        <div class="toggle-switch">
+            <label class="switch s-icons s-outline  s-outline-secondary">
+                <input type="checkbox" checked="" class="theme-shifter" id="changeTheme">
+                <span class="slider round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </span>
+            </label>
+        </div>
+    </div>
+</div>
+<div class="layout-px-spacing">
     @include('flash::message')
     <div class="row layout-top-spacing" id="cancel-row">
         <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
-            <div class="widget-content widget-content-area">
-                <div class="col-md-12 text-right mb-3">
-                    <a href="{{ route('rencana_operasi_create') }}" class="btn btn-success">Add New</a>
+            <div class="widget-content">
+                <div class="col-md-12 text-left mb-3">
+                    <a href="{{ route('rencana_operasi_create') }}" class="btn btn-success"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="15.556" viewBox="0 0 20 15.556">
+            <path id="text_align_left" d="M16.333,20.556H3V18.333H16.333ZM23,16.111H3V13.889H23Zm-6.667-4.444H3V9.444H16.333ZM23,7.222H3V5H23Z" transform="translate(-3 -5)" fill="#00adef"/>
+            </svg> Tambah Rencana Operasi</a>
                 </div>
                 <div class="table-responsive">
                     <table id="tbl_operation" class="table">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Name</th>
-                                <th>Operation Type</th>
-                                <th>Start Date</th>
-                                <th>End Date</th>
-                                <th>Description</th>
-                                <th>Attachment</th>
-                                <th>Action</th>
+                                <th>Nama Operasi</th>
+                                <th>Jenis Operasi</th>
+                                <th>TGL Mulai</th>
+                                <th>Durasi</th>
+                                <th>Deskripsi</th>
+                                <th>Lihat</th>
+                                <th>Pilihan</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -59,13 +82,13 @@
             ajax: route('operation_plan_data'),
             "oLanguage": {
                 "oPaginate": {
-                    "sPrevious": '<i class="fas fa-arrow-circle-left dtIconSize"></i>',
-                    "sNext": '<i class="fas fa-arrow-circle-right dtIconSize"></i>'
+                    "sPrevious": '<i class="fas fa-chevron-left dtIconSize"></i>',
+                    "sNext": '<i class="fas fa-chevron-right dtIconSize"></i>'
                 },
-                "sInfo": "Showing page _PAGE_ of _PAGES_",
+                "sInfo": "Menampilkan _PAGE_ hingga 12 dari _PAGES_ baris",
                 "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
-                "sSearchPlaceholder": "Search...",
-                "sLengthMenu": "Results :  _MENU_",
+                "sSearchPlaceholder": "CARI DATA...",
+                "sLengthMenu": " _MENU_ Baris per halaman",
                 "sProcessing": '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>',
             },
             order: [
