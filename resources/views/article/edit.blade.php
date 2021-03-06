@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="widget-content widget-content-area">
-                    <form method="POST" action="{{ route('article_update', $articleUuid->uuid) }}">
+                    <form method="POST" action="{{ route('article_update', $articleUuid->uuid) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
                         <input type="hidden" name="id" value="{{ $articleUuid->id }}">
@@ -61,6 +61,26 @@
                                     @endif
                                 @endforeach
                             </select>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Thumbnail Image</label>
+                            <input type="file" class="form-control @error('small_img') is-invalid @enderror" id="small_img" name="small_img">
+                            @error('small_img')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Big Image</label>
+                            <input type="file" class="form-control @error('big_img') is-invalid @enderror" id="big_img" name="big_img">
+                            @error('big_img')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
 
                         <input type="submit" name="submit" class="btn btn-primary mt-3" value="Submit">
