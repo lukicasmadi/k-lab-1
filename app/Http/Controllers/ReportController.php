@@ -581,9 +581,9 @@ class ReportController extends Controller
         ->first();
 
         $now = now()->format("Y-m-d");
-        $filename = 'report-comparison-tahun-'.$startYear.'-'.$endYear.'.xlsx';
+        $filename = 'comparison-report-'.$startYear.'-'.$endYear.'.xlsx';
 
-        return Excel::download(new ComparisonExport($tahunPertama, $findOperation), $filename);
+        return Excel::download(new ComparisonExport($tahunPertama, $tahunKedua, $findOperation), $filename);
 
         return redirect()->back();
     }

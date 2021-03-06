@@ -9,9 +9,10 @@ use Maatwebsite\Excel\Concerns\FromView;
 class ComparisonExport implements FromView
 {
 
-    public function __construct($tahunPertama, $operation)
+    public function __construct($tahunPertama, $tahunKedua, $operation)
     {
         $this->tahunPertama = $tahunPertama;
+        $this->tahunKedua = $tahunKedua;
         $this->operation = $operation;
     }
 
@@ -19,6 +20,7 @@ class ComparisonExport implements FromView
     {
         return view('exports.report_comparison', [
             'tahunPertama' => $this->tahunPertama,
+            'tahunKedua' => $this->tahunKedua,
             'operation' => $this->operation
         ]);
     }
