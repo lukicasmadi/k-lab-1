@@ -162,10 +162,10 @@
                                 </a>
                                 <ul class="collapse submenu list-unstyled" id="acl" data-parent="#topAccordion">
                                     <li class="{{ request()->is('access/role') || request()->is('access/role/*') ? 'active' : '' }}">
-                                        <a href="{{ route('role_index') }}"> Manajement Role </a>
+                                        <a href="{{ route('role_index') }}"> Manajemen Role </a>
                                     </li>
                                     <li class="{{ request()->is('access/permission') || request()->is('access/permission/*') ? 'active' : '' }}">
-                                        <a href="{{ route('permission_index') }}"> Manajement Permission </a>
+                                        <a href="{{ route('permission_index') }}"> Manajemen Permission </a>
                                     </li>
                                     <li class="{{ request()->is('access/permission-to-role') || request()->is('access/permission-to-role/*') ? 'active' : '' }}">
                                         <a href="{{ route('permission_to_role_index') }}"> Attach Permission To Role </a>
@@ -174,7 +174,7 @@
                                         <a href="{{ route('user_to_role_index') }}"> Attach User To Role </a>
                                     </li>
                                     <li class="{{ request()->is('access/user/*') || request()->is('access/user') ? 'active' : '' }}">
-                                        <a href="{{ route('user_index') }}"> Manajement User </a>
+                                        <a href="{{ route('user_index') }}"> Manajemen User </a>
                                     </li>
                                     <li class="{{ request()->is('access/polda/*') || request()->is('access/polda') ? 'active' : '' }}">
                                         <a href="{{ route('polda_access_index') }}"> Akses Polda </a>
