@@ -87,7 +87,7 @@
 
                         @role('access_daerah')
                             <li class="menu single-menu {{
-                                request()->is('operasi/*') ? 'active' : ''
+                                request()->is('report/*') ? 'active' : ''
                                 }}">
                                 <a href="#reportpusat" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
                                     <div>
@@ -96,11 +96,8 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                 </a>
                                 <ul class="collapse submenu list-unstyled" id="reportpusat" data-parent="#topAccordion">
-                                    <li class="{{ request()->is('rencana-operasi') ? 'active' : '' }}">
-                                        <a href="{{ route('rencana_operasi_index') }}"> Filter Tanggal </a>
-                                    </li>
-                                    <li class="{{ request()->is('rencana-operasi') ? 'active' : '' }}">
-                                        <a href="{{ route('rencana_operasi_index') }}"> Filter Bulan </a>
+                                    <li class="{{ request()->is('report/daily') ? 'active' : '' }}">
+                                        <a href="{{ route('report_daily_all_polda') }}"> Rekap Laporan Harian </a>
                                     </li>
                                 </ul>
                             </li>

@@ -16,7 +16,7 @@ class ReportController extends Controller
 
     public function __construct()
     {
-        $this->middleware('can-create-plan')->only('dailyAllPolda', 'poldaUuid', 'comparison');
+        // $this->middleware('can-create-plan')->only('dailyAllPolda', 'poldaUuid', 'comparison');
     }
 
     public function dailyAllPolda()
