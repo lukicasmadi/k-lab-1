@@ -13,9 +13,10 @@ Route::get('/home', function () {
 
 Auth::routes(['register' => false]);
 
-Route::get('/offest', function () {
-    return view('offest');
+Route::get('/polda/metro', function () {
+    return view('polda');
 });
+
 
 Route::get('/forgot-password', 'UserController@forgot_password_index')->name('forgot_password_index');
 Route::post('/forgot-password/process', 'UserController@forgot_password_process')->name('forgot_password_process');

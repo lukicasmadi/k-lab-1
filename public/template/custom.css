@@ -212,7 +212,8 @@
 }
 
 .dtIconSize {
-    font-size: 24px;
+    font-size: 15px;
+    color : #fff;
 }
 
 .checkboxRole {
@@ -227,8 +228,8 @@
 }
 
 .page-item.active .page-link {
-    background-color: #009688;
-    margin-top: 3px;
+    background-color: #00adef;
+    /* margin-top: 3px; */
 }
 
 .page-item .page-link {

@@ -37,14 +37,18 @@ table.dataTable {
     white-space: nowrap; }
 
 div.dataTables_wrapper div.dataTables_length label {
-  font-weight: normal;
+  position: absolute;
+  font-weight: lighter;
   text-align: left;
   white-space: nowrap;
-  color: #888ea8;
-  font-weight: 600; }
+  color: #79859b;
+  font-size: 14px;
+  margin: -43px 0 0 255px;
+  /* font-weight: 600; */
+}
 
 div.dataTables_wrapper div.dataTables_length select {
-  width: 75px;
+  width: 50px;
   display: inline-block; }
 
 div.dataTables_wrapper div.dataTables_filter {
@@ -53,8 +57,9 @@ div.dataTables_wrapper div.dataTables_filter {
     font-weight: normal;
     white-space: nowrap;
     text-align: left;
-    color: #888ea8;
-    font-weight: 600; }
+    color: #79859b;
+    font-weight: 600;
+  }
   div.dataTables_wrapper div.dataTables_filter input {
     margin-left: 0.5em;
     display: inline-block;
@@ -134,12 +139,15 @@ table.dataTable thead .sorting_desc_disabled:before, table.dataTable thead .sort
   opacity: 0.4; }
 
 table.dataTable thead .sorting:before, table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_asc_disabled:before, table.dataTable thead .sorting_desc_disabled:before {
-  right: 1em;
-  content: "\2191"; }
+  right: 0.5em;
+  font-size: 20px;
+  content: "\01F893"; }
 
 table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:after {
   right: 0.5em;
-  content: "\2193"; }
+  bottom: 45px;
+  font-size: 20px;
+  content: "\01F891"; }
 
 table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:after {
   opacity: 1; }
