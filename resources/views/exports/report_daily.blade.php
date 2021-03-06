@@ -84,7 +84,7 @@
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td style="font-weight: bold;">{{ calculation([
-                $data->dailyInput->pelanggaran_lalu_lintas_teguran,
+                $data->dailyInput->pelanggaran_lalu_lintas_tilang,
                 $data->dailyInput->pelanggaran_lalu_lintas_teguran
             ]) }}</td>
             <td></td>

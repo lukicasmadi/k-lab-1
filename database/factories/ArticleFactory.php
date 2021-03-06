@@ -28,6 +28,8 @@ class ArticleFactory extends Factory
             'uuid' => Str::uuid(),
             'topic' => $this->faker->sentence(3, true),
             'desc' => $this->faker->paragraph(5, false),
+            'small_img' => 'small.png',
+            'big_img' => 'big.png',
             'category_id' => Category::all()->random()->id,
             'created_by' => User::all()->random()->id,
         ];

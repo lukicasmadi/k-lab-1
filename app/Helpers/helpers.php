@@ -76,18 +76,6 @@ if (! function_exists('operationPlans')) {
     }
 }
 
-if (! function_exists('alreadyInput')) {
-    function alreadyInput() {
-        $now = now()->format('Y-m-d');
-        $submited = PoldaSubmited::where("submited_date", $now)->first();
-        if(empty($submited)) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-}
-
 if (! function_exists('isAdmin')) {
     function isAdmin() {
         $user = auth()->user();
@@ -124,6 +112,20 @@ if (! function_exists('poldaId')) {
     }
 }
 
+if (! function_exists('poldaAlreadyInputToday')) {
+    function poldaAlreadyInputToday() {
+        if(isPolda()) {
+            $now = now()->format('Y-m-d');
+            $submited = PoldaSubmited::where("submited_date", $now)->where('polda_id', poldaId())->first();
+            if(empty($submited)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+}
+
 if (! function_exists('hariIni')) {
     function hariIni() {
         return now()->format("d-m-Y");
@@ -133,5 +135,33 @@ if (! function_exists('hariIni')) {
 if (! function_exists('calculation')) {
     function calculation($arrayData) {
         return array_sum($arrayData);
+    }
+}
+
+if (! function_exists('percentageValue')) {
+    function percentageValue($tahunKedua, $tahunPertama) {
+        $output1 = $tahunKedua - $tahunPertama;
+        $output2 = $output1 / $tahunPertama;
+        $output3 = $output2 * 100;
+        $output4 = round($output3, 2);
+
+        return $output4;
+    }
+}
+
+if (! function_exists('percentageStatus')) {
+    function percentageStatus($tahunKedua, $tahunPertama) {
+
+        if($tahunKedua > $tahunPertama) {
+            $tanda = "NAIK";
+        } else if($tahunKedua < $tahunPertama) {
+            $tanda = "TURUN";
+        } else if($tahunKedua == $tahunPertama) {
+            $tanda = "SAMA";
+        } else {
+            $tanda = "";
+        }
+
+        return $tanda;
     }
 }

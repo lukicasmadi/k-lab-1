@@ -14,12 +14,17 @@
                     </div>
                 </div>
                 <div class="widget-content widget-content-area">
-                    <form action="{{ route('report_daily_process') }}" method="POST">
+                    <form action="{{ route('report_comparison_process') }}" method="POST">
                         @csrf
 
                         <div class="form-group mb-4">
-                            <label>Tanggal</label>
-                            <input id="tanggal" name="tanggal" class="form-control flatpickr flatpickr-input active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                            <label>Tahun Pembanding Pertama</label>
+                            <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control form-control-lg"></select>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Tahun Pembanding Kedua</label>
+                            <select id="tahun_pembanding_kedua" name="tahun_pembanding_kedua" class="form-control form-control-lg"></select>
                         </div>
 
                         <div class="form-group mb-4">
@@ -54,6 +59,25 @@
 
 @push('page_js')
 <script>
-var f1 = flatpickr(document.getElementById('tanggal'));
+$(document).ready(function () {
+
+})
+
+var min = new Date().getFullYear()
+var max = min + 5
+var select = document.getElementById('tahun_pembanding_pertama')
+var select_kedua = document.getElementById('tahun_pembanding_kedua')
+
+for (var i = min; i<=max; i++) {
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+
+    var opt_kedua = document.createElement('option');
+    opt_kedua.value = i;
+    opt_kedua.innerHTML = i;
+    select_kedua.appendChild(opt_kedua);
+}
 </script>
 @endpush

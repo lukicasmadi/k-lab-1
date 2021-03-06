@@ -34,7 +34,11 @@ class HomeController extends Controller
             return view('empty_project');
         }
 
-        return view('main', compact('polda', 'dailyInput'));
+        if(isPolda()) {
+            return view('polda');
+        } else {
+            return view('main', compact('polda', 'dailyInput'));
+        }
     }
 
     public function notifikasi()
