@@ -18,6 +18,8 @@ class CreateArticlesTable extends Migration
             $table->uuid('uuid');
             $table->string('topic');
             $table->longText('desc');
+            $table->string('small_img');
+            $table->string('big_img');
             $table->enum('status',['active', 'nonactive'])->default('active');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');

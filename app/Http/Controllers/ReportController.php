@@ -318,12 +318,12 @@ class ReportController extends Controller
         ->whereRaw('YEAR(created_at) = ? AND rencana_operasi_id = ?', [$startYear, $operation])
         ->first();
 
-        // $tahunKedua = DailyInput::selectRaw('
-        //     sum(pelanggaran_lalu_lintas_tilang) as pelanggaran_lalu_lintas_tilang,
-        //     sum(pelanggaran_lalu_lintas_teguran) as pelanggaran_lalu_lintas_teguran
-        // ')
-        // ->whereRaw('YEAR(created_at) = ? AND rencana_operasi_id = ?', [$endYear, $operation])
-        // ->first();
+        $tahunKedua = DailyInput::selectRaw('
+            sum(pelanggaran_lalu_lintas_tilang) as pelanggaran_lalu_lintas_tilang,
+            sum(pelanggaran_lalu_lintas_teguran) as pelanggaran_lalu_lintas_teguran
+        ')
+        ->whereRaw('YEAR(created_at) = ? AND rencana_operasi_id = ?', [$endYear, $operation])
+        ->first();
 
         $now = now()->format("Y-m-d");
         $filename = 'report-comparison-tahun'.$startYear.'.xlsx';
