@@ -76,18 +76,6 @@ if (! function_exists('operationPlans')) {
     }
 }
 
-if (! function_exists('alreadyInput')) {
-    function alreadyInput() {
-        $now = now()->format('Y-m-d');
-        $submited = PoldaSubmited::where("submited_date", $now)->first();
-        if(empty($submited)) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-}
-
 if (! function_exists('isAdmin')) {
     function isAdmin() {
         $user = auth()->user();
@@ -121,6 +109,20 @@ if (! function_exists('isPolda')) {
 if (! function_exists('poldaId')) {
     function poldaId() {
         return auth()->user()->polda()->first()->polda_id;
+    }
+}
+
+if (! function_exists('poldaAlreadyInputToday')) {
+    function poldaAlreadyInputToday() {
+        if(isPolda()) {
+            $now = now()->format('Y-m-d');
+            $submited = PoldaSubmited::where("submited_date", $now)->where('polda_id', poldaId())->first();
+            if(empty($submited)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
     }
 }
 

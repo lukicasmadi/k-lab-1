@@ -12,7 +12,7 @@
                         </svg>
                         <span>detail data laporan polda metro jaya</span>
                         </h3>
-                    </div>                    
+                    </div>
                     <div class="toggle-switch">
                         <label class="switch s-icons s-outline  s-outline-secondary">
                             <input type="checkbox" checked="" class="theme-shifter" id="changeTheme">
@@ -27,9 +27,11 @@
                 <div class="row layout-top-spacing">
 
                     <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                        <div class="grid-polda line glowblue">
-                        sudah mengirimkan
-                        </div>
+                        @if (poldaAlreadyInputToday())
+                            <div class="grid-polda line glowblue">Sudah Mengirimkan</div>
+                        @else
+                            <div class="grid-polda line glowred">Belum Mengirimkan</div>
+                        @endif
                         <img src="{{ secure_asset('/img/polda/metro_jaya_large.png') }}" width="50%" style="display: block; margin: 0 auto;">
                     </div>
                     <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
