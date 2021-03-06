@@ -63,7 +63,7 @@ $(document).ready(function () {
 
 })
 
-var min = new Date().getFullYear() - 1
+var min = new Date().getFullYear()
 var max = min + 5
 var select = document.getElementById('tahun_pembanding_pertama')
 var select_kedua = document.getElementById('tahun_pembanding_kedua')

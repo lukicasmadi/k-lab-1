@@ -106,7 +106,7 @@
                             </li>
                         @endrole
 
-                        @role('administrator|access_daerah|access_pusat')
+                        @role('administrator|access_pusat')
                             <li class="menu single-menu {{
                                     request()->is('category') ||
                                     request()->is('category/*') ||
