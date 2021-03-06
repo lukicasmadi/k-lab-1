@@ -29,14 +29,18 @@
             @foreach ($polda as $key => $val)
                 @if ($key >= 0 && $key <= 16)
                     @if (empty($val->dailyInput))
+                        <div class="cols-sm-1">
                         <div class="grid-polda line glowred">
                             <p>{{ $val->short_name }}</p>
                             <img src="{{ secure_asset('/img/polda/'.$val->logo) }}">
                         </div>
+                        </div>
                     @else
+                        <div class="cols-sm-1">
                         <div class="grid-polda line glowblue">
                             <p>{{ $val->short_name }}</p>
                             <img src="{{ secure_asset('/img/polda/'.$val->logo) }}">
+                        </div>
                         </div>
                     @endif
                 @endif
@@ -47,20 +51,26 @@
             @foreach ($polda as $key => $val)
                 @if ($key >= 17 && $key <= 33)
                     @if (empty($val->dailyInput))
+                        <div class="cols-sm-1">
                         <div class="grid-polda line glowred">
                             <p>{{ $val->short_name }}</p>
                             <img src="{{ secure_asset('/img/polda/'.$val->logo) }}">
                         </div>
+                        </div>
                     @else
+                        <div class="cols-sm-1">
                         <div class="grid-polda line glowblue">
                             <p>{{ $val->short_name }}</p>
                             <img src="{{ secure_asset('/img/polda/'.$val->logo) }}">
+                        </div>
                         </div>
                     @endif
                 @endif
             @endforeach
         </div>
-
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+            <img src="{{ secure_asset('/img/line-poldaup.png') }}" width="100%">
+        </div>
         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
             <div class="">
                 <div class="widget-heading">
@@ -99,12 +109,21 @@
                 </div>
             </div>
         </div>
-
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+            <img src="{{ secure_asset('/img/line-polda.png') }}" width="100%">
+        </div>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
             <div class="widget widget-activity-three">
 
                 <div class="widget-heading">
-                    <h5 class="">Data Statistik <span id="projectName"></span></h5>
+                    <h5 class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <path id="bar_chart_alt" d="M22,22H2V11.474A2.055,2.055,0,0,1,4,9.368H8V4.105A2.055,2.055,0,0,1,10,2h4a2.055,2.055,0,0,1,2,2.105V7.263h4a2.055,2.055,0,0,1,2,2.105ZM16,9.368V19.895h4V9.368ZM10,4.105V19.895h4V4.105ZM4,11.474v8.421H8V11.474Z" transform="translate(-2 -2)" fill="#00adef"/>
+                    </svg>
+                    <span>Data Statistik</span> <span id="projectName"></span>
+                    <p class="mar20">total data laporan</p>
+                    <b>34 laporan</b>
+                    </h5>
                     <ul class="tabs tab-pills">
                         <li><a href="#" id="filterOperasi" class="tabmenu">Filter Operasi <i class="far fa-filter" style="font-size: 12px;"></i></a></li>
                     </ul>
@@ -117,22 +136,34 @@
                 </div>
             </div>
         </div>
-
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+            <img src="{{ secure_asset('/img/line-poldaup.png') }}" width="100%">
+        </div>
         <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
-            <div class="widget-content widget-content-area">
+            <div class="widget-heading">
+                    <h5 class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20">
+                    <path id="Union_2" data-name="Union 2" d="M-2852-2201a2,2,0,0,1-2-2v-16a2,2,0,0,1,2-2h7a.118.118,0,0,1,.032.006.131.131,0,0,0,.03.006,1.043,1.043,0,0,1,.259.051l.028.009a.492.492,0,0,1,.066.028.993.993,0,0,1,.293.2l6,6a.98.98,0,0,1,.2.293.639.639,0,0,1,.025.068l.009.026a1,1,0,0,1,.049.258.144.144,0,0,0,.007.027.139.139,0,0,1,0,.028v11a2,2,0,0,1-2,2Zm0-2h12v-10h-5a1,1,0,0,1-1-1v-5h-6Zm8-12h2.586l-2.586-2.586Zm-5.333,10v-2h6.667v2Zm0-4v-2h6.667v2Z" transform="translate(2854 2221)" fill="#00adef"/>
+                    </svg>
+                    <span>data status pelaporan</span>
+                    </h5>
+                </div>
+            <div class="widget-content">
                 <div class="table-responsive">
                     <table id="tbl_daily_submited" class="table">
                         <thead>
                             <tr>
+                                <th>No.</th>
                                 <th>Nama Kesatuan</th>
                                 <th>Status Laporan</th>
-                                <th>Preview</th>
+                                <th>Lihat</th>
                                 <th>Pilihan</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($dailyInput as $daily)
                                 <tr>
+                                    <td>{{ $daily->id }}</td>
                                     <td>{{ $daily->name }}</td>
                                     <td>
                                         @php
