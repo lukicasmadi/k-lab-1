@@ -19,8 +19,8 @@
     <div class="container-fluid error-content">
         <div class="">
             <h1 class="error-number">404</h1>
-            <p class="mini-text">Ooops!</p>
-            <p class="error-text mb-4 mt-1">The page you requested was not found!</p>
+            <p class="mini-text">Maaf!</p>
+            <p class="error-text mb-4 mt-1">Halaman yang Anda minta tidak di temukan!</p>
             <a href="{{ route('dashboard') }}" class="btn btn-primary mt-5">Go Back</a>
         </div>
     </div>

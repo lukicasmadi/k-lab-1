@@ -17,8 +17,19 @@ class HomeController extends Controller
         return view('info');
     }
 
+    public function notAssign()
+    {
+        return view('not_assign');
+    }
+
     public function dashboard()
     {
+        if(isPolda()) {
+            if(checkUserHasAssign() == "belum") {
+                return redirect()->route('notAssign');
+            }
+        }
+
         $polda = Polda::select("id", "uuid", "name", "short_name", "logo")
             ->with(['dailyInput' => function($query) {
                 $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));

@@ -106,6 +106,16 @@ if (! function_exists('isPolda')) {
     }
 }
 
+if (! function_exists('checkUserHasAssign')) {
+    function checkUserHasAssign() {
+        if(empty(auth()->user()->polda()->first())) {
+            return "belum";
+        } else {
+            return "sudah";
+        }
+    }
+}
+
 if (! function_exists('poldaId')) {
     function poldaId() {
         return auth()->user()->polda()->first()->polda_id;

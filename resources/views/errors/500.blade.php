@@ -19,8 +19,8 @@
     <div class="container-fluid error-content">
         <div class="">
             <h1 class="error-number">500</h1>
-            <p class="mini-text">Ooops!</p>
-            <p class="error-text mb-4 mt-1">Internal server error! Please contact system administrator</p>
+            <p class="mini-text">Maaf!</p>
+            <p class="error-text mb-4 mt-1">Kesalahan server! Silakan reload halaman secara berkala atau hubungi admin</p>
             <a href="{{ route('dashboard') }}" class="btn btn-primary mt-5">Go Back</a>
         </div>
     </div>

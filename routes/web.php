@@ -20,6 +20,7 @@ Route::get('/polda/metro', function () {
 
 Route::get('/forgot-password', 'UserController@forgot_password_index')->name('forgot_password_index');
 Route::post('/forgot-password/process', 'UserController@forgot_password_process')->name('forgot_password_process');
+Route::get('/not-assign', 'HomeController@notAssign')->name('notAssign');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index')->name('index');
