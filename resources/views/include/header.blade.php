@@ -1,5 +1,5 @@
 <!--  BEGIN NAVBAR  -->
-<div class="header-container">
+<div class="header-container layout-px-menu">
     <header class="header navbar navbar-expand-sm">
 
         <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
@@ -267,7 +267,7 @@
                                 $user = App\Models\User::whereId(myUserId())->first();
                                 echo '<div class="media-body align-self-center" style="margin-right: 10px;"><h6><span>Hi,</span> '.$user->name.'</h6></div>';
                                 if(empty($user->avatar)) {
-                                    echo "<img src='".secure_asset('img/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";
+                                    echo "<img src='".secure_asset('img/profile/profile.png')."' class='img-fluid' alt='admin-profile' />";
                                 } else {
                                     echo "<img src='".secure_asset('storage/upload/profile/'.$user->avatar)."' class='img-fluid' alt='admin-profile' />";
                                 }
