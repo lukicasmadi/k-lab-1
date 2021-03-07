@@ -34,11 +34,7 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function index()
     {
-        if(authUser()->hasRole('access_daerah') || authUser()->hasRole('administrator')) {
-            return view('phro.index_polda');
-        } else {
-            return view('phro.index');
-        }
+        return view('phro.index_polda');
     }
 
     public function create()
@@ -71,6 +67,7 @@ class PoldaHasRencanaOperasiController extends Controller
             $poldaSubmit = PoldaSubmited::create([
                 'uuid' => genUuid(),
                 'polda_id' => poldaId(),
+                'rencana_operasi_id' => operationPlans()->id,
                 'status' => "SUDAH MENGIRIMKAN LAPORAN",
                 'submited_date' => date("Y-m-d")
             ]);

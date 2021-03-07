@@ -12,6 +12,24 @@ use Illuminate\Support\Facades\Storage;
 class HomeController extends Controller
 {
 
+    public function data()
+    {
+        // sleep(200);
+        $model = PoldaSubmited::perpolda()->with(['polda', 'rencanaOperasi']);
+
+        return datatables()->eloquent($model)
+        ->addColumn('operation_name', function (PoldaSubmited $ps) {
+            return $ps->rencanaOperasi->name;
+        })
+        ->addColumn('time_created', function (PoldaSubmited $ps) {
+            return timeOnly($ps->created_at);
+        })
+        ->addColumn('polda_name', function (PoldaSubmited $ps) {
+            return $ps->polda->name;
+        })
+        ->toJson();
+    }
+
     public function index()
     {
         return view('info');
@@ -35,16 +53,7 @@ class HomeController extends Controller
         }
 
         if(isPolda()) {
-            $poldaSubmited = PoldaSubmited::with(['polda' => function($query) {
-                $query->select('id', 'name', 'uuid', 'logo');
-            }])
-            ->where("submited_date", date("Y-m-d"))
-            ->where("polda_id", poldaId())
-            ->first();
-
-            logger($poldaSubmited);
-
-            return view('polda', compact('poldaSubmited'));
+            return view('polda');
         } else {
             $polda = Polda::select("id", "uuid", "name", "short_name", "logo")
                 ->with(['dailyInput' => function($query) {

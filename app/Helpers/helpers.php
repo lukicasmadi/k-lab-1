@@ -25,6 +25,12 @@ if (! function_exists('indonesianDateTime')) {
     }
 }
 
+if (! function_exists('timeOnly')) {
+    function timeOnly($timestamp) {
+        return Carbon::parse($timestamp)->format('h:i:s');
+    }
+}
+
 if (! function_exists('toStrip')) {
     function toStrip($string) {
         return ($string == '' || is_null($string) || empty($string)) ? '-' : $string;
