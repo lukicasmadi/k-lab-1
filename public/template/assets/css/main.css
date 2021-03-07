@@ -99,7 +99,19 @@ mark {
 }
 
 .modal-content {
-    background: #0e1726;
+    display: inline-flex;
+  color: #fff;
+  background:  #11394A; 
+  border: 12px solid transparent;   
+  border-image: url(/img/border.png);
+  border-image-slice: 30;
+  border-image-repeat: stretch;
+  /* padding: 0;
+  margin: 0; */
+  /* border: 1px solid #00adef; */
+  margin: 10px 0 20px 0;
+    /* padding: 0 0 0 5px; */
+  box-shadow: 0 0 8px 0 rgba(81, 203, 238, 0.2), 0 0 20px 0 rgba(81, 203, 238, 0.19);
 }
 
 .code-section-container {
@@ -1012,6 +1024,27 @@ select.form-control.form-custom {
     background-color: #00adef !important;
     border-color: #00adef;
     text-transform: uppercase;
+}
+
+.add-operasi {
+    color: #fff !important;
+    background-color: #00adef !important;
+    border-color: #00adef;
+    text-transform: uppercase;
+    padding-left: 10px;
+    position: absolute;
+    margin: 20px 0 0 0;
+    z-index: 2;
+}
+
+.del-operasi {
+    color: #fff !important;
+    background-color:  rgba(0, 0, 0, 0.1);
+    border-color: #ea1c26;
+    text-transform: uppercase;
+    padding-left: 10px;
+    position: absolute;
+    margin: 20px 0 0 265px;
 }
 
 .btn-primary:hover,
