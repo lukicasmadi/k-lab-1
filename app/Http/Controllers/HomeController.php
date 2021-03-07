@@ -30,24 +30,33 @@ class HomeController extends Controller
             }
         }
 
-        $polda = Polda::select("id", "uuid", "name", "short_name", "logo")
-            ->with(['dailyInput' => function($query) {
-                $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
-            }])
-            ->orderBy("name", "asc")
-            ->get();
-
-        $dailyInput = Polda::with(['dailyInput' => function($query) {
-            $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
-        }])->orderBy("name", "asc")->get();
-
         if(empty(operationPlans())) {
             return view('empty_project');
         }
 
         if(isPolda()) {
-            return view('polda');
+            $poldaSubmited = PoldaSubmited::with(['polda' => function($query) {
+                $query->select('id', 'name', 'uuid', 'logo');
+            }])
+            ->where("submited_date", date("Y-m-d"))
+            ->where("polda_id", poldaId())
+            ->first();
+
+            logger($poldaSubmited);
+
+            return view('polda', compact('poldaSubmited'));
         } else {
+            $polda = Polda::select("id", "uuid", "name", "short_name", "logo")
+                ->with(['dailyInput' => function($query) {
+                    $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
+                }])
+                ->orderBy("name", "asc")
+                ->get();
+
+            $dailyInput = Polda::with(['dailyInput' => function($query) {
+                $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
+            }])->orderBy("name", "asc")->get();
+
             return view('main', compact('polda', 'dailyInput'));
         }
     }
