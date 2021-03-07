@@ -18,10 +18,15 @@
 
     <div class="container-fluid error-content">
         <div class="">
-            <h1 class="error-number">403</h1>
+            <h1 class="error-number">401</h1>
             <p class="mini-text">Maaf!</p>
             <p class="error-text mb-4 mt-1">Akun anda belum di daftarkan ke polda manapun! Silahkan hubungi admin</p>
-            <a href="{{ route('dashboard') }}" class="btn btn-primary mt-5">Go Back</a>
+            <a class="btn btn-primary mt-5" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                {{ __('Sign Out') }}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
         </div>
     </div>
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->

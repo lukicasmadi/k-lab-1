@@ -3,6 +3,7 @@
 use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Str;
+use App\Models\UserHasPolda;
 use App\Models\PoldaSubmited;
 use App\Models\RencanaOperasi;
 
@@ -119,6 +120,12 @@ if (! function_exists('checkUserHasAssign')) {
 if (! function_exists('poldaId')) {
     function poldaId() {
         return auth()->user()->polda()->first()->polda_id;
+    }
+}
+
+if (! function_exists('poldaImage')) {
+    function poldaImage() {
+        return UserHasPolda::with('polda')->where("polda_id", poldaId())->first();
     }
 }
 

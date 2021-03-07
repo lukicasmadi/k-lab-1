@@ -32,7 +32,7 @@
                         @else
                             <div class="grid-polda line glowred">Belum Mengirimkan</div>
                         @endif
-                        <img src="{{ secure_asset('/img/polda/metro_jaya_large.png') }}" width="50%" style="display: block; margin: 0 auto;">
+                        <img src="{{ secure_asset('/img/polda/'.poldaImage()->polda->logo) }}" width="50%" style="display: block; margin: 0 auto;">
                     </div>
                     <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
