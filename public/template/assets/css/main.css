@@ -26,6 +26,40 @@ body {
     font-family: 'Bahnschrift';
 }
 
+.blendingimg {
+    height: 100%;
+    /* overflow: auto; */
+    margin: 30px 0 100px 0;
+    padding: 0;
+    /* background-image: linear-gradient(#161D25, #172631, #1A4B61); */
+    background: url(/img/shinycircle.png);
+    background-size: 100%;
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    max-width: 100%;
+}
+
+.blendingimg::after {
+    content: "";
+    background: url(/img/shiny.png);
+    min-height: 100%;
+    background-size: cover;
+    background-blend-mode: screen;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; }
+
+.blendingimg img {
+    width: 50%;
+    padding: 55px 0;
+    display: block; margin: 0 auto;
+}
+
 h1,
 h2,
 h3,
@@ -698,12 +732,12 @@ select.form-control.form-custom {
 .btn:focus {
     color: #3b3f5c;
     background-color: #f1f2f3;
-    border-color: #d3d3d3;
+    /* border-color: #d3d3d3; */
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    -webkit-transform: translateY(-3px);
-    transform: translateY(-3px);
+    /* -webkit-transform: translateY(-3px);
+    transform: translateY(-3px); */
 }
 
 .btn-group .btn:hover,
@@ -1036,6 +1070,10 @@ select.form-control.form-custom {
     z-index: 2;
 }
 
+.add-operasi svg {
+    padding-right: 5px;
+}
+
 .del-operasi {
     color: #fff !important;
     background-color: rgba(0, 0, 0, 0.1);
@@ -1043,7 +1081,11 @@ select.form-control.form-custom {
     text-transform: uppercase;
     padding-left: 10px;
     position: absolute;
-    margin: 20px 0 0 265px;
+    margin: 20px 0 0 255px;
+}
+
+.del-operasi svg {
+    padding-right: 5px;
 }
 
 .btn-primary:hover,

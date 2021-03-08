@@ -107,7 +107,7 @@ table.dataTable thead .sorting_desc:after {
 
 .table>thead>tr>th {
     color: #fff;
-    font-weight: bolder;
+    font-weight: normal;
     font-size: 13px;
     border: none;
     letter-spacing: 1px;
@@ -163,11 +163,21 @@ div.dataTables_wrapper div.dataTables_filter svg {
     background: #00adef;
     position: absolute;
     top: 5px;
-    right: 0px;
+    right: 42px;
     width: 35px;
     height: 35px;
     padding: 10px 0;
     color: #fff;
+    border-left: 1px solid #00adef;
+}
+
+div.dataTables_wrapper div.dataTables_filter img{
+    background: #00adef;
+    float: right;
+    margin-top: 5px;
+    margin-left: 40px;
+    padding: 10px;
+    height: 35px;
     border-left: 1px solid #00adef;
 }
 
