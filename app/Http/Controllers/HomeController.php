@@ -12,9 +12,59 @@ use Illuminate\Support\Facades\Storage;
 class HomeController extends Controller
 {
 
+    public function weeklyPolda()
+    {
+        $project_start = dateOnly(operationPlans()->start_date);
+        $project_end = dateOnly(operationPlans()->end_date);
+        $project_one_week = dateOnly(incrementDays($project_start, 7));
+
+        $model = PoldaSubmited::whereBetween('submited_date', [$project_start, $project_one_week])->where("polda_id", poldaId())->count();
+
+        $countDaysAWeek = countDays($project_start, $project_one_week);
+
+        if(empty($model)) {
+            $data = [
+                "filled" => 0,
+                "nofilled" => 100
+            ];
+        } else {
+            $percentage = round((100 * $model) / $countDaysAWeek);
+            $data = [
+                "filled" => $percentage,
+                "nofilled" => 100 - $percentage
+            ];
+        }
+
+        return $data;
+    }
+
+    public function fullPolda()
+    {
+        $project_start = dateOnly(operationPlans()->start_date);
+        $project_end = dateOnly(operationPlans()->end_date);
+
+        $model = PoldaSubmited::whereBetween('submited_date', [$project_start, $project_end])->where("polda_id", poldaId())->count();
+
+        $countDaysAll = countDays($project_start, $project_end);
+
+        if(empty($model)) {
+            $data = [
+                "filled" => 0,
+                "nofilled" => 100
+            ];
+        } else {
+            $percentage = round((100 * $model) / $countDaysAll);
+            $data = [
+                "filled" => $percentage,
+                "nofilled" => 100 - $percentage
+            ];
+        }
+
+        return $data;
+    }
+
     public function data()
     {
-        // sleep(500);
         $model = PoldaSubmited::perpolda()->with(['polda', 'rencanaOperasi']);
 
         return datatables()->eloquent($model)

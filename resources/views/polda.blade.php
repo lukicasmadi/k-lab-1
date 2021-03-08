@@ -25,6 +25,13 @@
                                     <p>DATA LAPORAN MINGGUAN</p>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="widget-content" style="margin-top: 5%;">
+                                    <div class="mx-auto">
+                                        <div id="donut-chart" class=""></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="row">
@@ -36,6 +43,13 @@
                                     <span>TOTAL LAPORAN</span>
                                     </h5>
                                     <p>DATA LAPORAN KESELURUHAN</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="widget-content" style="margin-top: 5%;">
+                                    <div class="mx-auto">
+                                        <div id="donut-chart-full" class=""></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -92,11 +106,54 @@
 @push('library_css')
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/datatables.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/dt-global_style.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/apex/apexcharts.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/dashboard/dash_2.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/animate/animate.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/custom.css') }}">
 @endpush
 
 @push('library_js')
 <script src="{{ secure_asset('template/plugins/table/datatable/datatables.js') }}"></script>
+<script src="{{ secure_asset('template/plugins/apex/apexcharts.min.js') }}"></script>
+@endpush
+
+@push('page_css')
+<style>
+    .apexcharts-canvas {
+        margin: 0 auto;
+    }
+
+    .apexcharts-title-text {
+        fill: #ffffff;
+    }
+    .apexcharts-yaxis-label {
+        fill: #ffffff;
+    }
+    .apexcharts-xaxis-label {
+        fill: #ffffff;
+    }
+    .apexcharts-legend-text {
+        color: #ffffff!important;
+    }
+    .apexcharts-radialbar-track.apexcharts-track .apexcharts-radialbar-area {
+        stroke: #191e3a;
+    }
+    .apexcharts-pie-label, .apexcharts-datalabel, .apexcharts-datalabel-label, .apexcharts-datalabel-value {
+        fill: #ffffff;
+    }
+.widget.widget-activity-three .timeline-line .item-timeline .t-content p {
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #00adef;
+}
+.widget.widget-activity-three .timeline-line .item-timeline .t-content .t-uppercontent span {
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: #888ea8;
+}
+</style>
 @endpush
 
 @push('page_js')
@@ -164,6 +221,8 @@ $(document).ready(function () {
             },
         ]
     })
+    donutDataWeekly()
+    donutDataFull()
 })
 
 $('#tbl_polda_submited tbody').on('click', '.previewPhro', function(e) {
@@ -182,5 +241,117 @@ $('#tbl_polda_submited tbody').on('click', '.previewPhro', function(e) {
         $("#status").html("Preview")
     })
 })
+
+function donutDataWeekly() {
+    axios.get(route('weeklyPolda')).then(function(response) {
+        var filled = response.data.filled
+        var nofilled = response.data.nofilled
+
+        var donutChart = {
+        chart: {
+            height: 325,
+            type: 'donut',
+            toolbar: {
+                show: false,
+            }
+        },
+        dataLabels: {
+            enabled: true,
+            formatter: function (val) {
+                return val + "%"
+            },
+        },
+        tooltip: {
+            y: {
+                formatter: function(value) {
+                    return value + " %";
+                }
+            }
+        },
+        colors:['#136487', '#bc1d26'],
+        stroke: {
+            colors: '#0e1726'
+        },
+        series: [filled, nofilled],
+        labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
+        responsive: [{
+            breakpoint: 480,
+            options: {
+                chart: {
+                    width: 200
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }]
+    }
+
+    var donut = new ApexCharts(
+        document.querySelector("#donut-chart"),
+        donutChart
+    )
+
+    donut.render()
+    }).catch(function(error) {
+
+    })
+}
+
+function donutDataFull() {
+    axios.get(route('fullPolda')).then(function(response) {
+        var filled = response.data.filled
+        var nofilled = response.data.nofilled
+
+        var donutChartFull = {
+        chart: {
+            height: 325,
+            type: 'donut',
+            toolbar: {
+                show: false,
+            }
+        },
+        dataLabels: {
+            enabled: true,
+            formatter: function (val) {
+                return val + "%"
+            },
+        },
+        tooltip: {
+            y: {
+                formatter: function(value) {
+                    return value + " %";
+                }
+            }
+        },
+        colors:['#136487', '#bc1d26'],
+        stroke: {
+            colors: '#0e1726'
+        },
+        series: [filled, nofilled],
+        labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
+        responsive: [{
+            breakpoint: 480,
+            options: {
+                chart: {
+                    width: 200
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }]
+    }
+
+    var donutFull = new ApexCharts(
+        document.querySelector("#donut-chart-full"),
+        donutChartFull
+    )
+
+    donutFull.render()
+    }).catch(function(error) {
+
+    })
+}
 </script>
 @endpush
