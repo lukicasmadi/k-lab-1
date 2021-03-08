@@ -13,6 +13,12 @@ if (! function_exists('humanDateRead')) {
     }
 }
 
+if (! function_exists('dayNameIndonesia')) {
+    function dayNameIndonesia($timestamp) {
+        return Carbon::parse($timestamp)->isoFormat('dddd');
+    }
+}
+
 if (! function_exists('indonesianDate')) {
     function indonesianDate($timestamp) {
         return Carbon::parse($timestamp)->format('d M Y');
@@ -21,7 +27,7 @@ if (! function_exists('indonesianDate')) {
 
 if (! function_exists('indonesianDateTime')) {
     function indonesianDateTime($timestamp) {
-        return Carbon::parse($timestamp)->format('d M Y h:i:s');
+        return Carbon::parse($timestamp)->format('d M Y h:i:s A');
     }
 }
 
@@ -33,7 +39,7 @@ if (! function_exists('dateOnly')) {
 
 if (! function_exists('timeOnly')) {
     function timeOnly($timestamp) {
-        return Carbon::parse($timestamp)->format('h:i:s');
+        return Carbon::parse($timestamp)->format('h:i:s A');
     }
 }
 
