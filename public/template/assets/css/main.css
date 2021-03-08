@@ -731,12 +731,12 @@ select.form-control.form-custom {
 .btn:focus {
     color: #3b3f5c;
     background-color: #f1f2f3;
-    border-color: #d3d3d3;
+    /* border-color: #d3d3d3; */
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    -webkit-transform: translateY(-3px);
-    transform: translateY(-3px);
+    /* -webkit-transform: translateY(-3px);
+    transform: translateY(-3px); */
 }
 
 .btn-group .btn:hover,
@@ -1069,6 +1069,10 @@ select.form-control.form-custom {
     z-index: 2;
 }
 
+.add-operasi svg {
+    padding-right: 5px;
+}
+
 .del-operasi {
     color: #fff !important;
     background-color: rgba(0, 0, 0, 0.1);
@@ -1076,7 +1080,11 @@ select.form-control.form-custom {
     text-transform: uppercase;
     padding-left: 10px;
     position: absolute;
-    margin: 20px 0 0 265px;
+    margin: 20px 0 0 255px;
+}
+
+.del-operasi svg {
+    padding-right: 5px;
 }
 
 .btn-primary:hover,
