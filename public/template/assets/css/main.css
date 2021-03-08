@@ -100,18 +100,18 @@ mark {
 
 .modal-content {
     display: inline-flex;
-  color: #fff;
-  background:  #11394A; 
-  border: 12px solid transparent;   
-  border-image: url(/img/border.png);
-  border-image-slice: 30;
-  border-image-repeat: stretch;
-  /* padding: 0;
+    color: #fff;
+    background: #11394A;
+    border: 12px solid transparent;
+    border-image: url(/img/border.png);
+    border-image-slice: 30;
+    border-image-repeat: stretch;
+    /* padding: 0;
   margin: 0; */
-  /* border: 1px solid #00adef; */
-  margin: 10px 0 20px 0;
+    /* border: 1px solid #00adef; */
+    margin: 10px 0 20px 0;
     /* padding: 0 0 0 5px; */
-  box-shadow: 0 0 8px 0 rgba(81, 203, 238, 0.2), 0 0 20px 0 rgba(81, 203, 238, 0.19);
+    box-shadow: 0 0 8px 0 rgba(81, 203, 238, 0.2), 0 0 20px 0 rgba(81, 203, 238, 0.19);
 }
 
 .code-section-container {
@@ -203,17 +203,17 @@ blockquote.media-object .media .usr-img img {
 }
 
 #footer-login {
-    position:absolute;
-    bottom:0;
-    font-size:11px;
-    color:#fff;
-    text-transform:uppercase;
-    text-align:center;
-    padding-top:11px;
-    width:100%;
-    height:38px;
-    background:#113e51;
-  }
+    position: absolute;
+    bottom: 0;
+    font-size: 11px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 11px;
+    width: 100%;
+    height: 38px;
+    background: #113e51;
+}
 
 
 /* Icon List */
@@ -290,9 +290,8 @@ span.red {
 /*      CARD    */
 
 .card {
-    border: 1px solid #0e1726;
+    border: transparent;
     border-radius: 6px;
-    /* background: #0e1726; */
     background: transparent;
 }
 
@@ -1039,7 +1038,7 @@ select.form-control.form-custom {
 
 .del-operasi {
     color: #fff !important;
-    background-color:  rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     border-color: #ea1c26;
     text-transform: uppercase;
     padding-left: 10px;

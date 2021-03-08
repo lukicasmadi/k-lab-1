@@ -280,8 +280,6 @@ class PoldaByUuidExport implements FromView
             sum(giat_lantas_patroli) as giat_lantas_patroli
         ')->whereRaw('polda_submited_id = ? AND rencana_operasi_id = ?', [$this->data->id, $this->data->rencana_operasi_id])->first();
 
-        logger($this->data->polda->name);
-
         return view('exports.report_daily_by_id', [
             'data' => $data,
             'operation' => $this->data->rencanaOperasi,
