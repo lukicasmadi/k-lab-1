@@ -6,19 +6,19 @@
         <div class="row layout-top-spacing">
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing blendingimg">
                 @if (poldaAlreadyInputToday())
-                    <div class="grid-polda line glowblue" >
-                        status laporan hari ini<br />
+                    <div class="grid-polda line glowblue" style="display: block; margin: 0 auto;" >
+                        Status laporan hari ini<br />
                         Sudah Mengirimkan
                         <br />
-                        jumat, 15 februari 2021  |  10.00 WIB test
+                        {{ dayNameIndonesia(now()) }}, {{ indonesianDate(now()) }} | {{ timeOnly(now()) }}
                     </div>
                 @else
-                <div class="grid-polda line glowred" style="display: block; margin: 0 auto;">
-                status laporan hari ini<br />
-                Belum Mengirimkan
-                <br />
-                jumat, 15 februari 2021  |  10.00 WIB test
-                </div>
+                    <div class="grid-polda line glowred" style="display: block; margin: 0 auto;">
+                        Status laporan hari ini<br />
+                        Belum Mengirimkan
+                        <br />
+                        {{ dayNameIndonesia(now()) }}, {{ indonesianDate(now()) }} | {{ timeOnly(now()) }}
+                    </div>
                 @endif
                 <img src="{{ secure_asset('/img/polda/'.poldaImage()->polda->logo) }}">
             </div>

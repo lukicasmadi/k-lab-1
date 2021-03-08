@@ -54,8 +54,8 @@
 <script>
 
 $(function () {
-    $("input[type=number]").val("12345")
-    $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast");
+    $("input[type=number]").val("5")
+    // $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
 });
 </script>
 @endpush
