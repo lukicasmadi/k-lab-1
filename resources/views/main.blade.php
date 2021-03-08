@@ -372,7 +372,7 @@ function donutData() {
 
         var donutChart = {
         chart: {
-            height: 325,
+            height: 250,
             type: 'donut',
             toolbar: {
                 show: false,

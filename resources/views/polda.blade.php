@@ -13,7 +13,7 @@
                         jumat, 15 februari 2021  |  10.00 WIB test
                     </div>
                 @else
-                    <div class="grid-polda line glowred" style="display: block; margin: 0 auto;">Belum Mengirimkan</div>
+                <div class="grid-polda line glowred" style="display: block; margin: 0 auto;">Belum Mengirimkan</div>
                 @endif
                 <img src="{{ secure_asset('/img/polda/'.poldaImage()->polda->logo) }}">
             </div>
@@ -256,7 +256,7 @@ function donutDataWeekly() {
 
         var donutChart = {
         chart: {
-            height: 225,
+            height: 250,
             type: 'donut',
             toolbar: {
                 show: false,
@@ -312,7 +312,7 @@ function donutDataFull() {
 
         var donutChartFull = {
         chart: {
-            height: 225,
+            height: 250,
             type: 'donut',
             toolbar: {
                 show: false,
