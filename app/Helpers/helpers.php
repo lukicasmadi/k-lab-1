@@ -25,15 +25,33 @@ if (! function_exists('indonesianDateTime')) {
     }
 }
 
+if (! function_exists('dateOnly')) {
+    function dateOnly($timestamp) {
+        return Carbon::parse($timestamp)->format('Y-m-d');
+    }
+}
+
 if (! function_exists('timeOnly')) {
     function timeOnly($timestamp) {
         return Carbon::parse($timestamp)->format('h:i:s');
     }
 }
 
+if (! function_exists('incrementDays')) {
+    function incrementDays($timestamp, $days) {
+        return Carbon::parse($timestamp)->addDays($days);
+    }
+}
+
 if (! function_exists('indonesianStandart')) {
     function indonesianStandart($timestamp) {
         return Carbon::parse($timestamp)->format('d-m-Y');
+    }
+}
+
+if (! function_exists('countDays')) {
+    function countDays($start, $end) {
+        return Carbon::parse($end)->diffInDays($start);
     }
 }
 
