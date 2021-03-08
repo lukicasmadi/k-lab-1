@@ -10,7 +10,7 @@
                     status laporan hari ini<br />
                         Sudah Mengirimkan
                         <br />
-                        jumat, 15 februari 2021  |  10.00 wib
+                        jumat, 15 februari 2021  |  10.00 WIB
                     </div>
                 @else
                     <div class="grid-polda line glowred" style="display: block; margin: 0 auto;">Belum Mengirimkan</div>
