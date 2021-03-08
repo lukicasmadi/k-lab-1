@@ -251,7 +251,7 @@ function donutDataWeekly() {
 
         var donutChart = {
         chart: {
-            height: 325,
+            height: 250,
             type: 'donut',
             toolbar: {
                 show: false,
@@ -307,7 +307,7 @@ function donutDataFull() {
 
         var donutChartFull = {
         chart: {
-            height: 325,
+            height: 250,
             type: 'donut',
             toolbar: {
                 show: false,
