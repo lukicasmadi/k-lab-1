@@ -14,7 +14,7 @@ class HomeController extends Controller
 
     public function data()
     {
-        sleep(500);
+        // sleep(500);
         $model = PoldaSubmited::perpolda()->with(['polda', 'rencanaOperasi']);
 
         return datatables()->eloquent($model)
