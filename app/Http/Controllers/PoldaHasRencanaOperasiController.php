@@ -22,14 +22,22 @@ class PoldaHasRencanaOperasiController extends Controller
     {
         $model = PoldaSubmited::perpolda()->with('polda');
 
-        $model->when(authUser()->hasRole('access_daerah'), function ($q) {
-            return $q->where(DB::raw('DATE(created_at)'), now()->format("Y-m-d"));
-        });
+        // $model->when(authUser()->hasRole('access_daerah'), function ($q) {
+        //     return $q->where(DB::raw('DATE(created_at)'), now()->format("Y-m-d"));
+        // });
 
         return datatables()->eloquent($model)
         ->addColumn('polda_name', function (PoldaSubmited $ps) {
             return $ps->polda->name;
-        })->toJson();
+        })
+        ->addColumn('editable', function (PoldaSubmited $ps) {
+            if(indonesianStandart($ps->submited_date) == now()->format("d-m-Y")) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+        ->toJson();
     }
 
     public function index()

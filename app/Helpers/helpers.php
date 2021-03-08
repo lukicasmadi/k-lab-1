@@ -31,6 +31,12 @@ if (! function_exists('timeOnly')) {
     }
 }
 
+if (! function_exists('indonesianStandart')) {
+    function indonesianStandart($timestamp) {
+        return Carbon::parse($timestamp)->format('d-m-Y');
+    }
+}
+
 if (! function_exists('toStrip')) {
     function toStrip($string) {
         return ($string == '' || is_null($string) || empty($string)) ? '-' : $string;
