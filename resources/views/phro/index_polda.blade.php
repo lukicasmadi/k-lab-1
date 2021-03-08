@@ -118,11 +118,15 @@ $(document).ready(function () {
             {
                 data: 'uuid',
                 render: function(data, type, row) {
-                    return `
-                    <div class="icon-container">
-                        <a href="`+route('phro_edit', data)+`"><i class="far fa-edit"></i></a>
-                    </div>
-                    `;
+                    if(row['editable'] == true) {
+                        return `
+                        <div class="icon-container">
+                            <a href="`+route('phro_edit', data)+`"><i class="far fa-edit"></i></a>
+                        </div>
+                        `;
+                    } else {
+                        return "";
+                    }
                 },
                 searchable: false,
                 sortable: false,

@@ -12,6 +12,24 @@ use Illuminate\Support\Facades\Storage;
 class HomeController extends Controller
 {
 
+    public function data()
+    {
+        // sleep(500);
+        $model = PoldaSubmited::perpolda()->with(['polda', 'rencanaOperasi']);
+
+        return datatables()->eloquent($model)
+        ->addColumn('operation_name', function (PoldaSubmited $ps) {
+            return $ps->rencanaOperasi->name;
+        })
+        ->addColumn('time_created', function (PoldaSubmited $ps) {
+            return timeOnly($ps->created_at);
+        })
+        ->addColumn('polda_name', function (PoldaSubmited $ps) {
+            return $ps->polda->name;
+        })
+        ->toJson();
+    }
+
     public function index()
     {
         return view('info');
@@ -30,17 +48,6 @@ class HomeController extends Controller
             }
         }
 
-        $polda = Polda::select("id", "uuid", "name", "short_name", "logo")
-            ->with(['dailyInput' => function($query) {
-                $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
-            }])
-            ->orderBy("name", "asc")
-            ->get();
-
-        $dailyInput = Polda::with(['dailyInput' => function($query) {
-            $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
-        }])->orderBy("name", "asc")->get();
-
         if(empty(operationPlans())) {
             return view('empty_project');
         }
@@ -48,6 +55,17 @@ class HomeController extends Controller
         if(isPolda()) {
             return view('polda');
         } else {
+            $polda = Polda::select("id", "uuid", "name", "short_name", "logo")
+                ->with(['dailyInput' => function($query) {
+                    $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
+                }])
+                ->orderBy("name", "asc")
+                ->get();
+
+            $dailyInput = Polda::with(['dailyInput' => function($query) {
+                $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
+            }])->orderBy("name", "asc")->get();
+
             return view('main', compact('polda', 'dailyInput'));
         }
     }

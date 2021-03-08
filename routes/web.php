@@ -63,6 +63,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/report/daily/polda/{poldaUuid}', 'ReportController@poldaUuid')->name('report_bypolda');
     Route::get('/report/comparison', 'ReportController@comparison')->name('report_comparison');
     Route::post('/report/comparison/process', 'ReportController@comparisonProcess')->name('report_comparison_process');
+    Route::get('/report/daily/id/{uuid}', 'ReportController@byId')->name('report_daily_by_id');
 
 
     // Route Hanya Bisa Diakses Oleh Administrator atau Korlantas Pusat
@@ -160,6 +161,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/user-has-polda', 'UserHasPoldaController@data')->name('uhp_data');
         Route::get('/get-polda-list/{id}', 'UserHasPoldaController@check_user_polda')->name('check_user_polda');
         Route::get('/phro', 'PoldaHasRencanaOperasiController@data')->name('phro_data');
+        Route::get('/polda/phro', 'HomeController@data')->name('phro_polda_data');
         Route::get('/totalinputan', 'HomeController@dashboardChart')->name('dashboardChart');
         Route::get('/phro/{uuid}/preview', 'PoldaHasRencanaOperasiController@preview')->name('phro_preview');
         Route::get('/phro/dailycheck', 'HomeController@dailycheck')->name('dailycheck');

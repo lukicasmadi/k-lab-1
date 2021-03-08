@@ -18,6 +18,8 @@ class CreatePoldaSubmitedsTable extends Migration
             $table->uuid("uuid");
             $table->unsignedBigInteger('polda_id');
             $table->foreign('polda_id')->references('id')->on('poldas');
+            $table->unsignedBigInteger('rencana_operasi_id');
+            $table->foreign('rencana_operasi_id')->references('id')->on('rencana_operasis');
             $table->string("status");
             $table->date("submited_date");
             $table->timestamps();

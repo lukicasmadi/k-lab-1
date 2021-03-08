@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Polda;
 use App\Models\DailyInput;
 use Illuminate\Http\Request;
+use App\Models\PoldaSubmited;
 use App\Models\RencanaOperasi;
 use App\Exports\PoldaAllExport;
 use App\Exports\ComparisonExport;
+use App\Exports\PoldaByUuidExport;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -17,6 +19,16 @@ class ReportController extends Controller
     public function __construct()
     {
         // $this->middleware('can-create-plan')->only('dailyAllPolda', 'poldaUuid', 'comparison');
+    }
+
+    public function byId($uuid)
+    {
+        $now = now()->format("Y-m-d");
+        $filename = 'daily-report.xlsx';
+
+        $submitedData = PoldaSubmited::with(['rencanaOperasi', 'polda'])->whereUuid($uuid)->first();
+
+        return Excel::download(new PoldaByUuidExport($submitedData), $filename);
     }
 
     public function dailyAllPolda()
