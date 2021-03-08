@@ -79,7 +79,7 @@
                                         <a href="{{ route('report_daily_all_polda') }}"> Rekap Laporan Harian </a>
                                     </li>
                                     <li class="{{ request()->is('report/comparison') ? 'active' : '' }}">
-                                        <a href="{{ route('report_comparison') }}"> Laporan Tahunan </a>
+                                        <a href="{{ route('report_comparison') }}"> Laporan Analisa & Evaluasi </a>
                                     </li>
                                 </ul>
                             </li>
