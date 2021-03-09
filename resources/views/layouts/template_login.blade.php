@@ -11,6 +11,7 @@
     <link href="{{ secure_asset('template/assets/font/stylesheet.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ secure_asset('template/bootstrap/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ secure_asset('template/assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ secure_asset('template/assets/css/responsive.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ secure_asset('template/assets/css/authentication/form-2.css') }}" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
     <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/forms/theme-checkbox-radio.css') }}">

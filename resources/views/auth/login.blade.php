@@ -60,12 +60,17 @@
                             </div>
                             <div class="d-sm-flex justify-content-between">
                                 <div class="field-wrapper">
-                                    <button type="submit" class="btn btn-primary" value="">LogIn</button>
+                                    <button type="submit" class="btn btn-primary dodneon" value="">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    LogIn
+                                    </button>                                    
                                 </div>
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
