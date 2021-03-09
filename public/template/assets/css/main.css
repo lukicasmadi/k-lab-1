@@ -197,7 +197,7 @@ mark {
 /*blockquote*/
 
 blockquote.blockquote {
-    color: #009688;
+    color: #00adef;
     padding: 20px 20px 20px 14px;
     font-size: 0.875rem;
     background-color: #1b2e4b;
@@ -365,7 +365,7 @@ label {
 .form-control {
     height: auto;
     border: 1px solid #00adef;
-    color: #009688;
+    color: #fff;
     font-size: 15px;
     padding: 8px 10px;
     letter-spacing: 1px;
@@ -386,7 +386,7 @@ label {
     box-shadow: none;
     border-color: #3b3f5c;
     color: #25d5e4;
-    background-color: #1b2e4b;
+    background-color: rgba(0, 173, 239, 0.1);
 }
 
 .form-control::-webkit-input-placeholder,
@@ -437,7 +437,7 @@ label {
     padding: 8px 10px;
     letter-spacing: 1px;
     border: 1px solid #1b2e4b;
-    color: #009688;
+    color: #00adef;
     background: #1b2e4b;
     background: #1b2e4b url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23009688' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px;
 }
@@ -545,7 +545,7 @@ select.form-control.form-custom {
 .custom-file-label {
     height: auto;
     border: 1px solid #1b2e4b;
-    color: #009688;
+    color: #00adef;
     font-size: 15px;
     padding: 8px 10px;
     letter-spacing: 1px;
@@ -644,13 +644,13 @@ select.form-control.form-custom {
 }
 
 .valid-feedback {
-    color: #009688;
+    color: #00adef;
     font-size: 13px;
     letter-spacing: 1px;
 }
 
 .valid-tooltip {
-    background-color: #009688;
+    background-color: #00adef;
 }
 
 .invalid-tooltip {
@@ -659,19 +659,19 @@ select.form-control.form-custom {
 
 .custom-select.is-valid,
 .form-control.is-valid {
-    border-color: #009688;
+    border-color: #00adef;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23009688' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3e%3cpolyline points='20 6 9 17 4 12'%3e%3c/polyline%3e%3c/svg%3e");
 }
 
 .was-validated .custom-select:valid,
 .was-validated .form-control:valid {
-    border-color: #009688;
+    border-color: #00adef;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23009688' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3e%3cpolyline points='20 6 9 17 4 12'%3e%3c/polyline%3e%3c/svg%3e");
 }
 
 .custom-control-input.is-valid~.custom-control-label,
 .was-validated .custom-control-input:valid~.custom-control-label {
-    color: #009688;
+    color: #00adef;
 }
 
 .form-control.is-invalid,
@@ -1087,25 +1087,39 @@ select.form-control.form-custom {
     padding-right: 5px;
 }
 
+.del-laporan {
+    color: #fff !important;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-color: #ea1c26;
+    text-transform: uppercase;
+    padding-left: 10px;
+    position: absolute;
+    margin: 20px 0 0 190px;
+}
+
+.del-laporan svg {
+    padding-right: 5px;
+}
+
 .btn-primary:hover,
 .btn-primary:focus {
     color: #fff !important;
     background-color: #1b55e2;
     box-shadow: none;
-    border-color: #1b55e2;
+    border-color: #00adef;
 }
 
 .btn-primary:active,
 .btn-primary.active {
     background-color: #1b55e2;
-    border-top: 1px solid #1b55e2;
+    border-top: 1px solid #00adef;
 }
 
 .btn-primary.disabled,
 .btn-primary.btn[disabled],
 .btn-primary:disabled {
     background-color: #1b55e2;
-    border-color: #1b55e2;
+    border-color: #00adef;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;

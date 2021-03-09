@@ -6,8 +6,8 @@
         <div class="row layout-top-spacing">
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing blendingimg">
                 @if (poldaAlreadyInputToday())
-                    <div class="grid-polda line glowblue" >
-                        status laporan hari ini<br />
+                    <div class="grid-polda line glowblue" style="display: block; margin: 0 auto;" >
+                        Status laporan hari ini<br />
                         Sudah Mengirimkan
                         <br />
                         {{ dayNameIndonesia(now()) }}, {{ indonesianDate(now()) }} | {{ timeOnly(now()) }}
@@ -22,7 +22,7 @@
                 @endif
                 <img src="{{ secure_asset('/img/polda/'.poldaImage()->polda->logo) }}">
             </div>
-            <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+            <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="row">
                         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -176,16 +176,16 @@ $(document).ready(function () {
         serverSide: true,
         ajax: route('phro_polda_data'),
         "oLanguage": {
-            "oPaginate": {
-                "sPrevious": '<i class="fas fa-chevron-left dtIconSize"></i>',
-                "sNext": '<i class="fas fa-chevron-right dtIconSize"></i>'
-            },
-            "sInfo": "Menampilkan _PAGE_ hingga 12 dari _PAGES_ baris",
+                "oPaginate": {
+                    "sPrevious": '<i class="fas fa-chevron-left dtIconSize"></i>',
+                    "sNext": '<i class="fas fa-chevron-right dtIconSize"></i>'
+                },
+                "sInfo": "Menampilkan _PAGE_ hingga 12 dari _PAGES_ baris",
                 "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> <img src="{{ secure_asset("/img/cloud_down.png") }}">',
                 "sSearchPlaceholder": "CARI DATA...",
                 "sLengthMenu": " _MENU_ Baris per halaman",
                 "sProcessing": '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>',
-        },
+            },
         order: [
             [0, "desc"]
         ],

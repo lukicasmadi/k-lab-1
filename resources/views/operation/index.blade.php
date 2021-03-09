@@ -78,12 +78,13 @@
                                                                 <div class="notes-content">                                         TAMBAH RENCANA OPERASI
                                                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                                                                 <div class="row">
-                                                                    <img src="{{ secure_asset('/img/line-poldaup.png') }}" width="100%">
+                                                                    <img src="{{ secure_asset('/img/line_popbottom.png') }}" width="100%">
                                                                 </div>             
                                                                 </div>             
                                                                     <form action="javascript:void(0);" id="notesMailModalTitle">
                                                                         <div class="row">
                                                                             <div class="col-md-12">
+                                                                            Jenis Operasi Yang Akan Dilaksanakan
                                                                             <select class="form-control  basic">
                                                                                 <option selected="selected">orange</option>
                                                                                 <option>white</option>
@@ -91,8 +92,35 @@
                                                                             </select>
 
                                                                             </div>
-
                                                                             <div class="col-md-12">
+                                                                            Nama Operasi
+                                                                            <select class="form-control  basic">
+                                                                                <option selected="selected">orange</option>
+                                                                                <option>white</option>
+                                                                                <option>purple</option>
+                                                                            </select>
+
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                            Tanggal Mulai
+                                                                            <select class="form-control  basic">
+                                                                                <option selected="selected">orange</option>
+                                                                                <option>white</option>
+                                                                                <option>purple</option>
+                                                                            </select>
+
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                            Durasi Operasi (Hari)
+                                                                            <select class="form-control  basic">
+                                                                                <option selected="selected">orange</option>
+                                                                                <option>white</option>
+                                                                                <option>purple</option>
+                                                                            </select>
+
+                                                                            </div>
+                                                                            <div class="col-md-12">
+                                                                            Deskripsi
                                                                                 <div class="d-flex note-description">
                                                                                     <textarea id="n-description" class="form-control" maxlength="60" placeholder="Description" rows="3"></textarea>
                                                                                 </div>
@@ -130,6 +158,7 @@
 
 @push('page_js')
 <script>
+    
     $(document).ready(function () {
         var table = $('#tbl_operation').DataTable({
             processing: true,
