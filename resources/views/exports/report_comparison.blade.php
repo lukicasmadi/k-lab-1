@@ -3587,5 +3587,211 @@
 			<td>xxxxxxxxx</td>
 			<td>Kali</td>
         </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $tahunPertama->polisi_sahabat_anak,
+                $tahunPertama->cara_aman_sekolah,
+                $tahunPertama->patroli_keamanan_sekolah,
+                $tahunPertama->pramuka_bhayangkara_krida_lalu_lintas
+                ]) }}</td>
+               <td style="font-weight: bold;">{{ calculation([
+                $tahunKedua->polisi_sahabat_anak,
+                $tahunKedua->cara_aman_sekolah,
+                $tahunKedua->patroli_keamanan_sekolah,
+                $tahunKedua->pramuka_bhayangkara_krida_lalu_lintas
+                ]) }}
+            </td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;">d. PROGRAM NASIONAL KESELAMATAN LALU LINTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+        </tr>
+
+
+
+
+        <tr>
+            <td></td>
+            <td>1) POLICE GOES TO CAMPUS</td>
+            <td>{{ $tahunPertama->police_goes_to_campus }}</td>
+            <td>{{ $tahunKedua->police_goes_to_campus }}</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>2) SAFETY RIDING &amp; DRIVING</td>
+            <td>{{ $tahunPertama->safety_riding_driving }}</td>
+            <td>{{ $tahunKedua->safety_riding_driving }}</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>3) FORUM LALU LINTAS &amp; ANGKUTAN JALAN</td>
+            <td>{{ $tahunPertama->forum_lalu_lintas_angkutan_umum }}</td>
+            <td>{{ $tahunKedua->forum_lalu_lintas_angkutan_umum }}</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>4) KAMPANYE KESELAMATAN</td>
+            <td>{{ $tahunPertama->kampanye_keselamatan }}</td>
+            <td>{{ $tahunKedua->kampanye_keselamatan }}</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>5) SEKOLAH MENGEMUDI</td>
+            <td>{{ $tahunPertama->sekolah_mengemudi }}</td>
+            <td>{{ $tahunKedua->sekolah_mengemudi }}</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>6) TAMAN LALU LINTAS</td>
+            <td>{{ $tahunPertama->taman_lalu_lintas }}</td>
+            <td>{{ $tahunKedua->taman_lalu_lintas }}</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>7) GLOBAL ROAD SAFETY PARTNERSHIP ACTION</td>
+            <td>{{ $tahunPertama->global_road_safety_partnership_action }}</td>
+            <td>{{ $tahunKedua->global_road_safety_partnership_action }}</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $tahunPertama->police_goes_to_campus,
+                $tahunPertama->safety_riding_driving,
+                $tahunPertama->forum_lalu_lintas_angkutan_umum,
+                $tahunPertama->kampanye_keselamatan,
+                $tahunPertama->sekolah_mengemudi,
+                $tahunPertama->taman_lalu_lintas,
+                $tahunPertama->global_road_safety_partnership_action
+                ]) }}</td>
+             <td style="font-weight: bold;">{{ calculation([
+                $tahunKedua->police_goes_to_campus,
+                $tahunKedua->safety_riding_driving,
+                $tahunKedua->forum_lalu_lintas_angkutan_umum,
+                $tahunKedua->kampanye_keselamatan,
+                $tahunKedua->sekolah_mengemudi,
+                $tahunKedua->taman_lalu_lintas,
+                $tahunKedua->global_road_safety_partnership_action
+                ]) }}</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="background-color: #c6efcd;">32</td>
+            <td style="background-color: #c6efcd;">DATA TERKAIT GIAT KEPOLISIAN</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+        </tr>
+        <tr>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;">GIAT LANTAS</td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+            <td style="background-color: #c6efcd;"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>a. PENGATURAN</td>
+            <td>{{ $tahunPertama->giat_lantas_pengaturan }}</td>
+            <td>{{ $tahunKedua->giat_lantas_pengaturan }}</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>b. PENJAGAAN</td>
+            <td>{{ $tahunPertama->giat_lantas_penjagaan }}</td>
+            <td>{{ $tahunKedua->giat_lantas_penjagaan }}</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>c. PENGAWALAN</td>
+            <td>{{ $tahunPertama->giat_lantas_pengawalan }}</td>
+            <td>{{ $tahunKedua->giat_lantas_pengawalan }}</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>d. PATROLI</td>
+            <td>{{ $tahunPertama->giat_lantas_patroli }}</td>
+            <td>{{ $tahunKedua->giat_lantas_patroli }}</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>Kali</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center; font-weight: bold;">JUMLAH</td>
+            <td style="font-weight: bold;">{{ calculation([
+               $tahunPertama->giat_lantas_pengaturan,
+               $tahunPertama->giat_lantas_penjagaan,
+               $tahunPertama->giat_lantas_pengawalan,
+               $tahunPertama->giat_lantas_patroli
+                ]) }}</td>
+            <td style="font-weight: bold;">{{ calculation([
+                $tahunKedua->giat_lantas_pengaturan,
+                $tahunKedua->giat_lantas_penjagaan,
+                $tahunKedua->giat_lantas_pengawalan,
+                $tahunKedua->giat_lantas_patroli
+                 ]) }}</td>
+			<td>xxxxxxxxx</td>
+			<td>xxxxxxxxx</td>
+			<td>Kali</td>
+        </tr>
     </tbody>
 </table>
