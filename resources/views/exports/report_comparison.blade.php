@@ -65,8 +65,8 @@
             <td>a. TILANG</td>
             <td>{{ $tahunPertama->pelanggaran_lalu_lintas_tilang }}</td>
             <td>{{ $tahunKedua->pelanggaran_lalu_lintas_tilang }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->pelanggaran_lalu_lintas_tilang, $tahunPertama->pelanggaran_lalu_lintas_tilang) }}</td>
+			<td>{{ percentageValue($tahunKedua->pelanggaran_lalu_lintas_tilang, $tahunPertama->pelanggaran_lalu_lintas_tilang) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -74,8 +74,8 @@
             <td>b. TEGURAN</td>
             <td>{{ $tahunPertama->pelanggaran_lalu_lintas_teguran }}</td>
             <td>{{ $tahunKedua->pelanggaran_lalu_lintas_teguran }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->pelanggaran_lalu_lintas_teguran, $tahunPertama->pelanggaran_lalu_lintas_teguran) }}</td>
+			<td>{{ percentageValue($tahunKedua->pelanggaran_lalu_lintas_teguran, $tahunPertama->pelanggaran_lalu_lintas_teguran) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -89,8 +89,21 @@
                 $tahunKedua->pelanggaran_lalu_lintas_tilang,
                 $tahunKedua->pelanggaran_lalu_lintas_teguran
             ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->pelanggaran_lalu_lintas_tilang,
+                $tahunKedua->pelanggaran_lalu_lintas_teguran
+            ]), calculation([
+                $tahunPertama->pelanggaran_lalu_lintas_tilang,
+                $tahunPertama->pelanggaran_lalu_lintas_teguran
+            ])) }}
+            </td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->pelanggaran_lalu_lintas_tilang,
+                $tahunKedua->pelanggaran_lalu_lintas_teguran
+            ]), calculation([
+                $tahunPertama->pelanggaran_lalu_lintas_tilang,
+                $tahunPertama->pelanggaran_lalu_lintas_teguran
+            ])) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -122,8 +135,8 @@
             <td>1) GUN HELM SNI</td>
             <td>{{ $tahunPertama->pelanggaran_sepeda_motor_gun_helm_sni }}</td>
             <td>{{ $tahunKedua->pelanggaran_sepeda_motor_gun_helm_sni }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->pelanggaran_sepeda_motor_gun_helm_sni, $tahunPertama->pelanggaran_sepeda_motor_gun_helm_sni) }}</td>
+			<td>{{ percentageValue($tahunKedua->pelanggaran_sepeda_motor_gun_helm_sni, $tahunPertama->pelanggaran_sepeda_motor_gun_helm_sni) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -131,8 +144,8 @@
             <td>2) MELAWAN ARUS</td>
             <td>{{ $tahunPertama->pelanggaran_sepeda_motor_melawan_arus }}</td>
             <td>{{ $tahunKedua->pelanggaran_sepeda_motor_melawan_arus }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->pelanggaran_sepeda_motor_melawan_arus, $tahunPertama->pelanggaran_sepeda_motor_melawan_arus) }}</td>
+			<td>{{ percentageValue($tahunKedua->pelanggaran_sepeda_motor_melawan_arus, $tahunPertama->pelanggaran_sepeda_motor_melawan_arus) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -140,8 +153,8 @@
             <td>3) GUN HP SAAT BERKENDARA</td>
             <td>{{ $tahunPertama->pelanggaran_sepeda_motor_gun_hp_saat_berkendara }}</td>
             <td>{{ $tahunKedua->pelanggaran_sepeda_motor_gun_hp_saat_berkendara }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->pelanggaran_sepeda_motor_gun_hp_saat_berkendara, $tahunPertama->pelanggaran_sepeda_motor_gun_hp_saat_berkendara) }}</td>
+			<td>{{ percentageValue($tahunKedua->pelanggaran_sepeda_motor_gun_hp_saat_berkendara, $tahunPertama->pelanggaran_sepeda_motor_gun_hp_saat_berkendara) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -149,8 +162,8 @@
             <td>4) BERKENDARA DI BAWAH PENGARUH ALKOHOL</td>
             <td>{{ $tahunPertama->pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol }}</td>
             <td>{{ $tahunKedua->pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol, $tahunPertama->pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol) }}</td>
+			<td>{{ percentageValue($tahunKedua->pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol, $tahunPertama->pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -158,8 +171,8 @@
             <td>5) MELEBIHI BATAS KECEPATAN</td>
             <td>{{ $tahunPertama->pelanggaran_sepeda_motor_melebihi_batas_kecepatan }}</td>
             <td>{{ $tahunKedua->pelanggaran_sepeda_motor_melebihi_batas_kecepatan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->pelanggaran_sepeda_motor_melebihi_batas_kecepatan, $tahunPertama->pelanggaran_sepeda_motor_melebihi_batas_kecepatan) }}</td>
+			<td>{{ percentageValue($tahunKedua->pelanggaran_sepeda_motor_melebihi_batas_kecepatan, $tahunPertama->pelanggaran_sepeda_motor_melebihi_batas_kecepatan) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -167,8 +180,8 @@
             <td>6) BERKENDARA DI BAWAH UMUR</td>
             <td>{{ $tahunPertama->pelanggaran_sepeda_motor_berkendara_dibawah_umur }}</td>
             <td>{{ $tahunKedua->pelanggaran_sepeda_motor_berkendara_dibawah_umur }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->pelanggaran_sepeda_motor_berkendara_dibawah_umur, $tahunPertama->pelanggaran_sepeda_motor_berkendara_dibawah_umur) }}</td>
+			<td>{{ percentageValue($tahunKedua->pelanggaran_sepeda_motor_berkendara_dibawah_umur, $tahunPertama->pelanggaran_sepeda_motor_berkendara_dibawah_umur) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -176,8 +189,8 @@
             <td>7) LAIN - LAIN</td>
             <td>{{ $tahunPertama->pelanggaran_sepeda_motor_lain_lain }}</td>
             <td>{{ $tahunKedua->pelanggaran_sepeda_motor_lain_lain }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->pelanggaran_sepeda_motor_lain_lain, $tahunPertama->pelanggaran_sepeda_motor_lain_lain) }}</td>
+			<td>{{ percentageValue($tahunKedua->pelanggaran_sepeda_motor_lain_lain, $tahunPertama->pelanggaran_sepeda_motor_lain_lain) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -191,7 +204,8 @@
                 $tahunPertama->pelanggaran_sepeda_motor_melebihi_batas_kecepatan,
                 $tahunPertama->pelanggaran_sepeda_motor_berkendara_dibawah_umur,
                 $tahunPertama->pelanggaran_sepeda_motor_lain_lain
-            ]) }}</td>
+            ]) }}
+            </td>
              <td style="font-weight: bold;">{{ calculation([
                 $tahunKedua->pelanggaran_sepeda_motor_gun_helm_sni,
                 $tahunKedua->pelanggaran_sepeda_motor_melawan_arus,
@@ -200,9 +214,42 @@
                 $tahunKedua->pelanggaran_sepeda_motor_melebihi_batas_kecepatan,
                 $tahunKedua->pelanggaran_sepeda_motor_berkendara_dibawah_umur,
                 $tahunKedua->pelanggaran_sepeda_motor_lain_lain
-            ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+            ]) }}
+            </td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->pelanggaran_sepeda_motor_gun_helm_sni,
+                $tahunKedua->pelanggaran_sepeda_motor_melawan_arus,
+                $tahunKedua->pelanggaran_sepeda_motor_gun_hp_saat_berkendara,
+                $tahunKedua->pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol,
+                $tahunKedua->pelanggaran_sepeda_motor_melebihi_batas_kecepatan,
+                $tahunKedua->pelanggaran_sepeda_motor_berkendara_dibawah_umur,
+                $tahunKedua->pelanggaran_sepeda_motor_lain_lain
+            ]), calculation([
+                $tahunPertama->pelanggaran_sepeda_motor_gun_helm_sni,
+                $tahunPertama->pelanggaran_sepeda_motor_melawan_arus,
+                $tahunPertama->pelanggaran_sepeda_motor_gun_hp_saat_berkendara,
+                $tahunPertama->pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol,
+                $tahunPertama->pelanggaran_sepeda_motor_melebihi_batas_kecepatan,
+                $tahunPertama->pelanggaran_sepeda_motor_berkendara_dibawah_umur,
+                $tahunPertama->pelanggaran_sepeda_motor_lain_lain
+            ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->pelanggaran_sepeda_motor_gun_helm_sni,
+                $tahunKedua->pelanggaran_sepeda_motor_melawan_arus,
+                $tahunKedua->pelanggaran_sepeda_motor_gun_hp_saat_berkendara,
+                $tahunKedua->pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol,
+                $tahunKedua->pelanggaran_sepeda_motor_melebihi_batas_kecepatan,
+                $tahunKedua->pelanggaran_sepeda_motor_berkendara_dibawah_umur,
+                $tahunKedua->pelanggaran_sepeda_motor_lain_lain
+            ]), calculation([
+                $tahunPertama->pelanggaran_sepeda_motor_gun_helm_sni,
+                $tahunPertama->pelanggaran_sepeda_motor_melawan_arus,
+                $tahunPertama->pelanggaran_sepeda_motor_gun_hp_saat_berkendara,
+                $tahunPertama->pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol,
+                $tahunPertama->pelanggaran_sepeda_motor_melebihi_batas_kecepatan,
+                $tahunPertama->pelanggaran_sepeda_motor_berkendara_dibawah_umur,
+                $tahunPertama->pelanggaran_sepeda_motor_lain_lain
+            ])) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -225,8 +272,8 @@
             <td>1) MELAWAN ARUS</td>
             <td>{{ $tahunPertama->pelanggaran_mobil_melawan_arus }}</td>
             <td>{{ $tahunKedua->pelanggaran_mobil_melawan_arus }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->pelanggaran_mobil_melawan_arus, $tahunPertama->pelanggaran_mobil_melawan_arus) }}</td>
+			<td>{{ percentageValue($tahunKedua->pelanggaran_mobil_melawan_arus, $tahunPertama->pelanggaran_mobil_melawan_arus) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -234,8 +281,8 @@
             <td>2) GUN HP SAAT BERKENDARA</td>
             <td>{{ $tahunPertama->pelanggaran_mobil_gun_hp_saat_berkendara }}</td>
             <td>{{ $tahunKedua->pelanggaran_mobil_gun_hp_saat_berkendara }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->pelanggaran_mobil_gun_hp_saat_berkendara, $tahunPertama->pelanggaran_mobil_gun_hp_saat_berkendara) }}</td>
+			<td>{{ percentageValue($tahunKedua->pelanggaran_mobil_gun_hp_saat_berkendara, $tahunPertama->pelanggaran_mobil_gun_hp_saat_berkendara) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -243,8 +290,8 @@
             <td>3) BERKENDARA DI BAWAH PENGARUH ALKOHOL</td>
             <td>{{ $tahunPertama->pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol }}</td>
             <td>{{ $tahunKedua->pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol, $tahunPertama->pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol) }}</td>
+			<td>{{ percentageValue($tahunKedua->pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol, $tahunPertama->pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -252,8 +299,8 @@
             <td>4) MELEBIHI BATAS KECEPATAN</td>
             <td>{{ $tahunPertama->pelanggaran_mobil_melebihi_batas_kecepatan }}</td>
             <td>{{ $tahunKedua->pelanggaran_mobil_melebihi_batas_kecepatan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->pelanggaran_mobil_melebihi_batas_kecepatan, $tahunPertama->pelanggaran_mobil_melebihi_batas_kecepatan) }}</td>
+			<td>{{ percentageValue($tahunKedua->pelanggaran_mobil_melebihi_batas_kecepatan, $tahunPertama->pelanggaran_mobil_melebihi_batas_kecepatan) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -261,8 +308,8 @@
             <td>5) BERKENDARA DI BAWAH UMUR</td>
             <td>{{ $tahunPertama->pelanggaran_mobil_berkendara_dibawah_umur }}</td>
             <td>{{ $tahunKedua->pelanggaran_mobil_berkendara_dibawah_umur }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->pelanggaran_mobil_berkendara_dibawah_umur, $tahunPertama->pelanggaran_mobil_berkendara_dibawah_umur) }}</td>
+			<td>{{ percentageValue($tahunKedua->pelanggaran_mobil_berkendara_dibawah_umur, $tahunPertama->pelanggaran_mobil_berkendara_dibawah_umur) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -270,8 +317,8 @@
             <td>6) GUN SAFETY BELT</td>
             <td>{{ $tahunPertama->pelanggaran_mobil_gun_safety_belt }}</td>
             <td>{{ $tahunKedua->pelanggaran_mobil_gun_safety_belt }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->pelanggaran_mobil_gun_safety_belt, $tahunPertama->pelanggaran_mobil_gun_safety_belt) }}</td>
+			<td>{{ percentageValue($tahunKedua->pelanggaran_mobil_gun_safety_belt, $tahunPertama->pelanggaran_mobil_gun_safety_belt) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -279,8 +326,8 @@
             <td>7) LAIN - LAIN</td>
             <td>{{ $tahunPertama->pelanggaran_mobil_lain_lain }}</td>
             <td>{{ $tahunKedua->pelanggaran_mobil_lain_lain }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->pelanggaran_mobil_lain_lain, $tahunPertama->pelanggaran_mobil_lain_lain) }}</td>
+			<td>{{ percentageValue($tahunKedua->pelanggaran_mobil_lain_lain, $tahunPertama->pelanggaran_mobil_lain_lain) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -294,7 +341,8 @@
                 $tahunPertama->pelanggaran_mobil_berkendara_dibawah_umur,
                 $tahunPertama->pelanggaran_mobil_gun_safety_belt,
                 $tahunPertama->pelanggaran_mobil_lain_lain
-            ]) }}</td>
+            ]) }}
+            </td>
             <td style="font-weight: bold;">{{ calculation([
                 $tahunKedua->pelanggaran_mobil_melawan_arus,
                 $tahunKedua->pelanggaran_mobil_gun_hp_saat_berkendara,
@@ -303,9 +351,42 @@
                 $tahunKedua->pelanggaran_mobil_berkendara_dibawah_umur,
                 $tahunKedua->pelanggaran_mobil_gun_safety_belt,
                 $tahunKedua->pelanggaran_mobil_lain_lain
-            ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+            ]) }}
+            </td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->pelanggaran_mobil_melawan_arus,
+                $tahunKedua->pelanggaran_mobil_gun_hp_saat_berkendara,
+                $tahunKedua->pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol,
+                $tahunKedua->pelanggaran_mobil_melebihi_batas_kecepatan,
+                $tahunKedua->pelanggaran_mobil_berkendara_dibawah_umur,
+                $tahunKedua->pelanggaran_mobil_gun_safety_belt,
+                $tahunKedua->pelanggaran_mobil_lain_lain
+            ]), calculation([
+                $tahunPertama->pelanggaran_mobil_melawan_arus,
+                $tahunPertama->pelanggaran_mobil_gun_hp_saat_berkendara,
+                $tahunPertama->pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol,
+                $tahunPertama->pelanggaran_mobil_melebihi_batas_kecepatan,
+                $tahunPertama->pelanggaran_mobil_berkendara_dibawah_umur,
+                $tahunPertama->pelanggaran_mobil_gun_safety_belt,
+                $tahunPertama->pelanggaran_mobil_lain_lain
+            ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->pelanggaran_mobil_melawan_arus,
+                $tahunKedua->pelanggaran_mobil_gun_hp_saat_berkendara,
+                $tahunKedua->pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol,
+                $tahunKedua->pelanggaran_mobil_melebihi_batas_kecepatan,
+                $tahunKedua->pelanggaran_mobil_berkendara_dibawah_umur,
+                $tahunKedua->pelanggaran_mobil_gun_safety_belt,
+                $tahunKedua->pelanggaran_mobil_lain_lain
+            ]), calculation([
+                $tahunPertama->pelanggaran_mobil_melawan_arus,
+                $tahunPertama->pelanggaran_mobil_gun_hp_saat_berkendara,
+                $tahunPertama->pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol,
+                $tahunPertama->pelanggaran_mobil_melebihi_batas_kecepatan,
+                $tahunPertama->pelanggaran_mobil_berkendara_dibawah_umur,
+                $tahunPertama->pelanggaran_mobil_gun_safety_belt,
+                $tahunPertama->pelanggaran_mobil_lain_lain
+            ])) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -328,8 +409,8 @@
             <td>a. SIM</td>
             <td>{{ $tahunPertama->barang_bukti_yg_disita_sim }}</td>
             <td>{{ $tahunKedua->barang_bukti_yg_disita_sim }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->barang_bukti_yg_disita_sim, $tahunPertama->barang_bukti_yg_disita_sim) }}</td>
+			<td>{{ percentageValue($tahunKedua->barang_bukti_yg_disita_sim, $tahunPertama->barang_bukti_yg_disita_sim) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -337,8 +418,8 @@
             <td>b. STNK</td>
             <td>{{ $tahunPertama->barang_bukti_yg_disita_stnk }}</td>
             <td>{{ $tahunKedua->barang_bukti_yg_disita_stnk }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->barang_bukti_yg_disita_stnk, $tahunPertama->barang_bukti_yg_disita_stnk) }}</td>
+			<td>{{ percentageValue($tahunKedua->barang_bukti_yg_disita_stnk, $tahunPertama->barang_bukti_yg_disita_stnk) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -346,8 +427,8 @@
             <td>c. KENDARAAN</td>
             <td>{{ $tahunPertama->barang_bukti_yg_disita_kendaraan }}</td>
             <td>{{ $tahunKedua->barang_bukti_yg_disita_kendaraan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->barang_bukti_yg_disita_kendaraan, $tahunPertama->barang_bukti_yg_disita_kendaraan) }}</td>
+			<td>{{ percentageValue($tahunKedua->barang_bukti_yg_disita_kendaraan, $tahunPertama->barang_bukti_yg_disita_kendaraan) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -357,14 +438,32 @@
                 $tahunPertama->barang_bukti_yg_disita_sim,
                 $tahunPertama->barang_bukti_yg_disita_stnk,
                 $tahunPertama->barang_bukti_yg_disita_kendaraan
-            ]) }}</td>
+            ]) }}
+            </td>
             <td style="font-weight: bold;">{{ calculation([
                 $tahunKedua->barang_bukti_yg_disita_sim,
                 $tahunKedua->barang_bukti_yg_disita_stnk,
                 $tahunKedua->barang_bukti_yg_disita_kendaraan
-            ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+            ]) }}
+            </td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->barang_bukti_yg_disita_sim,
+                $tahunKedua->barang_bukti_yg_disita_stnk,
+                $tahunKedua->barang_bukti_yg_disita_kendaraan
+            ]), calculation([
+                $tahunPertama->barang_bukti_yg_disita_sim,
+                $tahunPertama->barang_bukti_yg_disita_stnk,
+                $tahunPertama->barang_bukti_yg_disita_kendaraan
+            ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->barang_bukti_yg_disita_sim,
+                $tahunKedua->barang_bukti_yg_disita_stnk,
+                $tahunKedua->barang_bukti_yg_disita_kendaraan
+            ]), calculation([
+                $tahunPertama->barang_bukti_yg_disita_sim,
+                $tahunPertama->barang_bukti_yg_disita_stnk,
+                $tahunPertama->barang_bukti_yg_disita_kendaraan
+            ])) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -387,8 +486,8 @@
             <td>a. SEPEDA MOTOR</td>
             <td>{{ $tahunPertama->kendaraan_yang_terlibat_pelanggaran_sepeda_motor }}</td>
             <td>{{ $tahunKedua->kendaraan_yang_terlibat_pelanggaran_sepeda_motor }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kendaraan_yang_terlibat_pelanggaran_sepeda_motor, $tahunPertama->kendaraan_yang_terlibat_pelanggaran_sepeda_motor) }}</td>
+			<td>{{ percentageValue($tahunKedua->kendaraan_yang_terlibat_pelanggaran_sepeda_motor, $tahunPertama->kendaraan_yang_terlibat_pelanggaran_sepeda_motor) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -396,8 +495,8 @@
             <td>b. MOBIL PENUMPANG</td>
             <td>{{ $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang }}</td>
             <td>{{ $tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang, $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang) }}</td>
+			<td>{{ percentageValue($tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang, $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -405,8 +504,8 @@
             <td>c. MOBIL BUS</td>
             <td>{{ $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_bus }}</td>
             <td>{{ $tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_bus }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_bus, $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_bus) }}</td>
+			<td>{{ percentageValue($tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_bus, $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_bus) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -414,8 +513,8 @@
             <td>d. MOBIL BARANG</td>
             <td>{{ $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_barang }}</td>
             <td>{{ $tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_barang }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_barang, $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_barang) }}</td>
+			<td>{{ percentageValue($tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_barang, $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_barang) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -423,8 +522,8 @@
             <td>e. KENDARAAN KHUSUS</td>
             <td>{{ $tahunPertama->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus }}</td>
             <td>{{ $tahunKedua->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus, $tahunPertama->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus) }}</td>
+			<td>{{ percentageValue($tahunKedua->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus, $tahunPertama->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -436,16 +535,42 @@
                 $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_bus,
                 $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_barang,
                 $tahunPertama->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus
-            ]) }}</td>
+            ]) }}
+            </td>
            <td style="font-weight: bold;">{{ calculation([
             $tahunKedua->kendaraan_yang_terlibat_pelanggaran_sepeda_motor,
             $tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang,
             $tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_bus,
             $tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_barang,
             $tahunKedua->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus
-        ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+        ]) }}
+        </td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->kendaraan_yang_terlibat_pelanggaran_sepeda_motor,
+                $tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang,
+                $tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_bus,
+                $tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_barang,
+                $tahunKedua->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus
+            ]), calculation([
+                $tahunPertama->kendaraan_yang_terlibat_pelanggaran_sepeda_motor,
+                $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang,
+                $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_bus,
+                $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_barang,
+                $tahunPertama->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus
+            ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->kendaraan_yang_terlibat_pelanggaran_sepeda_motor,
+                $tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang,
+                $tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_bus,
+                $tahunKedua->kendaraan_yang_terlibat_pelanggaran_mobil_barang,
+                $tahunKedua->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus
+            ]), calculation([
+                $tahunPertama->kendaraan_yang_terlibat_pelanggaran_sepeda_motor,
+                $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang,
+                $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_bus,
+                $tahunPertama->kendaraan_yang_terlibat_pelanggaran_mobil_barang,
+                $tahunPertama->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus
+            ])) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -468,8 +593,8 @@
             <td>a. PEGAWAI NEGERI SIPIL</td>
             <td>{{ $tahunPertama->profesi_pelaku_pelanggaran_pns }}</td>
             <td>{{ $tahunKedua->profesi_pelaku_pelanggaran_pns }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_pelaku_pelanggaran_pns, $tahunPertama->profesi_pelaku_pelanggaran_pns) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_pelaku_pelanggaran_pns, $tahunPertama->profesi_pelaku_pelanggaran_pns) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -477,8 +602,8 @@
             <td>b. KARYAWAN / SWASTA</td>
             <td>{{ $tahunPertama->profesi_pelaku_pelanggaran_karyawan_swasta }}</td>
             <td>{{ $tahunKedua->profesi_pelaku_pelanggaran_karyawan_swasta }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_pelaku_pelanggaran_karyawan_swasta, $tahunPertama->profesi_pelaku_pelanggaran_karyawan_swasta) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_pelaku_pelanggaran_karyawan_swasta, $tahunPertama->profesi_pelaku_pelanggaran_karyawan_swasta) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -486,8 +611,8 @@
             <td>c. PELAJAR / MAHASISWA</td>
             <td>{{ $tahunPertama->profesi_pelaku_pelanggaran_pelajar_mahasiswa }}</td>
             <td>{{ $tahunKedua->profesi_pelaku_pelanggaran_pelajar_mahasiswa }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_pelaku_pelanggaran_pelajar_mahasiswa, $tahunPertama->profesi_pelaku_pelanggaran_pelajar_mahasiswa) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_pelaku_pelanggaran_pelajar_mahasiswa, $tahunPertama->profesi_pelaku_pelanggaran_pelajar_mahasiswa) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -495,8 +620,8 @@
             <td>d. PENGEMUDI (SUPIR)</td>
             <td>{{ $tahunPertama->profesi_pelaku_pelanggaran_pengemudi_supir }}</td>
             <td>{{ $tahunKedua->profesi_pelaku_pelanggaran_pengemudi_supir }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_pelaku_pelanggaran_pengemudi_supir, $tahunPertama->profesi_pelaku_pelanggaran_pengemudi_supir) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_pelaku_pelanggaran_pengemudi_supir, $tahunPertama->profesi_pelaku_pelanggaran_pengemudi_supir) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -504,8 +629,8 @@
             <td>e. TNI</td>
             <td>{{ $tahunPertama->profesi_pelaku_pelanggaran_tni }}</td>
             <td>{{ $tahunKedua->profesi_pelaku_pelanggaran_tni }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_pelaku_pelanggaran_tni, $tahunPertama->profesi_pelaku_pelanggaran_tni) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_pelaku_pelanggaran_tni, $tahunPertama->profesi_pelaku_pelanggaran_tni) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -513,8 +638,8 @@
             <td>f. POLRI</td>
             <td>{{ $tahunPertama->profesi_pelaku_pelanggaran_polri }}</td>
             <td>{{ $tahunKedua->profesi_pelaku_pelanggaran_polri }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_pelaku_pelanggaran_polri, $tahunPertama->profesi_pelaku_pelanggaran_polri) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_pelaku_pelanggaran_polri, $tahunPertama->profesi_pelaku_pelanggaran_polri) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -522,8 +647,8 @@
             <td>g LAIN-LAIN</td>
             <td>{{ $tahunPertama->profesi_pelaku_pelanggaran_lain_lain }}</td>
             <td>{{ $tahunKedua->profesi_pelaku_pelanggaran_lain_lain }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_pelaku_pelanggaran_lain_lain, $tahunPertama->profesi_pelaku_pelanggaran_lain_lain) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_pelaku_pelanggaran_lain_lain, $tahunPertama->profesi_pelaku_pelanggaran_lain_lain) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -547,8 +672,40 @@
                 $tahunKedua->profesi_pelaku_pelanggaran_polri,
                 $tahunKedua->profesi_pelaku_pelanggaran_lain_lain
             ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->profesi_pelaku_pelanggaran_pns,
+                $tahunKedua->profesi_pelaku_pelanggaran_karyawan_swasta,
+                $tahunKedua->profesi_pelaku_pelanggaran_pelajar_mahasiswa,
+                $tahunKedua->profesi_pelaku_pelanggaran_pengemudi_supir,
+                $tahunKedua->profesi_pelaku_pelanggaran_tni,
+                $tahunKedua->profesi_pelaku_pelanggaran_polri,
+                $tahunKedua->profesi_pelaku_pelanggaran_lain_lain
+            ]), calculation([
+                $tahunPertama->profesi_pelaku_pelanggaran_pns,
+                $tahunPertama->profesi_pelaku_pelanggaran_karyawan_swasta,
+                $tahunPertama->profesi_pelaku_pelanggaran_pelajar_mahasiswa,
+                $tahunPertama->profesi_pelaku_pelanggaran_pengemudi_supir,
+                $tahunPertama->profesi_pelaku_pelanggaran_tni,
+                $tahunPertama->profesi_pelaku_pelanggaran_polri,
+                $tahunPertama->profesi_pelaku_pelanggaran_lain_lain
+            ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->profesi_pelaku_pelanggaran_pns,
+                $tahunKedua->profesi_pelaku_pelanggaran_karyawan_swasta,
+                $tahunKedua->profesi_pelaku_pelanggaran_pelajar_mahasiswa,
+                $tahunKedua->profesi_pelaku_pelanggaran_pengemudi_supir,
+                $tahunKedua->profesi_pelaku_pelanggaran_tni,
+                $tahunKedua->profesi_pelaku_pelanggaran_polri,
+                $tahunKedua->profesi_pelaku_pelanggaran_lain_lain
+            ]), calculation([
+                $tahunPertama->profesi_pelaku_pelanggaran_pns,
+                $tahunPertama->profesi_pelaku_pelanggaran_karyawan_swasta,
+                $tahunPertama->profesi_pelaku_pelanggaran_pelajar_mahasiswa,
+                $tahunPertama->profesi_pelaku_pelanggaran_pengemudi_supir,
+                $tahunPertama->profesi_pelaku_pelanggaran_tni,
+                $tahunPertama->profesi_pelaku_pelanggaran_polri,
+                $tahunPertama->profesi_pelaku_pelanggaran_lain_lain
+            ])) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -571,8 +728,8 @@
             <td>a. &lt; 15 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_kurang_dari_15_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_pelanggaran_kurang_dari_15_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_pelanggaran_kurang_dari_15_tahun, $tahunPertama->usia_pelaku_pelanggaran_kurang_dari_15_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_pelanggaran_kurang_dari_15_tahun, $tahunPertama->usia_pelaku_pelanggaran_kurang_dari_15_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -580,8 +737,8 @@
             <td>b. 16 - 20 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_16_20_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_pelanggaran_16_20_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_pelanggaran_16_20_tahun, $tahunPertama->usia_pelaku_pelanggaran_16_20_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_pelanggaran_16_20_tahun, $tahunPertama->usia_pelaku_pelanggaran_16_20_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -589,8 +746,8 @@
             <td>c. 21 - 25 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_21_25_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_pelanggaran_21_25_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_pelanggaran_21_25_tahun, $tahunPertama->usia_pelaku_pelanggaran_21_25_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_pelanggaran_21_25_tahun, $tahunPertama->usia_pelaku_pelanggaran_21_25_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -598,8 +755,8 @@
             <td>d. 26 - 30 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_26_30_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_pelanggaran_26_30_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_pelanggaran_26_30_tahun, $tahunPertama->usia_pelaku_pelanggaran_26_30_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_pelanggaran_26_30_tahun, $tahunPertama->usia_pelaku_pelanggaran_26_30_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -607,8 +764,8 @@
             <td>e. 31 - 35 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_31_35_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_pelanggaran_31_35_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_pelanggaran_31_35_tahun, $tahunPertama->usia_pelaku_pelanggaran_31_35_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_pelanggaran_31_35_tahun, $tahunPertama->usia_pelaku_pelanggaran_31_35_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -616,8 +773,8 @@
             <td>f. 36 - 40 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_36_40_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_pelanggaran_36_40_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_pelanggaran_36_40_tahun, $tahunPertama->usia_pelaku_pelanggaran_36_40_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_pelanggaran_36_40_tahun, $tahunPertama->usia_pelaku_pelanggaran_36_40_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -625,8 +782,8 @@
             <td>g. 41 - 45 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_41_45_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_pelanggaran_41_45_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_pelanggaran_41_45_tahun, $tahunPertama->usia_pelaku_pelanggaran_41_45_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_pelanggaran_41_45_tahun, $tahunPertama->usia_pelaku_pelanggaran_41_45_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -634,8 +791,8 @@
             <td>h. 46 - 50 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_46_50_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_pelanggaran_46_50_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_pelanggaran_46_50_tahun, $tahunPertama->usia_pelaku_pelanggaran_46_50_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_pelanggaran_46_50_tahun, $tahunPertama->usia_pelaku_pelanggaran_46_50_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -643,8 +800,8 @@
             <td>I. 51 - 55 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_51_55_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_pelanggaran_51_55_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_pelanggaran_51_55_tahun, $tahunPertama->usia_pelaku_pelanggaran_51_55_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_pelanggaran_51_55_tahun, $tahunPertama->usia_pelaku_pelanggaran_51_55_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -652,8 +809,8 @@
             <td>j. 56 - 60 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_56_60_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_pelanggaran_56_60_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_pelanggaran_56_60_tahun, $tahunPertama->usia_pelaku_pelanggaran_56_60_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_pelanggaran_56_60_tahun, $tahunPertama->usia_pelaku_pelanggaran_56_60_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -661,8 +818,8 @@
             <td>k. > 60 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_pelanggaran_diatas_60_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_pelanggaran_diatas_60_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_pelanggaran_diatas_60_tahun, $tahunPertama->usia_pelaku_pelanggaran_diatas_60_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_pelanggaran_diatas_60_tahun, $tahunPertama->usia_pelaku_pelanggaran_diatas_60_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -694,8 +851,56 @@
                 $tahunKedua->usia_pelaku_pelanggaran_56_60_tahun,
                 $tahunKedua->usia_pelaku_pelanggaran_diatas_60_tahun
             ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->usia_pelaku_pelanggaran_kurang_dari_15_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_16_20_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_21_25_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_26_30_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_31_35_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_36_40_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_41_45_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_46_50_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_51_55_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_56_60_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_diatas_60_tahun
+            ]), calculation([
+                $tahunPertama->usia_pelaku_pelanggaran_kurang_dari_15_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_16_20_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_21_25_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_26_30_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_31_35_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_36_40_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_41_45_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_46_50_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_51_55_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_56_60_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_diatas_60_tahun
+            ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->usia_pelaku_pelanggaran_kurang_dari_15_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_16_20_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_21_25_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_26_30_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_31_35_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_36_40_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_41_45_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_46_50_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_51_55_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_56_60_tahun,
+                $tahunKedua->usia_pelaku_pelanggaran_diatas_60_tahun
+            ]), calculation([
+                $tahunPertama->usia_pelaku_pelanggaran_kurang_dari_15_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_16_20_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_21_25_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_26_30_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_31_35_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_36_40_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_41_45_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_46_50_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_51_55_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_56_60_tahun,
+                $tahunPertama->usia_pelaku_pelanggaran_diatas_60_tahun
+            ])) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -718,8 +923,8 @@
             <td>a. A</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_a }}</td>
             <td>{{ $tahunKedua->sim_pelaku_pelanggaran_sim_a }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_pelanggaran_sim_a, $tahunPertama->sim_pelaku_pelanggaran_sim_a) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_pelanggaran_sim_a, $tahunPertama->sim_pelaku_pelanggaran_sim_a) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -727,8 +932,8 @@
             <td>b. A UMUM</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_a_umum }}</td>
             <td>{{ $tahunKedua->sim_pelaku_pelanggaran_sim_a_umum }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_pelanggaran_sim_a_umum, $tahunPertama->sim_pelaku_pelanggaran_sim_a_umum) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_pelanggaran_sim_a_umum, $tahunPertama->sim_pelaku_pelanggaran_sim_a_umum) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -736,8 +941,8 @@
             <td>c. B1</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_b1 }}</td>
             <td>{{ $tahunKedua->sim_pelaku_pelanggaran_sim_b1 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_pelanggaran_sim_b1, $tahunPertama->sim_pelaku_pelanggaran_sim_b1) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_pelanggaran_sim_b1, $tahunPertama->sim_pelaku_pelanggaran_sim_b1) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -745,8 +950,8 @@
             <td>d. B1 UMUM</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_b1_umum }}</td>
             <td>{{ $tahunKedua->sim_pelaku_pelanggaran_sim_b1_umum }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_pelanggaran_sim_b1_umum, $tahunPertama->sim_pelaku_pelanggaran_sim_b1_umum) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_pelanggaran_sim_b1_umum, $tahunPertama->sim_pelaku_pelanggaran_sim_b1_umum) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -754,8 +959,8 @@
             <td>e. BII</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_b2 }}</td>
             <td>{{ $tahunKedua->sim_pelaku_pelanggaran_sim_b2 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_pelanggaran_sim_b2, $tahunPertama->sim_pelaku_pelanggaran_sim_b2) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_pelanggaran_sim_b2, $tahunPertama->sim_pelaku_pelanggaran_sim_b2) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -763,8 +968,8 @@
             <td>f. B II UMUM</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_b2_umum }}</td>
             <td>{{ $tahunKedua->sim_pelaku_pelanggaran_sim_b2_umum }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_pelanggaran_sim_b2_umum, $tahunPertama->sim_pelaku_pelanggaran_sim_b2_umum) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_pelanggaran_sim_b2_umum, $tahunPertama->sim_pelaku_pelanggaran_sim_b2_umum) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -772,8 +977,8 @@
             <td>g. C</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_c }}</td>
             <td>{{ $tahunKedua->sim_pelaku_pelanggaran_sim_c }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_pelanggaran_sim_c, $tahunPertama->sim_pelaku_pelanggaran_sim_c) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_pelanggaran_sim_c, $tahunPertama->sim_pelaku_pelanggaran_sim_c) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -781,8 +986,8 @@
             <td>h. D</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_d }}</td>
             <td>{{ $tahunKedua->sim_pelaku_pelanggaran_sim_d }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_pelanggaran_sim_d, $tahunPertama->sim_pelaku_pelanggaran_sim_d) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_pelanggaran_sim_d, $tahunPertama->sim_pelaku_pelanggaran_sim_d) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -790,8 +995,8 @@
             <td>I. SIM INTERNASIONAL</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_sim_internasional }}</td>
             <td>{{ $tahunKedua->sim_pelaku_pelanggaran_sim_internasional }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_pelanggaran_sim_internasional, $tahunPertama->sim_pelaku_pelanggaran_sim_internasional) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_pelanggaran_sim_internasional, $tahunPertama->sim_pelaku_pelanggaran_sim_internasional) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -799,8 +1004,8 @@
             <td>j. TANPA SIM</td>
             <td>{{ $tahunPertama->sim_pelaku_pelanggaran_tanpa_sim }}</td>
             <td>{{ $tahunKedua->sim_pelaku_pelanggaran_tanpa_sim }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_pelanggaran_tanpa_sim, $tahunPertama->sim_pelaku_pelanggaran_tanpa_sim) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_pelanggaran_tanpa_sim, $tahunPertama->sim_pelaku_pelanggaran_tanpa_sim) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -830,8 +1035,52 @@
                 $tahunKedua->sim_pelaku_pelanggaran_sim_internasional,
                 $tahunKedua->sim_pelaku_pelanggaran_tanpa_sim
             ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->sim_pelaku_pelanggaran_sim_a,
+                $tahunKedua->sim_pelaku_pelanggaran_sim_a_umum,
+                $tahunKedua->sim_pelaku_pelanggaran_sim_b1,
+                $tahunKedua->sim_pelaku_pelanggaran_sim_b1_umum,
+                $tahunKedua->sim_pelaku_pelanggaran_sim_b2,
+                $tahunKedua->sim_pelaku_pelanggaran_sim_b2_umum,
+                $tahunKedua->sim_pelaku_pelanggaran_sim_c,
+                $tahunKedua->sim_pelaku_pelanggaran_sim_d,
+                $tahunKedua->sim_pelaku_pelanggaran_sim_internasional,
+                $tahunKedua->sim_pelaku_pelanggaran_tanpa_sim
+            ]), calculation([
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_a,
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_a_umum,
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_b1,
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_b1_umum,
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_b2,
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_b2_umum,
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_c,
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_d,
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_internasional,
+                    $tahunPertama->sim_pelaku_pelanggaran_tanpa_sim
+                ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->sim_pelaku_pelanggaran_sim_a,
+                $tahunKedua->sim_pelaku_pelanggaran_sim_a_umum,
+                $tahunKedua->sim_pelaku_pelanggaran_sim_b1,
+                $tahunKedua->sim_pelaku_pelanggaran_sim_b1_umum,
+                $tahunKedua->sim_pelaku_pelanggaran_sim_b2,
+                $tahunKedua->sim_pelaku_pelanggaran_sim_b2_umum,
+                $tahunKedua->sim_pelaku_pelanggaran_sim_c,
+                $tahunKedua->sim_pelaku_pelanggaran_sim_d,
+                $tahunKedua->sim_pelaku_pelanggaran_sim_internasional,
+                $tahunKedua->sim_pelaku_pelanggaran_tanpa_sim
+            ]), calculation([
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_a,
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_a_umum,
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_b1,
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_b1_umum,
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_b2,
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_b2_umum,
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_c,
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_d,
+                    $tahunPertama->sim_pelaku_pelanggaran_sim_internasional,
+                    $tahunPertama->sim_pelaku_pelanggaran_tanpa_sim
+                ])) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
