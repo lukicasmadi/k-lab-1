@@ -1112,8 +1112,8 @@
             <td>1) KAWASAN PEMUKIMAN</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_pemukiman }}</td>
             <td>{{ $tahunKedua->lokasi_pelanggaran_pemukiman }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_pelanggaran_pemukiman, $tahunPertama->lokasi_pelanggaran_pemukiman) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_pelanggaran_pemukiman, $tahunPertama->lokasi_pelanggaran_pemukiman) }}</td>
 			<td>Lokasi</td>
         </tr>
         <tr>
@@ -1121,8 +1121,8 @@
             <td>2) KAWASAN PERBELANJAAN</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_perbelanjaan }}</td>
             <td>{{ $tahunKedua->lokasi_pelanggaran_perbelanjaan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_pelanggaran_perbelanjaan, $tahunPertama->lokasi_pelanggaran_perbelanjaan) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_pelanggaran_perbelanjaan, $tahunPertama->lokasi_pelanggaran_perbelanjaan) }}</td>
 			<td>Lokasi</td>
         </tr>
         <tr>
@@ -1130,8 +1130,8 @@
             <td>3) PERKANTORAN</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_perkantoran }}</td>
             <td>{{ $tahunKedua->lokasi_pelanggaran_perkantoran }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_pelanggaran_perkantoran, $tahunPertama->lokasi_pelanggaran_perkantoran) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_pelanggaran_perkantoran, $tahunPertama->lokasi_pelanggaran_perkantoran) }}</td>
 			<td>Lokasi</td>
         </tr>
         <tr>
@@ -1139,8 +1139,8 @@
             <td>4) KAWASAN WISATA</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_wisata }}</td>
             <td>{{ $tahunKedua->lokasi_pelanggaran_wisata }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_pelanggaran_wisata, $tahunPertama->lokasi_pelanggaran_wisata) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_pelanggaran_wisata, $tahunPertama->lokasi_pelanggaran_wisata) }}</td>
 			<td>Lokasi</td>
         </tr>
         <tr>
@@ -1148,8 +1148,8 @@
             <td>5) KAWASAN INDUTRI</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_industri }}</td>
             <td>{{ $tahunKedua->lokasi_pelanggaran_industri }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_pelanggaran_industri, $tahunPertama->lokasi_pelanggaran_industri) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_pelanggaran_industri, $tahunPertama->lokasi_pelanggaran_industri) }}</td>
 			<td>Lokasi</td>
         </tr>
         <tr>
@@ -1161,16 +1161,44 @@
                 $tahunPertama->lokasi_pelanggaran_perkantoran,
                 $tahunPertama->lokasi_pelanggaran_wisata,
                 $tahunPertama->lokasi_pelanggaran_industri
-            ]) }}</td>
+            ]) }}
+            </td>
             <td style="font-weight: bold;">{{ calculation([
                 $tahunKedua->lokasi_pelanggaran_pemukiman,
                 $tahunKedua->lokasi_pelanggaran_perbelanjaan,
                 $tahunKedua->lokasi_pelanggaran_perkantoran,
                 $tahunKedua->lokasi_pelanggaran_wisata,
                 $tahunKedua->lokasi_pelanggaran_industri
-            ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+            ]) }}
+            </td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->lokasi_pelanggaran_pemukiman,
+                $tahunKedua->lokasi_pelanggaran_perbelanjaan,
+                $tahunKedua->lokasi_pelanggaran_perkantoran,
+                $tahunKedua->lokasi_pelanggaran_wisata,
+                $tahunKedua->lokasi_pelanggaran_industri
+            ]), calculation([
+                $tahunPertama->lokasi_pelanggaran_pemukiman,
+                $tahunPertama->lokasi_pelanggaran_perbelanjaan,
+                $tahunPertama->lokasi_pelanggaran_perkantoran,
+                $tahunPertama->lokasi_pelanggaran_wisata,
+                $tahunPertama->lokasi_pelanggaran_industri
+            ])) }}
+            </td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->lokasi_pelanggaran_pemukiman,
+                $tahunKedua->lokasi_pelanggaran_perbelanjaan,
+                $tahunKedua->lokasi_pelanggaran_perkantoran,
+                $tahunKedua->lokasi_pelanggaran_wisata,
+                $tahunKedua->lokasi_pelanggaran_industri
+            ]), calculation([
+                $tahunPertama->lokasi_pelanggaran_pemukiman,
+                $tahunPertama->lokasi_pelanggaran_perbelanjaan,
+                $tahunPertama->lokasi_pelanggaran_perkantoran,
+                $tahunPertama->lokasi_pelanggaran_wisata,
+                $tahunPertama->lokasi_pelanggaran_industri
+            ])) }}
+            </td>
 			<td>Lokasi</td>
         </tr>
         <tr>
@@ -1193,8 +1221,8 @@
             <td>1) NASIONAL</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_status_jalan_nasional }}</td>
             <td>{{ $tahunKedua->lokasi_pelanggaran_status_jalan_nasional }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_pelanggaran_status_jalan_nasional, $tahunPertama->lokasi_pelanggaran_status_jalan_nasional) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_pelanggaran_status_jalan_nasional, $tahunPertama->lokasi_pelanggaran_status_jalan_nasional) }}</td>
 			<td>Lokasi</td>
         </tr>
         <tr>
@@ -1202,8 +1230,8 @@
             <td>2) PROPINSI</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_status_jalan_propinsi }}</td>
             <td>{{ $tahunKedua->lokasi_pelanggaran_status_jalan_propinsi }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_pelanggaran_status_jalan_propinsi, $tahunPertama->lokasi_pelanggaran_status_jalan_propinsi) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_pelanggaran_status_jalan_propinsi, $tahunPertama->lokasi_pelanggaran_status_jalan_propinsi) }}</td>
 			<td>Lokasi</td>
         </tr>
         <tr>
@@ -1211,8 +1239,8 @@
             <td>3) KAB/KOTA</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_status_jalan_kab_kota }}</td>
             <td>{{ $tahunKedua->lokasi_pelanggaran_status_jalan_kab_kota }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_pelanggaran_status_jalan_kab_kota, $tahunPertama->lokasi_pelanggaran_status_jalan_kab_kota) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_pelanggaran_status_jalan_kab_kota, $tahunPertama->lokasi_pelanggaran_status_jalan_kab_kota) }}</td>
 			<td>Lokasi</td>
         </tr>
         <tr>
@@ -1220,8 +1248,8 @@
             <td>4) DESA / LINGKUNGAN</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_status_jalan_desa_lingkungan }}</td>
             <td>{{ $tahunKedua->lokasi_pelanggaran_status_jalan_desa_lingkungan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_pelanggaran_status_jalan_desa_lingkungan, $tahunPertama->lokasi_pelanggaran_status_jalan_desa_lingkungan) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_pelanggaran_status_jalan_desa_lingkungan, $tahunPertama->lokasi_pelanggaran_status_jalan_desa_lingkungan) }}</td>
 			<td>Lokasi</td>
         </tr>
         <tr>
@@ -1232,15 +1260,39 @@
                 $tahunPertama->lokasi_pelanggaran_status_jalan_propinsi,
                 $tahunPertama->lokasi_pelanggaran_status_jalan_kab_kota,
                 $tahunPertama->lokasi_pelanggaran_status_jalan_desa_lingkungan
-            ]) }}</td>
+            ]) }}
+            </td>
             <td style="font-weight: bold;">{{ calculation([
                 $tahunKedua->lokasi_pelanggaran_status_jalan_nasional,
                 $tahunKedua->lokasi_pelanggaran_status_jalan_propinsi,
                 $tahunKedua->lokasi_pelanggaran_status_jalan_kab_kota,
                 $tahunKedua->lokasi_pelanggaran_status_jalan_desa_lingkungan
-            ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+            ]) }}
+            </td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->lokasi_pelanggaran_status_jalan_nasional,
+                $tahunKedua->lokasi_pelanggaran_status_jalan_propinsi,
+                $tahunKedua->lokasi_pelanggaran_status_jalan_kab_kota,
+                $tahunKedua->lokasi_pelanggaran_status_jalan_desa_lingkungan
+            ]), calculation([
+                $tahunPertama->lokasi_pelanggaran_status_jalan_nasional,
+                $tahunPertama->lokasi_pelanggaran_status_jalan_propinsi,
+                $tahunPertama->lokasi_pelanggaran_status_jalan_kab_kota,
+                $tahunPertama->lokasi_pelanggaran_status_jalan_desa_lingkungan
+            ])) }}
+            </td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->lokasi_pelanggaran_status_jalan_nasional,
+                $tahunKedua->lokasi_pelanggaran_status_jalan_propinsi,
+                $tahunKedua->lokasi_pelanggaran_status_jalan_kab_kota,
+                $tahunKedua->lokasi_pelanggaran_status_jalan_desa_lingkungan
+            ]), calculation([
+                $tahunPertama->lokasi_pelanggaran_status_jalan_nasional,
+                $tahunPertama->lokasi_pelanggaran_status_jalan_propinsi,
+                $tahunPertama->lokasi_pelanggaran_status_jalan_kab_kota,
+                $tahunPertama->lokasi_pelanggaran_status_jalan_desa_lingkungan
+            ])) }}
+            </td>
 			<td>Lokasi</td>
         </tr>
         <tr>
