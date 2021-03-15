@@ -56,8 +56,7 @@
     <script src="{{ secure_asset('template/assets/js/custom.js') }}"></script>
     <script src="{{ secure_asset('template/globalfunction.js') }}"></script>
     <script src="{{ secure_asset('template/assets/js/app.js') }}"></script>
-    <script src="{{ secure_asset('plugins/select2/select2.min.js') }}"></script>
-    <script src="{{ secure_asset('plugins/select2/custom-select2.min') }}"></script>
+    <script src="{{ secure_asset('template/plugins/select2/select2.min.js') }}"></script>
     <script>
         $(document).ready(function() {
             App.init();
