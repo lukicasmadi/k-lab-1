@@ -6,7 +6,12 @@
     <div class="row">
     <div class="centered">
         <div class="col-sm-12">
-            <div class="col-sm-2 offset-md-5">
+            <div class="col-sm-12 head-logo">
+                <a href="{{ route('home') }}">
+                    <h3 class="colorback"><img src="{{ secure_asset('/img/chevron_big_right.png') }}"> kembali</h3>
+                </a>
+            </div>
+            <div class="col-sm-4 offset-md-4">
                 <img class="logo-login" src="{{ secure_asset('/img/korlantas.png') }}">
             </div>
             <div class="text-center">

@@ -571,6 +571,12 @@ pre code {
   }
 }
 
+@media (min-width: 1900px) {
+  .container {
+    max-width: 1570px;
+  }
+}
+
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
   width: 100%;
   /* padding-right: 15px;
@@ -600,6 +606,12 @@ pre code {
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
     max-width: 1140px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .container, .container-sm, .container-md, .container-lg, .container-xl {
+    max-width: 1570px;
   }
 }
 
@@ -3187,7 +3199,8 @@ pre code {
 }
 
 .form-control::placeholder {
-  color: #00adef;
+  font-size: 12px;
+  color: #79859b;
   opacity: 1;
 }
 

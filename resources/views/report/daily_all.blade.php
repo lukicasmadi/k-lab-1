@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="layout-px-spacing">
-    <div class="page-header">
+    <div class="page-header mb-25">
         <div class="page-title">
             <h3>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20">
+            <svg style="margin-top:-5px;" xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20">
   <path id="Union_2" data-name="Union 2" d="M-2852-2201a2,2,0,0,1-2-2v-16a2,2,0,0,1,2-2h7a.118.118,0,0,1,.032.006.131.131,0,0,0,.03.006,1.043,1.043,0,0,1,.259.051l.028.009a.492.492,0,0,1,.066.028.993.993,0,0,1,.293.2l6,6a.98.98,0,0,1,.2.293.639.639,0,0,1,.025.068l.009.026a1,1,0,0,1,.049.258.144.144,0,0,0,.007.027.139.139,0,0,1,0,.028v11a2,2,0,0,1-2,2Zm0-2h12v-10h-5a1,1,0,0,1-1-1v-5h-6Zm8-12h2.586l-2.586-2.586Zm-5.333,10v-2h6.667v2Zm0-4v-2h6.667v2Z" transform="translate(2854 2221)" fill="#00adef"/>
 </svg>
             <span>laporan rekap harian</span>
@@ -70,102 +70,86 @@
             </div>
         </div>
         <div class="modal fade" id="notesMailModal" tabindex="-1" role="dialog" aria-labelledby="notesMailModalTitle" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-body">
-                                                            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x close" data-dismiss="modal"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> -->
-                                                            <div class="notes-box">
-                                                                <div class="notes-content">                                         TAMBAH LAPORAN
-                                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                                                                <div class="row">
-                                                                    <img src="{{ secure_asset('/img/line_popbottom.png') }}" width="100%">
-                                                                </div>             
-                                                                </div>             
-                                                                    <form action="javascript:void(0);" id="notesMailModalTitle">
-                                                                        <div class="row">
-                                                                            <div class="col-md-12">
-                                                                            Jenis Operasi Yang Akan Dilaksanakan
-                                                                            <select class="form-control  basic">
-                                                                                <option selected="selected">orange</option>
-                                                                                <option>white</option>
-                                                                                <option>purple</option>
-                                                                            </select>
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="notes-box">
+                            <div class="notes-content">
+                            <span class="colorblue">TAMBAH LAPORAN</span>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                            <div class="row imgpopup">
+                                <img src="{{ secure_asset('/img/line_popbottom.png') }}">
+                            </div>             
+                            </div>             
+                                <form action="javascript:void(0);" id="notesMailModalTitle">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                        <label class="text-popup">nama laporan</label>
+                                        <select class="form-control height-form">
+                                            <option selected="selected">-   Pilih nama laporan yang Anda butuhkan</option>
+                                            <option>white</option>
+                                            <option>purple</option>
+                                        </select>
+                                        </div>
+                                        <div class="col-md-12">
+                                        <label class="text-popup">deskripsi laporan</label>
+                                        <select class="form-control height-form">
+                                            <option selected="selected">-   Tulislah deskripsi laporan yang akan Anda buat</option>
+                                            <option>white</option>
+                                            <option>purple</option>
+                                        </select>
+                                        </div>
+                                        <div class="col-md-12">
+                                        <label class="text-popup">pilih polda</label>
+                                        <select class="form-control height-form">
+                                            <option selected="selected">-   Semua Polda</option>
+                                            <option>white</option>
+                                            <option>purple</option>
+                                        </select>
+                                        </div>
+                                        <div class="col-md-12">
+                                        <label class="text-popup">Data Yang Ditampilkan</label>
+                                        <select class="form-control height-form">
+                                            <option selected="selected">-   Semua Data</option>
+                                            <option>white</option>
+                                            <option>purple</option>
+                                        </select>
+                                        </div>
+                                        <div class="col-md-12">
+                                        <label class="text-popup">tahun</label>
+                                        <select class="form-control height-form">
+                                            <option selected="selected">-   Pilih Tahun</option>
+                                            <option>white</option>
+                                            <option>purple</option>
+                                        </select>
+                                        </div>
+                                        <div class="col-md-12">
+                                        <label class="text-popup">nama operasi</label>
+                                        <select class="form-control height-form">
+                                            <option selected="selected">-   Pilih operasi yang akan Anda laksanakan</option>
+                                            <option>white</option>
+                                            <option>purple</option>
+                                        </select>
+                                        </div>
+                                        <div class="col-md-12">
+                                        <label class="text-popup">Hari Operasi</label>
+                                        <select class="form-control height-form">
+                                            <option selected="selected">-   Semua Hari</option>
+                                            <option>white</option>
+                                            <option>purple</option>
+                                        </select>
+                                        </div>
+                                    </div>
 
-                                                                            </div>
-                                                                            <div class="col-md-12">
-                                                                            Nama Operasi
-                                                                            <select class="form-control  basic">
-                                                                                <option selected="selected">orange</option>
-                                                                                <option>white</option>
-                                                                                <option>purple</option>
-                                                                            </select>
-
-                                                                            </div>
-                                                                            <div class="col-md-12">
-                                                                            Nama Operasi
-                                                                            <select class="form-control  basic">
-                                                                                <option selected="selected">orange</option>
-                                                                                <option>white</option>
-                                                                                <option>purple</option>
-                                                                            </select>
-
-                                                                            </div>
-                                                                            <div class="col-md-12">
-                                                                            Nama Operasi
-                                                                            <select class="form-control  basic">
-                                                                                <option selected="selected">orange</option>
-                                                                                <option>white</option>
-                                                                                <option>purple</option>
-                                                                            </select>
-
-                                                                            </div>
-                                                                            <div class="col-md-12">
-                                                                            Nama Operasi
-                                                                            <select class="form-control  basic">
-                                                                                <option selected="selected">orange</option>
-                                                                                <option>white</option>
-                                                                                <option>purple</option>
-                                                                            </select>
-
-                                                                            </div>
-                                                                            <div class="col-md-12">
-                                                                            Nama Operasi
-                                                                            <select class="form-control  basic">
-                                                                                <option selected="selected">orange</option>
-                                                                                <option>white</option>
-                                                                                <option>purple</option>
-                                                                            </select>
-
-                                                                            </div>
-                                                                            <div class="col-md-12">
-                                                                            Nama Operasi
-                                                                            <select class="form-control  basic">
-                                                                                <option selected="selected">orange</option>
-                                                                                <option>white</option>
-                                                                                <option>purple</option>
-                                                                            </select>
-
-                                                                            </div>
-                                                                            <div class="col-md-12">
-                                                                            Nama Operasi
-                                                                            <select class="form-control  basic">
-                                                                                <option selected="selected">orange</option>
-                                                                                <option>white</option>
-                                                                                <option>purple</option>
-                                                                            </select>
-
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button id="btn-n-add" class="btn">SIMPAN</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn-n-add" class="btn">SIMPAN</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
