@@ -10,7 +10,7 @@
             </svg>
             <span>Laporan Analisa Dan Evaluasi</span>
             </h3>
-        </div>                    
+        </div>
         <div class="toggle-switch">
             <label class="switch s-icons s-outline  s-outline-secondary">
                 <input type="checkbox" checked="" class="theme-shifter" id="changeTheme">
@@ -83,99 +83,37 @@
                             </tr>
                         </thead>
                         <tbody>
-                                <tr class="padd-title">
-                                    <td bgcolor="#0E7096" colspan="5">PELANGGARAN LALU LINTAS</td>
-                                </tr>
-                                <tr class="evaluasi">
-                                    <td>Tilang</td>
-                                    <td>365</td>
-                                    <td>309</td>
-                                    <td>Turun</td>
-                                    <td>15,34%</td>
-                                </tr>
-                                <tr class="evaluasi">
-                                    <td>Pelanggaran Ringan</td>
-                                    <td>124</td>
-                                    <td>144</td>
-                                    <td>Turun</td>
-                                    <td>15,34%</td>
-                                </tr>
-                                <tr class="evaluasi">
-                                    <td>Tilang</td>
-                                    <td>365</td>
-                                    <td>309</td>
-                                    <td>Turun</td>
-                                    <td>15,34%</td>
-                                </tr>
-                                <tr class="evaluasi">
-                                    <td>Pelanggaran Ringan</td>
-                                    <td>124</td>
-                                    <td>144</td>
-                                    <td>Turun</td>
-                                    <td>15,34%</td>
-                                </tr>
-                                <tr class="padd-title">
-                                    <td bgcolor="#0E7096" colspan="5">PELANGGARAN LALU LINTAS</td>
-                                </tr>
-                                <tr class="evaluasi">
-                                    <td>Tilang</td>
-                                    <td>365</td>
-                                    <td>309</td>
-                                    <td>Turun</td>
-                                    <td>15,34%</td>
-                                </tr>
-                                <tr class="evaluasi">
-                                    <td>Pelanggaran Ringan</td>
-                                    <td>124</td>
-                                    <td>144</td>
-                                    <td>Turun</td>
-                                    <td>15,34%</td>
-                                </tr>
-                                <tr class="evaluasi">
-                                    <td>Tilang</td>
-                                    <td>365</td>
-                                    <td>309</td>
-                                    <td>Turun</td>
-                                    <td>15,34%</td>
-                                </tr>
-                                <tr class="evaluasi">
-                                    <td>Pelanggaran Ringan</td>
-                                    <td>124</td>
-                                    <td>144</td>
-                                    <td>Turun</td>
-                                    <td>15,34%</td>
-                                </tr>
-                                <tr class="padd-title">
-                                    <td bgcolor="#0E7096" colspan="5">PELANGGARAN LALU LINTAS</td>
-                                </tr>
-                                <tr class="evaluasi">
-                                    <td>Tilang</td>
-                                    <td>365</td>
-                                    <td>309</td>
-                                    <td>Turun</td>
-                                    <td>15,34%</td>
-                                </tr>
-                                <tr class="evaluasi">
-                                    <td>Pelanggaran Ringan</td>
-                                    <td>124</td>
-                                    <td>144</td>
-                                    <td>Turun</td>
-                                    <td>15,34%</td>
-                                </tr>
-                                <tr class="evaluasi">
-                                    <td>Tilang</td>
-                                    <td>365</td>
-                                    <td>309</td>
-                                    <td>Turun</td>
-                                    <td>15,34%</td>
-                                </tr>
-                                <tr class="evaluasi">
-                                    <td>Pelanggaran Ringan</td>
-                                    <td>124</td>
-                                    <td>144</td>
-                                    <td>Turun</td>
-                                    <td>15,34%</td>
-                                </tr>
+                            <tr class="padd-title">
+                                <td bgcolor="#0E7096" colspan="5">PELANGGARAN LALU LINTAS</td>
+                            </tr>
+                            <tr class="evaluasi">
+                                <td>Tilang</td>
+                                <td>365</td>
+                                <td>309</td>
+                                <td>Turun</td>
+                                <td>15,34%</td>
+                            </tr>
+                            <tr class="evaluasi">
+                                <td>Pelanggaran Ringan</td>
+                                <td>124</td>
+                                <td>144</td>
+                                <td>Turun</td>
+                                <td>15,34%</td>
+                            </tr>
+                            <tr class="evaluasi">
+                                <td>Tilang</td>
+                                <td>365</td>
+                                <td>309</td>
+                                <td>Turun</td>
+                                <td>15,34%</td>
+                            </tr>
+                            <tr class="evaluasi">
+                                <td>Pelanggaran Ringan</td>
+                                <td>124</td>
+                                <td>144</td>
+                                <td>Turun</td>
+                                <td>15,34%</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
