@@ -41,7 +41,7 @@
 
                         <div class="form-group">
                             <label class="text-popup">pilih Operasi</label>
-                            <select class="form-control height-form" name="operation_id" id="operation_id">
+                            <select class="height-form" name="operation_id" id="operation_id">
                                 @foreach($rencanaOperasi as $key => $val)
                                     <option value="{{$key}}">{{$val}}</option>
                                 @endforeach

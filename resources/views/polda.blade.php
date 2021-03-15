@@ -39,7 +39,7 @@
                             </div>
                             <div class="row">
                                 <div class="widget-content" style="margin-top: 5%;">
-                                    <div class="mx-auto">
+                                    <div class="">
                                         <div id="donut-chart" class=""></div>
                                     </div>
                                 </div>
@@ -58,8 +58,8 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="widget-content" style="margin-top: 5%;">
-                                    <div class="mx-auto">
+                                <div class="" style="margin-top: 5%;">
+                                    <div class="">
                                         <div id="donut-chart-full" class=""></div>
                                     </div>
                                 </div>
