@@ -1,8 +1,8 @@
 @extends('layouts.template_info') @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-sm-4">
-            <div class="col-sm-12 head-logo">
+        <div class="col-sm-12">
+            <div class="col-sm-12 mt-30 head-logo">
                 <img src="{{ secure_asset('/img/korlantas.png') }}" />
                 <h3>korlantas polri</h3>
             </div>

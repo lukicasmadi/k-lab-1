@@ -17,6 +17,14 @@ Route::get('/polda/metro', function () {
     return view('polda');
 });
 
+Route::get('/article/detail', function() {
+    return view('/article/detail');
+});
+
+Route::get('/article/all', function() {
+    return view('/article/all');
+});
+
 
 Route::get('/forgot-password', 'UserController@forgot_password_index')->name('forgot_password_index');
 Route::post('/forgot-password/process', 'UserController@forgot_password_process')->name('forgot_password_process');

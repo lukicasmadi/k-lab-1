@@ -14,6 +14,7 @@
     <link href="{{ secure_asset('template/bootstrap/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ secure_asset('template/fontawesome5.15.1/css/all.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ secure_asset('template/assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ secure_asset('template/plugins/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
     @stack('library_css')
     @stack('page_css')
@@ -55,6 +56,8 @@
     <script src="{{ secure_asset('template/assets/js/custom.js') }}"></script>
     <script src="{{ secure_asset('template/globalfunction.js') }}"></script>
     <script src="{{ secure_asset('template/assets/js/app.js') }}"></script>
+    <script src="{{ secure_asset('plugins/select2/select2.min.js') }}"></script>
+    <script src="{{ secure_asset('plugins/select2/custom-select2.min') }}"></script>
     <script>
         $(document).ready(function() {
             App.init();
