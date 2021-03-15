@@ -10,7 +10,7 @@
             </svg>
             <span>Laporan Analisa Dan Evaluasi</span>
             </h3>
-        </div>
+        </div>                    
         <div class="toggle-switch">
             <label class="switch s-icons s-outline  s-outline-secondary">
                 <input type="checkbox" checked="" class="theme-shifter" id="changeTheme">
@@ -35,50 +35,152 @@
         <div class="col-lg-4 col-12  layout-spacing">
             <div class="statbox widget box box-shadow">
                 @include('flash::message')
-                <div class="widget-content  widget-content-area mt-3">
+                <div class="widget-content mt-3 widget-content-area">
                     <form action="{{ route('report_comparison_process') }}" method="POST">
                         @csrf
 
-                        <div class="form-group mb-4">
-                            <label>Operasi</label>
-                            <select class="form-control form-control-lg" name="operation_id" id="operation_id">
+                        <div class="form-group">
+                            <label class="text-popup">pilih Operasi</label>
+                            <select class="form-control height-form" name="operation_id" id="operation_id">
                                 @foreach($rencanaOperasi as $key => $val)
                                     <option value="{{$key}}">{{$val}}</option>
                                 @endforeach
                             </select>
                         </div>
 
-                        <div class="form-group mb-4">
+                        <div class="form-group">
                             <label>Pilih Tahun Pembanding 1</label>
-                            <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control form-control-lg">
-                                @foreach($yearFiltered as $yf){
-                                    <option value="{{ $yf }}">{{ $yf }}</option>
-                                @endforeach
-                            </select>
+                            <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control height-form"></select>
                         </div>
 
-                        <div class="form-group mb-4">
+                        <div class="form-group">
                             <label>Pilih Tahun Pembanding 2</label>
-                            <select id="tahun_pembanding_kedua" name="tahun_pembanding_kedua" class="form-control form-control-lg">
-                                @foreach($yearFiltered as $yf){
-                                    <option value="{{ $yf }}">{{ $yf }}</option>
-                                @endforeach
-                            </select>
+                            <select id="tahun_pembanding_kedua" name="tahun_pembanding_kedua" class="form-control height-form"></select>
                         </div>
 
-                        {{-- <div class="form-group">
-                            <label>Pilih Hari</label>
-                            <select id="pilihan_hari" name="pilihan_hari" class="form-control height-form"></select>
-                        </div> --}}
+                        <div class="form-group">
+                            <label>pilih hari</label>
+                            <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control height-form"></select>
+                        </div>
 
-                        <input type="button" id="rekap" name="rekap" class="mt-4 mb-4 btn btn-primary" value="Rekap Data">
-                        <input type="submit" name="submit" class="mt-4 mb-4 btn btn-primary" value="Unduh Data">
+                        <input type="submit" name="submit" class="mt-4 mb-4 btn btn-primary" value="rekap data">
+                        <input type="submit" name="submit" class="mt-4 mb-4 btn btn-primary" value="unduh data">
                     </form>
                 </div>
             </div>
         </div>
         <div class="col-lg-8 col-12  layout-spacing">
-
+        <div class="widget-content mt-4 mb-5">
+                <div class="table-responsive">
+                    <table id="tbl_daily_submited" class="table">
+                        <thead>
+                            <tr>
+                                <th>Nama Laporan</th>
+                                <th>tahun 2020</th>
+                                <th>tahun 2021</th>
+                                <th>status</th>
+                                <th>Persentase</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr class="padd-title">
+                                    <td bgcolor="#0E7096" colspan="5">PELANGGARAN LALU LINTAS</td>
+                                </tr>
+                                <tr class="evaluasi">
+                                    <td>Tilang</td>
+                                    <td>365</td>
+                                    <td>309</td>
+                                    <td>Turun</td>
+                                    <td>15,34%</td>
+                                </tr>
+                                <tr class="evaluasi">
+                                    <td>Pelanggaran Ringan</td>
+                                    <td>124</td>
+                                    <td>144</td>
+                                    <td>Turun</td>
+                                    <td>15,34%</td>
+                                </tr>
+                                <tr class="evaluasi">
+                                    <td>Tilang</td>
+                                    <td>365</td>
+                                    <td>309</td>
+                                    <td>Turun</td>
+                                    <td>15,34%</td>
+                                </tr>
+                                <tr class="evaluasi">
+                                    <td>Pelanggaran Ringan</td>
+                                    <td>124</td>
+                                    <td>144</td>
+                                    <td>Turun</td>
+                                    <td>15,34%</td>
+                                </tr>
+                                <tr class="padd-title">
+                                    <td bgcolor="#0E7096" colspan="5">PELANGGARAN LALU LINTAS</td>
+                                </tr>
+                                <tr class="evaluasi">
+                                    <td>Tilang</td>
+                                    <td>365</td>
+                                    <td>309</td>
+                                    <td>Turun</td>
+                                    <td>15,34%</td>
+                                </tr>
+                                <tr class="evaluasi">
+                                    <td>Pelanggaran Ringan</td>
+                                    <td>124</td>
+                                    <td>144</td>
+                                    <td>Turun</td>
+                                    <td>15,34%</td>
+                                </tr>
+                                <tr class="evaluasi">
+                                    <td>Tilang</td>
+                                    <td>365</td>
+                                    <td>309</td>
+                                    <td>Turun</td>
+                                    <td>15,34%</td>
+                                </tr>
+                                <tr class="evaluasi">
+                                    <td>Pelanggaran Ringan</td>
+                                    <td>124</td>
+                                    <td>144</td>
+                                    <td>Turun</td>
+                                    <td>15,34%</td>
+                                </tr>
+                                <tr class="padd-title">
+                                    <td bgcolor="#0E7096" colspan="5">PELANGGARAN LALU LINTAS</td>
+                                </tr>
+                                <tr class="evaluasi">
+                                    <td>Tilang</td>
+                                    <td>365</td>
+                                    <td>309</td>
+                                    <td>Turun</td>
+                                    <td>15,34%</td>
+                                </tr>
+                                <tr class="evaluasi">
+                                    <td>Pelanggaran Ringan</td>
+                                    <td>124</td>
+                                    <td>144</td>
+                                    <td>Turun</td>
+                                    <td>15,34%</td>
+                                </tr>
+                                <tr class="evaluasi">
+                                    <td>Tilang</td>
+                                    <td>365</td>
+                                    <td>309</td>
+                                    <td>Turun</td>
+                                    <td>15,34%</td>
+                                </tr>
+                                <tr class="evaluasi">
+                                    <td>Pelanggaran Ringan</td>
+                                    <td>124</td>
+                                    <td>144</td>
+                                    <td>Turun</td>
+                                    <td>15,34%</td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
 </div>
@@ -100,5 +202,22 @@
 $(document).ready(function () {
 
 })
+
+var min = new Date().getFullYear()
+var max = min + 5
+var select = document.getElementById('tahun_pembanding_pertama')
+var select_kedua = document.getElementById('tahun_pembanding_kedua')
+
+for (var i = min; i<=max; i++) {
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+
+    var opt_kedua = document.createElement('option');
+    opt_kedua.value = i;
+    opt_kedua.innerHTML = i;
+    select_kedua.appendChild(opt_kedua);
+}
 </script>
 @endpush
