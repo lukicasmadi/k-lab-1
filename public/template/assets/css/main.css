@@ -2648,6 +2648,22 @@ table .badge-dark {
     clear: both;
 }
 
+.evaluasi {
+    border-bottom : 1.4px solid #00adef;
+    text-transform: capitalize;
+}
+
+.table>tbody>tr.evaluasi>td {
+    vertical-align: middle;
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 13px 30px;
+}
+
+.table>tbody>tr.padd-title>td {
+    padding: 13px 30px;
+}
+
 .nav-tabs>li>a {
     -webkit-border-radius: 0 !important;
     -moz-border-radius: 0 !important;
