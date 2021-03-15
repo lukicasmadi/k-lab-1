@@ -56,8 +56,17 @@ class ReportController extends Controller
     public function comparison()
     {
         $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");
+        $yearAvailable = PoldaSubmited::selectRaw('YEAR(submited_date) as year_avail')->orderBy('id', 'desc')->get();
 
-        return view('report.comparison', compact('rencanaOperasi'));
+        $year = [];
+
+        foreach($yearAvailable as $ya) {
+            array_push($year, $ya->year_avail);
+        }
+
+        $yearFiltered = array_unique($year);
+
+        return view('report.comparison', compact('rencanaOperasi', 'yearFiltered'));
     }
 
     public function comparisonProcess()
