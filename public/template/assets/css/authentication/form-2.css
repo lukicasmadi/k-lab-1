@@ -35,15 +35,15 @@ body .overflow {
 
 .logo-presisi {
   display: block;
-  margin: 45px auto 0px auto;
+  margin: 35px auto 0px auto;
   /* width: 355px; */
-  width: 65%;
+  width: 55%;
 }
 
 .button-login {
   display: block;
   margin: 50px auto;
-  width: 50%;
+  width: 65%;
 }
 
 .button-login:hover {
@@ -189,11 +189,11 @@ body .overflow {
   text-transform: uppercase;
   position: absolute;
   color: #fff;
-  margin-top: -88px;
+  margin-top: -87px;
   margin-left: 0.2px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 15px;
+  transform: translate(-50%, -70%);
+  padding: 25px;
   background-image: linear-gradient(#0B6992, #16374B);
   border-radius: 50%;
   z-index: -1;
@@ -839,6 +839,12 @@ body .overflow {
   .form-form .form-form-wrap form .field-wrapper button.btn {
     margin-top: -15px;
     padding: 7px 10px 6px 10px;
+  }
+}
+
+@media screen and (min-width: 2500px) {
+  .logo-presisi {
+    width: 10%;
   }
 }
 
