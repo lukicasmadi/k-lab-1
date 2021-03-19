@@ -18,7 +18,6 @@ class RencanaOperasiSeeder extends Seeder
     public function run()
     {
         RencanaOperasi::withoutEvents(function () {
-            // return RencanaOperasi::factory(3)->create();
             $now = Carbon::now();
 
             $pl = "Operasi Patuh Lalu Lintas";
@@ -29,8 +28,8 @@ class RencanaOperasiSeeder extends Seeder
                 'desc' => "Operasi untuk menindak pengguna roda 2 di jalan raya yang tidak membawa kelengkapan SIM dan STNK",
                 'start_date' => now(),
                 'end_date' => $now->addDays(13),
-                'created_by' => User::whereEmail('korlantas_pusat@gmail.com')->first()->id,
-                'updated_by' => User::whereEmail('korlantas_pusat@gmail.com')->first()->id,
+                'created_by' => User::whereName('korlantas')->first()->id,
+                'updated_by' => User::whereName('korlantas')->first()->id,
             ]);
 
             $ketupat = "Operasi Ketupat";
@@ -41,8 +40,8 @@ class RencanaOperasiSeeder extends Seeder
                 'desc' => "Operasi untuk mengatur arus lalu lintas selama bulan puasa",
                 'start_date' => "2021-04-01",
                 'end_date' => "2021-04-30",
-                'created_by' => User::whereEmail('korlantas_pusat@gmail.com')->first()->id,
-                'updated_by' => User::whereEmail('korlantas_pusat@gmail.com')->first()->id,
+                'created_by' => User::whereName('korlantas')->first()->id,
+                'updated_by' => User::whereName('korlantas')->first()->id,
             ]);
         });
     }
