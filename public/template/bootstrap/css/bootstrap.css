@@ -3200,7 +3200,7 @@ pre code {
 
 .form-control::placeholder {
   font-size: 12px;
-  color: #79859b;
+  color: #00adef;
   opacity: 1;
 }
 

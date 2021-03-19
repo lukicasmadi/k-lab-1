@@ -36,13 +36,7 @@
                                     </h5>
                                     <p>DATA LAPORAN MINGGUAN</p>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="widget-content" style="margin-top: 5%;">
-                                    <div class="mx-auto">
-                                        <div id="donut-chart" class=""></div>
-                                    </div>
-                                </div>
+                                <div id="donut-chart" style="background: #ff0000; paddding: 50px; position: absolute;"></div>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -56,13 +50,7 @@
                                     </h5>
                                     <p>DATA LAPORAN KESELURUHAN</p>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="widget-content" style="margin-top: 5%;">
-                                    <div class="mx-auto">
-                                        <div id="donut-chart-full" class=""></div>
-                                    </div>
-                                </div>
+                                <div id="donut-chart-full" class=""></div>
                             </div>
                         </div>
                     </div>
@@ -118,7 +106,7 @@
 @push('library_css')
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/datatables.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/dt-global_style.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/apex/apexcharts.css') }}" />
+<!-- <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/apex/apexcharts.css') }}" /> -->
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/dashboard/dash_2.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/animate/animate.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/custom.css') }}">
@@ -261,7 +249,7 @@ function donutDataWeekly() {
 
         var donutChart = {
         chart: {
-            height: 250,
+            height: 150,
             type: 'donut',
             toolbar: {
                 show: false,
@@ -336,12 +324,21 @@ function donutDataFull() {
                 }
             }
         },
+        fill: {
+    type: "gradient",
+    gradient: {
+      shadeIntensity: 1,
+      opacityFrom: 0.9,
+      opacityTo: 0.9,
+      stops: [0, 90, 100]
+    }
+  },
         colors:['#136487', '#bc1d26'],
         stroke: {
             colors: '#0e1726'
         },
         series: [filled, nofilled],
-        labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
+        // labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
         responsive: [{
             breakpoint: 480,
             options: {
