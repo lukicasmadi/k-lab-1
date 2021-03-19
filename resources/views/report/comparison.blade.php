@@ -21,16 +21,24 @@
 
                         <div class="form-group">
                             <label>Pilih Tahun Pembanding 1</label>
-                            <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control height-form"></select>
+                            <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control height-form">
+                                @foreach($yearFiltered as $yf){
+                                    <option value="{{ $yf }}">{{ $yf }}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <div class="form-group">
                             <label>Pilih Tahun Pembanding 2</label>
-                            <select id="tahun_pembanding_kedua" name="tahun_pembanding_kedua" class="form-control height-form"></select>
+                            <select id="tahun_pembanding_kedua" name="tahun_pembanding_kedua" class="form-control height-form">
+                                @foreach($yearFiltered as $yf){
+                                    <option value="{{ $yf }}">{{ $yf }}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label>pilih hari</label>
+                            <label>Pilih Hari</label>
                             <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control height-form"></select>
                         </div>
 
@@ -173,22 +181,5 @@
 $(document).ready(function () {
 
 })
-
-var min = new Date().getFullYear()
-var max = min + 5
-var select = document.getElementById('tahun_pembanding_pertama')
-var select_kedua = document.getElementById('tahun_pembanding_kedua')
-
-for (var i = min; i<=max; i++) {
-    var opt = document.createElement('option');
-    opt.value = i;
-    opt.innerHTML = i;
-    select.appendChild(opt);
-
-    var opt_kedua = document.createElement('option');
-    opt_kedua.value = i;
-    opt_kedua.innerHTML = i;
-    select_kedua.appendChild(opt_kedua);
-}
 </script>
 @endpush
