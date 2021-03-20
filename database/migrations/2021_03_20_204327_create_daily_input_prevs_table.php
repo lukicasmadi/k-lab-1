@@ -19,6 +19,7 @@ class CreateDailyInputPrevsTable extends Migration
             $table->foreign('polda_submited_id')->references('id')->on('polda_submiteds');
             $table->unsignedBigInteger('rencana_operasi_id');
             $table->foreign('rencana_operasi_id')->references('id')->on('rencana_operasis');
+            $table->string("year");
             $table->float("pelanggaran_lalu_lintas_tilang_p", 8, 0)->default(0);
             $table->float("pelanggaran_lalu_lintas_teguran_p", 8, 0)->default(0);
             $table->float("pelanggaran_sepeda_motor_gun_helm_sni_p", 8, 0)->default(0);
