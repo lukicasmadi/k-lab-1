@@ -79,7 +79,7 @@
                                     <li class="{{ request()->is('report/daily') ? 'active' : '' }}">
                                         <a href="{{ route('report_daily_all_polda') }}"> Laporan Rekap Harian </a>
                                     </li>
-                                    <li class="{{ request()->is('report/comparison') ? 'active' : '' }}">
+                                    <li class="{{ request()->is('report/analysis-evaluation') ? 'active' : '' }}">
                                         <a href="{{ route('report_comparison') }}"> Laporan Analisa & Evaluasi </a>
                                     </li>
                                 </ul>
@@ -307,14 +307,7 @@
 </div>
 <div class="layout-px-spacing">
     <div class="page-header">
-        <div class="page-title">
-            <h3>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15.556" viewBox="0 0 20 15.556">
-            <path id="text_align_left" d="M16.333,20.556H3V18.333H16.333ZM23,16.111H3V13.889H23Zm-6.667-4.444H3V9.444H16.333ZM23,7.222H3V5H23Z" transform="translate(-3 -5)" fill="#00adef"/>
-            </svg>
-            <span>PAGE NAME</span>
-            </h3>
-        </div>
+        @stack('page_title')
         <div class="toggle-switch">
             <label class="switch s-icons s-outline  s-outline-secondary">
                 <input type="checkbox" checked="" class="theme-shifter" id="changeTheme">
