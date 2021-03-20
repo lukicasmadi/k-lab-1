@@ -6,7 +6,7 @@ use App\Models\PoldaSubmited;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class DailyInput extends Model
+class DailyInputPrev extends Model
 {
     use HasFactory;
 
