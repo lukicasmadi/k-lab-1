@@ -35,7 +35,7 @@
                             </a>
                         </li>
 
-                        @hasanyrole('administrator|access_daerah|access_pusat')
+                        @hasanyrole('administrator|access_pusat')
                         <li class="menu single-menu {{
                             request()->is('operation-plan') ||
                             request()->is('operation-plan/*') ||
@@ -47,21 +47,7 @@
                                 <div>
                                     <span>Rencana Operasi</span>
                                 </div>
-                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg> -->
                             </a>
-                            <!-- <ul class="collapse submenu list-unstyled" id="operation" data-parent="#topAccordion">
-                                @role('access_pusat|administrator')
-                                    <li class="{{ request()->is('operation-plan') || request()->is('operation-plan/*') ? 'active' : '' }}">
-                                        <a href="{{ route('rencana_operasi_index') }}"> Buat Rencana Operasi </a>
-                                    </li>
-                                @endrole
-
-                                @role('access_daerah|administrator')
-                                    <li class="{{ request()->is('operation-onsite') || request()->is('operation-onsite/*') ? 'active' : '' }}">
-                                        <a href="{{ route('phro_index') }}"> Laporan Operasi </a>
-                                    </li>
-                                @endrole
-                            </ul> -->
                         </li>
                         @endhasanyrole
 

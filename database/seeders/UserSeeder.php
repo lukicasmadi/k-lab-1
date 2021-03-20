@@ -360,5 +360,107 @@ class UserSeeder extends Seeder
 
         $access_pusat = User::whereName("korlantas")->first();
         $access_pusat->assignRole('access_pusat');
+
+        $access_pusat = User::whereName("poldaaceh")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldasumut")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldasumbar")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldariau")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldakepri")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldajambi")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldababel")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldabengkulu")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldasumsel")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldalampung")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldabanten")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldametrojaya")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldajabar")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldajateng")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldadiy")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldajatim")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldabali")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldakaltim")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldakalsel")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldakalteng")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldakalbar")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldantb")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldantt")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldasulut")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldasulteng")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldasulsel")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldasultra")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldagorontalo")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldamaluku")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldamalut")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldapapua")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldapabar")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldasulbar")->first();
+        $access_pusat->assignRole('access_daerah');
+
+        $access_pusat = User::whereName("poldakaltara")->first();
+        $access_pusat->assignRole('access_daerah');
     }
 }
