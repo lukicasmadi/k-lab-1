@@ -28,7 +28,7 @@
             @endforeach
         </div>
 
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-1">
             @foreach ($polda as $key => $val)
                 @if ($key >= 17 && $key <= 33)
                     <div class="cols-sm-1">
@@ -351,14 +351,14 @@ function donutData() {
 
         var donutChart = {
         chart: {
-            height: 250,
+            height: 350,
             type: 'donut',
             toolbar: {
                 show: false,
             }
         },
         dataLabels: {
-            enabled: true,
+            enabled: false,
             formatter: function (val) {
                 return val + "%"
             },
@@ -366,21 +366,67 @@ function donutData() {
         tooltip: {
             y: {
                 formatter: function(value) {
-                    return value + " %";
+                    return value + "%";
                 }
             }
         },
-        colors:['#136487', '#bc1d26'],
+        fill: {
+            type: "gradient",
+            gradient: {
+            shadeIntensity: 0.8,
+            opacityFrom: 0.9,
+            opacityTo: 0.9,
+            stops: [0, 90, 100]
+            }
+        },
+        colors:['#00adef', '#ea1c26'],
+        plotOptions: {
+          pie: {
+            donut: {
+              size: '65%',
+              background: 'transparent',
+              labels: {
+                show: true,
+                name: {
+                  show: true,
+                  fontSize: '12px',
+                  color: undefined,
+                  offsetY: -10,
+                },
+                value: {
+                  show: true,
+                  fontSize: '50px',
+                  color: '20',
+                  offsetY: 16,
+                  formatter: function (val) {
+                    return val + "%"
+                  }
+                },
+                total: {
+                  show: true,
+                  showAlways: false,
+                  label: 'TOTAL DATA',
+                  color: '#888ea8',
+                  formatter: function (w) {
+                    return w.globals.seriesTotals.reduce( function(a, b) {
+                      return a + b + "%"
+                    })
+                  }
+                }
+              }
+            }
+          }
+        },
         stroke: {
-            colors: '#0e1726'
+            show: false,
         },
         series: [filled, nofilled],
         labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
         responsive: [{
-            breakpoint: 480,
+            breakpoint: 1439,
             options: {
                 chart: {
-                    width: 200
+                    width: 300
                 },
                 legend: {
                     position: 'bottom'
