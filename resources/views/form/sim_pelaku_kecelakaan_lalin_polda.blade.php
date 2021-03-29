@@ -34,8 +34,8 @@
                                 A. A
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_a_prev') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_a_prev" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_a_prev') }}">
-                                    @error('sim_pelaku_kecelakaan_sim_a_prev')
+                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_a_p') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_a_p" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_a_p') }}">
+                                    @error('sim_pelaku_kecelakaan_sim_a_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -59,8 +59,8 @@
                                 B. A UMUM
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_a_umum_prev') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_a_umum_prev" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_a_umum_prev') }}">
-                                    @error('sim_pelaku_kecelakaan_sim_a_umum_prev')
+                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_a_umum_p') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_a_umum_p" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_a_umum_p') }}">
+                                    @error('sim_pelaku_kecelakaan_sim_a_umum_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -84,8 +84,8 @@
                                 C. B1
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_b1_prev') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_b1_prev" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_b1_prev') }}">
-                                    @error('sim_pelaku_kecelakaan_sim_b1_prev')
+                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_b1_p') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_b1_p" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_b1_p') }}">
+                                    @error('sim_pelaku_kecelakaan_sim_b1_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -109,8 +109,8 @@
                                 D. B1 UMUM
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_b1_umum_prev') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_b1_umum_prev" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_b1_umum_prev') }}">
-                                    @error('sim_pelaku_kecelakaan_sim_b1_umum_prev')
+                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_b1_umum_p') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_b1_umum_p" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_b1_umum_p') }}">
+                                    @error('sim_pelaku_kecelakaan_sim_b1_umum_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -134,8 +134,8 @@
                                 E. BII
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_b2_prev') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_b2_prev" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_b2_prev') }}">
-                                    @error('sim_pelaku_kecelakaan_sim_b2_prev')
+                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_b2_p') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_b2_p" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_b2_p') }}">
+                                    @error('sim_pelaku_kecelakaan_sim_b2_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -159,8 +159,8 @@
                                 F. B II UMUM
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_b2_umum_prev') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_b2_umum_prev" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_b2_umum_prev') }}">
-                                    @error('sim_pelaku_kecelakaan_sim_b2_umum_prev')
+                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_b2_umum_p') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_b2_umum_p" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_b2_umum_p') }}">
+                                    @error('sim_pelaku_kecelakaan_sim_b2_umum_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -184,8 +184,8 @@
                                 G. C
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_c_prev') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_c_prev" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_c_prev') }}">
-                                    @error('sim_pelaku_kecelakaan_sim_c_prev')
+                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_c_p') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_c_p" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_c_p') }}">
+                                    @error('sim_pelaku_kecelakaan_sim_c_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -209,8 +209,8 @@
                                 H. D
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_d_prev') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_d_prev" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_d_prev') }}">
-                                    @error('sim_pelaku_kecelakaan_sim_d_prev')
+                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_d_p') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_d_p" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_d_p') }}">
+                                    @error('sim_pelaku_kecelakaan_sim_d_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -234,8 +234,8 @@
                                 I. SIM INTERNASIONAL
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_internasional_prev') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_internasional_prev" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_internasional_prev') }}">
-                                    @error('sim_pelaku_kecelakaan_sim_internasional_prev')
+                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_sim_internasional_p') is-invalid @enderror" name="sim_pelaku_kecelakaan_sim_internasional_p" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_sim_internasional_p') }}">
+                                    @error('sim_pelaku_kecelakaan_sim_internasional_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -259,8 +259,8 @@
                                 J. TANPA SIM
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_tanpa_sim_prev') is-invalid @enderror" name="sim_pelaku_kecelakaan_tanpa_sim_prev" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_tanpa_sim_prev') }}">
-                                    @error('sim_pelaku_kecelakaan_tanpa_sim_prev')
+                                    <input type="number" class="form-onsite @error('sim_pelaku_kecelakaan_tanpa_sim_p') is-invalid @enderror" name="sim_pelaku_kecelakaan_tanpa_sim_p" autocomplete="off" value="{{ old('sim_pelaku_kecelakaan_tanpa_sim_p') }}">
+                                    @error('sim_pelaku_kecelakaan_tanpa_sim_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

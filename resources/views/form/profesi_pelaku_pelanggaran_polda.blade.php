@@ -34,8 +34,8 @@
                                 A. PEGAWAI NEGERI SIPIL
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_pelanggaran_pns_prev') is-invalid @enderror" name="profesi_pelaku_pelanggaran_pns_prev" autocomplete="off" value="{{ old('profesi_pelaku_pelanggaran_pns_prev') }}">
-                                    @error('profesi_pelaku_pelanggaran_pns_prev')
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_pelanggaran_pns_p') is-invalid @enderror" name="profesi_pelaku_pelanggaran_pns_p" autocomplete="off" value="{{ old('profesi_pelaku_pelanggaran_pns_p') }}">
+                                    @error('profesi_pelaku_pelanggaran_pns_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -59,8 +59,8 @@
                                 B. KARYAWAN SWASTA
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_pelanggaran_karyawan_swasta_prev') is-invalid @enderror" name="profesi_pelaku_pelanggaran_karyawan_swasta_prev" autocomplete="off" value="{{ old('profesi_pelaku_pelanggaran_karyawan_swasta_prev') }}">
-                                    @error('profesi_pelaku_pelanggaran_karyawan_swasta_prev')
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_pelanggaran_karyawan_swasta_p') is-invalid @enderror" name="profesi_pelaku_pelanggaran_karyawan_swasta_p" autocomplete="off" value="{{ old('profesi_pelaku_pelanggaran_karyawan_swasta_p') }}">
+                                    @error('profesi_pelaku_pelanggaran_karyawan_swasta_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -84,8 +84,8 @@
                                 C. PELAJAR/MAHASISWA
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_pelanggaran_pelajar_mahasiswa_prev') is-invalid @enderror" name="profesi_pelaku_pelanggaran_pelajar_mahasiswa_prev" autocomplete="off" value="{{ old('profesi_pelaku_pelanggaran_pelajar_mahasiswa_prev') }}">
-                                    @error('profesi_pelaku_pelanggaran_pelajar_mahasiswa_prev')
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_pelanggaran_pelajar_mahasiswa_p') is-invalid @enderror" name="profesi_pelaku_pelanggaran_pelajar_mahasiswa_p" autocomplete="off" value="{{ old('profesi_pelaku_pelanggaran_pelajar_mahasiswa_p') }}">
+                                    @error('profesi_pelaku_pelanggaran_pelajar_mahasiswa_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -109,8 +109,8 @@
                                 D. PENGEMUDI(SUPIR)
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_pelanggaran_pengemudi_supir_prev') is-invalid @enderror" name="profesi_pelaku_pelanggaran_pengemudi_supir_prev" autocomplete="off" value="{{ old('profesi_pelaku_pelanggaran_pengemudi_supir_prev') }}">
-                                    @error('profesi_pelaku_pelanggaran_pengemudi_supir_prev')
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_pelanggaran_pengemudi_supir_p') is-invalid @enderror" name="profesi_pelaku_pelanggaran_pengemudi_supir_p" autocomplete="off" value="{{ old('profesi_pelaku_pelanggaran_pengemudi_supir_p') }}">
+                                    @error('profesi_pelaku_pelanggaran_pengemudi_supir_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -134,8 +134,8 @@
                                 E. TNI
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_pelanggaran_tni_prev') is-invalid @enderror" name="profesi_pelaku_pelanggaran_tni_prev" autocomplete="off" value="{{ old('profesi_pelaku_pelanggaran_tni_prev') }}">
-                                    @error('profesi_pelaku_pelanggaran_tni_prev')
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_pelanggaran_tni_p') is-invalid @enderror" name="profesi_pelaku_pelanggaran_tni_p" autocomplete="off" value="{{ old('profesi_pelaku_pelanggaran_tni_p') }}">
+                                    @error('profesi_pelaku_pelanggaran_tni_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -159,8 +159,8 @@
                                 F. POLRI
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_pelanggaran_polri_prev') is-invalid @enderror" name="profesi_pelaku_pelanggaran_polri_prev" autocomplete="off" value="{{ old('profesi_pelaku_pelanggaran_polri_prev') }}">
-                                    @error('profesi_pelaku_pelanggaran_polri_prev')
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_pelanggaran_polri_p') is-invalid @enderror" name="profesi_pelaku_pelanggaran_polri_p" autocomplete="off" value="{{ old('profesi_pelaku_pelanggaran_polri_p') }}">
+                                    @error('profesi_pelaku_pelanggaran_polri_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -184,8 +184,8 @@
                                 G. LAIN-LAIN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_pelanggaran_lain_lain_prev') is-invalid @enderror" name="profesi_pelaku_pelanggaran_lain_lain_prev" autocomplete="off" value="{{ old('profesi_pelaku_pelanggaran_lain_lain_prev') }}">
-                                    @error('profesi_pelaku_pelanggaran_lain_lain_prev')
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_pelanggaran_lain_lain_p') is-invalid @enderror" name="profesi_pelaku_pelanggaran_lain_lain_p" autocomplete="off" value="{{ old('profesi_pelaku_pelanggaran_lain_lain_p') }}">
+                                    @error('profesi_pelaku_pelanggaran_lain_lain_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

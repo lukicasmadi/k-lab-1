@@ -34,8 +34,8 @@
                                 A. KECELAKAAN KERETA API
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kecelakaan_transportasi_kereta_api_prev') is-invalid @enderror" name="kecelakaan_transportasi_kereta_api_prev" autocomplete="off" value="{{ old('kecelakaan_transportasi_kereta_api_prev') }}">
-                                    @error('kecelakaan_transportasi_kereta_api_prev')
+                                    <input type="number" class="form-onsite @error('kecelakaan_transportasi_kereta_api_p') is-invalid @enderror" name="kecelakaan_transportasi_kereta_api_p" autocomplete="off" value="{{ old('kecelakaan_transportasi_kereta_api_p') }}">
+                                    @error('kecelakaan_transportasi_kereta_api_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -59,8 +59,8 @@
                                 B. KECELAKAAN LAUT / PERAIRAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kecelakaan_transportasi_laut_perairan_prev') is-invalid @enderror" name="kecelakaan_transportasi_laut_perairan_prev" autocomplete="off" value="{{ old('kecelakaan_transportasi_laut_perairan_prev') }}">
-                                    @error('kecelakaan_transportasi_laut_perairan_prev')
+                                    <input type="number" class="form-onsite @error('kecelakaan_transportasi_laut_perairan_p') is-invalid @enderror" name="kecelakaan_transportasi_laut_perairan_p" autocomplete="off" value="{{ old('kecelakaan_transportasi_laut_perairan_p') }}">
+                                    @error('kecelakaan_transportasi_laut_perairan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -84,8 +84,8 @@
                                 C. KECELAKAAN UDARA
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kecelakaan_transportasi_udara_prev') is-invalid @enderror" name="kecelakaan_transportasi_udara_prev" autocomplete="off" value="{{ old('kecelakaan_transportasi_udara_prev') }}">
-                                    @error('kecelakaan_transportasi_udara_prev')
+                                    <input type="number" class="form-onsite @error('kecelakaan_transportasi_udara_p') is-invalid @enderror" name="kecelakaan_transportasi_udara_p" autocomplete="off" value="{{ old('kecelakaan_transportasi_udara_p') }}">
+                                    @error('kecelakaan_transportasi_udara_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

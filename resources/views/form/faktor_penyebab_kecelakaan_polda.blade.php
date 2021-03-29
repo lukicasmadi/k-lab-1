@@ -34,8 +34,8 @@
                                 1. MANUSIA
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_manusia_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_manusia_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_manusia_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_manusia_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_manusia_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_manusia_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_manusia_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_manusia_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -59,8 +59,8 @@
                                A. NGANTUK/LELAH (PSL 283)
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_ngantuk_lelah_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_ngantuk_lelah_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_ngantuk_lelah_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_ngantuk_lelah_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_ngantuk_lelah_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_ngantuk_lelah_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_ngantuk_lelah_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_ngantuk_lelah_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -84,8 +84,8 @@
                                 B. MABUK /PENGARUH ALKOHOL DAN OBAT (PSL 283)
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_mabuk_obat_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_mabuk_obat_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_mabuk_obat_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_mabuk_obat_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_mabuk_obat_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_mabuk_obat_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_mabuk_obat_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_mabuk_obat_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -109,8 +109,8 @@
                                 C. SAKIT (PSL 283)
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_sakit_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_sakit_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_sakit_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_sakit_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_sakit_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_sakit_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_sakit_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_sakit_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -134,8 +134,8 @@
                                 D. HAND PHONE/ ALAT ELEKTRONIK LAIN (PSL 283)
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_handphone_elektronik_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_handphone_elektronik_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_handphone_elektronik_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_handphone_elektronik_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_handphone_elektronik_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_handphone_elektronik_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_handphone_elektronik_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_handphone_elektronik_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -159,8 +159,8 @@
                                 E. MENEROBOS LAMPU MERAH(PSL 287 AY 2)
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_menerobos_lampu_merah_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_menerobos_lampu_merah_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_menerobos_lampu_merah_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_menerobos_lampu_merah_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_menerobos_lampu_merah_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_menerobos_lampu_merah_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_menerobos_lampu_merah_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_menerobos_lampu_merah_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -184,8 +184,8 @@
                                 F. MELANGGAR BATAS KECEPATAN (PSL 287 AY 7)
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_melanggar_batas_kecepatan_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_melanggar_batas_kecepatan_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_melanggar_batas_kecepatan_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_melanggar_batas_kecepatan_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_melanggar_batas_kecepatan_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_melanggar_batas_kecepatan_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_melanggar_batas_kecepatan_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_melanggar_batas_kecepatan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -209,8 +209,8 @@
                                 G. TIDAK MENJAGA JARAK
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_tidak_menjaga_jarak_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_tidak_menjaga_jarak_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_tidak_menjaga_jarak_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_tidak_menjaga_jarak_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_tidak_menjaga_jarak_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_tidak_menjaga_jarak_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_tidak_menjaga_jarak_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_tidak_menjaga_jarak_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -234,8 +234,8 @@
                                 H. MENDAHULUI/BERBELOK/BERPINDAH JALUR (PSL 294)
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -259,8 +259,8 @@
                                 I. BERPINDAH LAJUR ( PSL 295)
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_berpindah_jalur_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_berpindah_jalur_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_berpindah_jalur_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_berpindah_jalur_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_berpindah_jalur_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_berpindah_jalur_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_berpindah_jalur_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_berpindah_jalur_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -284,8 +284,8 @@
                                 J. TIDAK MEMBERIKAN LAMPU ISYARAT BERHENTI/BERBELOK/BERUBAH ARAH
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -309,8 +309,8 @@
                                 K. TIDAK MENGUTAMAKAN PEJALAN KAKI (PSL 284 JO 106 AY 2)
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -334,8 +334,8 @@
                                 L. LAINNYA
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_lainnya_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_lainnya_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_lainnya_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_lainnya_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_lainnya_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_lainnya_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_lainnya_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_lainnya_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -359,8 +359,8 @@
                                 2. ALAM
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_alam_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_alam_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_alam_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_alam_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_alam_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_alam_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_alam_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_alam_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -384,8 +384,8 @@
                                 3. KELAIKAN KENDARAAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_kelaikan_kendaraan_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_kelaikan_kendaraan_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_kelaikan_kendaraan_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_kelaikan_kendaraan_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_kelaikan_kendaraan_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_kelaikan_kendaraan_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_kelaikan_kendaraan_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_kelaikan_kendaraan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -409,8 +409,8 @@
                                 4. JALAN (KONDISI JALAN)
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_kondisi_jalan_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_kondisi_jalan_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_kondisi_jalan_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_kondisi_jalan_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_kondisi_jalan_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_kondisi_jalan_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_kondisi_jalan_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_kondisi_jalan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -434,8 +434,8 @@
                                 5. PRASARANA JALAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_prasarana_jalan_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_prasarana_jalan_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_prasarana_jalan_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_prasarana_jalan_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_prasarana_jalan_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_prasarana_jalan_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_prasarana_jalan_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_prasarana_jalan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -459,8 +459,8 @@
                                 A. RAMBU
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_rambu_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_rambu_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_rambu_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_rambu_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_rambu_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_rambu_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_rambu_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_rambu_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -484,8 +484,8 @@
                                 B. MARKA
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_marka_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_marka_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_marka_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_marka_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_marka_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_marka_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_marka_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_marka_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -509,8 +509,8 @@
                                 C. APIL
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_apil_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_apil_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_apil_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_apil_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_apil_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_apil_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_apil_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_apil_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -534,8 +534,8 @@
                                 D. PERLINTASAN KA TANPA PALANG PINTU
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu_prev') }}">
-                                    @error('faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu_prev')
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu_p') is-invalid @enderror" name="faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu_p" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu_p') }}">
+                                    @error('faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

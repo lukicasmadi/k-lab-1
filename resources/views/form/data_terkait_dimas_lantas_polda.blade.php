@@ -54,8 +54,8 @@
                                 1. MELALUI MEDIA CETAK
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('penlu_melalui_media_cetak_prev') is-invalid @enderror" name="penlu_melalui_media_cetak_prev" autocomplete="off" value="{{ old('penlu_melalui_media_cetak_prev') }}">
-                                    @error('penlu_melalui_media_cetak_prev')
+                                    <input type="number" class="form-onsite @error('penlu_melalui_media_cetak_p') is-invalid @enderror" name="penlu_melalui_media_cetak_p" autocomplete="off" value="{{ old('penlu_melalui_media_cetak_p') }}">
+                                    @error('penlu_melalui_media_cetak_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -79,8 +79,8 @@
                                 2. MELALUI MEDIA ELEKTRONIK
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('penlu_melalui_media_elektronik_prev') is-invalid @enderror" name="penlu_melalui_media_elektronik_prev" autocomplete="off" value="{{ old('penlu_melalui_media_elektronik_prev') }}">
-                                    @error('penlu_melalui_media_elektronik_prev')
+                                    <input type="number" class="form-onsite @error('penlu_melalui_media_elektronik_p') is-invalid @enderror" name="penlu_melalui_media_elektronik_p" autocomplete="off" value="{{ old('penlu_melalui_media_elektronik_p') }}">
+                                    @error('penlu_melalui_media_elektronik_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -104,8 +104,8 @@
                                 3. TEMPAT KERAMAIAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('penlu_melalui_tempat_keramaian_prev') is-invalid @enderror" name="penlu_melalui_tempat_keramaian_prev" autocomplete="off" value="{{ old('penlu_melalui_tempat_keramaian_prev') }}">
-                                    @error('penlu_melalui_tempat_keramaian_prev')
+                                    <input type="number" class="form-onsite @error('penlu_melalui_tempat_keramaian_p') is-invalid @enderror" name="penlu_melalui_tempat_keramaian_p" autocomplete="off" value="{{ old('penlu_melalui_tempat_keramaian_p') }}">
+                                    @error('penlu_melalui_tempat_keramaian_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -129,8 +129,8 @@
                                 4. TEMPAT ISTIRAHAT
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('penlu_melalui_tempat_istirahat_prev') is-invalid @enderror" name="penlu_melalui_tempat_istirahat_prev" autocomplete="off" value="{{ old('penlu_melalui_tempat_istirahat_prev') }}">
-                                    @error('penlu_melalui_tempat_istirahat_prev')
+                                    <input type="number" class="form-onsite @error('penlu_melalui_tempat_istirahat_p') is-invalid @enderror" name="penlu_melalui_tempat_istirahat_p" autocomplete="off" value="{{ old('penlu_melalui_tempat_istirahat_p') }}">
+                                    @error('penlu_melalui_tempat_istirahat_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -154,8 +154,8 @@
                                 5. DAERAH RAWAN LAKA & LANGGAR
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('penlu_melalui_daerah_rawan_laka_dan_langgar_prev') is-invalid @enderror" name="penlu_melalui_daerah_rawan_laka_dan_langgar_prev" autocomplete="off" value="{{ old('penlu_melalui_daerah_rawan_laka_dan_langgar_prev') }}">
-                                    @error('penlu_melalui_daerah_rawan_laka_dan_langgar_prev')
+                                    <input type="number" class="form-onsite @error('penlu_melalui_daerah_rawan_laka_dan_langgar_p') is-invalid @enderror" name="penlu_melalui_daerah_rawan_laka_dan_langgar_p" autocomplete="off" value="{{ old('penlu_melalui_daerah_rawan_laka_dan_langgar_p') }}">
+                                    @error('penlu_melalui_daerah_rawan_laka_dan_langgar_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -188,8 +188,8 @@
                                 1. SPANDUK
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('penyebaran_pemasangan_spanduk_prev') is-invalid @enderror" name="penyebaran_pemasangan_spanduk_prev" autocomplete="off" value="{{ old('penyebaran_pemasangan_spanduk_prev') }}">
-                                    @error('penyebaran_pemasangan_spanduk_prev')
+                                    <input type="number" class="form-onsite @error('penyebaran_pemasangan_spanduk_p') is-invalid @enderror" name="penyebaran_pemasangan_spanduk_p" autocomplete="off" value="{{ old('penyebaran_pemasangan_spanduk_p') }}">
+                                    @error('penyebaran_pemasangan_spanduk_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -213,8 +213,8 @@
                                 2. LEAFLET
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('penyebaran_pemasangan_leaflet_prev') is-invalid @enderror" name="penyebaran_pemasangan_leaflet_prev" autocomplete="off" value="{{ old('penyebaran_pemasangan_leaflet_prev') }}">
-                                    @error('penyebaran_pemasangan_leaflet_prev')
+                                    <input type="number" class="form-onsite @error('penyebaran_pemasangan_leaflet_p') is-invalid @enderror" name="penyebaran_pemasangan_leaflet_p" autocomplete="off" value="{{ old('penyebaran_pemasangan_leaflet_p') }}">
+                                    @error('penyebaran_pemasangan_leaflet_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -238,8 +238,8 @@
                                 3. STICKER
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('penyebaran_pemasangan_sticker_prev') is-invalid @enderror" name="penyebaran_pemasangan_sticker_prev" autocomplete="off" value="{{ old('penyebaran_pemasangan_sticker_prev') }}">
-                                    @error('penyebaran_pemasangan_sticker_prev')
+                                    <input type="number" class="form-onsite @error('penyebaran_pemasangan_sticker_p') is-invalid @enderror" name="penyebaran_pemasangan_sticker_p" autocomplete="off" value="{{ old('penyebaran_pemasangan_sticker_p') }}">
+                                    @error('penyebaran_pemasangan_sticker_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -263,8 +263,8 @@
                                 4. BILBOARD
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('penyebaran_pemasangan_bilboard_prev') is-invalid @enderror" name="penyebaran_pemasangan_bilboard_prev" autocomplete="off" value="{{ old('penyebaran_pemasangan_bilboard_prev') }}">
-                                    @error('penyebaran_pemasangan_bilboard_prev')
+                                    <input type="number" class="form-onsite @error('penyebaran_pemasangan_bilboard_p') is-invalid @enderror" name="penyebaran_pemasangan_bilboard_p" autocomplete="off" value="{{ old('penyebaran_pemasangan_bilboard_p') }}">
+                                    @error('penyebaran_pemasangan_bilboard_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -297,8 +297,8 @@
                                 1. POLISI SAHABAT ANAK
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('polisi_sahabat_anak_prev') is-invalid @enderror" name="polisi_sahabat_anak_prev" autocomplete="off" value="{{ old('polisi_sahabat_anak_prev') }}">
-                                    @error('polisi_sahabat_anak_prev')
+                                    <input type="number" class="form-onsite @error('polisi_sahabat_anak_p') is-invalid @enderror" name="polisi_sahabat_anak_p" autocomplete="off" value="{{ old('polisi_sahabat_anak_p') }}">
+                                    @error('polisi_sahabat_anak_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -322,8 +322,8 @@
                                 2. CARA AMAN SEKOLAH
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('cara_aman_sekolah_prev') is-invalid @enderror" name="cara_aman_sekolah_prev" autocomplete="off" value="{{ old('cara_aman_sekolah_prev') }}">
-                                    @error('cara_aman_sekolah_prev')
+                                    <input type="number" class="form-onsite @error('cara_aman_sekolah_p') is-invalid @enderror" name="cara_aman_sekolah_p" autocomplete="off" value="{{ old('cara_aman_sekolah_p') }}">
+                                    @error('cara_aman_sekolah_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -347,8 +347,8 @@
                                 3. PATROLI KEAMANAN SEKOLAH
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('patroli_keamanan_sekolah_prev') is-invalid @enderror" name="patroli_keamanan_sekolah_prev" autocomplete="off" value="{{ old('patroli_keamanan_sekolah_prev') }}">
-                                    @error('patroli_keamanan_sekolah_prev')
+                                    <input type="number" class="form-onsite @error('patroli_keamanan_sekolah_p') is-invalid @enderror" name="patroli_keamanan_sekolah_p" autocomplete="off" value="{{ old('patroli_keamanan_sekolah_p') }}">
+                                    @error('patroli_keamanan_sekolah_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -372,8 +372,8 @@
                                 4. PRAMUKA SAKA BHAYANGKARA KRIDA LALU LINTAS
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pramuka_bhayangkara_krida_lalu_lintas_prev') is-invalid @enderror" name="pramuka_bhayangkara_krida_lalu_lintas_prev" autocomplete="off" value="{{ old('pramuka_bhayangkara_krida_lalu_lintas_prev') }}">
-                                    @error('pramuka_bhayangkara_krida_lalu_lintas_prev')
+                                    <input type="number" class="form-onsite @error('pramuka_bhayangkara_krida_lalu_lintas_p') is-invalid @enderror" name="pramuka_bhayangkara_krida_lalu_lintas_p" autocomplete="off" value="{{ old('pramuka_bhayangkara_krida_lalu_lintas_p') }}">
+                                    @error('pramuka_bhayangkara_krida_lalu_lintas_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -406,8 +406,8 @@
                                 1. POLICE GOES TO CAMPUS
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('police_goes_to_campus_prev') is-invalid @enderror" name="police_goes_to_campus_prev" autocomplete="off" value="{{ old('police_goes_to_campus_prev') }}">
-                                    @error('police_goes_to_campus_prev')
+                                    <input type="number" class="form-onsite @error('police_goes_to_campus_p') is-invalid @enderror" name="police_goes_to_campus_p" autocomplete="off" value="{{ old('police_goes_to_campus_p') }}">
+                                    @error('police_goes_to_campus_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -431,8 +431,8 @@
                                 2. SAFETY RIDING & DRIVING
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('safety_riding_driving_prev') is-invalid @enderror" name="safety_riding_driving_prev" autocomplete="off" value="{{ old('safety_riding_driving_prev') }}">
-                                    @error('safety_riding_driving_prev')
+                                    <input type="number" class="form-onsite @error('safety_riding_driving_p') is-invalid @enderror" name="safety_riding_driving_p" autocomplete="off" value="{{ old('safety_riding_driving_p') }}">
+                                    @error('safety_riding_driving_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -456,8 +456,8 @@
                                 3. FORUM LALU LINTAS & ANGKUTAN JALAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('forum_lalu_lintas_angkutan_umum_prev') is-invalid @enderror" name="forum_lalu_lintas_angkutan_umum_prev" autocomplete="off" value="{{ old('forum_lalu_lintas_angkutan_umum_prev') }}">
-                                    @error('forum_lalu_lintas_angkutan_umum_prev')
+                                    <input type="number" class="form-onsite @error('forum_lalu_lintas_angkutan_umum_p') is-invalid @enderror" name="forum_lalu_lintas_angkutan_umum_p" autocomplete="off" value="{{ old('forum_lalu_lintas_angkutan_umum_p') }}">
+                                    @error('forum_lalu_lintas_angkutan_umum_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -481,8 +481,8 @@
                                 4. KAMPANYE KESELAMATAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kampanye_keselamatan_prev') is-invalid @enderror" name="kampanye_keselamatan_prev" autocomplete="off" value="{{ old('kampanye_keselamatan_prev') }}">
-                                    @error('kampanye_keselamatan_prev')
+                                    <input type="number" class="form-onsite @error('kampanye_keselamatan_p') is-invalid @enderror" name="kampanye_keselamatan_p" autocomplete="off" value="{{ old('kampanye_keselamatan_p') }}">
+                                    @error('kampanye_keselamatan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -506,8 +506,8 @@
                                 5. SEKOLAH MENGEMUDI
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('sekolah_mengemudi_prev') is-invalid @enderror" name="sekolah_mengemudi_prev" autocomplete="off" value="{{ old('sekolah_mengemudi_prev') }}">
-                                    @error('sekolah_mengemudi_prev')
+                                    <input type="number" class="form-onsite @error('sekolah_mengemudi_p') is-invalid @enderror" name="sekolah_mengemudi_p" autocomplete="off" value="{{ old('sekolah_mengemudi_p') }}">
+                                    @error('sekolah_mengemudi_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -531,8 +531,8 @@
                                 6. TAMAN LALU LINTAS
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('taman_lalu_lintas_prev') is-invalid @enderror" name="taman_lalu_lintas_prev" autocomplete="off" value="{{ old('taman_lalu_lintas_prev') }}">
-                                    @error('taman_lalu_lintas_prev')
+                                    <input type="number" class="form-onsite @error('taman_lalu_lintas_p') is-invalid @enderror" name="taman_lalu_lintas_p" autocomplete="off" value="{{ old('taman_lalu_lintas_p') }}">
+                                    @error('taman_lalu_lintas_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -556,8 +556,8 @@
                                 7. GLOBAL ROAD SAFETY PARTNERSHIP ACTION
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('global_road_safety_partnership_action_prev') is-invalid @enderror" name="global_road_safety_partnership_action_prev" autocomplete="off" value="{{ old('global_road_safety_partnership_action_prev') }}">
-                                    @error('global_road_safety_partnership_action_prev')
+                                    <input type="number" class="form-onsite @error('global_road_safety_partnership_action_p') is-invalid @enderror" name="global_road_safety_partnership_action_p" autocomplete="off" value="{{ old('global_road_safety_partnership_action_p') }}">
+                                    @error('global_road_safety_partnership_action_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

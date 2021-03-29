@@ -66,7 +66,7 @@
 
 $(function () {
     $("input[type=number]").val("5")
-    // $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
+    $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
 });
 </script>
 @endpush

@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use App\Models\UserHasPolda;
 use Illuminate\Http\Request;
 use App\Models\PoldaSubmited;
+use App\Models\DailyInputPrev;
 use App\Http\Requests\PHRORequest;
 use Illuminate\Support\Facades\DB;
 use App\Exports\PoldaSubmitedExport;
@@ -83,9 +84,16 @@ class PoldaHasRencanaOperasiController extends Controller
             $payload = $request->except(['_token', 'submit']);
             $payload["polda_submited_id"] = $poldaSubmit->id;
             $payload["rencana_operasi_id"] = operationPlans()->id;
-            $payload["year"] = date("Y");
+            $payload["year"] = year();
+
+            $payloadPrev = $request->except(['_token', 'submit']);
+            $payloadPrev["polda_submited_id"] = $poldaSubmit->id;
+            $payloadPrev["rencana_operasi_id"] = operationPlans()->id;
+            $payloadPrev["year"] = yearMinus();
 
             DailyInput::create($payload);
+
+            DailyInputPrev::create($payloadPrev);
 
             DB::commit();
             flash('Seluruh data berhasil dikirim ke pusat')->success();

@@ -45,8 +45,8 @@
                                 A. PENGATURAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('giat_lantas_pengaturan_prev') is-invalid @enderror" name="giat_lantas_pengaturan_prev" autocomplete="off" value="{{ old('giat_lantas_pengaturan_prev') }}">
-                                    @error('giat_lantas_pengaturan_prev')
+                                    <input type="number" class="form-onsite @error('giat_lantas_pengaturan_p') is-invalid @enderror" name="giat_lantas_pengaturan_p" autocomplete="off" value="{{ old('giat_lantas_pengaturan_p') }}">
+                                    @error('giat_lantas_pengaturan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -70,8 +70,8 @@
                                 B. PENJAGAAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('giat_lantas_penjagaan_prev') is-invalid @enderror" name="giat_lantas_penjagaan_prev" autocomplete="off" value="{{ old('giat_lantas_penjagaan_prev') }}">
-                                    @error('giat_lantas_penjagaan_prev')
+                                    <input type="number" class="form-onsite @error('giat_lantas_penjagaan_p') is-invalid @enderror" name="giat_lantas_penjagaan_p" autocomplete="off" value="{{ old('giat_lantas_penjagaan_p') }}">
+                                    @error('giat_lantas_penjagaan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -95,8 +95,8 @@
                                 C. PENGAWALAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('giat_lantas_pengawalan_prev') is-invalid @enderror" name="giat_lantas_pengawalan_prev" autocomplete="off" value="{{ old('giat_lantas_pengawalan_prev') }}">
-                                    @error('giat_lantas_pengawalan_prev')
+                                    <input type="number" class="form-onsite @error('giat_lantas_pengawalan_p') is-invalid @enderror" name="giat_lantas_pengawalan_p" autocomplete="off" value="{{ old('giat_lantas_pengawalan_p') }}">
+                                    @error('giat_lantas_pengawalan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -120,8 +120,8 @@
                                 D. PATROLI
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('giat_lantas_patroli_prev') is-invalid @enderror" name="giat_lantas_patroli_prev" autocomplete="off" value="{{ old('giat_lantas_patroli_prev') }}">
-                                    @error('giat_lantas_patroli_prev')
+                                    <input type="number" class="form-onsite @error('giat_lantas_patroli_p') is-invalid @enderror" name="giat_lantas_patroli_p" autocomplete="off" value="{{ old('giat_lantas_patroli_p') }}">
+                                    @error('giat_lantas_patroli_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
