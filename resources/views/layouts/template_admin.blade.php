@@ -15,6 +15,7 @@
     <link href="{{ secure_asset('template/fontawesome5.15.1/css/all.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ secure_asset('template/assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ secure_asset('template/plugins/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ secure_asset('template/assets/css/components/tabs-accordian/custom-accordions.css') }}" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
     @stack('library_css')
     @stack('page_css')
@@ -57,6 +58,7 @@
     <script src="{{ secure_asset('template/globalfunction.js') }}"></script>
     <script src="{{ secure_asset('template/assets/js/app.js') }}"></script>
     <script src="{{ secure_asset('template/plugins/select2/select2.min.js') }}"></script>
+    <script src="{{ secure_asset('template/assets/js/components/ui-accordions.js') }}"></script>
     <script>
         $(document).ready(function() {
             App.init();

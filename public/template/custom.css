@@ -307,11 +307,9 @@ mark {
 }
 
 blockquote.blockquote {
-    color: #009688;
-    padding: 20px 20px 20px 14px;
-    font-size: 18px;
-    background-color: #1b2e4b;
-    border-bottom-right-radius: 8px;
+    padding: 10px 30px;
+    background-color: rgb(0, 173, 239, 0.1);
+    /* border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
     border: 1px solid #1b2e4b;
     border-left-color: rgb(27, 46, 75);
@@ -320,7 +318,48 @@ blockquote.blockquote {
     border-left-color: rgb(27, 46, 75);
     border-left-style: solid;
     border-left-width: 1px;
-    border-left: 5px solid #009688;
+    border-left: 5px solid #009688; */
+}
+
+blockquote.blockquote p {
+    color: #00adef;
+    font-size: 17px;
+}
+
+blockquote.blockquote span {
+    display: block;
+    color: #79859b;
+    font-size: 14px;
+}
+
+.button-onsite span{
+    position: absolute;
+    margin-top: -40px;
+    float: right;
+    right: 0;
+    text-transform: uppercase;
+    padding: 8px 25px;
+     box-shadow: 0 0 6px 0 #00adef;
+    border: solid 1px #00adef;
+    color: #00adef;
+}
+
+.button-onsite span.inputan{
+     background: #00adef;
+     color: #fff;
+     font-size: 13px;
+     margin-right: 45px;
+}
+
+.button-onsite span.seehow{
+    color: #00adef;
+    font-size: 13px;
+    margin-right: 190px;
+}
+
+.line-onsite {
+    border-bottom: solid 1px #105c7c;
+    padding: 10px 0 0 0;
 }
 
 .loadingWhite {
