@@ -161,7 +161,7 @@ if (! function_exists('poldaId')) {
 
 if (! function_exists('poldaName')) {
     function poldaName() {
-        return "Polda ".auth()->user()->polda()->first()->polda->name;
+        return auth()->user()->polda()->first()->polda->name;
     }
 }
 
