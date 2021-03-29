@@ -1,18 +1,18 @@
 <div class="col-lg-12 layout-spacing">
 
     @if ($errors->any())
-        {{-- <div class="alert alert-danger custom">
+        <div class="alert alert-danger custom">
             <ul>
                 <li>Inputan anda belum lengkap. Silahkan diperiksa lagi</li>
             </ul>
-        </div> --}}
-        <div class="alert alert-danger">
+        </div>
+        {{-- <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
-        </div>
+        </div> --}}
     @endif
 
     @include('flash::message')
@@ -22,7 +22,7 @@
         <span>TANGGAL : 10 FEBRUARI S/D 24 FEBRUARI 2021</span>
         <div class="button-onsite">
             <span class="inputan">input data</span>
-            <span class="seehow">lihat data</span>
+            <a href="{{ route('phro_index') }}"><span class="seehow">lihat data</span></a>
         </div>
     </blockquote>
 
