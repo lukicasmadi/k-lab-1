@@ -1,5 +1,16 @@
 @extends('layouts.template_admin')
 
+@push('page_title')
+<div class="page-title">
+    <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15.556" viewBox="0 0 20 15.556">
+        <path id="text_align_left" d="M16.333,20.556H3V18.333H16.333ZM23,16.111H3V13.889H23Zm-6.667-4.444H3V9.444H16.333ZM23,7.222H3V5H23Z" transform="translate(-3 -5)" fill="#00adef"/>
+        </svg>
+        <span>DASHBOARD</span>
+    </h3>
+</div>
+@endpush
+
 @section('content')
 <div id="content" class="main-content">
     <div class="layout-px-spacing">
@@ -36,7 +47,7 @@
                                     </h5>
                                     <p>DATA LAPORAN MINGGUAN</p>
                                 </div>
-                                <div id="donut-chart" style="background: #ff0000; paddding: 50px; position: absolute;"></div>
+                                <div id="donut-chart"></div>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -249,14 +260,14 @@ function donutDataWeekly() {
 
         var donutChart = {
         chart: {
-            height: 150,
+            height: 300,
             type: 'donut',
             toolbar: {
                 show: false,
             }
         },
         dataLabels: {
-            enabled: true,
+            enabled: false,
             formatter: function (val) {
                 return val + "%"
             },
@@ -264,18 +275,64 @@ function donutDataWeekly() {
         tooltip: {
             y: {
                 formatter: function(value) {
-                    return value + " %";
+                    return value + "%";
                 }
             }
         },
+        fill: {
+            type: "gradient",
+            gradient: {
+            shadeIntensity: 0.8,
+            opacityFrom: 0.9,
+            opacityTo: 0.9,
+            stops: [0, 90, 100]
+            }
+        },
         colors:['#136487', '#bc1d26'],
+        plotOptions: {
+          pie: {
+            donut: {
+              size: '65%',
+              background: 'transparent',
+              labels: {
+                show: true,
+                name: {
+                  show: true,
+                  fontSize: '11px',
+                  color: undefined,
+                  offsetY: -10,
+                },
+                value: {
+                  show: true,
+                  fontSize: '35px',
+                  color: '20',
+                  offsetY: 16,
+                  formatter: function (val) {
+                    return val + "%"
+                  }
+                },
+                total: {
+                  show: true,
+                  showAlways: false,
+                  label: 'TOTAL DATA',
+                  color: '#888ea8',
+                  formatter: function (w) {
+                    return w.globals.seriesTotals.reduce( function(a, b) {
+                      return a + b + "%"
+                    })
+                  }
+                }
+              }
+            }
+          }
+        },
         stroke: {
-            colors: '#0e1726'
+            show: false,
         },
         series: [filled, nofilled],
         labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
         responsive: [{
-            breakpoint: 480,
+            breakpoint: 1439,
             options: {
                 chart: {
                     width: 200
@@ -305,14 +362,14 @@ function donutDataFull() {
 
         var donutChartFull = {
         chart: {
-            height: 250,
+            height: 300,
             type: 'donut',
             toolbar: {
                 show: false,
             }
         },
         dataLabels: {
-            enabled: true,
+            enabled: false,
             formatter: function (val) {
                 return val + "%"
             },
@@ -325,22 +382,59 @@ function donutDataFull() {
             }
         },
         fill: {
-    type: "gradient",
-    gradient: {
-      shadeIntensity: 1,
-      opacityFrom: 0.9,
-      opacityTo: 0.9,
-      stops: [0, 90, 100]
-    }
-  },
-        colors:['#136487', '#bc1d26'],
+            type: "gradient",
+            gradient: {
+            shadeIntensity: 0.8,
+            opacityFrom: 0.9,
+            opacityTo: 0.9,
+            stops: [0, 90, 100]
+            }
+        },
+        colors:['#00adef', '#ea1c26'],
+        plotOptions: {
+          pie: {
+            donut: {
+              size: '65%',
+              background: 'transparent',
+              labels: {
+                show: true,
+                name: {
+                  show: true,
+                  fontSize: '11px',
+                  color: undefined,
+                  offsetY: -10,
+                },
+                value: {
+                  show: true,
+                  fontSize: '35px',
+                  color: '20',
+                  offsetY: 16,
+                  formatter: function (val) {
+                    return val + "%"
+                  }
+                },
+                total: {
+                  show: true,
+                  showAlways: false,
+                  label: 'TOTAL DATA',
+                  color: '#888ea8',
+                  formatter: function (w) {
+                    return w.globals.seriesTotals.reduce( function(a, b) {
+                      return a + b + "%"
+                    })
+                  }
+                }
+              }
+            }
+          }
+        },
         stroke: {
-            colors: '#0e1726'
+            show: false,
         },
         series: [filled, nofilled],
-        // labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
+        labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
         responsive: [{
-            breakpoint: 480,
+            breakpoint: 1439,
             options: {
                 chart: {
                     width: 200
