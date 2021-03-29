@@ -34,7 +34,7 @@
                                 A. SEPEDA MOTOR
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_sepeda_motor_p') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_sepeda_motor_p" autocomplete="off" value="{{ old('kendaraan_yang_terlibat_pelanggaran_sepeda_motor_p') }}">
+                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_sepeda_motor_p') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_sepeda_motor_p" autocomplete="off" value="{{ $data->dailyInputPrev->kendaraan_yang_terlibat_pelanggaran_sepeda_motor_p }}">
                                     @error('kendaraan_yang_terlibat_pelanggaran_sepeda_motor_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -42,7 +42,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_sepeda_motor') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_sepeda_motor" autocomplete="off" value="{{ old('kendaraan_yang_terlibat_pelanggaran_sepeda_motor') }}">
+                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_sepeda_motor') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_sepeda_motor" autocomplete="off" value="{{ $data->dailyInput->kendaraan_yang_terlibat_pelanggaran_sepeda_motor }}">
                                     @error('kendaraan_yang_terlibat_pelanggaran_sepeda_motor')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -59,7 +59,7 @@
                                 B. MOBIL PENUMPANG
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_mobil_penumpang_p') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_mobil_penumpang_p" autocomplete="off" value="{{ old('kendaraan_yang_terlibat_pelanggaran_mobil_penumpang_p') }}">
+                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_mobil_penumpang_p') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_mobil_penumpang_p" autocomplete="off" value="{{ $data->dailyInputPrev->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang_p }}">
                                     @error('kendaraan_yang_terlibat_pelanggaran_mobil_penumpang_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -67,7 +67,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_mobil_penumpang') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_mobil_penumpang" autocomplete="off" value="{{ old('kendaraan_yang_terlibat_pelanggaran_mobil_penumpang') }}">
+                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_mobil_penumpang') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_mobil_penumpang" autocomplete="off" value="{{ $data->dailyInput->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang }}">
                                     @error('kendaraan_yang_terlibat_pelanggaran_mobil_penumpang')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -84,7 +84,7 @@
                                 C. MOBIL BUS
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_mobil_bus_p') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_mobil_bus_p" autocomplete="off" value="{{ old('kendaraan_yang_terlibat_pelanggaran_mobil_bus_p') }}">
+                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_mobil_bus_p') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_mobil_bus_p" autocomplete="off" value="{{ $data->dailyInputPrev->kendaraan_yang_terlibat_pelanggaran_mobil_bus_p }}">
                                     @error('kendaraan_yang_terlibat_pelanggaran_mobil_bus_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -92,7 +92,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_mobil_bus') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_mobil_bus" autocomplete="off" value="{{ old('kendaraan_yang_terlibat_pelanggaran_mobil_bus') }}">
+                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_mobil_bus') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_mobil_bus" autocomplete="off" value="{{ $data->dailyInput->kendaraan_yang_terlibat_pelanggaran_mobil_bus }}">
                                     @error('kendaraan_yang_terlibat_pelanggaran_mobil_bus')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -109,7 +109,7 @@
                                 D. MOBIL BARANG
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_mobil_barang_p') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_mobil_barang_p" autocomplete="off" value="{{ old('kendaraan_yang_terlibat_pelanggaran_mobil_barang_p') }}">
+                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_mobil_barang_p') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_mobil_barang_p" autocomplete="off" value="{{ $data->dailyInputPrev->kendaraan_yang_terlibat_pelanggaran_mobil_barang_p }}">
                                     @error('kendaraan_yang_terlibat_pelanggaran_mobil_barang_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -117,7 +117,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_mobil_barang') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_mobil_barang" autocomplete="off" value="{{ old('kendaraan_yang_terlibat_pelanggaran_mobil_barang') }}">
+                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_mobil_barang') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_mobil_barang" autocomplete="off" value="{{ $data->dailyInput->kendaraan_yang_terlibat_pelanggaran_mobil_barang }}">
                                     @error('kendaraan_yang_terlibat_pelanggaran_mobil_barang')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -134,7 +134,7 @@
                                 E. KENDARAAN KHUSUS
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus_p') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus_p" autocomplete="off" value="{{ old('kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus_p') }}">
+                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus_p') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus_p" autocomplete="off" value="{{ $data->dailyInputPrev->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus_p }}">
                                     @error('kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -142,7 +142,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus" autocomplete="off" value="{{ old('kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus') }}">
+                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus" autocomplete="off" value="{{ $data->dailyInput->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus }}">
                                     @error('kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

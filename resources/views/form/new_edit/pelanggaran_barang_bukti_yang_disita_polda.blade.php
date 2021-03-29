@@ -34,7 +34,7 @@
                                 1. SIM
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_sim_p') is-invalid @enderror" name="barang_bukti_yg_disita_sim_p" autocomplete="off" value="{{ old('barang_bukti_yg_disita_sim_p') }}">
+                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_sim_p') is-invalid @enderror" name="barang_bukti_yg_disita_sim_p" autocomplete="off" value="{{ $data->dailyInputPrev->barang_bukti_yg_disita_sim_p }}">
                                     @error('barang_bukti_yg_disita_sim_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -42,7 +42,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_sim') is-invalid @enderror" name="barang_bukti_yg_disita_sim" autocomplete="off" value="{{ old('barang_bukti_yg_disita_sim') }}">
+                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_sim') is-invalid @enderror" name="barang_bukti_yg_disita_sim" autocomplete="off" value="{{ $data->dailyInput->barang_bukti_yg_disita_sim }}">
                                     @error('barang_bukti_yg_disita_sim')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -59,7 +59,7 @@
                                 2. STNK
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_stnk_p') is-invalid @enderror" name="barang_bukti_yg_disita_stnk_p" autocomplete="off" value="{{ old('barang_bukti_yg_disita_stnk_p') }}">
+                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_stnk_p') is-invalid @enderror" name="barang_bukti_yg_disita_stnk_p" autocomplete="off" value="{{ $data->dailyInputPrev->barang_bukti_yg_disita_stnk_p }}">
                                     @error('barang_bukti_yg_disita_stnk_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -67,7 +67,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_stnk') is-invalid @enderror" name="barang_bukti_yg_disita_stnk" autocomplete="off" value="{{ old('barang_bukti_yg_disita_stnk') }}">
+                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_stnk') is-invalid @enderror" name="barang_bukti_yg_disita_stnk" autocomplete="off" value="{{ $data->dailyInput->barang_bukti_yg_disita_stnk }}">
                                     @error('barang_bukti_yg_disita_stnk')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -84,7 +84,7 @@
                                 3. KENDARAAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_kendaraan_p') is-invalid @enderror" name="barang_bukti_yg_disita_kendaraan_p" autocomplete="off" value="{{ old('barang_bukti_yg_disita_kendaraan_p') }}">
+                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_kendaraan_p') is-invalid @enderror" name="barang_bukti_yg_disita_kendaraan_p" autocomplete="off" value="{{ $data->dailyInputPrev->barang_bukti_yg_disita_kendaraan_p }}">
                                     @error('barang_bukti_yg_disita_kendaraan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -92,7 +92,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_kendaraan') is-invalid @enderror" name="barang_bukti_yg_disita_kendaraan" autocomplete="off" value="{{ old('barang_bukti_yg_disita_kendaraan') }}">
+                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_kendaraan') is-invalid @enderror" name="barang_bukti_yg_disita_kendaraan" autocomplete="off" value="{{ $data->dailyInput->barang_bukti_yg_disita_kendaraan }}">
                                     @error('barang_bukti_yg_disita_kendaraan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
