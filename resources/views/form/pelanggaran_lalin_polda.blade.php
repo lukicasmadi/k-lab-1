@@ -1,18 +1,18 @@
 <div class="col-lg-12 layout-spacing">
 
     @if ($errors->any())
-        {{-- <div class="alert alert-danger custom">
+        <div class="alert alert-danger custom">
             <ul>
                 <li>Inputan anda belum lengkap. Silahkan diperiksa lagi</li>
             </ul>
-        </div> --}}
-        <div class="alert alert-danger">
+        </div>
+        {{-- <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
-        </div>
+        </div> --}}
     @endif
 
     @include('flash::message')

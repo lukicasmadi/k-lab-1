@@ -43,7 +43,7 @@
                                 1. GUN HELM SNI
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_gun_helm_sni_p') is-invalid @enderror" name="pelanggaran_sepeda_motor_gun_helm_sni_p" autocomplete="off" value="{{ old('pelanggaran_sepeda_motor_gun_helm_sni_p') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_gun_helm_sni_p') is-invalid @enderror" name="pelanggaran_sepeda_motor_gun_helm_sni_p" autocomplete="off" value="{{ $data->dailyInputPrev->pelanggaran_sepeda_motor_gun_helm_sni_p }}">
                                     @error('pelanggaran_sepeda_motor_gun_helm_sni_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -51,7 +51,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_gun_helm_sni') is-invalid @enderror" name="pelanggaran_sepeda_motor_gun_helm_sni" autocomplete="off" value="{{ old('pelanggaran_sepeda_motor_gun_helm_sni') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_gun_helm_sni') is-invalid @enderror" name="pelanggaran_sepeda_motor_gun_helm_sni" autocomplete="off" value="{{ $data->dailyInput->pelanggaran_sepeda_motor_gun_helm_sni }}">
                                     @error('pelanggaran_sepeda_motor_gun_helm_sni')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -68,7 +68,7 @@
                                 2. MELAWAN ARUS
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_melawan_arus_p') is-invalid @enderror" name="pelanggaran_sepeda_motor_melawan_arus_p" autocomplete="off" value="{{ old('pelanggaran_sepeda_motor_melawan_arus_p') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_melawan_arus_p') is-invalid @enderror" name="pelanggaran_sepeda_motor_melawan_arus_p" autocomplete="off" value="{{ $data->dailyInputPrev->pelanggaran_sepeda_motor_melawan_arus_p }}">
                                     @error('pelanggaran_sepeda_motor_melawan_arus_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -76,7 +76,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_melawan_arus') is-invalid @enderror" name="pelanggaran_sepeda_motor_melawan_arus" autocomplete="off" value="{{ old('pelanggaran_sepeda_motor_melawan_arus') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_melawan_arus') is-invalid @enderror" name="pelanggaran_sepeda_motor_melawan_arus" autocomplete="off" value="{{ $data->dailyInput->pelanggaran_sepeda_motor_melawan_arus }}">
                                     @error('pelanggaran_sepeda_motor_melawan_arus')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -93,7 +93,7 @@
                                 3. GUN HP SAAT BERKENDARA
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_gun_hp_saat_berkendara_p') is-invalid @enderror" name="pelanggaran_sepeda_motor_gun_hp_saat_berkendara_p" autocomplete="off" value="{{ old('pelanggaran_sepeda_motor_gun_hp_saat_berkendara_p') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_gun_hp_saat_berkendara_p') is-invalid @enderror" name="pelanggaran_sepeda_motor_gun_hp_saat_berkendara_p" autocomplete="off" value="{{ $data->dailyInputPrev->pelanggaran_sepeda_motor_gun_hp_saat_berkendara_p }}">
                                     @error('pelanggaran_sepeda_motor_gun_hp_saat_berkendara_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -101,7 +101,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_gun_hp_saat_berkendara') is-invalid @enderror" name="pelanggaran_sepeda_motor_gun_hp_saat_berkendara" autocomplete="off" value="{{ old('pelanggaran_sepeda_motor_gun_hp_saat_berkendara') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_gun_hp_saat_berkendara') is-invalid @enderror" name="pelanggaran_sepeda_motor_gun_hp_saat_berkendara" autocomplete="off" value="{{ $data->dailyInput->pelanggaran_sepeda_motor_gun_hp_saat_berkendara }}">
                                     @error('pelanggaran_sepeda_motor_gun_hp_saat_berkendara')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -118,7 +118,7 @@
                                 4. BERKENDARA DI BAWAH PENGARUH ALKOHOL
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol_p') is-invalid @enderror" name="pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol_p" autocomplete="off" value="{{ old('pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol_p') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol_p') is-invalid @enderror" name="pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol_p" autocomplete="off" value="{{ $data->dailyInputPrev->pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol_p }}">
                                     @error('pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -126,7 +126,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol') is-invalid @enderror" name="pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol" autocomplete="off" value="{{ old('pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol') is-invalid @enderror" name="pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol" autocomplete="off" value="{{ $data->dailyInput->pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol }}">
                                     @error('pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -143,7 +143,7 @@
                                 5. MELEBIHI BATAS KECEPATAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_melebihi_batas_kecepatan_p') is-invalid @enderror" name="pelanggaran_sepeda_motor_melebihi_batas_kecepatan_p" autocomplete="off" value="{{ old('pelanggaran_sepeda_motor_melebihi_batas_kecepatan_p') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_melebihi_batas_kecepatan_p') is-invalid @enderror" name="pelanggaran_sepeda_motor_melebihi_batas_kecepatan_p" autocomplete="off" value="{{ $data->dailyInputPrev->pelanggaran_sepeda_motor_melebihi_batas_kecepatan_p }}">
                                     @error('pelanggaran_sepeda_motor_melebihi_batas_kecepatan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -151,7 +151,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_melebihi_batas_kecepatan') is-invalid @enderror" name="pelanggaran_sepeda_motor_melebihi_batas_kecepatan" autocomplete="off" value="{{ old('pelanggaran_sepeda_motor_melebihi_batas_kecepatan') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_melebihi_batas_kecepatan') is-invalid @enderror" name="pelanggaran_sepeda_motor_melebihi_batas_kecepatan" autocomplete="off" value="{{ $data->dailyInput->pelanggaran_sepeda_motor_melebihi_batas_kecepatan }}">
                                     @error('pelanggaran_sepeda_motor_melebihi_batas_kecepatan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -168,7 +168,7 @@
                                 6. BERKENDARA DI BAWAH UMUR
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_berkendara_dibawah_umur_p') is-invalid @enderror" name="pelanggaran_sepeda_motor_berkendara_dibawah_umur_p" autocomplete="off" value="{{ old('pelanggaran_sepeda_motor_berkendara_dibawah_umur_p') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_berkendara_dibawah_umur_p') is-invalid @enderror" name="pelanggaran_sepeda_motor_berkendara_dibawah_umur_p" autocomplete="off" value="{{ $data->dailyInputPrev->pelanggaran_sepeda_motor_berkendara_dibawah_umur_p }}">
                                     @error('pelanggaran_sepeda_motor_berkendara_dibawah_umur_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -176,7 +176,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_berkendara_dibawah_umur') is-invalid @enderror" name="pelanggaran_sepeda_motor_berkendara_dibawah_umur" autocomplete="off" value="{{ old('pelanggaran_sepeda_motor_berkendara_dibawah_umur') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_berkendara_dibawah_umur') is-invalid @enderror" name="pelanggaran_sepeda_motor_berkendara_dibawah_umur" autocomplete="off" value="{{ $data->dailyInput->pelanggaran_sepeda_motor_berkendara_dibawah_umur }}">
                                     @error('pelanggaran_sepeda_motor_berkendara_dibawah_umur')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -193,7 +193,7 @@
                                 7. LAIN – LAIN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_lain_lain_p') is-invalid @enderror" name="pelanggaran_sepeda_motor_lain_lain_p" autocomplete="off" value="{{ old('pelanggaran_sepeda_motor_lain_lain_p') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_lain_lain_p') is-invalid @enderror" name="pelanggaran_sepeda_motor_lain_lain_p" autocomplete="off" value="{{ $data->dailyInputPrev->pelanggaran_sepeda_motor_lain_lain_p }}">
                                     @error('pelanggaran_sepeda_motor_lain_lain_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -201,7 +201,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_lain_lain') is-invalid @enderror" name="pelanggaran_sepeda_motor_lain_lain" autocomplete="off" value="{{ old('pelanggaran_sepeda_motor_lain_lain') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_sepeda_motor_lain_lain') is-invalid @enderror" name="pelanggaran_sepeda_motor_lain_lain" autocomplete="off" value="{{ $data->dailyInput->pelanggaran_sepeda_motor_lain_lain }}">
                                     @error('pelanggaran_sepeda_motor_lain_lain')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -227,7 +227,7 @@
                                 1. MELAWAN ARUS
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_melawan_arus_p') is-invalid @enderror" name="pelanggaran_mobil_melawan_arus_p" autocomplete="off" value="{{ old('pelanggaran_mobil_melawan_arus_p') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_melawan_arus_p') is-invalid @enderror" name="pelanggaran_mobil_melawan_arus_p" autocomplete="off" value="{{ $data->dailyInputPrev->pelanggaran_mobil_melawan_arus_p }}">
                                     @error('pelanggaran_mobil_melawan_arus_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -235,7 +235,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_melawan_arus') is-invalid @enderror" name="pelanggaran_mobil_melawan_arus" autocomplete="off" value="{{ old('pelanggaran_mobil_melawan_arus') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_melawan_arus') is-invalid @enderror" name="pelanggaran_mobil_melawan_arus" autocomplete="off" value="{{ $data->dailyInput->pelanggaran_mobil_melawan_arus }}">
                                     @error('pelanggaran_mobil_melawan_arus')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -252,7 +252,7 @@
                                 2. GUN HP SAAT BERKENDARA
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_gun_hp_saat_berkendara_p') is-invalid @enderror" name="pelanggaran_mobil_gun_hp_saat_berkendara_p" autocomplete="off" value="{{ old('pelanggaran_mobil_gun_hp_saat_berkendara_p') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_gun_hp_saat_berkendara_p') is-invalid @enderror" name="pelanggaran_mobil_gun_hp_saat_berkendara_p" autocomplete="off" value="{{ $data->dailyInputPrev->pelanggaran_mobil_gun_hp_saat_berkendara_p }}">
                                     @error('pelanggaran_mobil_gun_hp_saat_berkendara_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -260,7 +260,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_gun_hp_saat_berkendara') is-invalid @enderror" name="pelanggaran_mobil_gun_hp_saat_berkendara" autocomplete="off" value="{{ old('pelanggaran_mobil_gun_hp_saat_berkendara') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_gun_hp_saat_berkendara') is-invalid @enderror" name="pelanggaran_mobil_gun_hp_saat_berkendara" autocomplete="off" value="{{ $data->dailyInput->pelanggaran_mobil_gun_hp_saat_berkendara }}">
                                     @error('pelanggaran_mobil_gun_hp_saat_berkendara')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -277,7 +277,7 @@
                                 3. BERKENDARA DI BAWAH PENGARUH ALKOHOL
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol_p') is-invalid @enderror" name="pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol_p" autocomplete="off" value="{{ old('pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol_p') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol_p') is-invalid @enderror" name="pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol_p" autocomplete="off" value="{{ $data->dailyInputPrev->pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol_p }}">
                                     @error('pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -285,7 +285,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol') is-invalid @enderror" name="pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol" autocomplete="off" value="{{ old('pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol') is-invalid @enderror" name="pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol" autocomplete="off" value="{{ $data->dailyInput->pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol }}">
                                     @error('pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -302,7 +302,7 @@
                                 4. MELEBIHI BATAS KECEPATAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_melebihi_batas_kecepatan_p') is-invalid @enderror" name="pelanggaran_mobil_melebihi_batas_kecepatan_p" autocomplete="off" value="{{ old('pelanggaran_mobil_melebihi_batas_kecepatan_p') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_melebihi_batas_kecepatan_p') is-invalid @enderror" name="pelanggaran_mobil_melebihi_batas_kecepatan_p" autocomplete="off" value="{{ $data->dailyInputPrev->pelanggaran_mobil_melebihi_batas_kecepatan_p }}">
                                     @error('pelanggaran_mobil_melebihi_batas_kecepatan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -310,7 +310,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_melebihi_batas_kecepatan') is-invalid @enderror" name="pelanggaran_mobil_melebihi_batas_kecepatan" autocomplete="off" value="{{ old('pelanggaran_mobil_melebihi_batas_kecepatan') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_melebihi_batas_kecepatan') is-invalid @enderror" name="pelanggaran_mobil_melebihi_batas_kecepatan" autocomplete="off" value="{{ $data->dailyInput->pelanggaran_mobil_melebihi_batas_kecepatan }}">
                                     @error('pelanggaran_mobil_melebihi_batas_kecepatan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -327,7 +327,7 @@
                                 5. BERKENDARA DI BAWAH UMUR
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_berkendara_dibawah_umur_p') is-invalid @enderror" name="pelanggaran_mobil_berkendara_dibawah_umur_p" autocomplete="off" value="{{ old('pelanggaran_mobil_berkendara_dibawah_umur_p') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_berkendara_dibawah_umur_p') is-invalid @enderror" name="pelanggaran_mobil_berkendara_dibawah_umur_p" autocomplete="off" value="{{ $data->dailyInputPrev->pelanggaran_mobil_berkendara_dibawah_umur_p }}">
                                     @error('pelanggaran_mobil_berkendara_dibawah_umur_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -335,7 +335,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_berkendara_dibawah_umur') is-invalid @enderror" name="pelanggaran_mobil_berkendara_dibawah_umur" autocomplete="off" value="{{ old('pelanggaran_mobil_berkendara_dibawah_umur') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_berkendara_dibawah_umur') is-invalid @enderror" name="pelanggaran_mobil_berkendara_dibawah_umur" autocomplete="off" value="{{ $data->dailyInput->pelanggaran_mobil_berkendara_dibawah_umur }}">
                                     @error('pelanggaran_mobil_berkendara_dibawah_umur')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -352,7 +352,7 @@
                                 6. GUN SAFETY BELT
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_gun_safety_belt_p') is-invalid @enderror" name="pelanggaran_mobil_gun_safety_belt_p" autocomplete="off" value="{{ old('pelanggaran_mobil_gun_safety_belt_p') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_gun_safety_belt_p') is-invalid @enderror" name="pelanggaran_mobil_gun_safety_belt_p" autocomplete="off" value="{{ $data->dailyInputPrev->pelanggaran_mobil_gun_safety_belt_p }}">
                                     @error('pelanggaran_mobil_gun_safety_belt_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -360,7 +360,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_gun_safety_belt') is-invalid @enderror" name="pelanggaran_mobil_gun_safety_belt" autocomplete="off" value="{{ old('pelanggaran_mobil_gun_safety_belt') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_gun_safety_belt') is-invalid @enderror" name="pelanggaran_mobil_gun_safety_belt" autocomplete="off" value="{{ $data->dailyInput->pelanggaran_mobil_gun_safety_belt }}">
                                     @error('pelanggaran_mobil_gun_safety_belt')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -377,7 +377,7 @@
                                 7. LAIN - LAIN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_lain_lain_p') is-invalid @enderror" name="pelanggaran_mobil_lain_lain_p" autocomplete="off" value="{{ old('pelanggaran_mobil_lain_lain_p') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_lain_lain_p') is-invalid @enderror" name="pelanggaran_mobil_lain_lain_p" autocomplete="off" value="{{ $data->dailyInputPrev->pelanggaran_mobil_lain_lain_p }}">
                                     @error('pelanggaran_mobil_lain_lain_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -385,7 +385,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_lain_lain') is-invalid @enderror" name="pelanggaran_mobil_lain_lain" autocomplete="off" value="{{ old('pelanggaran_mobil_lain_lain') }}">
+                                    <input type="number" class="form-onsite @error('pelanggaran_mobil_lain_lain') is-invalid @enderror" name="pelanggaran_mobil_lain_lain" autocomplete="off" value="{{ $data->dailyInput->pelanggaran_mobil_lain_lain }}">
                                     @error('pelanggaran_mobil_lain_lain')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
