@@ -34,8 +34,8 @@
                                 A. SEPEDA MOTOR
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kendaraan_yg_terlibat_kecelakaan_sepeda_motor_prev') is-invalid @enderror" name="kendaraan_yg_terlibat_kecelakaan_sepeda_motor_prev" autocomplete="off" value="{{ old('kendaraan_yg_terlibat_kecelakaan_sepeda_motor_prev') }}">
-                                    @error('kendaraan_yg_terlibat_kecelakaan_sepeda_motor_prev')
+                                    <input type="number" class="form-onsite @error('kendaraan_yg_terlibat_kecelakaan_sepeda_motor_p') is-invalid @enderror" name="kendaraan_yg_terlibat_kecelakaan_sepeda_motor_p" autocomplete="off" value="{{ old('kendaraan_yg_terlibat_kecelakaan_sepeda_motor_p') }}">
+                                    @error('kendaraan_yg_terlibat_kecelakaan_sepeda_motor_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -59,8 +59,8 @@
                                 B. MOBIL PENUMPANG
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kendaraan_yg_terlibat_kecelakaan_mobil_penumpang_prev') is-invalid @enderror" name="kendaraan_yg_terlibat_kecelakaan_mobil_penumpang_prev" autocomplete="off" value="{{ old('kendaraan_yg_terlibat_kecelakaan_mobil_penumpang_prev') }}">
-                                    @error('kendaraan_yg_terlibat_kecelakaan_mobil_penumpang_prev')
+                                    <input type="number" class="form-onsite @error('kendaraan_yg_terlibat_kecelakaan_mobil_penumpang_p') is-invalid @enderror" name="kendaraan_yg_terlibat_kecelakaan_mobil_penumpang_p" autocomplete="off" value="{{ old('kendaraan_yg_terlibat_kecelakaan_mobil_penumpang_p') }}">
+                                    @error('kendaraan_yg_terlibat_kecelakaan_mobil_penumpang_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -84,8 +84,8 @@
                                 C. MOBIL BUS
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kendaraan_yg_terlibat_kecelakaan_mobil_bus_prev') is-invalid @enderror" name="kendaraan_yg_terlibat_kecelakaan_mobil_bus_prev" autocomplete="off" value="{{ old('kendaraan_yg_terlibat_kecelakaan_mobil_bus_prev') }}">
-                                    @error('kendaraan_yg_terlibat_kecelakaan_mobil_bus_prev')
+                                    <input type="number" class="form-onsite @error('kendaraan_yg_terlibat_kecelakaan_mobil_bus_p') is-invalid @enderror" name="kendaraan_yg_terlibat_kecelakaan_mobil_bus_p" autocomplete="off" value="{{ old('kendaraan_yg_terlibat_kecelakaan_mobil_bus_p') }}">
+                                    @error('kendaraan_yg_terlibat_kecelakaan_mobil_bus_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -109,8 +109,8 @@
                                 D. MOBIL BARANG
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kendaraan_yg_terlibat_kecelakaan_mobil_barang_prev') is-invalid @enderror" name="kendaraan_yg_terlibat_kecelakaan_mobil_barang_prev" autocomplete="off" value="{{ old('kendaraan_yg_terlibat_kecelakaan_mobil_barang_prev') }}">
-                                    @error('kendaraan_yg_terlibat_kecelakaan_mobil_barang_prev')
+                                    <input type="number" class="form-onsite @error('kendaraan_yg_terlibat_kecelakaan_mobil_barang_p') is-invalid @enderror" name="kendaraan_yg_terlibat_kecelakaan_mobil_barang_p" autocomplete="off" value="{{ old('kendaraan_yg_terlibat_kecelakaan_mobil_barang_p') }}">
+                                    @error('kendaraan_yg_terlibat_kecelakaan_mobil_barang_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -134,8 +134,8 @@
                                 E. KENDARAAN KHUSUS
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus_prev') is-invalid @enderror" name="kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus_prev" autocomplete="off" value="{{ old('kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus_prev') }}">
-                                    @error('kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus_prev')
+                                    <input type="number" class="form-onsite @error('kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus_p') is-invalid @enderror" name="kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus_p" autocomplete="off" value="{{ old('kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus_p') }}">
+                                    @error('kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -159,8 +159,8 @@
                                 F. KENDARAAN TIDAK BERMOTOR
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor_prev') is-invalid @enderror" name="kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor_prev" autocomplete="off" value="{{ old('kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor_prev') }}">
-                                    @error('kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor_prev')
+                                    <input type="number" class="form-onsite @error('kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor_p') is-invalid @enderror" name="kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor_p" autocomplete="off" value="{{ old('kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor_p') }}">
+                                    @error('kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

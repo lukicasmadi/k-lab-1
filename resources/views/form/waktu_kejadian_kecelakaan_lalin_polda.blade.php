@@ -34,8 +34,8 @@
                                 A. 00.00 - 03.00
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('waktu_kejadian_kecelakaan_00_03_prev') is-invalid @enderror" name="waktu_kejadian_kecelakaan_00_03_prev" autocomplete="off" value="{{ old('waktu_kejadian_kecelakaan_00_03_prev') }}">
-                                    @error('waktu_kejadian_kecelakaan_00_03_prev')
+                                    <input type="number" class="form-onsite @error('waktu_kejadian_kecelakaan_00_03_p') is-invalid @enderror" name="waktu_kejadian_kecelakaan_00_03_p" autocomplete="off" value="{{ old('waktu_kejadian_kecelakaan_00_03_p') }}">
+                                    @error('waktu_kejadian_kecelakaan_00_03_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -59,8 +59,8 @@
                                 B. 03.00 - 06.00
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('waktu_kejadian_kecelakaan_03_06_prev') is-invalid @enderror" name="waktu_kejadian_kecelakaan_03_06_prev" autocomplete="off" value="{{ old('waktu_kejadian_kecelakaan_03_06_prev') }}">
-                                    @error('waktu_kejadian_kecelakaan_03_06_prev')
+                                    <input type="number" class="form-onsite @error('waktu_kejadian_kecelakaan_03_06_p') is-invalid @enderror" name="waktu_kejadian_kecelakaan_03_06_p" autocomplete="off" value="{{ old('waktu_kejadian_kecelakaan_03_06_p') }}">
+                                    @error('waktu_kejadian_kecelakaan_03_06_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -84,8 +84,8 @@
                                 C. 06.00- 09.00
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('waktu_kejadian_kecelakaan_06_09_prev') is-invalid @enderror" name="waktu_kejadian_kecelakaan_06_09_prev" autocomplete="off" value="{{ old('waktu_kejadian_kecelakaan_06_09_prev') }}">
-                                    @error('waktu_kejadian_kecelakaan_06_09_prev')
+                                    <input type="number" class="form-onsite @error('waktu_kejadian_kecelakaan_06_09_p') is-invalid @enderror" name="waktu_kejadian_kecelakaan_06_09_p" autocomplete="off" value="{{ old('waktu_kejadian_kecelakaan_06_09_p') }}">
+                                    @error('waktu_kejadian_kecelakaan_06_09_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -109,8 +109,8 @@
                                 D. 09.00 - 12.00
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('waktu_kejadian_kecelakaan_09_12_prev') is-invalid @enderror" name="waktu_kejadian_kecelakaan_09_12_prev" autocomplete="off" value="{{ old('waktu_kejadian_kecelakaan_09_12_prev') }}">
-                                    @error('waktu_kejadian_kecelakaan_09_12_prev')
+                                    <input type="number" class="form-onsite @error('waktu_kejadian_kecelakaan_09_12_p') is-invalid @enderror" name="waktu_kejadian_kecelakaan_09_12_p" autocomplete="off" value="{{ old('waktu_kejadian_kecelakaan_09_12_p') }}">
+                                    @error('waktu_kejadian_kecelakaan_09_12_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -134,8 +134,8 @@
                                 E. 12.00 - 15.00
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('waktu_kejadian_kecelakaan_12_15_prev') is-invalid @enderror" name="waktu_kejadian_kecelakaan_12_15_prev" autocomplete="off" value="{{ old('waktu_kejadian_kecelakaan_12_15_prev') }}">
-                                    @error('waktu_kejadian_kecelakaan_12_15_prev')
+                                    <input type="number" class="form-onsite @error('waktu_kejadian_kecelakaan_12_15_p') is-invalid @enderror" name="waktu_kejadian_kecelakaan_12_15_p" autocomplete="off" value="{{ old('waktu_kejadian_kecelakaan_12_15_p') }}">
+                                    @error('waktu_kejadian_kecelakaan_12_15_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -159,8 +159,8 @@
                                 F. 15.00 - 18.00
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('waktu_kejadian_kecelakaan_15_18_prev') is-invalid @enderror" name="waktu_kejadian_kecelakaan_15_18_prev" autocomplete="off" value="{{ old('waktu_kejadian_kecelakaan_15_18_prev') }}">
-                                    @error('waktu_kejadian_kecelakaan_15_18_prev')
+                                    <input type="number" class="form-onsite @error('waktu_kejadian_kecelakaan_15_18_p') is-invalid @enderror" name="waktu_kejadian_kecelakaan_15_18_p" autocomplete="off" value="{{ old('waktu_kejadian_kecelakaan_15_18_p') }}">
+                                    @error('waktu_kejadian_kecelakaan_15_18_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -184,8 +184,8 @@
                                 G. 18.00 - 21.00
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('waktu_kejadian_kecelakaan_18_21_prev') is-invalid @enderror" name="waktu_kejadian_kecelakaan_18_21_prev" autocomplete="off" value="{{ old('waktu_kejadian_kecelakaan_18_21_prev') }}">
-                                    @error('waktu_kejadian_kecelakaan_18_21_prev')
+                                    <input type="number" class="form-onsite @error('waktu_kejadian_kecelakaan_18_21_p') is-invalid @enderror" name="waktu_kejadian_kecelakaan_18_21_p" autocomplete="off" value="{{ old('waktu_kejadian_kecelakaan_18_21_p') }}">
+                                    @error('waktu_kejadian_kecelakaan_18_21_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -209,8 +209,8 @@
                                 H. 21.00 - 24.00
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('waktu_kejadian_kecelakaan_21_24_prev') is-invalid @enderror" name="waktu_kejadian_kecelakaan_21_24_prev" autocomplete="off" value="{{ old('waktu_kejadian_kecelakaan_21_24_prev') }}">
-                                    @error('waktu_kejadian_kecelakaan_21_24_prev')
+                                    <input type="number" class="form-onsite @error('waktu_kejadian_kecelakaan_21_24_p') is-invalid @enderror" name="waktu_kejadian_kecelakaan_21_24_p" autocomplete="off" value="{{ old('waktu_kejadian_kecelakaan_21_24_p') }}">
+                                    @error('waktu_kejadian_kecelakaan_21_24_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

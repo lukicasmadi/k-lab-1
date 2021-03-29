@@ -34,8 +34,8 @@
                                 A. > 15 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_kurang_15_prev') is-invalid @enderror" name="usia_korban_kecelakaan_kurang_15_prev" autocomplete="off" value="{{ old('usia_korban_kecelakaan_kurang_15_prev') }}">
-                                    @error('usia_korban_kecelakaan_kurang_15_prev')
+                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_kurang_15_p') is-invalid @enderror" name="usia_korban_kecelakaan_kurang_15_p" autocomplete="off" value="{{ old('usia_korban_kecelakaan_kurang_15_p') }}">
+                                    @error('usia_korban_kecelakaan_kurang_15_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -59,8 +59,8 @@
                                 B. 16 - 20 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_16_20_prev') is-invalid @enderror" name="usia_korban_kecelakaan_16_20_prev" autocomplete="off" value="{{ old('usia_korban_kecelakaan_16_20_prev') }}">
-                                    @error('usia_korban_kecelakaan_16_20_prev')
+                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_16_20_p') is-invalid @enderror" name="usia_korban_kecelakaan_16_20_p" autocomplete="off" value="{{ old('usia_korban_kecelakaan_16_20_p') }}">
+                                    @error('usia_korban_kecelakaan_16_20_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -84,8 +84,8 @@
                                 C. 21 - 25 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_21_25_prev') is-invalid @enderror" name="usia_korban_kecelakaan_21_25_prev" autocomplete="off" value="{{ old('usia_korban_kecelakaan_21_25_prev') }}">
-                                    @error('usia_korban_kecelakaan_21_25_prev')
+                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_21_25_p') is-invalid @enderror" name="usia_korban_kecelakaan_21_25_p" autocomplete="off" value="{{ old('usia_korban_kecelakaan_21_25_p') }}">
+                                    @error('usia_korban_kecelakaan_21_25_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -109,8 +109,8 @@
                                 D. 26 - 30 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_26_30_prev') is-invalid @enderror" name="usia_korban_kecelakaan_26_30_prev" autocomplete="off" value="{{ old('usia_korban_kecelakaan_26_30_prev') }}">
-                                    @error('usia_korban_kecelakaan_26_30_prev')
+                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_26_30_p') is-invalid @enderror" name="usia_korban_kecelakaan_26_30_p" autocomplete="off" value="{{ old('usia_korban_kecelakaan_26_30_p') }}">
+                                    @error('usia_korban_kecelakaan_26_30_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -134,8 +134,8 @@
                                 E. 31 - 35 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_31_35_prev') is-invalid @enderror" name="usia_korban_kecelakaan_31_35_prev" autocomplete="off" value="{{ old('usia_korban_kecelakaan_31_35_prev') }}">
-                                    @error('usia_korban_kecelakaan_31_35_prev')
+                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_31_35_p') is-invalid @enderror" name="usia_korban_kecelakaan_31_35_p" autocomplete="off" value="{{ old('usia_korban_kecelakaan_31_35_p') }}">
+                                    @error('usia_korban_kecelakaan_31_35_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -159,8 +159,8 @@
                                 F. 36 - 40 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_36_40_prev') is-invalid @enderror" name="usia_korban_kecelakaan_36_40_prev" autocomplete="off" value="{{ old('usia_korban_kecelakaan_36_40_prev') }}">
-                                    @error('usia_korban_kecelakaan_36_40_prev')
+                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_36_40_p') is-invalid @enderror" name="usia_korban_kecelakaan_36_40_p" autocomplete="off" value="{{ old('usia_korban_kecelakaan_36_40_p') }}">
+                                    @error('usia_korban_kecelakaan_36_40_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -184,8 +184,8 @@
                                 G. 41 - 45 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_41_45_prev') is-invalid @enderror" name="usia_korban_kecelakaan_41_45_prev" autocomplete="off" value="{{ old('usia_korban_kecelakaan_41_45_prev') }}">
-                                    @error('usia_korban_kecelakaan_41_45_prev')
+                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_41_45_p') is-invalid @enderror" name="usia_korban_kecelakaan_41_45_p" autocomplete="off" value="{{ old('usia_korban_kecelakaan_41_45_p') }}">
+                                    @error('usia_korban_kecelakaan_41_45_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -209,8 +209,8 @@
                                 H. 46 - 50 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_45_50_prev') is-invalid @enderror" name="usia_korban_kecelakaan_45_50_prev" autocomplete="off" value="{{ old('usia_korban_kecelakaan_45_50_prev') }}">
-                                    @error('usia_korban_kecelakaan_45_50_prev')
+                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_45_50_p') is-invalid @enderror" name="usia_korban_kecelakaan_45_50_p" autocomplete="off" value="{{ old('usia_korban_kecelakaan_45_50_p') }}">
+                                    @error('usia_korban_kecelakaan_45_50_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -234,8 +234,8 @@
                                 I. 51 - 55 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_51_55_prev') is-invalid @enderror" name="usia_korban_kecelakaan_51_55_prev" autocomplete="off" value="{{ old('usia_korban_kecelakaan_51_55_prev') }}">
-                                    @error('usia_korban_kecelakaan_51_55_prev')
+                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_51_55_p') is-invalid @enderror" name="usia_korban_kecelakaan_51_55_p" autocomplete="off" value="{{ old('usia_korban_kecelakaan_51_55_p') }}">
+                                    @error('usia_korban_kecelakaan_51_55_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -259,8 +259,8 @@
                                 J. 56 - 60 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_56_60_prev') is-invalid @enderror" name="usia_korban_kecelakaan_56_60_prev" autocomplete="off" value="{{ old('usia_korban_kecelakaan_56_60_prev') }}">
-                                    @error('usia_korban_kecelakaan_56_60_prev')
+                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_56_60_p') is-invalid @enderror" name="usia_korban_kecelakaan_56_60_p" autocomplete="off" value="{{ old('usia_korban_kecelakaan_56_60_p') }}">
+                                    @error('usia_korban_kecelakaan_56_60_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -284,8 +284,8 @@
                                 K. > 60 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_diatas_60_prev') is-invalid @enderror" name="usia_korban_kecelakaan_diatas_60_prev" autocomplete="off" value="{{ old('usia_korban_kecelakaan_diatas_60_prev') }}">
-                                    @error('usia_korban_kecelakaan_diatas_60_prev')
+                                    <input type="number" class="form-onsite @error('usia_korban_kecelakaan_diatas_60_p') is-invalid @enderror" name="usia_korban_kecelakaan_diatas_60_p" autocomplete="off" value="{{ old('usia_korban_kecelakaan_diatas_60_p') }}">
+                                    @error('usia_korban_kecelakaan_diatas_60_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

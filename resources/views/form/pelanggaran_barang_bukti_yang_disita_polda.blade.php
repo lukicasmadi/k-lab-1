@@ -34,8 +34,8 @@
                                 1. SIM
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_sim_prev') is-invalid @enderror" name="barang_bukti_yg_disita_sim_prev" autocomplete="off" value="{{ old('barang_bukti_yg_disita_sim_prev') }}">
-                                    @error('barang_bukti_yg_disita_sim_prev')
+                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_sim_p') is-invalid @enderror" name="barang_bukti_yg_disita_sim_p" autocomplete="off" value="{{ old('barang_bukti_yg_disita_sim_p') }}">
+                                    @error('barang_bukti_yg_disita_sim_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -59,8 +59,8 @@
                                 2. STNK
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_stnk_prev') is-invalid @enderror" name="barang_bukti_yg_disita_stnk_prev" autocomplete="off" value="{{ old('barang_bukti_yg_disita_stnk_prev') }}">
-                                    @error('barang_bukti_yg_disita_stnk_prev')
+                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_stnk_p') is-invalid @enderror" name="barang_bukti_yg_disita_stnk_p" autocomplete="off" value="{{ old('barang_bukti_yg_disita_stnk_p') }}">
+                                    @error('barang_bukti_yg_disita_stnk_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -84,8 +84,8 @@
                                 3. KENDARAAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_kendaraan_prev') is-invalid @enderror" name="barang_bukti_yg_disita_kendaraan_prev" autocomplete="off" value="{{ old('barang_bukti_yg_disita_kendaraan_prev') }}">
-                                    @error('barang_bukti_yg_disita_kendaraan_prev')
+                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_kendaraan_p') is-invalid @enderror" name="barang_bukti_yg_disita_kendaraan_p" autocomplete="off" value="{{ old('barang_bukti_yg_disita_kendaraan_p') }}">
+                                    @error('barang_bukti_yg_disita_kendaraan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

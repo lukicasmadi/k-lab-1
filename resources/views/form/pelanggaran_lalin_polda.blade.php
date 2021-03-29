@@ -1,18 +1,18 @@
 <div class="col-lg-12 layout-spacing">
 
     @if ($errors->any())
-        <div class="alert alert-danger custom">
+        {{-- <div class="alert alert-danger custom">
             <ul>
                 <li>Inputan anda belum lengkap. Silahkan diperiksa lagi</li>
             </ul>
-        </div>
-        {{-- <div class="alert alert-danger">
+        </div> --}}
+        <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
-        </div> --}}
+        </div>
     @endif
 
     @include('flash::message')
@@ -93,8 +93,8 @@
                                 A. TILANG
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_lalu_lintas_tilang_prev') is-invalid @enderror" name="pelanggaran_lalu_lintas_tilang_prev" autocomplete="off" value="{{ old('pelanggaran_lalu_lintas_tilang_prev') }}">
-                                    @error('pelanggaran_lalu_lintas_tilang_prev')
+                                    <input type="number" class="form-onsite @error('pelanggaran_lalu_lintas_tilang_p') is-invalid @enderror" name="pelanggaran_lalu_lintas_tilang_p" autocomplete="off" value="{{ old('pelanggaran_lalu_lintas_tilang_p') }}">
+                                    @error('pelanggaran_lalu_lintas_tilang_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -118,8 +118,8 @@
                                 B. TEGURAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('pelanggaran_lalu_lintas_teguran_prev') is-invalid @enderror" name="pelanggaran_lalu_lintas_teguran_prev" autocomplete="off" value="{{ old('pelanggaran_lalu_lintas_teguran_prev') }}">
-                                    @error('pelanggaran_lalu_lintas_teguran_prev')
+                                    <input type="number" class="form-onsite @error('pelanggaran_lalu_lintas_teguran_p') is-invalid @enderror" name="pelanggaran_lalu_lintas_teguran_p" autocomplete="off" value="{{ old('pelanggaran_lalu_lintas_teguran_p') }}">
+                                    @error('pelanggaran_lalu_lintas_teguran_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
