@@ -11,6 +11,7 @@ class DailyInputPrev extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+    protected $table = 'daily_input_prev';
 
     public function poldaSubmited()
     {

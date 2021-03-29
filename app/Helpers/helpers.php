@@ -159,6 +159,12 @@ if (! function_exists('poldaId')) {
     }
 }
 
+if (! function_exists('poldaName')) {
+    function poldaName() {
+        return "Polda ".auth()->user()->polda()->first()->polda->name;
+    }
+}
+
 if (! function_exists('poldaImage')) {
     function poldaImage() {
         return UserHasPolda::with('polda')->where("polda_id", poldaId())->first();
