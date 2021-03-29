@@ -33,6 +33,11 @@ class PoldaSubmited extends Model
         return $this->hasOne(DailyInput::class);
     }
 
+    public function dailyInputPrev()
+    {
+        return $this->hasOne(DailyInputPrev::class);
+    }
+
     public function rencanaOperasi()
     {
         return $this->belongsTo(RencanaOperasi::class);

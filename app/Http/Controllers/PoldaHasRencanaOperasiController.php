@@ -23,10 +23,6 @@ class PoldaHasRencanaOperasiController extends Controller
     {
         $model = PoldaSubmited::perpolda()->with('polda');
 
-        // $model->when(authUser()->hasRole('access_daerah'), function ($q) {
-        //     return $q->where(DB::raw('DATE(created_at)'), now()->format("Y-m-d"));
-        // });
-
         return datatables()->eloquent($model)
         ->addColumn('polda_name', function (PoldaSubmited $ps) {
             return $ps->polda->name;
@@ -109,7 +105,7 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function edit($uuid)
     {
-        $data = PoldaSubmited::with('dailyInput')->whereUuid($uuid)->firstOrFail();
+        $data = PoldaSubmited::with('dailyInput', 'dailyInputPrev')->whereUuid($uuid)->firstOrFail();
 
         return view('phro.edit', compact('data', 'uuid'));
     }
