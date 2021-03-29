@@ -15,15 +15,16 @@ h1, h2, h3, h4, h5, h6 {
     Basic
 */
 .card {
-  border: 2px solid #1b2e4b;
-  border-radius: 6px;
+  border: none;
+  border-radius: unset;
   margin-bottom: 4px;
-  background: #191e3a; }
+  background: transparent; }
 
 .card-header {
-  background-color: #1b2e4b;
-  color: #f8538d;
-  border-radius: 4px;
+  
+  background-color: #0B658A;
+  /* color: #f8538d; */
+  border-radius: unset;
   padding: 0;
   position: relative;
   border-bottom: none; }
@@ -34,11 +35,11 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 14px;
     letter-spacing: 1px; }
     .card-header section > div.collapsed {
-      color: #888ea8; }
+      color: #fff; }
     .card-header section > div:not(.collapsed) {
-      color: #25d5e4;
-      border-bottom: 2px solid #1b2e4b;
-      font-weight: 600; }
+      color: #fff;
+      /* border-bottom: 2px solid #1b2e4b; */
+      font-weight: normal }
     .card-header section > div .icons {
       position: absolute;
       right: 0;
@@ -65,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
     .card .card-body ul li a {
       color: #888ea8;
       font-size: 13px;
-      font-weight: 600; }
+      font-weight: normal }
       .card .card-body ul li a:hover {
         color: #1b55e2; }
 
@@ -74,17 +75,20 @@ h1, h2, h3, h4, h5, h6 {
 */
 .no-outer-spacing {
   border: 1px solid #3b3f5c;
-  border-radius: 6px; }
+  border-radius: unset;
+ }
   .no-outer-spacing .card {
     margin-bottom: 0;
     border: none;
-    border-radius: 0; }
+    border-radius: unset; }
     .no-outer-spacing .card:first-child {
-      border-top-left-radius: 6px;
-      border-top-right-radius: 6px; }
+      border-top-left-radius: unset;
+      border-top-right-radius: unset; 
+    }
     .no-outer-spacing .card:last-child {
-      border-bottom-left-radius: 6px;
-      border-bottom-right-radius: 6px; }
+      border-bottom-left-radius: unset;
+      border-bottom-right-radius: unset;
+     }
     .no-outer-spacing .card:not(:last-child) {
       border-bottom: 1px solid #3b3f5c; }
   .no-outer-spacing .card-header section > div:not(.collapsed) {
@@ -105,5 +109,5 @@ h1, h2, h3, h4, h5, h6 {
     fill: rgba(0, 23, 55, 0.08); }
 
 .accordion-icons div:not(.collapsed) .accordion-icon svg {
-  color: #25d5e4;
+  color: #fff;
   fill: rgba(27, 85, 226, 0.239216); }

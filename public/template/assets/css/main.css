@@ -201,10 +201,10 @@ blockquote.blockquote {
     padding: 20px 20px 20px 14px;
     font-size: 0.875rem;
     background-color: #1b2e4b;
-    border-bottom-right-radius: 8px;
+    /* border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
     border: 1px solid #1b2e4b;
-    border-left: 2px solid #009688;
+    border-left: 2px solid #009688; */
 }
 
 blockquote.blockquote>p {
@@ -361,6 +361,22 @@ label {
 
 
 /*      Form Control       */
+
+.form-onsite {
+    height: auto;
+    border: 0px solid #00adef;
+    color: #fff;
+    font-size: 15px;
+    padding: 8px 10px;
+    letter-spacing: 1px;
+    height: calc(1.1em + 1.1rem + 2px);
+    padding: .75rem 1.25rem;
+    background: rgba(0, 173, 239, 0);
+    outline: none;
+    /* box-shadow: 0 0 8px 0 rgba(81, 203, 238, 0.1), 0 0 20px 0 rgba(81, 203, 238, 0.09); */
+    /* border-radius: 6px; */
+    /* background: #1b2e4b; */
+}
 
 .form-control {
     height: auto;
