@@ -15,10 +15,10 @@
                                 JENIS PELANGGARAN LALU LINTAS
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12 text-center">
-                                2019
+                                    {{ yearMinus() }}
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12 text-center">
-                                2020
+                                    {{ year() }}
                                 </div>
                             </div>
                         </div>

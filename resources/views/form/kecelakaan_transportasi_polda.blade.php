@@ -15,12 +15,12 @@
                                 KECELAKAAN TRANSPORTASI
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12 text-center">
-                                2019
+                                    {{ yearMinus() }}
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12 text-center">
-                                2020
+                                    {{ year() }}
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -49,7 +49,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -74,7 +74,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -99,7 +99,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </div>
                 </div>

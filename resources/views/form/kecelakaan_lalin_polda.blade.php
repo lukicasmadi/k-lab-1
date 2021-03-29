@@ -9,7 +9,7 @@
                                 <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                 II DATA TERKAIT MASALAH KECELAKAAN LALU LINTAS
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -26,12 +26,12 @@
                                 KECELAKAAN LALU LINTAS
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12 text-center">
-                                2019
+                                    {{ yearMinus() }}
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12 text-center">
-                                2020
+                                    {{ year() }}
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -60,7 +60,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -85,7 +85,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -110,7 +110,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -135,7 +135,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -160,7 +160,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </div>
                 </div>

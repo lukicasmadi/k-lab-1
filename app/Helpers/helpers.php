@@ -218,3 +218,15 @@ if (! function_exists('percentageStatus')) {
         return $tanda;
     }
 }
+
+if (! function_exists('year')) {
+    function year() {
+        return date("Y");
+    }
+}
+
+if (! function_exists('yearMinus')) {
+    function yearMinus() {
+        return date("Y") - 1;
+    }
+}

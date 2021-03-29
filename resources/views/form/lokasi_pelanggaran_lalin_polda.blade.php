@@ -15,12 +15,12 @@
                                 LOKASI PELANGGARAN LALU LINTAS
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12 text-center">
-                                2019
+                                    {{ yearMinus() }}
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12 text-center">
-                                2020
+                                    {{ year() }}
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -33,8 +33,8 @@
                                 <div class="col-xl-11 col-md-12 col-sm-12 col-12">
                                 A. BERDASARKAN KAWASAN
                                 </div>
-                            </div>                                            
-                        </div>                        
+                            </div>
+                        </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
@@ -58,7 +58,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -83,7 +83,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -108,7 +108,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -133,7 +133,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -158,7 +158,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12" style="background: #11425C; padding: 10px 0;">
                             <div class="row">
@@ -167,8 +167,8 @@
                                 <div class="col-xl-11 col-md-12 col-sm-12 col-12">
                                 B. STATUS JALAN
                                 </div>
-                            </div>                                            
-                        </div>                        
+                            </div>
+                        </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
@@ -192,7 +192,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -217,7 +217,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -242,7 +242,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -267,7 +267,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12" style="background: #11425C; padding: 10px 0;">
                             <div class="row">
@@ -276,8 +276,8 @@
                                 <div class="col-xl-11 col-md-12 col-sm-12 col-12">
                                 C. BERDASARKAN FUNGSI JALAN
                                 </div>
-                            </div>                                            
-                        </div>                        
+                            </div>
+                        </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
@@ -301,7 +301,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -326,7 +326,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -351,7 +351,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -376,7 +376,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </div>
                 </div>
