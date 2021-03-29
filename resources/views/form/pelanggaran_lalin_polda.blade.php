@@ -1,9 +1,16 @@
 <div class="col-lg-12 layout-spacing">
 
     @if ($errors->any())
-        <div class="alert alert-danger custom">
+        {{-- <div class="alert alert-danger custom">
             <ul>
                 <li>Inputan anda belum lengkap. Silahkan diperiksa lagi</li>
+            </ul>
+        </div> --}}
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
             </ul>
         </div>
     @endif
@@ -37,7 +44,7 @@
                                 <div class="col-xl-4 col-md-12 col-sm-12 col-12">
                                 TAHUN
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -48,7 +55,7 @@
                                 <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                 I DATA TERKAIT MASALAH PELANGGARAN LALU LINTAS
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -72,7 +79,7 @@
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12 text-center">
                                 2020
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -101,7 +108,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -126,7 +133,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </div>
                 </div>

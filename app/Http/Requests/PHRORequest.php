@@ -21,13 +21,13 @@ class PHRORequest extends FormRequest
      *
      * @return array
      */
-    public function messages()
-    {
-        return [
-            'required' => 'Field ini harus diisi minimal dengan angka 0',
-            'numeric' => 'Field ini harus dalam format numeric'
-        ];
-    }
+    // public function messages()
+    // {
+    //     return [
+    //         'required' => 'Field ini harus diisi minimal dengan angka 0',
+    //         'numeric' => 'Field ini harus dalam format numeric'
+    //     ];
+    // }
 
     public function rules()
     {

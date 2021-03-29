@@ -20,7 +20,7 @@
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12 text-center">
                                 2020
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -33,8 +33,8 @@
                                 <div class="col-xl-11 col-md-12 col-sm-12 col-12">
                                 A. SEPEDA MOTOR
                                 </div>
-                            </div>                                            
-                        </div>                        
+                            </div>
+                        </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
@@ -58,7 +58,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -83,7 +83,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -108,7 +108,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -133,7 +133,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -158,7 +158,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -183,7 +183,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -208,7 +208,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12" style="background: #11425C; padding: 10px 0;">
                             <div class="row">
@@ -217,8 +217,8 @@
                                 <div class="col-xl-11 col-md-12 col-sm-12 col-12">
                                 B. MOBIL DAN KENDARAAN KHUSUS
                                 </div>
-                            </div>                                            
-                        </div>                        
+                            </div>
+                        </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
@@ -242,7 +242,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -267,7 +267,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -292,7 +292,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -317,7 +317,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -342,7 +342,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -367,7 +367,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -392,7 +392,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </div>
                 </div>

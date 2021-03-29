@@ -20,7 +20,7 @@
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12 text-center">
                                 2020
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -33,8 +33,8 @@
                                 <div class="col-xl-11 col-md-12 col-sm-12 col-12">
                                 A. BERDASARKAN KAWASAN
                                 </div>
-                            </div>                                            
-                        </div>                        
+                            </div>
+                        </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
@@ -43,22 +43,22 @@
                                 1. KAWASAN PEMUKIMAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_pemukiman_prev') is-invalid @enderror" name="lokasi_kecelakaan_pemukiman_prev" autocomplete="off" value="{{ old('lokasi_kecelakaan_pemukiman_prev') }}">
-                                    @error('lokasi_kecelakaan_pemukiman_prev')
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_pemukiman_prev') is-invalid @enderror" name="lokasi_kecelakaan_lalin_pemukiman_prev" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_pemukiman_prev') }}">
+                                    @error('lokasi_kecelakaan_lalin_pemukiman_prev')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_pemukiman') is-invalid @enderror" name="lokasi_kecelakaan_pemukiman" autocomplete="off" value="{{ old('lokasi_kecelakaan_pemukiman') }}">
-                                    @error('lokasi_kecelakaan_pemukiman')
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_pemukiman') is-invalid @enderror" name="lokasi_kecelakaan_lalin_pemukiman" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_pemukiman') }}">
+                                    @error('lokasi_kecelakaan_lalin_pemukiman')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -68,22 +68,22 @@
                                 2. KAWASAN PERBELANJAAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_perbelanjaan_prev') is-invalid @enderror" name="lokasi_kecelakaan_perbelanjaan_prev" autocomplete="off" value="{{ old('lokasi_kecelakaan_perbelanjaan_prev') }}">
-                                    @error('lokasi_kecelakaan_perbelanjaan_prev')
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_perbelanjaan_prev') is-invalid @enderror" name="lokasi_kecelakaan_lalin_perbelanjaan_prev" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_perbelanjaan_prev') }}">
+                                    @error('lokasi_kecelakaan_lalin_perbelanjaan_prev')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_perbelanjaan') is-invalid @enderror" name="lokasi_kecelakaan_perbelanjaan" autocomplete="off" value="{{ old('lokasi_kecelakaan_perbelanjaan') }}">
-                                    @error('lokasi_kecelakaan_perbelanjaan')
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_perbelanjaan') is-invalid @enderror" name="lokasi_kecelakaan_lalin_perbelanjaan" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_perbelanjaan') }}">
+                                    @error('lokasi_kecelakaan_lalin_perbelanjaan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -93,22 +93,22 @@
                                 3. PERKANTORAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_perkantoran_prev') is-invalid @enderror" name="lokasi_kecelakaan_perkantoran_prev" autocomplete="off" value="{{ old('lokasi_kecelakaan_perkantoran_prev') }}">
-                                    @error('lokasi_kecelakaan_perkantoran_prev')
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_perkantoran_prev') is-invalid @enderror" name="lokasi_kecelakaan_lalin_perkantoran_prev" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_perkantoran_prev') }}">
+                                    @error('lokasi_kecelakaan_lalin_perkantoran_prev')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_perkantoran') is-invalid @enderror" name="lokasi_kecelakaan_perkantoran" autocomplete="off" value="{{ old('lokasi_kecelakaan_perkantoran') }}">
-                                    @error('lokasi_kecelakaan_perkantoran')
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_perkantoran') is-invalid @enderror" name="lokasi_kecelakaan_lalin_perkantoran" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_perkantoran') }}">
+                                    @error('lokasi_kecelakaan_lalin_perkantoran')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -118,22 +118,22 @@
                                 4. KAWASAN WISATA
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_wisata_prev') is-invalid @enderror" name="lokasi_kecelakaan_wisata_prev" autocomplete="off" value="{{ old('lokasi_kecelakaan_wisata_prev') }}">
-                                    @error('lokasi_kecelakaan_wisata_prev')
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_wisata_prev') is-invalid @enderror" name="lokasi_kecelakaan_lalin_wisata_prev" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_wisata_prev') }}">
+                                    @error('lokasi_kecelakaan_lalin_wisata_prev')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_wisata') is-invalid @enderror" name="lokasi_kecelakaan_wisata" autocomplete="off" value="{{ old('lokasi_kecelakaan_wisata') }}">
-                                    @error('lokasi_kecelakaan_wisata')
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_wisata') is-invalid @enderror" name="lokasi_kecelakaan_lalin_wisata" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_wisata') }}">
+                                    @error('lokasi_kecelakaan_lalin_wisata')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -143,22 +143,47 @@
                                 5. KAWASAN INDUSTRI
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_industri_prev') is-invalid @enderror" name="lokasi_kecelakaan_industri_prev" autocomplete="off" value="{{ old('lokasi_kecelakaan_industri_prev') }}">
-                                    @error('lokasi_kecelakaan_industri_prev')
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_industri_prev') is-invalid @enderror" name="lokasi_kecelakaan_lalin_industri_prev" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_industri_prev') }}">
+                                    @error('lokasi_kecelakaan_lalin_industri_prev')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_industri') is-invalid @enderror" name="lokasi_kecelakaan_industri" autocomplete="off" value="{{ old('lokasi_kecelakaan_industri') }}">
-                                    @error('lokasi_kecelakaan_industri')
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_industri') is-invalid @enderror" name="lokasi_kecelakaan_lalin_industri" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_industri') }}">
+                                    @error('lokasi_kecelakaan_lalin_industri')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                6. LAIN LAIN
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_lain_lain_prev') is-invalid @enderror" name="lokasi_kecelakaan_lalin_lain_lain_prev" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_lain_lain_prev') }}">
+                                    @error('lokasi_kecelakaan_lalin_lain_lain_prev')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_lain_lain') is-invalid @enderror" name="lokasi_kecelakaan_lalin_lain_lain" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_lain_lain') }}">
+                                    @error('lokasi_kecelakaan_lalin_lain_lain')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12" style="background: #11425C; padding: 10px 0;">
                             <div class="row">
@@ -167,8 +192,8 @@
                                 <div class="col-xl-11 col-md-12 col-sm-12 col-12">
                                 B. STATUS JALAN
                                 </div>
-                            </div>                                            
-                        </div>                        
+                            </div>
+                        </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
@@ -192,7 +217,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -217,7 +242,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -242,7 +267,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -267,7 +292,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12" style="background: #11425C; padding: 10px 0;">
                             <div class="row">
@@ -276,8 +301,8 @@
                                 <div class="col-xl-11 col-md-12 col-sm-12 col-12">
                                 C. BERDASARKAN FUNGSI JALAN
                                 </div>
-                            </div>                                            
-                        </div>                        
+                            </div>
+                        </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
@@ -301,7 +326,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -326,7 +351,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -351,7 +376,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -376,7 +401,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -20,7 +20,7 @@
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12 text-center">
                                 2020
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -49,7 +49,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -74,7 +74,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -99,7 +99,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -124,7 +124,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -134,22 +134,22 @@
                                 E. KENDARAAN KHUSUS
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_kendaraan_prev') is-invalid @enderror" name="barang_bukti_yg_disita_kendaraan_prev" autocomplete="off" value="{{ old('barang_bukti_yg_disita_kendaraan_prev') }}">
-                                    @error('barang_bukti_yg_disita_kendaraan_prev')
+                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus_prev') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus_prev" autocomplete="off" value="{{ old('kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus_prev') }}">
+                                    @error('kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus_prev')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('barang_bukti_yg_disita_kendaraan') is-invalid @enderror" name="barang_bukti_yg_disita_kendaraan" autocomplete="off" value="{{ old('barang_bukti_yg_disita_kendaraan') }}">
-                                    @error('barang_bukti_yg_disita_kendaraan')
+                                    <input type="number" class="form-onsite @error('kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus') is-invalid @enderror" name="kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus" autocomplete="off" value="{{ old('kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus') }}">
+                                    @error('kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </div>
                 </div>

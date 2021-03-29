@@ -10,15 +10,7 @@
 
         <div class="widget-content widget-content-area">
 
-            <div class="form-group mb-4">
-                <label><span class="require">*</span>1) MANUSIA</label>
-                <input type="number" class="form-control @error('faktor_penyebab_kecelakaan_manusia') is-invalid @enderror" name="faktor_penyebab_kecelakaan_manusia" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_manusia') }}">
-                @error('faktor_penyebab_kecelakaan_manusia')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
+
 
             <div class="form-group mb-4">
                 <label><span class="require">*</span>a. NGANTUK/LELAH (PSL 283)</label>

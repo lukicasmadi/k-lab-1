@@ -83,6 +83,7 @@ class PoldaHasRencanaOperasiController extends Controller
             $payload = $request->except(['_token', 'submit']);
             $payload["polda_submited_id"] = $poldaSubmit->id;
             $payload["rencana_operasi_id"] = operationPlans()->id;
+            $payload["year"] = date("Y");
 
             DailyInput::create($payload);
 

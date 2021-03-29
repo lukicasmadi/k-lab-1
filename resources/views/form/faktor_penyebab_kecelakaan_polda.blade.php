@@ -20,7 +20,7 @@
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12 text-center">
                                 2020
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -33,8 +33,24 @@
                                 <div class="col-xl-11 col-md-12 col-sm-12 col-12">
                                 1. MANUSIA
                                 </div>
-                            </div>                                            
-                        </div>                        
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_manusia_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_manusia_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_manusia_prev') }}">
+                                    @error('faktor_penyebab_kecelakaan_manusia_prev')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_manusia') is-invalid @enderror" name="faktor_penyebab_kecelakaan_manusia" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_manusia') }}">
+                                    @error('faktor_penyebab_kecelakaan_manusia')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
@@ -58,7 +74,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -83,7 +99,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -108,7 +124,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -133,7 +149,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -158,7 +174,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -183,7 +199,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -208,7 +224,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -233,7 +249,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -258,7 +274,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -283,7 +299,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -308,7 +324,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -333,7 +349,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -358,7 +374,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite" style="background: #11425C; padding: 10px 0;">
                             <div class="row">
@@ -383,7 +399,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -408,7 +424,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12" style="background: #11425C; padding: 10px 0;">
                             <div class="row">
@@ -417,8 +433,24 @@
                                 <div class="col-xl-11 col-md-12 col-sm-12 col-12">
                                 5. PRASARANA JALAN
                                 </div>
-                            </div>                                            
-                        </div>                        
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_prasarana_jalan_prev') is-invalid @enderror" name="faktor_penyebab_kecelakaan_prasarana_jalan_prev" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_prasarana_jalan_prev') }}">
+                                    @error('faktor_penyebab_kecelakaan_prasarana_jalan_prev')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('faktor_penyebab_kecelakaan_prasarana_jalan') is-invalid @enderror" name="faktor_penyebab_kecelakaan_prasarana_jalan" autocomplete="off" value="{{ old('faktor_penyebab_kecelakaan_prasarana_jalan') }}">
+                                    @error('faktor_penyebab_kecelakaan_prasarana_jalan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
@@ -442,7 +474,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -467,7 +499,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -492,7 +524,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
                             <div class="row">
@@ -517,7 +549,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>                                            
+                            </div>
                         </div>
                     </div>
                 </div>
