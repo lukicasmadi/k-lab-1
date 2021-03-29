@@ -376,7 +376,7 @@ function donutData() {
             shadeIntensity: 0.8,
             opacityFrom: 0.9,
             opacityTo: 0.9,
-            stops: [0, 90, 100]
+            stops: [50, 190, 100]
             }
         },
         colors:['#00adef', '#ea1c26'],
