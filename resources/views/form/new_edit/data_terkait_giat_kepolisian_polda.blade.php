@@ -45,7 +45,7 @@
                                 A. PENGATURAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('giat_lantas_pengaturan_p') is-invalid @enderror" name="giat_lantas_pengaturan_p" autocomplete="off" value="{{ old('giat_lantas_pengaturan_p') }}">
+                                    <input type="number" class="form-onsite @error('giat_lantas_pengaturan_p') is-invalid @enderror" name="giat_lantas_pengaturan_p" autocomplete="off" value="{{ $data->dailyInputPrev->giat_lantas_pengaturan_p }}">
                                     @error('giat_lantas_pengaturan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -53,7 +53,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('giat_lantas_pengaturan') is-invalid @enderror" name="giat_lantas_pengaturan" autocomplete="off" value="{{ old('giat_lantas_pengaturan') }}">
+                                    <input type="number" class="form-onsite @error('giat_lantas_pengaturan') is-invalid @enderror" name="giat_lantas_pengaturan" autocomplete="off" value="{{ $data->dailyInput->giat_lantas_pengaturan }}">
                                     @error('giat_lantas_pengaturan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -70,7 +70,7 @@
                                 B. PENJAGAAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('giat_lantas_penjagaan_p') is-invalid @enderror" name="giat_lantas_penjagaan_p" autocomplete="off" value="{{ old('giat_lantas_penjagaan_p') }}">
+                                    <input type="number" class="form-onsite @error('giat_lantas_penjagaan_p') is-invalid @enderror" name="giat_lantas_penjagaan_p" autocomplete="off" value="{{ $data->dailyInputPrev->giat_lantas_penjagaan_p }}">
                                     @error('giat_lantas_penjagaan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -78,7 +78,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('giat_lantas_penjagaan') is-invalid @enderror" name="giat_lantas_penjagaan" autocomplete="off" value="{{ old('giat_lantas_penjagaan') }}">
+                                    <input type="number" class="form-onsite @error('giat_lantas_penjagaan') is-invalid @enderror" name="giat_lantas_penjagaan" autocomplete="off" value="{{ $data->dailyInput->giat_lantas_penjagaan }}">
                                     @error('giat_lantas_penjagaan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -95,7 +95,7 @@
                                 C. PENGAWALAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('giat_lantas_pengawalan_p') is-invalid @enderror" name="giat_lantas_pengawalan_p" autocomplete="off" value="{{ old('giat_lantas_pengawalan_p') }}">
+                                    <input type="number" class="form-onsite @error('giat_lantas_pengawalan_p') is-invalid @enderror" name="giat_lantas_pengawalan_p" autocomplete="off" value="{{ $data->dailyInputPrev->giat_lantas_pengawalan_p }}">
                                     @error('giat_lantas_pengawalan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -103,7 +103,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('giat_lantas_pengawalan') is-invalid @enderror" name="giat_lantas_pengawalan" autocomplete="off" value="{{ old('giat_lantas_pengawalan') }}">
+                                    <input type="number" class="form-onsite @error('giat_lantas_pengawalan') is-invalid @enderror" name="giat_lantas_pengawalan" autocomplete="off" value="{{ $data->dailyInput->giat_lantas_pengawalan }}">
                                     @error('giat_lantas_pengawalan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -120,7 +120,7 @@
                                 D. PATROLI
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('giat_lantas_patroli_p') is-invalid @enderror" name="giat_lantas_patroli_p" autocomplete="off" value="{{ old('giat_lantas_patroli_p') }}">
+                                    <input type="number" class="form-onsite @error('giat_lantas_patroli_p') is-invalid @enderror" name="giat_lantas_patroli_p" autocomplete="off" value="{{ $data->dailyInputPrev->giat_lantas_patroli_p }}">
                                     @error('giat_lantas_patroli_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -128,7 +128,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('giat_lantas_patroli') is-invalid @enderror" name="giat_lantas_patroli" autocomplete="off" value="{{ old('giat_lantas_patroli') }}">
+                                    <input type="number" class="form-onsite @error('giat_lantas_patroli') is-invalid @enderror" name="giat_lantas_patroli" autocomplete="off" value="{{ $data->dailyInput->giat_lantas_patroli }}">
                                     @error('giat_lantas_patroli')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
