@@ -34,10 +34,6 @@
                             </svg>
                             Tambah Rencana Operasi
                             </a>
-                            <a class="btn del-operasi" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="18.001" height="18.001" viewBox="0 0 18.001 18.001">
-                            <path id="Union_24" data-name="Union 24" d="M-2992-9019a2,2,0,0,1-2-2v-14a2,2,0,0,1,2-2h14a2,2,0,0,1,2,2v14a2,2,0,0,1-2,2Zm0-2h14v-14h-14Zm7-5.586-2.831,2.828-1.415-1.415,2.83-2.828-2.828-2.829,1.413-1.415,2.828,2.828,2.83-2.828,1.415,1.415-2.831,2.829,2.831,2.83-1.415,1.413Z" transform="translate(2994.001 9037.001)" fill="#fff"/>
-                            </svg>
-                            Hapus Operasi</a>
                         </div>
                     </div>
                 </div>
@@ -49,8 +45,8 @@
                                 <th>Nama Operasi</th>
                                 <th>Operasi</th>
                                 <th>Deskripsi</th>
-                                <th>TGL Mulai</th>
-                                <th>Durasi</th>
+                                <th>Mulai</th>
+                                <th>Selesai</th>
                                 <th>Lihat</th>
                                 <th>Pilihan</th>
                             </tr>
@@ -119,7 +115,7 @@
         <div class="modal fade" id="editRencanaOperasi" tabindex="-1" role="dialog" aria-labelledby="editRencanaOperasi" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
-                    <form method="POST" action="">
+                    <form id="formEdit" method="POST" action="">
                         @csrf
                         @method('PATCH')
                         <div class="modal-body">
@@ -132,24 +128,26 @@
                                         </div>
                                     </div>
                                     <div class="row">
+                                        <input type="hidden" name="uuid_edit" id="uuid_edit">
+
                                         <div class="col-md-12">
                                             <label class="text-popup">Jenis Operasi Yang Akan Dilaksanakan</label>
-                                            <input type="text" name="edit_jenis_operasi" id="edit_jenis_operasi" class="form-control" value="">
+                                            <input type="text" name="edit_jenis_operasi" id="edit_jenis_operasi" class="form-control">
                                         </div>
 
                                         <div class="col-md-12">
                                             <label class="text-popup">Nama Operasi</label>
-                                            <input type="text" name="edit_nama_operasi" id="edit_nama_operasi" class="form-control" value="">
+                                            <input type="text" name="edit_nama_operasi" id="edit_nama_operasi" class="form-control">
                                         </div>
 
                                         <div class="col-md-6">
                                             <label class="text-popup">Tanggal Mulai</label>
-                                            <input type="text" name="edit_tanggal_mulai" id="edit_tanggal_mulai" class="form-control" value="">
+                                            <input type="text" name="edit_tanggal_mulai" id="edit_tanggal_mulai" class="form-control">
                                         </div>
 
                                         <div class="col-md-6">
                                             <label class="text-popup">Tanggal Selesai</label>
-                                            <input type="text" name="edit_tanggal_selesai" id="edit_tanggal_selesai" class="form-control" value="">
+                                            <input type="text" name="edit_tanggal_selesai" id="edit_tanggal_selesai" class="form-control">
                                         </div>
 
                                         <div class="col-md-12">
@@ -167,6 +165,63 @@
                             <input type="submit" name="submit" class="btn" value="UPDATE" id="btn-n-add">
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="showRencanaOperasi" tabindex="-1" role="dialog" aria-labelledby="showRencanaOperasi" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="notes-box">
+                            <div class="notes-content">
+                                <span class="colorblue">VIEW RENCANA OPERASI</span>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                                    <div class="row imgpopup">
+                                        <img src="{{ secure_asset('/img/line_popbottom.png') }}">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <input type="hidden" name="uuid_preview" id="uuid_preview">
+                                    <div class="col-md-12">
+                                        <label class="text-popup">Jenis Operasi Yang Akan Dilaksanakan</label><br>
+                                        <span id="view_jenis_operasi"></span>
+                                    </div>
+
+                                    <span class="divSpace"></span>
+
+                                    <div class="col-md-12">
+                                        <label class="text-popup">Nama Operasi</label><br>
+                                        <span id="view_nama_operasi"></span>
+                                    </div>
+
+                                    <span class="divSpace"></span>
+
+                                    <div class="col-md-12">
+                                        <label class="text-popup">Tanggal Mulai</label><br>
+                                        <span id="view_tanggal_mulai"></span>
+                                    </div>
+
+                                    <span class="divSpace"></span>
+
+                                    <div class="col-md-12">
+                                        <label class="text-popup">Tanggal Selesai</label><br>
+                                        <span id="view_tanggal_selesai"></span>
+                                    </div>
+
+                                    <span class="divSpace"></span>
+
+                                    <div class="col-md-12">
+                                        <label class="text-popup">Deskripsi</label><br>
+                                        <span id="view_deskripsi"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" name="btnRedirectEdit" id="btnRedirectEdit" class="btn" value="EDIT">
+                    </div>
                 </div>
             </div>
         </div>
@@ -198,13 +253,20 @@
         $('#modalCreateRencanaOperasi').modal('show');
     });
 
-
     $(document).ready(function () {
         $('#tanggal_mulai').datepicker({
             format: 'yyyy-mm-dd',
         })
 
         $('#tanggal_selesai').datepicker({
+            format: 'yyyy-mm-dd',
+        })
+
+        $('#edit_tanggal_mulai').datepicker({
+            format: 'yyyy-mm-dd',
+        })
+
+        $('#edit_tanggal_selesai').datepicker({
             format: 'yyyy-mm-dd',
         })
 
@@ -267,19 +329,23 @@
                     data: 'end_date',
                 },
                 {
-                    data: 'attachement',
+                    data: 'uuid',
                     render: function(data, type, row) {
-                        return operationDownload(data);
+                        return `
+                        <div class="icon-container">
+                            <a href="#" class="viewData" idval="`+data+`"><i class="far fa-eye"></i></a>
+                        </div>
+                        `;
                     },
-                    sortable: false,
                     searchable: false,
+                    sortable: false,
                 },
                 {
                     data: 'uuid',
                     render: function(data, type, row) {
                         return `
                         <div class="icon-container">
-                            <a class="editData" idval="`+data+`" href="`+route('rencana_operasi_edit', data)+`"><i class="far fa-edit"></i></a>
+                            <a class="editData" idval="`+data+`" href="#"><i class="far fa-edit"></i></a>
                         </div>
                         `;
                     },
@@ -315,11 +381,39 @@
             })
         })
 
+        $('#tbl_operation tbody').on('click', 'a.viewData', function(e) {
+            e.preventDefault()
+            var uuid = $(this).attr("idval")
+            axios.get(route('rencana_operasi_by_uuid', uuid)).then(function(response) {
+                if(response.status == 200) {
+                    $("#view_jenis_operasi").html(response.data.operation_type)
+                    $("#view_nama_operasi").html(response.data.name)
+                    $("#view_tanggal_mulai").html(response.data.start_date)
+                    $("#view_tanggal_selesai").html(response.data.end_date)
+                    $("#view_deskripsi").html(response.data.desc)
+                    $("#uuid_preview").val(uuid)
+                    $('#showRencanaOperasi').modal('show')
+                } else {
+                    swal("Not found", error.response.data.output, "error")
+                }
+            })
+            .catch(function(error) {
+                swal("Get data failed! Maybe you miss something", error.response.data.output, "error")
+            })
+        })
+
         $('#tbl_operation tbody').on('click', 'a.editData', function(e) {
             e.preventDefault()
             var uuid = $(this).attr("idval")
             axios.get(route('rencana_operasi_by_uuid', uuid)).then(function(response) {
                 if(response.status == 200) {
+                    $("#edit_jenis_operasi").val(response.data.operation_type)
+                    $("#edit_nama_operasi").val(response.data.name)
+                    $("#edit_tanggal_mulai").val(response.data.start_date)
+                    $("#edit_tanggal_selesai").val(response.data.end_date)
+                    $("#edit_deskripsi").val(response.data.desc)
+                    $("#uuid_edit").val(uuid)
+                    $("#formEdit").attr("action", route('edit_rencana_operasi_new'))
                     $('#editRencanaOperasi').modal('show')
                 } else {
                     swal("Not found", error.response.data.output, "error")
@@ -328,6 +422,29 @@
             .catch(function(error) {
                 swal("Get data failed! Maybe you miss something", error.response.data.output, "error")
             })
+        })
+    })
+
+    $('body').on('click', '#btnRedirectEdit', function(e) {
+        e.preventDefault()
+        $('#showRencanaOperasi').modal('hide')
+        var uuid = $("#uuid_preview").val()
+        axios.get(route('rencana_operasi_by_uuid', uuid)).then(function(response) {
+            if(response.status == 200) {
+                $("#edit_jenis_operasi").val(response.data.operation_type)
+                $("#edit_nama_operasi").val(response.data.name)
+                $("#edit_tanggal_mulai").val(response.data.start_date)
+                $("#edit_tanggal_selesai").val(response.data.end_date)
+                $("#edit_deskripsi").val(response.data.desc)
+                $("#uuid_edit").val(uuid)
+                $("#formEdit").attr("action", route('edit_rencana_operasi_new'))
+                $('#editRencanaOperasi').modal('show')
+            } else {
+                swal("Not found", error.response.data.output, "error")
+            }
+        })
+        .catch(function(error) {
+            swal("Get data failed! Maybe you miss something", error.response.data.output, "error")
         })
     })
     </script>
