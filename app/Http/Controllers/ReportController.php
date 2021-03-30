@@ -43,7 +43,7 @@ class ReportController extends Controller
 
         $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");
 
-        return view('report.daily_all', compact('rencanaOperasi'));
+        return view('report.daily_all_casmadi', compact('rencanaOperasi'));
     }
 
     public function dailyProcess()
