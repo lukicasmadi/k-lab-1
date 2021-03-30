@@ -13,10 +13,10 @@ class RencanaOperasi extends Model
 
     protected $guarded = ['id'];
 
-    protected $casts = [
-        'start_date'  => 'date:d-m-Y',
-        'end_date' => 'date:d-m-Y',
-    ];
+    // protected $casts = [
+    //     'start_date'  => 'date:d-m-Y',
+    //     'end_date' => 'date:d-m-Y',
+    // ];
 
     public function getRouteKeyName()
     {

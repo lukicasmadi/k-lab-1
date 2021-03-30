@@ -9,6 +9,7 @@ use App\Models\RencanaOperasi;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\RencanaOperasiRequest;
+use App\Http\Requests\RencanaOperasiUpdateRequest;
 
 class RencanaOperasiController extends Controller
 {
@@ -74,7 +75,7 @@ class RencanaOperasiController extends Controller
         return view('operation.edit', compact('data'));
     }
 
-    public function update(RencanaOperasiRequest $request, $uuid)
+    public function update(RencanaOperasiUpdateRequest $request, $uuid)
     {
         // $all_date = $request->operation_periode;
         // $format = explode(" to ", $all_date);
@@ -83,21 +84,14 @@ class RencanaOperasiController extends Controller
         // $end_date = Carbon::parse(ltrim($format[1], " "))->format('Y-m-d');
 
         $data = [
-            'name' => request('name'),
-            'operation_type' => request('operation_type'),
-            'start_date' => $start_date,
-            'end_date' => $end_date,
-            'desc' => request('desc'),
+            'name' => $request->edit_jenis_operasi,
+            'operation_type' => $request->edit_nama_operasi,
+            'start_date' => $request->edit_tanggal_mulai,
+            'end_date' => $request->edit_tanggal_selesai,
+            'desc' => $request->edit_deskripsi,
         ];
 
-        if(request()->hasFile('attachement')) {
-            $file = $request->file('attachement');
-            $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-            Storage::put("/public/upload/rencana_operasi/".$randomName, File::get($file));
-            $data['attachement'] = $randomName;
-        }
-
-        RencanaOperasi::whereUuid($uuid)->update($data);
+        RencanaOperasi::whereUuid($request->uuid_edit)->update($data);
 
         flash('Your data has been updated')->success();
         return redirect()->route('rencana_operasi_index');

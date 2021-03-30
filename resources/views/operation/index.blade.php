@@ -49,8 +49,8 @@
                                 <th>Nama Operasi</th>
                                 <th>Operasi</th>
                                 <th>Deskripsi</th>
-                                <th>TGL Mulai</th>
-                                <th>Durasi</th>
+                                <th>Mulai</th>
+                                <th>Selesai</th>
                                 <th>Lihat</th>
                                 <th>Pilihan</th>
                             </tr>
@@ -119,7 +119,7 @@
         <div class="modal fade" id="editRencanaOperasi" tabindex="-1" role="dialog" aria-labelledby="editRencanaOperasi" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
-                    <form method="POST" action="">
+                    <form id="formEdit" method="POST" action="">
                         @csrf
                         @method('PATCH')
                         <div class="modal-body">
@@ -132,24 +132,26 @@
                                         </div>
                                     </div>
                                     <div class="row">
+                                        <input type="hidden" name="uuid_edit" id="uuid_edit">
+
                                         <div class="col-md-12">
                                             <label class="text-popup">Jenis Operasi Yang Akan Dilaksanakan</label>
-                                            <input type="text" name="edit_jenis_operasi" id="edit_jenis_operasi" class="form-control" value="">
+                                            <input type="text" name="edit_jenis_operasi" id="edit_jenis_operasi" class="form-control">
                                         </div>
 
                                         <div class="col-md-12">
                                             <label class="text-popup">Nama Operasi</label>
-                                            <input type="text" name="edit_nama_operasi" id="edit_nama_operasi" class="form-control" value="">
+                                            <input type="text" name="edit_nama_operasi" id="edit_nama_operasi" class="form-control">
                                         </div>
 
                                         <div class="col-md-6">
                                             <label class="text-popup">Tanggal Mulai</label>
-                                            <input type="text" name="edit_tanggal_mulai" id="edit_tanggal_mulai" class="form-control" value="">
+                                            <input type="text" name="edit_tanggal_mulai" id="edit_tanggal_mulai" class="form-control">
                                         </div>
 
                                         <div class="col-md-6">
                                             <label class="text-popup">Tanggal Selesai</label>
-                                            <input type="text" name="edit_tanggal_selesai" id="edit_tanggal_selesai" class="form-control" value="">
+                                            <input type="text" name="edit_tanggal_selesai" id="edit_tanggal_selesai" class="form-control">
                                         </div>
 
                                         <div class="col-md-12">
@@ -333,6 +335,8 @@
                     $("#edit_tanggal_mulai").val(response.data.start_date)
                     $("#edit_tanggal_selesai").val(response.data.end_date)
                     $("#edit_deskripsi").val(response.data.desc)
+                    $("#uuid_edit").val(uuid)
+                    $("#formEdit").attr("action", route('edit_rencana_operasi_new'))
                     $('#editRencanaOperasi').modal('show')
                 } else {
                     swal("Not found", error.response.data.output, "error")
