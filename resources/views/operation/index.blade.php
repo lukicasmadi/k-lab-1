@@ -259,6 +259,11 @@
                 }
             })
         })
+
+        $('#tbl_operation tbody').on('click', '.fa-edit', function(e) {
+            e.preventDefault()
+            alert("edit")
+        })
     })
     </script>
 @endpush
