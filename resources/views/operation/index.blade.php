@@ -116,6 +116,61 @@
             </div>
         </div>
 
+        <div class="modal fade" id="editRencanaOperasi" tabindex="-1" role="dialog" aria-labelledby="editRencanaOperasi" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <form method="POST" action="">
+                        @csrf
+                        @method('PATCH')
+                        <div class="modal-body">
+                            <div class="notes-box">
+                                <div class="notes-content">
+                                    <span class="colorblue">EDIT RENCANA OPERASI</span>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                                        <div class="row imgpopup">
+                                            <img src="{{ secure_asset('/img/line_popbottom.png') }}">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label class="text-popup">Jenis Operasi Yang Akan Dilaksanakan</label>
+                                            <input type="text" name="edit_jenis_operasi" id="edit_jenis_operasi" class="form-control" value="">
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <label class="text-popup">Nama Operasi</label>
+                                            <input type="text" name="edit_nama_operasi" id="edit_nama_operasi" class="form-control" value="">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="text-popup">Tanggal Mulai</label>
+                                            <input type="text" name="edit_tanggal_mulai" id="edit_tanggal_mulai" class="form-control" value="">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="text-popup">Tanggal Selesai</label>
+                                            <input type="text" name="edit_tanggal_selesai" id="edit_tanggal_selesai" class="form-control" value="">
+                                        </div>
+
+                                        <div class="col-md-12">
+                                        <label class="text-popup">Deskripsi</label>
+                                            <div class="d-flex note-description">
+                                                <textarea name="edit_deskripsi" id="edit_deskripsi" class="form-control " maxlength="60" rows="3"></textarea>
+                                            </div>
+                                            <span class="validation-text"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" name="submit" class="btn" value="UPDATE" id="btn-n-add">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 @endsection
@@ -265,7 +320,7 @@
             var uuid = $(this).attr("idval")
             axios.get(route('rencana_operasi_by_uuid', uuid)).then(function(response) {
                 if(response.status == 200) {
-                    $('#modalCreateRencanaOperasi').modal('show')
+                    $('#editRencanaOperasi').modal('show')
                 } else {
                     swal("Not found", error.response.data.output, "error")
                 }
