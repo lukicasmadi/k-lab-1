@@ -62,9 +62,9 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                 </a>
                                 <ul class="collapse submenu list-unstyled" id="reportpusat" data-parent="#topAccordion">
-                                    <li class="{{ request()->is('report/daily') ? 'active' : '' }}">
+                                    {{-- <li class="{{ request()->is('report/daily') ? 'active' : '' }}">
                                         <a href="{{ route('report_daily_all_polda') }}"> Laporan Rekap Harian </a>
-                                    </li>
+                                    </li> --}}
                                     <li class="{{ request()->is('report/analysis-evaluation') ? 'active' : '' }}">
                                         <a href="{{ route('report_comparison') }}"> Laporan Analisa & Evaluasi </a>
                                     </li>

@@ -6,6 +6,7 @@ use App\Models\Polda;
 use App\Models\DailyInput;
 use Illuminate\Http\Request;
 use App\Models\PoldaSubmited;
+use App\Models\DailyInputPrev;
 use App\Models\RencanaOperasi;
 use App\Exports\PoldaAllExport;
 use App\Exports\ComparisonExport;
@@ -42,7 +43,7 @@ class ReportController extends Controller
 
         $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");
 
-        return view('report.daily_all_casmadi', compact('rencanaOperasi'));
+        return view('report.daily_all', compact('rencanaOperasi'));
     }
 
     public function dailyProcess()
@@ -56,17 +57,11 @@ class ReportController extends Controller
     public function comparison()
     {
         $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");
-        $yearAvailable = PoldaSubmited::selectRaw('YEAR(submited_date) as year_avail')->orderBy('id', 'desc')->get();
 
-        $year = [];
+        $currentYear = DailyInput::pluck('year')->toArray();
+        $prevYear = DailyInputPrev::pluck('year')->toArray();
 
-        foreach($yearAvailable as $ya) {
-            array_push($year, $ya->year_avail);
-        }
-
-        $yearFiltered = array_unique($year);
-
-        return view('report.comparison', compact('rencanaOperasi', 'yearFiltered'));
+        return view('report.comparison', compact('rencanaOperasi', 'currentYear', 'prevYear'));
     }
 
     public function comparisonProcess()
