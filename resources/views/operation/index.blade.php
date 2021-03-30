@@ -182,6 +182,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <input type="hidden" name="uuid_preview" id="uuid_preview">
                                     <div class="col-md-12">
                                         <label class="text-popup">Jenis Operasi Yang Akan Dilaksanakan</label><br>
                                         <span id="view_jenis_operasi"></span>
@@ -218,6 +219,9 @@
                             </div>
                         </div>
                     </div>
+                    <div class="modal-footer">
+                        <input type="button" name="btnRedirectEdit" id="btnRedirectEdit" class="btn" value="EDIT">
+                    </div>
                 </div>
             </div>
         </div>
@@ -248,7 +252,6 @@
         e.preventDefault();
         $('#modalCreateRencanaOperasi').modal('show');
     });
-
 
     $(document).ready(function () {
         $('#tanggal_mulai').datepicker({
@@ -388,6 +391,7 @@
                     $("#view_tanggal_mulai").html(response.data.start_date)
                     $("#view_tanggal_selesai").html(response.data.end_date)
                     $("#view_deskripsi").html(response.data.desc)
+                    $("#uuid_preview").val(uuid)
                     $('#showRencanaOperasi').modal('show')
                 } else {
                     swal("Not found", error.response.data.output, "error")
@@ -418,6 +422,29 @@
             .catch(function(error) {
                 swal("Get data failed! Maybe you miss something", error.response.data.output, "error")
             })
+        })
+    })
+
+    $('body').on('click', '#btnRedirectEdit', function(e) {
+        e.preventDefault()
+        $('#showRencanaOperasi').modal('hide')
+        var uuid = $("#uuid_preview").val()
+        axios.get(route('rencana_operasi_by_uuid', uuid)).then(function(response) {
+            if(response.status == 200) {
+                $("#edit_jenis_operasi").val(response.data.operation_type)
+                $("#edit_nama_operasi").val(response.data.name)
+                $("#edit_tanggal_mulai").val(response.data.start_date)
+                $("#edit_tanggal_selesai").val(response.data.end_date)
+                $("#edit_deskripsi").val(response.data.desc)
+                $("#uuid_edit").val(uuid)
+                $("#formEdit").attr("action", route('edit_rencana_operasi_new'))
+                $('#editRencanaOperasi').modal('show')
+            } else {
+                swal("Not found", error.response.data.output, "error")
+            }
+        })
+        .catch(function(error) {
+            swal("Get data failed! Maybe you miss something", error.response.data.output, "error")
         })
     })
     </script>
