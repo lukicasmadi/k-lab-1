@@ -17,6 +17,12 @@ class RencanaOperasiController extends Controller
         $this->middleware('can-create-plan')->only('create', 'store', 'edit', 'update');
     }
 
+    public function rencana_operasi_by_uuid($uuid)
+    {
+        $data = RencanaOperasi::where("uuid", $uuid)->firstOrFail();
+        return $data;
+    }
+
     public function data()
     {
         $model = RencanaOperasi::query();

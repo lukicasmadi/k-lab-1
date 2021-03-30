@@ -224,7 +224,7 @@
                     render: function(data, type, row) {
                         return `
                         <div class="icon-container">
-                            <a href="`+route('rencana_operasi_edit', data)+`"><i class="far fa-edit"></i></a> <a href="`+route('rencana_operasi_destroy', data)+`" class="delete" data-id="`+data+`"><i class="far fa-trash-alt"></i><span class="icon-name"></span></a>
+                            <a class="editData" idval="`+data+`" href="`+route('rencana_operasi_edit', data)+`"><i class="far fa-edit"></i></a> <a href="`+route('rencana_operasi_destroy', data)+`" class="delete" data-id="`+data+`"><i class="far fa-trash-alt"></i><span class="icon-name"></span></a>
                         </div>
                         `;
                     },
@@ -260,9 +260,19 @@
             })
         })
 
-        $('#tbl_operation tbody').on('click', '.fa-edit', function(e) {
+        $('#tbl_operation tbody').on('click', 'a.editData', function(e) {
             e.preventDefault()
-            alert("edit")
+            var uuid = $(this).attr("idval")
+            axios.get(route('rencana_operasi_by_uuid', uuid)).then(function(response) {
+                if(response.status == 200) {
+                    $('#modalCreateRencanaOperasi').modal('show')
+                } else {
+                    swal("Not found", error.response.data.output, "error")
+                }
+            })
+            .catch(function(error) {
+                swal("Get data failed! Maybe you miss something", error.response.data.output, "error")
+            })
         })
     })
     </script>

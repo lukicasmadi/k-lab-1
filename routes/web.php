@@ -180,5 +180,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/dashboard/notifikasi', 'HomeController@notifikasi')->name('notifikasi');
         Route::get('/dashboard/polda/mingguan', 'HomeController@weeklyPolda')->name('weeklyPolda');
         Route::get('/dashboard/polda/full', 'HomeController@fullPolda')->name('fullPolda');
+        Route::get('/get/rencana-operasi/{uuid}', 'RencanaOperasiController@rencana_operasi_by_uuid')->name('rencana_operasi_by_uuid');
     });
 });
