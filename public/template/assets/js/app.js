@@ -35,7 +35,7 @@ var App = function() {
 
     var toggleFunction = {
         sidebar: function() {
-            $('.sidebarCollapse').on('click', function (sidebar) {
+            $('.sidebarCollapse').on('click', function(sidebar) {
                 sidebar.preventDefault();
                 $(Selector.mainContainer).toggleClass("topbar-closed");
                 $(Selector.mainContainer).toggleClass("sbar-open");
@@ -44,7 +44,7 @@ var App = function() {
             });
         },
         overlay: function() {
-            $('#dismiss, .overlay').on('click', function () {
+            $('#dismiss, .overlay').on('click', function() {
                 // hide sidebar
                 $(Selector.mainContainer).removeClass('topbar-closed');
                 // hide overlay
@@ -58,16 +58,16 @@ var App = function() {
         },
         search: function() {
             $(Selector.searchFull).click(function(event) {
-               $(this).parents('.search-animated').find('.search-full').addClass(ToggleClasses.inputFocused);
-               $(this).parents('.search-animated').addClass('show-search');
-               $(Selector.overlay.search).addClass('show');
-               $(Selector.overlay.search).addClass('show');
+                $(this).parents('.search-animated').find('.search-full').addClass(ToggleClasses.inputFocused);
+                $(this).parents('.search-animated').addClass('show-search');
+                $(Selector.overlay.search).addClass('show');
+                $(Selector.overlay.search).addClass('show');
             });
 
             $(Selector.overlay.search).click(function(event) {
-               $(this).removeClass('show');
-               $(Selector.searchFull).parents('.search-animated').find('.search-full').removeClass(ToggleClasses.inputFocused);
-               $(Selector.searchFull).parents('.search-animated').removeClass('show-search');
+                $(this).removeClass('show');
+                $(Selector.searchFull).parents('.search-animated').find('.search-full').removeClass(ToggleClasses.inputFocused);
+                $(Selector.searchFull).parents('.search-animated').removeClass('show-search');
             });
         }
     }
@@ -75,24 +75,24 @@ var App = function() {
     var mobileFunctions = {
         activateScroll: function() {
             const ps = new PerfectScrollbar('#topbar', {
-                wheelSpeed:.5,
-                swipeEasing:!0,
-                minScrollbarLength:40,
-                maxScrollbarLength:300
+                wheelSpeed: .5,
+                swipeEasing: !0,
+                minScrollbarLength: 40,
+                maxScrollbarLength: 300
             });
         },
     }
     var desktopFunctions = {
         activateScroll: function() {
             const desktopFncScroll = new PerfectScrollbar('.menu-categories li.menu .submenu', {
-                wheelSpeed:.5,
-                swipeEasing:!0,
-                minScrollbarLength:40,
-                maxScrollbarLength:300
+                wheelSpeed: .5,
+                swipeEasing: !0,
+                minScrollbarLength: 40,
+                maxScrollbarLength: 300
             });
         },
         preventAccordionOnClick: function() {
-            $('.menu > a[data-toggle="collapse"], .menu.single-menu  a[data-toggle="collapse"]').click(function(e){
+            $('.menu > a[data-toggle="collapse"], .menu.single-menu  a[data-toggle="collapse"]').click(function(e) {
                 getWindowWidth = window.innerWidth;
                 if (getWindowWidth > 991) {
                     e.preventDefault(); // to stop the page jump to the anchor target.
@@ -109,8 +109,7 @@ var App = function() {
 
                 if (e.type == 'mousewheel') {
                     scrollTo = (e.originalEvent.wheelDelta * -1);
-                }
-                else if (e.type == 'DOMMouseScroll') {
+                } else if (e.type == 'DOMMouseScroll') {
                     scrollTo = 40 * e.originalEvent.detail;
                 }
 
@@ -123,12 +122,12 @@ var App = function() {
         default: function() {
             $(document).scroll(function(event) {
 
-              var elementMainContent = $('.main-content');
-              var elementNavbar = $( '.topbar-nav');
-              var sideNav = $('.sidenav');
-              var elementOffset = elementMainContent.offset().top;
-              var windowScroll = $(window).scrollTop();
-              // Check if window scroll > or == element offset?
+                var elementMainContent = $('.main-content');
+                var elementNavbar = $('.topbar-nav');
+                var sideNav = $('.sidenav');
+                var elementOffset = elementMainContent.offset().top;
+                var windowScroll = $(window).scrollTop();
+                // Check if window scroll > or == element offset?
                 if (windowScroll >= elementOffset) {
                     sideNav.css('top', '42px');
                 } else if (windowScroll < elementOffset) {
@@ -141,7 +140,7 @@ var App = function() {
             var getDropdownElement = document.querySelectorAll('.more-dropdown .dropdown-item');
             for (var i = 0; i < getDropdownElement.length; i++) {
                 getDropdownElement[i].addEventListener('click', function() {
-                    document.querySelectorAll('.more-dropdown .dropdown-toggle > img')[0].setAttribute('src', 'assets/img/' + this.getAttribute('data-img-value') + '.png' );
+                    document.querySelectorAll('.more-dropdown .dropdown-toggle > img')[0].setAttribute('src', 'assets/img/' + this.getAttribute('data-img-value') + '.png');
                 })
             }
         },
@@ -150,7 +149,7 @@ var App = function() {
     var _mobileResolution = {
         onRefresh: function() {
             var windowWidth = window.innerWidth;
-            if ( windowWidth <= MediaSize.md ) {
+            if (windowWidth <= MediaSize.md) {
                 console.log('On Mobile Refresh');
                 toggleFunction.search();
                 mobileFunctions.activateScroll();
@@ -160,7 +159,7 @@ var App = function() {
             $(window).on('resize', function(event) {
                 event.preventDefault();
                 var windowWidth = window.innerWidth;
-                if ( windowWidth <= MediaSize.md ) {
+                if (windowWidth <= MediaSize.md) {
                     toggleFunction.search();
                     console.log('On Mobile Resize');
                 }
@@ -171,7 +170,7 @@ var App = function() {
     var _desktopResolution = {
         onRefresh: function() {
             var windowWidth = window.innerWidth;
-            if ( windowWidth > MediaSize.md ) {
+            if (windowWidth > MediaSize.md) {
                 toggleFunction.search();
                 console.log('On Desktop Refresh');
                 desktopFunctions.preventAccordionOnClick();
@@ -181,9 +180,9 @@ var App = function() {
             $(window).on('resize', function(event) {
                 event.preventDefault();
                 var windowWidth = window.innerWidth;
-                if ( windowWidth > MediaSize.md ) {
+                if (windowWidth > MediaSize.md) {
                     toggleFunction.search();
-                    toggleFunction.deactivateScroll();
+                    // toggleFunction.deactivateScroll();
                     console.log('On Desktop Resize');
                 }
             });
@@ -192,7 +191,7 @@ var App = function() {
 
     return {
         init: function() {
-            
+
             // Sidebar fn
             toggleFunction.sidebar();
             // Overlay fn
