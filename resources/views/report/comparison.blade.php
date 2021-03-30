@@ -65,75 +65,74 @@
                     <table id="tbl_daily_submited" class="table">
                         <thead>
                             <tr>
-                                <th>Nama Laporan</th>
-                                <th>tahun 2020</th>
-                                <th>tahun 2021</th>
-                                <th>status</th>
-                                <th>Persentase</th>
+                                <th width="35%">Nama Laporan</th>
+                                <th width="25%">tahun 2020</th>
+                                <th width="25%">tahun 2021</th>
+                                <th width="5%">status</th>
+                                <th width="10%">Persentase</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="padd-title">
-                                <td bgcolor="#0E7096" colspan="5">PELANGGARAN LALU LINTAS</td>
-                            </tr>
-                            <tr class="evaluasi">
-                                <td>Tilang</td>
-                                <td>365</td>
-                                <td>309</td>
-                                <td>Turun</td>
-                                <td>15,34%</td>
-                            </tr>
-                            <tr class="evaluasi">
-                                <td>Pelanggaran Ringan</td>
-                                <td>124</td>
-                                <td>144</td>
-                                <td>Turun</td>
-                                <td>15,34%</td>
-                            </tr>
-                            <tr class="evaluasi">
-                                <td>Tilang</td>
-                                <td>365</td>
-                                <td>309</td>
-                                <td>Turun</td>
-                                <td>15,34%</td>
-                            </tr>
-                            <tr class="evaluasi">
-                                <td>Pelanggaran Ringan</td>
-                                <td>124</td>
-                                <td>144</td>
-                                <td>Turun</td>
-                                <td>15,34%</td>
+                            <tr>
+                                <td class="titlletd" bgcolor="#fff" colspan="5">I. DATA TERKAIT MASALAH PELANGGARAN LALU LINTAS</td>
                             </tr>
                             <tr class="padd-title">
-                                <td bgcolor="#0E7096" colspan="5">PELANGGARAN LALU LINTAS</td>
+                                <td bgcolor="#0E7096" colspan="5">1. PELANGGARAN LALU LINTAS</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>Tilang</td>
-                                <td>365</td>
-                                <td>309</td>
-                                <td>Turun</td>
-                                <td>15,34%</td>
+                                <td id="pelanggaran_lalin_tilang_prev">0</td>
+                                <td id="pelanggaran_lalin_tilang">0</td>
+                                <td id="status_pelanggaran_lalin_tilang"><svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 7.5 10"><defs><style>.a{fill:#00adef;}</style></defs><path class="a" d="M9.125,11.606,6.881,9.369,6,10.25,9.75,14l3.75-3.75-.881-.881-2.244,2.238V4H9.125Z" transform="translate(-6 -4)"/></svg> Turun</td>
+                                <td id="persentase_pelanggaran_lalin_tilang">0%</td>
                             </tr>
                             <tr class="evaluasi">
-                                <td>Pelanggaran Ringan</td>
-                                <td>124</td>
-                                <td>144</td>
-                                <td>Turun</td>
-                                <td>15,34%</td>
+                                <td>Teguran</td>
+                                <td id="pelanggaran_lalin_teguran_prev">0</td>
+                                <td id="pelanggaran_lalin_teguran">0</td>
+                                <td id="status_pelanggaran_lalin_teguran"><svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 7.5 10"><defs><style>.a{fill:#00adef;}</style></defs><path class="a" d="M9.125,6.394,6.881,8.631,6,7.75,9.75,4,13.5,7.75l-.881.881L10.375,6.394V14H9.125Z" transform="translate(-6 -4)"/></svg> Naik</td>
+                                <td id="persentase_pelanggaran_lalin_teguran">0%</td>
+                            </tr>
+                            <tr class="padd-title">
+                                <td bgcolor="#0E7096" colspan="5">2. JENIS PELANGGARAN LALU LINTAS</td>
+                            </tr>
+                            <tr>
+                                <td class="subtitle" bgcolor="#fff" colspan="5">A. Sepeda Motor</td>
                             </tr>
                             <tr class="evaluasi">
-                                <td>Tilang</td>
-                                <td>365</td>
-                                <td>309</td>
-                                <td>Turun</td>
-                                <td>15,34%</td>
+                                <td>Gun Helm SNI</td>
+                                <td id="pelanggaran_lalin_motor_gunhelm_prev">0</td>
+                                <td id="pelanggaran_lalin_motor_gunhelm">0</td>
+                                <td id="status_pelanggaran_lalin_motor_gunhelm"><svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 7.5 10"><defs><style>.a{fill:#00adef;}</style></defs><path class="a" d="M9.125,6.394,6.881,8.631,6,7.75,9.75,4,13.5,7.75l-.881.881L10.375,6.394V14H9.125Z" transform="translate(-6 -4)"/></svg> Naik</td>
+                                <td  id="persentase_pelanggaran_lalin_motor_gunhelm">0%</td>
                             </tr>
                             <tr class="evaluasi">
-                                <td>Pelanggaran Ringan</td>
-                                <td>124</td>
-                                <td>144</td>
-                                <td>Turun</td>
-                                <td>15,34%</td>
+                                <td>Melawan Arus</td>
+                                <td id="pelanggaran_lalin_motor_lawan_arus_prev">0</td>
+                                <td id="pelanggaran_lalin_motor_lawan_arus">0</td>
+                                <td id="status_pelanggaran_lalin_motor_lawan_arus"><svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 7.5 10"><defs><style>.a{fill:#00adef;}</style></defs><path class="a" d="M9.125,6.394,6.881,8.631,6,7.75,9.75,4,13.5,7.75l-.881.881L10.375,6.394V14H9.125Z" transform="translate(-6 -4)"/></svg> Naik</td>
+                                <td  id="persentase_pelanggaran_lalin_motor_lawan_arus">0%</td>
+                            </tr>
+                            <tr class="evaluasi">
+                                <td>Gun HP Saat Berkendara</td>
+                                <td id="pelanggaran_lalin_motor_gunhp_prev">0</td>
+                                <td id="pelanggaran_lalin_motor_gunhp">0</td>
+                                <td id="status_pelanggaran_lalin_motor_gunhp"><svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 7.5 10"><defs><style>.a{fill:#00adef;}</style></defs><path class="a" d="M9.125,11.606,6.881,9.369,6,10.25,9.75,14l3.75-3.75-.881-.881-2.244,2.238V4H9.125Z" transform="translate(-6 -4)"/></svg> Turun</td>
+                                <td  id="persentase_pelanggaran_lalin_motor_gunhp">0%</td>
+                            </tr>
+                            <tr class="evaluasi">
+                                <td>Berkendara Di Bawah Pengaruh Alkohol</td>
+                                <td id="pelanggaran_lalin_motor_pengaruh_alkohol_prev">0</td>
+                                <td id="pelanggaran_lalin_motor_pengaruh_alkohol">0</td>
+                                <td id="status_pelanggaran_lalin_motor_pengaruh_alkohol"><svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 7.5 10"><defs><style>.a{fill:#00adef;}</style></defs><path class="a" d="M9.125,6.394,6.881,8.631,6,7.75,9.75,4,13.5,7.75l-.881.881L10.375,6.394V14H9.125Z" transform="translate(-6 -4)"/></svg> Naik</td>
+                                <td  id="persentase_pelanggaran_lalin_motor_pengaruh_alkohol">0%</td>
+                            </tr>
+                            <tr class="evaluasi">
+                                <td>Melebihi Batas Kecepatan</td>
+                                <td id="pelanggaran_lalin_batas_kecepatan_prev">0</td>
+                                <td id="pelanggaran_lalin_batas_kecepatan">0</td>
+                                <td id="status_pelanggaran_lalin_batas_kecepatan"><svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 7.5 10"><defs><style>.a{fill:#00adef;}</style></defs><path class="a" d="M9.125,11.606,6.881,9.369,6,10.25,9.75,14l3.75-3.75-.881-.881-2.244,2.238V4H9.125Z" transform="translate(-6 -4)"/></svg> Turun</td>
+                                <td id="persentase_pelanggaran_lalin_batas_kecepatan">0%</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">PELANGGARAN LALU LINTAS</td>
