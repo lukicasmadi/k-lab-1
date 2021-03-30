@@ -30,7 +30,7 @@
                             <div class="row">
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
                                 </div>
-                                <div class="col-xl-11 col-md-12 col-sm-12 col-12">
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
                                 1. MANUSIA
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
@@ -430,7 +430,7 @@
                             <div class="row">
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
                                 </div>
-                                <div class="col-xl-11 col-md-12 col-sm-12 col-12">
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
                                 5. PRASARANA JALAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
