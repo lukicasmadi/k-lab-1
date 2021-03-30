@@ -34,7 +34,7 @@
                                 A. PEGAWAI NEGERI SIPIL
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_pns_p') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_pns_p" autocomplete="off" value="{{ old('profesi_pelaku_kecelakaan_lalin_pns_p') }}">
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_pns_p') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_pns_p" autocomplete="off" value="{{ $data->dailyInputPrev->profesi_pelaku_kecelakaan_lalin_pns_p }}">
                                     @error('profesi_pelaku_kecelakaan_lalin_pns_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -42,7 +42,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_pns') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_pns" autocomplete="off" value="{{ old('profesi_pelaku_kecelakaan_lalin_pns') }}">
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_pns') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_pns" autocomplete="off" value="{{ $data->dailyInput->profesi_pelaku_kecelakaan_lalin_pns }}">
                                     @error('profesi_pelaku_kecelakaan_lalin_pns')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -59,7 +59,7 @@
                                 B. KARYAWAN / SWASTA
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_karyawan_swasta_p') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_karyawan_swasta_p" autocomplete="off" value="{{ old('profesi_pelaku_kecelakaan_lalin_karyawan_swasta_p') }}">
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_karyawan_swasta_p') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_karyawan_swasta_p" autocomplete="off" value="{{ $data->dailyInputPrev->profesi_pelaku_kecelakaan_lalin_karyawan_swasta_p }}">
                                     @error('profesi_pelaku_kecelakaan_lalin_karyawan_swasta_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -67,7 +67,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_karyawan_swasta') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_karyawan_swasta" autocomplete="off" value="{{ old('profesi_pelaku_kecelakaan_lalin_karyawan_swasta') }}">
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_karyawan_swasta') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_karyawan_swasta" autocomplete="off" value="{{ $data->dailyInput->profesi_pelaku_kecelakaan_lalin_karyawan_swasta }}">
                                     @error('profesi_pelaku_kecelakaan_lalin_karyawan_swasta')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -84,7 +84,7 @@
                                 C. MAHASISWA / PELAJAR
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar_p') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar_p" autocomplete="off" value="{{ old('profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar_p') }}">
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar_p') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar_p" autocomplete="off" value="{{ $data->dailyInputPrev->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar_p }}">
                                     @error('profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -92,7 +92,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar" autocomplete="off" value="{{ old('profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar') }}">
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar" autocomplete="off" value="{{ $data->dailyInput->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar }}">
                                     @error('profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -109,7 +109,7 @@
                                 D. PENGEMUDI
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_pengemudi_p') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_pengemudi_p" autocomplete="off" value="{{ old('profesi_pelaku_kecelakaan_lalin_pengemudi_p') }}">
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_pengemudi_p') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_pengemudi_p" autocomplete="off" value="{{ $data->dailyInputPrev->profesi_pelaku_kecelakaan_lalin_pengemudi_p }}">
                                     @error('profesi_pelaku_kecelakaan_lalin_pengemudi_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -117,7 +117,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_pengemudi') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_pengemudi" autocomplete="off" value="{{ old('profesi_pelaku_kecelakaan_lalin_pengemudi') }}">
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_pengemudi') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_pengemudi" autocomplete="off" value="{{ $data->dailyInput->profesi_pelaku_kecelakaan_lalin_pengemudi }}">
                                     @error('profesi_pelaku_kecelakaan_lalin_pengemudi')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -134,7 +134,7 @@
                                 E. TNI
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_tni_p') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_tni_p" autocomplete="off" value="{{ old('profesi_pelaku_kecelakaan_lalin_tni_p') }}">
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_tni_p') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_tni_p" autocomplete="off" value="{{ $data->dailyInputPrev->profesi_pelaku_kecelakaan_lalin_tni_p }}">
                                     @error('profesi_pelaku_kecelakaan_lalin_tni_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -142,7 +142,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_tni') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_tni" autocomplete="off" value="{{ old('profesi_pelaku_kecelakaan_lalin_tni') }}">
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_tni') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_tni" autocomplete="off" value="{{ $data->dailyInput->profesi_pelaku_kecelakaan_lalin_tni }}">
                                     @error('profesi_pelaku_kecelakaan_lalin_tni')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -159,7 +159,7 @@
                                 F. POLRI
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_polri_p') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_polri_p" autocomplete="off" value="{{ old('profesi_pelaku_kecelakaan_lalin_polri_p') }}">
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_polri_p') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_polri_p" autocomplete="off" value="{{ $data->dailyInputPrev->profesi_pelaku_kecelakaan_lalin_polri_p }}">
                                     @error('profesi_pelaku_kecelakaan_lalin_polri_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -167,7 +167,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_polri') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_polri" autocomplete="off" value="{{ old('profesi_pelaku_kecelakaan_lalin_polri') }}">
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_polri') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_polri" autocomplete="off" value="{{ $data->dailyInput->profesi_pelaku_kecelakaan_lalin_polri }}">
                                     @error('profesi_pelaku_kecelakaan_lalin_polri')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -184,7 +184,7 @@
                                 G. LAIN-LAIN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_lain_lain_p') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_lain_lain_p" autocomplete="off" value="{{ old('profesi_pelaku_kecelakaan_lalin_lain_lain_p') }}">
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_lain_lain_p') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_lain_lain_p" autocomplete="off" value="{{ $data->dailyInputPrev->profesi_pelaku_kecelakaan_lalin_lain_lain_p }}">
                                     @error('profesi_pelaku_kecelakaan_lalin_lain_lain_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -192,7 +192,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_lain_lain') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_lain_lain" autocomplete="off" value="{{ old('profesi_pelaku_kecelakaan_lalin_lain_lain') }}">
+                                    <input type="number" class="form-onsite @error('profesi_pelaku_kecelakaan_lalin_lain_lain') is-invalid @enderror" name="profesi_pelaku_kecelakaan_lalin_lain_lain" autocomplete="off" value="{{ $data->dailyInput->profesi_pelaku_kecelakaan_lalin_lain_lain }}">
                                     @error('profesi_pelaku_kecelakaan_lalin_lain_lain')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

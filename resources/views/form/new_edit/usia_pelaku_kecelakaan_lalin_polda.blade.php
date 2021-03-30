@@ -34,7 +34,7 @@
                                 A. < 15 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_kurang_dari_15_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_kurang_dari_15_tahun_p" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_kurang_dari_15_tahun_p') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_kurang_dari_15_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_kurang_dari_15_tahun_p" autocomplete="off" value="{{ $data->dailyInputPrev->usia_pelaku_kecelakaan_kurang_dari_15_tahun_p }}">
                                     @error('usia_pelaku_kecelakaan_kurang_dari_15_tahun_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -42,7 +42,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_kurang_dari_15_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_kurang_dari_15_tahun" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_kurang_dari_15_tahun') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_kurang_dari_15_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_kurang_dari_15_tahun" autocomplete="off" value="{{ $data->dailyInput->usia_pelaku_kecelakaan_kurang_dari_15_tahun }}">
                                     @error('usia_pelaku_kecelakaan_kurang_dari_15_tahun')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -59,7 +59,7 @@
                                 B. 16 - 20 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_16_20_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_16_20_tahun_p" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_16_20_tahun_p') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_16_20_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_16_20_tahun_p" autocomplete="off" value="{{ $data->dailyInputPrev->usia_pelaku_kecelakaan_16_20_tahun_p }}">
                                     @error('usia_pelaku_kecelakaan_16_20_tahun_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -67,7 +67,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_16_20_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_16_20_tahun" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_16_20_tahun') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_16_20_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_16_20_tahun" autocomplete="off" value="{{ $data->dailyInput->usia_pelaku_kecelakaan_16_20_tahun }}">
                                     @error('usia_pelaku_kecelakaan_16_20_tahun')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -84,7 +84,7 @@
                                 C. 21 - 25 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_21_25_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_21_25_tahun_p" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_21_25_tahun_p') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_21_25_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_21_25_tahun_p" autocomplete="off" value="{{ $data->dailyInputPrev->usia_pelaku_kecelakaan_21_25_tahun_p }}">
                                     @error('usia_pelaku_kecelakaan_21_25_tahun_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -92,7 +92,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_21_25_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_21_25_tahun" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_21_25_tahun') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_21_25_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_21_25_tahun" autocomplete="off" value="{{ $data->dailyInput->usia_pelaku_kecelakaan_21_25_tahun }}">
                                     @error('usia_pelaku_kecelakaan_21_25_tahun')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -109,7 +109,7 @@
                                 D. 26 - 30 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                   <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_26_30_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_26_30_tahun_p" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_26_30_tahun_p') }}">
+                                   <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_26_30_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_26_30_tahun_p" autocomplete="off" value="{{ $data->dailyInputPrev->usia_pelaku_kecelakaan_26_30_tahun_p }}">
                                     @error('usia_pelaku_kecelakaan_26_30_tahun_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -117,7 +117,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_26_30_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_26_30_tahun" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_26_30_tahun') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_26_30_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_26_30_tahun" autocomplete="off" value="{{ $data->dailyInput->usia_pelaku_kecelakaan_26_30_tahun }}">
                                     @error('usia_pelaku_kecelakaan_26_30_tahun')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -134,7 +134,7 @@
                                 E. 31 - 35 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                   <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_31_35_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_31_35_tahun_p" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_31_35_tahun_p') }}">
+                                   <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_31_35_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_31_35_tahun_p" autocomplete="off" value="{{ $data->dailyInputPrev->usia_pelaku_kecelakaan_31_35_tahun_p }}">
                                     @error('usia_pelaku_kecelakaan_31_35_tahun_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -142,7 +142,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_31_35_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_31_35_tahun" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_31_35_tahun') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_31_35_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_31_35_tahun" autocomplete="off" value="{{ $data->dailyInput->usia_pelaku_kecelakaan_31_35_tahun }}">
                                     @error('usia_pelaku_kecelakaan_31_35_tahun')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -159,7 +159,7 @@
                                 F. 36 - 40 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                   <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_36_40_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_36_40_tahun_p" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_36_40_tahun_p') }}">
+                                   <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_36_40_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_36_40_tahun_p" autocomplete="off" value="{{ $data->dailyInputPrev->usia_pelaku_kecelakaan_36_40_tahun_p }}">
                                     @error('usia_pelaku_kecelakaan_36_40_tahun_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -167,7 +167,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_36_40_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_36_40_tahun" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_36_40_tahun') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_36_40_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_36_40_tahun" autocomplete="off" value="{{ $data->dailyInput->usia_pelaku_kecelakaan_36_40_tahun }}">
                                     @error('usia_pelaku_kecelakaan_36_40_tahun')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -184,7 +184,7 @@
                                 G. 41 - 45 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_41_45_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_41_45_tahun_p" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_41_45_tahun_p') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_41_45_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_41_45_tahun_p" autocomplete="off" value="{{ $data->dailyInputPrev->usia_pelaku_kecelakaan_41_45_tahun_p }}">
                                     @error('usia_pelaku_kecelakaan_41_45_tahun_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -192,7 +192,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_41_45_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_41_45_tahun" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_41_45_tahun') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_41_45_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_41_45_tahun" autocomplete="off" value="{{ $data->dailyInput->usia_pelaku_kecelakaan_41_45_tahun }}">
                                     @error('usia_pelaku_kecelakaan_41_45_tahun')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -209,7 +209,7 @@
                                 H. 46 - 50 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                   <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_46_50_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_46_50_tahun_p" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_46_50_tahun_p') }}">
+                                   <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_46_50_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_46_50_tahun_p" autocomplete="off" value="{{ $data->dailyInputPrev->usia_pelaku_kecelakaan_46_50_tahun_p }}">
                                     @error('usia_pelaku_kecelakaan_45_50_tahun_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -217,7 +217,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_46_50_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_46_50_tahun" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_46_50_tahun') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_46_50_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_46_50_tahun" autocomplete="off" value="{{ $data->dailyInput->usia_pelaku_kecelakaan_46_50_tahun }}">
                                     @error('usia_pelaku_kecelakaan_46_50_tahun')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -234,7 +234,7 @@
                                 I. 51 - 55 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_51_55_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_51_55_tahun_p" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_51_55_tahun_p') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_51_55_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_51_55_tahun_p" autocomplete="off" value="{{ $data->dailyInputPrev->usia_pelaku_kecelakaan_51_55_tahun_p }}">
                                     @error('usia_pelaku_kecelakaan_51_55_tahun_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -242,7 +242,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_51_55_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_51_55_tahun" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_51_55_tahun') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_51_55_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_51_55_tahun" autocomplete="off" value="{{ $data->dailyInput->usia_pelaku_kecelakaan_51_55_tahun }}">
                                     @error('usia_pelaku_kecelakaan_51_55_tahun')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -259,7 +259,7 @@
                                 J. 56 - 60 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_56_60_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_56_60_tahun_p" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_56_60_tahun_p') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_56_60_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_56_60_tahun_p" autocomplete="off" value="{{ $data->dailyInputPrev->usia_pelaku_kecelakaan_56_60_tahun_p }}">
                                     @error('usia_pelaku_kecelakaan_56_60_tahun_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -267,7 +267,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_56_60_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_56_60_tahun" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_56_60_tahun') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_56_60_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_56_60_tahun" autocomplete="off" value="{{ $data->dailyInput->usia_pelaku_kecelakaan_56_60_tahun }}">
                                     @error('usia_pelaku_kecelakaan_56_60_tahun')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -284,7 +284,7 @@
                                 K. > 60 TAHUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_diatas_60_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_diatas_60_tahun_p" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_diatas_60_tahun_p') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_diatas_60_tahun_p') is-invalid @enderror" name="usia_pelaku_kecelakaan_diatas_60_tahun_p" autocomplete="off" value="{{ $data->dailyInputPrev->usia_pelaku_kecelakaan_diatas_60_tahun_p }}">
                                     @error('usia_pelaku_kecelakaan_diatas_60_tahun_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -292,7 +292,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_diatas_60_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_diatas_60_tahun" autocomplete="off" value="{{ old('usia_pelaku_kecelakaan_diatas_60_tahun') }}">
+                                    <input type="number" class="form-onsite @error('usia_pelaku_kecelakaan_diatas_60_tahun') is-invalid @enderror" name="usia_pelaku_kecelakaan_diatas_60_tahun" autocomplete="off" value="{{ $data->dailyInput->usia_pelaku_kecelakaan_diatas_60_tahun }}">
                                     @error('usia_pelaku_kecelakaan_diatas_60_tahun')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

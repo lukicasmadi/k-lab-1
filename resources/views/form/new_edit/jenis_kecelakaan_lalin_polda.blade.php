@@ -34,7 +34,7 @@
                                 A. TUNGGAL / OUT OF CONTROL
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_tunggal_ooc_p') is-invalid @enderror" name="jenis_kecelakaan_tunggal_ooc_p" autocomplete="off" value="{{ old('jenis_kecelakaan_tunggal_ooc_p') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_tunggal_ooc_p') is-invalid @enderror" name="jenis_kecelakaan_tunggal_ooc_p" autocomplete="off" value="{{ $data->dailyInputPrev->jenis_kecelakaan_tunggal_ooc_p }}">
                                     @error('jenis_kecelakaan_tunggal_ooc_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -42,7 +42,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_tunggal_ooc') is-invalid @enderror" name="jenis_kecelakaan_tunggal_ooc" autocomplete="off" value="{{ old('jenis_kecelakaan_tunggal_ooc') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_tunggal_ooc') is-invalid @enderror" name="jenis_kecelakaan_tunggal_ooc" autocomplete="off" value="{{ $data->dailyInput->jenis_kecelakaan_tunggal_ooc }}">
                                     @error('jenis_kecelakaan_tunggal_ooc')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -59,7 +59,7 @@
                                 B. DEPAN-DEPAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_depan_depan_p') is-invalid @enderror" name="jenis_kecelakaan_depan_depan_p" autocomplete="off" value="{{ old('jenis_kecelakaan_depan_depan_p') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_depan_depan_p') is-invalid @enderror" name="jenis_kecelakaan_depan_depan_p" autocomplete="off" value="{{ $data->dailyInputPrev->jenis_kecelakaan_depan_depan_p }}">
                                     @error('jenis_kecelakaan_depan_depan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -67,7 +67,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_depan_depan') is-invalid @enderror" name="jenis_kecelakaan_depan_depan" autocomplete="off" value="{{ old('jenis_kecelakaan_depan_depan') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_depan_depan') is-invalid @enderror" name="jenis_kecelakaan_depan_depan" autocomplete="off" value="{{ $data->dailyInput->jenis_kecelakaan_depan_depan }}">
                                     @error('jenis_kecelakaan_depan_depan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -84,7 +84,7 @@
                                 C. DEPAN-BELAKANG
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_depan_belakang_p') is-invalid @enderror" name="jenis_kecelakaan_depan_belakang_p" autocomplete="off" value="{{ old('jenis_kecelakaan_depan_belakang_p') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_depan_belakang_p') is-invalid @enderror" name="jenis_kecelakaan_depan_belakang_p" autocomplete="off" value="{{ $data->dailyInputPrev->jenis_kecelakaan_depan_belakang_p }}">
                                     @error('jenis_kecelakaan_depan_belakang_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -92,7 +92,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_depan_belakang') is-invalid @enderror" name="jenis_kecelakaan_depan_belakang" autocomplete="off" value="{{ old('jenis_kecelakaan_depan_belakang') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_depan_belakang') is-invalid @enderror" name="jenis_kecelakaan_depan_belakang" autocomplete="off" value="{{ $data->dailyInput->jenis_kecelakaan_depan_belakang }}">
                                     @error('jenis_kecelakaan_depan_belakang')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -109,7 +109,7 @@
                                 D. DEPAN-SAMPING
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_depan_samping_p') is-invalid @enderror" name="jenis_kecelakaan_depan_samping_p" autocomplete="off" value="{{ old('jenis_kecelakaan_depan_samping_p') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_depan_samping_p') is-invalid @enderror" name="jenis_kecelakaan_depan_samping_p" autocomplete="off" value="{{ $data->dailyInputPrev->jenis_kecelakaan_depan_samping_p }}">
                                     @error('jenis_kecelakaan_depan_samping_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -117,7 +117,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_depan_samping') is-invalid @enderror" name="jenis_kecelakaan_depan_samping" autocomplete="off" value="{{ old('jenis_kecelakaan_depan_samping') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_depan_samping') is-invalid @enderror" name="jenis_kecelakaan_depan_samping" autocomplete="off" value="{{ $data->dailyInput->jenis_kecelakaan_depan_samping }}">
                                     @error('jenis_kecelakaan_depan_samping')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -134,7 +134,7 @@
                                 E. BERUNTUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_beruntun_p') is-invalid @enderror" name="jenis_kecelakaan_beruntun_p" autocomplete="off" value="{{ old('jenis_kecelakaan_beruntun_p') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_beruntun_p') is-invalid @enderror" name="jenis_kecelakaan_beruntun_p" autocomplete="off" value="{{ $data->dailyInputPrev->jenis_kecelakaan_beruntun_p }}">
                                     @error('jenis_kecelakaan_beruntun_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -142,7 +142,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_beruntun') is-invalid @enderror" name="jenis_kecelakaan_beruntun" autocomplete="off" value="{{ old('jenis_kecelakaan_beruntun') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_beruntun') is-invalid @enderror" name="jenis_kecelakaan_beruntun" autocomplete="off" value="{{ $data->dailyInput->jenis_kecelakaan_beruntun }}">
                                     @error('jenis_kecelakaan_beruntun')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -159,7 +159,7 @@
                                 F. TABRAK PEJALAN KAKI
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_pejalan_kaki_p') is-invalid @enderror" name="jenis_kecelakaan_pejalan_kaki_p" autocomplete="off" value="{{ old('jenis_kecelakaan_pejalan_kaki_p') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_pejalan_kaki_p') is-invalid @enderror" name="jenis_kecelakaan_pejalan_kaki_p" autocomplete="off" value="{{ $data->dailyInputPrev->jenis_kecelakaan_pejalan_kaki_p }}">
                                     @error('jenis_kecelakaan_pejalan_kaki_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -167,7 +167,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_pejalan_kaki') is-invalid @enderror" name="jenis_kecelakaan_pejalan_kaki" autocomplete="off" value="{{ old('jenis_kecelakaan_pejalan_kaki') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_pejalan_kaki') is-invalid @enderror" name="jenis_kecelakaan_pejalan_kaki" autocomplete="off" value="{{ $data->dailyInput->jenis_kecelakaan_pejalan_kaki }}">
                                     @error('jenis_kecelakaan_pejalan_kaki')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -184,7 +184,7 @@
                                 G. TABRAK LARI
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_tabrak_lari_p') is-invalid @enderror" name="jenis_kecelakaan_tabrak_lari_p" autocomplete="off" value="{{ old('jenis_kecelakaan_tabrak_lari_p') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_tabrak_lari_p') is-invalid @enderror" name="jenis_kecelakaan_tabrak_lari_p" autocomplete="off" value="{{ $data->dailyInputPrev->jenis_kecelakaan_tabrak_lari_p }}">
                                     @error('jenis_kecelakaan_tabrak_lari_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -192,7 +192,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_tabrak_lari') is-invalid @enderror" name="jenis_kecelakaan_tabrak_lari" autocomplete="off" value="{{ old('jenis_kecelakaan_tabrak_lari') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_tabrak_lari') is-invalid @enderror" name="jenis_kecelakaan_tabrak_lari" autocomplete="off" value="{{ $data->dailyInput->jenis_kecelakaan_tabrak_lari }}">
                                     @error('jenis_kecelakaan_tabrak_lari')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -209,7 +209,7 @@
                                 H. TABRAK HEWAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_tabrak_hewan_p') is-invalid @enderror" name="jenis_kecelakaan_tabrak_hewan_p" autocomplete="off" value="{{ old('jenis_kecelakaan_tabrak_hewan_p') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_tabrak_hewan_p') is-invalid @enderror" name="jenis_kecelakaan_tabrak_hewan_p" autocomplete="off" value="{{ $data->dailyInputPrev->jenis_kecelakaan_tabrak_hewan_p }}">
                                     @error('jenis_kecelakaan_tabrak_hewan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -217,7 +217,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_tabrak_hewan') is-invalid @enderror" name="jenis_kecelakaan_tabrak_hewan" autocomplete="off" value="{{ old('jenis_kecelakaan_tabrak_hewan') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_tabrak_hewan') is-invalid @enderror" name="jenis_kecelakaan_tabrak_hewan" autocomplete="off" value="{{ $data->dailyInput->jenis_kecelakaan_tabrak_hewan }}">
                                     @error('jenis_kecelakaan_tabrak_hewan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -234,7 +234,7 @@
                                 I. SAMPING-SAMPING
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_samping_samping_p') is-invalid @enderror" name="jenis_kecelakaan_samping_samping_p" autocomplete="off" value="{{ old('jenis_kecelakaan_samping_samping_p') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_samping_samping_p') is-invalid @enderror" name="jenis_kecelakaan_samping_samping_p" autocomplete="off" value="{{ $data->dailyInputPrev->jenis_kecelakaan_samping_samping_p }}">
                                     @error('jenis_kecelakaan_samping_samping_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -242,7 +242,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_samping_samping') is-invalid @enderror" name="jenis_kecelakaan_samping_samping" autocomplete="off" value="{{ old('jenis_kecelakaan_samping_samping') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_samping_samping') is-invalid @enderror" name="jenis_kecelakaan_samping_samping" autocomplete="off" value="{{ $data->dailyInput->jenis_kecelakaan_samping_samping }}">
                                     @error('jenis_kecelakaan_samping_samping')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -259,7 +259,7 @@
                                 J. LAINNYA
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_lainnya_p') is-invalid @enderror" name="jenis_kecelakaan_lainnya_p" autocomplete="off" value="{{ old('jenis_kecelakaan_lainnya_p') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_lainnya_p') is-invalid @enderror" name="jenis_kecelakaan_lainnya_p" autocomplete="off" value="{{ $data->dailyInputPrev->jenis_kecelakaan_lainnya_p }}">
                                     @error('jenis_kecelakaan_lainnya_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -267,7 +267,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_lainnya') is-invalid @enderror" name="jenis_kecelakaan_lainnya" autocomplete="off" value="{{ old('jenis_kecelakaan_lainnya') }}">
+                                    <input type="number" class="form-onsite @error('jenis_kecelakaan_lainnya') is-invalid @enderror" name="jenis_kecelakaan_lainnya" autocomplete="off" value="{{ $data->dailyInput->jenis_kecelakaan_lainnya }}">
                                     @error('jenis_kecelakaan_lainnya')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
