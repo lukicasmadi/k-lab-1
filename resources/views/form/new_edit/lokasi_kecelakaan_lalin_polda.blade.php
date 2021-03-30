@@ -43,7 +43,7 @@
                                 1. KAWASAN PEMUKIMAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_pemukiman_p') is-invalid @enderror" name="lokasi_kecelakaan_lalin_pemukiman_p" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_pemukiman_p') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_pemukiman_p') is-invalid @enderror" name="lokasi_kecelakaan_lalin_pemukiman_p" autocomplete="off" value="{{ $data->dailyInputPrev->lokasi_kecelakaan_lalin_pemukiman_p }}">
                                     @error('lokasi_kecelakaan_lalin_pemukiman_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -51,7 +51,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_pemukiman') is-invalid @enderror" name="lokasi_kecelakaan_lalin_pemukiman" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_pemukiman') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_pemukiman') is-invalid @enderror" name="lokasi_kecelakaan_lalin_pemukiman" autocomplete="off" value="{{ $data->dailyInput->lokasi_kecelakaan_lalin_pemukiman }}">
                                     @error('lokasi_kecelakaan_lalin_pemukiman')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -68,7 +68,7 @@
                                 2. KAWASAN PERBELANJAAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_perbelanjaan_p') is-invalid @enderror" name="lokasi_kecelakaan_lalin_perbelanjaan_p" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_perbelanjaan_p') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_perbelanjaan_p') is-invalid @enderror" name="lokasi_kecelakaan_lalin_perbelanjaan_p" autocomplete="off" value="{{ $data->dailyInputPrev->lokasi_kecelakaan_lalin_perbelanjaan_p }}">
                                     @error('lokasi_kecelakaan_lalin_perbelanjaan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -76,7 +76,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_perbelanjaan') is-invalid @enderror" name="lokasi_kecelakaan_lalin_perbelanjaan" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_perbelanjaan') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_perbelanjaan') is-invalid @enderror" name="lokasi_kecelakaan_lalin_perbelanjaan" autocomplete="off" value="{{ $data->dailyInput->lokasi_kecelakaan_lalin_perbelanjaan }}">
                                     @error('lokasi_kecelakaan_lalin_perbelanjaan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -93,7 +93,7 @@
                                 3. PERKANTORAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_perkantoran_p') is-invalid @enderror" name="lokasi_kecelakaan_lalin_perkantoran_p" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_perkantoran_p') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_perkantoran_p') is-invalid @enderror" name="lokasi_kecelakaan_lalin_perkantoran_p" autocomplete="off" value="{{ $data->dailyInputPrev->lokasi_kecelakaan_lalin_perkantoran_p }}">
                                     @error('lokasi_kecelakaan_lalin_perkantoran_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -101,7 +101,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_perkantoran') is-invalid @enderror" name="lokasi_kecelakaan_lalin_perkantoran" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_perkantoran') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_perkantoran') is-invalid @enderror" name="lokasi_kecelakaan_lalin_perkantoran" autocomplete="off" value="{{ $data->dailyInput->lokasi_kecelakaan_lalin_perkantoran }}">
                                     @error('lokasi_kecelakaan_lalin_perkantoran')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -118,7 +118,7 @@
                                 4. KAWASAN WISATA
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_wisata_p') is-invalid @enderror" name="lokasi_kecelakaan_lalin_wisata_p" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_wisata_p') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_wisata_p') is-invalid @enderror" name="lokasi_kecelakaan_lalin_wisata_p" autocomplete="off" value="{{ $data->dailyInputPrev->lokasi_kecelakaan_lalin_wisata_p }}">
                                     @error('lokasi_kecelakaan_lalin_wisata_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -126,7 +126,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_wisata') is-invalid @enderror" name="lokasi_kecelakaan_lalin_wisata" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_wisata') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_wisata') is-invalid @enderror" name="lokasi_kecelakaan_lalin_wisata" autocomplete="off" value="{{ $data->dailyInput->lokasi_kecelakaan_lalin_wisata }}">
                                     @error('lokasi_kecelakaan_lalin_wisata')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -143,7 +143,7 @@
                                 5. KAWASAN INDUSTRI
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_industri_p') is-invalid @enderror" name="lokasi_kecelakaan_lalin_industri_p" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_industri_p') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_industri_p') is-invalid @enderror" name="lokasi_kecelakaan_lalin_industri_p" autocomplete="off" value="{{ $data->dailyInputPrev->lokasi_kecelakaan_lalin_industri_p }}">
                                     @error('lokasi_kecelakaan_lalin_industri_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -151,7 +151,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_industri') is-invalid @enderror" name="lokasi_kecelakaan_lalin_industri" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_industri') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_industri') is-invalid @enderror" name="lokasi_kecelakaan_lalin_industri" autocomplete="off" value="{{ $data->dailyInput->lokasi_kecelakaan_lalin_industri }}">
                                     @error('lokasi_kecelakaan_lalin_industri')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -168,7 +168,7 @@
                                 6. LAIN LAIN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_lain_lain_p') is-invalid @enderror" name="lokasi_kecelakaan_lalin_lain_lain_p" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_lain_lain_p') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_lain_lain_p') is-invalid @enderror" name="lokasi_kecelakaan_lalin_lain_lain_p" autocomplete="off" value="{{ $data->dailyInputPrev->lokasi_kecelakaan_lalin_lain_lain_p }}">
                                     @error('lokasi_kecelakaan_lalin_lain_lain_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -176,7 +176,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_lain_lain') is-invalid @enderror" name="lokasi_kecelakaan_lalin_lain_lain" autocomplete="off" value="{{ old('lokasi_kecelakaan_lalin_lain_lain') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_lalin_lain_lain') is-invalid @enderror" name="lokasi_kecelakaan_lalin_lain_lain" autocomplete="off" value="{{ $data->dailyInput->lokasi_kecelakaan_lalin_lain_lain }}">
                                     @error('lokasi_kecelakaan_lalin_lain_lain')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -202,7 +202,7 @@
                                 1. NASIONAL
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_status_jalan_nasional_p') is-invalid @enderror" name="lokasi_kecelakaan_status_jalan_nasional_p" autocomplete="off" value="{{ old('lokasi_kecelakaan_status_jalan_nasional_p') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_status_jalan_nasional_p') is-invalid @enderror" name="lokasi_kecelakaan_status_jalan_nasional_p" autocomplete="off" value="{{ $data->dailyInputPrev->lokasi_kecelakaan_status_jalan_nasional_p }}">
                                     @error('lokasi_kecelakaan_status_jalan_nasional_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -210,7 +210,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_status_jalan_nasional') is-invalid @enderror" name="lokasi_kecelakaan_status_jalan_nasional" autocomplete="off" value="{{ old('lokasi_kecelakaan_status_jalan_nasional') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_status_jalan_nasional') is-invalid @enderror" name="lokasi_kecelakaan_status_jalan_nasional" autocomplete="off" value="{{ $data->dailyInput->lokasi_kecelakaan_status_jalan_nasional }}">
                                     @error('lokasi_kecelakaan_status_jalan_nasional')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -227,7 +227,7 @@
                                 2. PROPINSI
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_status_jalan_propinsi_p') is-invalid @enderror" name="lokasi_kecelakaan_status_jalan_propinsi_p" autocomplete="off" value="{{ old('lokasi_kecelakaan_status_jalan_propinsi_p') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_status_jalan_propinsi_p') is-invalid @enderror" name="lokasi_kecelakaan_status_jalan_propinsi_p" autocomplete="off" value="{{ $data->dailyInputPrev->lokasi_kecelakaan_status_jalan_propinsi_p }}">
                                     @error('lokasi_kecelakaan_status_jalan_propinsi_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -235,7 +235,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_status_jalan_propinsi') is-invalid @enderror" name="lokasi_kecelakaan_status_jalan_propinsi" autocomplete="off" value="{{ old('lokasi_kecelakaan_status_jalan_propinsi') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_status_jalan_propinsi') is-invalid @enderror" name="lokasi_kecelakaan_status_jalan_propinsi" autocomplete="off" value="{{ $data->dailyInput->lokasi_kecelakaan_status_jalan_propinsi }}">
                                     @error('lokasi_kecelakaan_status_jalan_propinsi')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -252,7 +252,7 @@
                                 3. KAB/KOTA
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_status_jalan_kab_kota_p') is-invalid @enderror" name="lokasi_kecelakaan_status_jalan_kab_kota_p" autocomplete="off" value="{{ old('lokasi_kecelakaan_status_jalan_kab_kota_p') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_status_jalan_kab_kota_p') is-invalid @enderror" name="lokasi_kecelakaan_status_jalan_kab_kota_p" autocomplete="off" value="{{ $data->dailyInputPrev->lokasi_kecelakaan_status_jalan_kab_kota_p }}">
                                     @error('lokasi_kecelakaan_status_jalan_kab_kota_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -260,7 +260,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_status_jalan_kab_kota') is-invalid @enderror" name="lokasi_kecelakaan_status_jalan_kab_kota" autocomplete="off" value="{{ old('lokasi_kecelakaan_status_jalan_kab_kota') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_status_jalan_kab_kota') is-invalid @enderror" name="lokasi_kecelakaan_status_jalan_kab_kota" autocomplete="off" value="{{ $data->dailyInput->lokasi_kecelakaan_status_jalan_kab_kota }}">
                                     @error('lokasi_kecelakaan_status_jalan_kab_kota')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -277,7 +277,7 @@
                                 4. DESA / LINGKUNGAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_status_jalan_desa_lingkungan_p') is-invalid @enderror" name="lokasi_kecelakaan_status_jalan_desa_lingkungan_p" autocomplete="off" value="{{ old('lokasi_kecelakaan_status_jalan_desa_lingkungan_p') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_status_jalan_desa_lingkungan_p') is-invalid @enderror" name="lokasi_kecelakaan_status_jalan_desa_lingkungan_p" autocomplete="off" value="{{ $data->dailyInputPrev->lokasi_kecelakaan_status_jalan_desa_lingkungan_p }}">
                                     @error('lokasi_kecelakaan_status_jalan_desa_lingkungan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -285,7 +285,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_status_jalan_desa_lingkungan') is-invalid @enderror" name="lokasi_kecelakaan_status_jalan_desa_lingkungan" autocomplete="off" value="{{ old('lokasi_kecelakaan_status_jalan_desa_lingkungan') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_status_jalan_desa_lingkungan') is-invalid @enderror" name="lokasi_kecelakaan_status_jalan_desa_lingkungan" autocomplete="off" value="{{ $data->dailyInput->lokasi_kecelakaan_status_jalan_desa_lingkungan }}">
                                     @error('lokasi_kecelakaan_status_jalan_desa_lingkungan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -311,7 +311,7 @@
                                 1. ARTERI
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_fungsi_jalan_arteri_p') is-invalid @enderror" name="lokasi_kecelakaan_fungsi_jalan_arteri_p" autocomplete="off" value="{{ old('lokasi_kecelakaan_fungsi_jalan_arteri_p') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_fungsi_jalan_arteri_p') is-invalid @enderror" name="lokasi_kecelakaan_fungsi_jalan_arteri_p" autocomplete="off" value="{{ $data->dailyInputPrev->lokasi_kecelakaan_fungsi_jalan_arteri_p }}">
                                     @error('lokasi_kecelakaan_fungsi_jalan_arteri_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -319,7 +319,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_fungsi_jalan_arteri') is-invalid @enderror" name="lokasi_kecelakaan_fungsi_jalan_arteri" autocomplete="off" value="{{ old('lokasi_kecelakaan_fungsi_jalan_arteri') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_fungsi_jalan_arteri') is-invalid @enderror" name="lokasi_kecelakaan_fungsi_jalan_arteri" autocomplete="off" value="{{ $data->dailyInput->lokasi_kecelakaan_fungsi_jalan_arteri }}">
                                     @error('lokasi_kecelakaan_fungsi_jalan_arteri')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -336,7 +336,7 @@
                                 2. KOLEKTOR
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_fungsi_jalan_kolektor_p') is-invalid @enderror" name="lokasi_kecelakaan_fungsi_jalan_kolektor_p" autocomplete="off" value="{{ old('lokasi_kecelakaan_fungsi_jalan_kolektor_p') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_fungsi_jalan_kolektor_p') is-invalid @enderror" name="lokasi_kecelakaan_fungsi_jalan_kolektor_p" autocomplete="off" value="{{ $data->dailyInputPrev->lokasi_kecelakaan_fungsi_jalan_kolektor_p }}">
                                     @error('lokasi_kecelakaan_fungsi_jalan_kolektor_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -344,7 +344,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_fungsi_jalan_kolektor') is-invalid @enderror" name="lokasi_kecelakaan_fungsi_jalan_kolektor" autocomplete="off" value="{{ old('lokasi_kecelakaan_fungsi_jalan_kolektor') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_fungsi_jalan_kolektor') is-invalid @enderror" name="lokasi_kecelakaan_fungsi_jalan_kolektor" autocomplete="off" value="{{ $data->dailyInput->lokasi_kecelakaan_fungsi_jalan_kolektor }}">
                                     @error('lokasi_kecelakaan_fungsi_jalan_kolektor')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -361,7 +361,7 @@
                                 3. LOKAL
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_fungsi_jalan_lokal_p') is-invalid @enderror" name="lokasi_kecelakaan_fungsi_jalan_lokal_p" autocomplete="off" value="{{ old('lokasi_kecelakaan_fungsi_jalan_lokal_p') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_fungsi_jalan_lokal_p') is-invalid @enderror" name="lokasi_kecelakaan_fungsi_jalan_lokal_p" autocomplete="off" value="{{ $data->dailyInputPrev->lokasi_kecelakaan_fungsi_jalan_lokal_p }}">
                                     @error('lokasi_kecelakaan_fungsi_jalan_lokal_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -369,7 +369,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_fungsi_jalan_lokal') is-invalid @enderror" name="lokasi_kecelakaan_fungsi_jalan_lokal" autocomplete="off" value="{{ old('lokasi_kecelakaan_fungsi_jalan_lokal') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_fungsi_jalan_lokal') is-invalid @enderror" name="lokasi_kecelakaan_fungsi_jalan_lokal" autocomplete="off" value="{{ $data->dailyInput->lokasi_kecelakaan_fungsi_jalan_lokal }}">
                                     @error('lokasi_kecelakaan_fungsi_jalan_lokal')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -386,7 +386,7 @@
                                 4. LINGKUNGAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_fungsi_jalan_lingkungan_p') is-invalid @enderror" name="lokasi_kecelakaan_fungsi_jalan_lingkungan_p" autocomplete="off" value="{{ old('lokasi_kecelakaan_fungsi_jalan_lingkungan_p') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_fungsi_jalan_lingkungan_p') is-invalid @enderror" name="lokasi_kecelakaan_fungsi_jalan_lingkungan_p" autocomplete="off" value="{{ $data->dailyInputPrev->lokasi_kecelakaan_fungsi_jalan_lingkungan_p }}">
                                     @error('lokasi_kecelakaan_fungsi_jalan_lingkungan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -394,7 +394,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_fungsi_jalan_lingkungan') is-invalid @enderror" name="lokasi_kecelakaan_fungsi_jalan_lingkungan" autocomplete="off" value="{{ old('lokasi_kecelakaan_fungsi_jalan_lingkungan') }}">
+                                    <input type="number" class="form-onsite @error('lokasi_kecelakaan_fungsi_jalan_lingkungan') is-invalid @enderror" name="lokasi_kecelakaan_fungsi_jalan_lingkungan" autocomplete="off" value="{{ $data->dailyInput->lokasi_kecelakaan_fungsi_jalan_lingkungan }}">
                                     @error('lokasi_kecelakaan_fungsi_jalan_lingkungan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
