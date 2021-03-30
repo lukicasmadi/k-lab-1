@@ -332,26 +332,26 @@ blockquote.blockquote span {
     font-size: 14px;
 }
 
-.button-onsite span{
+.button-onsite span {
     position: absolute;
     margin-top: -40px;
     float: right;
     right: 0;
     text-transform: uppercase;
     padding: 8px 25px;
-     box-shadow: 0 0 6px 0 #00adef;
+    box-shadow: 0 0 6px 0 #00adef;
     border: solid 1px #00adef;
     color: #00adef;
 }
 
-.button-onsite span.inputan{
-     background: #00adef;
-     color: #fff;
-     font-size: 13px;
-     margin-right: 45px;
+.button-onsite span.inputan {
+    background: #00adef;
+    color: #fff;
+    font-size: 13px;
+    margin-right: 45px;
 }
 
-.button-onsite span.seehow{
+.button-onsite span.seehow {
     color: #00adef;
     font-size: 13px;
     margin-right: 190px;
@@ -391,4 +391,8 @@ hr.dashed {
 .centered {
     font-size: 16px;
     text-align: center;
+}
+
+.divSpace {
+    margin-bottom: 80px;
 }
