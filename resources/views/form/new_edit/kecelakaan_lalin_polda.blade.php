@@ -45,7 +45,7 @@
                                 A. JUMLAH KEJADIAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_kejadian_p') is-invalid @enderror" name="kecelakaan_lalin_jumlah_kejadian_p" autocomplete="off" value="{{ old('kecelakaan_lalin_jumlah_kejadian_p') }}">
+                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_kejadian_p') is-invalid @enderror" name="kecelakaan_lalin_jumlah_kejadian_p" autocomplete="off" value="{{ $data->dailyInputPrev->kecelakaan_lalin_jumlah_kejadian_p }}">
                                     @error('kecelakaan_lalin_jumlah_kejadian_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -53,7 +53,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_kejadian') is-invalid @enderror" name="kecelakaan_lalin_jumlah_kejadian" autocomplete="off" value="{{ old('kecelakaan_lalin_jumlah_kejadian') }}">
+                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_kejadian') is-invalid @enderror" name="kecelakaan_lalin_jumlah_kejadian" autocomplete="off" value="{{ $data->dailyInput->kecelakaan_lalin_jumlah_kejadian }}">
                                     @error('kecelakaan_lalin_jumlah_kejadian')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -70,7 +70,7 @@
                                 B. KORBAN MENINGGAL DUNIA
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_korban_meninggal_p') is-invalid @enderror" name="kecelakaan_lalin_jumlah_korban_meninggal_p" autocomplete="off" value="{{ old('kecelakaan_lalin_jumlah_korban_meninggal_p') }}">
+                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_korban_meninggal_p') is-invalid @enderror" name="kecelakaan_lalin_jumlah_korban_meninggal_p" autocomplete="off" value="{{ $data->dailyInputPrev->kecelakaan_lalin_jumlah_korban_meninggal_p }}">
                                     @error('kecelakaan_lalin_jumlah_korban_meninggal_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -78,7 +78,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_korban_meninggal') is-invalid @enderror" name="kecelakaan_lalin_jumlah_korban_meninggal" autocomplete="off" value="{{ old('kecelakaan_lalin_jumlah_korban_meninggal') }}">
+                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_korban_meninggal') is-invalid @enderror" name="kecelakaan_lalin_jumlah_korban_meninggal" autocomplete="off" value="{{ $data->dailyInput->kecelakaan_lalin_jumlah_korban_meninggal }}">
                                     @error('kecelakaan_lalin_jumlah_korban_meninggal')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -95,7 +95,7 @@
                                 C. KORBAN LUKA BERAT
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_korban_luka_berat_p') is-invalid @enderror" name="kecelakaan_lalin_jumlah_korban_luka_berat_p" autocomplete="off" value="{{ old('kecelakaan_lalin_jumlah_korban_luka_berat_p') }}">
+                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_korban_luka_berat_p') is-invalid @enderror" name="kecelakaan_lalin_jumlah_korban_luka_berat_p" autocomplete="off" value="{{ $data->dailyInputPrev->kecelakaan_lalin_jumlah_korban_luka_berat_p }}">
                                     @error('kecelakaan_lalin_jumlah_korban_luka_berat_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -103,7 +103,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_korban_luka_berat') is-invalid @enderror" name="kecelakaan_lalin_jumlah_korban_luka_berat" autocomplete="off" value="{{ old('kecelakaan_lalin_jumlah_korban_luka_berat') }}">
+                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_korban_luka_berat') is-invalid @enderror" name="kecelakaan_lalin_jumlah_korban_luka_berat" autocomplete="off" value="{{ $data->dailyInput->kecelakaan_lalin_jumlah_korban_luka_berat }}">
                                     @error('kecelakaan_lalin_jumlah_korban_luka_berat')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -120,7 +120,7 @@
                                 D. KORBAN LUKA RINGAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_korban_luka_ringan_p') is-invalid @enderror" name="kecelakaan_lalin_jumlah_korban_luka_ringan_p" autocomplete="off" value="{{ old('kecelakaan_lalin_jumlah_korban_luka_ringan_p') }}">
+                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_korban_luka_ringan_p') is-invalid @enderror" name="kecelakaan_lalin_jumlah_korban_luka_ringan_p" autocomplete="off" value="{{ $data->dailyInputPrev->kecelakaan_lalin_jumlah_korban_luka_ringan_p }}">
                                     @error('kecelakaan_lalin_jumlah_korban_luka_ringan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -128,7 +128,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_korban_luka_ringan') is-invalid @enderror" name="kecelakaan_lalin_jumlah_korban_luka_ringan" autocomplete="off" value="{{ old('kecelakaan_lalin_jumlah_korban_luka_ringan') }}">
+                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_korban_luka_ringan') is-invalid @enderror" name="kecelakaan_lalin_jumlah_korban_luka_ringan" autocomplete="off" value="{{ $data->dailyInput->kecelakaan_lalin_jumlah_korban_luka_ringan }}">
                                     @error('kecelakaan_lalin_jumlah_korban_luka_ringan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -145,7 +145,7 @@
                                 E. KERUGIAN MATERIIL
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_kerugian_materiil_p') is-invalid @enderror" name="kecelakaan_lalin_jumlah_kerugian_materiil_p" autocomplete="off" value="{{ old('kecelakaan_lalin_jumlah_kerugian_materiil_p') }}">
+                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_kerugian_materiil_p') is-invalid @enderror" name="kecelakaan_lalin_jumlah_kerugian_materiil_p" autocomplete="off" value="{{ $data->dailyInputPrev->kecelakaan_lalin_jumlah_kerugian_materiil_p }}">
                                     @error('kecelakaan_lalin_jumlah_kerugian_materiil_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -153,7 +153,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_kerugian_materiil') is-invalid @enderror" name="kecelakaan_lalin_jumlah_kerugian_materiil" autocomplete="off" value="{{ old('kecelakaan_lalin_jumlah_kerugian_materiil') }}">
+                                    <input type="number" class="form-onsite @error('kecelakaan_lalin_jumlah_kerugian_materiil') is-invalid @enderror" name="kecelakaan_lalin_jumlah_kerugian_materiil" autocomplete="off" value="{{ $data->dailyInput->kecelakaan_lalin_jumlah_kerugian_materiil }}">
                                     @error('kecelakaan_lalin_jumlah_kerugian_materiil')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
