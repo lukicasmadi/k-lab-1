@@ -208,6 +208,14 @@
             format: 'yyyy-mm-dd',
         })
 
+        $('#edit_tanggal_mulai').datepicker({
+            format: 'yyyy-mm-dd',
+        })
+
+        $('#edit_tanggal_selesai').datepicker({
+            format: 'yyyy-mm-dd',
+        })
+
         $('#notesMailModal').on('hidden.bs.modal', function () {
             $("#nama_operasi").val('')
             $("#jenis_operasi").val('')
@@ -320,6 +328,11 @@
             var uuid = $(this).attr("idval")
             axios.get(route('rencana_operasi_by_uuid', uuid)).then(function(response) {
                 if(response.status == 200) {
+                    $("#edit_jenis_operasi").val(response.data.operation_type)
+                    $("#edit_nama_operasi").val(response.data.name)
+                    $("#edit_tanggal_mulai").val(response.data.start_date)
+                    $("#edit_tanggal_selesai").val(response.data.end_date)
+                    $("#edit_deskripsi").val(response.data.desc)
                     $('#editRencanaOperasi').modal('show')
                 } else {
                     swal("Not found", error.response.data.output, "error")
