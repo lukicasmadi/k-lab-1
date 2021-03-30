@@ -17,6 +17,15 @@
     <div class="row layout-top-spacing" id="cancel-row">
         <div class="col-xl-12 col-lg-12 col-sm-12 mb-25 layout-spacing">
             <div class="widget-content">
+                @if ($errors->any())
+                    <div class="alert alert-danger custom">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="col-md-12 text-left mb-3">
                     <div class="text-left">
                         <div class="row">
@@ -51,75 +60,62 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="notesMailModal" tabindex="-1" role="dialog" aria-labelledby="notesMailModalTitle" aria-hidden="true">
+
+
+        <div class="modal fade" id="modalCreateRencanaOperasi" tabindex="-1" role="dialog" aria-labelledby="modalCreateRencanaOperasi" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="notes-box">
-                            <div class="notes-content">
-                            <span class="colorblue">TAMBAH RENCANA OPERASI</span>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-                            <div class="row imgpopup">
-                                <img src="{{ secure_asset('/img/line_popbottom.png') }}">
-                            </div>
-                            </div>
-                                <form action="javascript:void(0);" id="notesMailModalTitle">
+                    <form method="POST" action="{{ route('create_rencana_operasi_new') }}">
+                        @csrf
+                        <div class="modal-body">
+                            <div class="notes-box">
+                                <div class="notes-content">
+                                    <span class="colorblue">TAMBAH RENCANA OPERASI</span>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                                        <div class="row imgpopup">
+                                            <img src="{{ secure_asset('/img/line_popbottom.png') }}">
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-md-12">
-                                        <label class="text-popup">Jenis Operasi Yang Akan Dilaksanakan</label>
-                                        <select class="form-control height-form">
-                                            <option selected="selected">-   Pilih jenis operasi yang akan Anda laksanakan</option>
-                                            <option>white</option>
-                                            <option>purple</option>
-                                        </select>
-
+                                            <label class="text-popup">Jenis Operasi Yang Akan Dilaksanakan</label>
+                                            <input type="text" name="jenis_operasi" id="jenis_operasi" class="form-control" value="" placeholder="-   Tulis jenis operasi">
                                         </div>
+
                                         <div class="col-md-12">
-                                        <label class="text-popup">Nama Operasi</label>
-                                        <select class="form-control height-form">
-                                            <option selected="selected">-   Tulislah nama operasi yang akan Anda buat</option>
-                                            <option>white</option>
-                                            <option>purple</option>
-                                        </select>
-
+                                            <label class="text-popup">Nama Operasi</label>
+                                            <input type="text" name="nama_operasi" id="nama_operasi" class="form-control" value="" placeholder="-   Tulis nama operasi">
                                         </div>
+
                                         <div class="col-md-6">
-                                        <label class="text-popup">Tanggal Mulai</label>
-                                        <select class="form-control height-form">
-                                            <option selected="selected">-   mm/dd/yyyy</option>
-                                            <option>white</option>
-                                            <option>purple</option>
-                                        </select>
-
+                                            <label class="text-popup">Tanggal Mulai</label>
+                                            <input type="text" name="tanggal_mulai" id="tanggal_mulai" class="form-control" value="" placeholder="-   Input tanggal mulai">
                                         </div>
+
                                         <div class="col-md-6">
-                                        <label class="text-popup">Durasi Operasi (Hari)</label>
-                                        <select class="form-control height-form">
-                                            <option selected="selected">0</option>
-                                            <option>white</option>
-                                            <option>purple</option>
-                                        </select>
-
+                                            <label class="text-popup">Tanggal Selesai</label>
+                                            <input type="text" name="tanggal_selesai" id="tanggal_selesai" class="form-control" value="" placeholder="-   Input tanggal selesai">
                                         </div>
+
                                         <div class="col-md-12">
                                         <label class="text-popup">Deskripsi</label>
                                             <div class="d-flex note-description">
-                                                <textarea id="n-description" class="form-control " maxlength="60" placeholder="-   Tulis dekripsi rencana operasi Anda" rows="3"></textarea>
+                                                <textarea name="deskripsi" id="deskripsi" class="form-control " maxlength="60" placeholder="-   Tulis dekripsi rencana operasi Anda" rows="3"></textarea>
                                             </div>
                                             <span class="validation-text"></span>
                                         </div>
                                     </div>
-
-                                </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button id="btn-n-add" class="btn">SIMPAN</button>
-                    </div>
+                        <div class="modal-footer">
+                            <input type="submit" name="submit" class="btn" value="SIMPAN" id="btn-n-add">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 @endsection
@@ -130,18 +126,40 @@
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/components/custom-sweetalert.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/custom.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/datepicker/css/bootstrap-datepicker.min.css') }}">
 @endpush
 
 @push('library_js')
 <script src="{{ secure_asset('template/plugins/table/datatable/datatables.js') }}"></script>
 <script src="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
-<script src="{{ secure_asset('template/assets/js/apps/notes.js') }}"></script>
+<script src="{{ secure_asset('template/datepicker/js/bootstrap-datepicker.min.js') }}"></script>
 @endpush
 
 @push('page_js')
 <script>
 
+    $("#btn-add-notes").click(function (e) {
+        e.preventDefault();
+        $('#modalCreateRencanaOperasi').modal('show');
+    });
+
+
     $(document).ready(function () {
+        $('#tanggal_mulai').datepicker({
+            format: 'yyyy-mm-dd',
+        })
+
+        $('#tanggal_selesai').datepicker({
+            format: 'yyyy-mm-dd',
+        })
+
+        $('#notesMailModal').on('hidden.bs.modal', function () {
+            $("#nama_operasi").val('')
+            $("#jenis_operasi").val('')
+            $("#tanggal_mulai").val('')
+            $("#tanggal_selesai").val('')
+        })
+
         var table = $('#tbl_operation').DataTable({
             processing: true,
             serverSide: true,

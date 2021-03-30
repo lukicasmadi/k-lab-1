@@ -41,18 +41,12 @@ class RencanaOperasiController extends Controller
 
     public function store(RencanaOperasiRequest $request)
     {
-        $all_date = $request->operation_periode;
-        $format = explode(" to ", $all_date);
-
-        $start_date = Carbon::parse(rtrim($format[0], " "))->format('Y-m-d');
-        $end_date = Carbon::parse(ltrim($format[1], " "))->format('Y-m-d');
-
         $data = [
-            'name' => request('name'),
-            'operation_type' => request('operation_type'),
-            'start_date' => $start_date,
-            'end_date' => $end_date,
-            'desc' => request('desc'),
+            'name' => strtoupper(request('nama_operasi')),
+            'operation_type' => strtoupper(request('jenis_operasi')),
+            'start_date' => strtoupper(request('tanggal_mulai')),
+            'end_date' => strtoupper(request('tanggal_selesai')),
+            'desc' => strtoupper(request('deskripsi')),
         ];
 
         if(request()->hasFile('attachement')) {
@@ -64,7 +58,7 @@ class RencanaOperasiController extends Controller
 
         RencanaOperasi::create($data);
 
-        flash('Your data has been saved')->success();
+        flash('Rencana operasi telah dibuat')->success();
         return redirect()->route('rencana_operasi_index');
     }
 
@@ -76,11 +70,11 @@ class RencanaOperasiController extends Controller
 
     public function update(RencanaOperasiRequest $request, $uuid)
     {
-        $all_date = $request->operation_periode;
-        $format = explode(" to ", $all_date);
+        // $all_date = $request->operation_periode;
+        // $format = explode(" to ", $all_date);
 
-        $start_date = Carbon::parse(rtrim($format[0], " "))->format('Y-m-d');
-        $end_date = Carbon::parse(ltrim($format[1], " "))->format('Y-m-d');
+        // $start_date = Carbon::parse(rtrim($format[0], " "))->format('Y-m-d');
+        // $end_date = Carbon::parse(ltrim($format[1], " "))->format('Y-m-d');
 
         $data = [
             'name' => request('name'),

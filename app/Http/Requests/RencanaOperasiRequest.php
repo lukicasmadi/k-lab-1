@@ -24,11 +24,11 @@ class RencanaOperasiRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'operation_type' => 'required',
-            'operation_periode' => 'required|regex:/to/i',
-            'desc' => 'required',
-            'attachement' => 'nullable|file|mimes:jpg,jpeg,png,gif,rar,zip,txt,doc,docx,pdf,xls,xlsx,ppt,pptx,html',
+            'jenis_operasi' => 'required',
+            'nama_operasi' => 'required',
+            'tanggal_mulai' => 'required',
+            'tanggal_selesai' => 'required',
+            'deskripsi' => 'required',
         ];
     }
 }
