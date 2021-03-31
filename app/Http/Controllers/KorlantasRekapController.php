@@ -32,7 +32,7 @@ class KorlantasRekapController extends Controller
             'polda' => $request->polda,
             'year' => $request->year,
             'rencana_operasi_id' => $request->rencana_operasi_id,
-            'operation_date' => ($request->operation_date == "semua_hari") ? "Semua Hari" : $request->hari,
+            'operation_date' => ($request->operation_date == "semua_hari") ? "semua_hari" : $request->hari,
         ]);
 
         flash('Rekap harian berhasil dibuat')->success();
