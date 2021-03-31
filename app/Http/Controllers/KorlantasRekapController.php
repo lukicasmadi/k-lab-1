@@ -31,6 +31,7 @@ class KorlantasRekapController extends Controller
     public function store(KorlantasRekapRequest $request)
     {
         $model = KorlantasRekap::create([
+            'uuid' => genUuid(),
             'report_name' => $request->report_name,
             'polda' => $request->polda,
             'year' => $request->year,
@@ -41,5 +42,11 @@ class KorlantasRekapController extends Controller
         flash('Rekap harian berhasil dibuat')->success();
 
         return redirect()->back();
+    }
+
+    public function byuuid($uuid)
+    {
+        $model = KorlantasRekap::with(['rencaraOperasi', 'poldaData'])->whereUuid($uuid)->firstOrFail();
+        return $model;
     }
 }

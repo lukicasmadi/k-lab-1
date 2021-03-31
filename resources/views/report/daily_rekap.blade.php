@@ -117,9 +117,69 @@
                             </div>
                         </div>
                     <div class="modal-footer">
-                        <input type="submit" value="SIMPAN" id="btn-n-add">
+                        <input type="submit" class="btn btnBlue" value="SIMPAN">
                     </div>
                     </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="previewForm" tabindex="-1" role="dialog" aria-labelledby="previewForm" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="notes-box">
+                            <div class="notes-content">
+                                <span class="colorblue">PREVIEW LAPORAN</span>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                                    <div class="row imgpopup">
+                                        <img src="{{ secure_asset('/img/line_popbottom.png') }}">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label class="text-popup">Laporan</label>
+                                        <br>
+                                        <span id="preiew_report_name"></span>
+                                    </div>
+
+                                    <span class="divSpace"></span>
+
+                                    <div class="col-md-12">
+                                        <label class="text-popup">Polda</label>
+                                        <br>
+                                        <span id="preiew_polda"></span>
+                                    </div>
+
+                                    <span class="divSpace"></span>
+
+                                    <div class="col-md-12">
+                                        <label class="text-popup">Tahun</label>
+                                        <br>
+                                        <span id="preiew_year"></span>
+                                    </div>
+
+                                    <span class="divSpace"></span>
+
+                                    <div class="col-md-12">
+                                        <label class="text-popup">Nama Operasi</label>
+                                        <br>
+                                        <span id="preiew_rencana_operasi_id"></span>
+                                    </div>
+
+                                    <span class="divSpace"></span>
+
+                                    <div class="col-md-12">
+                                        <label class="text-popup">Hari Operasi</label>
+                                        <br>
+                                        <span id="preiew_operation_date"></span>
+                                        <input type="text" name="hari" id="hari" class="form-control d-none">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -234,7 +294,7 @@ $(document).ready(function () {
                 render: function(data, type, row) {
                     return `
                     <div class="icon-container">
-                        <a href=""><i class="far fa-eye"></i></a>
+                        <a href="#" id="btnView" data-id="`+data+`"><i class="far fa-eye"></i></a>
                     </div>
                     `;
                 },
@@ -246,7 +306,7 @@ $(document).ready(function () {
                 render: function(data, type, row) {
                     return `
                     <div class="icon-container">
-                        <a href=""><i class="far fa-download"></i></a>
+                        <a href="#" id="btnDownload" data-id="`+data+`"><i class="far fa-download"></i></a>
                     </div>
                     `;
                 },
@@ -254,6 +314,44 @@ $(document).ready(function () {
                 sortable: false,
             }
         ]
+    })
+})
+
+$('body').on('click', '#btnView', function(e) {
+    e.preventDefault()
+    var uuid = $(this).attr('data-id')
+
+    axios.get(route('korlantas_rekap_data_byuuid', uuid)).then(function(response) {
+        var output = response.data
+
+        if(output.operation_date == "semua_hari") {
+            var redate = "Semua Hari"
+        } else {
+            var redate = output.operation_date
+        }
+
+        $('#preiew_report_name').html(output.report_name)
+        $('#preiew_polda').html(output.polda_data.name)
+        $('#preiew_year').html(output.year)
+        $('#preiew_rencana_operasi_id').html(output.rencara_operasi.name)
+        $('#preiew_operation_date').html(redate)
+
+        $('#previewForm').modal('show')
+    })
+    .catch(function(error) {
+        swal("Deletion failed! Maybe you miss something", error.response.data.output, "error")
+    })
+})
+
+$('body').on('click', '#btnDownload', function(e) {
+    e.preventDefault()
+    var uuid = $(this).attr('data-id')
+
+    axios.get(route('korlantas_rekap_data_byuuid', uuid)).then(function(response) {
+        var output = response.data
+    })
+    .catch(function(error) {
+        swal("Deletion failed! Maybe you miss something", error.response.data.output, "error")
     })
 })
 </script>

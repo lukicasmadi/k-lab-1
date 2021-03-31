@@ -220,7 +220,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <input type="button" name="btnRedirectEdit" id="btnRedirectEdit" class="btn" value="EDIT">
+                        <input type="button" name="btnRedirectEdit" id="btnRedirectEdit" class="btn btnBlue" value="EDIT">
                     </div>
                 </div>
             </div>
@@ -386,7 +386,12 @@
             var uuid = $(this).attr("idval")
             axios.get(route('rencana_operasi_by_uuid', uuid)).then(function(response) {
                 if(response.status == 200) {
-                    $("#view_jenis_operasi").html(response.data.operation_type)
+                    if(!response.data.operation_type) {
+                        var op = "-"
+                    } else {
+                        var op = response.data.operation_type
+                    }
+                    $("#view_jenis_operasi").html(op)
                     $("#view_nama_operasi").html(response.data.name)
                     $("#view_tanggal_mulai").html(response.data.start_date)
                     $("#view_tanggal_selesai").html(response.data.end_date)

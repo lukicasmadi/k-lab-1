@@ -15,6 +15,7 @@ class CreateKorlantasRekapsTable extends Migration
     {
         Schema::create('korlantas_rekaps', function (Blueprint $table) {
             $table->id();
+            $table->uuid("uuid");
             $table->string("report_name");
             $table->string("polda");
             $table->string("year");

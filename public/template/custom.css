@@ -396,3 +396,8 @@ hr.dashed {
 .divSpace {
     margin-bottom: 80px;
 }
+
+.btnBlue {
+    background-color: #00adef;
+    color: #fff;
+}
