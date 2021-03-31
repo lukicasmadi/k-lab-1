@@ -29,7 +29,7 @@ class KorlantasRekapRequest extends FormRequest
             'year' => 'required',
             'rencana_operasi_id' => 'required|integer',
             'operation_date' => 'required',
-            'hari' => 'required_if:selected_hari,pilih_hari'
+            'hari' => 'required_if:operation_date,pilih_hari'
         ];
     }
 }
