@@ -20,6 +20,9 @@ class KorlantasRekapController extends Controller
                 return $kr->poldaData->name;
             }
         })
+        ->addColumn('rencana_operasi_relation', function (KorlantasRekap $kr) {
+            return $kr->rencaraOperasi->name;
+        })
         ->toJson();
 
         return datatables()->eloquent($model)->toJson();

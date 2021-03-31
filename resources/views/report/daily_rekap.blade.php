@@ -216,7 +216,8 @@ $(document).ready(function () {
                 data: 'year',
             },
             {
-                data: 'rencana_operasi_id',
+                data: 'rencana_operasi_relation',
+                name: 'rencaraOperasi.name',
             },
             {
                 data: 'operation_date',

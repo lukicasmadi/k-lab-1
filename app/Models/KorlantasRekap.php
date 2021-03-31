@@ -13,7 +13,7 @@ class KorlantasRekap extends Model
 
     public function rencaraOperasi()
     {
-        return $this->belongsTo(RencanaOperasi::class);
+        return $this->belongsTo(RencanaOperasi::class, "rencana_operasi_id", "id");
     }
 
     public function poldaData()
