@@ -16,8 +16,13 @@ class KorlantasRekap extends Model
         return $this->belongsTo(RencanaOperasi::class);
     }
 
-    public function polda()
+    public function poldaData()
     {
-        return $this->belongsTo(Polda::class);
+        return $this->belongsTo(Polda::class, "polda", "id");
+    }
+
+    public function poldaFilter()
+    {
+        return $this->polda()->where('name', '!=', 'polda_all');
     }
 }

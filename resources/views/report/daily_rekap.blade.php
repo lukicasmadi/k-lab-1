@@ -161,7 +161,7 @@ $(document).ready(function () {
         $('#modalForm').modal('show')
     })
 
-    $("#selected_hari").change(function (e) {
+    $("#operation_date").change(function (e) {
         e.preventDefault()
         $("#hari").val('')
         if($(this).val() == "pilih_hari") {
@@ -209,7 +209,8 @@ $(document).ready(function () {
                 data: 'report_name',
             },
             {
-                data: 'polda',
+                data: 'polda_relation',
+                name: 'poldaData.name',
             },
             {
                 data: 'year',
@@ -232,7 +233,7 @@ $(document).ready(function () {
                 render: function(data, type, row) {
                     return `
                     <div class="icon-container">
-                        <a href=""><i class="far fa-edit"></i></a>
+                        <a href=""><i class="far fa-eye"></i></a>
                     </div>
                     `;
                 },
@@ -244,7 +245,7 @@ $(document).ready(function () {
                 render: function(data, type, row) {
                     return `
                     <div class="icon-container">
-                        <a href=""><i class="far fa-edit"></i></a>
+                        <a href=""><i class="far fa-download"></i></a>
                     </div>
                     `;
                 },
@@ -253,32 +254,6 @@ $(document).ready(function () {
             }
         ]
     })
-
-    // $('#tbl_rekap_daily tbody').on('click', '.delete', function(e) {
-    //     e.preventDefault()
-    //     var id = $(this).attr('data-id')
-
-    //     $(".alert").remove()
-
-    //     swal({
-    //         title: 'Are you sure?',
-    //         text: "Detele this data!",
-    //         type: 'warning',
-    //         showCancelButton: true,
-    //         confirmButtonText: 'Delete',
-    //         padding: '2em',
-    //     }).then(function(result) {
-    //         if (result.value) {
-    //             axios.delete(route('rencana_operasi_destroy', id)).then(function(response) {
-    //                 table.ajax.reload()
-    //                 swal('Deleted!', response.data.output, 'success')
-    //             })
-    //             .catch(function(error) {
-    //                 swal("Deletion failed! Maybe you miss something", error.response.data.output, "error")
-    //             })
-    //         }
-    //     })
-    // })
 })
 </script>
 @endpush

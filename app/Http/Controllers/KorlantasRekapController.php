@@ -10,7 +10,18 @@ class KorlantasRekapController extends Controller
 {
     public function data()
     {
-        $model = KorlantasRekap::with(['rencaraOperasi', 'polda']);
+        $model = KorlantasRekap::with(['rencaraOperasi', 'poldaData']);
+
+        return datatables()->eloquent($model)
+        ->addColumn('polda_relation', function (KorlantasRekap $kr) {
+            if(empty($kr->poldaData)) {
+                return "Semua Polda";
+            } else {
+                return $kr->poldaData->name;
+            }
+        })
+        ->toJson();
+
         return datatables()->eloquent($model)->toJson();
     }
 
