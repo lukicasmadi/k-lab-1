@@ -2680,6 +2680,10 @@ table .badge-dark {
     text-transform: capitalize;
 }
 
+.comreport{
+    text-transform: capitalize
+}
+
 .table>tbody>tr.evaluasi>td {
     vertical-align: middle;
     font-size: 11px;
