@@ -157,6 +157,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('profile/process', 'UserController@profile_process')->name('profile_process');
     Route::get('change-password', 'UserController@changePassword')->name('change_password');
     Route::post('change-password/process', 'UserController@change_password_process')->name('change_password_process');
+    Route::post('/korlantas-rekap/daily/create', 'KorlantasRekapController@store')->name('korlantas_rekap_store');
 
     Route::group(['prefix' => 'data'], function () {
         Route::get('/category', 'CategoryController@data')->name('category_data');
@@ -181,5 +182,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/dashboard/polda/mingguan', 'HomeController@weeklyPolda')->name('weeklyPolda');
         Route::get('/dashboard/polda/full', 'HomeController@fullPolda')->name('fullPolda');
         Route::get('/get/rencana-operasi/{uuid}', 'RencanaOperasiController@rencana_operasi_by_uuid')->name('rencana_operasi_by_uuid');
+        Route::get('/korlantas-rekap/daily', 'KorlantasRekapController@data')->name('korlantas_rekap_data');
     });
 });

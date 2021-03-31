@@ -7,6 +7,7 @@ use App\Models\DailyInput;
 use Illuminate\Http\Request;
 use App\Models\PoldaSubmited;
 use App\Models\DailyInputPrev;
+use App\Models\KorlantasRekap;
 use App\Models\RencanaOperasi;
 use App\Exports\PoldaAllExport;
 use App\Exports\ComparisonExport;
@@ -34,16 +35,33 @@ class ReportController extends Controller
 
     public function dailyAllPolda()
     {
-        $polda = Polda::select("id", "uuid", "name", "short_name", "logo")
-            ->with(['dailyInput' => function($query) {
-                $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
-            }])
-            ->orderBy("name", "asc")
-            ->get();
+        // $polda = Polda::select("id", "uuid", "name", "short_name", "logo")
+        //     ->with(['dailyInput' => function($query) {
+        //         $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
+        //     }])
+        //     ->orderBy("name", "asc")
+        //     ->get();
+
+        $listPolda = Polda::orderBy('id', 'asc')->pluck("name", "id");
 
         $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");
 
-        return view('report.daily_all_casmadi', compact('rencanaOperasi'));
+        $prexYear = DailyInputPrev::select('year')->get();
+        $currentYear = DailyInput::select('year')->get();
+
+        $yearCollection = [];
+
+        foreach($prexYear as $key => $val) {
+            array_push($yearCollection, $val->year);
+        }
+
+        foreach($currentYear as $key => $val) {
+            array_push($yearCollection, $val->year);
+        }
+
+        $cleanYear = array_unique($yearCollection);
+
+        return view('report.daily_rekap', compact('rencanaOperasi', 'listPolda', 'cleanYear'));
     }
 
     public function dailyProcess()
