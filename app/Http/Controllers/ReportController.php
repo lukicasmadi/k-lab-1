@@ -11,6 +11,7 @@ use App\Models\KorlantasRekap;
 use App\Models\RencanaOperasi;
 use App\Exports\PoldaAllExport;
 use App\Exports\ComparisonExport;
+use App\Exports\DailyInputExport;
 use App\Exports\PoldaByUuidExport;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
@@ -629,16 +630,17 @@ class ReportController extends Controller
 
         if(!empty($korlantasRekap)) {
 
+            $now = now()->format("Y-m-d");
+            $rename = (empty($korlantasRekap->report_name)) ? "report" : $korlantasRekap->report_name;
+            $filename = slugTitle($rename).'-'.$now.'.xlsx';
+
+            $findOperation = RencanaOperasi::where("id", $korlantasRekap->rencana_operasi_id)->first();
+
             $prevYear = DailyInputPrev::where('year', $korlantasRekap->year)
-            ->where('rencana_operasi_id', $korlantasRekap->rencana_operasi_id)
-            ->first();
+                ->where('rencana_operasi_id', $korlantasRekap->rencana_operasi_id)
+                ->first();
 
             if(!empty($prevYear)) {
-                $now = now()->format("Y-m-d");
-                $rename = (empty($korlantasRekap->report_name)) ? "report" : $korlantasRekap->report_name;
-                $filename = slugTitle($rename).'-'.$now.'.xlsx';
-
-                $findOperation = RencanaOperasi::where("id", $korlantasRekap->rencana_operasi_id)->first();
 
                 return Excel::download(new DailyInputPrevExport(
                     $korlantasRekap->year,
@@ -651,8 +653,27 @@ class ReportController extends Controller
                 ), $filename);
 
             } else {
-                flash('Laporan tidak ditemukan')->warning();
-                return redirect()->back();
+
+                $currentYear = DailyInput::where('year', $korlantasRekap->year)
+                    ->where('rencana_operasi_id', $korlantasRekap->rencana_operasi_id)
+                    ->first();
+
+                if(!empty($currentYear)) {
+
+                    return Excel::download(new DailyInputExport(
+                        $korlantasRekap->year,
+                        $korlantasRekap->rencana_operasi_id,
+                        $korlantasRekap->polda,
+                        $korlantasRekap->operation_date,
+                        $korlantasRekap->rencaraOperasi->name,
+                        $korlantasRekap->poldaData,
+                        $findOperation
+                    ), $filename);
+
+                } else {
+                    flash('Laporan tidak ditemukan. Pastikan data yang diinput sudah benar!')->warning();
+                    return redirect()->back();
+                }
             }
 
         } else {
