@@ -22,10 +22,7 @@
             <td style="text-align: center;" colspan="4">KORLANTAS</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td colspan="4"></td>
         </tr>
         <tr>
             <th>NO</th>

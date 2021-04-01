@@ -1,52 +1,28 @@
 <table>
     <thead>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td colspan="4"></td>
         </tr>
         <tr>
-            <td></td>
-            <td style="text-align: center;">KEPOLISIAN NEGARA REPUBLIK INDONESIA</td>
-            <td></td>
-            <td></td>
+            <td style="text-align: center;" colspan="4">KEPOLISIAN NEGARA REPUBLIK INDONESIA</td>
         </tr>
         <tr>
-            <td></td>
-            <td style="text-align: center;">KORP LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="text-align: center;" colspan="4">KORP LALU LINTAS</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td colspan="4"></td>
         </tr>
         <tr>
-            <td></td>
-            <td style="text-align: center;">LAPORAN HARIAN {{ \Illuminate\Support\Str::upper(operationPlans()->name) }}</td>
-            <td></td>
-            <td></td>
+            <td style="text-align: center;" colspan="4">LAPORAN HARIAN {{ upperCase(operationPlans()->name) }}</td>
         </tr>
         <tr>
-            <td></td>
-            <td style="text-align: center;">TANGGAL: {{ operationPlans()->start_date->format("d-m-Y") }} S/D {{ operationPlans()->end_date->format("d-m-Y") }}</td>
-            <td></td>
-            <td></td>
+            <td style="text-align: center;" colspan="4">TANGGAL: {{ dateOnly(operationPlans()->start_date) }} S/D {{ dateOnly(operationPlans()->end_date) }}</td>
         </tr>
         <tr>
-            <td></td>
-            <td style="text-align: center;">KORLANTAS</td>
-            <td></td>
-            <td></td>
+            <td style="text-align: center;" colspan="4">KORLANTAS</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td colspan="4"></td>
         </tr>
         <tr>
             <th>NO</th>
