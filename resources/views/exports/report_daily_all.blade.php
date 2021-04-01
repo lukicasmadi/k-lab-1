@@ -1,46 +1,25 @@
 <table>
     <thead>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td colspan="4"></td>
         </tr>
         <tr>
-            <td></td>
-            <td style="text-align: center;">KEPOLISIAN NEGARA REPUBLIK INDONESIA</td>
-            <td></td>
-            <td></td>
+            <td style="text-align: center;" colspan="4">KEPOLISIAN NEGARA REPUBLIK INDONESIA</td>
         </tr>
         <tr>
-            <td></td>
-            <td style="text-align: center;">KORP LALU LINTAS</td>
-            <td></td>
-            <td></td>
+            <td style="text-align: center;" colspan="4">KORP LALU LINTAS</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td colspan="4"></td>
         </tr>
         <tr>
-            <td></td>
-            <td style="text-align: center;">LAPORAN HARIAN {{ \Illuminate\Support\Str::upper($operation->name) }} AKUMULASI SELURUH POLDA</td>
-            <td></td>
-            <td></td>
+            <td style="text-align: center;" colspan="4">LAPORAN HARIAN {{ upperCase($operation->name) }} AKUMULASI SELURUH POLDA</td>
         </tr>
         <tr>
-            <td></td>
-            <td style="text-align: center;">TANGGAL: {{ $operation->start_date->format("Y-m-d") }} S/D {{ $operation->end_date->format("Y-m-d") }}</td>
-            <td></td>
-            <td></td>
+            <td style="text-align: center;" colspan="4">TANGGAL: {{ dateOnly($operation->start_date) }} S/D {{ dateOnly($operation->end_date) }}</td>
         </tr>
         <tr>
-            <td></td>
-            <td style="text-align: center;">KORLANTAS</td>
-            <td></td>
-            <td></td>
+            <td style="text-align: center;" colspan="4">KORLANTAS</td>
         </tr>
         <tr>
             <td></td>

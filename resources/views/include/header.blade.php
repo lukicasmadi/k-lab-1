@@ -73,6 +73,13 @@
                         @endrole
 
                         @role('access_daerah')
+                            <li class="menu single-menu {{ request()->is('custom_alias') ? 'active' : '' }}">
+                                <a href="{{ route('custom_alias') }}">
+                                    <div>
+                                        <span>RENCANA OPERASI</span>
+                                    </div>
+                                </a>
+                            </li>
                             <li class="menu single-menu {{
                                 request()->is('report/*') ? 'active' : ''
                                 }}">

@@ -117,4 +117,9 @@ class RencanaOperasiController extends Controller
             ], 200);
         }
     }
+
+    public function customAlias()
+    {
+        //
+    }
 }
