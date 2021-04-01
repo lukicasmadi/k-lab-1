@@ -13,9 +13,6 @@ class DailyInputPrevExport implements FromView
         $this->year = $year;
         $this->operation_id = $operation_id;
         $this->polda = $polda;
-
-        logger($this->year);
-        logger($this->operation_id);
     }
 
     public function view(): View
