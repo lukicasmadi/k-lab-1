@@ -621,4 +621,25 @@ class ReportController extends Controller
 
         return redirect()->back();
     }
+
+    public function downloadExcel($uuid)
+    {
+        $korlantasRekap = KorlantasRekap::with(['rencaraOperasi', 'poldaData'])->whereUuid($uuid)->first();
+
+        if(!empty($korlantasRekap)) {
+
+            $output = repositoryDailyPolda($korlantasRekap);
+
+            if(!empty($output)) {
+                return $output;
+            } else {
+                flash('Laporan tahun '.$korlantasRekap->year.' tidak ditemukan')->success();
+                return redirect()->back();
+            }
+
+        } else {
+            flash('Data rekap laporan tidak ditemukan!')->success();
+            return redirect()->back();
+        }
+    }
 }

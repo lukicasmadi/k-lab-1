@@ -306,7 +306,7 @@ $(document).ready(function () {
                 render: function(data, type, row) {
                     return `
                     <div class="icon-container">
-                        <a href="#" id="btnDownload" data-id="`+data+`"><i class="far fa-download"></i></a>
+                        <a href="`+route('report_download_excel', data)+`" id="btnDownload" data-id="`+data+`"><i class="far fa-download"></i></a>
                     </div>
                     `;
                 },
@@ -337,18 +337,6 @@ $('body').on('click', '#btnView', function(e) {
         $('#preiew_operation_date').html(redate)
 
         $('#previewForm').modal('show')
-    })
-    .catch(function(error) {
-        swal("Deletion failed! Maybe you miss something", error.response.data.output, "error")
-    })
-})
-
-$('body').on('click', '#btnDownload', function(e) {
-    e.preventDefault()
-    var uuid = $(this).attr('data-id')
-
-    axios.get(route('korlantas_rekap_data_byuuid', uuid)).then(function(response) {
-        var output = response.data
     })
     .catch(function(error) {
         swal("Deletion failed! Maybe you miss something", error.response.data.output, "error")

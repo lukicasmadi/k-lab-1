@@ -75,6 +75,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/report/analysis-evaluation', 'ReportController@comparison')->name('report_comparison');
     Route::post('/report/analysis-evaluation/process', 'ReportController@comparisonProcess')->name('report_comparison_process');
     Route::get('/report/daily/id/{uuid}', 'ReportController@byId')->name('report_daily_by_id');
+    Route::get('/report/download/{uuid}', 'ReportController@downloadExcel')->name('report_download_excel');
+
 
 
     // Route Hanya Bisa Diakses Oleh Administrator atau Korlantas Pusat
