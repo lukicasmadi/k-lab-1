@@ -629,15 +629,29 @@ class ReportController extends Controller
 
         if(!empty($korlantasRekap)) {
 
-            $output = repositoryDailyPolda($korlantasRekap);
+            $prevYear = DailyInputPrev::where('year', $korlantasRekap->year)
+            ->where('rencana_operasi_id', $korlantasRekap->rencana_operasi_id)
+            ->first();
 
-            if(!empty($output)) {
+            if(!empty($prevYear)) {
                 $now = now()->format("Y-m-d");
-                $filename = 'daily-report-polda-'.$now.'.xlsx';
+                $rename = (empty($korlantasRekap->report_name)) ? "report" : $korlantasRekap->report_name;
+                $filename = slugTitle($rename).'-'.$now.'.xlsx';
 
-                return Excel::download(new DailyInputPrevExport($korlantasRekap->year, $korlantasRekap->rencaraOperasi->id), $filename);
+                $findOperation = RencanaOperasi::where("id", $korlantasRekap->rencana_operasi_id)->first();
+
+                return Excel::download(new DailyInputPrevExport(
+                    $korlantasRekap->year,
+                    $korlantasRekap->rencana_operasi_id,
+                    $korlantasRekap->polda,
+                    $korlantasRekap->operation_date,
+                    $korlantasRekap->rencaraOperasi->name,
+                    $korlantasRekap->poldaData,
+                    $findOperation
+                ), $filename);
+
             } else {
-                flash('Laporan tahun '.$korlantasRekap->year.' tidak ditemukan')->warning();
+                flash('Laporan tidak ditemukan')->warning();
                 return redirect()->back();
             }
 

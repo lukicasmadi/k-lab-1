@@ -3,16 +3,21 @@
 namespace App\Exports;
 
 use App\Models\DailyInputPrev;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
 
 class DailyInputPrevExport implements FromView
 {
-    public function __construct(string $year, int $operation_id, string $polda=null)
+    public function __construct(string $year, int $operation_id, string $polda=null, string $date, $operationName, $poldaData, $operationData)
     {
         $this->year = $year;
         $this->operation_id = $operation_id;
         $this->polda = $polda;
+        $this->filterByDate = $date;
+        $this->operationName = $operationName;
+        $this->poldaData = $poldaData;
+        $this->operationData = $operationData;
     }
 
     public function view(): View
@@ -274,10 +279,22 @@ class DailyInputPrevExport implements FromView
         sum(giat_lantas_pengaturan_p) as giat_lantas_pengaturan,
         sum(giat_lantas_penjagaan_p) as giat_lantas_penjagaan,
         sum(giat_lantas_pengawalan_p) as giat_lantas_pengawalan,
-        sum(giat_lantas_patroli_p) as giat_lantas_patroli')->whereRaw('rencana_operasi_id = ? AND year', [$this->operation_id, $this->year])->first();
+        sum(giat_lantas_patroli_p) as giat_lantas_patroli')
+        ->where('year', $this->year)
+        ->where('rencana_operasi_id', $this->operation_id)
+        ->when($this->polda != 'polda_all', function ($q) {
+            return $q->where('polda_id', $this->polda);
+        })
+        ->when($this->filterByDate != 'semua_hari', function ($q) {
+            return $q->where(DB::raw('DATE(created_at)'), $this->filterByDate);
+        })
+        ->first();
 
         return view('exports.new_daily', [
-            'data' => $data
+            'data' => $data,
+            'operation_name' => $this->operationName,
+            'polda_final' => ($this->polda == "polda_all") ? "SELURUH POLDA" : "POLDA ".$this->poldaData->name,
+            'operation_date' => $this->operationData->start_date." SD ".$this->operationData->end_date,
         ]);
     }
 }

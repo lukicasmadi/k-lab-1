@@ -79,11 +79,13 @@ class PoldaHasRencanaOperasiController extends Controller
 
             $payload = $request->except(['_token', 'submit']);
             $payload["polda_submited_id"] = $poldaSubmit->id;
+            $payload["polda_id"] = poldaId();
             $payload["rencana_operasi_id"] = operationPlans()->id;
             $payload["year"] = year();
 
             $payloadPrev = $request->except(['_token', 'submit']);
             $payloadPrev["polda_submited_id"] = $poldaSubmit->id;
+            $payloadPrev["polda_id"] = poldaId();
             $payloadPrev["rencana_operasi_id"] = operationPlans()->id;
             $payloadPrev["year"] = yearMinus();
 

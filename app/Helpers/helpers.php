@@ -7,14 +7,17 @@ use App\Models\UserHasPolda;
 use App\Models\PoldaSubmited;
 use App\Models\RencanaOperasi;
 
-
+if (! function_exists('slugTitle')) {
+    function slugTitle($string) {
+        return Str::slug($string, '-');
+    }
+}
 
 if (! function_exists('upperCase')) {
     function upperCase($string) {
         return Str::upper($string);
     }
 }
-
 
 if (! function_exists('humanDateRead')) {
     function humanDateRead($date) {

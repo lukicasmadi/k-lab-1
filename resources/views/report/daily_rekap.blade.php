@@ -75,7 +75,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <label class="text-popup">Nama Laporan</label>
-                                            <input type="text" name="report_name" id="report_name" class="form-control">
+                                            <input type="text" name="report_name" id="report_name" class="form-control" autocomplete="off">
                                         </div>
                                         <div class="col-md-12">
                                             <label class="text-popup">Pilih Polda</label>
@@ -206,7 +206,9 @@
 <script>
 
 $('#modalForm').on('hidden.bs.modal', function () {
-    $("#modalForm input").val('')
+    $("#report_name").val('')
+    $("#hari").val('')
+    $("#hari").addClass('d-none')
     $("#modalForm select").prop('selectedIndex', 0)
 })
 
@@ -263,7 +265,7 @@ $(document).ready(function () {
                 data: 'id',
                 visible: false,
                 searchable: false,
-                sortable: false
+                sortable: true
             },
             {
                 data: 'report_name',

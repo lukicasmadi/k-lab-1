@@ -17,6 +17,8 @@ class CreateDailyInputsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('polda_submited_id');
             $table->foreign('polda_submited_id')->references('id')->on('polda_submiteds');
+            $table->unsignedBigInteger('polda_id');
+            $table->foreign('polda_id')->references('id')->on('poldas');
             $table->unsignedBigInteger('rencana_operasi_id');
             $table->foreign('rencana_operasi_id')->references('id')->on('rencana_operasis');
             $table->string("year");
