@@ -1,30 +1,6 @@
 <table>
     <thead>
         <tr>
-            <td colspan="4"></td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="4">KEPOLISIAN NEGARA REPUBLIK INDONESIA</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="4">KORP LALU LINTAS</td>
-        </tr>
-        <tr>
-            <td colspan="4"></td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="4">LAPORAN HARIAN {{ upperCase($operation->name) }} AKUMULASI SELURUH POLDA</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="4">TANGGAL: {{ dateOnly($operation->start_date) }} S/D {{ dateOnly($operation->end_date) }}</td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="4">KORLANTAS</td>
-        </tr>
-        <tr>
-            <td colspan="4"></td>
-        </tr>
-        <tr>
             <th>NO</th>
             <th>URAIAN</th>
             <th>REKAP HARIAN</th>

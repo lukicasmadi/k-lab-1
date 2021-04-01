@@ -14,6 +14,7 @@ use App\Exports\ComparisonExport;
 use App\Exports\PoldaByUuidExport;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\DailyInputPrevExport;
 
 class ReportController extends Controller
 {
@@ -631,14 +632,17 @@ class ReportController extends Controller
             $output = repositoryDailyPolda($korlantasRekap);
 
             if(!empty($output)) {
-                return $output;
+                $now = now()->format("Y-m-d");
+                $filename = 'daily-report-polda-'.$now.'.xlsx';
+
+                return Excel::download(new DailyInputPrevExport($korlantasRekap->year, $korlantasRekap->rencaraOperasi->id), $filename);
             } else {
-                flash('Laporan tahun '.$korlantasRekap->year.' tidak ditemukan')->success();
+                flash('Laporan tahun '.$korlantasRekap->year.' tidak ditemukan')->warning();
                 return redirect()->back();
             }
 
         } else {
-            flash('Data rekap laporan tidak ditemukan!')->success();
+            flash('Data rekap laporan tidak ditemukan!')->warning();
             return redirect()->back();
         }
     }
