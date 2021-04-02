@@ -78,8 +78,8 @@ class ReportController extends Controller
     {
         $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");
 
-        $currentYear = DailyInput::pluck('year')->toArray();
-        $prevYear = DailyInputPrev::pluck('year')->toArray();
+        $currentYear = array_unique(DailyInput::pluck('year')->toArray());
+        $prevYear = array_unique(DailyInputPrev::pluck('year')->toArray());
 
         return view('report.comparison', compact('rencanaOperasi', 'currentYear', 'prevYear'));
     }

@@ -4069,7 +4069,9 @@
 @push('page_js')
 <script>
     $(document).ready(function () {
-        var f1 = flatpickr(document.getElementById('tanggal'));
+        var f1 = flatpickr(document.getElementById('tanggal'), {
+            mode: "range"
+        });
 
         $("#btnRekapData").click(function (e) {
             e.preventDefault();
