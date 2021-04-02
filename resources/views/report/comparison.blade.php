@@ -75,8 +75,8 @@
                             </tr>
                             <tr class="evaluasi">
                                 <td>Tilang</td>
-                                <td id="pelanggaran_lalin_tilang_prev">0</td>
-                                <td id="pelanggaran_lalin_tilang">0</td>
+                                <td id="pelanggaran_lalu_lintas_tilang_prev">0</td>
+                                <td id="pelanggaran_lalu_lintas_tilang">0</td>
                                 <td id="status_pelanggaran_lalin_tilang">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 7.5 10">
                                         <defs>
@@ -90,8 +90,8 @@
                             </tr>
                             <tr class="evaluasi">
                                 <td>Teguran</td>
-                                <td id="pelanggaran_lalin_teguran_prev">0</td>
-                                <td id="pelanggaran_lalin_teguran">0</td>
+                                <td id="pelanggaran_lalu_lintas_teguran_prev">0</td>
+                                <td id="pelanggaran_lalu_lintas_teguran">0</td>
                                 <td id="status_pelanggaran_lalin_teguran">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 7.5 10">
                                         <defs>
@@ -4106,9 +4106,17 @@
                     end_year: $("#tahun_pembanding_kedua").val(),
                     date_range: dateStr,
                 }).then(function(response) {
-                    console.log(response.data)
+                    var dataPrev = response.data.prev
+                    var dataCurrent = response.data.current
+
                     $("#panelLoading").addClass("d-none")
                     $("#panelData").removeClass("d-none")
+
+                    $("#pelanggaran_lalu_lintas_tilang_prev").html(dataPrev.pelanggaran_lalu_lintas_tilang)
+                    $("#pelanggaran_lalu_lintas_teguran_prev").html(dataPrev.pelanggaran_lalu_lintas_teguran)
+
+                    $("#pelanggaran_lalu_lintas_tilang").html(dataCurrent.pelanggaran_lalu_lintas_tilang)
+                    $("#pelanggaran_lalu_lintas_teguran").html(dataCurrent.pelanggaran_lalu_lintas_teguran)
                 })
                 .catch(function(error) {
                     swal("Data belum lengkap. Silahkan periksa data yang akan diproses", error.response.data.output, "error")

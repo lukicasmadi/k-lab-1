@@ -700,7 +700,11 @@ class ReportController extends Controller
         $end_date = Carbon::parse(ltrim($format[1], " "))->format('Y-m-d');
 
         $prevYear = laporanPrev($operation_id, $start_year, $start_date, $end_date);
+        $currentYear = laporanCurrent($operation_id, $end_year, $start_date, $end_date);
 
-        return $prevYear;
+        return [
+            'prev' => $prevYear,
+            'current' => $currentYear
+        ];
     }
 }
