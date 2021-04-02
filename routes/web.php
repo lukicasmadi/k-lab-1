@@ -186,5 +186,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/get/rencana-operasi/{uuid}', 'RencanaOperasiController@rencana_operasi_by_uuid')->name('rencana_operasi_by_uuid');
         Route::get('/korlantas-rekap/daily', 'KorlantasRekapController@data')->name('korlantas_rekap_data');
         Route::get('/korlantas-rekap/daily/byuuid/{uuid}', 'KorlantasRekapController@byuuid')->name('korlantas_rekap_data_byuuid');
+        Route::post('/report/analysis-evaluation/data', 'ReportController@comparisonGetData')->name('comparison_get_data');
     });
 });

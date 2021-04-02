@@ -12,11 +12,12 @@
 @section('content')
 <div class="layout-px-spacing">
     <div class="row layout-top-spacing">
+
         <div class="col-lg-4 col-12 mb-25 layout-spacing">
             <div class="statbox widget box box-shadow">
                 @include('flash::message')
                 <div class="widget-content mt-3 widget-content-area">
-                    <form action="{{ route('report_comparison_process') }}" method="POST">
+                    <form action="{{ route('report_comparison_process') }}" id="comparison_form" method="POST">
                         @csrf
                         <div class="form-group">
                             <label class="text-popup">Pilih Operasi</label>
@@ -46,13 +47,13 @@
                             <label>Pilih Hari</label>
                             <input id="tanggal" name="tanggal" class="form-control flatpickr flatpickr-input active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
                         </div>
-                        <input type="button" name="btnRekapData" id="btnRekapData" class="mt-4 mb-4 btn btn-primary" value="Rekap Data">
                         <input type="submit" name="btnUnduhData" id="btnUnduhData" class="mt-4 mb-4 btn btn-primary" value="Unduh Data">
                     </form>
                 </div>
             </div>
         </div>
-        <div class="col-lg-8 col-12  layout-spacing">
+
+        <div class="col-lg-8 col-12 layout-spacing" id="panelData">
             <div class="widget-content mt-1 mb-5">
                 <div class="table-responsive">
                     <table id="tbl_daily_submited" class="table">
@@ -4053,30 +4054,67 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-lg-8 col-12 d-none" id="panelLoading">
+            <div class="centerContent">
+                <img src="{{ secure_asset('template/assets/img/loader.gif') }}" alt="" srcset="">
+            </div>
+        </div>
     </div>
 </div>
+
+<div class="modal fade" id="debugModal" tabindex="-1" role="dialog" aria-labelledby="debugModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="notes-box">
+                    <div class="notes-content" id="debugdata"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 @endsection
+
 @push('library_css')
 <link href="{{ secure_asset('template/plugins/flatpickr/flatpickr.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ secure_asset('template/plugins/flatpickr/custom-flatpickr.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ secure_asset('template/plugins/bootstrap-range-Slider/bootstrap-slider.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ secure_asset('template/custom.css') }}" rel="stylesheet" type="text/css">
 @endpush
+
 @push('library_js')
 <script src="{{ secure_asset('template/plugins/flatpickr/flatpickr.js') }}"></script>
 <script src="{{ secure_asset('template/plugins/bootstrap-range-Slider/bootstrap-rangeSlider.js') }}"></script>
+<script src="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
 @endpush
+
 @push('page_js')
 <script>
     $(document).ready(function () {
         var f1 = flatpickr(document.getElementById('tanggal'), {
-            mode: "range"
-        });
+            mode: "range",
+            onClose: function(selectedDates, dateStr, instance) {
+                $("#panelData").addClass("d-none")
+                $("#panelLoading").removeClass("d-none")
 
-        $("#btnRekapData").click(function (e) {
-            e.preventDefault();
-            alert("call ajax")
-        });
+                axios.post(route('comparison_get_data'), {
+                    operation_id: $("#operation_id").val(),
+                    start_year: $("#tahun_pembanding_pertama").val(),
+                    end_year: $("#tahun_pembanding_kedua").val(),
+                    date_range: dateStr,
+                }).then(function(response) {
+                    console.log(response.data)
+                    $("#panelLoading").addClass("d-none")
+                    $("#panelData").removeClass("d-none")
+                })
+                .catch(function(error) {
+                    swal("Data belum lengkap. Silahkan periksa data yang akan diproses", error.response.data.output, "error")
+                })
+            }
+        })
     })
 </script>
 @endpush

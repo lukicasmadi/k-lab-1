@@ -9,6 +9,7 @@ use App\Models\PoldaSubmited;
 use App\Models\DailyInputPrev;
 use App\Models\KorlantasRekap;
 use App\Models\RencanaOperasi;
+use Illuminate\Support\Carbon;
 use App\Exports\PoldaAllExport;
 use App\Exports\ComparisonExport;
 use App\Exports\DailyInputExport;
@@ -680,5 +681,26 @@ class ReportController extends Controller
             flash('Data rekap laporan tidak ditemukan!')->warning();
             return redirect()->back();
         }
+    }
+
+    public function comparisonGetData()
+    {
+        $operation_id = request('operation_id');
+        $start_year = request('start_year');
+        $end_year = request('end_year');
+        $date_range = request('date_range');
+
+        if(is_null(request('date_range')) || is_null(request('operation_id')) || is_null(request('start_year')) || is_null(request('end_year'))) {
+            abort(401);
+        }
+
+        $format = explode(" to ", $date_range);
+
+        $start_date = Carbon::parse(rtrim($format[0], " "))->format('Y-m-d');
+        $end_date = Carbon::parse(ltrim($format[1], " "))->format('Y-m-d');
+
+        $prevYear = laporanPrev($operation_id, $start_year, $start_date, $end_date);
+
+        return $prevYear;
     }
 }
