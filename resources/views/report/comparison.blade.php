@@ -77,31 +77,15 @@
                                 <td>Tilang</td>
                                 <td id="pelanggaran_lalu_lintas_tilang_prev">0</td>
                                 <td id="pelanggaran_lalu_lintas_tilang">0</td>
-                                <td id="status_pelanggaran_lalin_tilang">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 7.5 10">
-                                        <defs>
-                                            <style>.a{fill:#00adef;}</style>
-                                        </defs>
-                                        <path class="a" d="M9.125,11.606,6.881,9.369,6,10.25,9.75,14l3.75-3.75-.881-.881-2.244,2.238V4H9.125Z" transform="translate(-6 -4)"/>
-                                    </svg>
-                                    Turun
-                                </td>
-                                <td id="persentase_pelanggaran_lalin_tilang">0%</td>
+                                <td id="status_pelanggaran_lalin_tilang">-</td>
+                                <td id="persentase_pelanggaran_lalin_tilang">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>Teguran</td>
                                 <td id="pelanggaran_lalu_lintas_teguran_prev">0</td>
                                 <td id="pelanggaran_lalu_lintas_teguran">0</td>
-                                <td id="status_pelanggaran_lalin_teguran">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 7.5 10">
-                                        <defs>
-                                            <style>.a{fill:#00adef;}</style>
-                                        </defs>
-                                        <path class="a" d="M9.125,6.394,6.881,8.631,6,7.75,9.75,4,13.5,7.75l-.881.881L10.375,6.394V14H9.125Z" transform="translate(-6 -4)"/>
-                                    </svg>
-                                    Naik
-                                </td>
-                                <td id="persentase_pelanggaran_lalin_teguran">0%</td>
+                                <td id="status_pelanggaran_lalin_teguran">-</td>
+                                <td id="persentase_pelanggaran_lalin_teguran">-</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">2. JENIS PELANGGARAN LALU LINTAS</td>
@@ -4093,6 +4077,36 @@
 
 @push('page_js')
 <script>
+    function percentageValue(tahunKedua, tahunPertama) {
+        var output1 = tahunKedua - tahunPertama
+        var output2 = output1 / tahunPertama
+        var output3 = output2 * 100
+        var output4 = Math.round(output3, 2)
+
+        if(!output4) {
+            return "-"
+        } else {
+            return output4+"%";
+        }
+    }
+
+    function percentageStatus(tahunKedua, tahunPertama) {
+        if(!tahunKedua || !tahunPertama) {
+            return "-"
+        } else {
+            if(tahunKedua > tahunPertama) {
+                tanda = '<svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 7.5 10"> <defs> <style>.a{fill:#00adef;}</style> </defs> <path class="a" d="M9.125,6.394,6.881,8.631,6,7.75,9.75,4,13.5,7.75l-.881.881L10.375,6.394V14H9.125Z" transform="translate(-6 -4)"/> </svg> Naik ';
+            } else if(tahunKedua < tahunPertama) {
+                tanda = '<svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 7.5 10"> <defs> <style>.a{fill:#00adef;}</style> </defs> <path class="a" d="M9.125,11.606,6.881,9.369,6,10.25,9.75,14l3.75-3.75-.881-.881-2.244,2.238V4H9.125Z" transform="translate(-6 -4)"/> </svg> Turun';
+            } else if(tahunKedua == tahunPertama) {
+                tanda = "Sama";
+            } else {
+                tanda = "";
+            }
+            return tanda;
+        }
+    }
+
     $(document).ready(function () {
         var f1 = flatpickr(document.getElementById('tanggal'), {
             mode: "range",
@@ -4112,11 +4126,303 @@
                     $("#panelLoading").addClass("d-none")
                     $("#panelData").removeClass("d-none")
 
-                    $("#pelanggaran_lalu_lintas_tilang_prev").html(dataPrev.pelanggaran_lalu_lintas_tilang)
-                    $("#pelanggaran_lalu_lintas_teguran_prev").html(dataPrev.pelanggaran_lalu_lintas_teguran)
+$("#pelanggaran_lalu_lintas_tilang_prev").html(dataPrev.pelanggaran_lalu_lintas_tilang)
+$("#pelanggaran_lalu_lintas_tilang").html(dataCurrent.pelanggaran_lalu_lintas_tilang)
+$("#status_pelanggaran_lalin_tilang").html(percentageStatus(dataCurrent.pelanggaran_lalu_lintas_tilang, dataPrev.pelanggaran_lalu_lintas_tilang))
+$("#persentase_pelanggaran_lalin_tilang").html(percentageValue(dataCurrent.pelanggaran_lalu_lintas_tilang, dataPrev.pelanggaran_lalu_lintas_tilang))
 
-                    $("#pelanggaran_lalu_lintas_tilang").html(dataCurrent.pelanggaran_lalu_lintas_tilang)
-                    $("#pelanggaran_lalu_lintas_teguran").html(dataCurrent.pelanggaran_lalu_lintas_teguran)
+
+$("#pelanggaran_lalu_lintas_teguran_prev").html(dataPrev.pelanggaran_lalu_lintas_teguran)
+$("#pelanggaran_lalu_lintas_teguran").html(dataCurrent.pelanggaran_lalu_lintas_teguran)
+$("#status_pelanggaran_lalin_teguran").html(percentageStatus(dataCurrent.pelanggaran_lalu_lintas_teguran, dataPrev.pelanggaran_lalu_lintas_teguran))
+$("#persentase_pelanggaran_lalin_teguran").html(percentageValue(dataCurrent.pelanggaran_lalu_lintas_teguran, dataPrev.pelanggaran_lalu_lintas_teguran))
+
+
+$("#pelanggaran_lalin_motor_gunhelm_prev").html(dataPrev.pelanggaran_sepeda_motor_gun_helm_sni)
+$("#pelanggaran_lalin_motor_gunhelm").html(dataCurrent.pelanggaran_sepeda_motor_gun_helm_sni)
+$("#status_pelanggaran_lalin_motor_gunhelm").html(percentageStatus(dataCurrent.pelanggaran_sepeda_motor_gun_helm_sni, dataPrev.pelanggaran_sepeda_motor_gun_helm_sni))
+$("#persentase_pelanggaran_lalin_motor_gunhelm").html(percentageValue(dataCurrent.pelanggaran_sepeda_motor_gun_helm_sni, dataPrev.pelanggaran_sepeda_motor_gun_helm_sni))
+
+$("#pelanggaran_lalin_motor_lawan_arus_prev").html(dataPrev.pelanggaran_sepeda_motor_melawan_arus)
+$("#pelanggaran_lalin_motor_lawan_arus").html(dataCurrent.pelanggaran_sepeda_motor_melawan_arus)
+$("#status_pelanggaran_lalin_motor_lawan_arus").html(percentageStatus(dataCurrent.pelanggaran_sepeda_motor_melawan_arus, dataPrev.pelanggaran_sepeda_motor_melawan_arus))
+$("#persentase_pelanggaran_lalin_motor_lawan_arus").html(percentageValue(dataCurrent.pelanggaran_sepeda_motor_melawan_arus, dataPrev.pelanggaran_sepeda_motor_melawan_arus))
+
+$("#pelanggaran_lalin_motor_gunhp_prev").html(dataPrev.pelanggaran_sepeda_motor_gun_hp_saat_berkendara)
+$("#pelanggaran_lalin_motor_gunhp").html(dataCurrent.pelanggaran_sepeda_motor_gun_hp_saat_berkendara)
+$("#status_pelanggaran_lalin_motor_gunhp").html(percentageStatus(dataCurrent.pelanggaran_sepeda_motor_gun_hp_saat_berkendara, dataPrev.pelanggaran_sepeda_motor_gun_hp_saat_berkendara))
+$("#persentase_pelanggaran_lalin_motor_gunhp").html(percentageValue(dataCurrent.pelanggaran_sepeda_motor_gun_hp_saat_berkendara, dataPrev.pelanggaran_sepeda_motor_gun_hp_saat_berkendara))
+
+$("#pelanggaran_lalin_motor_pengaruh_alkohol_prev").html(dataPrev.pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol)
+$("#pelanggaran_lalin_motor_pengaruh_alkohol").html(dataCurrent.pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol)
+$("#status_pelanggaran_lalin_motor_pengaruh_alkohol").html(percentageStatus(dataCurrent.pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol, dataPrev.pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol))
+$("#persentase_pelanggaran_lalin_motor_pengaruh_alkohol").html(percentageValue(dataCurrent.pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol, dataPrev.pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol))
+
+$("#pelanggaran_lalin_motor_batas_kecepatan_prev").html(dataPrev.pelanggaran_sepeda_motor_melebihi_batas_kecepatan)
+$("#pelanggaran_lalin_motor_batas_kecepatan").html(dataCurrent.pelanggaran_sepeda_motor_melebihi_batas_kecepatan)
+$("#status_pelanggaran_lalin_motor_batas_kecepatan").html(percentageStatus(dataCurrent.pelanggaran_sepeda_motor_melebihi_batas_kecepatan, dataPrev.pelanggaran_sepeda_motor_melebihi_batas_kecepatan))
+$("#persentase_pelanggaran_lalin_motor_batas_kecepatan").html(percentageValue(dataCurrent.pelanggaran_sepeda_motor_melebihi_batas_kecepatan, dataPrev.pelanggaran_sepeda_motor_melebihi_batas_kecepatan))
+
+$("#pelanggaran_lalin_motor_bawah_umur_prev").html(dataPrev.pelanggaran_sepeda_motor_berkendara_dibawah_umur)
+$("#pelanggaran_lalin_motor_bawah_umur").html(dataCurrent.pelanggaran_sepeda_motor_berkendara_dibawah_umur)
+$("#status_pelanggaran_lalin_motor_bawah_umur").html(percentageStatus(dataCurrent.pelanggaran_sepeda_motor_berkendara_dibawah_umur, dataPrev.pelanggaran_sepeda_motor_berkendara_dibawah_umur))
+$("#persentase_pelanggaran_lalin_motor_bawah_umur").html(percentageValue(dataCurrent.pelanggaran_sepeda_motor_berkendara_dibawah_umur, dataPrev.pelanggaran_sepeda_motor_berkendara_dibawah_umur))
+
+$("#pelanggaran_lalin_motor_lain_lain_prev").html(dataPrev.pelanggaran_sepeda_motor_lain_lain)
+$("#pelanggaran_lalin_motor_lain_lain").html(dataCurrent.pelanggaran_sepeda_motor_lain_lain)
+$("#status_pelanggaran_lalin_motor_lain_lain").html(percentageStatus(dataCurrent.pelanggaran_sepeda_motor_lain_lain, dataPrev.pelanggaran_sepeda_motor_lain_lain))
+$("#persentase_pelanggaran_lalin_motor_lain_lain").html(percentageValue(dataCurrent.pelanggaran_sepeda_motor_lain_lain, dataPrev.pelanggaran_sepeda_motor_lain_lain))
+
+$("#pelanggaran_lalin_mobil_lawan_arus_prev").html(dataPrev.pelanggaran_mobil_melawan_arus)
+$("#pelanggaran_lalin_mobil_lawan_arus").html(dataCurrent.pelanggaran_mobil_melawan_arus)
+$("#status_pelanggaran_lalin_mobil_lawan_arus").html(percentageStatus(dataCurrent.pelanggaran_mobil_melawan_arus, dataPrev.pelanggaran_mobil_melawan_arus))
+$("#persentase_pelanggaran_lalin_mobil_lawan_arus").html(percentageValue(dataCurrent.pelanggaran_mobil_melawan_arus, dataPrev.pelanggaran_mobil_melawan_arus))
+
+$("#pelanggaran_lalin_mobil_gunhp_prev").html(dataPrev.pelanggaran_mobil_gun_hp_saat_berkendara)
+$("#pelanggaran_lalin_mobil_gunhp").html(dataCurrent.pelanggaran_mobil_gun_hp_saat_berkendara)
+$("#status_pelanggaran_lalin_mobil_gunhp").html(percentageStatus(dataCurrent.pelanggaran_mobil_gun_hp_saat_berkendara, dataPrev.pelanggaran_mobil_gun_hp_saat_berkendara))
+$("#persentase_pelanggaran_lalin_mobil_gunhp").html(percentageValue(dataCurrent.pelanggaran_mobil_gun_hp_saat_berkendara, dataPrev.pelanggaran_mobil_gun_hp_saat_berkendara))
+
+$("#pelanggaran_lalin_mobil_pengaruh_alkohol_prev").html(dataPrev.pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol)
+$("#pelanggaran_lalin_mobil_pengaruh_alkohol").html(dataCurrent.pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol)
+$("#status_pelanggaran_lalin_mobil_pengaruh_alkohol").html(percentageStatus(dataCurrent.pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol, dataPrev.pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol))
+$("#persentase_pelanggaran_lalin_mobil_pengaruh_alkohol").html(percentageValue(dataCurrent.pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol, dataPrev.pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol))
+
+$("#pelanggaran_lalin_mobil_batas_kecepatan_prev").html(dataPrev.pelanggaran_mobil_melebihi_batas_kecepatan)
+$("#pelanggaran_lalin_mobil_batas_kecepatan").html(dataCurrent.pelanggaran_mobil_melebihi_batas_kecepatan)
+$("#status_pelanggaran_lalin_mobil_batas_kecepatan").html(percentageStatus(dataCurrent.pelanggaran_mobil_melebihi_batas_kecepatan, dataPrev.pelanggaran_mobil_melebihi_batas_kecepatan))
+$("#persentase_pelanggaran_lalin_mobil_batas_kecepatan").html(percentageValue(dataCurrent.pelanggaran_mobil_melebihi_batas_kecepatan, dataPrev.pelanggaran_mobil_melebihi_batas_kecepatan))
+
+$("#pelanggaran_lalin_mobil_bawah_umur_prev").html(dataPrev.pelanggaran_mobil_berkendara_dibawah_umur)
+$("#pelanggaran_lalin_mobil_bawah_umur").html(dataCurrent.pelanggaran_mobil_berkendara_dibawah_umur)
+$("#status_pelanggaran_lalin_mobil_bawah_umur").html(percentageStatus(dataCurrent.pelanggaran_mobil_berkendara_dibawah_umur, dataPrev.pelanggaran_mobil_berkendara_dibawah_umur))
+$("#persentase_pelanggaran_lalin_mobil_bawah_umur").html(percentageValue(dataCurrent.pelanggaran_mobil_berkendara_dibawah_umur, dataPrev.pelanggaran_mobil_berkendara_dibawah_umur))
+
+$("#pelanggaran_lalin_mobil_gunsafety_belt_prev").html(dataPrev.pelanggaran_mobil_gun_safety_belt)
+$("#pelanggaran_lalin_mobil_gunsafety_belt").html(dataCurrent.pelanggaran_mobil_gun_safety_belt)
+$("#status_pelanggaran_lalin_mobil_gunsafety_belt").html(percentageStatus(dataCurrent.pelanggaran_mobil_gun_safety_belt, dataPrev.pelanggaran_mobil_gun_safety_belt))
+$("#persentase_pelanggaran_lalin_mobil_gunsafety_belt").html(percentageValue(dataCurrent.pelanggaran_mobil_gun_safety_belt, dataPrev.pelanggaran_mobil_gun_safety_belt))
+
+$("#pelanggaran_lalin_mobil_lain_lain_prev").html(dataPrev.pelanggaran_mobil_lain_lain)
+$("#pelanggaran_lalin_mobil_lain_lain").html(dataCurrent.pelanggaran_mobil_lain_lain)
+$("#status_pelanggaran_lalin_mobil_lain_lain").html(percentageStatus(dataCurrent.pelanggaran_mobil_lain_lain, dataPrev.pelanggaran_mobil_lain_lain))
+$("#persentase_pelanggaran_lalin_mobil_lain_lain").html(percentageValue(dataCurrent.pelanggaran_mobil_lain_lain, dataPrev.pelanggaran_mobil_lain_lain))
+
+$("#pelanggaran_lalin_barang_bukti_sim_prev").html(dataPrev.barang_bukti_yg_disita_sim)
+$("#pelanggaran_lalin_barang_bukti_sim").html(dataCurrent.barang_bukti_yg_disita_sim)
+$("#status_pelanggaran_lalin_barang_bukti_sim").html(percentageStatus(dataCurrent.barang_bukti_yg_disita_sim, dataPrev.barang_bukti_yg_disita_sim))
+$("#persentase_pelanggaran_lalin_barang_bukti_sim").html(percentageValue(dataCurrent.barang_bukti_yg_disita_sim, dataPrev.barang_bukti_yg_disita_sim))
+
+$("#pelanggaran_lalin_barang_bukti_stnk_prev").html(dataPrev.barang_bukti_yg_disita_stnk)
+$("#pelanggaran_lalin_barang_bukti_stnk").html(dataCurrent.barang_bukti_yg_disita_stnk)
+$("#status_pelanggaran_lalin_barang_bukti_stnk").html(percentageStatus(dataCurrent.barang_bukti_yg_disita_stnk, dataPrev.barang_bukti_yg_disita_stnk))
+$("#persentase_pelanggaran_lalin_barang_bukti_stnk").html(percentageValue(dataCurrent.barang_bukti_yg_disita_stnk, dataPrev.barang_bukti_yg_disita_stnk))
+
+$("#pelanggaran_lalin_barang_bukti_kendaraan_prev").html(dataPrev.barang_bukti_yg_disita_kendaraan)
+$("#pelanggaran_lalin_barang_bukti_kendaraan").html(dataCurrent.barang_bukti_yg_disita_kendaraan)
+$("#status_pelanggaran_lalin_barang_bukti_kendaraan").html(percentageStatus(dataCurrent.barang_bukti_yg_disita_kendaraan, dataPrev.barang_bukti_yg_disita_kendaraan))
+$("#persentase_pelanggaran_lalin_barang_bukti_kendaraan").html(percentageValue(dataCurrent.barang_bukti_yg_disita_kendaraan, dataPrev.barang_bukti_yg_disita_kendaraan))
+
+$("#pelanggaran_lalin_terlibat_pelanggaran_motor_prev").html(dataPrev.kendaraan_yang_terlibat_pelanggaran_sepeda_motor)
+$("#pelanggaran_lalin_terlibat_pelanggaran_motor").html(dataCurrent.kendaraan_yang_terlibat_pelanggaran_sepeda_motor)
+$("#status_pelanggaran_lalin_terlibat_pelanggaran_motor").html(percentageStatus(dataCurrent.kendaraan_yang_terlibat_pelanggaran_sepeda_motor, dataPrev.kendaraan_yang_terlibat_pelanggaran_sepeda_motor))
+$("#persentase_pelanggaran_lalin_terlibat_pelanggaran_motor").html(percentageValue(dataCurrent.kendaraan_yang_terlibat_pelanggaran_sepeda_motor, dataPrev.kendaraan_yang_terlibat_pelanggaran_sepeda_motor))
+
+$("#pelanggaran_lalin_terlibat_pelanggaran_mob_png_prev").html(dataPrev.kendaraan_yang_terlibat_pelanggaran_mobil_penumpang)
+$("#pelanggaran_lalin_terlibat_pelanggaran_mob_png").html(dataCurrent.kendaraan_yang_terlibat_pelanggaran_mobil_penumpang)
+$("#status_pelanggaran_lalin_terlibat_pelanggaran_mob_png").html(percentageStatus(dataCurrent.kendaraan_yang_terlibat_pelanggaran_mobil_penumpang, dataPrev.kendaraan_yang_terlibat_pelanggaran_mobil_penumpang))
+$("#persentase_pelanggaran_lalin_terlibat_pelanggaran_mob_png").html(percentageValue(dataCurrent.kendaraan_yang_terlibat_pelanggaran_mobil_penumpang, dataPrev.kendaraan_yang_terlibat_pelanggaran_mobil_penumpang))
+
+$("#pelanggaran_lalin_terlibat_pelanggaran_bus_prev").html(dataPrev.kendaraan_yang_terlibat_pelanggaran_mobil_bus)
+$("#pelanggaran_lalin_terlibat_pelanggaran_bus").html(dataCurrent.kendaraan_yang_terlibat_pelanggaran_mobil_bus)
+$("#status_pelanggaran_lalin_terlibat_pelanggaran_bus").html(percentageStatus(dataCurrent.kendaraan_yang_terlibat_pelanggaran_mobil_bus, dataPrev.kendaraan_yang_terlibat_pelanggaran_mobil_bus))
+$("#persentase_pelanggaran_lalin_terlibat_pelanggaran_bus").html(percentageValue(dataCurrent.kendaraan_yang_terlibat_pelanggaran_mobil_bus, dataPrev.kendaraan_yang_terlibat_pelanggaran_mobil_bus))
+
+$("#pelanggaran_lalin_terlibat_pelanggaran_mob_brg_prev").html(dataPrev.kendaraan_yang_terlibat_pelanggaran_mobil_barang)
+$("#pelanggaran_lalin_terlibat_pelanggaran_mob_brg").html(dataCurrent.kendaraan_yang_terlibat_pelanggaran_mobil_barang)
+$("#status_pelanggaran_lalin_terlibat_pelanggaran_mob_brg").html(percentageStatus(dataCurrent.kendaraan_yang_terlibat_pelanggaran_mobil_barang, dataPrev.kendaraan_yang_terlibat_pelanggaran_mobil_barang))
+$("#persentase_pelanggaran_lalin_terlibat_pelanggaran_mob_brg").html(percentageValue(dataCurrent.kendaraan_yang_terlibat_pelanggaran_mobil_barang, dataPrev.kendaraan_yang_terlibat_pelanggaran_mobil_barang))
+
+$("#pelanggaran_lalin_terlibat_pelanggaran_khusus_prev").html(dataPrev.kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus)
+$("#pelanggaran_lalin_terlibat_pelanggaran_khusus").html(dataCurrent.kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus)
+$("#status_pelanggaran_lalin_terlibat_pelanggaran_khusus").html(percentageStatus(dataCurrent.kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus, dataPrev.kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus))
+$("#persentase_pelanggaran_lalin_terlibat_pelanggaran_khusus").html(percentageValue(dataCurrent.kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus, dataPrev.kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus))
+
+$("#pelanggaran_lalin_profesi_pelaku_pns_prev").html(dataPrev.profesi_pelaku_pelanggaran_pns)
+$("#pelanggaran_lalin_profesi_pelaku_pns").html(dataCurrent.profesi_pelaku_pelanggaran_pns)
+$("#status_pelanggaran_lalin_profesi_pelaku_pns").html(percentageStatus(dataCurrent.profesi_pelaku_pelanggaran_pns, dataPrev.profesi_pelaku_pelanggaran_pns))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_pns").html(percentageValue(dataCurrent.profesi_pelaku_pelanggaran_pns, dataPrev.profesi_pelaku_pelanggaran_pns))
+
+$("#pelanggaran_lalin_profesi_pelaku_swasta_prev").html(dataPrev.profesi_pelaku_pelanggaran_karyawan_swasta)
+$("#pelanggaran_lalin_profesi_pelaku_swasta").html(dataCurrent.profesi_pelaku_pelanggaran_karyawan_swasta)
+$("#status_pelanggaran_lalin_profesi_pelaku_swasta").html(percentageStatus(dataCurrent.profesi_pelaku_pelanggaran_karyawan_swasta, dataPrev.profesi_pelaku_pelanggaran_karyawan_swasta))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_swasta").html(percentageValue(dataCurrent.profesi_pelaku_pelanggaran_karyawan_swasta, dataPrev.profesi_pelaku_pelanggaran_karyawan_swasta))
+
+$("#pelanggaran_lalin_profesi_pelaku_pelajar_prev").html(dataPrev.profesi_pelaku_pelanggaran_pelajar_mahasiswa)
+$("#pelanggaran_lalin_profesi_pelaku_pelajar").html(dataCurrent.profesi_pelaku_pelanggaran_pelajar_mahasiswa)
+$("#status_pelanggaran_lalin_profesi_pelaku_pelajar").html(percentageStatus(dataCurrent.profesi_pelaku_pelanggaran_pelajar_mahasiswa, dataPrev.profesi_pelaku_pelanggaran_pelajar_mahasiswa))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_pelajar").html(percentageValue(dataCurrent.profesi_pelaku_pelanggaran_pelajar_mahasiswa, dataPrev.profesi_pelaku_pelanggaran_pelajar_mahasiswa))
+
+$("#pelanggaran_lalin_profesi_pelaku_supir_prev").html(dataPrev.profesi_pelaku_pelanggaran_pengemudi_supir)
+$("#pelanggaran_lalin_profesi_pelaku_supir").html(dataCurrent.profesi_pelaku_pelanggaran_pengemudi_supir)
+$("#status_pelanggaran_lalin_profesi_pelaku_supir").html(percentageStatus(dataCurrent.profesi_pelaku_pelanggaran_pengemudi_supir, dataPrev.profesi_pelaku_pelanggaran_pengemudi_supir))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_supir").html(percentageValue(dataCurrent.profesi_pelaku_pelanggaran_pengemudi_supir, dataPrev.profesi_pelaku_pelanggaran_pengemudi_supir))
+
+$("#pelanggaran_lalin_profesi_pelaku_tni_prev").html(dataPrev.profesi_pelaku_pelanggaran_tni)
+$("#pelanggaran_lalin_profesi_pelaku_tni").html(dataCurrent.profesi_pelaku_pelanggaran_tni)
+$("#status_pelanggaran_lalin_profesi_pelaku_tni").html(percentageStatus(dataCurrent.profesi_pelaku_pelanggaran_tni, dataPrev.profesi_pelaku_pelanggaran_tni))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_tni").html(percentageValue(dataCurrent.profesi_pelaku_pelanggaran_tni, dataPrev.profesi_pelaku_pelanggaran_tni))
+
+$("#pelanggaran_lalin_profesi_pelaku_polri_prev").html(dataPrev.profesi_pelaku_pelanggaran_polri)
+$("#pelanggaran_lalin_profesi_pelaku_polri").html(dataCurrent.profesi_pelaku_pelanggaran_polri)
+$("#status_pelanggaran_lalin_profesi_pelaku_polri").html(percentageStatus(dataCurrent.profesi_pelaku_pelanggaran_polri, dataPrev.profesi_pelaku_pelanggaran_polri))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_polri").html(percentageValue(dataCurrent.profesi_pelaku_pelanggaran_polri, dataPrev.profesi_pelaku_pelanggaran_polri))
+
+$("#pelanggaran_lalin_profesi_pelaku_lainnya_prev").html(dataPrev.profesi_pelaku_pelanggaran_lain_lain)
+$("#pelanggaran_lalin_profesi_pelaku_lainnya").html(dataCurrent.profesi_pelaku_pelanggaran_lain_lain)
+$("#status_pelanggaran_lalin_profesi_pelaku_lainnya").html(percentageStatus(dataCurrent.profesi_pelaku_pelanggaran_lain_lain, dataPrev.profesi_pelaku_pelanggaran_lain_lain))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_lainnya").html(percentageValue(dataCurrent.profesi_pelaku_pelanggaran_lain_lain, dataPrev.profesi_pelaku_pelanggaran_lain_lain))
+
+$("#pelanggaran_lalin_profesi_pelaku_15tahun_prev").html(dataPrev.usia_pelaku_pelanggaran_kurang_dari_15_tahun)
+$("#pelanggaran_lalin_profesi_pelaku_15tahun").html(dataCurrent.usia_pelaku_pelanggaran_kurang_dari_15_tahun)
+$("#status_pelanggaran_lalin_profesi_pelaku_15tahun").html(percentageStatus(dataCurrent.usia_pelaku_pelanggaran_kurang_dari_15_tahun, dataPrev.usia_pelaku_pelanggaran_kurang_dari_15_tahun))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_15tahun").html(percentageValue(dataCurrent.usia_pelaku_pelanggaran_kurang_dari_15_tahun, dataPrev.usia_pelaku_pelanggaran_kurang_dari_15_tahun))
+
+$("#pelanggaran_lalin_profesi_pelaku_1620tahun_prev").html(dataPrev.usia_pelaku_pelanggaran_16_20_tahun)
+$("#pelanggaran_lalin_profesi_pelaku_1620tahun").html(dataCurrent.usia_pelaku_pelanggaran_16_20_tahun)
+$("#status_pelanggaran_lalin_profesi_pelaku_1620tahun").html(percentageStatus(dataCurrent.usia_pelaku_pelanggaran_16_20_tahun, dataPrev.usia_pelaku_pelanggaran_16_20_tahun))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_1620tahun").html(percentageValue(dataCurrent.usia_pelaku_pelanggaran_16_20_tahun, dataPrev.usia_pelaku_pelanggaran_16_20_tahun))
+
+$("#pelanggaran_lalin_profesi_pelaku_2125tahun_prev").html(dataPrev.usia_pelaku_pelanggaran_21_25_tahun)
+$("#pelanggaran_lalin_profesi_pelaku_2125tahun").html(dataCurrent.usia_pelaku_pelanggaran_21_25_tahun)
+$("#status_pelanggaran_lalin_profesi_pelaku_2125tahun").html(percentageStatus(dataCurrent.usia_pelaku_pelanggaran_21_25_tahun, dataPrev.usia_pelaku_pelanggaran_21_25_tahun))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_2125tahun").html(percentageValue(dataCurrent.usia_pelaku_pelanggaran_21_25_tahun, dataPrev.usia_pelaku_pelanggaran_21_25_tahun))
+
+$("#pelanggaran_lalin_profesi_pelaku_2630tahun_prev").html(dataPrev.usia_pelaku_pelanggaran_26_30_tahun)
+$("#pelanggaran_lalin_profesi_pelaku_2630tahun").html(dataCurrent.usia_pelaku_pelanggaran_26_30_tahun)
+$("#status_pelanggaran_lalin_profesi_pelaku_2630tahun").html(percentageStatus(dataCurrent.usia_pelaku_pelanggaran_26_30_tahun, dataPrev.usia_pelaku_pelanggaran_26_30_tahun))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_2630tahun").html(percentageValue(dataCurrent.usia_pelaku_pelanggaran_26_30_tahun, dataPrev.usia_pelaku_pelanggaran_26_30_tahun))
+
+$("#pelanggaran_lalin_profesi_pelaku_3135tahun_prev").html(dataPrev.usia_pelaku_pelanggaran_31_35_tahun)
+$("#pelanggaran_lalin_profesi_pelaku_3135tahun").html(dataCurrent.usia_pelaku_pelanggaran_31_35_tahun)
+$("#status_pelanggaran_lalin_profesi_pelaku_3135tahun").html(percentageStatus(dataCurrent.usia_pelaku_pelanggaran_31_35_tahun, dataPrev.usia_pelaku_pelanggaran_31_35_tahun))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_3135tahun").html(percentageValue(dataCurrent.usia_pelaku_pelanggaran_31_35_tahun, dataPrev.usia_pelaku_pelanggaran_31_35_tahun))
+
+$("#pelanggaran_lalin_profesi_pelaku_3640tahun_prev").html(dataPrev.usia_pelaku_pelanggaran_36_40_tahun)
+$("#pelanggaran_lalin_profesi_pelaku_3640tahun").html(dataCurrent.usia_pelaku_pelanggaran_36_40_tahun)
+$("#status_pelanggaran_lalin_profesi_pelaku_3640tahun").html(percentageStatus(dataCurrent.usia_pelaku_pelanggaran_36_40_tahun, dataPrev.usia_pelaku_pelanggaran_36_40_tahun))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_3640tahun").html(percentageValue(dataCurrent.usia_pelaku_pelanggaran_36_40_tahun, dataPrev.usia_pelaku_pelanggaran_36_40_tahun))
+
+$("#pelanggaran_lalin_profesi_pelaku_4145tahun_prev").html(dataPrev.usia_pelaku_pelanggaran_41_45_tahun)
+$("#pelanggaran_lalin_profesi_pelaku_4145tahun").html(dataCurrent.usia_pelaku_pelanggaran_41_45_tahun)
+$("#status_pelanggaran_lalin_profesi_pelaku_4145tahun").html(percentageStatus(dataCurrent.usia_pelaku_pelanggaran_41_45_tahun, dataPrev.usia_pelaku_pelanggaran_41_45_tahun))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_4145tahun").html(percentageValue(dataCurrent.usia_pelaku_pelanggaran_41_45_tahun, dataPrev.usia_pelaku_pelanggaran_41_45_tahun))
+
+$("#pelanggaran_lalin_profesi_pelaku_4650tahun_prev").html(dataPrev.usia_pelaku_pelanggaran_46_50_tahun)
+$("#pelanggaran_lalin_profesi_pelaku_4650tahun").html(dataCurrent.usia_pelaku_pelanggaran_46_50_tahun)
+$("#status_pelanggaran_lalin_profesi_pelaku_4650tahun").html(percentageStatus(dataCurrent.usia_pelaku_pelanggaran_46_50_tahun, dataPrev.usia_pelaku_pelanggaran_46_50_tahun))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_4650tahun").html(percentageValue(dataCurrent.usia_pelaku_pelanggaran_46_50_tahun, dataPrev.usia_pelaku_pelanggaran_46_50_tahun))
+
+$("#pelanggaran_lalin_profesi_pelaku_5155tahun_prev").html(dataPrev.usia_pelaku_pelanggaran_51_55_tahun)
+$("#pelanggaran_lalin_profesi_pelaku_5155tahun").html(dataCurrent.usia_pelaku_pelanggaran_51_55_tahun)
+$("#status_pelanggaran_lalin_profesi_pelaku_5155tahun").html(percentageStatus(dataCurrent.usia_pelaku_pelanggaran_51_55_tahun, dataPrev.usia_pelaku_pelanggaran_51_55_tahun))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_5155tahun").html(percentageValue(dataCurrent.usia_pelaku_pelanggaran_51_55_tahun, dataPrev.usia_pelaku_pelanggaran_51_55_tahun))
+
+$("#pelanggaran_lalin_profesi_pelaku_5660tahun_prev").html(dataPrev.usia_pelaku_pelanggaran_56_60_tahun)
+$("#pelanggaran_lalin_profesi_pelaku_5660tahun").html(dataCurrent.usia_pelaku_pelanggaran_56_60_tahun)
+$("#status_pelanggaran_lalin_profesi_pelaku_5660tahun").html(percentageStatus(dataCurrent.usia_pelaku_pelanggaran_56_60_tahun, dataPrev.usia_pelaku_pelanggaran_56_60_tahun))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_5660tahun").html(percentageValue(dataCurrent.usia_pelaku_pelanggaran_56_60_tahun, dataPrev.usia_pelaku_pelanggaran_56_60_tahun))
+
+$("#pelanggaran_lalin_profesi_pelaku_60tahun_prev").html(dataPrev.usia_pelaku_pelanggaran_diatas_60_tahun)
+$("#pelanggaran_lalin_profesi_pelaku_60tahun").html(dataCurrent.usia_pelaku_pelanggaran_diatas_60_tahun)
+$("#status_pelanggaran_lalin_profesi_pelaku_60tahun").html(percentageStatus(dataCurrent.usia_pelaku_pelanggaran_diatas_60_tahun, dataPrev.usia_pelaku_pelanggaran_diatas_60_tahun))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_60tahun").html(percentageValue(dataCurrent.usia_pelaku_pelanggaran_diatas_60_tahun, dataPrev.usia_pelaku_pelanggaran_diatas_60_tahun))
+
+$("#pelanggaran_lalin_profesi_pelaku_a_prev").html(dataPrev.sim_pelaku_pelanggaran_sim_a)
+$("#pelanggaran_lalin_profesi_pelaku_a").html(dataCurrent.sim_pelaku_pelanggaran_sim_a)
+$("#status_pelanggaran_lalin_profesi_pelaku_a").html(percentageStatus(dataCurrent.sim_pelaku_pelanggaran_sim_a, dataPrev.sim_pelaku_pelanggaran_sim_a))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_a").html(percentageValue(dataCurrent.sim_pelaku_pelanggaran_sim_a, dataPrev.sim_pelaku_pelanggaran_sim_a))
+
+$("#pelanggaran_lalin_profesi_pelaku_a_umum_prev").html(dataPrev.sim_pelaku_pelanggaran_sim_a_umum)
+$("#pelanggaran_lalin_profesi_pelaku_a_umum").html(dataCurrent.sim_pelaku_pelanggaran_sim_a_umum)
+$("#status_pelanggaran_lalin_profesi_pelaku_a_umum").html(percentageStatus(dataCurrent.sim_pelaku_pelanggaran_sim_a_umum, dataPrev.sim_pelaku_pelanggaran_sim_a_umum))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_a_umum").html(percentageValue(dataCurrent.sim_pelaku_pelanggaran_sim_a_umum, dataPrev.sim_pelaku_pelanggaran_sim_a_umum))
+
+$("#pelanggaran_lalin_profesi_pelaku_b1_prev").html(dataPrev.sim_pelaku_pelanggaran_sim_b1)
+$("#pelanggaran_lalin_profesi_pelaku_b1").html(dataCurrent.sim_pelaku_pelanggaran_sim_b1)
+$("#status_pelanggaran_lalin_profesi_pelaku_b1").html(percentageStatus(dataCurrent.sim_pelaku_pelanggaran_sim_b1, dataPrev.sim_pelaku_pelanggaran_sim_b1))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_b1").html(percentageValue(dataCurrent.sim_pelaku_pelanggaran_sim_b1, dataPrev.sim_pelaku_pelanggaran_sim_b1))
+
+$("#pelanggaran_lalin_profesi_pelaku_b1umum_prev").html(dataPrev.sim_pelaku_pelanggaran_sim_b1_umum)
+$("#pelanggaran_lalin_profesi_pelaku_b1umum").html(dataCurrent.sim_pelaku_pelanggaran_sim_b1_umum)
+$("#status_pelanggaran_lalin_profesi_pelaku_b1umum").html(percentageStatus(dataCurrent.sim_pelaku_pelanggaran_sim_b1_umum, dataPrev.sim_pelaku_pelanggaran_sim_b1_umum))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_b1umum").html(percentageValue(dataCurrent.sim_pelaku_pelanggaran_sim_b1_umum, dataPrev.sim_pelaku_pelanggaran_sim_b1_umum))
+
+$("#pelanggaran_lalin_profesi_pelaku_bii_prev").html(dataPrev.sim_pelaku_pelanggaran_sim_b2)
+$("#pelanggaran_lalin_profesi_pelaku_bii").html(dataCurrent.sim_pelaku_pelanggaran_sim_b2)
+$("#status_pelanggaran_lalin_profesi_pelaku_bii").html(percentageStatus(dataCurrent.sim_pelaku_pelanggaran_sim_b2, dataPrev.sim_pelaku_pelanggaran_sim_b2))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_bii").html(percentageValue(dataCurrent.sim_pelaku_pelanggaran_sim_b2, dataPrev.sim_pelaku_pelanggaran_sim_b2))
+
+$("#pelanggaran_lalin_profesi_pelaku_bii_umum_prev").html(dataPrev.sim_pelaku_pelanggaran_sim_b2_umum)
+$("#pelanggaran_lalin_profesi_pelaku_bii_umum").html(dataCurrent.sim_pelaku_pelanggaran_sim_b2_umum)
+$("#status_pelanggaran_lalin_profesi_pelaku_bii_umum").html(percentageStatus(dataCurrent.sim_pelaku_pelanggaran_sim_b2_umum, dataPrev.sim_pelaku_pelanggaran_sim_b2_umum))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_bii_umum").html(percentageValue(dataCurrent.sim_pelaku_pelanggaran_sim_b2_umum, dataPrev.sim_pelaku_pelanggaran_sim_b2_umum))
+
+$("#pelanggaran_lalin_profesi_pelaku_c_prev").html(dataPrev.sim_pelaku_pelanggaran_sim_c)
+$("#pelanggaran_lalin_profesi_pelaku_c").html(dataCurrent.sim_pelaku_pelanggaran_sim_c)
+$("#status_pelanggaran_lalin_profesi_pelaku_c").html(percentageStatus(dataCurrent.sim_pelaku_pelanggaran_sim_c, dataPrev.sim_pelaku_pelanggaran_sim_c))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_c").html(percentageValue(dataCurrent.sim_pelaku_pelanggaran_sim_c, dataPrev.sim_pelaku_pelanggaran_sim_c))
+
+$("#pelanggaran_lalin_profesi_pelaku_d_prev").html(dataPrev.sim_pelaku_pelanggaran_sim_d)
+$("#pelanggaran_lalin_profesi_pelaku_d").html(dataCurrent.sim_pelaku_pelanggaran_sim_d)
+$("#status_pelanggaran_lalin_profesi_pelaku_d").html(percentageStatus(dataCurrent.sim_pelaku_pelanggaran_sim_d, dataPrev.sim_pelaku_pelanggaran_sim_d))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_d").html(percentageValue(dataCurrent.sim_pelaku_pelanggaran_sim_d, dataPrev.sim_pelaku_pelanggaran_sim_d))
+
+$("#pelanggaran_lalin_profesi_pelaku_sim_internasional_prev").html(dataPrev.sim_pelaku_pelanggaran_sim_internasional)
+$("#pelanggaran_lalin_profesi_pelaku_sim_internasional").html(dataCurrent.sim_pelaku_pelanggaran_sim_internasional)
+$("#status_pelanggaran_lalin_profesi_pelaku_sim_internasional").html(percentageStatus(dataCurrent.sim_pelaku_pelanggaran_sim_internasional, dataPrev.sim_pelaku_pelanggaran_sim_internasional))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_sim_internasional").html(percentageValue(dataCurrent.sim_pelaku_pelanggaran_sim_internasional, dataPrev.sim_pelaku_pelanggaran_sim_internasional))
+
+$("#pelanggaran_lalin_profesi_pelaku_tanpa_sim_prev").html(dataPrev.sim_pelaku_pelanggaran_tanpa_sim)
+$("#pelanggaran_lalin_profesi_pelaku_tanpa_sim").html(dataCurrent.sim_pelaku_pelanggaran_tanpa_sim)
+$("#status_pelanggaran_lalin_profesi_pelaku_tanpa_sim").html(percentageStatus(dataCurrent.sim_pelaku_pelanggaran_tanpa_sim, dataPrev.sim_pelaku_pelanggaran_tanpa_sim))
+$("#persentase_pelanggaran_lalin_profesi_pelaku_tanpa_sim").html(percentageValue(dataCurrent.sim_pelaku_pelanggaran_tanpa_sim, dataPrev.sim_pelaku_pelanggaran_tanpa_sim))
+
+$("#pelanggaran_lalin_kawasan_pemukiman_prev").html(dataPrev.lokasi_pelanggaran_pemukiman)
+$("#pelanggaran_lalin_kawasan_pemukiman").html(dataCurrent.lokasi_pelanggaran_pemukiman)
+$("#status_pelanggaran_lalin_kawasan_pemukiman").html(percentageStatus(dataCurrent.lokasi_pelanggaran_pemukiman, dataPrev.lokasi_pelanggaran_pemukiman))
+$("#persentase_pelanggaran_lalin_kawasan_pemukiman").html(percentageValue(dataCurrent.lokasi_pelanggaran_pemukiman, dataPrev.lokasi_pelanggaran_pemukiman))
+
+$("#pelanggaran_lalin_kawasan_perbelanjaan_prev").html(dataPrev.lokasi_pelanggaran_perbelanjaan)
+$("#pelanggaran_lalin_kawasan_perbelanjaan").html(dataCurrent.lokasi_pelanggaran_perbelanjaan)
+$("#status_pelanggaran_lalin_kawasan_perbelanjaan").html(percentageStatus(dataCurrent.lokasi_pelanggaran_perbelanjaan, dataPrev.lokasi_pelanggaran_perbelanjaan))
+$("#persentase_pelanggaran_lalin_kawasan_perbelanjaan").html(percentageValue(dataCurrent.lokasi_pelanggaran_perbelanjaan, dataPrev.lokasi_pelanggaran_perbelanjaan))
+
+$("#pelanggaran_lalin_kawasan_perkantoran_prev").html(dataPrev.lokasi_pelanggaran_perkantoran)
+$("#pelanggaran_lalin_kawasan_perkantoran").html(dataCurrent.lokasi_pelanggaran_perkantoran)
+$("#status_pelanggaran_lalin_kawasan_perkantoran").html(percentageStatus(dataCurrent.lokasi_pelanggaran_perkantoran, dataPrev.lokasi_pelanggaran_perkantoran))
+$("#persentase_pelanggaran_lalin_kawasan_perkantoran").html(percentageValue(dataCurrent.lokasi_pelanggaran_perkantoran, dataPrev.lokasi_pelanggaran_perkantoran))
+
+$("#pelanggaran_lalin_kawasan_wisata_prev").html(dataPrev.lokasi_pelanggaran_wisata)
+$("#pelanggaran_lalin_kawasan_wisata").html(dataCurrent.lokasi_pelanggaran_wisata)
+$("#status_pelanggaran_lalin_kawasan_wisata").html(percentageStatus(dataCurrent.lokasi_pelanggaran_wisata, dataPrev.lokasi_pelanggaran_wisata))
+$("#persentase_pelanggaran_lalin_kawasan_wisata").html(percentageValue(dataCurrent.lokasi_pelanggaran_wisata, dataPrev.lokasi_pelanggaran_wisata))
+
+$("#pelanggaran_lalin_kawasan_industri_prev").html(dataPrev.lokasi_pelanggaran_industri)
+$("#pelanggaran_lalin_kawasan_industri").html(dataCurrent.lokasi_pelanggaran_industri)
+$("#status_pelanggaran_lalin_kawasan_industri").html(percentageStatus(dataCurrent.lokasi_pelanggaran_industri, dataPrev.lokasi_pelanggaran_industri))
+$("#persentase_pelanggaran_lalin_kawasan_industri").html(percentageValue(dataCurrent.lokasi_pelanggaran_industri, dataPrev.lokasi_pelanggaran_industri))
+
+$("#pelanggaran_lalin_status_jalan_nasional_prev").html(dataPrev.lokasi_pelanggaran_status_jalan_nasional)
+$("#pelanggaran_lalin_status_jalan_nasional").html(dataCurrent.lokasi_pelanggaran_status_jalan_nasional)
+$("#status_pelanggaran_lalin_status_jalan_nasional").html(percentageStatus(dataCurrent.lokasi_pelanggaran_status_jalan_nasional, dataPrev.lokasi_pelanggaran_status_jalan_nasional))
+$("#persentase_pelanggaran_lalin_status_jalan_nasional").html(percentageValue(dataCurrent.lokasi_pelanggaran_status_jalan_nasional, dataPrev.lokasi_pelanggaran_status_jalan_nasional))
+
+$("#pelanggaran_lalin_status_jalan_propinsi_prev").html(dataPrev.lokasi_pelanggaran_status_jalan_propinsi)
+$("#pelanggaran_lalin_status_jalan_propinsi").html(dataCurrent.lokasi_pelanggaran_status_jalan_propinsi)
+$("#status_pelanggaran_lalin_status_jalan_propinsi").html(percentageStatus(dataCurrent.lokasi_pelanggaran_status_jalan_propinsi, dataPrev.lokasi_pelanggaran_status_jalan_propinsi))
+$("#persentase_pelanggaran_lalin_status_jalan_propinsi").html(percentageValue(dataCurrent.lokasi_pelanggaran_status_jalan_propinsi, dataPrev.lokasi_pelanggaran_status_jalan_propinsi))
+
                 })
                 .catch(function(error) {
                     swal("Data belum lengkap. Silahkan periksa data yang akan diproses", error.response.data.output, "error")
