@@ -13,10 +13,10 @@
             <td colspan="7"></td>
         </tr>
         <tr>
-            <td style="text-align: center;" colspan="7">LAPORAN PERBANDINGAN {{ \Illuminate\Support\Str::upper($operation->name) }} SELURUH POLDA</td>
+            <td style="text-align: center;" colspan="7">LAPORAN PERBANDINGAN SELURUH POLDA</td>
         </tr>
         <tr>
-            <td style="text-align: center;" colspan="7">TANGGAL: {{ $operation->start_date->format("Y-m-d") }} S/D {{ $operation->end_date->format("Y-m-d") }}</td>
+            <td style="text-align: center;" colspan="7">TANGGAL: </td>
         </tr>
         <tr>
             <td style="text-align: center;" colspan="7">KORLANTAS</td>
