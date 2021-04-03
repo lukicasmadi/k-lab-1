@@ -694,13 +694,22 @@ class ReportController extends Controller
             abort(401);
         }
 
-        $format = explode(" to ", $date_range);
+        if (str_contains($date_range, 'to')) {
+            $format = explode(" to ", $date_range);
 
-        $start_date = Carbon::parse(rtrim($format[0], " "))->format('Y-m-d');
-        $end_date = Carbon::parse(ltrim($format[1], " "))->format('Y-m-d');
+            $start_date = Carbon::parse(rtrim($format[0], " "))->format('Y-m-d');
+            $end_date = Carbon::parse(ltrim($format[1], " "))->format('Y-m-d');
 
-        $prevYear = laporanPrev($operation_id, $start_year, $start_date, $end_date);
+            $prevYear = laporanPrev($operation_id, $start_year, $start_date, $end_date);
+            $currentYear = laporanCurrent($operation_id, $end_year, $start_date, $end_date);
+        } else {
+            $prevYear = laporanPrev($operation_id, $start_year, $date_range, $date_range);
+            $currentYear = laporanCurrent($operation_id, $end_year, $date_range, $date_range);
+        }
 
-        return $prevYear;
+        return [
+            'prev' => $prevYear,
+            'current' => $currentYear
+        ];
     }
 }
