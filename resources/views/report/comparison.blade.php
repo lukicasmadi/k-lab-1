@@ -4423,6 +4423,17 @@ $("#pelanggaran_lalin_status_jalan_propinsi").html(dataCurrent.lokasi_pelanggara
 $("#status_pelanggaran_lalin_status_jalan_propinsi").html(percentageStatus(dataCurrent.lokasi_pelanggaran_status_jalan_propinsi, dataPrev.lokasi_pelanggaran_status_jalan_propinsi))
 $("#persentase_pelanggaran_lalin_status_jalan_propinsi").html(percentageValue(dataCurrent.lokasi_pelanggaran_status_jalan_propinsi, dataPrev.lokasi_pelanggaran_status_jalan_propinsi))
 
+$("#pelanggaran_lalin_status_jalan_kabkota_prev").html(dataPrev.lokasi_pelanggaran_status_jalan_kab_kota)
+$("#pelanggaran_lalin_status_jalan_kabkota").html(dataCurrent.lokasi_pelanggaran_status_jalan_kab_kota)
+$("#status_pelanggaran_lalin_status_jalan_kabkota").html(percentageStatus(dataCurrent.lokasi_pelanggaran_status_jalan_kab_kota, dataPrev.lokasi_pelanggaran_status_jalan_kab_kota))
+$("#persentase_pelanggaran_lalin_status_jalan_kabkota").html(percentageValue(dataCurrent.lokasi_pelanggaran_status_jalan_kab_kota, dataPrev.lokasi_pelanggaran_status_jalan_kab_kota))
+
+$("#xxxxxxxx").html(dataPrev.xxxxxxxx)
+$("#xxxxxxxx").html(dataCurrent.xxxxxxxx)
+$("#xxxxxxxx").html(percentageStatus(dataCurrent.xxxxxxxx, dataPrev.xxxxxxxx))
+$("#xxxxxxxx").html(percentageValue(dataCurrent.xxxxxxxx, dataPrev.xxxxxxxx))
+
+
                 })
                 .catch(function(error) {
                     swal("Data belum lengkap. Silahkan periksa data yang akan diproses", error.response.data.output, "error")
