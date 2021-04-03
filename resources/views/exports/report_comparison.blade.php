@@ -16,7 +16,7 @@
             <td style="text-align: center;" colspan="7">LAPORAN PERBANDINGAN SELURUH POLDA</td>
         </tr>
         <tr>
-            <td style="text-align: center;" colspan="7">TANGGAL: </td>
+            <td style="text-align: center;" colspan="7">TANGGAL: {{ $startDate }} S/D {{ $endDate }}</td>
         </tr>
         <tr>
             <td style="text-align: center;" colspan="7">KORLANTAS</td>

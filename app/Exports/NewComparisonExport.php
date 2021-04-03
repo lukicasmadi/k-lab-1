@@ -550,7 +550,9 @@ class NewComparisonExport implements FromView
 
         return view('exports.report_comparison', [
             'tahunPertama' => $tahunPertama,
-            'tahunKedua' => $tahunKedua
+            'tahunKedua' => $tahunKedua,
+            'startDate' => $this->start_date,
+            'endDate' => $this->end_date,
         ]);
     }
 }
