@@ -4436,6 +4436,8 @@ $("#xxxxxxxx").html(percentageValue(dataCurrent.xxxxxxxx, dataPrev.xxxxxxxx))
 
                 })
                 .catch(function(error) {
+                    $("#panelLoading").addClass("d-none")
+                    $("#panelData").removeClass("d-none")
                     swal("Data belum lengkap. Silahkan periksa data yang akan diproses", error.response.data.output, "error")
                 })
             }
