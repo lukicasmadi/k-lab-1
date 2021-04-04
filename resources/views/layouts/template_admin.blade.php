@@ -58,13 +58,13 @@
     <script src="{{ secure_asset('template/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ secure_asset('js/app.js') }}"></script>
     <script src="{{ secure_asset('template/assets/js/custom.js') }}"></script>
-    <script src="{{ secure_asset('template/assets/js/bootstrap-tour.min.js') }}"></script>
-    <script src="{{ secure_asset('template/assets/js/script.js') }}"></script>
     <script src="{{ secure_asset('template/globalfunction.js') }}"></script>
     <script src="{{ secure_asset('template/assets/js/app.js') }}"></script>
     <script src="{{ secure_asset('template/plugins/select2/select2.min.js') }}"></script>
     <script src="{{ secure_asset('template/assets/js/components/ui-accordions.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    {{-- <script src="{{ secure_asset('template/assets/js/bootstrap-tour.min.js') }}"></script>
+    <script src="{{ secure_asset('template/assets/js/script.js') }}"></script> --}}
     <script>
         $(document).ready(function() {
             App.init();
