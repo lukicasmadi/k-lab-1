@@ -1382,7 +1382,7 @@
                 $tahunPertama->lokasi_pelanggaran_fungsi_jalan_kolektor,
                 $tahunPertama->lokasi_pelanggaran_fungsi_jalan_lokal,
                 $tahunPertama->lokasi_pelanggaran_fungsi_jalan_lingkungan
-            ]))) }}</td>
+            ])) }}</td>
 			<td>Lokasi</td>
         </tr>
         <tr>
@@ -1655,7 +1655,7 @@
                 $tahunKedua->profesi_korban_kecelakaan_lalin_polri,
                 $tahunKedua->profesi_korban_kecelakaan_lalin_lain_lain
                 ]) }}</td>
-			<td>{{ percentageStatus(alculation([
+			<td>{{ percentageStatus(calculation([
                 $tahunKedua->profesi_korban_kecelakaan_lalin_pns,
                 $tahunKedua->profesi_korban_kecelakaan_lalin_karwayan_swasta,
                 $tahunKedua->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa,
@@ -1672,7 +1672,7 @@
                 $tahunPertama->profesi_korban_kecelakaan_lalin_polri,
                 $tahunPertama->profesi_korban_kecelakaan_lalin_lain_lain
                 ])) }}</td>
-			<td>{{ percentageValue(alculation([
+			<td>{{ percentageValue(calculation([
                 $tahunKedua->profesi_korban_kecelakaan_lalin_pns,
                 $tahunKedua->profesi_korban_kecelakaan_lalin_karwayan_swasta,
                 $tahunKedua->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa,

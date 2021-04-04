@@ -211,6 +211,11 @@ if (! function_exists('calculation')) {
 
 if (! function_exists('percentageValue')) {
     function percentageValue($tahunKedua, $tahunPertama) {
+
+        if(empty($tahunKedua) && empty($tahunPertama)) {
+            return 0;
+        }
+
         $output1 = $tahunKedua - $tahunPertama;
         $output2 = $output1 / $tahunPertama;
         $output3 = $output2 * 100;
