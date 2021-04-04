@@ -1315,8 +1315,8 @@
             <td>1) ARTERI</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_fungsi_jalan_arteri }}</td>
             <td>{{ $tahunKedua->lokasi_pelanggaran_fungsi_jalan_arteri }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_pelanggaran_fungsi_jalan_arteri, $tahunPertama->lokasi_pelanggaran_fungsi_jalan_arteri) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_pelanggaran_fungsi_jalan_arteri, $tahunPertama->lokasi_pelanggaran_fungsi_jalan_arteri) }}</td>
 			<td>Lokasi</td>
         </tr>
         <tr>
@@ -1324,8 +1324,8 @@
             <td>2) KOLEKTOR</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_fungsi_jalan_kolektor }}</td>
             <td>{{ $tahunKedua->lokasi_pelanggaran_fungsi_jalan_kolektor }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_pelanggaran_fungsi_jalan_kolektor, $tahunPertama->lokasi_pelanggaran_fungsi_jalan_kolektor) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_pelanggaran_fungsi_jalan_kolektor, $tahunPertama->lokasi_pelanggaran_fungsi_jalan_kolektor) }}</td>
 			<td>Lokasi</td>
         </tr>
         <tr>
@@ -1333,8 +1333,8 @@
             <td>3) LOKAL</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_fungsi_jalan_lokal }}</td>
             <td>{{ $tahunKedua->lokasi_pelanggaran_fungsi_jalan_lokal }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_pelanggaran_fungsi_jalan_lokal, $tahunPertama->lokasi_pelanggaran_fungsi_jalan_lokal) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_pelanggaran_fungsi_jalan_lokal, $tahunPertama->lokasi_pelanggaran_fungsi_jalan_lokal) }}</td>
 			<td>Lokasi</td>
         </tr>
         <tr>
@@ -1342,8 +1342,8 @@
             <td>4) LINGKUNGAN</td>
             <td>{{ $tahunPertama->lokasi_pelanggaran_fungsi_jalan_lingkungan }}</td>
             <td>{{ $tahunKedua->lokasi_pelanggaran_fungsi_jalan_lingkungan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_pelanggaran_fungsi_jalan_lingkungan, $tahunPertama->lokasi_pelanggaran_fungsi_jalan_lingkungan) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_pelanggaran_fungsi_jalan_lingkungan, $tahunPertama->lokasi_pelanggaran_fungsi_jalan_lingkungan) }}</td>
 			<td>Lokasi</td>
         </tr>
         <tr>
@@ -1361,8 +1361,28 @@
                 $tahunKedua->lokasi_pelanggaran_fungsi_jalan_lokal,
                 $tahunKedua->lokasi_pelanggaran_fungsi_jalan_lingkungan
             ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->lokasi_pelanggaran_fungsi_jalan_arteri,
+                $tahunKedua->lokasi_pelanggaran_fungsi_jalan_kolektor,
+                $tahunKedua->lokasi_pelanggaran_fungsi_jalan_lokal,
+                $tahunKedua->lokasi_pelanggaran_fungsi_jalan_lingkungan
+            ]), calculation([
+                $tahunPertama->lokasi_pelanggaran_fungsi_jalan_arteri,
+                $tahunPertama->lokasi_pelanggaran_fungsi_jalan_kolektor,
+                $tahunPertama->lokasi_pelanggaran_fungsi_jalan_lokal,
+                $tahunPertama->lokasi_pelanggaran_fungsi_jalan_lingkungan
+            ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->lokasi_pelanggaran_fungsi_jalan_arteri,
+                $tahunKedua->lokasi_pelanggaran_fungsi_jalan_kolektor,
+                $tahunKedua->lokasi_pelanggaran_fungsi_jalan_lokal,
+                $tahunKedua->lokasi_pelanggaran_fungsi_jalan_lingkungan
+            ]), calculation([
+                $tahunPertama->lokasi_pelanggaran_fungsi_jalan_arteri,
+                $tahunPertama->lokasi_pelanggaran_fungsi_jalan_kolektor,
+                $tahunPertama->lokasi_pelanggaran_fungsi_jalan_lokal,
+                $tahunPertama->lokasi_pelanggaran_fungsi_jalan_lingkungan
+            ]))) }}</td>
 			<td>Lokasi</td>
         </tr>
         <tr>
@@ -1400,8 +1420,8 @@
             <td>b. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_jumlah_korban_meninggal }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_jumlah_korban_meninggal }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_jumlah_korban_meninggal, $tahunPertama->kecelakaan_lalin_jumlah_korban_meninggal) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_jumlah_korban_meninggal, $tahunPertama->kecelakaan_lalin_jumlah_korban_meninggal) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1409,8 +1429,8 @@
             <td>c. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_jumlah_korban_luka_berat }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_jumlah_korban_luka_berat }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_jumlah_korban_luka_berat, $tahunPertama->kecelakaan_lalin_jumlah_korban_luka_berat) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_jumlah_korban_luka_berat, $tahunPertama->kecelakaan_lalin_jumlah_korban_luka_berat) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1418,8 +1438,8 @@
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_jumlah_korban_luka_ringan }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_jumlah_korban_luka_ringan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_jumlah_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_jumlah_korban_luka_ringan) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_jumlah_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_jumlah_korban_luka_ringan) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1427,8 +1447,8 @@
             <td>e. KERUGIAN MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_jumlah_kerugian_materiil }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_jumlah_kerugian_materiil }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_jumlah_kerugian_materiil, $tahunPertama->kecelakaan_lalin_jumlah_kerugian_materiil) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_jumlah_kerugian_materiil, $tahunPertama->kecelakaan_lalin_jumlah_kerugian_materiil) }}</td>
 			<td>Rp</td>
         </tr>
         <tr>
@@ -1451,8 +1471,8 @@
             <td>a. SIM</td>
             <td>{{ $tahunPertama->kecelakaan_barang_bukti_yg_disita_sim }}</td>
             <td>{{ $tahunKedua->kecelakaan_barang_bukti_yg_disita_sim }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_barang_bukti_yg_disita_sim, $tahunPertama->kecelakaan_barang_bukti_yg_disita_sim) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_barang_bukti_yg_disita_sim, $tahunPertama->kecelakaan_barang_bukti_yg_disita_sim) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -1460,8 +1480,8 @@
             <td>b. STNK</td>
             <td>{{ $tahunPertama->kecelakaan_barang_bukti_yg_disita_stnk }}</td>
             <td>{{ $tahunKedua->kecelakaan_barang_bukti_yg_disita_stnk }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_barang_bukti_yg_disita_stnk, $tahunPertama->kecelakaan_barang_bukti_yg_disita_stnk) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_barang_bukti_yg_disita_stnk, $tahunPertama->kecelakaan_barang_bukti_yg_disita_stnk) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -1469,8 +1489,8 @@
             <td>c. KENDARAAN</td>
             <td>{{ $tahunPertama->kecelakaan_barang_bukti_yg_disita_kendaraan }}</td>
             <td>{{ $tahunKedua->kecelakaan_barang_bukti_yg_disita_kendaraan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_barang_bukti_yg_disita_kendaraan, $tahunPertama->kecelakaan_barang_bukti_yg_disita_kendaraan) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_barang_bukti_yg_disita_kendaraan, $tahunPertama->kecelakaan_barang_bukti_yg_disita_kendaraan) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -1496,8 +1516,44 @@
                 $tahunKedua->kecelakaan_barang_bukti_yg_disita_stnk,
                 $tahunKedua->kecelakaan_barang_bukti_yg_disita_kendaraan
             ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->kecelakaan_lalin_jumlah_kejadian,
+                $tahunKedua->kecelakaan_lalin_jumlah_korban_meninggal,
+                $tahunKedua->kecelakaan_lalin_jumlah_korban_luka_berat,
+                $tahunKedua->kecelakaan_lalin_jumlah_korban_luka_ringan,
+                $tahunKedua->kecelakaan_lalin_jumlah_kerugian_materiil,
+                $tahunKedua->kecelakaan_barang_bukti_yg_disita_sim,
+                $tahunKedua->kecelakaan_barang_bukti_yg_disita_stnk,
+                $tahunKedua->kecelakaan_barang_bukti_yg_disita_kendaraan
+            ]), calculation([
+                $tahunPertama->kecelakaan_lalin_jumlah_kejadian,
+                $tahunPertama->kecelakaan_lalin_jumlah_korban_meninggal,
+                $tahunPertama->kecelakaan_lalin_jumlah_korban_luka_berat,
+                $tahunPertama->kecelakaan_lalin_jumlah_korban_luka_ringan,
+                $tahunPertama->kecelakaan_lalin_jumlah_kerugian_materiil,
+                $tahunPertama->kecelakaan_barang_bukti_yg_disita_sim,
+                $tahunPertama->kecelakaan_barang_bukti_yg_disita_stnk,
+                $tahunPertama->kecelakaan_barang_bukti_yg_disita_kendaraan
+            ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->kecelakaan_lalin_jumlah_kejadian,
+                $tahunKedua->kecelakaan_lalin_jumlah_korban_meninggal,
+                $tahunKedua->kecelakaan_lalin_jumlah_korban_luka_berat,
+                $tahunKedua->kecelakaan_lalin_jumlah_korban_luka_ringan,
+                $tahunKedua->kecelakaan_lalin_jumlah_kerugian_materiil,
+                $tahunKedua->kecelakaan_barang_bukti_yg_disita_sim,
+                $tahunKedua->kecelakaan_barang_bukti_yg_disita_stnk,
+                $tahunKedua->kecelakaan_barang_bukti_yg_disita_kendaraan
+            ]), calculation([
+                $tahunPertama->kecelakaan_lalin_jumlah_kejadian,
+                $tahunPertama->kecelakaan_lalin_jumlah_korban_meninggal,
+                $tahunPertama->kecelakaan_lalin_jumlah_korban_luka_berat,
+                $tahunPertama->kecelakaan_lalin_jumlah_korban_luka_ringan,
+                $tahunPertama->kecelakaan_lalin_jumlah_kerugian_materiil,
+                $tahunPertama->kecelakaan_barang_bukti_yg_disita_sim,
+                $tahunPertama->kecelakaan_barang_bukti_yg_disita_stnk,
+                $tahunPertama->kecelakaan_barang_bukti_yg_disita_kendaraan
+            ])) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -1520,8 +1576,8 @@
             <td>a. PEGAWAI NEGERI SIPIL</td>
             <td>{{ $tahunPertama->profesi_korban_kecelakaan_lalin_pns }}</td>
             <td>{{ $tahunKedua->profesi_korban_kecelakaan_lalin_pns }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_korban_kecelakaan_lalin_pns, $tahunPertama->profesi_korban_kecelakaan_lalin_pns) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_korban_kecelakaan_lalin_pns, $tahunPertama->profesi_korban_kecelakaan_lalin_pns) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1529,8 +1585,8 @@
             <td>b. KARYAWAN / SWASTA</td>
             <td>{{ $tahunPertama->profesi_korban_kecelakaan_lalin_karwayan_swasta }}</td>
             <td>{{ $tahunKedua->profesi_korban_kecelakaan_lalin_karwayan_swasta }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_korban_kecelakaan_lalin_karwayan_swasta, $tahunPertama->profesi_korban_kecelakaan_lalin_karwayan_swasta) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_korban_kecelakaan_lalin_karwayan_swasta, $tahunPertama->profesi_korban_kecelakaan_lalin_karwayan_swasta) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1538,8 +1594,8 @@
             <td>c. MAHASISWA / PELAJAR</td>
             <td>{{ $tahunPertama->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa }}</td>
             <td>{{ $tahunKedua->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa, $tahunPertama->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa, $tahunPertama->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1547,8 +1603,8 @@
             <td>d. PENGEMUDI</td>
             <td>{{ $tahunPertama->profesi_korban_kecelakaan_lalin_pengemudi }}</td>
             <td>{{ $tahunKedua->profesi_korban_kecelakaan_lalin_pengemudi }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_korban_kecelakaan_lalin_pengemudi, $tahunPertama->profesi_korban_kecelakaan_lalin_pengemudi) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_korban_kecelakaan_lalin_pengemudi, $tahunPertama->profesi_korban_kecelakaan_lalin_pengemudi) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1556,8 +1612,8 @@
             <td>e. TNI</td>
             <td>{{ $tahunPertama->profesi_korban_kecelakaan_lalin_tni }}</td>
             <td>{{ $tahunKedua->profesi_korban_kecelakaan_lalin_tni }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_korban_kecelakaan_lalin_tni, $tahunPertama->profesi_korban_kecelakaan_lalin_tni) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_korban_kecelakaan_lalin_tni, $tahunPertama->profesi_korban_kecelakaan_lalin_tni) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1565,8 +1621,8 @@
             <td>f. POLRI</td>
             <td>{{ $tahunPertama->profesi_korban_kecelakaan_lalin_polri }}</td>
             <td>{{ $tahunKedua->profesi_korban_kecelakaan_lalin_polri }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_korban_kecelakaan_lalin_polri, $tahunPertama->profesi_korban_kecelakaan_lalin_polri) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_korban_kecelakaan_lalin_polri, $tahunPertama->profesi_korban_kecelakaan_lalin_polri) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1574,8 +1630,8 @@
             <td>g. LAIN-LAIN</td>
             <td>{{ $tahunPertama->profesi_korban_kecelakaan_lalin_lain_lain }}</td>
             <td>{{ $tahunKedua->profesi_korban_kecelakaan_lalin_lain_lain }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_korban_kecelakaan_lalin_lain_lain, $tahunPertama->profesi_korban_kecelakaan_lalin_lain_lain) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_korban_kecelakaan_lalin_lain_lain, $tahunPertama->profesi_korban_kecelakaan_lalin_lain_lain) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1599,8 +1655,40 @@
                 $tahunKedua->profesi_korban_kecelakaan_lalin_polri,
                 $tahunKedua->profesi_korban_kecelakaan_lalin_lain_lain
                 ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(alculation([
+                $tahunKedua->profesi_korban_kecelakaan_lalin_pns,
+                $tahunKedua->profesi_korban_kecelakaan_lalin_karwayan_swasta,
+                $tahunKedua->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa,
+                $tahunKedua->profesi_korban_kecelakaan_lalin_pengemudi,
+                $tahunKedua->profesi_korban_kecelakaan_lalin_tni,
+                $tahunKedua->profesi_korban_kecelakaan_lalin_polri,
+                $tahunKedua->profesi_korban_kecelakaan_lalin_lain_lain
+                ]), calculation([
+                $tahunPertama->profesi_korban_kecelakaan_lalin_pns,
+                $tahunPertama->profesi_korban_kecelakaan_lalin_karwayan_swasta,
+                $tahunPertama->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa,
+                $tahunPertama->profesi_korban_kecelakaan_lalin_pengemudi,
+                $tahunPertama->profesi_korban_kecelakaan_lalin_tni,
+                $tahunPertama->profesi_korban_kecelakaan_lalin_polri,
+                $tahunPertama->profesi_korban_kecelakaan_lalin_lain_lain
+                ])) }}</td>
+			<td>{{ percentageValue(alculation([
+                $tahunKedua->profesi_korban_kecelakaan_lalin_pns,
+                $tahunKedua->profesi_korban_kecelakaan_lalin_karwayan_swasta,
+                $tahunKedua->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa,
+                $tahunKedua->profesi_korban_kecelakaan_lalin_pengemudi,
+                $tahunKedua->profesi_korban_kecelakaan_lalin_tni,
+                $tahunKedua->profesi_korban_kecelakaan_lalin_polri,
+                $tahunKedua->profesi_korban_kecelakaan_lalin_lain_lain
+                ]), calculation([
+                $tahunPertama->profesi_korban_kecelakaan_lalin_pns,
+                $tahunPertama->profesi_korban_kecelakaan_lalin_karwayan_swasta,
+                $tahunPertama->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa,
+                $tahunPertama->profesi_korban_kecelakaan_lalin_pengemudi,
+                $tahunPertama->profesi_korban_kecelakaan_lalin_tni,
+                $tahunPertama->profesi_korban_kecelakaan_lalin_polri,
+                $tahunPertama->profesi_korban_kecelakaan_lalin_lain_lain
+                ])) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1623,8 +1711,8 @@
             <td>a. &lt; 15 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_kurang_15 }}</td>
             <td>{{ $tahunKedua->usia_korban_kecelakaan_kurang_15 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_korban_kecelakaan_kurang_15, $tahunPertama->usia_korban_kecelakaan_kurang_15) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_korban_kecelakaan_kurang_15, $tahunPertama->usia_korban_kecelakaan_kurang_15) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1632,8 +1720,8 @@
             <td>b. 16 - 20 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_16_20 }}</td>
             <td>{{ $tahunKedua->usia_korban_kecelakaan_16_20 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_korban_kecelakaan_16_20, $tahunPertama->usia_korban_kecelakaan_16_20) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_korban_kecelakaan_16_20, $tahunPertama->usia_korban_kecelakaan_16_20) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1641,8 +1729,8 @@
             <td>c. 21 - 25 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_21_25 }}</td>
             <td>{{ $tahunKedua->usia_korban_kecelakaan_21_25 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_korban_kecelakaan_21_25, $tahunPertama->usia_korban_kecelakaan_21_25) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_korban_kecelakaan_21_25, $tahunPertama->usia_korban_kecelakaan_21_25) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1650,8 +1738,8 @@
             <td>d. 26 - 30 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_26_30 }}</td>
             <td>{{ $tahunKedua->usia_korban_kecelakaan_26_30 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_korban_kecelakaan_26_30, $tahunPertama->usia_korban_kecelakaan_26_30) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_korban_kecelakaan_26_30, $tahunPertama->usia_korban_kecelakaan_26_30) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1659,8 +1747,8 @@
             <td>e. 31 - 35 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_31_35 }}</td>
             <td>{{ $tahunKedua->usia_korban_kecelakaan_31_35 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_korban_kecelakaan_31_35, $tahunPertama->usia_korban_kecelakaan_31_35) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_korban_kecelakaan_31_35, $tahunPertama->usia_korban_kecelakaan_31_35) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1668,8 +1756,8 @@
             <td>f. 36 - 40 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_36_40 }}</td>
             <td>{{ $tahunKedua->usia_korban_kecelakaan_36_40 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_korban_kecelakaan_36_40, $tahunPertama->usia_korban_kecelakaan_36_40) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_korban_kecelakaan_36_40, $tahunPertama->usia_korban_kecelakaan_36_40) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1677,8 +1765,8 @@
             <td>g. 41 - 45 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_41_45 }}</td>
             <td>{{ $tahunKedua->usia_korban_kecelakaan_41_45 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_korban_kecelakaan_41_45, $tahunPertama->usia_korban_kecelakaan_41_45) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_korban_kecelakaan_41_45, $tahunPertama->usia_korban_kecelakaan_41_45) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1686,8 +1774,8 @@
             <td>h. 46 - 50 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_45_50 }}</td>
             <td>{{ $tahunKedua->usia_korban_kecelakaan_45_50 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_korban_kecelakaan_45_50, $tahunPertama->usia_korban_kecelakaan_45_50) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_korban_kecelakaan_45_50, $tahunPertama->usia_korban_kecelakaan_45_50) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1695,8 +1783,8 @@
             <td>I. 51 - 55 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_51_55 }}</td>
             <td>{{ $tahunKedua->usia_korban_kecelakaan_51_55 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_korban_kecelakaan_51_55, $tahunPertama->usia_korban_kecelakaan_51_55) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_korban_kecelakaan_51_55, $tahunPertama->usia_korban_kecelakaan_51_55) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1704,8 +1792,8 @@
             <td>j. 56 - 60 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_56_60 }}</td>
             <td>{{ $tahunKedua->usia_korban_kecelakaan_56_60 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_korban_kecelakaan_56_60, $tahunPertama->usia_korban_kecelakaan_56_60) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_korban_kecelakaan_56_60, $tahunPertama->usia_korban_kecelakaan_56_60) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1713,8 +1801,8 @@
             <td>k. > 60 TAHUN</td>
             <td>{{ $tahunPertama->usia_korban_kecelakaan_diatas_60 }}</td>
             <td>{{ $tahunKedua->usia_korban_kecelakaan_diatas_60 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_korban_kecelakaan_diatas_60, $tahunPertama->usia_korban_kecelakaan_diatas_60) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_korban_kecelakaan_diatas_60, $tahunPertama->usia_korban_kecelakaan_diatas_60) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1746,8 +1834,56 @@
                 $tahunKedua->usia_korban_kecelakaan_56_60,
                 $tahunKedua->usia_korban_kecelakaan_diatas_60
                 ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->usia_korban_kecelakaan_kurang_15,
+                $tahunKedua->usia_korban_kecelakaan_16_20,
+                $tahunKedua->usia_korban_kecelakaan_21_25,
+                $tahunKedua->usia_korban_kecelakaan_26_30,
+                $tahunKedua->usia_korban_kecelakaan_31_35,
+                $tahunKedua->usia_korban_kecelakaan_36_40,
+                $tahunKedua->usia_korban_kecelakaan_41_45,
+                $tahunKedua->usia_korban_kecelakaan_45_50,
+                $tahunKedua->usia_korban_kecelakaan_51_55,
+                $tahunKedua->usia_korban_kecelakaan_56_60,
+                $tahunKedua->usia_korban_kecelakaan_diatas_60
+                ]), calculation([
+                $tahunPertama->usia_korban_kecelakaan_kurang_15,
+                $tahunPertama->usia_korban_kecelakaan_16_20,
+                $tahunPertama->usia_korban_kecelakaan_21_25,
+                $tahunPertama->usia_korban_kecelakaan_26_30,
+                $tahunPertama->usia_korban_kecelakaan_31_35,
+                $tahunPertama->usia_korban_kecelakaan_36_40,
+                $tahunPertama->usia_korban_kecelakaan_41_45,
+                $tahunPertama->usia_korban_kecelakaan_45_50,
+                $tahunPertama->usia_korban_kecelakaan_51_55,
+                $tahunPertama->usia_korban_kecelakaan_56_60,
+                $tahunPertama->usia_korban_kecelakaan_diatas_60
+                ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->usia_korban_kecelakaan_kurang_15,
+                $tahunKedua->usia_korban_kecelakaan_16_20,
+                $tahunKedua->usia_korban_kecelakaan_21_25,
+                $tahunKedua->usia_korban_kecelakaan_26_30,
+                $tahunKedua->usia_korban_kecelakaan_31_35,
+                $tahunKedua->usia_korban_kecelakaan_36_40,
+                $tahunKedua->usia_korban_kecelakaan_41_45,
+                $tahunKedua->usia_korban_kecelakaan_45_50,
+                $tahunKedua->usia_korban_kecelakaan_51_55,
+                $tahunKedua->usia_korban_kecelakaan_56_60,
+                $tahunKedua->usia_korban_kecelakaan_diatas_60
+                ]), calculation([
+                $tahunPertama->usia_korban_kecelakaan_kurang_15,
+                $tahunPertama->usia_korban_kecelakaan_16_20,
+                $tahunPertama->usia_korban_kecelakaan_21_25,
+                $tahunPertama->usia_korban_kecelakaan_26_30,
+                $tahunPertama->usia_korban_kecelakaan_31_35,
+                $tahunPertama->usia_korban_kecelakaan_36_40,
+                $tahunPertama->usia_korban_kecelakaan_41_45,
+                $tahunPertama->usia_korban_kecelakaan_45_50,
+                $tahunPertama->usia_korban_kecelakaan_51_55,
+                $tahunPertama->usia_korban_kecelakaan_56_60,
+                $tahunPertama->usia_korban_kecelakaan_diatas_60
+                ])) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -1770,8 +1906,8 @@
             <td>a. A</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_a }}</td>
             <td>{{ $tahunKedua->sim_korban_kecelakaan_sim_a }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_korban_kecelakaan_sim_a, $tahunPertama->sim_korban_kecelakaan_sim_a) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_korban_kecelakaan_sim_a, $tahunPertama->sim_korban_kecelakaan_sim_a) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -1779,8 +1915,8 @@
             <td>b. A UMUM</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_a_umum }}</td>
             <td>{{ $tahunKedua->sim_korban_kecelakaan_sim_a_umum }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_korban_kecelakaan_sim_a_umum, $tahunPertama->sim_korban_kecelakaan_sim_a_umum) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_korban_kecelakaan_sim_a_umum, $tahunPertama->sim_korban_kecelakaan_sim_a_umum) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -1788,8 +1924,8 @@
             <td>c. B1</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_b1 }}</td>
             <td>{{ $tahunKedua->sim_korban_kecelakaan_sim_b1 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_korban_kecelakaan_sim_b1, $tahunPertama->sim_korban_kecelakaan_sim_b1) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_korban_kecelakaan_sim_b1, $tahunPertama->sim_korban_kecelakaan_sim_b1) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -1797,8 +1933,8 @@
             <td>d. B1 UMUM</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_b1_umum }}</td>
             <td>{{ $tahunKedua->sim_korban_kecelakaan_sim_b1_umum }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_korban_kecelakaan_sim_b1_umum, $tahunPertama->sim_korban_kecelakaan_sim_b1_umum) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_korban_kecelakaan_sim_b1_umum, $tahunPertama->sim_korban_kecelakaan_sim_b1_umum) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -1806,8 +1942,8 @@
             <td>e. BII</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_b2 }}</td>
             <td>{{ $tahunKedua->sim_korban_kecelakaan_sim_b2 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_korban_kecelakaan_sim_b2, $tahunPertama->sim_korban_kecelakaan_sim_b2) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_korban_kecelakaan_sim_b2, $tahunPertama->sim_korban_kecelakaan_sim_b2) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -1815,8 +1951,8 @@
             <td>f. BII UMUM</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_b2_umum }}</td>
             <td>{{ $tahunKedua->sim_korban_kecelakaan_sim_b2_umum }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_korban_kecelakaan_sim_b2_umum, $tahunPertama->sim_korban_kecelakaan_sim_b2_umum) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_korban_kecelakaan_sim_b2_umum, $tahunPertama->sim_korban_kecelakaan_sim_b2_umum) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -1824,8 +1960,8 @@
             <td>g. C</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_c }}</td>
             <td>{{ $tahunKedua->sim_korban_kecelakaan_sim_c }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_korban_kecelakaan_sim_c, $tahunPertama->sim_korban_kecelakaan_sim_c) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_korban_kecelakaan_sim_c, $tahunPertama->sim_korban_kecelakaan_sim_c) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -1833,8 +1969,8 @@
             <td>h. D</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_d }}</td>
             <td>{{ $tahunKedua->sim_korban_kecelakaan_sim_d }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_korban_kecelakaan_sim_d, $tahunPertama->sim_korban_kecelakaan_sim_d) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_korban_kecelakaan_sim_d, $tahunPertama->sim_korban_kecelakaan_sim_d) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -1842,8 +1978,8 @@
             <td>I. SIM INTERNASIONAL</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_sim_internasional }}</td>
             <td>{{ $tahunKedua->sim_korban_kecelakaan_sim_internasional }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_korban_kecelakaan_sim_internasional, $tahunPertama->sim_korban_kecelakaan_sim_internasional) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_korban_kecelakaan_sim_internasional, $tahunPertama->sim_korban_kecelakaan_sim_internasional) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -1851,8 +1987,8 @@
             <td>j. TANPA SIM</td>
             <td>{{ $tahunPertama->sim_korban_kecelakaan_tanpa_sim }}</td>
             <td>{{ $tahunKedua->sim_korban_kecelakaan_tanpa_sim }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_korban_kecelakaan_tanpa_sim, $tahunPertama->sim_korban_kecelakaan_tanpa_sim) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_korban_kecelakaan_tanpa_sim, $tahunPertama->sim_korban_kecelakaan_tanpa_sim) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -1882,8 +2018,52 @@
                 $tahunKedua->sim_korban_kecelakaan_sim_internasional,
                 $tahunKedua->sim_korban_kecelakaan_tanpa_sim
                 ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->sim_korban_kecelakaan_sim_a,
+                $tahunKedua->sim_korban_kecelakaan_sim_a_umum,
+                $tahunKedua->sim_korban_kecelakaan_sim_b1,
+                $tahunKedua->sim_korban_kecelakaan_sim_b1_umum,
+                $tahunKedua->sim_korban_kecelakaan_sim_b2,
+                $tahunKedua->sim_korban_kecelakaan_sim_b2_umum,
+                $tahunKedua->sim_korban_kecelakaan_sim_c,
+                $tahunKedua->sim_korban_kecelakaan_sim_d,
+                $tahunKedua->sim_korban_kecelakaan_sim_internasional,
+                $tahunKedua->sim_korban_kecelakaan_tanpa_sim
+                ]), calculation([
+                $tahunPertama->sim_korban_kecelakaan_sim_a,
+                $tahunPertama->sim_korban_kecelakaan_sim_a_umum,
+                $tahunPertama->sim_korban_kecelakaan_sim_b1,
+                $tahunPertama->sim_korban_kecelakaan_sim_b1_umum,
+                $tahunPertama->sim_korban_kecelakaan_sim_b2,
+                $tahunPertama->sim_korban_kecelakaan_sim_b2_umum,
+                $tahunPertama->sim_korban_kecelakaan_sim_c,
+                $tahunPertama->sim_korban_kecelakaan_sim_d,
+                $tahunPertama->sim_korban_kecelakaan_sim_internasional,
+                $tahunPertama->sim_korban_kecelakaan_tanpa_sim
+                ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->sim_korban_kecelakaan_sim_a,
+                $tahunKedua->sim_korban_kecelakaan_sim_a_umum,
+                $tahunKedua->sim_korban_kecelakaan_sim_b1,
+                $tahunKedua->sim_korban_kecelakaan_sim_b1_umum,
+                $tahunKedua->sim_korban_kecelakaan_sim_b2,
+                $tahunKedua->sim_korban_kecelakaan_sim_b2_umum,
+                $tahunKedua->sim_korban_kecelakaan_sim_c,
+                $tahunKedua->sim_korban_kecelakaan_sim_d,
+                $tahunKedua->sim_korban_kecelakaan_sim_internasional,
+                $tahunKedua->sim_korban_kecelakaan_tanpa_sim
+                ]), calculation([
+                $tahunPertama->sim_korban_kecelakaan_sim_a,
+                $tahunPertama->sim_korban_kecelakaan_sim_a_umum,
+                $tahunPertama->sim_korban_kecelakaan_sim_b1,
+                $tahunPertama->sim_korban_kecelakaan_sim_b1_umum,
+                $tahunPertama->sim_korban_kecelakaan_sim_b2,
+                $tahunPertama->sim_korban_kecelakaan_sim_b2_umum,
+                $tahunPertama->sim_korban_kecelakaan_sim_c,
+                $tahunPertama->sim_korban_kecelakaan_sim_d,
+                $tahunPertama->sim_korban_kecelakaan_sim_internasional,
+                $tahunPertama->sim_korban_kecelakaan_tanpa_sim
+                ])) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -1906,8 +2086,8 @@
             <td>a. SEPEDA MOTOR</td>
             <td>{{ $tahunPertama->kendaraan_yg_terlibat_kecelakaan_sepeda_motor }}</td>
             <td>{{ $tahunKedua->kendaraan_yg_terlibat_kecelakaan_sepeda_motor }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kendaraan_yg_terlibat_kecelakaan_sepeda_motor, $tahunPertama->kendaraan_yg_terlibat_kecelakaan_sepeda_motor) }}</td>
+			<td>{{ percentageValue($tahunKedua->kendaraan_yg_terlibat_kecelakaan_sepeda_motor, $tahunPertama->kendaraan_yg_terlibat_kecelakaan_sepeda_motor) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -1915,8 +2095,8 @@
             <td>b. MOBIL PENUMPANG</td>
             <td>{{ $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang }}</td>
             <td>{{ $tahunKedua->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang, $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang) }}</td>
+			<td>{{ percentageValue($tahunKedua->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang, $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -1924,8 +2104,8 @@
             <td>c. MOBIL BUS</td>
             <td>{{ $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_bus }}</td>
             <td>{{ $tahunKedua->kendaraan_yg_terlibat_kecelakaan_mobil_bus }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kendaraan_yg_terlibat_kecelakaan_mobil_bus, $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_bus) }}</td>
+			<td>{{ percentageValue($tahunKedua->kendaraan_yg_terlibat_kecelakaan_mobil_bus, $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_bus) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -1933,8 +2113,8 @@
             <td>d. MOBIL BARANG</td>
             <td>{{ $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_barang }}</td>
             <td>{{ $tahunKedua->kendaraan_yg_terlibat_kecelakaan_mobil_barang }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kendaraan_yg_terlibat_kecelakaan_mobil_barang, $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_barang) }}</td>
+			<td>{{ percentageValue($tahunKedua->kendaraan_yg_terlibat_kecelakaan_mobil_barang, $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_barang) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -1942,8 +2122,8 @@
             <td>e. KENDARAAN KHUSUS</td>
             <td>{{ $tahunPertama->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus }}</td>
             <td>{{ $tahunKedua->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus, $tahunPertama->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus) }}</td>
+			<td>{{ percentageValue($tahunKedua->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus, $tahunPertama->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -1951,8 +2131,8 @@
             <td>f. KENDARAAN TIDAK BERMOTOR</td>
             <td>{{ $tahunPertama->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor }}</td>
             <td>{{ $tahunKedua->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor, $tahunPertama->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor) }}</td>
+			<td>{{ percentageValue($tahunKedua->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor, $tahunPertama->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -1974,8 +2154,36 @@
                 $tahunKedua->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus,
                 $tahunKedua->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor
                 ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->kendaraan_yg_terlibat_kecelakaan_sepeda_motor,
+                $tahunKedua->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang,
+                $tahunKedua->kendaraan_yg_terlibat_kecelakaan_mobil_bus,
+                $tahunKedua->kendaraan_yg_terlibat_kecelakaan_mobil_barang,
+                $tahunKedua->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus,
+                $tahunKedua->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor
+                ]), calculation([
+                $tahunPertama->kendaraan_yg_terlibat_kecelakaan_sepeda_motor,
+                $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang,
+                $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_bus,
+                $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_barang,
+                $tahunPertama->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus,
+                $tahunPertama->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor
+                ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->kendaraan_yg_terlibat_kecelakaan_sepeda_motor,
+                $tahunKedua->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang,
+                $tahunKedua->kendaraan_yg_terlibat_kecelakaan_mobil_bus,
+                $tahunKedua->kendaraan_yg_terlibat_kecelakaan_mobil_barang,
+                $tahunKedua->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus,
+                $tahunKedua->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor
+                ]), calculation([
+                $tahunPertama->kendaraan_yg_terlibat_kecelakaan_sepeda_motor,
+                $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang,
+                $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_bus,
+                $tahunPertama->kendaraan_yg_terlibat_kecelakaan_mobil_barang,
+                $tahunPertama->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus,
+                $tahunPertama->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor
+                ])) }}</td>
 			<td>Unit</td>
         </tr>
         <tr>
@@ -1998,8 +2206,8 @@
             <td>a. TUNGGAL / OUT OF CONTROL</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_tunggal_ooc }}</td>
             <td>{{ $tahunKedua->jenis_kecelakaan_tunggal_ooc }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->jenis_kecelakaan_tunggal_ooc, $tahunPertama->jenis_kecelakaan_tunggal_ooc) }}</td>
+			<td>{{ percentageValue($tahunKedua->jenis_kecelakaan_tunggal_ooc, $tahunPertama->jenis_kecelakaan_tunggal_ooc) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -2007,8 +2215,8 @@
             <td>b. DEPAN-DEPAN</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_depan_depan }}</td>
             <td>{{ $tahunKedua->jenis_kecelakaan_depan_depan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->jenis_kecelakaan_depan_depan, $tahunPertama->jenis_kecelakaan_depan_depan) }}</td>
+			<td>{{ percentageValue($tahunKedua->jenis_kecelakaan_depan_depan, $tahunPertama->jenis_kecelakaan_depan_depan) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -2016,8 +2224,8 @@
             <td>c. DEPAN-BELAKANG</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_depan_belakang }}</td>
             <td>{{ $tahunKedua->jenis_kecelakaan_depan_belakang }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->jenis_kecelakaan_depan_belakang, $tahunPertama->jenis_kecelakaan_depan_belakang) }}</td>
+			<td>{{ percentageValue($tahunKedua->jenis_kecelakaan_depan_belakang, $tahunPertama->jenis_kecelakaan_depan_belakang) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -2025,8 +2233,8 @@
             <td>d. DEPAN-SAMPING</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_depan_samping }}</td>
             <td>{{ $tahunKedua->jenis_kecelakaan_depan_samping }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->jenis_kecelakaan_depan_samping, $tahunPertama->jenis_kecelakaan_depan_samping) }}</td>
+			<td>{{ percentageValue($tahunKedua->jenis_kecelakaan_depan_samping, $tahunPertama->jenis_kecelakaan_depan_samping) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -2034,8 +2242,8 @@
             <td>e. BERUNTUN</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_beruntun }}</td>
             <td>{{ $tahunKedua->jenis_kecelakaan_beruntun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->jenis_kecelakaan_beruntun, $tahunPertama->jenis_kecelakaan_beruntun) }}</td>
+			<td>{{ percentageValue($tahunKedua->jenis_kecelakaan_beruntun, $tahunPertama->jenis_kecelakaan_beruntun) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -2043,8 +2251,8 @@
             <td>f. TABRAK PEJALAN KAKI</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_pejalan_kaki }}</td>
             <td>{{ $tahunKedua->jenis_kecelakaan_pejalan_kaki }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->jenis_kecelakaan_pejalan_kaki, $tahunPertama->jenis_kecelakaan_pejalan_kaki) }}</td>
+			<td>{{ percentageValue($tahunKedua->jenis_kecelakaan_pejalan_kaki, $tahunPertama->jenis_kecelakaan_pejalan_kaki) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -2052,8 +2260,8 @@
             <td>g. TABRAK LARI</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_tabrak_lari }}</td>
             <td>{{ $tahunKedua->jenis_kecelakaan_tabrak_lari }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->jenis_kecelakaan_tabrak_lari, $tahunPertama->jenis_kecelakaan_tabrak_lari) }}</td>
+			<td>{{ percentageValue($tahunKedua->jenis_kecelakaan_tabrak_lari, $tahunPertama->jenis_kecelakaan_tabrak_lari) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -2061,8 +2269,8 @@
             <td>h. TABRAK HEWAN</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_tabrak_hewan }}</td>
             <td>{{ $tahunKedua->jenis_kecelakaan_tabrak_hewan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->jenis_kecelakaan_tabrak_hewan, $tahunPertama->jenis_kecelakaan_tabrak_hewan) }}</td>
+			<td>{{ percentageValue($tahunKedua->jenis_kecelakaan_tabrak_hewan, $tahunPertama->jenis_kecelakaan_tabrak_hewan) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -2070,8 +2278,8 @@
             <td>I. SAMPING-SAMPING</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_samping_samping }}</td>
             <td>{{ $tahunKedua->jenis_kecelakaan_samping_samping }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->jenis_kecelakaan_samping_samping, $tahunPertama->jenis_kecelakaan_samping_samping) }}</td>
+			<td>{{ percentageValue($tahunKedua->jenis_kecelakaan_samping_samping, $tahunPertama->jenis_kecelakaan_samping_samping) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -2079,8 +2287,8 @@
             <td>j. LAINNYA</td>
             <td>{{ $tahunPertama->jenis_kecelakaan_lainnya }}</td>
             <td>{{ $tahunKedua->jenis_kecelakaan_lainnya }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->jenis_kecelakaan_lainnya, $tahunPertama->jenis_kecelakaan_lainnya) }}</td>
+			<td>{{ percentageValue($tahunKedua->jenis_kecelakaan_lainnya, $tahunPertama->jenis_kecelakaan_lainnya) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -2110,8 +2318,52 @@
                 $tahunKedua->jenis_kecelakaan_samping_samping,
                 $tahunKedua->jenis_kecelakaan_lainnya
                 ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->jenis_kecelakaan_tunggal_ooc,
+                $tahunKedua->jenis_kecelakaan_depan_depan,
+                $tahunKedua->jenis_kecelakaan_depan_belakang,
+                $tahunKedua->jenis_kecelakaan_depan_samping,
+                $tahunKedua->jenis_kecelakaan_beruntun,
+                $tahunKedua->jenis_kecelakaan_pejalan_kaki,
+                $tahunKedua->jenis_kecelakaan_tabrak_lari,
+                $tahunKedua->jenis_kecelakaan_tabrak_hewan,
+                $tahunKedua->jenis_kecelakaan_samping_samping,
+                $tahunKedua->jenis_kecelakaan_lainnya
+                ]), calculation([
+                $tahunPertama->jenis_kecelakaan_tunggal_ooc,
+                $tahunPertama->jenis_kecelakaan_depan_depan,
+                $tahunPertama->jenis_kecelakaan_depan_belakang,
+                $tahunPertama->jenis_kecelakaan_depan_samping,
+                $tahunPertama->jenis_kecelakaan_beruntun,
+                $tahunPertama->jenis_kecelakaan_pejalan_kaki,
+                $tahunPertama->jenis_kecelakaan_tabrak_lari,
+                $tahunPertama->jenis_kecelakaan_tabrak_hewan,
+                $tahunPertama->jenis_kecelakaan_samping_samping,
+                $tahunPertama->jenis_kecelakaan_lainnya
+                ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->jenis_kecelakaan_tunggal_ooc,
+                $tahunKedua->jenis_kecelakaan_depan_depan,
+                $tahunKedua->jenis_kecelakaan_depan_belakang,
+                $tahunKedua->jenis_kecelakaan_depan_samping,
+                $tahunKedua->jenis_kecelakaan_beruntun,
+                $tahunKedua->jenis_kecelakaan_pejalan_kaki,
+                $tahunKedua->jenis_kecelakaan_tabrak_lari,
+                $tahunKedua->jenis_kecelakaan_tabrak_hewan,
+                $tahunKedua->jenis_kecelakaan_samping_samping,
+                $tahunKedua->jenis_kecelakaan_lainnya
+                ]), calculation([
+                $tahunPertama->jenis_kecelakaan_tunggal_ooc,
+                $tahunPertama->jenis_kecelakaan_depan_depan,
+                $tahunPertama->jenis_kecelakaan_depan_belakang,
+                $tahunPertama->jenis_kecelakaan_depan_samping,
+                $tahunPertama->jenis_kecelakaan_beruntun,
+                $tahunPertama->jenis_kecelakaan_pejalan_kaki,
+                $tahunPertama->jenis_kecelakaan_tabrak_lari,
+                $tahunPertama->jenis_kecelakaan_tabrak_hewan,
+                $tahunPertama->jenis_kecelakaan_samping_samping,
+                $tahunPertama->jenis_kecelakaan_lainnya
+                ])) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -2134,8 +2386,8 @@
             <td>a. PEGAWAI NEGERI SIPIL</td>
             <td>{{ $tahunPertama->profesi_pelaku_kecelakaan_lalin_pns }}</td>
             <td>{{ $tahunKedua->profesi_pelaku_kecelakaan_lalin_pns }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_pelaku_kecelakaan_lalin_pns, $tahunPertama->profesi_pelaku_kecelakaan_lalin_pns) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_pelaku_kecelakaan_lalin_pns, $tahunPertama->profesi_pelaku_kecelakaan_lalin_pns) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2143,8 +2395,8 @@
             <td>b. KARYAWAN / SWASTA</td>
             <td>{{ $tahunPertama->profesi_pelaku_kecelakaan_lalin_karyawan_swasta }}</td>
             <td>{{ $tahunKedua->profesi_pelaku_kecelakaan_lalin_karyawan_swasta }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_pelaku_kecelakaan_lalin_karyawan_swasta, $tahunPertama->profesi_pelaku_kecelakaan_lalin_karyawan_swasta) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_pelaku_kecelakaan_lalin_karyawan_swasta, $tahunPertama->profesi_pelaku_kecelakaan_lalin_karyawan_swasta) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2152,8 +2404,8 @@
             <td>c. MAHASISWA / PELAJAR</td>
             <td>{{ $tahunPertama->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar }}</td>
             <td>{{ $tahunKedua->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar, $tahunPertama->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar, $tahunPertama->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2161,8 +2413,8 @@
             <td>d. PENGEMUDI</td>
             <td>{{ $tahunPertama->profesi_pelaku_kecelakaan_lalin_pengemudi }}</td>
             <td>{{ $tahunKedua->profesi_pelaku_kecelakaan_lalin_pengemudi }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_pelaku_kecelakaan_lalin_pengemudi, $tahunPertama->profesi_pelaku_kecelakaan_lalin_pengemudi) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_pelaku_kecelakaan_lalin_pengemudi, $tahunPertama->profesi_pelaku_kecelakaan_lalin_pengemudi) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2170,8 +2422,8 @@
             <td>e. TNI</td>
             <td>{{ $tahunPertama->profesi_pelaku_kecelakaan_lalin_tni }}</td>
             <td>{{ $tahunKedua->profesi_pelaku_kecelakaan_lalin_tni }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_pelaku_kecelakaan_lalin_tni, $tahunPertama->profesi_pelaku_kecelakaan_lalin_tni) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_pelaku_kecelakaan_lalin_tni, $tahunPertama->profesi_pelaku_kecelakaan_lalin_tni) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2179,8 +2431,8 @@
             <td>f. POLRI</td>
             <td>{{ $tahunPertama->profesi_pelaku_kecelakaan_lalin_polri }}</td>
             <td>{{ $tahunKedua->profesi_pelaku_kecelakaan_lalin_polri }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_pelaku_kecelakaan_lalin_polri, $tahunPertama->profesi_pelaku_kecelakaan_lalin_polri) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_pelaku_kecelakaan_lalin_polri, $tahunPertama->profesi_pelaku_kecelakaan_lalin_polri) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2188,8 +2440,8 @@
             <td>g. LAIN-LAIN</td>
             <td>{{ $tahunPertama->profesi_pelaku_kecelakaan_lalin_lain_lain }}</td>
             <td>{{ $tahunKedua->profesi_pelaku_kecelakaan_lalin_lain_lain }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->profesi_pelaku_kecelakaan_lalin_lain_lain, $tahunPertama->profesi_pelaku_kecelakaan_lalin_lain_lain) }}</td>
+			<td>{{ percentageValue($tahunKedua->profesi_pelaku_kecelakaan_lalin_lain_lain, $tahunPertama->profesi_pelaku_kecelakaan_lalin_lain_lain) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2213,8 +2465,40 @@
                 $tahunKedua->profesi_pelaku_kecelakaan_lalin_polri,
                 $tahunKedua->profesi_pelaku_kecelakaan_lalin_lain_lain
                 ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->profesi_pelaku_kecelakaan_lalin_pns,
+                $tahunKedua->profesi_pelaku_kecelakaan_lalin_karyawan_swasta,
+                $tahunKedua->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelaja,
+                $tahunKedua->profesi_pelaku_kecelakaan_lalin_pengemudi,
+                $tahunKedua->profesi_pelaku_kecelakaan_lalin_tni,
+                $tahunKedua->profesi_pelaku_kecelakaan_lalin_polri,
+                $tahunKedua->profesi_pelaku_kecelakaan_lalin_lain_lain
+                ]), calculation([
+                $tahunPertama->profesi_pelaku_kecelakaan_lalin_pns,
+                $tahunPertama->profesi_pelaku_kecelakaan_lalin_karyawan_swasta,
+                $tahunPertama->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelaja,
+                $tahunPertama->profesi_pelaku_kecelakaan_lalin_pengemudi,
+                $tahunPertama->profesi_pelaku_kecelakaan_lalin_tni,
+                $tahunPertama->profesi_pelaku_kecelakaan_lalin_polri,
+                $tahunPertama->profesi_pelaku_kecelakaan_lalin_lain_lain
+                ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->profesi_pelaku_kecelakaan_lalin_pns,
+                $tahunKedua->profesi_pelaku_kecelakaan_lalin_karyawan_swasta,
+                $tahunKedua->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelaja,
+                $tahunKedua->profesi_pelaku_kecelakaan_lalin_pengemudi,
+                $tahunKedua->profesi_pelaku_kecelakaan_lalin_tni,
+                $tahunKedua->profesi_pelaku_kecelakaan_lalin_polri,
+                $tahunKedua->profesi_pelaku_kecelakaan_lalin_lain_lain
+                ]), calculation([
+                $tahunPertama->profesi_pelaku_kecelakaan_lalin_pns,
+                $tahunPertama->profesi_pelaku_kecelakaan_lalin_karyawan_swasta,
+                $tahunPertama->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelaja,
+                $tahunPertama->profesi_pelaku_kecelakaan_lalin_pengemudi,
+                $tahunPertama->profesi_pelaku_kecelakaan_lalin_tni,
+                $tahunPertama->profesi_pelaku_kecelakaan_lalin_polri,
+                $tahunPertama->profesi_pelaku_kecelakaan_lalin_lain_lain
+                ])) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2237,8 +2521,8 @@
             <td>a. &lt; 15 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_kurang_dari_15_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_kecelakaan_kurang_dari_15_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_kecelakaan_kurang_dari_15_tahun, $tahunPertama->usia_pelaku_kecelakaan_kurang_dari_15_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_kecelakaan_kurang_dari_15_tahun, $tahunPertama->usia_pelaku_kecelakaan_kurang_dari_15_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2246,8 +2530,8 @@
             <td>b. 16 - 20 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_16_20_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_kecelakaan_16_20_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_kecelakaan_16_20_tahun, $tahunPertama->usia_pelaku_kecelakaan_16_20_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_kecelakaan_16_20_tahun, $tahunPertama->usia_pelaku_kecelakaan_16_20_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2255,8 +2539,8 @@
             <td>c. 21 - 25 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_21_25_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_kecelakaan_21_25_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_kecelakaan_21_25_tahun, $tahunPertama->usia_pelaku_kecelakaan_21_25_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_kecelakaan_21_25_tahun, $tahunPertama->usia_pelaku_kecelakaan_21_25_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2264,8 +2548,8 @@
             <td>d. 26 - 30 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_26_30_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_kecelakaan_26_30_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_kecelakaan_26_30_tahun, $tahunPertama->usia_pelaku_kecelakaan_26_30_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_kecelakaan_26_30_tahun, $tahunPertama->usia_pelaku_kecelakaan_26_30_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2273,8 +2557,8 @@
             <td>e. 31 - 35 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_31_35_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_kecelakaan_31_35_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_kecelakaan_31_35_tahun, $tahunPertama->usia_pelaku_kecelakaan_31_35_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_kecelakaan_31_35_tahun, $tahunPertama->usia_pelaku_kecelakaan_31_35_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2282,8 +2566,8 @@
             <td>f. 36 - 40 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_36_40_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_kecelakaan_36_40_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_kecelakaan_36_40_tahun, $tahunPertama->usia_pelaku_kecelakaan_36_40_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_kecelakaan_36_40_tahun, $tahunPertama->usia_pelaku_kecelakaan_36_40_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2291,8 +2575,8 @@
             <td>g. 41 - 45 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_41_45_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_kecelakaan_41_45_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_kecelakaan_41_45_tahun, $tahunPertama->usia_pelaku_kecelakaan_41_45_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_kecelakaan_41_45_tahun, $tahunPertama->usia_pelaku_kecelakaan_41_45_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2300,8 +2584,8 @@
             <td>h. 46 - 50 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_46_50_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_kecelakaan_46_50_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_kecelakaan_46_50_tahun, $tahunPertama->usia_pelaku_kecelakaan_46_50_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_kecelakaan_46_50_tahun, $tahunPertama->usia_pelaku_kecelakaan_46_50_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2309,8 +2593,8 @@
             <td>I. 51 - 55 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_51_55_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_kecelakaan_51_55_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_kecelakaan_51_55_tahun, $tahunPertama->usia_pelaku_kecelakaan_51_55_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_kecelakaan_51_55_tahun, $tahunPertama->usia_pelaku_kecelakaan_51_55_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2318,8 +2602,8 @@
             <td>j. 56 - 60 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_56_60_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_kecelakaan_56_60_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_kecelakaan_56_60_tahun, $tahunPertama->usia_pelaku_kecelakaan_56_60_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_kecelakaan_56_60_tahun, $tahunPertama->usia_pelaku_kecelakaan_56_60_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2327,8 +2611,8 @@
             <td>k. > 60 TAHUN</td>
             <td>{{ $tahunPertama->usia_pelaku_kecelakaan_diatas_60_tahun }}</td>
             <td>{{ $tahunKedua->usia_pelaku_kecelakaan_diatas_60_tahun }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->usia_pelaku_kecelakaan_diatas_60_tahun, $tahunPertama->usia_pelaku_kecelakaan_diatas_60_tahun) }}</td>
+			<td>{{ percentageValue($tahunKedua->usia_pelaku_kecelakaan_diatas_60_tahun, $tahunPertama->usia_pelaku_kecelakaan_diatas_60_tahun) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2360,8 +2644,56 @@
                 $tahunKedua->usia_pelaku_kecelakaan_56_60_tahun,
                 $tahunKedua->usia_pelaku_kecelakaan_diatas_60_tahun
                 ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->usia_pelaku_kecelakaan_kurang_dari_15_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_16_20_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_21_25_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_26_30_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_31_35_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_36_40_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_41_45_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_46_50_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_51_55_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_56_60_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_diatas_60_tahun
+                ]), calculation([
+                $tahunPertama->usia_pelaku_kecelakaan_kurang_dari_15_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_16_20_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_21_25_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_26_30_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_31_35_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_36_40_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_41_45_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_46_50_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_51_55_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_56_60_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_diatas_60_tahun
+                ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->usia_pelaku_kecelakaan_kurang_dari_15_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_16_20_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_21_25_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_26_30_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_31_35_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_36_40_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_41_45_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_46_50_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_51_55_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_56_60_tahun,
+                $tahunKedua->usia_pelaku_kecelakaan_diatas_60_tahun
+                ]), calculation([
+                $tahunPertama->usia_pelaku_kecelakaan_kurang_dari_15_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_16_20_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_21_25_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_26_30_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_31_35_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_36_40_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_41_45_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_46_50_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_51_55_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_56_60_tahun,
+                $tahunPertama->usia_pelaku_kecelakaan_diatas_60_tahun
+                ])) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -2384,8 +2716,8 @@
             <td>a. A</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_a }}</td>
             <td>{{ $tahunKedua->sim_pelaku_kecelakaan_sim_a }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_kecelakaan_sim_a, $tahunPertama->sim_pelaku_kecelakaan_sim_a) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_kecelakaan_sim_a, $tahunPertama->sim_pelaku_kecelakaan_sim_a) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -2393,8 +2725,8 @@
             <td>b. A UMUM</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_a_umum }}</td>
             <td>{{ $tahunKedua->sim_pelaku_kecelakaan_sim_a_umum }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_kecelakaan_sim_a_umum, $tahunPertama->sim_pelaku_kecelakaan_sim_a_umum) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_kecelakaan_sim_a_umum, $tahunPertama->sim_pelaku_kecelakaan_sim_a_umum) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -2402,8 +2734,8 @@
             <td>c. B1</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_b1 }}</td>
             <td>{{ $tahunKedua->sim_pelaku_kecelakaan_sim_b1 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_kecelakaan_sim_b1, $tahunPertama->sim_pelaku_kecelakaan_sim_b1) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_kecelakaan_sim_b1, $tahunPertama->sim_pelaku_kecelakaan_sim_b1) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -2411,8 +2743,8 @@
             <td>d. B1 UMUM</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_b1_umum }}</td>
             <td>{{ $tahunKedua->sim_pelaku_kecelakaan_sim_b1_umum }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_kecelakaan_sim_b1_umum, $tahunPertama->sim_pelaku_kecelakaan_sim_b1_umum) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_kecelakaan_sim_b1_umum, $tahunPertama->sim_pelaku_kecelakaan_sim_b1_umum) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -2420,8 +2752,8 @@
             <td>e. BII</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_b2 }}</td>
             <td>{{ $tahunKedua->sim_pelaku_kecelakaan_sim_b2 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_kecelakaan_sim_b2, $tahunPertama->sim_pelaku_kecelakaan_sim_b2) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_kecelakaan_sim_b2, $tahunPertama->sim_pelaku_kecelakaan_sim_b2) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -2429,8 +2761,8 @@
             <td>f. B II UMUM</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_b2_umum }}</td>
             <td>{{ $tahunKedua->sim_pelaku_kecelakaan_sim_b2_umum }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_kecelakaan_sim_b2_umum, $tahunPertama->sim_pelaku_kecelakaan_sim_b2_umum) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_kecelakaan_sim_b2_umum, $tahunPertama->sim_pelaku_kecelakaan_sim_b2_umum) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -2438,8 +2770,8 @@
             <td>g. C</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_c }}</td>
             <td>{{ $tahunKedua->sim_pelaku_kecelakaan_sim_c }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_kecelakaan_sim_c, $tahunPertama->sim_pelaku_kecelakaan_sim_c) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_kecelakaan_sim_c, $tahunPertama->sim_pelaku_kecelakaan_sim_c) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -2447,8 +2779,8 @@
             <td>h. D</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_d }}</td>
             <td>{{ $tahunKedua->sim_pelaku_kecelakaan_sim_d }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_kecelakaan_sim_d, $tahunPertama->sim_pelaku_kecelakaan_sim_d) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_kecelakaan_sim_d, $tahunPertama->sim_pelaku_kecelakaan_sim_d) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -2456,8 +2788,8 @@
             <td>I. SIM INTERNASIONAL</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_sim_internasional }}</td>
             <td>{{ $tahunKedua->sim_pelaku_kecelakaan_sim_internasional }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_kecelakaan_sim_internasional, $tahunPertama->sim_pelaku_kecelakaan_sim_internasional) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_kecelakaan_sim_internasional, $tahunPertama->sim_pelaku_kecelakaan_sim_internasional) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -2465,8 +2797,8 @@
             <td>j. TANPA SIM</td>
             <td>{{ $tahunPertama->sim_pelaku_kecelakaan_tanpa_sim }}</td>
             <td>{{ $tahunKedua->sim_pelaku_kecelakaan_tanpa_sim }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sim_pelaku_kecelakaan_tanpa_sim, $tahunPertama->sim_pelaku_kecelakaan_tanpa_sim) }}</td>
+			<td>{{ percentageValue($tahunKedua->sim_pelaku_kecelakaan_tanpa_sim, $tahunPertama->sim_pelaku_kecelakaan_tanpa_sim) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -2496,8 +2828,52 @@
                 $tahunKedua->sim_pelaku_kecelakaan_sim_internasional,
                 $tahunKedua->sim_pelaku_kecelakaan_tanpa_sim
                 ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->sim_pelaku_kecelakaan_sim_a,
+                $tahunKedua->sim_pelaku_kecelakaan_sim_a_umum,
+                $tahunKedua->sim_pelaku_kecelakaan_sim_b1,
+                $tahunKedua->sim_pelaku_kecelakaan_sim_b1_umum,
+                $tahunKedua->sim_pelaku_kecelakaan_sim_b2,
+                $tahunKedua->sim_pelaku_kecelakaan_sim_b2_umum,
+                $tahunKedua->sim_pelaku_kecelakaan_sim_c,
+                $tahunKedua->sim_pelaku_kecelakaan_sim_d,
+                $tahunKedua->sim_pelaku_kecelakaan_sim_internasional,
+                $tahunKedua->sim_pelaku_kecelakaan_tanpa_sim
+                ]), calculation([
+                $tahunPertama->sim_pelaku_kecelakaan_sim_a,
+                $tahunPertama->sim_pelaku_kecelakaan_sim_a_umum,
+                $tahunPertama->sim_pelaku_kecelakaan_sim_b1,
+                $tahunPertama->sim_pelaku_kecelakaan_sim_b1_umum,
+                $tahunPertama->sim_pelaku_kecelakaan_sim_b2,
+                $tahunPertama->sim_pelaku_kecelakaan_sim_b2_umum,
+                $tahunPertama->sim_pelaku_kecelakaan_sim_c,
+                $tahunPertama->sim_pelaku_kecelakaan_sim_d,
+                $tahunPertama->sim_pelaku_kecelakaan_sim_internasional,
+                $tahunPertama->sim_pelaku_kecelakaan_tanpa_sim
+                ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->sim_pelaku_kecelakaan_sim_a,
+                $tahunKedua->sim_pelaku_kecelakaan_sim_a_umum,
+                $tahunKedua->sim_pelaku_kecelakaan_sim_b1,
+                $tahunKedua->sim_pelaku_kecelakaan_sim_b1_umum,
+                $tahunKedua->sim_pelaku_kecelakaan_sim_b2,
+                $tahunKedua->sim_pelaku_kecelakaan_sim_b2_umum,
+                $tahunKedua->sim_pelaku_kecelakaan_sim_c,
+                $tahunKedua->sim_pelaku_kecelakaan_sim_d,
+                $tahunKedua->sim_pelaku_kecelakaan_sim_internasional,
+                $tahunKedua->sim_pelaku_kecelakaan_tanpa_sim
+                ]), calculation([
+                $tahunPertama->sim_pelaku_kecelakaan_sim_a,
+                $tahunPertama->sim_pelaku_kecelakaan_sim_a_umum,
+                $tahunPertama->sim_pelaku_kecelakaan_sim_b1,
+                $tahunPertama->sim_pelaku_kecelakaan_sim_b1_umum,
+                $tahunPertama->sim_pelaku_kecelakaan_sim_b2,
+                $tahunPertama->sim_pelaku_kecelakaan_sim_b2_umum,
+                $tahunPertama->sim_pelaku_kecelakaan_sim_c,
+                $tahunPertama->sim_pelaku_kecelakaan_sim_d,
+                $tahunPertama->sim_pelaku_kecelakaan_sim_internasional,
+                $tahunPertama->sim_pelaku_kecelakaan_tanpa_sim
+                ])) }}</td>
 			<td>Buah</td>
         </tr>
         <tr>
@@ -2529,8 +2905,8 @@
             <td>1) KAWASAN PEMUKIMAN</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_lalin_pemukiman }}</td>
             <td>{{ $tahunKedua->lokasi_kecelakaan_lalin_pemukiman }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_kecelakaan_lalin_pemukiman, $tahunPertama->lokasi_kecelakaan_lalin_pemukiman) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_kecelakaan_lalin_pemukiman, $tahunPertama->lokasi_kecelakaan_lalin_pemukiman) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2538,8 +2914,8 @@
             <td>2) KAWASAN PERBELANJAAN</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_lalin_perbelanjaan }}</td>
             <td>{{ $tahunKedua->lokasi_kecelakaan_lalin_perbelanjaan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_kecelakaan_lalin_perbelanjaan, $tahunPertama->lokasi_kecelakaan_lalin_perbelanjaan) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_kecelakaan_lalin_perbelanjaan, $tahunPertama->lokasi_kecelakaan_lalin_perbelanjaan) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2547,8 +2923,8 @@
             <td>3) PERKANTORAN</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_lalin_perkantoran }}</td>
             <td>{{ $tahunKedua->lokasi_kecelakaan_lalin_perkantoran }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_kecelakaan_lalin_perkantoran, $tahunPertama->lokasi_kecelakaan_lalin_perkantoran) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_kecelakaan_lalin_perkantoran, $tahunPertama->lokasi_kecelakaan_lalin_perkantoran) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2556,8 +2932,8 @@
             <td>4) KAWASAN WISATA</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_lalin_wisata }}</td>
             <td>{{ $tahunKedua->lokasi_kecelakaan_lalin_wisata }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_kecelakaan_lalin_wisata, $tahunPertama->lokasi_kecelakaan_lalin_wisata) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_kecelakaan_lalin_wisata, $tahunPertama->lokasi_kecelakaan_lalin_wisata) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2565,8 +2941,8 @@
             <td>5) KAWASAN INDUTRI</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_lalin_industri }}</td>
             <td>{{ $tahunKedua->lokasi_kecelakaan_lalin_industri }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_kecelakaan_lalin_industri, $tahunPertama->lokasi_kecelakaan_lalin_industri) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_kecelakaan_lalin_industri, $tahunPertama->lokasi_kecelakaan_lalin_industri) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2574,8 +2950,8 @@
             <td>6) LAIN - LAIN</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_lalin_lain_lain }}</td>
             <td>{{ $tahunKedua->lokasi_kecelakaan_lalin_lain_lain }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_kecelakaan_lalin_lain_lain, $tahunPertama->lokasi_kecelakaan_lalin_lain_lain) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_kecelakaan_lalin_lain_lain, $tahunPertama->lokasi_kecelakaan_lalin_lain_lain) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2597,8 +2973,36 @@
                 $tahunKedua->lokasi_kecelakaan_lalin_industri,
                 $tahunKedua->lokasi_kecelakaan_lalin_lain_lain
                 ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->lokasi_kecelakaan_lalin_pemukiman,
+                $tahunKedua->lokasi_kecelakaan_lalin_perbelanjaan,
+                $tahunKedua->lokasi_kecelakaan_lalin_perkantoran,
+                $tahunKedua->lokasi_kecelakaan_lalin_wisata,
+                $tahunKedua->lokasi_kecelakaan_lalin_industri,
+                $tahunKedua->lokasi_kecelakaan_lalin_lain_lain
+                ]), calculation([
+                $tahunPertama->lokasi_kecelakaan_lalin_pemukiman,
+                $tahunPertama->lokasi_kecelakaan_lalin_perbelanjaan,
+                $tahunPertama->lokasi_kecelakaan_lalin_perkantoran,
+                $tahunPertama->lokasi_kecelakaan_lalin_wisata,
+                $tahunPertama->lokasi_kecelakaan_lalin_industri,
+                $tahunPertama->lokasi_kecelakaan_lalin_lain_lain
+                ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->lokasi_kecelakaan_lalin_pemukiman,
+                $tahunKedua->lokasi_kecelakaan_lalin_perbelanjaan,
+                $tahunKedua->lokasi_kecelakaan_lalin_perkantoran,
+                $tahunKedua->lokasi_kecelakaan_lalin_wisata,
+                $tahunKedua->lokasi_kecelakaan_lalin_industri,
+                $tahunKedua->lokasi_kecelakaan_lalin_lain_lain
+                ]), calculation([
+                $tahunPertama->lokasi_kecelakaan_lalin_pemukiman,
+                $tahunPertama->lokasi_kecelakaan_lalin_perbelanjaan,
+                $tahunPertama->lokasi_kecelakaan_lalin_perkantoran,
+                $tahunPertama->lokasi_kecelakaan_lalin_wisata,
+                $tahunPertama->lokasi_kecelakaan_lalin_industri,
+                $tahunPertama->lokasi_kecelakaan_lalin_lain_lain
+                ])) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2621,8 +3025,8 @@
             <td>1) NASIONAL</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_status_jalan_nasional }}</td>
             <td>{{ $tahunKedua->lokasi_kecelakaan_status_jalan_nasional }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_kecelakaan_status_jalan_nasional, $tahunPertama->lokasi_kecelakaan_status_jalan_nasional) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_kecelakaan_status_jalan_nasional, $tahunPertama->lokasi_kecelakaan_status_jalan_nasional) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2630,8 +3034,8 @@
             <td>2) PROPINSI</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_status_jalan_propinsi }}</td>
             <td>{{ $tahunKedua->lokasi_kecelakaan_status_jalan_propinsi }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_kecelakaan_status_jalan_propinsi, $tahunPertama->lokasi_kecelakaan_status_jalan_propinsi) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_kecelakaan_status_jalan_propinsi, $tahunPertama->lokasi_kecelakaan_status_jalan_propinsi) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2639,8 +3043,8 @@
             <td>3) KAB/KOTA</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_status_jalan_kab_kota }}</td>
             <td>{{ $tahunKedua->lokasi_kecelakaan_status_jalan_kab_kota }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_kecelakaan_status_jalan_kab_kota, $tahunPertama->lokasi_kecelakaan_status_jalan_kab_kota) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_kecelakaan_status_jalan_kab_kota, $tahunPertama->lokasi_kecelakaan_status_jalan_kab_kota) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2648,8 +3052,8 @@
             <td>4) DESA / LINGKUNGAN</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_status_jalan_desa_lingkungan }}</td>
             <td>{{ $tahunKedua->lokasi_kecelakaan_status_jalan_desa_lingkungan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_kecelakaan_status_jalan_desa_lingkungan, $tahunPertama->lokasi_kecelakaan_status_jalan_desa_lingkungan) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_kecelakaan_status_jalan_desa_lingkungan, $tahunPertama->lokasi_kecelakaan_status_jalan_desa_lingkungan) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2669,8 +3073,28 @@
                 $tahunKedua->lokasi_kecelakaan_status_jalan_kab_kota,
                 $tahunKedua->lokasi_kecelakaan_status_jalan_desa_lingkungan
                 ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->lokasi_kecelakaan_status_jalan_nasional,
+                $tahunKedua->lokasi_kecelakaan_status_jalan_propinsi,
+                $tahunKedua->lokasi_kecelakaan_status_jalan_kab_kota,
+                $tahunKedua->lokasi_kecelakaan_status_jalan_desa_lingkungan
+                ]), calculation([
+                $tahunPertama->lokasi_kecelakaan_status_jalan_nasional,
+                $tahunPertama->lokasi_kecelakaan_status_jalan_propinsi,
+                $tahunPertama->lokasi_kecelakaan_status_jalan_kab_kota,
+                $tahunPertama->lokasi_kecelakaan_status_jalan_desa_lingkungan
+                ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->lokasi_kecelakaan_status_jalan_nasional,
+                $tahunKedua->lokasi_kecelakaan_status_jalan_propinsi,
+                $tahunKedua->lokasi_kecelakaan_status_jalan_kab_kota,
+                $tahunKedua->lokasi_kecelakaan_status_jalan_desa_lingkungan
+                ]), calculation([
+                $tahunPertama->lokasi_kecelakaan_status_jalan_nasional,
+                $tahunPertama->lokasi_kecelakaan_status_jalan_propinsi,
+                $tahunPertama->lokasi_kecelakaan_status_jalan_kab_kota,
+                $tahunPertama->lokasi_kecelakaan_status_jalan_desa_lingkungan
+                ])) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2696,8 +3120,8 @@
             <td>1) ARTERI</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_fungsi_jalan_arteri }}</td>
             <td>{{ $tahunKedua->lokasi_kecelakaan_fungsi_jalan_arteri }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_kecelakaan_fungsi_jalan_arteri, $tahunPertama->lokasi_kecelakaan_fungsi_jalan_arteri) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_kecelakaan_fungsi_jalan_arteri, $tahunPertama->lokasi_kecelakaan_fungsi_jalan_arteri) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2705,8 +3129,8 @@
             <td>2) KOLEKTOR</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_fungsi_jalan_kolektor }}</td>
             <td>{{ $tahunKedua->lokasi_kecelakaan_fungsi_jalan_kolektor }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_kecelakaan_fungsi_jalan_kolektor, $tahunPertama->lokasi_kecelakaan_fungsi_jalan_kolektor) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_kecelakaan_fungsi_jalan_kolektor, $tahunPertama->lokasi_kecelakaan_fungsi_jalan_kolektor) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2714,8 +3138,8 @@
             <td>3) LOKAL</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_fungsi_jalan_lokal }}</td>
             <td>{{ $tahunKedua->lokasi_kecelakaan_fungsi_jalan_lokal }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_kecelakaan_fungsi_jalan_lokal, $tahunPertama->lokasi_kecelakaan_fungsi_jalan_lokal) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_kecelakaan_fungsi_jalan_lokal, $tahunPertama->lokasi_kecelakaan_fungsi_jalan_lokal) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2723,8 +3147,8 @@
             <td>4) LINGKUNGAN</td>
             <td>{{ $tahunPertama->lokasi_kecelakaan_fungsi_jalan_lingkungan }}</td>
             <td>{{ $tahunKedua->lokasi_kecelakaan_fungsi_jalan_lingkungan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->lokasi_kecelakaan_fungsi_jalan_lingkungan, $tahunPertama->lokasi_kecelakaan_fungsi_jalan_lingkungan) }}</td>
+			<td>{{ percentageValue($tahunKedua->lokasi_kecelakaan_fungsi_jalan_lingkungan, $tahunPertama->lokasi_kecelakaan_fungsi_jalan_lingkungan) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2742,8 +3166,28 @@
                 $tahunKedua->lokasi_kecelakaan_fungsi_jalan_lokal,
                 $tahunKedua->lokasi_kecelakaan_fungsi_jalan_lingkungan
             ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->lokasi_kecelakaan_fungsi_jalan_arteri,
+                $tahunKedua->lokasi_kecelakaan_fungsi_jalan_kolektor,
+                $tahunKedua->lokasi_kecelakaan_fungsi_jalan_lokal,
+                $tahunKedua->lokasi_kecelakaan_fungsi_jalan_lingkungan
+            ]), calculation([
+                $tahunPertama->lokasi_kecelakaan_fungsi_jalan_arteri,
+                $tahunPertama->lokasi_kecelakaan_fungsi_jalan_kolektor,
+                $tahunPertama->lokasi_kecelakaan_fungsi_jalan_lokal,
+                $tahunPertama->lokasi_kecelakaan_fungsi_jalan_lingkungan
+            ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->lokasi_kecelakaan_fungsi_jalan_arteri,
+                $tahunKedua->lokasi_kecelakaan_fungsi_jalan_kolektor,
+                $tahunKedua->lokasi_kecelakaan_fungsi_jalan_lokal,
+                $tahunKedua->lokasi_kecelakaan_fungsi_jalan_lingkungan
+            ]), calculation([
+                $tahunPertama->lokasi_kecelakaan_fungsi_jalan_arteri,
+                $tahunPertama->lokasi_kecelakaan_fungsi_jalan_kolektor,
+                $tahunPertama->lokasi_kecelakaan_fungsi_jalan_lokal,
+                $tahunPertama->lokasi_kecelakaan_fungsi_jalan_lingkungan
+            ])) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2768,8 +3212,8 @@
             <td>1) MANUSIA</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_manusia }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_manusia }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_manusia, $tahunPertama->faktor_penyebab_kecelakaan_manusia) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_manusia, $tahunPertama->faktor_penyebab_kecelakaan_manusia) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2777,8 +3221,8 @@
             <td>a. NGANTUK/LELAH (PSL 283)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_ngantuk_lelah }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_ngantuk_lelah }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_ngantuk_lelah, $tahunPertama->faktor_penyebab_kecelakaan_ngantuk_lelah) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_ngantuk_lelah, $tahunPertama->faktor_penyebab_kecelakaan_ngantuk_lelah) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2786,8 +3230,8 @@
             <td>b. MABUK /PENGARUH ALKOHOL DAN OBAT (PSL 283)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_mabuk_obat }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_mabuk_obat }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_mabuk_obat, $tahunPertama->faktor_penyebab_kecelakaan_mabuk_obat) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_mabuk_obat, $tahunPertama->faktor_penyebab_kecelakaan_mabuk_obat) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2795,8 +3239,8 @@
             <td>c. SAKIT (PSL 283)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_sakit }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_sakit }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_sakit, $tahunPertama->faktor_penyebab_kecelakaan_sakit) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_sakit, $tahunPertama->faktor_penyebab_kecelakaan_sakit) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2804,8 +3248,8 @@
             <td>d. HAND PHONE/ ALAT ELEKTRONIK LAIN (PSL 283)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_handphone_elektronik }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_handphone_elektronik }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_handphone_elektronik, $tahunPertama->faktor_penyebab_kecelakaan_handphone_elektronik) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_handphone_elektronik, $tahunPertama->faktor_penyebab_kecelakaan_handphone_elektronik) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2813,8 +3257,8 @@
             <td>e. MENEROBOS LAMPU MERAH(PSL 287 AY 2)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_menerobos_lampu_merah }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_menerobos_lampu_merah }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_menerobos_lampu_merah, $tahunPertama->faktor_penyebab_kecelakaan_menerobos_lampu_merah) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_menerobos_lampu_merah, $tahunPertama->faktor_penyebab_kecelakaan_menerobos_lampu_merah) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2822,8 +3266,8 @@
             <td>f. MELANGGAR BATAS KECEPATAN (PSL 287 AY 7)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_melanggar_batas_kecepatan }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_melanggar_batas_kecepatan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_melanggar_batas_kecepatan, $tahunPertama->faktor_penyebab_kecelakaan_melanggar_batas_kecepatan) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_melanggar_batas_kecepatan, $tahunPertama->faktor_penyebab_kecelakaan_melanggar_batas_kecepatan) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2831,8 +3275,8 @@
             <td>g. TIDAK MENJAGA JARAK</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_tidak_menjaga_jarak }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_tidak_menjaga_jarak }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_tidak_menjaga_jarak, $tahunPertama->faktor_penyebab_kecelakaan_tidak_menjaga_jarak) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_tidak_menjaga_jarak, $tahunPertama->faktor_penyebab_kecelakaan_tidak_menjaga_jarak) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2840,8 +3284,8 @@
             <td>h. MENDAHULUI/BERBELOK/BERPINDAH JALUR (PSL 294)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur, $tahunPertama->faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur, $tahunPertama->faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2849,8 +3293,8 @@
             <td>I. BERPINDAH LAJUR ( PSL 295)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_berpindah_jalur }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_berpindah_jalur }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_berpindah_jalur, $tahunPertama->faktor_penyebab_kecelakaan_berpindah_jalur) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_berpindah_jalur, $tahunPertama->faktor_penyebab_kecelakaan_berpindah_jalur) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2858,8 +3302,8 @@
             <td>j. TIDAK MEMBERIKAN LAMPU ISYARAT BERHENTI/BERBELOK   /BERUBAH ARAH</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat, $tahunPertama->faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat, $tahunPertama->faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2867,8 +3311,8 @@
             <td>k. TIDAK MENGUTAMAKAN PEJALAN KAKI (PSL 284 JO 106 AY 2)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki, $tahunPertama->faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki, $tahunPertama->faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2876,8 +3320,8 @@
             <td>l. LAINNYA</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_lainnya }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_lainnya }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_lainnya, $tahunPertama->faktor_penyebab_kecelakaan_lainnya) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_lainnya, $tahunPertama->faktor_penyebab_kecelakaan_lainnya) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2885,8 +3329,8 @@
             <td>2) ALAM</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_alam }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_alam }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_alam, $tahunPertama->faktor_penyebab_kecelakaan_alam) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_alam, $tahunPertama->faktor_penyebab_kecelakaan_alam) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2894,8 +3338,8 @@
             <td>3) KELAIKAN KENDARAAN</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_kelaikan_kendaraan }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_kelaikan_kendaraan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_kelaikan_kendaraan, $tahunPertama->faktor_penyebab_kecelakaan_kelaikan_kendaraan) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_kelaikan_kendaraan, $tahunPertama->faktor_penyebab_kecelakaan_kelaikan_kendaraan) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2903,8 +3347,8 @@
             <td>4) JALAN (KONDISI JALAN)</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_kondisi_jalan }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_kondisi_jalan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_kondisi_jalan, $tahunPertama->faktor_penyebab_kecelakaan_kondisi_jalan) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_kondisi_jalan, $tahunPertama->faktor_penyebab_kecelakaan_kondisi_jalan) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2912,8 +3356,8 @@
             <td>5) PRASARANA JALAN</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_prasarana_jalan }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_prasarana_jalan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_prasarana_jalan, $tahunPertama->faktor_penyebab_kecelakaan_prasarana_jalan) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_prasarana_jalan, $tahunPertama->faktor_penyebab_kecelakaan_prasarana_jalan) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2921,8 +3365,8 @@
             <td>a. RAMBU</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_rambu }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_rambu }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_rambu, $tahunPertama->faktor_penyebab_kecelakaan_rambu) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_rambu, $tahunPertama->faktor_penyebab_kecelakaan_rambu) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2930,8 +3374,8 @@
             <td>b. MARKA</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_marka }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_marka }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_marka, $tahunPertama->faktor_penyebab_kecelakaan_marka) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_marka, $tahunPertama->faktor_penyebab_kecelakaan_marka) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2939,8 +3383,8 @@
             <td>c. APIL</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_apil }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_apil }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_apil, $tahunPertama->faktor_penyebab_kecelakaan_apil) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_apil, $tahunPertama->faktor_penyebab_kecelakaan_apil) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2948,8 +3392,8 @@
             <td>d. PERLINTASAN KA TANPA PALANG PINTU</td>
             <td>{{ $tahunPertama->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu }}</td>
             <td>{{ $tahunKedua->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu, $tahunPertama->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu) }}</td>
+			<td>{{ percentageValue($tahunKedua->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu, $tahunPertama->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -2997,8 +3441,88 @@
                 $tahunKedua->faktor_penyebab_kecelakaan_apil,
                 $tahunKedua->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu
                 ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->faktor_penyebab_kecelakaan_ngantuk_lelah,
+                $tahunKedua->faktor_penyebab_kecelakaan_mabuk_obat,
+                $tahunKedua->faktor_penyebab_kecelakaan_sakit,
+                $tahunKedua->faktor_penyebab_kecelakaan_handphone_elektronik,
+                $tahunKedua->faktor_penyebab_kecelakaan_menerobos_lampu_merah,
+                $tahunKedua->faktor_penyebab_kecelakaan_melanggar_batas_kecepatan,
+                $tahunKedua->faktor_penyebab_kecelakaan_tidak_menjaga_jarak,
+                $tahunKedua->faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur,
+                $tahunKedua->faktor_penyebab_kecelakaan_berpindah_jalur,
+                $tahunKedua->faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat,
+                $tahunKedua->faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki,
+                $tahunKedua->faktor_penyebab_kecelakaan_lainnya,
+                $tahunKedua->faktor_penyebab_kecelakaan_alam,
+                $tahunKedua->faktor_penyebab_kecelakaan_kelaikan_kendaraan,
+                $tahunKedua->faktor_penyebab_kecelakaan_kondisi_jalan,
+                $tahunKedua->faktor_penyebab_kecelakaan_rambu,
+                $tahunKedua->faktor_penyebab_kecelakaan_marka,
+                $tahunKedua->faktor_penyebab_kecelakaan_apil,
+                $tahunKedua->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu
+                ]), calculation([
+                $tahunPertama->faktor_penyebab_kecelakaan_ngantuk_lelah,
+                $tahunPertama->faktor_penyebab_kecelakaan_mabuk_obat,
+                $tahunPertama->faktor_penyebab_kecelakaan_sakit,
+                $tahunPertama->faktor_penyebab_kecelakaan_handphone_elektronik,
+                $tahunPertama->faktor_penyebab_kecelakaan_menerobos_lampu_merah,
+                $tahunPertama->faktor_penyebab_kecelakaan_melanggar_batas_kecepatan,
+                $tahunPertama->faktor_penyebab_kecelakaan_tidak_menjaga_jarak,
+                $tahunPertama->faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur,
+                $tahunPertama->faktor_penyebab_kecelakaan_berpindah_jalur,
+                $tahunPertama->faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat,
+                $tahunPertama->faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki,
+                $tahunPertama->faktor_penyebab_kecelakaan_lainnya,
+                $tahunPertama->faktor_penyebab_kecelakaan_alam,
+                $tahunPertama->faktor_penyebab_kecelakaan_kelaikan_kendaraan,
+                $tahunPertama->faktor_penyebab_kecelakaan_kondisi_jalan,
+                $tahunPertama->faktor_penyebab_kecelakaan_rambu,
+                $tahunPertama->faktor_penyebab_kecelakaan_marka,
+                $tahunPertama->faktor_penyebab_kecelakaan_apil,
+                $tahunPertama->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu
+                ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->faktor_penyebab_kecelakaan_ngantuk_lelah,
+                $tahunKedua->faktor_penyebab_kecelakaan_mabuk_obat,
+                $tahunKedua->faktor_penyebab_kecelakaan_sakit,
+                $tahunKedua->faktor_penyebab_kecelakaan_handphone_elektronik,
+                $tahunKedua->faktor_penyebab_kecelakaan_menerobos_lampu_merah,
+                $tahunKedua->faktor_penyebab_kecelakaan_melanggar_batas_kecepatan,
+                $tahunKedua->faktor_penyebab_kecelakaan_tidak_menjaga_jarak,
+                $tahunKedua->faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur,
+                $tahunKedua->faktor_penyebab_kecelakaan_berpindah_jalur,
+                $tahunKedua->faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat,
+                $tahunKedua->faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki,
+                $tahunKedua->faktor_penyebab_kecelakaan_lainnya,
+                $tahunKedua->faktor_penyebab_kecelakaan_alam,
+                $tahunKedua->faktor_penyebab_kecelakaan_kelaikan_kendaraan,
+                $tahunKedua->faktor_penyebab_kecelakaan_kondisi_jalan,
+                $tahunKedua->faktor_penyebab_kecelakaan_rambu,
+                $tahunKedua->faktor_penyebab_kecelakaan_marka,
+                $tahunKedua->faktor_penyebab_kecelakaan_apil,
+                $tahunKedua->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu
+                ]), calculation([
+                $tahunPertama->faktor_penyebab_kecelakaan_ngantuk_lelah,
+                $tahunPertama->faktor_penyebab_kecelakaan_mabuk_obat,
+                $tahunPertama->faktor_penyebab_kecelakaan_sakit,
+                $tahunPertama->faktor_penyebab_kecelakaan_handphone_elektronik,
+                $tahunPertama->faktor_penyebab_kecelakaan_menerobos_lampu_merah,
+                $tahunPertama->faktor_penyebab_kecelakaan_melanggar_batas_kecepatan,
+                $tahunPertama->faktor_penyebab_kecelakaan_tidak_menjaga_jarak,
+                $tahunPertama->faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur,
+                $tahunPertama->faktor_penyebab_kecelakaan_berpindah_jalur,
+                $tahunPertama->faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat,
+                $tahunPertama->faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki,
+                $tahunPertama->faktor_penyebab_kecelakaan_lainnya,
+                $tahunPertama->faktor_penyebab_kecelakaan_alam,
+                $tahunPertama->faktor_penyebab_kecelakaan_kelaikan_kendaraan,
+                $tahunPertama->faktor_penyebab_kecelakaan_kondisi_jalan,
+                $tahunPertama->faktor_penyebab_kecelakaan_rambu,
+                $tahunPertama->faktor_penyebab_kecelakaan_marka,
+                $tahunPertama->faktor_penyebab_kecelakaan_apil,
+                $tahunPertama->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu
+                ])) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3021,8 +3545,8 @@
             <td>a. 00.00 - 03.00</td>
             <td>{{ $tahunPertama->waktu_kejadian_kecelakaan_00_03 }}</td>
             <td>{{ $tahunKedua->waktu_kejadian_kecelakaan_00_03 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->waktu_kejadian_kecelakaan_00_03, $tahunPertama->waktu_kejadian_kecelakaan_00_03) }}</td>
+			<td>{{ percentageValue($tahunKedua->waktu_kejadian_kecelakaan_00_03, $tahunPertama->waktu_kejadian_kecelakaan_00_03) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3030,8 +3554,8 @@
             <td>b. 03.00 - 06.00</td>
             <td>{{ $tahunPertama->waktu_kejadian_kecelakaan_03_06 }}</td>
             <td>{{ $tahunKedua->waktu_kejadian_kecelakaan_03_06 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->waktu_kejadian_kecelakaan_03_06, $tahunPertama->waktu_kejadian_kecelakaan_03_06) }}</td>
+			<td>{{ percentageValue($tahunKedua->waktu_kejadian_kecelakaan_03_06, $tahunPertama->waktu_kejadian_kecelakaan_03_06) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3039,8 +3563,8 @@
             <td>c. 06.00- 09.00</td>
             <td>{{ $tahunPertama->waktu_kejadian_kecelakaan_06_09 }}</td>
             <td>{{ $tahunKedua->waktu_kejadian_kecelakaan_06_09 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->waktu_kejadian_kecelakaan_06_09, $tahunPertama->waktu_kejadian_kecelakaan_06_09) }}</td>
+			<td>{{ percentageValue($tahunKedua->waktu_kejadian_kecelakaan_06_09, $tahunPertama->waktu_kejadian_kecelakaan_06_09) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3048,8 +3572,8 @@
             <td>d. 09.00 - 12.00</td>
             <td>{{ $tahunPertama->waktu_kejadian_kecelakaan_09_12 }}</td>
             <td>{{ $tahunKedua->waktu_kejadian_kecelakaan_09_12 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->waktu_kejadian_kecelakaan_09_12, $tahunPertama->waktu_kejadian_kecelakaan_09_12) }}</td>
+			<td>{{ percentageValue($tahunKedua->waktu_kejadian_kecelakaan_09_12, $tahunPertama->waktu_kejadian_kecelakaan_09_12) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3057,8 +3581,8 @@
             <td>e. 12.00 - 15.00</td>
             <td>{{ $tahunPertama->waktu_kejadian_kecelakaan_12_15 }}</td>
             <td>{{ $tahunKedua->waktu_kejadian_kecelakaan_12_15 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->waktu_kejadian_kecelakaan_12_15, $tahunPertama->waktu_kejadian_kecelakaan_12_15) }}</td>
+			<td>{{ percentageValue($tahunKedua->waktu_kejadian_kecelakaan_12_15, $tahunPertama->waktu_kejadian_kecelakaan_12_15) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3066,8 +3590,8 @@
             <td>f. 15.00 - 18.00</td>
             <td>{{ $tahunPertama->waktu_kejadian_kecelakaan_15_18 }}</td>
             <td>{{ $tahunKedua->waktu_kejadian_kecelakaan_15_18 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->waktu_kejadian_kecelakaan_15_18, $tahunPertama->waktu_kejadian_kecelakaan_15_18) }}</td>
+			<td>{{ percentageValue($tahunKedua->waktu_kejadian_kecelakaan_15_18, $tahunPertama->waktu_kejadian_kecelakaan_15_18) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3075,8 +3599,8 @@
             <td>g. 18.00 - 21.00</td>
             <td>{{ $tahunPertama->waktu_kejadian_kecelakaan_18_21 }}</td>
             <td>{{ $tahunKedua->waktu_kejadian_kecelakaan_18_21 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->waktu_kejadian_kecelakaan_18_21, $tahunPertama->waktu_kejadian_kecelakaan_18_21) }}</td>
+			<td>{{ percentageValue($tahunKedua->waktu_kejadian_kecelakaan_18_21, $tahunPertama->waktu_kejadian_kecelakaan_18_21) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3084,8 +3608,8 @@
             <td>h. 21.00 - 24.00</td>
             <td>{{ $tahunPertama->waktu_kejadian_kecelakaan_21_24 }}</td>
             <td>{{ $tahunKedua->waktu_kejadian_kecelakaan_21_24 }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->waktu_kejadian_kecelakaan_21_24, $tahunPertama->waktu_kejadian_kecelakaan_21_24) }}</td>
+			<td>{{ percentageValue($tahunKedua->waktu_kejadian_kecelakaan_21_24, $tahunPertama->waktu_kejadian_kecelakaan_21_24) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3111,8 +3635,44 @@
                 $tahunKedua->waktu_kejadian_kecelakaan_18_21,
                 $tahunKedua->waktu_kejadian_kecelakaan_21_24
                 ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->waktu_kejadian_kecelakaan_00_03,
+                $tahunKedua->waktu_kejadian_kecelakaan_03_06,
+                $tahunKedua->waktu_kejadian_kecelakaan_06_09,
+                $tahunKedua->waktu_kejadian_kecelakaan_09_12,
+                $tahunKedua->waktu_kejadian_kecelakaan_12_15,
+                $tahunKedua->waktu_kejadian_kecelakaan_15_18,
+                $tahunKedua->waktu_kejadian_kecelakaan_18_21,
+                $tahunKedua->waktu_kejadian_kecelakaan_21_24
+                ]), calculation([
+                $tahunPertama->waktu_kejadian_kecelakaan_00_03,
+                $tahunPertama->waktu_kejadian_kecelakaan_03_06,
+                $tahunPertama->waktu_kejadian_kecelakaan_06_09,
+                $tahunPertama->waktu_kejadian_kecelakaan_09_12,
+                $tahunPertama->waktu_kejadian_kecelakaan_12_15,
+                $tahunPertama->waktu_kejadian_kecelakaan_15_18,
+                $tahunPertama->waktu_kejadian_kecelakaan_18_21,
+                $tahunPertama->waktu_kejadian_kecelakaan_21_24
+                ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->waktu_kejadian_kecelakaan_00_03,
+                $tahunKedua->waktu_kejadian_kecelakaan_03_06,
+                $tahunKedua->waktu_kejadian_kecelakaan_06_09,
+                $tahunKedua->waktu_kejadian_kecelakaan_09_12,
+                $tahunKedua->waktu_kejadian_kecelakaan_12_15,
+                $tahunKedua->waktu_kejadian_kecelakaan_15_18,
+                $tahunKedua->waktu_kejadian_kecelakaan_18_21,
+                $tahunKedua->waktu_kejadian_kecelakaan_21_24
+                ]), calculation([
+                $tahunPertama->waktu_kejadian_kecelakaan_00_03,
+                $tahunPertama->waktu_kejadian_kecelakaan_03_06,
+                $tahunPertama->waktu_kejadian_kecelakaan_06_09,
+                $tahunPertama->waktu_kejadian_kecelakaan_09_12,
+                $tahunPertama->waktu_kejadian_kecelakaan_12_15,
+                $tahunPertama->waktu_kejadian_kecelakaan_15_18,
+                $tahunPertama->waktu_kejadian_kecelakaan_18_21,
+                $tahunPertama->waktu_kejadian_kecelakaan_21_24
+                ])) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3135,8 +3695,8 @@
             <td>a. JUMLAH KEJADIAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_menonjol_jumlah_kejadian }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_menonjol_jumlah_kejadian }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_menonjol_jumlah_kejadian, $tahunPertama->kecelakaan_lalin_menonjol_jumlah_kejadian) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_menonjol_jumlah_kejadian, $tahunPertama->kecelakaan_lalin_menonjol_jumlah_kejadian) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3144,8 +3704,8 @@
             <td>b. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_menonjol_korban_meninggal }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_menonjol_korban_meninggal }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_menonjol_korban_meninggal, $tahunPertama->kecelakaan_lalin_menonjol_korban_meninggal) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_menonjol_korban_meninggal, $tahunPertama->kecelakaan_lalin_menonjol_korban_meninggal) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3153,8 +3713,8 @@
             <td>c. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_menonjol_korban_luka_berat }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_menonjol_korban_luka_berat }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_menonjol_korban_luka_berat, $tahunPertama->kecelakaan_lalin_menonjol_korban_luka_berat) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_menonjol_korban_luka_berat, $tahunPertama->kecelakaan_lalin_menonjol_korban_luka_berat) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3162,8 +3722,8 @@
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_menonjol_korban_luka_ringan }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_menonjol_korban_luka_ringan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_menonjol_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_menonjol_korban_luka_ringan) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_menonjol_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_menonjol_korban_luka_ringan) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3171,8 +3731,8 @@
             <td>e. MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_menonjol_materiil }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_menonjol_materiil }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_menonjol_materiil, $tahunPertama->kecelakaan_lalin_menonjol_materiil) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_menonjol_materiil, $tahunPertama->kecelakaan_lalin_menonjol_materiil) }}</td>
 			<td>Rp</td>
         </tr>
         <tr>
@@ -3195,8 +3755,8 @@
             <td>a. JUMLAH KEJADIAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tunggal_jumlah_kejadian }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tunggal_jumlah_kejadian }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tunggal_jumlah_kejadian, $tahunPertama->kecelakaan_lalin_tunggal_jumlah_kejadian) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tunggal_jumlah_kejadian, $tahunPertama->kecelakaan_lalin_tunggal_jumlah_kejadian) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3204,8 +3764,8 @@
             <td>b. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tunggal_korban_meninggal }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tunggal_korban_meninggal }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tunggal_korban_meninggal, $tahunPertama->kecelakaan_lalin_tunggal_korban_meninggal) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tunggal_korban_meninggal, $tahunPertama->kecelakaan_lalin_tunggal_korban_meninggal) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3213,8 +3773,8 @@
             <td>c. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tunggal_korban_luka_berat }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tunggal_korban_luka_berat }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tunggal_korban_luka_berat, $tahunPertama->kecelakaan_lalin_tunggal_korban_luka_berat) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tunggal_korban_luka_berat, $tahunPertama->kecelakaan_lalin_tunggal_korban_luka_berat) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3222,8 +3782,8 @@
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tunggal_korban_luka_ringan }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tunggal_korban_luka_ringan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tunggal_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_tunggal_korban_luka_ringan) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tunggal_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_tunggal_korban_luka_ringan) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3231,8 +3791,8 @@
             <td>e. MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tunggal_materiil }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tunggal_materiil }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tunggal_materiil, $tahunPertama->kecelakaan_lalin_tunggal_materiil) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tunggal_materiil, $tahunPertama->kecelakaan_lalin_tunggal_materiil) }}</td>
 			<td>Rp</td>
         </tr>
         <tr>
@@ -3255,8 +3815,8 @@
             <td>a. JUMLAH KEJADIAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_jumlah_kejadian }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_pejalan_kaki_jumlah_kejadian }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_pejalan_kaki_jumlah_kejadian, $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_jumlah_kejadian) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_pejalan_kaki_jumlah_kejadian, $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_jumlah_kejadian) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3264,8 +3824,8 @@
             <td>b. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_korban_meninggal }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_pejalan_kaki_jumlah_kejadian }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_pejalan_kaki_korban_meninggal, $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_korban_meninggal) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_pejalan_kaki_korban_meninggal, $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_korban_meninggal) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3273,8 +3833,8 @@
             <td>c. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_berat }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_berat }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_berat, $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_berat) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_berat, $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_berat) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3282,8 +3842,8 @@
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_ringan }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_ringan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_ringan) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_ringan) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3291,9 +3851,9 @@
             <td>e. MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_materiil }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_pejalan_kaki_materiil }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_pejalan_kaki_materiil, $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_materiil) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_pejalan_kaki_materiil, $tahunPertama->kecelakaan_lalin_tabrak_pejalan_kaki_materiil) }}</td>
+			<td>Rp</td>
         </tr>
         <tr>
             <td></td>
@@ -3315,8 +3875,8 @@
             <td>a. JUMLAH KEJADIAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_lari_jumlah_kejadian }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_lari_jumlah_kejadian }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_lari_jumlah_kejadian, $tahunPertama->kecelakaan_lalin_tabrak_lari_jumlah_kejadian) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_lari_jumlah_kejadian, $tahunPertama->kecelakaan_lalin_tabrak_lari_jumlah_kejadian) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3324,8 +3884,8 @@
             <td>b. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_lari_korban_meninggal }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_lari_korban_meninggal }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_lari_korban_meninggal, $tahunPertama->kecelakaan_lalin_tabrak_lari_korban_meninggal) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_lari_korban_meninggal, $tahunPertama->kecelakaan_lalin_tabrak_lari_korban_meninggal) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3333,8 +3893,8 @@
             <td>c. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_lari_korban_luka_berat }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_lari_korban_luka_berat }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_lari_korban_luka_berat, $tahunPertama->kecelakaan_lalin_tabrak_lari_korban_luka_berat) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_lari_korban_luka_berat, $tahunPertama->kecelakaan_lalin_tabrak_lari_korban_luka_berat) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3342,8 +3902,8 @@
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_lari_korban_luka_ringan }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_lari_korban_luka_ringan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_lari_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_tabrak_lari_korban_luka_ringan) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_lari_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_tabrak_lari_korban_luka_ringan) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3351,8 +3911,8 @@
             <td>e. MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_lari_materiil }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_lari_materiil }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_lari_materiil, $tahunPertama->kecelakaan_lalin_tabrak_lari_materiil) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_lari_materiil, $tahunPertama->kecelakaan_lalin_tabrak_lari_materiil) }}</td>
 			<td>Rp</td>
         </tr>
         <tr>
@@ -3375,8 +3935,8 @@
             <td>a. JUMLAH KEJADIAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_jumlah_kejadian }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_sepeda_motor_jumlah_kejadian }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_sepeda_motor_jumlah_kejadian, $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_jumlah_kejadian) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_sepeda_motor_jumlah_kejadian, $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_jumlah_kejadian) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3384,8 +3944,8 @@
             <td>b. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_korban_meninggal }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_sepeda_motor_korban_meninggal }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_sepeda_motor_korban_meninggal, $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_korban_meninggal) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_sepeda_motor_korban_meninggal, $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_korban_meninggal) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3393,8 +3953,8 @@
             <td>c. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_berat }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_berat }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_berat, $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_berat) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_berat, $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_berat) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3402,8 +3962,8 @@
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_ringan }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_ringan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_ringan) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_ringan) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3411,8 +3971,8 @@
             <td>e. MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_materiil }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_sepeda_motor_materiil }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_sepeda_motor_materiil, $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_materiil) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_sepeda_motor_materiil, $tahunPertama->kecelakaan_lalin_tabrak_sepeda_motor_materiil) }}</td>
 			<td>Rp</td>
         </tr>
         <tr>
@@ -3435,8 +3995,8 @@
             <td>a. JUMLAH KEJADIAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_jumlah_kejadian }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_roda_empat_jumlah_kejadian }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_roda_empat_jumlah_kejadian, $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_jumlah_kejadian) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_roda_empat_jumlah_kejadian, $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_jumlah_kejadian) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3444,8 +4004,8 @@
             <td>b. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_korban_meninggal }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_roda_empat_korban_meninggal }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_roda_empat_korban_meninggal, $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_korban_meninggal) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_roda_empat_korban_meninggal, $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_korban_meninggal) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3453,8 +4013,8 @@
             <td>c. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_korban_luka_berat }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_roda_empat_korban_luka_berat }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_roda_empat_korban_luka_berat, $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_korban_luka_berat) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_roda_empat_korban_luka_berat, $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_korban_luka_berat) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3462,8 +4022,8 @@
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_korban_luka_ringan }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_roda_empat_korban_luka_ringan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_roda_empat_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_korban_luka_ringan) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_roda_empat_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_korban_luka_ringan) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3471,8 +4031,8 @@
             <td>e. MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_materiil }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_roda_empat_materiil }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_roda_empat_materiil, $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_materiil) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_roda_empat_materiil, $tahunPertama->kecelakaan_lalin_tabrak_roda_empat_materiil) }}</td>
 			<td>Rp</td>
         </tr>
         <tr>
@@ -3495,8 +4055,8 @@
             <td>a. JUMLAH KEJADIAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_jumlah_kejadian }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_tidak_bermotor_jumlah_kejadian }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_tidak_bermotor_jumlah_kejadian, $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_jumlah_kejadian) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_tidak_bermotor_jumlah_kejadian, $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_jumlah_kejadian) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3504,8 +4064,8 @@
             <td>b. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_korban_meninggal }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_tidak_bermotor_korban_meninggal }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_tidak_bermotor_korban_meninggal, $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_korban_meninggal) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_tidak_bermotor_korban_meninggal, $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_korban_meninggal) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3513,8 +4073,8 @@
             <td>c. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_berat }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_berat }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_berat, $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_berat) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_berat, $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_berat) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3522,8 +4082,8 @@
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_ringan }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_ringan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_ringan) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_ringan) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3531,8 +4091,8 @@
             <td>e. MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_materiil }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_tabrak_tidak_bermotor_materiil }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_tabrak_tidak_bermotor_materiil, $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_materiil) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_tabrak_tidak_bermotor_materiil, $tahunPertama->kecelakaan_lalin_tabrak_tidak_bermotor_materiil) }}</td>
 			<td>Rp</td>
         </tr>
         <tr>
@@ -3555,8 +4115,8 @@
             <td>a. JUMLAH KEJADIAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_perlintasan_ka_jumlah_kejadian }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_perlintasan_ka_jumlah_kejadian }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_perlintasan_ka_jumlah_kejadian, $tahunPertama->kecelakaan_lalin_perlintasan_ka_jumlah_kejadian) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_perlintasan_ka_jumlah_kejadian, $tahunPertama->kecelakaan_lalin_perlintasan_ka_jumlah_kejadian) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3564,8 +4124,8 @@
             <td>b. BERPALANG PINTU</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_perlintasan_ka_berpalang_pintu }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_perlintasan_ka_berpalang_pintu }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_perlintasan_ka_berpalang_pintu, $tahunPertama->kecelakaan_lalin_perlintasan_ka_berpalang_pintu) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_perlintasan_ka_berpalang_pintu, $tahunPertama->kecelakaan_lalin_perlintasan_ka_berpalang_pintu) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3573,8 +4133,8 @@
             <td>c. TIDAK BERPALANG PINTU</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_perlintasan_ka_tidak_berpalang_pintu }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_perlintasan_ka_tidak_berpalang_pintu }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_perlintasan_ka_tidak_berpalang_pintu, $tahunPertama->kecelakaan_lalin_perlintasan_ka_tidak_berpalang_pintu) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_perlintasan_ka_tidak_berpalang_pintu, $tahunPertama->kecelakaan_lalin_perlintasan_ka_tidak_berpalang_pintu) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3582,8 +4142,8 @@
             <td>d. KORBAN LUKA RINGAN</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_perlintasan_ka_korban_luka_ringan }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_perlintasan_ka_korban_luka_ringan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_perlintasan_ka_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_perlintasan_ka_korban_luka_ringan) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_perlintasan_ka_korban_luka_ringan, $tahunPertama->kecelakaan_lalin_perlintasan_ka_korban_luka_ringan) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3591,8 +4151,8 @@
             <td>e. KORBAN LUKA BERAT</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_perlintasan_ka_korban_luka_berat }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_perlintasan_ka_korban_luka_berat }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_perlintasan_ka_korban_luka_berat, $tahunPertama->kecelakaan_lalin_perlintasan_ka_korban_luka_berat) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_perlintasan_ka_korban_luka_berat, $tahunPertama->kecelakaan_lalin_perlintasan_ka_korban_luka_berat) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3600,8 +4160,8 @@
             <td>f. KORBAN MENINGGAL DUNIA</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_perlintasan_ka_korban_meninggal }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_perlintasan_ka_korban_meninggal }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_perlintasan_ka_korban_meninggal, $tahunPertama->kecelakaan_lalin_perlintasan_ka_korban_meninggal) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_perlintasan_ka_korban_meninggal, $tahunPertama->kecelakaan_lalin_perlintasan_ka_korban_meninggal) }}</td>
 			<td>Orang</td>
         </tr>
         <tr>
@@ -3609,8 +4169,8 @@
             <td>g. MATERIIL</td>
             <td>{{ $tahunPertama->kecelakaan_lalin_perlintasan_ka_materiil }}</td>
             <td>{{ $tahunKedua->kecelakaan_lalin_perlintasan_ka_materiil }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_lalin_perlintasan_ka_materiil, $tahunPertama->kecelakaan_lalin_perlintasan_ka_materiil) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_lalin_perlintasan_ka_materiil, $tahunPertama->kecelakaan_lalin_perlintasan_ka_materiil) }}</td>
 			<td>Rp</td>
         </tr>
         <tr>
@@ -3633,8 +4193,8 @@
             <td>a. KECELAKAAN KERETA API</td>
             <td>{{ $tahunPertama->kecelakaan_transportasi_kereta_api }}</td>
             <td>{{ $tahunKedua->kecelakaan_transportasi_kereta_api }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_transportasi_kereta_api, $tahunPertama->kecelakaan_transportasi_kereta_api) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_transportasi_kereta_api, $tahunPertama->kecelakaan_transportasi_kereta_api) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3642,8 +4202,8 @@
             <td>b. KECELAKAAN LAUT / PERAIRAN</td>
             <td>{{ $tahunPertama->kecelakaan_transportasi_laut_perairan }}</td>
             <td>{{ $tahunKedua->kecelakaan_transportasi_laut_perairan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_transportasi_laut_perairan, $tahunPertama->kecelakaan_transportasi_laut_perairan) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_transportasi_laut_perairan, $tahunPertama->kecelakaan_transportasi_laut_perairan) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3651,8 +4211,8 @@
             <td>c. KECELAKAAN UDARA</td>
             <td>{{ $tahunPertama->kecelakaan_transportasi_udara }}</td>
             <td>{{ $tahunKedua->kecelakaan_transportasi_udara }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kecelakaan_transportasi_udara, $tahunPertama->kecelakaan_transportasi_udara) }}</td>
+			<td>{{ percentageValue($tahunKedua->kecelakaan_transportasi_udara, $tahunPertama->kecelakaan_transportasi_udara) }}</td>
 			<td>Perkara</td>
         </tr>
         <tr>
@@ -3668,7 +4228,7 @@
                 $tahunKedua->kecelakaan_transportasi_kereta_api,
                 $tahunKedua->kecelakaan_transportasi_laut_perairan,
                 $tahunKedua->kecelakaan_transportasi_udara
-                ]) }}
+            ]) }}
         </tr>
         <tr>
             <td></td>
@@ -3708,8 +4268,8 @@
             <td>1) MELALUI MEDIA CETAK</td>
             <td>{{ $tahunPertama->penlu_melalui_media_cetak }}</td>
             <td>{{ $tahunKedua->penlu_melalui_media_cetak }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->penlu_melalui_media_cetak, $tahunPertama->penlu_melalui_media_cetak) }}</td>
+			<td>{{ percentageValue($tahunKedua->penlu_melalui_media_cetak, $tahunPertama->penlu_melalui_media_cetak) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3717,8 +4277,8 @@
             <td>2) MELALUI MEDIA ELEKTRONIK</td>
             <td>{{ $tahunPertama->penlu_melalui_media_elektronik }}</td>
             <td>{{ $tahunKedua->penlu_melalui_media_elektronik }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->penlu_melalui_media_elektronik, $tahunPertama->penlu_melalui_media_elektronik) }}</td>
+			<td>{{ percentageValue($tahunKedua->penlu_melalui_media_elektronik, $tahunPertama->penlu_melalui_media_elektronik) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3726,8 +4286,8 @@
             <td>3) TEMPAT KERAMAIAN</td>
             <td>{{ $tahunPertama->penlu_melalui_tempat_keramaian }}</td>
             <td>{{ $tahunKedua->penlu_melalui_tempat_keramaian }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->penlu_melalui_tempat_keramaian, $tahunPertama->penlu_melalui_tempat_keramaian) }}</td>
+			<td>{{ percentageValue($tahunKedua->penlu_melalui_tempat_keramaian, $tahunPertama->penlu_melalui_tempat_keramaian) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3735,8 +4295,8 @@
             <td>4) TEMPAT ISTIRAHAT</td>
             <td>{{ $tahunPertama->penlu_melalui_tempat_istirahat }}</td>
             <td>{{ $tahunKedua->penlu_melalui_tempat_istirahat }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->penlu_melalui_tempat_istirahat, $tahunPertama->penlu_melalui_tempat_istirahat) }}</td>
+			<td>{{ percentageValue($tahunKedua->penlu_melalui_tempat_istirahat, $tahunPertama->penlu_melalui_tempat_istirahat) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3744,8 +4304,8 @@
             <td>5) DAERAH RAWAN LAKA &amp; LANGGAR</td>
             <td>{{ $tahunPertama->penlu_melalui_daerah_rawan_laka_dan_langgar }}</td>
             <td>{{ $tahunKedua->penlu_melalui_daerah_rawan_laka_dan_langgar }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->penlu_melalui_daerah_rawan_laka_dan_langgar, $tahunPertama->penlu_melalui_daerah_rawan_laka_dan_langgar) }}</td>
+			<td>{{ percentageValue($tahunKedua->penlu_melalui_daerah_rawan_laka_dan_langgar, $tahunPertama->penlu_melalui_daerah_rawan_laka_dan_langgar) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3765,8 +4325,8 @@
                 $tahunKedua->penlu_melalui_tempat_istirahat,
                 $tahunKedua->penlu_melalui_daerah_rawan_laka_dan_langgar
                 ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->xxxxxxxx, $tahunPertama->xxxxxxxx) }}</td>
+			<td>{{ percentageValue($tahunKedua->xxxxxxxx, $tahunPertama->xxxxxxxx) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3789,8 +4349,8 @@
             <td>1) SPANDUK</td>
             <td>{{ $tahunPertama->penyebaran_pemasangan_spanduk }}</td>
             <td>{{ $tahunKedua->penyebaran_pemasangan_spanduk }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->penyebaran_pemasangan_spanduk, $tahunPertama->penyebaran_pemasangan_spanduk) }}</td>
+			<td>{{ percentageValue($tahunKedua->penyebaran_pemasangan_spanduk, $tahunPertama->penyebaran_pemasangan_spanduk) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3798,8 +4358,8 @@
             <td>2) LEAFLET</td>
             <td>{{ $tahunPertama->penyebaran_pemasangan_leaflet }}</td>
             <td>{{ $tahunKedua->penyebaran_pemasangan_leaflet }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->penyebaran_pemasangan_leaflet, $tahunPertama->penyebaran_pemasangan_leaflet) }}</td>
+			<td>{{ percentageValue($tahunKedua->penyebaran_pemasangan_leaflet, $tahunPertama->penyebaran_pemasangan_leaflet) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3807,8 +4367,8 @@
             <td>3) STICKER</td>
             <td>{{ $tahunPertama->penyebaran_pemasangan_sticker }}</td>
             <td>{{ $tahunKedua->penyebaran_pemasangan_sticker }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->penyebaran_pemasangan_sticker, $tahunPertama->penyebaran_pemasangan_sticker) }}</td>
+			<td>{{ percentageValue($tahunKedua->penyebaran_pemasangan_sticker, $tahunPertama->penyebaran_pemasangan_sticker) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3816,19 +4376,19 @@
             <td>4) BILBOARD</td>
             <td>{{ $tahunPertama->penyebaran_pemasangan_bilboard }}</td>
             <td>{{ $tahunKedua->penyebaran_pemasangan_bilboard }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->penyebaran_pemasangan_bilboard, $tahunPertama->penyebaran_pemasangan_bilboard) }}</td>
+			<td>{{ percentageValue($tahunKedua->penyebaran_pemasangan_bilboard, $tahunPertama->penyebaran_pemasangan_bilboard) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center; font-weight: bold;">JUMLAH</td>
             <td style="font-weight: bold;">{{ calculation([
-                    $tahunPertama->penyebaran_pemasangan_spanduk,
-                    $tahunPertama->penyebaran_pemasangan_leaflet,
-                    $tahunPertama->penyebaran_pemasangan_sticker,
-                    $tahunPertama->penyebaran_pemasangan_bilboard
-                ]) }}
+                $tahunPertama->penyebaran_pemasangan_spanduk,
+                $tahunPertama->penyebaran_pemasangan_leaflet,
+                $tahunPertama->penyebaran_pemasangan_sticker,
+                $tahunPertama->penyebaran_pemasangan_bilboard
+            ]) }}
             </td>
             <td style="font-weight: bold;">{{ calculation([
                 $tahunKedua->penyebaran_pemasangan_spanduk,
@@ -3857,8 +4417,8 @@
             <td>1) POLISI SAHABAT ANAK</td>
             <td>{{ $tahunPertama->polisi_sahabat_anak }}</td>
             <td>{{ $tahunKedua->polisi_sahabat_anak }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->polisi_sahabat_anak, $tahunPertama->polisi_sahabat_anak) }}</td>
+			<td>{{ percentageValue($tahunKedua->polisi_sahabat_anak, $tahunPertama->polisi_sahabat_anak) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3866,8 +4426,8 @@
             <td>2) CARA AMAN SEKOLAH</td>
             <td>{{ $tahunPertama->cara_aman_sekolah }}</td>
             <td>{{ $tahunKedua->cara_aman_sekolah }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->cara_aman_sekolah, $tahunPertama->cara_aman_sekolah) }}</td>
+			<td>{{ percentageValue($tahunKedua->cara_aman_sekolah, $tahunPertama->cara_aman_sekolah) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3875,8 +4435,8 @@
             <td>3) PATROLI KEAMANAN SEKOLAH</td>
             <td>{{ $tahunPertama->patroli_keamanan_sekolah }}</td>
             <td>{{ $tahunKedua->patroli_keamanan_sekolah }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->patroli_keamanan_sekolah, $tahunPertama->patroli_keamanan_sekolah) }}</td>
+			<td>{{ percentageValue($tahunKedua->patroli_keamanan_sekolah, $tahunPertama->patroli_keamanan_sekolah) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3884,8 +4444,8 @@
             <td>4) PRAMUKA SAKA BHAYANGKARA KRIDA LALU LINTAS</td>
             <td>{{ $tahunPertama->pramuka_bhayangkara_krida_lalu_lintas }}</td>
             <td>{{ $tahunKedua->pramuka_bhayangkara_krida_lalu_lintas }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->pramuka_bhayangkara_krida_lalu_lintas, $tahunPertama->pramuka_bhayangkara_krida_lalu_lintas) }}</td>
+			<td>{{ percentageValue($tahunKedua->pramuka_bhayangkara_krida_lalu_lintas, $tahunPertama->pramuka_bhayangkara_krida_lalu_lintas) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3896,16 +4456,36 @@
                 $tahunPertama->cara_aman_sekolah,
                 $tahunPertama->patroli_keamanan_sekolah,
                 $tahunPertama->pramuka_bhayangkara_krida_lalu_lintas
-                ]) }}</td>
-               <td style="font-weight: bold;">{{ calculation([
+            ]) }}</td>
+            <td style="font-weight: bold;">{{ calculation([
                 $tahunKedua->polisi_sahabat_anak,
                 $tahunKedua->cara_aman_sekolah,
                 $tahunKedua->patroli_keamanan_sekolah,
                 $tahunKedua->pramuka_bhayangkara_krida_lalu_lintas
-                ]) }}
+            ]) }}
             </td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->polisi_sahabat_anak,
+                $tahunKedua->cara_aman_sekolah,
+                $tahunKedua->patroli_keamanan_sekolah,
+                $tahunKedua->pramuka_bhayangkara_krida_lalu_lintas
+            ]), calculation([
+                $tahunPertama->polisi_sahabat_anak,
+                $tahunPertama->cara_aman_sekolah,
+                $tahunPertama->patroli_keamanan_sekolah,
+                $tahunPertama->pramuka_bhayangkara_krida_lalu_lintas
+            ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->polisi_sahabat_anak,
+                $tahunKedua->cara_aman_sekolah,
+                $tahunKedua->patroli_keamanan_sekolah,
+                $tahunKedua->pramuka_bhayangkara_krida_lalu_lintas
+            ]), calculation([
+                $tahunPertama->polisi_sahabat_anak,
+                $tahunPertama->cara_aman_sekolah,
+                $tahunPertama->patroli_keamanan_sekolah,
+                $tahunPertama->pramuka_bhayangkara_krida_lalu_lintas
+            ])) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3923,17 +4503,13 @@
             <td style="background-color: #c6efcd;"></td>
             <td style="background-color: #c6efcd;"></td>
         </tr>
-
-
-
-
         <tr>
             <td></td>
             <td>1) POLICE GOES TO CAMPUS</td>
             <td>{{ $tahunPertama->police_goes_to_campus }}</td>
             <td>{{ $tahunKedua->police_goes_to_campus }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->police_goes_to_campus, $tahunPertama->police_goes_to_campus) }}</td>
+			<td>{{ percentageValue($tahunKedua->police_goes_to_campus, $tahunPertama->police_goes_to_campus) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3941,8 +4517,8 @@
             <td>2) SAFETY RIDING &amp; DRIVING</td>
             <td>{{ $tahunPertama->safety_riding_driving }}</td>
             <td>{{ $tahunKedua->safety_riding_driving }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->safety_riding_driving, $tahunPertama->safety_riding_driving) }}</td>
+			<td>{{ percentageValue($tahunKedua->safety_riding_driving, $tahunPertama->safety_riding_driving) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3950,8 +4526,8 @@
             <td>3) FORUM LALU LINTAS &amp; ANGKUTAN JALAN</td>
             <td>{{ $tahunPertama->forum_lalu_lintas_angkutan_umum }}</td>
             <td>{{ $tahunKedua->forum_lalu_lintas_angkutan_umum }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->forum_lalu_lintas_angkutan_umum, $tahunPertama->forum_lalu_lintas_angkutan_umum) }}</td>
+			<td>{{ percentageValue($tahunKedua->forum_lalu_lintas_angkutan_umum, $tahunPertama->forum_lalu_lintas_angkutan_umum) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3959,8 +4535,8 @@
             <td>4) KAMPANYE KESELAMATAN</td>
             <td>{{ $tahunPertama->kampanye_keselamatan }}</td>
             <td>{{ $tahunKedua->kampanye_keselamatan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->kampanye_keselamatan, $tahunPertama->kampanye_keselamatan) }}</td>
+			<td>{{ percentageValue($tahunKedua->kampanye_keselamatan, $tahunPertama->kampanye_keselamatan) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3968,8 +4544,8 @@
             <td>5) SEKOLAH MENGEMUDI</td>
             <td>{{ $tahunPertama->sekolah_mengemudi }}</td>
             <td>{{ $tahunKedua->sekolah_mengemudi }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->sekolah_mengemudi, $tahunPertama->sekolah_mengemudi) }}</td>
+			<td>{{ percentageValue($tahunKedua->sekolah_mengemudi, $tahunPertama->sekolah_mengemudi) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3977,8 +4553,8 @@
             <td>6) TAMAN LALU LINTAS</td>
             <td>{{ $tahunPertama->taman_lalu_lintas }}</td>
             <td>{{ $tahunKedua->taman_lalu_lintas }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->taman_lalu_lintas, $tahunPertama->taman_lalu_lintas) }}</td>
+			<td>{{ percentageValue($tahunKedua->taman_lalu_lintas, $tahunPertama->taman_lalu_lintas) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -3986,8 +4562,8 @@
             <td>7) GLOBAL ROAD SAFETY PARTNERSHIP ACTION</td>
             <td>{{ $tahunPertama->global_road_safety_partnership_action }}</td>
             <td>{{ $tahunKedua->global_road_safety_partnership_action }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->global_road_safety_partnership_action, $tahunPertama->global_road_safety_partnership_action) }}</td>
+			<td>{{ percentageValue($tahunKedua->global_road_safety_partnership_action, $tahunPertama->global_road_safety_partnership_action) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -4011,8 +4587,40 @@
                 $tahunKedua->taman_lalu_lintas,
                 $tahunKedua->global_road_safety_partnership_action
                 ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->police_goes_to_campus,
+                $tahunKedua->safety_riding_driving,
+                $tahunKedua->forum_lalu_lintas_angkutan_umum,
+                $tahunKedua->kampanye_keselamatan,
+                $tahunKedua->sekolah_mengemudi,
+                $tahunKedua->taman_lalu_lintas,
+                $tahunKedua->global_road_safety_partnership_action
+                ]), calculation([
+                $tahunPertama->police_goes_to_campus,
+                $tahunPertama->safety_riding_driving,
+                $tahunPertama->forum_lalu_lintas_angkutan_umum,
+                $tahunPertama->kampanye_keselamatan,
+                $tahunPertama->sekolah_mengemudi,
+                $tahunPertama->taman_lalu_lintas,
+                $tahunPertama->global_road_safety_partnership_action
+                ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->police_goes_to_campus,
+                $tahunKedua->safety_riding_driving,
+                $tahunKedua->forum_lalu_lintas_angkutan_umum,
+                $tahunKedua->kampanye_keselamatan,
+                $tahunKedua->sekolah_mengemudi,
+                $tahunKedua->taman_lalu_lintas,
+                $tahunKedua->global_road_safety_partnership_action
+                ]), calculation([
+                $tahunPertama->police_goes_to_campus,
+                $tahunPertama->safety_riding_driving,
+                $tahunPertama->forum_lalu_lintas_angkutan_umum,
+                $tahunPertama->kampanye_keselamatan,
+                $tahunPertama->sekolah_mengemudi,
+                $tahunPertama->taman_lalu_lintas,
+                $tahunPertama->global_road_safety_partnership_action
+                ])) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -4044,8 +4652,8 @@
             <td>a. PENGATURAN</td>
             <td>{{ $tahunPertama->giat_lantas_pengaturan }}</td>
             <td>{{ $tahunKedua->giat_lantas_pengaturan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->tahunPertama, $tahunPertama->tahunPertama) }}</td>
+			<td>{{ percentageValue($tahunKedua->tahunPertama, $tahunPertama->tahunPertama) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -4053,8 +4661,8 @@
             <td>b. PENJAGAAN</td>
             <td>{{ $tahunPertama->giat_lantas_penjagaan }}</td>
             <td>{{ $tahunKedua->giat_lantas_penjagaan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->giat_lantas_penjagaan, $tahunPertama->giat_lantas_penjagaan) }}</td>
+			<td>{{ percentageValue($tahunKedua->giat_lantas_penjagaan, $tahunPertama->giat_lantas_penjagaan) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -4062,8 +4670,8 @@
             <td>c. PENGAWALAN</td>
             <td>{{ $tahunPertama->giat_lantas_pengawalan }}</td>
             <td>{{ $tahunKedua->giat_lantas_pengawalan }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->giat_lantas_pengawalan, $tahunPertama->giat_lantas_pengawalan) }}</td>
+			<td>{{ percentageValue($tahunKedua->giat_lantas_pengawalan, $tahunPertama->giat_lantas_pengawalan) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -4071,8 +4679,8 @@
             <td>d. PATROLI</td>
             <td>{{ $tahunPertama->giat_lantas_patroli }}</td>
             <td>{{ $tahunKedua->giat_lantas_patroli }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+			<td>{{ percentageStatus($tahunKedua->giat_lantas_patroli, $tahunPertama->giat_lantas_patroli) }}</td>
+			<td>{{ percentageValue($tahunKedua->giat_lantas_patroli, $tahunPertama->giat_lantas_patroli) }}</td>
 			<td>Kali</td>
         </tr>
         <tr>
@@ -4083,15 +4691,35 @@
                $tahunPertama->giat_lantas_penjagaan,
                $tahunPertama->giat_lantas_pengawalan,
                $tahunPertama->giat_lantas_patroli
-                ]) }}</td>
+            ]) }}</td>
             <td style="font-weight: bold;">{{ calculation([
                 $tahunKedua->giat_lantas_pengaturan,
                 $tahunKedua->giat_lantas_penjagaan,
                 $tahunKedua->giat_lantas_pengawalan,
                 $tahunKedua->giat_lantas_patroli
-                 ]) }}</td>
-			<td>xxxxxxxxx</td>
-			<td>xxxxxxxxx</td>
+            ]) }}</td>
+			<td>{{ percentageStatus(calculation([
+                $tahunKedua->giat_lantas_pengaturan,
+                $tahunKedua->giat_lantas_penjagaan,
+                $tahunKedua->giat_lantas_pengawalan,
+                $tahunKedua->giat_lantas_patroli
+            ]), calculation([
+               $tahunPertama->giat_lantas_pengaturan,
+               $tahunPertama->giat_lantas_penjagaan,
+               $tahunPertama->giat_lantas_pengawalan,
+               $tahunPertama->giat_lantas_patroli
+            ])) }}</td>
+			<td>{{ percentageValue(calculation([
+                $tahunKedua->giat_lantas_pengaturan,
+                $tahunKedua->giat_lantas_penjagaan,
+                $tahunKedua->giat_lantas_pengawalan,
+                $tahunKedua->giat_lantas_patroli
+            ]), calculation([
+               $tahunPertama->giat_lantas_pengaturan,
+               $tahunPertama->giat_lantas_penjagaan,
+               $tahunPertama->giat_lantas_pengawalan,
+               $tahunPertama->giat_lantas_patroli
+            ])) }}</td>
 			<td>Kali</td>
         </tr>
     </tbody>
