@@ -54,4 +54,9 @@ class KorlantasRekapController extends Controller
     {
         return view('operation.polda_custom');
     }
+
+    public function getCustomName($uuid)
+    {
+        return $uuid;
+    }
 }

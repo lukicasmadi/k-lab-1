@@ -293,16 +293,21 @@
                 },
                 {
                     data: 'name',
+                    render: function(data, type, row, meta) {
+                        return `
+                            <a href="`+route('get_data_polda_custom_name', row.uuid)+`" id="addCustom" idval="`+row.uuid+`">`+data+`</a>
+                        `;
+                    },
                 },
                 {
                     data: 'operation_type',
-                    render: function(data, type, row) {
+                    render: function(data, type, row, meta) {
                         return limitTableText(data, 20);
                     },
                 },
                 {
                     data: 'desc',
-                    render: function(data, type, row) {
+                    render: function(data, type, row, meta) {
                         return limitTableText(data, 50);
                     },
                     sortable: false
@@ -326,6 +331,22 @@
                     sortable: false,
                 }
             ]
+        })
+
+        $('body').on('click', '#addCustom', function(e) {
+            e.preventDefault()
+            var uuid = $(this).attr("idval")
+
+            axios.get(route('get_data_polda_custom_name', uuid)).then(function(response) {
+                if(response.status == 200) {
+                    console.log(response.data);
+                } else {
+                    swal("Not found", error.response.data.output, "error")
+                }
+            })
+            .catch(function(error) {
+                swal("Get data failed! Maybe you miss something", error.response.data.output, "error")
+            })
         })
 
         $('#tbl_operation tbody').on('click', '.delete', function(e) {
