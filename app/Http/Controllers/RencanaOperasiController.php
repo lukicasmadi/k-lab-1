@@ -13,10 +13,10 @@ use App\Http\Requests\RencanaOperasiUpdateRequest;
 
 class RencanaOperasiController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('can-create-plan')->only('create', 'store', 'edit', 'update');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('can-create-plan')->only('create', 'store', 'edit', 'update', 'customAlias');
+    // }
 
     public function rencana_operasi_by_uuid($uuid)
     {
@@ -116,10 +116,5 @@ class RencanaOperasiController extends Controller
                 'output' => 'Your data has been deleted.',
             ], 200);
         }
-    }
-
-    public function customAlias()
-    {
-        //
     }
 }

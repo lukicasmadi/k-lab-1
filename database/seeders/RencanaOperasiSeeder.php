@@ -20,10 +20,11 @@ class RencanaOperasiSeeder extends Seeder
         RencanaOperasi::withoutEvents(function () {
             $now = Carbon::now();
 
-            $pl = "Operasi Patuh Lalu Lintas";
+            $pl = "Operasi Patuh";
             RencanaOperasi::create([
                 'uuid' => genUuid(),
                 'name' => $pl,
+                'operation_type' => "Operasi Patuh 2021",
                 'slug_name' => Str::slug($pl, '-'),
                 'desc' => "Operasi untuk menindak pengguna roda 2 di jalan raya yang tidak membawa kelengkapan SIM dan STNK",
                 'start_date' => now(),
@@ -36,6 +37,7 @@ class RencanaOperasiSeeder extends Seeder
             RencanaOperasi::create([
                 'uuid' => genUuid(),
                 'name' => $ketupat,
+                'operation_type' => "Operasi Ketupat 2021",
                 'slug_name' => Str::slug($ketupat, '-'),
                 'desc' => "Operasi untuk mengatur arus lalu lintas selama bulan puasa",
                 'start_date' => "2021-04-01",

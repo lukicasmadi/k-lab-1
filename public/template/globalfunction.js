@@ -2,7 +2,15 @@ function ifEmptyData(value) {
     if (_.isEmpty(value)) {
         return '-'
     } else {
-        return _.truncate(value, { 'length': 75, 'separator': '...' })
+        return _.truncate(value, { 'length': 50, 'separator': '...' })
+    }
+}
+
+function limitTableText(value, lenght) {
+    if (_.isEmpty(value)) {
+        return '-'
+    } else {
+        return _.truncate(value, { 'length': lenght, 'separator': '...' })
     }
 }
 

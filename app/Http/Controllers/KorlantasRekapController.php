@@ -49,4 +49,9 @@ class KorlantasRekapController extends Controller
         $model = KorlantasRekap::with(['rencaraOperasi', 'poldaData'])->whereUuid($uuid)->firstOrFail();
         return $model;
     }
+
+    public function polda_custom_name()
+    {
+        return view('operation.polda_custom');
+    }
 }

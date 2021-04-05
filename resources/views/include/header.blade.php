@@ -73,8 +73,8 @@
                         @endrole
 
                         @role('access_daerah')
-                            <li class="menu single-menu {{ request()->is('custom_alias') ? 'active' : '' }}">
-                                <a href="{{ route('custom_alias') }}">
+                            <li class="menu single-menu {{ request()->is('polda_custom_name') ? 'active' : '' }}">
+                                <a href="{{ route('polda_custom_name') }}">
                                     <div>
                                         <span>RENCANA OPERASI</span>
                                     </div>

@@ -26,17 +26,6 @@
                         </ul>
                     </div>
                 @endif
-                <div class="col-md-12 text-left mb-3">
-                    <div class="text-left">
-                        <div class="row">
-                            <a id="btn-add-notes" class="btn add-operasi" href="javascript:void(0);"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                            <path id="add_to_queue" d="M16,22H4a2,2,0,0,1-2-2V8H4V20H16Zm4-4H8a2,2,0,0,1-2-2V4A2,2,0,0,1,8,2H20a2,2,0,0,1,2,2V16A2,2,0,0,1,20,18ZM8,4V16H20V4Zm7,10H13V11H10V9h3V6h2V9h3v2H15Z" transform="translate(-2 -2)" fill="#fff"/>
-                            </svg>
-                            Tambah Rencana Operasi
-                            </a>
-                        </div>
-                    </div>
-                </div>
                 <div class="table-responsive">
                     <table id="tbl_operation" class="table">
                         <thead>
@@ -48,7 +37,6 @@
                                 <th>Mulai</th>
                                 <th>Selesai</th>
                                 <th>Lihat</th>
-                                <th>Pilihan</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -219,9 +207,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <input type="button" name="btnRedirectEdit" id="btnRedirectEdit" class="btn btnBlue" value="EDIT">
-                    </div>
                 </div>
             </div>
         </div>
@@ -312,13 +297,13 @@
                 {
                     data: 'operation_type',
                     render: function(data, type, row) {
-                        return ifEmptyData(data);
+                        return limitTableText(data, 20);
                     },
                 },
                 {
                     data: 'desc',
                     render: function(data, type, row) {
-                        return ifEmptyData(data);
+                        return limitTableText(data, 50);
                     },
                     sortable: false
                 },
@@ -334,18 +319,6 @@
                         return `
                         <div class="icon-container">
                             <a href="#" class="viewData" idval="`+data+`"><i class="far fa-eye"></i></a>
-                        </div>
-                        `;
-                    },
-                    searchable: false,
-                    sortable: false,
-                },
-                {
-                    data: 'uuid',
-                    render: function(data, type, row) {
-                        return `
-                        <div class="icon-container">
-                            <a class="editData" idval="`+data+`" href="#"><i class="far fa-edit"></i></a>
                         </div>
                         `;
                     },

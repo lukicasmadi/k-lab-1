@@ -67,7 +67,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/operation-plan/download/{filePath}', 'RencanaOperasiController@download')->name('downloadOperationPlan');
     Route::post('/operation-plan/create-new', 'RencanaOperasiController@store')->name('create_rencana_operasi_new');
     Route::post('/operation-plan/update-new', 'RencanaOperasiController@update')->name('edit_rencana_operasi_new');
-    Route::post('/operation-plan/custom', 'RencanaOperasiController@customAlias')->name('custom_alias');
 
     Route::get('/report/daily', 'ReportController@dailyAllPolda')->name('report_daily_all_polda');
     Route::post('/report/daily/process', 'ReportController@dailyProcess')->name('report_daily_process');
@@ -155,11 +154,12 @@ Route::group(['middleware' => 'auth'], function () {
         Route::delete('/access/polda/{id}/delete', 'UserHasPoldaController@polda_access_delete')->name('polda_access_delete');
     });
 
-    Route::get('profile', 'UserController@profile')->name('profile');
-    Route::post('profile/process', 'UserController@profile_process')->name('profile_process');
-    Route::get('change-password', 'UserController@changePassword')->name('change_password');
-    Route::post('change-password/process', 'UserController@change_password_process')->name('change_password_process');
+    Route::get('/profile', 'UserController@profile')->name('profile');
+    Route::post('/profile/process', 'UserController@profile_process')->name('profile_process');
+    Route::get('/change-password', 'UserController@changePassword')->name('change_password');
+    Route::post('/change-password/process', 'UserController@change_password_process')->name('change_password_process');
     Route::post('/korlantas-rekap/daily/create', 'KorlantasRekapController@store')->name('korlantas_rekap_store');
+    Route::get('/custom-name', 'KorlantasRekapController@polda_custom_name')->name('polda_custom_name');
 
     Route::group(['prefix' => 'data'], function () {
         Route::get('/category', 'CategoryController@data')->name('category_data');
