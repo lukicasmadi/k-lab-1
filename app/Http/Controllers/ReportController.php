@@ -24,7 +24,7 @@ class ReportController extends Controller
 
     public function __construct()
     {
-        // $this->middleware('can-create-plan')->only('dailyAllPolda', 'poldaUuid', 'comparison');
+        // $this->middleware('can-create-plan')->only('dailyAllPolda', 'byId', 'comparison', 'dailyProcess', 'comparisonProcess', 'downloadExcel', 'comparisonGetData');
     }
 
     public function byId($uuid)
@@ -39,13 +39,6 @@ class ReportController extends Controller
 
     public function dailyAllPolda()
     {
-        // $polda = Polda::select("id", "uuid", "name", "short_name", "logo")
-        //     ->with(['dailyInput' => function($query) {
-        //         $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
-        //     }])
-        //     ->orderBy("name", "asc")
-        //     ->get();
-
         $listPolda = Polda::orderBy('id', 'asc')->pluck("name", "id");
 
         $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");

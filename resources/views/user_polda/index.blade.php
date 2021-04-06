@@ -14,8 +14,8 @@
     @endif
     <div class="row layout-top-spacing" id="cancel-row">
 
-        <div class="col-xl-6 col-lg-12 col-sm-12  layout-spacing">
-            <div class="widget-content widget-content-area">
+        <div class="col-xl-6 col-lg-6 col-sm-12 mb-25 layout-spacing">
+            <div class="widget-content">
                 <div class="table-responsive">
                     <table id="tbl_user_polda" class="table">
                         <thead>
@@ -36,16 +36,7 @@
             <form action="{{ route('polda_access_store') }}" method="POST">
                 @csrf
                 <div class="statbox widget box box-shadow">
-                    {{-- <div class="widget-header">
-                        <div class="row">
-                            <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                <h4>Assign User To <span id="polda_name"></span></h4>
-                            </div>
-                        </div>
-                    </div> --}}
-
                     <div class="widget-content widget-content-area">
-
                         <input type="hidden" name="polda_id" id="polda_id" value="">
 
                         <blockquote class="blockquote">
@@ -70,7 +61,6 @@
                 </div>
             </form>
         </div>
-
     </div>
 </div>
 @endsection
@@ -78,10 +68,7 @@
 @push('library_css')
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/datatables.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/dt-global_style.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/font-icons/fontawesome/css/regular.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/font-icons/fontawesome/css/fontawesome.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/forms/theme-checkbox-radio.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/forms/switches.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/custom.css') }}">
 @endpush
 
@@ -101,13 +88,14 @@ $(document).ready(function() {
         ajax: route('uhp_data'),
         "oLanguage": {
             "oPaginate": {
-                "sPrevious": '<i class="fas fa-arrow-circle-left dtIconSize"></i>',
-                "sNext": '<i class="fas fa-arrow-circle-right dtIconSize"></i>'
+                "sPrevious": '<i class="fas fa-chevron-left dtIconSize"></i>',
+                "sNext": '<i class="fas fa-chevron-right dtIconSize"></i>'
             },
-            "sInfo": "Showing page _PAGE_ of _PAGES_",
-            "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
-            "sSearchPlaceholder": "Search...",
-            "sLengthMenu": "Results :  _MENU_",
+            "sInfo": "",
+            "sInfoFiltered": "",
+            "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> <img src="{{ secure_asset("/img/cloud_down.png") }}">',
+            "sSearchPlaceholder": "CARI DATA...",
+            "sLengthMenu": "",
             "sProcessing": '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>',
         },
         order: [
