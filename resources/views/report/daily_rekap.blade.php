@@ -89,7 +89,7 @@
                                         <div class="col-md-12">
                                             <label class="text-popup">Tahun</label>
                                             <select class="form-control height-form" id="year" name="year">
-                                                <option selected="">-   Pilih Tahun</option>
+                                                <option selected="" value="">-   Pilih Tahun</option>
                                                 @foreach($cleanYear as $key => $val)
                                                     <option value="{{$val}}">{{$val}}</option>
                                                 @endforeach
