@@ -66,6 +66,10 @@
     color: #00adef;
 }
 
+.ubah-change span {
+    color: #fff;
+}
+
 .feather-icon .icon-container {
     cursor: pointer;
 }

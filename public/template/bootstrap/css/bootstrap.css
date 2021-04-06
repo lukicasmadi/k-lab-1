@@ -3205,11 +3205,13 @@ pre code {
 }
 
 .form-control.popoups {
+  background-color: transparent;
   font-size: 13px;
 }
 
 .form-control.popoups.inp-icon{
-  background: #0f455b url(/img/chart.png) no-repeat 100%;
+  background: url(/img/chart.png) no-repeat 100%;
+  background-color: transparent;
   padding-right: 7px;
   background-size: 16px;
   background-origin: content-box;

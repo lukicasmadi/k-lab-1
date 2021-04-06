@@ -35,18 +35,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="table-responsive">
+                <div class="table-responsive mb-5">
                     <table id="tbl_rekap_daily" class="table">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nama Laporan</th>
-                                <th>Polda</th>
-                                <th>Tahun</th>
-                                <th>Nama Operasi</th>
-                                <th>Tanggal Operasi</th>
-                                <th>Lihat</th>
-                                <th>Pilihan</th>
+                                <th width="20%">Nama Laporan</th>
+                                <th width="13%">Polda</th>
+                                <th width="10%">Tahun</th>
+                                <th width="21%">Nama Operasi</th>
+                                <th width="20%">Tanggal Operasi</th>
+                                <th width="6%">Lihat</th>
+                                <th width="10%">Pilihan</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -64,20 +64,23 @@
                             <div class="notes-box">
                                 <div class="notes-content">
                                     <span class="colorblue">REKAP LAPORAN</span>
-                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                    </button>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-popup">
                                         <div class="row imgpopup">
                                             <img src="{{ secure_asset('/img/line_popbottom.png') }}">
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 mb-3">
                                             <label class="text-popup">Nama Laporan</label>
-                                            <input type="text" name="report_name" id="report_name" class="form-control" autocomplete="off">
+                                            <input type="text" name="report_name" id="report_name" class="form-control popoups" autocomplete="off" placeholder="- Tulis jenis operasi yang akan Anda laksanakan">
                                         </div>
                                         <div class="col-md-12">
                                             <label class="text-popup">Pilih Polda</label>
-                                            <select class="form-control height-form" id="polda" name="polda">
+                                            <select class="form-control form-custom height-form" id="polda" name="polda">
                                                 <option selected="selected" value="polda_all">-   Semua Polda</option>
                                                 @foreach($listPolda as $key => $val)
                                                     <option value="{{$key}}">{{$val}}</option>
@@ -86,7 +89,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <label class="text-popup">Tahun</label>
-                                            <select class="form-control height-form" id="year" name="year">
+                                            <select class="form-control form-custom height-form" id="year" name="year">
                                                 <option selected="" value="">-   Pilih Tahun</option>
                                                 @foreach($cleanYear as $key => $val)
                                                     <option value="{{$val}}">{{$val}}</option>
@@ -95,7 +98,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <label class="text-popup">Nama Operasi</label>
-                                            <select class="form-control height-form" id="rencana_operasi_id" name="rencana_operasi_id">
+                                            <select class="form-control form-custom height-form" id="rencana_operasi_id" name="rencana_operasi_id">
                                                 <option selected="selected" value="">-   Pilih operasi yang akan Anda laksanakan</option>
                                                 @foreach($rencanaOperasi as $key => $val)
                                                     <option value="{{$key}}">{{$val}}</option>
@@ -104,11 +107,11 @@
                                         </div>
                                         <div class="col-md-12">
                                             <label class="text-popup">Hari Operasi</label>
-                                            <select class="form-control height-form" id="operation_date" name="operation_date">
+                                            <select class="form-control form-custom height-form" id="operation_date" name="operation_date">
                                                 <option value="semua_hari" selected="selected">-   Semua Hari</option>
                                                 <option value="pilih_hari">-   Pilih Hari</option>
                                             </select>
-                                            <input type="text" name="hari" id="hari" class="form-control d-none">
+                                            <input type="text" name="hari" id="hari" class="form-control popoups inp-icon d-none">
                                         </div>
                                     </div>
                                 </div>
@@ -129,50 +132,45 @@
                         <div class="notes-box">
                             <div class="notes-content">
                                 <span class="colorblue">PREVIEW LAPORAN</span>
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                </button>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-popup">
                                     <div class="row imgpopup">
                                         <img src="{{ secure_asset('/img/line_popbottom.png') }}">
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mb-3">
                                         <label class="text-popup">Laporan</label>
                                         <br>
-                                        <span id="preiew_report_name"></span>
+                                        <span class="colorgray" id="preiew_report_name"></span>
                                     </div>
 
-                                    <span class="divSpace"></span>
-
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mb-3">
                                         <label class="text-popup">Polda</label>
                                         <br>
-                                        <span id="preiew_polda"></span>
+                                        <span class="colorgray" id="preiew_polda"></span>
                                     </div>
 
-                                    <span class="divSpace"></span>
-
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mb-3">
                                         <label class="text-popup">Tahun</label>
                                         <br>
-                                        <span id="preiew_year"></span>
+                                        <span class="colorgray" id="preiew_year"></span>
                                     </div>
 
-                                    <span class="divSpace"></span>
-
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mb-3">
                                         <label class="text-popup">Nama Operasi</label>
                                         <br>
-                                        <span id="preiew_rencana_operasi_id"></span>
+                                        <span class="colorgray" id="preiew_rencana_operasi_id"></span>
                                     </div>
 
-                                    <span class="divSpace"></span>
-
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mb-n2">
                                         <label class="text-popup">Hari Operasi</label>
                                         <br>
-                                        <span id="preiew_operation_date"></span>
-                                        <input type="text" name="hari" id="hari" class="form-control d-none">
+                                        <span class="colorgray" id="preiew_operation_date"></span>
+                                        <input type="text" name="hari" id="hari" class="form-control popoups d-none">
                                     </div>
                                 </div>
                             </div>
@@ -294,7 +292,9 @@ $(document).ready(function () {
                 render: function(data, type, row) {
                     return `
                     <div class="icon-container">
-                        <a href="#" id="btnView" data-id="`+data+`"><i class="far fa-eye"></i></a>
+                        <a href="#" id="btnView" data-id="`+data+`">
+                            <img src="{{ secure_asset('/img/search.png') }}" width="45%">
+                        </a>
                     </div>
                     `;
                 },
@@ -305,8 +305,8 @@ $(document).ready(function () {
                 data: 'uuid',
                 render: function(data, type, row) {
                     return `
-                    <div class="icon-container">
-                        <a href="`+route('report_download_excel', data)+`" id="btnDownload" data-id="`+data+`"><i class="far fa-download"></i></a>
+                    <div class="ubah-change">
+                        <a href="`+route('report_download_excel', data)+`" id="btnDownload" data-id="`+data+`">Unduh</a>
                     </div>
                     `;
                 },
