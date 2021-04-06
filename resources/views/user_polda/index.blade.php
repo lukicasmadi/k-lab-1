@@ -36,33 +36,36 @@
             <form action="{{ route('polda_access_store') }}" method="POST">
                 @csrf
                 <div class="statbox widget box box-shadow">
-                    <div class="widget-header">
+                    {{-- <div class="widget-header">
                         <div class="row">
                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                 <h4>Assign User To <span id="polda_name"></span></h4>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="widget-content widget-content-area">
 
                         <input type="hidden" name="polda_id" id="polda_id" value="">
 
-                        <div id="userList">
-                            <div class="col-xl-12 mx-auto">
-                                <blockquote class="blockquote">
-                                    <p class="d-inline">Pilih data polda untuk memberikan akses ke user</p>
-                                    <small>Administrator</small>
-                                </blockquote>
-                            </div>
+                        <blockquote class="blockquote">
+                            <p class="d-inline">Pilih polda untuk memberikan akses ke user</p>
+                            <small>Administrator</small>
+                        </blockquote>
+
+                        <div class="alert alert-primary d-none" role="alert">
+                            Anda akan memberikan akses polda <span id="polda_name"></span> dengan user dibawah. <br>Pilih salah satu kemudian submit pada tombol dibawah list
                         </div>
 
+                        <div id="userList"></div>
+
                         <input type="submit" class="btn btn-success mb-2 d-none btnSubmit" value="Submit">
+
+                        <br><br>
 
                         <div class="col-md-12 text-center d-none" id="loadingPanel">
                             <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
                         </div>
-
                     </div>
                 </div>
             </form>
@@ -141,7 +144,7 @@ $(document).ready(function() {
         $("#polda_id").val(id)
 
         $("#userList").empty()
-        $("div.alert").hide()
+        $("div.alert").removeClass("d-none")
         $("#userList, .btnSubmit").addClass("d-none")
 
         $("#loadingPanel").removeClass("d-none")

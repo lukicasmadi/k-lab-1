@@ -67,7 +67,7 @@ class UserHasPoldaController extends Controller
             ]);
         }
 
-        flash('User has attached to polda')->success();
+        flash('User berhasil di assign ke polda')->success();
         return redirect()->back();
     }
 }
