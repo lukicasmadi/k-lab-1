@@ -30,4 +30,14 @@ class ComparisonExcelRequest extends FormRequest
             'tanggal' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'operation_id.required' => 'Nama operasi tidak boleh kosong',
+            'tahun_pembanding_pertama.required' => 'Tahun pembanding pertama tidak boleh kosong',
+            'tahun_pembanding_kedua.required' => 'Tahun pembanding kedua tidak boleh kosong',
+            'tanggal.required' => 'Tanggal tidak boleh kosong'
+        ];
+    }
 }

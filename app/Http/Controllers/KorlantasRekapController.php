@@ -85,7 +85,7 @@ class KorlantasRekapController extends Controller
     {
         $pcon = PoldaCustomOperationName::updateOrCreate(
             ['rencana_operasi_id' => request('operation_id'), 'polda_id' => poldaId()],
-            ['alias' => request('alias')]
+            ['alias' => strtoupper(request('alias'))]
         );
 
         return $pcon;

@@ -59,14 +59,21 @@
 
 @push('page_css')
 <link rel="stylesheet" href="{{ secure_asset('template/custom.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/components/custom-sweetalert.css') }}" />
+@endpush
+
+@push('library_js')
+<script src="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
 @endpush
 
 @push('page_js')
-<script>
 
-$(function () {
+<script>
+$(document).ready(function () {
     $("input[type=number]").val("5")
     $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
-});
+    swal("Untuk testing halaman ini akan secara otomatis terisi angka. \nSilahkan edit jika diperlukan", null, "success")
+})
 </script>
 @endpush

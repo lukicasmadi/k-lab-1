@@ -32,4 +32,15 @@ class KorlantasRekapRequest extends FormRequest
             'hari' => 'required_if:operation_date,pilih_hari'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'report_name.required' => 'Nama laporan tidak boleh kosong',
+            'polda.required' => 'Nama polda tidak boleh kosong',
+            'year.required' => 'Tahun tidak boleh kosong',
+            'rencana_operasi_id.required' => 'Nama operasi tidak boleh kosong',
+            'hari.required' => 'Pilihan hari tidak boleh kosong',
+        ];
+    }
 }

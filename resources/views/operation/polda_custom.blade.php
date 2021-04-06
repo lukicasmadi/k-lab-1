@@ -59,6 +59,14 @@
                                 </div>
                                 <div class="row">
                                     <input type="hidden" name="uuid_preview" id="uuid_preview">
+
+                                    <div class="col-md-12">
+                                        <label class="text-popup">Alias Nama Operasi</label><br>
+                                        <span id="alias_name"></span>
+                                    </div>
+
+                                    <span class="divSpace"></span>
+
                                     <div class="col-md-12">
                                         <label class="text-popup">Jenis Operasi Yang Akan Dilaksanakan</label><br>
                                         <span id="view_jenis_operasi"></span>
@@ -105,7 +113,7 @@
                     <div class="modal-body">
                         <div class="notes-box">
                             <div class="notes-content">
-                                <span class="colorblue">ADD ALIAS RENCANA OPERASI</span>
+                                <span class="colorblue">ALIAS RENCANA OPERASI</span>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                                     <div class="row imgpopup">
                                         <img src="{{ secure_asset('/img/line_popbottom.png') }}">
@@ -264,27 +272,36 @@ $('body').on('keypress', '#custom_operation_name', function(e) {
 $('#tbl_operation tbody').on('click', 'a.viewData', function(e) {
     e.preventDefault()
     var uuid = $(this).attr("idval")
-    axios.get(route('rencana_operasi_by_uuid', uuid)).then(function(response) {
-        if(response.status == 200) {
-            if(!response.data.operation_type) {
-                var op = "-"
-            } else {
-                var op = response.data.operation_type
-            }
-            $("#view_jenis_operasi").html(op)
-            $("#view_nama_operasi").html(response.data.name)
-            $("#view_tanggal_mulai").html(response.data.start_date)
-            $("#view_tanggal_selesai").html(response.data.end_date)
-            $("#view_deskripsi").html(response.data.desc)
-            $("#uuid_preview").val(uuid)
-            $('#showRencanaOperasi').modal('show')
+
+    Promise.all([getRencanaOperasi(uuid), getDataCustomName(uuid)])
+    .then(function (response) {
+
+        const rencana_operasi = response[0]
+        const custom_name = response[1]
+
+        if(!rencana_operasi.data.operation_type) {
+            var op = "-"
         } else {
-            swal("Not found", error.response.data.output, "error")
+            var op = rencana_operasi.data.operation_type
         }
-    })
-    .catch(function(error) {
-        swal("Get data failed! Maybe you miss something", error.response.data.output, "error")
+
+        $("#view_jenis_operasi").html(op)
+        $("#view_nama_operasi").html(rencana_operasi.data.name)
+        $("#view_tanggal_mulai").html(rencana_operasi.data.start_date)
+        $("#view_tanggal_selesai").html(rencana_operasi.data.end_date)
+        $("#view_deskripsi").html(rencana_operasi.data.desc)
+        $("#alias_name").html(custom_name.data.alias)
+        $("#uuid_preview").val(uuid)
+        $('#showRencanaOperasi').modal('show')
     })
 })
+
+function getDataCustomName(uuid) {
+    return axios.get(route('rencana_operasi_custom_name', uuid))
+}
+
+function getRencanaOperasi(uuid) {
+    return axios.get(route('rencana_operasi_by_uuid', uuid))
+}
 </script>
 @endpush

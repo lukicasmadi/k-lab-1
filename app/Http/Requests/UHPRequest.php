@@ -34,4 +34,13 @@ class UHPRequest extends FormRequest
             'user_assign' => 'required'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'polda_id.required' => 'Polda belum dipilih',
+            'polda_id.unique' => 'Polda yang dipilih sudah di assign ke user lain',
+            'user_assign.required' => 'User belum dipilih',
+        ];
+    }
 }
