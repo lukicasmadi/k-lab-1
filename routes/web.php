@@ -159,7 +159,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/change-password', 'UserController@changePassword')->name('change_password');
     Route::post('/change-password/process', 'UserController@change_password_process')->name('change_password_process');
     Route::post('/korlantas-rekap/daily/create', 'KorlantasRekapController@store')->name('korlantas_rekap_store');
-    Route::get('/custom-name', 'KorlantasRekapController@polda_custom_name')->name('polda_custom_name');
+    Route::get('/custom-name', 'KorlantasRekapController@polda_custom_name')->name('polda_custom_name'); //route kenapa bermasalah?
     Route::post('/custom-name/store', 'KorlantasRekapController@storeCustomName')->name('post_data_polda_custom_name');
 
     Route::group(['prefix' => 'data'], function () {
@@ -185,6 +185,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/dashboard/polda/mingguan', 'HomeController@weeklyPolda')->name('weeklyPolda');
         Route::get('/dashboard/polda/full', 'HomeController@fullPolda')->name('fullPolda');
         Route::get('/get/rencana-operasi/{uuid}', 'RencanaOperasiController@rencana_operasi_by_uuid')->name('rencana_operasi_by_uuid');
+        Route::get('/get/rencana-operasi/custom-name/{uuid}', 'RencanaOperasiController@rencana_operasi_custom_name')->name('rencana_operasi_custom_name');
         Route::get('/korlantas-rekap/daily', 'KorlantasRekapController@data')->name('korlantas_rekap_data');
         Route::get('/korlantas-rekap/daily/byuuid/{uuid}', 'KorlantasRekapController@byuuid')->name('korlantas_rekap_data_byuuid');
         Route::post('/report/analysis-evaluation/data', 'ReportController@comparisonGetData')->name('comparison_get_data');

@@ -8,19 +8,29 @@ use Illuminate\Http\Request;
 use App\Models\RencanaOperasi;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use App\Models\PoldaCustomOperationName;
 use App\Http\Requests\RencanaOperasiRequest;
 use App\Http\Requests\RencanaOperasiUpdateRequest;
 
 class RencanaOperasiController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('can-create-plan')->only('create', 'store', 'edit', 'update', 'customAlias');
-    // }
+    public function __construct()
+    {
+        $this->middleware('can-create-plan')->only('create', 'store', 'edit', 'update', 'rencana_operasi_custom_name', 'rencana_operasi_by_uuid');
+    }
+
+    public function rencana_operasi_custom_name($uuid)
+    {
+        $data = RencanaOperasi::where("uuid", $uuid)->firstOrFail();
+        $pcon = PoldaCustomOperationName::where('rencana_operasi_id', $data->id)->where('polda_id', poldaId())->first();
+
+        return $pcon;
+    }
 
     public function rencana_operasi_by_uuid($uuid)
     {
         $data = RencanaOperasi::where("uuid", $uuid)->firstOrFail();
+
         return $data;
     }
 
@@ -84,8 +94,8 @@ class RencanaOperasiController extends Controller
         // $end_date = Carbon::parse(ltrim($format[1], " "))->format('Y-m-d');
 
         $data = [
-            'name' => $request->edit_jenis_operasi,
-            'operation_type' => $request->edit_nama_operasi,
+            'name' => strtoupper($request->edit_jenis_operasi),
+            'operation_type' => strtoupper($request->edit_nama_operasi),
             'start_date' => $request->edit_tanggal_mulai,
             'end_date' => $request->edit_tanggal_selesai,
             'desc' => $request->edit_deskripsi,

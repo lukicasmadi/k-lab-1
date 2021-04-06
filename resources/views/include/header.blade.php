@@ -36,19 +36,19 @@
                         </li>
 
                         @hasanyrole('administrator|access_pusat')
-                        <li class="menu single-menu {{
-                            request()->is('operation-plan') ||
-                            request()->is('operation-plan/*') ||
-                            request()->is('operation-onsite') ||
-                            request()->is('operation-onsite/*')
-                            ? 'active' : ''
-                            }}">
-                            <a href="{{ route('rencana_operasi_index') }}">
-                                <div>
-                                    <span>Rencana Operasi</span>
-                                </div>
-                            </a>
-                        </li>
+                            <li class="menu single-menu {{
+                                request()->is('operation-plan') ||
+                                request()->is('operation-plan/*') ||
+                                request()->is('operation-onsite') ||
+                                request()->is('operation-onsite/*')
+                                ? 'active' : ''
+                                }}">
+                                <a href="{{ route('rencana_operasi_index') }}">
+                                    <div>
+                                        <span>Rencana Operasi</span>
+                                    </div>
+                                </a>
+                            </li>
                         @endhasanyrole
 
                         @role('access_pusat|administrator')
@@ -73,7 +73,7 @@
                         @endrole
 
                         @role('access_daerah')
-                            <li class="menu single-menu {{ request()->is('polda_custom_name') ? 'active' : '' }}">
+                            <li class="menu single-menu {{ request()->is('custom-name') ? 'active' : '' }}">
                                 <a href="{{ route('polda_custom_name') }}">
                                     <div>
                                         <span>RENCANA OPERASI</span>
@@ -81,7 +81,7 @@
                                 </a>
                             </li>
                             <li class="menu single-menu {{
-                                request()->is('report/*') ? 'active' : ''
+                                request()->is('report/*') || request()->is('operation-onsite') || request()->is('operation-onsite/*') ? 'active' : ''
                                 }}">
                                 <a href="#reportpusat" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
                                     <div>
