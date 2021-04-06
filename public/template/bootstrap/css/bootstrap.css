@@ -3204,6 +3204,47 @@ pre code {
   opacity: 1;
 }
 
+.form-control.popoups {
+  font-size: 13px;
+}
+
+.form-control.popoups.inp-icon{
+  background: #0f455b url(/img/chart.png) no-repeat 100%;
+  padding-right: 7px;
+  background-size: 16px;
+  background-origin: content-box;
+}
+
+.form-control.popoups:focus {
+  color: #fff;
+}
+
+.form-control.popoups::-webkit-input-placeholder {
+  color: #79859b;
+  opacity: 1;
+ }
+ 
+ .form-control.popoups::-moz-placeholder {
+  color: #79859b;
+  opacity: 1;
+ }
+ 
+ .form-control.popoups:-ms-input-placeholder {
+  color: #79859b;
+  opacity: 1;
+ }
+ 
+ .form-control.popoups::-ms-input-placeholder {
+  color: #79859b;
+  opacity: 1;
+ }
+ 
+ .form-control.popoups::placeholder {
+  font-size: 13px;
+  color: #79859b;
+  opacity: 1;
+ }
+
 .form-control:disabled, .form-control[readonly] {
   background-color: #e9ecef;
   opacity: 1;
@@ -3282,7 +3323,7 @@ select.form-control:focus::-ms-value {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: 0.3rem;
+  /* border-radius: 0.3rem; */
 }
 
 select.form-control[size], select.form-control[multiple] {
@@ -6953,17 +6994,20 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .close {
+  position: absolute;
+  top: 0;
+  right: 0;
   float: right;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1;
-  color: #000;
+  color: #00adef;
   text-shadow: 0 1px 0 #fff;
   opacity: .5;
 }
 
 .close:hover {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 

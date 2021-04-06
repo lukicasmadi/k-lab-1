@@ -42,7 +42,7 @@ body {
     font-family: 'Bahnschrift';
     margin: 0 auto;
     padding: 0;
-    background: #1a4a61 url(/img/backround_arc.jpg);
+    background: #1a4a61 url(/img/dashboard.jpg);
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -172,6 +172,10 @@ code {
 
 .layout-top-spacing {
     margin-top: 20px;
+}
+
+.layout-popup {
+    padding-bottom: 30px;
 }
 
 .layout-spacing {

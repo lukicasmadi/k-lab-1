@@ -55,13 +55,6 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <div class="d-flex justify-content-between">
-                                    <label class="checktainer">Remember Me
-                                    <input type="checkbox" checked="checked">
-                                    <span class="checkmark"></span>
-                                    </label>
-                                    <a href="auth_pass_recovery_boxed.html" class="forgot-pass-link">Forgot Password?</a>
-                                </div>
                             </div>
                             <div class="d-sm-flex justify-content-between">
                                 <div class="field-wrapper">

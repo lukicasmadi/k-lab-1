@@ -29,10 +29,8 @@
                 <div class="col-md-12 text-left mb-3">
                     <div class="text-left">
                         <div class="row">
-                            <a id="btnShowModal" class="btn add-operasi" href="javascript:void(0);"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-  <path id="add_to_queue" d="M16,22H4a2,2,0,0,1-2-2V8H4V20H16Zm4-4H8a2,2,0,0,1-2-2V4A2,2,0,0,1,8,2H20a2,2,0,0,1,2,2V16A2,2,0,0,1,20,18ZM8,4V16H20V4Zm7,10H13V11H10V9h3V6h2V9h3v2H15Z" transform="translate(-2 -2)" fill="#fff"/>
-</svg>
-    REKAP LAPORAN
+                            <a id="btnShowModal" class="btn add-operasi" href="javascript:void(0);"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path id="add_to_queue" d="M16,22H4a2,2,0,0,1-2-2V8H4V20H16Zm4-4H8a2,2,0,0,1-2-2V4A2,2,0,0,1,8,2H20a2,2,0,0,1,2,2V16A2,2,0,0,1,20,18ZM8,4V16H20V4Zm7,10H13V11H10V9h3V6h2V9h3v2H15Z" transform="translate(-2 -2)" fill="#fff"/></svg>
+                            REKAP LAPORAN
                             </a>
                         </div>
                     </div>
@@ -65,7 +63,7 @@
                         <div class="modal-body">
                             <div class="notes-box">
                                 <div class="notes-content">
-                                    <span class="colorblue">TAMBAH LAPORAN</span>
+                                    <span class="colorblue">REKAP LAPORAN</span>
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                                         <div class="row imgpopup">
                                             <img src="{{ secure_asset('/img/line_popbottom.png') }}">
@@ -117,7 +115,7 @@
                             </div>
                         </div>
                     <div class="modal-footer">
-                        <input type="submit" class="btn btnBlue" value="SIMPAN">
+                        <input type="submit" class="btn btnBlue" value="UNDUH">
                     </div>
                     </form>
                 </div>
@@ -254,7 +252,7 @@ $(document).ready(function () {
             "sInfo": "Menampilkan halaman _PAGE_ dari _PAGES_",
             "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> <img src="{{ secure_asset("/img/cloud_down.png") }}">',
             "sSearchPlaceholder": "CARI DATA...",
-            "sLengthMenu": " _MENU_ Baris per halaman",
+            "sLengthMenu": " _MENU_ ",
             "sProcessing": '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>',
         },
         order: [

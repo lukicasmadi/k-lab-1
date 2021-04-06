@@ -378,6 +378,10 @@ label {
     /* background: #1b2e4b; */
 }
 
+.colorgray {
+    color: #79859b;
+}
+
 .form-control {
     height: auto;
     border: 1px solid #00adef;
@@ -1115,9 +1119,9 @@ select.form-control.form-custom {
     background-color: #00adef !important;
     border-color: #00adef;
     text-transform: uppercase;
-    padding-left: 10px;
+    padding: 7px 10px 6px 10px;
     position: absolute;
-    margin: 20px 0 0 0;
+    margin: 21px 0 0 60px;
     z-index: 2;
 }
 

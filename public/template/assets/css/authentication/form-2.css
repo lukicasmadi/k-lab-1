@@ -605,7 +605,7 @@ body .overflow {
         color: #d3d3d3;
         font-size: 14px; }
     .form-form .form-form-wrap form .field-wrapper button.btn {
-      margin-top: -25px;
+      /* margin-top: -25px; */
       align-self: center;
       width: 100%;
       padding: 6px 10px 5px 10px;

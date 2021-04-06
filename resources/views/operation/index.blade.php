@@ -42,13 +42,13 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nama Operasi</th>
-                                <th>Operasi</th>
-                                <th>Deskripsi</th>
-                                <th>Mulai</th>
-                                <th>Selesai</th>
-                                <th>Lihat</th>
-                                <th>Pilihan</th>
+                                <th width="17%">Nama Operasi</th>
+                                <th width="16%">Jenis Operasi</th>
+                                <th width="24%">Deskripsi</th>
+                                <th width="13%">Tgl Mulai</th>
+                                <th width="14%">Tgl Selesai</th>
+                                <th width="6%">Lihat</th>
+                                <th width="10%">Pilihan</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -67,36 +67,39 @@
                             <div class="notes-box">
                                 <div class="notes-content">
                                     <span class="colorblue">TAMBAH RENCANA OPERASI</span>
-                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                    </button>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-popup">
                                         <div class="row imgpopup">
                                             <img src="{{ secure_asset('/img/line_popbottom.png') }}">
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 mb-3">
                                             <label class="text-popup">Jenis Operasi Yang Akan Dilaksanakan</label>
-                                            <input type="text" name="jenis_operasi" id="jenis_operasi" class="form-control" value="" placeholder="-   Tulis jenis operasi">
+                                            <input type="text" name="jenis_operasi" id="jenis_operasi" class="form-control popoups" value="" placeholder="- Tulis jenis operasi yang akan Anda laksanakan">
                                         </div>
 
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 mb-3">
                                             <label class="text-popup">Nama Operasi</label>
-                                            <input type="text" name="nama_operasi" id="nama_operasi" class="form-control" value="" placeholder="-   Tulis nama operasi">
+                                            <input type="text" name="nama_operasi" id="nama_operasi" class="form-control popoups" value="" placeholder="- Tulislah nama operasi yang akan Anda buat">
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-6 mb-3">
                                             <label class="text-popup">Tanggal Mulai</label>
-                                            <input type="text" name="tanggal_mulai" id="tanggal_mulai" class="form-control" value="" placeholder="-   Input tanggal mulai">
+                                            <input type="text" name="tanggal_mulai" id="tanggal_mulai" class="form-control popoups inp-icon" value="" placeholder="- yyyy/mm/dd">                                            
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-6 mb-3">
                                             <label class="text-popup">Tanggal Selesai</label>
-                                            <input type="text" name="tanggal_selesai" id="tanggal_selesai" class="form-control" value="" placeholder="-   Input tanggal selesai">
+                                            <input type="text" name="tanggal_selesai" id="tanggal_selesai" class="form-control popoups inp-icon" value="" placeholder="- yyyy/mm/dd">
                                         </div>
 
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 mb-n2">
                                         <label class="text-popup">Deskripsi</label>
                                             <div class="d-flex note-description">
-                                                <textarea name="deskripsi" id="deskripsi" class="form-control " maxlength="60" placeholder="-   Tulis dekripsi rencana operasi Anda" rows="3"></textarea>
+                                                <textarea name="deskripsi" id="deskripsi" class="form-control popoups" maxlength="60" placeholder="- Tulis dekripsi rencana operasi Anda" rows="1"></textarea>
                                             </div>
                                             <span class="validation-text"></span>
                                         </div>
@@ -122,7 +125,10 @@
                             <div class="notes-box">
                                 <div class="notes-content">
                                     <span class="colorblue">EDIT RENCANA OPERASI</span>
-                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                    </button>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-popup">
                                         <div class="row imgpopup">
                                             <img src="{{ secure_asset('/img/line_popbottom.png') }}">
                                         </div>
@@ -130,30 +136,30 @@
                                     <div class="row">
                                         <input type="hidden" name="uuid_edit" id="uuid_edit">
 
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 mb-3">
                                             <label class="text-popup">Jenis Operasi Yang Akan Dilaksanakan</label>
-                                            <input type="text" name="edit_jenis_operasi" id="edit_jenis_operasi" class="form-control">
+                                            <input type="text" name="edit_jenis_operasi" id="edit_jenis_operasi" class="form-control popoups">
                                         </div>
 
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 mb-3">
                                             <label class="text-popup">Nama Operasi</label>
-                                            <input type="text" name="edit_nama_operasi" id="edit_nama_operasi" class="form-control">
+                                            <input type="text" name="edit_nama_operasi" id="edit_nama_operasi" class="form-control popoups">
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-6 mb-3">
                                             <label class="text-popup">Tanggal Mulai</label>
-                                            <input type="text" name="edit_tanggal_mulai" id="edit_tanggal_mulai" class="form-control">
+                                            <input type="text" name="edit_tanggal_mulai" id="edit_tanggal_mulai" class="form-control popoups inp-icon">
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-6 mb-3">
                                             <label class="text-popup">Tanggal Selesai</label>
-                                            <input type="text" name="edit_tanggal_selesai" id="edit_tanggal_selesai" class="form-control">
+                                            <input type="text" name="edit_tanggal_selesai" id="edit_tanggal_selesai" class="form-control popoups inp-icon">
                                         </div>
 
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 mb-n2">
                                         <label class="text-popup">Deskripsi</label>
                                             <div class="d-flex note-description">
-                                                <textarea name="edit_deskripsi" id="edit_deskripsi" class="form-control " maxlength="60" rows="3"></textarea>
+                                                <textarea name="edit_deskripsi" id="edit_deskripsi" class="form-control popoups" maxlength="60" rows="2"></textarea>
                                             </div>
                                             <span class="validation-text"></span>
                                         </div>
@@ -176,44 +182,39 @@
                         <div class="notes-box">
                             <div class="notes-content">
                                 <span class="colorblue">VIEW RENCANA OPERASI</span>
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                </button>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-popup">
                                     <div class="row imgpopup">
                                         <img src="{{ secure_asset('/img/line_popbottom.png') }}">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <input type="hidden" name="uuid_preview" id="uuid_preview">
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mb-4">
                                         <label class="text-popup">Jenis Operasi Yang Akan Dilaksanakan</label><br>
-                                        <span id="view_jenis_operasi"></span>
+                                        <span class="colorgray" id="view_jenis_operasi"></span>
                                     </div>
 
-                                    <span class="divSpace"></span>
-
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mb-4">
                                         <label class="text-popup">Nama Operasi</label><br>
-                                        <span id="view_nama_operasi"></span>
+                                        <span class="colorgray" id="view_nama_operasi"></span>
                                     </div>
 
-                                    <span class="divSpace"></span>
-
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mb-4">
                                         <label class="text-popup">Tanggal Mulai</label><br>
-                                        <span id="view_tanggal_mulai"></span>
+                                        <span class="colorgray" id="view_tanggal_mulai"></span>
                                     </div>
 
-                                    <span class="divSpace"></span>
-
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mb-4">
                                         <label class="text-popup">Tanggal Selesai</label><br>
-                                        <span id="view_tanggal_selesai"></span>
+                                        <span class="colorgray" id="view_tanggal_selesai"></span>
                                     </div>
 
-                                    <span class="divSpace"></span>
-
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mb-n1">
                                         <label class="text-popup">Deskripsi</label><br>
-                                        <span id="view_deskripsi"></span>
+                                        <span class="colorgray" id="view_deskripsi"></span>
                                     </div>
                                 </div>
                             </div>
@@ -294,7 +295,7 @@
                 "sInfo": "Menampilkan halaman _PAGE_ dari _PAGES_",
                 "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> <img src="{{ secure_asset("/img/cloud_down.png") }}">',
                 "sSearchPlaceholder": "CARI DATA...",
-                "sLengthMenu": " _MENU_ Baris per halaman",
+                "sLengthMenu": " _MENU_ ",
                 "sProcessing": '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>',
             },
             order: [
@@ -333,7 +334,9 @@
                     render: function(data, type, row) {
                         return `
                         <div class="icon-container">
-                            <a href="#" class="viewData" idval="`+data+`"><i class="far fa-eye"></i></a>
+                            <a href="#" class="viewData" idval="`+data+`">
+                                <img src="{{ secure_asset('/img/search.png') }}" width="45%">
+                            </a>
                         </div>
                         `;
                     },
@@ -344,8 +347,8 @@
                     data: 'uuid',
                     render: function(data, type, row) {
                         return `
-                        <div class="icon-container">
-                            <a class="editData" idval="`+data+`" href="#"><i class="far fa-edit"></i></a>
+                        <div class="ubah-change">
+                            <a class="editData" idval="`+data+`" href="#">Ubah</a>
                         </div>
                         `;
                     },
