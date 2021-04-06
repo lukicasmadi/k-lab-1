@@ -12,8 +12,8 @@
             </ul>
         </div>
     @endif
-    <div class="row layout-top-spacing" id="cancel-row">
 
+    <div class="row layout-top-spacing" id="cancel-row" style="margin-top: 40px">
         <div class="col-xl-6 col-lg-6 col-sm-12 mb-25 layout-spacing">
             <div class="widget-content">
                 <div class="table-responsive">
