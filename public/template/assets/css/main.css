@@ -52,7 +52,8 @@ body {
     bottom: 0;
     right: 0;
     position: absolute;
-    z-index: -1; }
+    z-index: -1;
+}
 
 .blendingimg img {
     width: 100%;
@@ -234,6 +235,7 @@ blockquote.media-object.m-o-border-right {
 blockquote.media-object .media .usr-img img {
     width: 55px;
 }
+
 
 /* #footer-login {
     position: absolute;
@@ -420,7 +422,7 @@ label {
 }
 
 .form-control.form-control-lg {
-    font-size: 19px;
+    font-size: 13px;
     padding: 11px 20px;
 }
 
@@ -429,19 +431,19 @@ label {
     font-size: 13px;
 }
 
-.mb-25{
+.mb-25 {
     margin-top: -25px;
 }
 
-.colorblue{
+.colorblue {
     color: #00adef;
 }
 
-.imgpopup{
+.imgpopup {
     margin-bottom: -100px;
 }
 
-.imgpopup img{
+.imgpopup img {
     width: 100%;
     padding: 10px 0 0 0;
 }
@@ -454,7 +456,7 @@ label {
     margin-bottom: 15px;
 }
 
-.text-popup{
+.text-popup {
     color: #fff;
     text-transform: uppercase;
     font-size: 13px;
@@ -762,7 +764,7 @@ select.form-control.form-custom {
     -webkit-transition: all 0.3s ease-out;
 }
 
-#btn-n-add{
+#btn-n-add {
     background-color: #00adef;
     color: #fff;
 }
@@ -2676,11 +2678,11 @@ table .badge-dark {
 }
 
 .evaluasi {
-    border-bottom : 1.4px solid #00adef;
+    border-bottom: 1.4px solid #00adef;
     text-transform: capitalize;
 }
 
-.comreport{
+.comreport {
     text-transform: capitalize
 }
 
@@ -3219,6 +3221,7 @@ table .badge-dark {
     position: relative;
 }
 
+
 /*
     =====================
         Media Query
@@ -3229,14 +3232,16 @@ table .badge-dark {
     .form-control {
         height: calc(1.3em + 1.1rem + 2px);
     }
-  }
-  @media (max-width: 1200px) {
+}
+
+@media (max-width: 1200px) {
     /* .logo-login{
       display: inline;
     } */
-  }
-  @media (max-width: 575.98px) {
+}
+
+@media (max-width: 575.98px) {
     /* .logo-login{
         display: none;
     } */
-  }
+}
