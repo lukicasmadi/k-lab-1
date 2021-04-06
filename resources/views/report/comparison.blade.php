@@ -11,8 +11,16 @@
 @endpush
 @section('content')
 <div class="layout-px-spacing">
+    @if ($errors->any())
+        <div class="alert alert-danger custom">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="row layout-top-spacing">
-
         <div class="col-lg-4 col-12 mb-25 layout-spacing">
             <div class="statbox widget box box-shadow">
                 @include('flash::message')
@@ -23,7 +31,7 @@
                             <label class="text-popup">Pilih Operasi</label>
                             <select class="form-control height-form" name="operation_id" id="operation_id">
                                 @foreach($rencanaOperasi as $key => $val)
-                                <option value="{{$key}}">{{$val}}</option>
+                                    <option value="{{$key}}">{{$val}}</option>
                                 @endforeach
                             </select>
                         </div>
