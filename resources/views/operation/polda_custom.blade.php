@@ -275,6 +275,7 @@ $('#tbl_operation tbody').on('click', 'a.viewData', function(e) {
 
     Promise.all([getRencanaOperasi(uuid), getDataCustomName(uuid)])
     .then(function (response) {
+
         const rencana_operasi = response[0]
         const custom_name = response[1]
 

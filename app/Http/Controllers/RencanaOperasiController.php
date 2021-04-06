@@ -16,7 +16,7 @@ class RencanaOperasiController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('can-create-plan')->only('create', 'store', 'edit', 'update', 'rencana_operasi_custom_name', 'rencana_operasi_by_uuid');
+        $this->middleware('can-create-plan')->only('create', 'store', 'edit', 'update');
     }
 
     public function rencana_operasi_custom_name($uuid)
