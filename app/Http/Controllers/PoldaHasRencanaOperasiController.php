@@ -39,6 +39,7 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function index()
     {
+        logger(poldaImage());
         return view('phro.index_polda');
     }
 

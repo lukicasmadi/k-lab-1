@@ -256,10 +256,21 @@
                             if(!empty(auth()->user())) {
                                 $user = App\Models\User::whereId(myUserId())->first();
                                 echo '<div class="media-body align-self-center" style="margin-right: 35px;"><h6><span>Hi,</span> '.$user->name.'</h6></div>';
-                                if(empty($user->avatar)) {
-                                    echo "<img src='".secure_asset('img/profile/profile.png')."' class='img-fluid' alt='admin-profile' />";
-                                } else {
-                                    echo "<img src='".secure_asset('storage/upload/profile/'.$user->avatar)."' class='img-fluid' alt='admin-profile' />";
+
+                                if(isAdmin()) {
+                                    if(empty($user->avatar)) {
+                                        echo "<img src='".secure_asset('img/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";
+                                    } else {
+                                        echo "<img src='".secure_asset('storage/upload/profile/'.$user->avatar)."' class='img-fluid' alt='admin-profile' />";
+                                    }
+                                }
+
+                                if(isPusat()) {
+                                    echo "<img src='".secure_asset('img/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";
+                                }
+
+                                if(isPolda()) {
+                                    echo "<img src='".secure_asset('img/polda/'.poldaImage()->polda->logo)."' class='img-fluid' alt='admin-profile' />";
                                 }
                             }
                         @endphp
