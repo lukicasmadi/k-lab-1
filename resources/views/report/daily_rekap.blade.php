@@ -200,24 +200,18 @@ $('body').on('click', '#btnView', function(e) {
     var uuid = $(this).attr('data-id')
 
     axios.get(route('korlantas_rekap_data_byuuid', uuid)).then(function(response) {
-        var output = response.data
+        var dailyInput = response.data.dailyInput
+        var dailyInputPrev = response.data.dailyInputPrev
 
-        if(output.operation_date == "semua_hari") {
-            var redate = "Semua Hari"
-        } else {
-            var redate = output.operation_date
-        }
-
-        // $('#preiew_report_name').html(output.report_name)
-        // $('#preiew_polda').html(output.polda_data.name)
-        // $('#preiew_year').html(output.year)
-        // $('#preiew_rencana_operasi_id').html(output.rencara_operasi.name)
-        // $('#preiew_operation_date').html(redate)
+        $.each(dailyInput, function(index, value) {
+            $("#"+index).html(value)
+            console.log(index+" : "+value);
+        })
 
         $('#daily_preview').modal('show')
     })
     .catch(function(error) {
-        swal("Deletion failed! Maybe you miss something", error.response.data.output, "error")
+        swal("View failed! Maybe you miss something", error.response.data.output, "error")
     })
 })
 </script>
