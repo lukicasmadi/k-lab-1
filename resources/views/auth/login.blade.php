@@ -47,9 +47,9 @@
                             </div>
                             <div id="password-field" class="field-wrapper input mb-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="feather feather-lock" viewBox="0 0 18.454 23.659"><path id="Path_239" data-name="Path 239" d="M209.086,219.823h-.024V218.2a6.992,6.992,0,0,0-6.984-6.984H201.8a6.993,6.993,0,0,0-6.984,6.984v1.626h-.023a2.086,2.086,0,0,0-2.08,2.08v10.891a2.085,2.085,0,0,0,2.08,2.079h14.3a2.084,2.084,0,0,0,2.079-2.079V221.9A2.085,2.085,0,0,0,209.086,219.823ZM196.848,218.2a4.954,4.954,0,0,1,4.949-4.949h.281a4.955,4.955,0,0,1,4.95,4.949v1.626h-10.18Zm5.848,9.869v1.943a.758.758,0,0,1-1.515,0v-1.943a2.105,2.105,0,1,1,1.515,0Z" transform="translate(-192.71 -211.213)" fill="#00adef"/></svg>
-                                <input name="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password">
+                                <input name="password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="feather feather-eye" viewBox="0 0 20 14.002">
-                                <path id="show" d="M12,19a10.785,10.785,0,0,1-4.746-1.035,10.076,10.076,0,0,1-3.041-2.282A10.59,10.59,0,0,1,2.1,12.316L2,12l.105-.316A10.661,10.661,0,0,1,4.214,8.317a10.074,10.074,0,0,1,3.04-2.282A10.785,10.785,0,0,1,12,5a10.786,10.786,0,0,1,4.746,1.035,10.073,10.073,0,0,1,3.041,2.282A10.5,10.5,0,0,1,21.9,11.684L22,12l-.1.316A10.423,10.423,0,0,1,12,19ZM12,7a8.308,8.308,0,0,0-7.883,5A8.307,8.307,0,0,0,12,17a8.309,8.309,0,0,0,7.883-5A8.3,8.3,0,0,0,12,7Zm0,8a3.02,3.02,0,1,1,2.115-.884A2.976,2.976,0,0,1,12,15Z" transform="translate(-2 -4.999)" fill="#00adef"/></svg>
+                                <path id="show_icon" d="M12,19a10.785,10.785,0,0,1-4.746-1.035,10.076,10.076,0,0,1-3.041-2.282A10.59,10.59,0,0,1,2.1,12.316L2,12l.105-.316A10.661,10.661,0,0,1,4.214,8.317a10.074,10.074,0,0,1,3.04-2.282A10.785,10.785,0,0,1,12,5a10.786,10.786,0,0,1,4.746,1.035,10.073,10.073,0,0,1,3.041,2.282A10.5,10.5,0,0,1,21.9,11.684L22,12l-.1.316A10.423,10.423,0,0,1,12,19ZM12,7a8.308,8.308,0,0,0-7.883,5A8.307,8.307,0,0,0,12,17a8.309,8.309,0,0,0,7.883-5A8.3,8.3,0,0,0,12,7Zm0,8a3.02,3.02,0,1,1,2.115-.884A2.976,2.976,0,0,1,12,15Z" transform="translate(-2 -4.999)" fill="#00adef"/></svg>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -77,4 +77,26 @@
     </div>
     </div>
 </div>
+<input type="hidden" name="config_show_password" id="config_show_password" value="hide">
 @endsection
+
+@push('page_js')
+<script>
+$(document).ready(function () {
+    $("#show_icon").click(function (e) {
+        e.preventDefault();
+        if($("#config_show_password").val() == 'hide') {
+            $(this).val('show')
+            var x = document.getElementById("password")
+            if (x.type === "password") {
+                x.type = "text"
+            } else {
+                x.type = "password"
+            }
+        } else {
+            $(this).val('hide')
+        }
+    })
+})
+</script>
+@endpush

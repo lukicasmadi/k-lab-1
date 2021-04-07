@@ -26,5 +26,6 @@
     <script src="{{ secure_asset('template/bootstrap/js/bootstrap.min.js') }}"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 </div>
+@stack('page_js')
 </body>
 </html>
