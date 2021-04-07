@@ -2038,11 +2038,11 @@ select.form-control.form-custom {
 }
 
 .badge {
-    font-weight: 600;
+    font-weight: lighter;
     line-height: 1.4;
     padding: 3px 6px;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: lighter;
     transition: all 0.3s ease-out;
     -webkit-transition: all 0.3s ease-out;
 }

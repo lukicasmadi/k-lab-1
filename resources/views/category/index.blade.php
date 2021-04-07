@@ -20,7 +20,7 @@
                 <div class="col-md-12 text-left mb-3">
                     <div class="text-left">
                         <div class="row">
-                            <a id="btnShowModal" class="btn add-operasi" href="javascript:void(0);"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path id="add_to_queue" d="M16,22H4a2,2,0,0,1-2-2V8H4V20H16Zm4-4H8a2,2,0,0,1-2-2V4A2,2,0,0,1,8,2H20a2,2,0,0,1,2,2V16A2,2,0,0,1,20,18ZM8,4V16H20V4Zm7,10H13V11H10V9h3V6h2V9h3v2H15Z" transform="translate(-2 -2)" fill="#fff"/></svg>
+                            <a id="btnShowModal" class="btn add-operasi" href="{{ route('category_add') }}"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path id="add_to_queue" d="M16,22H4a2,2,0,0,1-2-2V8H4V20H16Zm4-4H8a2,2,0,0,1-2-2V4A2,2,0,0,1,8,2H20a2,2,0,0,1,2,2V16A2,2,0,0,1,20,18ZM8,4V16H20V4Zm7,10H13V11H10V9h3V6h2V9h3v2H15Z" transform="translate(-2 -2)" fill="#fff"/></svg>
                             TAMBAH PENGGUNA
                             </a>
                         </div>
@@ -105,7 +105,7 @@ $(document).ready(function() {
             {
                 data: 'uuid',
                 render: function(data, type, row) {
-                    return '<div class="ubah-change"><a href="' + route('category_edit', data) + '">Ubah <span>|</span> <a href="' + route('category_delete', data) + '">Hapus</a></div>';
+                    return '<div class="ubah-change"><a href="' + route('category_edit', data) + '">Ubah</a> <span>|</span> <a href="' + route('category_delete', data) + '">Hapus</a></div>';
                 },
                 searchable: false,
                 sortable: false
