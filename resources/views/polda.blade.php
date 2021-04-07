@@ -336,7 +336,7 @@ function donutDataWeekly() {
             breakpoint: 5000,
             options: {
                 chart: {
-                    width: 315
+                    width: 250
                 },
                 legend: {
                     position: 'bottom'
@@ -438,7 +438,7 @@ function donutDataFull() {
             breakpoint: 5000,
             options: {
                 chart: {
-                    width: 315
+                    width: 250
                 },
                 legend: {
                     position: 'bottom'
