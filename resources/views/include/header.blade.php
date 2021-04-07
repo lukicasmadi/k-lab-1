@@ -266,7 +266,7 @@
                                 }
 
                                 if(isPusat()) {
-                                    echo "<img src='".secure_asset('img/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";
+                                    echo "<img src='".secure_asset('img/polda/mabes.png')."' class='img-fluid' alt='admin-profile' />";
                                 }
 
                                 if(isPolda()) {
