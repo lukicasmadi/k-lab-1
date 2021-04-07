@@ -26,7 +26,8 @@
                         </ul>
                     </div>
                 @endif
-                <div class="table-responsive">
+                <div class="col-md-12 text-left mb-3"></div>
+                <div class="table-responsive mb-5">
                     <table id="tbl_operation" class="table">
                         <thead>
                             <tr>
@@ -36,7 +37,7 @@
                                 <th>Deskripsi</th>
                                 <th>Mulai</th>
                                 <th>Selesai</th>
-                                <th>Lihat</th>
+                                <th width="6%">Lihat</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -170,7 +171,7 @@ $(document).ready(function () {
             "sInfo": "Menampilkan halaman _PAGE_ dari _PAGES_",
             "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> <img src="{{ secure_asset("/img/cloud_down.png") }}">',
             "sSearchPlaceholder": "CARI DATA...",
-            "sLengthMenu": " _MENU_ Baris per halaman",
+            "sLengthMenu": " _MENU_ ",
             "sProcessing": '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>',
         },
         order: [
@@ -214,7 +215,9 @@ $(document).ready(function () {
                 render: function(data, type, row) {
                     return `
                     <div class="icon-container">
-                        <a href="#" class="viewData" idval="`+data+`"><i class="far fa-eye"></i></a>
+                        <a href="#" class="viewData" idval="`+data+`">
+                        <img src="{{ secure_asset('/img/search.png') }}" width="45%">
+                        </a>
                     </div>
                     `;
                 },

@@ -14,21 +14,27 @@
 @section('content')
 <div class="layout-px-spacing">
     <div class="row layout-top-spacing" id="cancel-row">
-        <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
-            <div class="widget-content widget-content-area">
-                <div class="col-md-12 text-right mb-3">
-                    <a href="{{ route('unit_create') }}" class="btn btn-success">Add New</a>
+        <div class="col-xl-12 col-lg-12 col-sm-12 mb-25 layout-spacing">
+            <div class="widget-content">
+                <div class="col-md-12 text-left mb-3">
+                    <div class="text-left">
+                        <div class="row">
+                            <a id="btnShowModal" class="btn add-operasi" href="{{ route('unit_create') }}"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path id="add_to_queue" d="M16,22H4a2,2,0,0,1-2-2V8H4V20H16Zm4-4H8a2,2,0,0,1-2-2V4A2,2,0,0,1,8,2H20a2,2,0,0,1,2,2V16A2,2,0,0,1,20,18ZM8,4V16H20V4Zm7,10H13V11H10V9h3V6h2V9h3v2H15Z" transform="translate(-2 -2)" fill="#fff"/></svg>
+                            TAMBAH KESATUAN
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="table-responsive">
+                <div class="table-responsive mb-5">
                     <table id="tbl_unit" class="table">
                         <thead>
                             <tr>
                                 <th>ID</th>
                                 <th width="30%">Name</th>
                                 <th width="20%">Unit Called</th>
-                                <th width="30%">Profile</th>
-                                <th width="10%">Logo</th>
-                                <th width="10%">Action</th>
+                                <th width="20%">Profile</th>
+                                <th width="15%">Logo</th>
+                                <th width="15%">Action</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -64,13 +70,13 @@ $(document).ready(function () {
         ajax: route('unit_data'),
         "oLanguage": {
             "oPaginate": {
-                "sPrevious": '<i class="fas fa-arrow-circle-left dtIconSize"></i>',
-                "sNext": '<i class="fas fa-arrow-circle-right dtIconSize"></i>'
+                "sPrevious": '<i class="fas fa-chevron-left dtIconSize"></i>',
+                "sNext": '<i class="fas fa-chevron-right dtIconSize"></i>'
             },
-            "sInfo": "Showing page _PAGE_ of _PAGES_",
-            "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
-            "sSearchPlaceholder": "Search...",
-            "sLengthMenu": "Results :  _MENU_",
+            "sInfo": "Menampilkan halaman _PAGE_ dari _PAGES_",
+            "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> <img src="{{ secure_asset("/img/cloud_down.png") }}">',
+            "sSearchPlaceholder": "CARI DATA...",
+            "sLengthMenu": " _MENU_ ",
             "sProcessing": '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>',
         },
         order: [
@@ -107,8 +113,8 @@ $(document).ready(function () {
                 data: 'uuid',
                 render: function(data, type, row) {
                     return `
-                    <div class="icon-container">
-                        <a href="`+route('unit_edit', data)+`"><i class="far fa-edit"></i></a> <a href="`+route('unit_destroy', data)+`" class="delete" data-id="`+data+`"><i class="far fa-trash-alt"></i><span class="icon-name"></span></a>
+                    <div class="ubah-change">
+                        <a href="`+route('unit_edit', data)+`">Ubah</a> <span>|</span> <a href="`+route('unit_destroy', data)+`" class="delete" data-id="`+data+`">Hapus</a>
                     </div>
                     `;
                 },
