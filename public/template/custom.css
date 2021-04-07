@@ -420,3 +420,16 @@ hr.dashed {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.swal2-modal .swal2-title {
+    color: #bfc9d4 !important;
+    font-size: 18px !important;
+    text-align: center;
+    font-weight: normal;
+    text-transform: none;
+    position: relative;
+    margin: 0 0 .4em;
+    padding: 0;
+    display: block;
+    word-wrap: break-word;
+}
