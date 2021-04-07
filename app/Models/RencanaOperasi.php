@@ -27,4 +27,14 @@ class RencanaOperasi extends Model
     {
         return $this->hasMany(PoldaHasRencanaOperasi::class);
     }
+
+    public function poldaHasOperationNameAlias()
+    {
+        return $this->hasMany(PoldaCustomOperationName::class);
+    }
+
+    public function poldaAlias()
+    {
+        return $this->hasOne(PoldaCustomOperationName::class)->where('polda_id', poldaId());
+    }
 }

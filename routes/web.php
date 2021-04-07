@@ -171,6 +171,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/unit', 'UnitController@data')->name('unit_data');
         Route::get('/violation', 'ViolationController@data')->name('violation_data');
         Route::get('/operation-plan', 'RencanaOperasiController@data')->name('operation_plan_data');
+        Route::get('/operation-plan/alias', 'RencanaOperasiController@dataAlias')->name('operation_plan_data_custom_alias');
         Route::get('/role', 'AclController@role_data')->name('role_data');
         Route::get('/get-permission-by-role/{id}', 'AclController@get_permission_by_role')->name('get_permission_by_role');
         Route::get('/user-has-polda', 'UserHasPoldaController@data')->name('uhp_data');

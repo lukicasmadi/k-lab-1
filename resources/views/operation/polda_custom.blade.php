@@ -33,11 +33,13 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Nama Operasi</th>
+                                <th>Nama Alias</th>
                                 <th>Operasi</th>
                                 <th>Deskripsi</th>
                                 <th>Mulai</th>
                                 <th>Selesai</th>
                                 <th width="6%">Lihat</th>
+                                <th width="6%">Alias</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -125,6 +127,8 @@
                                         <input type="hidden" name="rencana_operasi_id" id="rencana_operasi_id" value="">
                                         <label class="text-popup">Tambahkan atau ubah alias dari nama operasi</label><br>
                                         <input type="text" class="form-control" name="custom_operation_name" id="custom_operation_name" autocomplete="off">
+                                        <br>
+                                        <button id="submitBtn" class="btn btn-primary">Submit</button>
                                     </div>
                                 </div>
                             </div>
@@ -162,7 +166,7 @@ $(document).ready(function () {
                 className: "tengah", "targets": [6]
             }
         ],
-        ajax: route('operation_plan_data'),
+        ajax: route('operation_plan_data_custom_alias'),
         "oLanguage": {
             "oPaginate": {
                 "sPrevious": '<i class="fas fa-chevron-left dtIconSize"></i>',
@@ -184,12 +188,11 @@ $(document).ready(function () {
                 searchable: false
             },
             {
-                data: 'name',
-                render: function(data, type, row, meta) {
-                    return `
-                        <a href="`+route('get_data_polda_custom_name', row.uuid)+`" id="addCustom" idval="`+row.uuid+`">`+data+`</a>
-                    `;
-                },
+                data: 'name'
+            },
+            {
+                data: 'alias_name',
+                name: 'polda.name'
             },
             {
                 data: 'operation_type',
@@ -200,7 +203,7 @@ $(document).ready(function () {
             {
                 data: 'desc',
                 render: function(data, type, row, meta) {
-                    return limitTableText(data, 50);
+                    return limitTableText(data, 20);
                 },
                 sortable: false
             },
@@ -216,8 +219,20 @@ $(document).ready(function () {
                     return `
                     <div class="icon-container">
                         <a href="#" class="viewData" idval="`+data+`">
-                        <img src="{{ secure_asset('/img/search.png') }}" width="45%">
+                            <img src="{{ secure_asset('/img/search.png') }}" width="45%">
                         </a>
+                    </div>
+                    `;
+                },
+                searchable: false,
+                sortable: false,
+            },
+            {
+                data: 'uuid',
+                render: function(data, type, row) {
+                    return `
+                    <div class="icon-container">
+                        <a href="`+route('get_data_polda_custom_name', data)+`" id="addAliasData" idval="`+data+`"><img src="{{ secure_asset('/img/search.png') }}" width="45%"></a>
                     </div>
                     `;
                 },
@@ -226,23 +241,47 @@ $(document).ready(function () {
             }
         ]
     })
-})
 
-$('body').on('click', '#addCustom', function(e) {
-    e.preventDefault()
-    var uuid = $(this).attr("idval")
-
-    axios.get(route('get_data_polda_custom_name', uuid)).then(function(response) {
-        if(response.status == 200) {
-            $("#rencana_operasi_id").val(response.data.rencana_op_id)
-            $("#custom_operation_name").val(response.data.output)
-            $('#addAlias').modal('show')
-        } else {
-            swal("Not found", error.response.data.output, "error")
-        }
+    $('body').on('click', '#submitBtn', function(e) {
+        e.preventDefault()
+        axios.post(route('post_data_polda_custom_name'), {
+            alias: $("#custom_operation_name").val(),
+            operation_id: $("#rencana_operasi_id").val()
+        })
+        .then(function (response) {
+            $("#rencana_operasi_id").val('')
+            if(response.status == 201) {
+                $('#addAlias').modal('hide')
+                swal("Nama alias berhasil anda daftarkan", null, "success")
+            } else if(response.status == 200) {
+                $('#addAlias').modal('hide')
+                swal("Nama alias berhasil diubah", null, "success")
+            } else {
+                swal("Proses gagal. Silahkan cek inputan anda!", null, "error")
+            }
+            table.ajax.reload()
+        })
+        .catch(function (error) {
+            swal("Get data failed! Maybe you miss something", error.response.data.output, "error")
+        })
     })
-    .catch(function(error) {
-        swal("Get data failed! Maybe you miss something", error.response.data.output, "error")
+
+    $('body').on('click', '#addAliasData', function(e) {
+        e.preventDefault()
+        var uuid = $(this).attr("idval")
+
+        axios.get(route('get_data_polda_custom_name', uuid)).then(function(response) {
+            if(response.status == 200) {
+                $("#rencana_operasi_id").val(response.data.rencana_op_id)
+                $("#custom_operation_name").val(response.data.output)
+                $('#addAlias').modal('show')
+            } else {
+                swal("Not found", error.response.data.output, "error")
+            }
+        })
+        .catch(function(error) {
+            swal("Get data failed! Maybe you miss something", error.response.data.output, "error")
+        })
     })
 })
 
@@ -293,7 +332,7 @@ $('#tbl_operation tbody').on('click', 'a.viewData', function(e) {
         $("#view_tanggal_mulai").html(rencana_operasi.data.start_date)
         $("#view_tanggal_selesai").html(rencana_operasi.data.end_date)
         $("#view_deskripsi").html(rencana_operasi.data.desc)
-        $("#alias_name").html(custom_name.data.alias)
+        $("#alias_name").empty().html(custom_name.data.alias)
         $("#uuid_preview").val(uuid)
         $('#showRencanaOperasi').modal('show')
     })

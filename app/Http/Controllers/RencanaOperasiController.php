@@ -40,6 +40,21 @@ class RencanaOperasiController extends Controller
         return datatables()->eloquent($model)->toJson();
     }
 
+    public function dataAlias()
+    {
+        $model = RencanaOperasi::with('poldaAlias');
+
+        return datatables()->eloquent($model)
+        ->addColumn('alias_name', function (RencanaOperasi $ro) {
+            if(empty($ro->poldaAlias)) {
+                return "-";
+            } else {
+                return $ro->poldaAlias->alias;
+            }
+        })
+        ->toJson();
+    }
+
     public function index()
     {
         return view('operation.index');
