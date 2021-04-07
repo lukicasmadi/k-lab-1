@@ -333,10 +333,10 @@ function donutDataWeekly() {
         series: [filled, nofilled],
         labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
         responsive: [{
-            breakpoint: 1439,
+            breakpoint: 5000,
             options: {
                 chart: {
-                    width: 200
+                    width: 315
                 },
                 legend: {
                     position: 'bottom'
@@ -435,10 +435,10 @@ function donutDataFull() {
         series: [filled, nofilled],
         labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
         responsive: [{
-            breakpoint: 1439,
+            breakpoint: 5000,
             options: {
                 chart: {
-                    width: 200
+                    width: 315
                 },
                 legend: {
                     position: 'bottom'
