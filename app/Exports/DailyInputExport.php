@@ -294,7 +294,7 @@ class DailyInputExport implements FromView
             'data' => $data,
             'operation_name' => $this->operationName,
             'polda_final' => ($this->polda == "polda_all") ? "SELURUH POLDA" : "POLDA ".$this->poldaData->name,
-            'operation_date' => $this->operationData->start_date." SD ".$this->operationData->end_date,
+            'operation_date' => indonesianStandart($this->operationData->start_date)." SD ".indonesianStandart($this->operationData->end_date),
         ]);
     }
 }
