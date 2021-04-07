@@ -70,7 +70,7 @@
                                 <th width="31%">Nama Laporan</th>
                                 <th width="27%">tahun 2020</th>
                                 <th width="27%">tahun 2021</th>
-                                <th width="5%">status</th>
+                                <th width="5%">tren</th>
                                 <th width="10%">Persentase</th>
                             </tr>
                         </thead>
@@ -106,28 +106,28 @@
                                 <td id="pelanggaran_lalin_motor_gunhelm_prev">0</td>
                                 <td id="pelanggaran_lalin_motor_gunhelm">0</td>
                                 <td id="status_pelanggaran_lalin_motor_gunhelm">-</td>
-                                <td  id="persentase_pelanggaran_lalin_motor_gunhelm">-</td>
+                                <td id="persentase_pelanggaran_lalin_motor_gunhelm">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>Melawan Arus</td>
                                 <td id="pelanggaran_lalin_motor_lawan_arus_prev">0</td>
                                 <td id="pelanggaran_lalin_motor_lawan_arus">0</td>
                                 <td id="status_pelanggaran_lalin_motor_lawan_arus">-</td>
-                                <td  id="persentase_pelanggaran_lalin_motor_lawan_arus">-</td>
+                                <td id="persentase_pelanggaran_lalin_motor_lawan_arus">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>Gun HP Saat Berkendara</td>
                                 <td id="pelanggaran_lalin_motor_gunhp_prev">0</td>
                                 <td id="pelanggaran_lalin_motor_gunhp">0</td>
                                 <td id="status_pelanggaran_lalin_motor_gunhp">-</td>
-                                <td  id="persentase_pelanggaran_lalin_motor_gunhp">-</td>
+                                <td id="persentase_pelanggaran_lalin_motor_gunhp">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>Berkendara Di Bawah Pengaruh Alkohol</td>
                                 <td id="pelanggaran_lalin_motor_pengaruh_alkohol_prev">0</td>
                                 <td id="pelanggaran_lalin_motor_pengaruh_alkohol">0</td>
                                 <td id="status_pelanggaran_lalin_motor_pengaruh_alkohol">-</td>
-                                <td  id="persentase_pelanggaran_lalin_motor_pengaruh_alkohol">-</td>
+                                <td id="persentase_pelanggaran_lalin_motor_pengaruh_alkohol">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>Melebihi Batas Kecepatan</td>
@@ -141,7 +141,7 @@
                                 <td id="pelanggaran_lalin_motor_bawah_umur_prev">0</td>
                                 <td id="pelanggaran_lalin_motor_bawah_umur">0</td>
                                 <td id="status_pelanggaran_lalin_motor_bawah_umur">-</td>
-                                <td  id="persentase_pelanggaran_lalin_motor_bawah_umur">-</td>
+                                <td id="persentase_pelanggaran_lalin_motor_bawah_umur">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>Lain - Lain</td>
@@ -158,21 +158,21 @@
                                 <td id="pelanggaran_lalin_mobil_lawan_arus_prev">0</td>
                                 <td id="pelanggaran_lalin_mobil_lawan_arus">0</td>
                                 <td id="status_pelanggaran_lalin_mobil_lawan_arus">-</td>
-                                <td  id="persentase_pelanggaran_lalin_mobil_lawan_arus">-</td>
+                                <td id="persentase_pelanggaran_lalin_mobil_lawan_arus">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>Gun HP Saat Berkendara</td>
                                 <td id="pelanggaran_lalin_mobil_gunhp_prev">0</td>
                                 <td id="pelanggaran_lalin_mobil_gunhp">0</td>
                                 <td id="status_pelanggaran_lalin_mobil_gunhp">-</td>
-                                <td  id="persentase_pelanggaran_lalin_mobil_gunhp">-</td>
+                                <td id="persentase_pelanggaran_lalin_mobil_gunhp">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>Berkendara Di Bawah Pengaruh Alkohol</td>
                                 <td id="pelanggaran_lalin_mobil_pengaruh_alkohol_prev">0</td>
                                 <td id="pelanggaran_lalin_mobil_pengaruh_alkohol">0</td>
                                 <td id="status_pelanggaran_lalin_mobil_pengaruh_alkohol">-</td>
-                                <td  id="persentase_pelanggaran_lalin_mobil_pengaruh_alkohol">-</td>
+                                <td id="persentase_pelanggaran_lalin_mobil_pengaruh_alkohol">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>Melebihi Batas Kecepatan</td>
@@ -186,14 +186,14 @@
                                 <td id="pelanggaran_lalin_mobil_bawah_umur_prev">0</td>
                                 <td id="pelanggaran_lalin_mobil_bawah_umur">0</td>
                                 <td id="status_pelanggaran_lalin_mobil_bawah_umur">-</td>
-                                <td  id="persentase_pelanggaran_lalin_mobil_bawah_umur">-</td>
+                                <td id="persentase_pelanggaran_lalin_mobil_bawah_umur">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>Gun Safety Belt</td>
                                 <td id="pelanggaran_lalin_mobil_gunsafety_belt_prev">0</td>
                                 <td id="pelanggaran_lalin_mobil_gunsafety_belt">0</td>
                                 <td id="status_pelanggaran_lalin_mobil_gunsafety_belt">-</td>
-                                <td  id="persentase_pelanggaran_lalin_mobil_gunsafety_belt">-</td>
+                                <td id="persentase_pelanggaran_lalin_mobil_gunsafety_belt">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>Lain - Lain</td>
@@ -210,21 +210,21 @@
                                 <td id="pelanggaran_lalin_barang_bukti_sim_prev">0</td>
                                 <td id="pelanggaran_lalin_barang_bukti_sim">0</td>
                                 <td id="status_pelanggaran_lalin_barang_bukti_sim">-</td>
-                                <td  id="persentase_pelanggaran_lalin_barang_bukti_sim">-</td>
+                                <td id="persentase_pelanggaran_lalin_barang_bukti_sim">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>STNK</td>
                                 <td id="pelanggaran_lalin_barang_bukti_stnk_prev">0</td>
                                 <td id="pelanggaran_lalin_barang_bukti_stnk">0</td>
                                 <td id="status_pelanggaran_lalin_barang_bukti_stnk">-</td>
-                                <td  id="persentase_pelanggaran_lalin_barang_bukti_stnk">-</td>
+                                <td id="persentase_pelanggaran_lalin_barang_bukti_stnk">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>Kendaraan</td>
                                 <td id="pelanggaran_lalin_barang_bukti_kendaraan_prev">0</td>
                                 <td id="pelanggaran_lalin_barang_bukti_kendaraan">0</td>
                                 <td id="status_pelanggaran_lalin_barang_bukti_kendaraan">-</td>
-                                <td  id="persentase_pelanggaran_lalin_barang_bukti_kendaraan">-</td>
+                                <td id="persentase_pelanggaran_lalin_barang_bukti_kendaraan">-</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">4. KENDARAAN YANG TERLIBAT PELANGGARAN</td>
@@ -234,35 +234,35 @@
                                 <td id="pelanggaran_lalin_terlibat_pelanggaran_motor_prev">0</td>
                                 <td id="pelanggaran_lalin_terlibat_pelanggaran_motor">0</td>
                                 <td id="status_pelanggaran_lalin_terlibat_pelanggaran_motor">-</td>
-                                <td  id="persentase_pelanggaran_lalin_terlibat_pelanggaran_motor">-</td>
+                                <td id="persentase_pelanggaran_lalin_terlibat_pelanggaran_motor">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>mobil penumpang</td>
                                 <td id="pelanggaran_lalin_terlibat_pelanggaran_mob_png_prev">0</td>
                                 <td id="pelanggaran_lalin_terlibat_pelanggaran_mob_png">0</td>
                                 <td id="status_pelanggaran_lalin_terlibat_pelanggaran_mob_png">-</td>
-                                <td  id="persentase_pelanggaran_lalin_terlibat_pelanggaran_mob_png">-</td>
+                                <td id="persentase_pelanggaran_lalin_terlibat_pelanggaran_mob_png">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>mobil bus</td>
                                 <td id="pelanggaran_lalin_terlibat_pelanggaran_bus_prev">0</td>
                                 <td id="pelanggaran_lalin_terlibat_pelanggaran_bus">0</td>
                                 <td id="status_pelanggaran_lalin_terlibat_pelanggaran_bus">-</td>
-                                <td  id="persentase_pelanggaran_lalin_terlibat_pelanggaran_bus">-</td>
+                                <td id="persentase_pelanggaran_lalin_terlibat_pelanggaran_bus">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>mobil barang</td>
                                 <td id="pelanggaran_lalin_terlibat_pelanggaran_mob_brg_prev">0</td>
                                 <td id="pelanggaran_lalin_terlibat_pelanggaran_mob_brg">0</td>
                                 <td id="status_pelanggaran_lalin_terlibat_pelanggaran_mob_brg">-</td>
-                                <td  id="persentase_pelanggaran_lalin_terlibat_pelanggaran_mob_brg">-</td>
+                                <td id="persentase_pelanggaran_lalin_terlibat_pelanggaran_mob_brg">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>kendaraan khusus</td>
                                 <td id="pelanggaran_lalin_terlibat_pelanggaran_khusus_prev">0</td>
                                 <td id="pelanggaran_lalin_terlibat_pelanggaran_khusus">0</td>
                                 <td id="status_pelanggaran_lalin_terlibat_pelanggaran_khusus">-</td>
-                                <td  id="persentase_pelanggaran_lalin_terlibat_pelanggaran_khusus">-</td>
+                                <td id="persentase_pelanggaran_lalin_terlibat_pelanggaran_khusus">-</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">5. PROFESI PELAKU PELANGGARAN</td>
@@ -272,49 +272,49 @@
                                 <td id="pelanggaran_lalin_profesi_pelaku_pns_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_pns">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_pns">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_pns">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_pns">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>karyawan / swasta</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_swasta_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_swasta">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_swasta">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_swasta">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_swasta">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>pelajar / mahasiswa</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_pelajar_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_pelajar">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_pelajar">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_pelajar">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_pelajar">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>pengemudi (supir)</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_supir_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_supir">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_supir">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_supir">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_supir">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>TNI</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_tni_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_tni">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_tni">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_tni">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_tni">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>POLRI</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_polri_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_polri">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_polri">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_polri">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_polri">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>lain - lain</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_lainnya_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_lainnya">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_lainnya">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_lainnya">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_lainnya">-</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">6. USIA PELAKU PELANGGARAN</td>
@@ -324,77 +324,77 @@
                                 <td id="pelanggaran_lalin_profesi_pelaku_15tahun_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_15tahun">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_15tahun">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_15tahun">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_15tahun">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>16 - 20 Tahun</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_1620tahun_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_1620tahun">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_1620tahun">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_1620tahun">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_1620tahun">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>21 - 25 Tahun</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_2125tahun_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_2125tahun">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_2125tahun">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_2125tahun">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_2125tahun">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>26 - 30 Tahun</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_2630tahun_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_2630tahun">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_2630tahun">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_2630tahun">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_2630tahun">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>31 - 35 Tahun</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_3135tahun_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_3135tahun">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_3135tahun">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_3135tahun">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_3135tahun">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>36 - 40 Tahun</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_3640tahun_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_3640tahun">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_3640tahun">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_3640tahun">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_3640tahun">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>41 - 45 Tahun</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_4145tahun_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_4145tahun">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_4145tahun">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_4145tahun">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_4145tahun">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>46 - 50 Tahun</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_4650tahun_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_4650tahun">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_4650tahun">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_4650tahun">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_4650tahun">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>51 - 55 Tahun</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_5155tahun_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_5155tahun">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_5155tahun">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_5155tahun">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_5155tahun">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>56 - 60 Tahun</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_5660tahun_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_5660tahun">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_5660tahun">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_5660tahun">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_5660tahun">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>> 60 Tahun</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_60tahun_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_60tahun">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_60tahun">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_60tahun">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_60tahun">-</td>
                             </tr>
                             </tr>
                             <tr class="padd-title">
@@ -405,70 +405,70 @@
                                 <td id="pelanggaran_lalin_profesi_pelaku_a_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_a">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_a">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_a">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_a">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>A Umum</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_a_umum_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_a_umum">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_a_umum">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_a_umum">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_a_umum">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>B1</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_b1_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_b1">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_b1">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_b1">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_b1">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>B1 Umum</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_b1umum_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_b1umum">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_b1umum">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_b1umum">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_b1umum">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>BII</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_bii_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_bii">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_bii">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_bii">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_bii">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>B II Umum</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_bii_umum_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_bii_umum">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_bii_umum">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_bii_umum">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_bii_umum">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>C</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_c_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_c">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_c">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_c">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_c">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>D</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_d_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_d">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_d">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_d">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_d">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>SIM Internasional</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_sim_internasional_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_sim_internasional">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_sim_internasional">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_sim_internasional">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_sim_internasional">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>Tanpa SIM</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_tanpa_sim_prev">0</td>
                                 <td id="pelanggaran_lalin_profesi_pelaku_tanpa_sim">0</td>
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_tanpa_sim">-</td>
-                                <td  id="persentase_pelanggaran_lalin_profesi_pelaku_tanpa_sim">-</td>
+                                <td id="persentase_pelanggaran_lalin_profesi_pelaku_tanpa_sim">-</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">8. LOKASI PELANGGARAN LALU LINTAS</td>
@@ -481,35 +481,35 @@
                                 <td id="pelanggaran_lalin_kawasan_pemukiman_prev">0</td>
                                 <td id="pelanggaran_lalin_kawasan_pemukiman">0</td>
                                 <td id="status_pelanggaran_lalin_kawasan_pemukiman">-</td>
-                                <td  id="persentase_pelanggaran_lalin_kawasan_pemukiman">-</td>
+                                <td id="persentase_pelanggaran_lalin_kawasan_pemukiman">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>kawasan perbelanjaan</td>
                                 <td id="pelanggaran_lalin_kawasan_perbelanjaan_prev">0</td>
                                 <td id="pelanggaran_lalin_kawasan_perbelanjaan">0</td>
                                 <td id="status_pelanggaran_lalin_kawasan_perbelanjaan">-</td>
-                                <td  id="persentase_pelanggaran_lalin_kawasan_perbelanjaan">-</td>
+                                <td id="persentase_pelanggaran_lalin_kawasan_perbelanjaan">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>perkantoran</td>
                                 <td id="pelanggaran_lalin_kawasan_perkantoran_prev">0</td>
                                 <td id="pelanggaran_lalin_kawasan_perkantoran">0</td>
                                 <td id="status_pelanggaran_lalin_kawasan_perkantoran">-</td>
-                                <td  id="persentase_pelanggaran_lalin_kawasan_perkantoran">-</td>
+                                <td id="persentase_pelanggaran_lalin_kawasan_perkantoran">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>kawasan wisata</td>
                                 <td id="pelanggaran_lalin_kawasan_wisata_prev">0</td>
                                 <td id="pelanggaran_lalin_kawasan_wisata">0</td>
                                 <td id="status_pelanggaran_lalin_kawasan_wisata">-</td>
-                                <td  id="persentase_pelanggaran_lalin_kawasan_wisata">-</td>
+                                <td id="persentase_pelanggaran_lalin_kawasan_wisata">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>kawasan industri</td>
                                 <td id="pelanggaran_lalin_kawasan_industri_prev">0</td>
                                 <td id="pelanggaran_lalin_kawasan_industri">0</td>
                                 <td id="status_pelanggaran_lalin_kawasan_industri">-</td>
-                                <td  id="persentase_pelanggaran_lalin_kawasan_industri">-</td>
+                                <td id="persentase_pelanggaran_lalin_kawasan_industri">-</td>
                             </tr>
                             <tr>
                                 <td class="subtitle" colspan="5">B. Status Jalan</td>
@@ -519,28 +519,28 @@
                                 <td id="pelanggaran_lalin_status_jalan_nasional_prev">0</td>
                                 <td id="pelanggaran_lalin_status_jalan_nasional">0</td>
                                 <td id="status_pelanggaran_lalin_status_jalan_nasional">-</td>
-                                <td  id="persentase_pelanggaran_lalin_status_jalan_nasional">-</td>
+                                <td id="persentase_pelanggaran_lalin_status_jalan_nasional">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>propinsi</td>
                                 <td id="pelanggaran_lalin_status_jalan_propinsi_prev">0</td>
                                 <td id="pelanggaran_lalin_status_jalan_propinsi">0</td>
                                 <td id="status_pelanggaran_lalin_status_jalan_propinsi">-</td>
-                                <td  id="persentase_pelanggaran_lalin_status_jalan_propinsi">-</td>
+                                <td id="persentase_pelanggaran_lalin_status_jalan_propinsi">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>kab/kota</td>
                                 <td id="pelanggaran_lalin_status_jalan_kabkota_prev">0</td>
                                 <td id="pelanggaran_lalin_status_jalan_kabkota">0</td>
                                 <td id="status_pelanggaran_lalin_status_jalan_kabkota">-</td>
-                                <td  id="persentase_pelanggaran_lalin_status_jalan_kabkota">-</td>
+                                <td id="persentase_pelanggaran_lalin_status_jalan_kabkota">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>desa / lingkungan</td>
                                 <td id="pelanggaran_lalin_status_jalan_desa_prev">0</td>
                                 <td id="pelanggaran_lalin_status_jalan_desa">0</td>
                                 <td id="status_pelanggaran_lalin_status_jalan_desa">-</td>
-                                <td  id="persentase_pelanggaran_lalin_status_jalan_desa">-</td>
+                                <td id="persentase_pelanggaran_lalin_status_jalan_desa">-</td>
                             </tr>
                             <tr>
                                 <td class="subtitle" colspan="5">C. Berdasarkan Fungsi Jalan</td>
@@ -550,28 +550,28 @@
                                 <td id="pelanggaran_lalin_status_jalan_arteri_prev">0</td>
                                 <td id="pelanggaran_lalin_status_jalan_arteri">0</td>
                                 <td id="status_pelanggaran_lalin_status_jalan_arteri">-</td>
-                                <td  id="persentase_pelanggaran_lalin_status_jalan_arteri">-</td>
+                                <td id="persentase_pelanggaran_lalin_status_jalan_arteri">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>kolektor</td>
                                 <td id="pelanggaran_lalin_status_jalan_kolektor_prev">0</td>
                                 <td id="pelanggaran_lalin_status_jalan_kolektor">0</td>
                                 <td id="status_pelanggaran_lalin_status_jalan_kolektor">-</td>
-                                <td  id="persentase_pelanggaran_lalin_status_jalan_kolektor">-</td>
+                                <td id="persentase_pelanggaran_lalin_status_jalan_kolektor">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>lokal</td>
                                 <td id="pelanggaran_lalin_status_jalan_lokal_prev">0</td>
                                 <td id="pelanggaran_lalin_status_jalan_lokal">0</td>
                                 <td id="status_pelanggaran_lalin_status_jalan_lokal">-</td>
-                                <td  id="persentase_pelanggaran_lalin_status_jalan_lokal">-</td>
+                                <td id="persentase_pelanggaran_lalin_status_jalan_lokal">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>lingkungan</td>
                                 <td id="pelanggaran_lalin_status_jalan_lingkungan_prev">0</td>
                                 <td id="pelanggaran_lalin_status_jalan_lingkungan">0</td>
                                 <td id="status_pelanggaran_lalin_status_jalan_lingkungan">-</td>
-                                <td  id="persentase_pelanggaran_lalin_status_jalan_lingkungan">-</td>
+                                <td id="persentase_pelanggaran_lalin_status_jalan_lingkungan">-</td>
                             </tr>
                             <tr>
                                 <td class="titlletd" bgcolor="#fff" colspan="5">II. DATA TERKAIT MASALAH KECELAKAAN LALU LINTAS</td>
@@ -584,35 +584,35 @@
                                 <td id="kecelakaan_lalin_jumlah_kejadian_prev">0</td>
                                 <td id="kecelakaan_lalin_jumlah_kejadian">0</td>
                                 <td id="status_kecelakaan_lalin_jumlah_kejadian">-</td>
-                                <td  id="persentase_kecelakaan_lalin_jumlah_kejadian">-</td>
+                                <td id="persentase_kecelakaan_lalin_jumlah_kejadian">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>korban meninggal dunia</td>
                                 <td id="kecelakaan_lalin_korban_meninggal_prev">0</td>
                                 <td id="kecelakaan_lalin_korban_meninggal">0</td>
                                 <td id="status_kecelakaan_lalin_korban_meninggal">-</td>
-                                <td  id="persentase_kecelakaan_lalin_korban_meninggal">-</td>
+                                <td id="persentase_kecelakaan_lalin_korban_meninggal">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>korban luka berat</td>
                                 <td id="kecelakaan_lalin_korban_lukaberat_prev">0</td>
                                 <td id="kecelakaan_lalin_korban_lukaberat">0</td>
                                 <td id="status_kecelakaan_lalin_korban_lukaberat">-</td>
-                                <td  id="persentase_kecelakaan_lalin_korban_lukaberat">-</td>
+                                <td id="persentase_kecelakaan_lalin_korban_lukaberat">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>korban luka ringan</td>
                                 <td id="kecelakaan_lalin_korban_lukaringan_prev">0</td>
                                 <td id="kecelakaan_lalin_korban_lukaringan">0</td>
                                 <td id="status_kecelakaan_lalin_korban_lukaringan">-</td>
-                                <td  id="persentase_kecelakaan_lalin_korban_lukaringan">-</td>
+                                <td id="persentase_kecelakaan_lalin_korban_lukaringan">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>kerugian materil</td>
                                 <td id="kecelakaan_lalin_kerugian_materil_prev">0</td>
                                 <td id="kecelakaan_lalin_kerugian_materil">0</td>
                                 <td id="status_kecelakaan_lalin_kerugian_materil">-</td>
-                                <td  id="persentase_kecelakaan_lalin_kerugian_materil">-</td>
+                                <td id="persentase_kecelakaan_lalin_kerugian_materil">-</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">10. BARANG BUKTI YANG DISITA</td>
@@ -622,21 +622,21 @@
                                 <td id="kecelakaan_lalin_barbuk_sim_prev">0</td>
                                 <td id="kecelakaan_lalin_barbuk_sim">0</td>
                                 <td id="status_kecelakaan_lalin_barbuk_sim">-</td>
-                                <td  id="persentase_kecelakaan_lalin_barbuk_sim">-</td>
+                                <td id="persentase_kecelakaan_lalin_barbuk_sim">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>STNK</td>
                                 <td id="kecelakaan_lalin_barbuk_stnk_prev">0</td>
                                 <td id="kecelakaan_lalin_barbuk_stnk">0</td>
                                 <td id="status_kecelakaan_lalin_barbuk_stnk">-</td>
-                                <td  id="persentase_kecelakaan_lalin_barbuk_stnk">-</td>
+                                <td id="persentase_kecelakaan_lalin_barbuk_stnk">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>kendaraan</td>
                                 <td id="kecelakaan_lalin_barbuk_kendaraan_prev">0</td>
                                 <td id="kecelakaan_lalin_barbuk_kendaraan">0</td>
                                 <td id="status_kecelakaan_lalin_barbuk_kendaraan">-</td>
-                                <td  id="persentase_kecelakaan_lalin_barbuk_kendaraan">-</td>
+                                <td id="persentase_kecelakaan_lalin_barbuk_kendaraan">-</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">11. PROFESI KORBAN KECELAKAAN LALU LINTAS</td>
@@ -646,49 +646,49 @@
                                 <td id="kecelakaan_lalin_pns_prev">0</td>
                                 <td id="kecelakaan_lalin_pns">0</td>
                                 <td id="status_kecelakaan_lalin_pns">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pns">-</td>
+                                <td id="persentase_kecelakaan_lalin_pns">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>karyawan / swasta</td>
                                 <td id="kecelakaan_lalin_swasta_prev">0</td>
                                 <td id="kecelakaan_lalin_swasta">0</td>
                                 <td id="status_kecelakaan_lalin_swasta">-</td>
-                                <td  id="persentase_kecelakaan_lalin_swasta">-</td>
+                                <td id="persentase_kecelakaan_lalin_swasta">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>pelajar / mahasiswa</td>
                                 <td id="kecelakaan_lalin_pelajar_prev">0</td>
                                 <td id="kecelakaan_lalin_pelajar">0</td>
                                 <td id="status_kecelakaan_lalin_pelajar">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelajar">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelajar">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>pengemudi</td>
                                 <td id="kecelakaan_lalin_pengemudi_prev">0</td>
                                 <td id="kecelakaan_lalin_pengemudi">0</td>
                                 <td id="status_kecelakaan_lalin_pengemudi">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pengemudi">-</td>
+                                <td id="persentase_kecelakaan_lalin_pengemudi">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>TNI</td>
                                 <td id="kecelakaan_lalin_tni_prev">0</td>
                                 <td id="kecelakaan_lalin_tni">0</td>
                                 <td id="status_kecelakaan_lalin_tni">-</td>
-                                <td  id="persentase_kecelakaan_lalin_tni">-</td>
+                                <td id="persentase_kecelakaan_lalin_tni">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>POLRI</td>
                                 <td id="kecelakaan_lalin_polri_prev">0</td>
                                 <td id="kecelakaan_lalin_polri">0</td>
                                 <td id="status_kecelakaan_lalin_polri">-</td>
-                                <td  id="persentase_kecelakaan_lalin_polri">-</td>
+                                <td id="persentase_kecelakaan_lalin_polri">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>lain - lain</td>
                                 <td id="kecelakaan_lalin_lain_prev">0</td>
                                 <td id="kecelakaan_lalin_lain">0</td>
                                 <td id="status_kecelakaan_lalin_lain">-</td>
-                                <td  id="persentase_kecelakaan_lalin_lain">-</td>
+                                <td id="persentase_kecelakaan_lalin_lain">-</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">12. USIA KORBAN KECELAKAAN LALU LINTAS</td>
@@ -698,77 +698,77 @@
                                 <td id="kecelakaan_lalin_15tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_15tahun">0</td>
                                 <td id="status_kecelakaan_lalin_15tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_15tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_15tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>16 - 20 Tahun</td>
                                 <td id="kecelakaan_lalin_1620tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_1620tahun">0</td>
                                 <td id="status_kecelakaan_lalin_1620tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_1620tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_1620tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>21 - 25 Tahun</td>
                                 <td id="kecelakaan_lalin_2125tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_2125tahun">0</td>
                                 <td id="status_kecelakaan_lalin_2125tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_2125tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_2125tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>26 - 30 Tahun</td>
                                 <td id="kecelakaan_lalin_2630tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_2630tahun">0</td>
                                 <td id="status_kecelakaan_lalin_2630tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_2630tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_2630tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>31 - 35 Tahun</td>
                                 <td id="kecelakaan_lalin_3135tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_3135tahun">0</td>
                                 <td id="status_kecelakaan_lalin_3135tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_3135tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_3135tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>36 - 40 Tahun</td>
                                 <td id="kecelakaan_lalin_3640tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_3640tahun">0</td>
                                 <td id="status_kecelakaan_lalin_3640tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_3640tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_3640tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>41 - 45 Tahun</td>
                                 <td id="kecelakaan_lalin_4145tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_4145tahun">0</td>
                                 <td id="status_kecelakaan_lalin_4145tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_4145tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_4145tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>46 - 50 Tahun</td>
                                 <td id="kecelakaan_lalin_4650tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_4650tahun">0</td>
                                 <td id="status_kecelakaan_lalin_4650tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_4650tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_4650tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>51 - 55 Tahun</td>
                                 <td id="kecelakaan_lalin_5155tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_5155tahun">0</td>
                                 <td id="status_kecelakaan_lalin_5155tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_5155tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_5155tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>56 - 60 Tahun</td>
                                 <td id="kecelakaan_lalin_5660tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_5660tahun">0</td>
                                 <td id="status_kecelakaan_lalin_5660tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_5660tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_5660tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>> 60 Tahun</td>
                                 <td id="kecelakaan_lalin_60tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_60tahun">0</td>
                                 <td id="status_kecelakaan_lalin_60tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_60tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_60tahun">-</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">13. SIM KORBAN KECELAKAAN LALU LINTAS</td>
@@ -778,70 +778,70 @@
                                 <td id="kecelakaan_lalin_sima_prev">0</td>
                                 <td id="kecelakaan_lalin_sima">0</td>
                                 <td id="status_kecelakaan_lalin_sima">-</td>
-                                <td  id="persentase_kecelakaan_lalin_sima">-</td>
+                                <td id="persentase_kecelakaan_lalin_sima">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>A Umum</td>
                                 <td id="kecelakaan_lalin_sima_umum_prev">0</td>
                                 <td id="kecelakaan_lalin_sima_umum">0</td>
                                 <td id="status_kecelakaan_lalin_sima_umum">-</td>
-                                <td  id="persentase_kecelakaan_lalin_sima_umum">-</td>
+                                <td id="persentase_kecelakaan_lalin_sima_umum">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>B1</td>
                                 <td id="kecelakaan_lalin_b1_prev">0</td>
                                 <td id="kecelakaan_lalin_b1">0</td>
                                 <td id="status_kecelakaan_lalin_b1">-</td>
-                                <td  id="persentase_kecelakaan_lalin_b1">-</td>
+                                <td id="persentase_kecelakaan_lalin_b1">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>B1 Umum</td>
                                 <td id="kecelakaan_lalin_b1umum_prev">0</td>
                                 <td id="kecelakaan_lalin_b1umum">0</td>
                                 <td id="status_kecelakaan_lalin_b1umum">-</td>
-                                <td  id="persentase_kecelakaan_lalin_b1umum">-</td>
+                                <td id="persentase_kecelakaan_lalin_b1umum">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>BII</td>
                                 <td id="kecelakaan_lalin_bii_prev">0</td>
                                 <td id="kecelakaan_lalin_bii">0</td>
                                 <td id="status_kecelakaan_lalin_bii">-</td>
-                                <td  id="persentase_kecelakaan_lalin_bii">-</td>
+                                <td id="persentase_kecelakaan_lalin_bii">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>BII Umum</td>
                                 <td id="kecelakaan_lalin_bii_umum_prev">0</td>
                                 <td id="kecelakaan_lalin_bii_umum">0</td>
                                 <td id="status_kecelakaan_lalin_bii_umum">-</td>
-                                <td  id="persentase_kecelakaan_lalin_bii_umum">-</td>
+                                <td id="persentase_kecelakaan_lalin_bii_umum">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>C</td>
                                 <td id="kecelakaan_lalin_simc_prev">0</td>
                                 <td id="kecelakaan_lalin_simc">0</td>
                                 <td id="status_kecelakaan_lalin_simc">-</td>
-                                <td  id="persentase_kecelakaan_lalin_simc">-</td>
+                                <td id="persentase_kecelakaan_lalin_simc">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>D</td>
                                 <td id="kecelakaan_lalin_simd_prev">0</td>
                                 <td id="kecelakaan_lalin_simd">0</td>
                                 <td id="status_kecelakaan_lalin_simd">-</td>
-                                <td  id="persentase_kecelakaan_lalin_simd">-</td>
+                                <td id="persentase_kecelakaan_lalin_simd">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>SIM Internasional</td>
                                 <td id="kecelakaan_lalin_sim_internasional_prev">0</td>
                                 <td id="kecelakaan_lalin_sim_internasional">0</td>
                                 <td id="status_kecelakaan_lalin_sim_internasional">-</td>
-                                <td  id="persentase_kecelakaan_lalin_sim_internasional">-</td>
+                                <td id="persentase_kecelakaan_lalin_sim_internasional">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>Tanpa SIM</td>
                                 <td id="kecelakaan_lalin_tanpa_sim_prev">0</td>
                                 <td id="kecelakaan_lalin_tanpa_sim">0</td>
                                 <td id="status_kecelakaan_lalin_tanpa_sim">-</td>
-                                <td  id="persentase_kecelakaan_lalin_tanpa_sim">-</td>
+                                <td id="persentase_kecelakaan_lalin_tanpa_sim">-</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">14. KENDARAAN YANG TERLIBAT KECELAKAAN LALU LINTAS</td>
@@ -851,42 +851,42 @@
                                 <td id="kecelakaan_lalin_motor_prev">0</td>
                                 <td id="kecelakaan_lalin_motor">0</td>
                                 <td id="status_kecelakaan_lalin_motor">-</td>
-                                <td  id="persentase_kecelakaan_lalin_motor">-</td>
+                                <td id="persentase_kecelakaan_lalin_motor">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>mobil penumpang</td>
                                 <td id="kecelakaan_lalin_mobil_penumpang_prev">0</td>
                                 <td id="kecelakaan_lalin_mobil_penumpang">0</td>
                                 <td id="status_kecelakaan_lalin_mobil_penumpang">-</td>
-                                <td  id="persentase_kecelakaan_lalin_mobil_penumpang">-</td>
+                                <td id="persentase_kecelakaan_lalin_mobil_penumpang">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>mobil bus</td>
                                 <td id="kecelakaan_lalin_bus_prev">0</td>
                                 <td id="kecelakaan_lalin_bus">0</td>
                                 <td id="status_kecelakaan_lalin_bus">-</td>
-                                <td  id="persentase_kecelakaan_lalin_bus">-</td>
+                                <td id="persentase_kecelakaan_lalin_bus">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>mobil barang</td>
                                 <td id="kecelakaan_lalin_barang_prev">0</td>
                                 <td id="kecelakaan_lalin_barang">0</td>
                                 <td id="status_kecelakaan_lalin_barang">-</td>
-                                <td  id="persentase_kecelakaan_lalin_barang">-</td>
+                                <td id="persentase_kecelakaan_lalin_barang">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>Kendaraan Khusus</td>
                                 <td id="kecelakaan_lalin_kendaraankhusus_prev">0</td>
                                 <td id="kecelakaan_lalin_kendaraankhusus">0</td>
                                 <td id="status_kecelakaan_lalin_kendaraankhusus">-</td>
-                                <td  id="persentase_kecelakaan_lalin_kendaraankhusus">-</td>
+                                <td id="persentase_kecelakaan_lalin_kendaraankhusus">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>kendaraan tidak bermotor</td>
                                 <td id="kecelakaan_lalin_tidak_bermotor_prev">0</td>
                                 <td id="kecelakaan_lalin_tidak_bermotor">0</td>
                                 <td id="status_kecelakaan_lalin_tidak_bermotor">-</td>
-                                <td  id="persentase_kecelakaan_lalin_tidak_bermotor">-</td>
+                                <td id="persentase_kecelakaan_lalin_tidak_bermotor">-</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">15. JENIS KECELAKAAN LALU LINTAS</td>
@@ -896,70 +896,70 @@
                                 <td id="kecelakaan_lalin_tunggal_prev">0</td>
                                 <td id="kecelakaan_lalin_tunggal">0</td>
                                 <td id="status_kecelakaan_lalin_tunggal">-</td>
-                                <td  id="persentase_kecelakaan_lalin_tunggal">-</td>
+                                <td id="persentase_kecelakaan_lalin_tunggal">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>depan-depan</td>
                                 <td id="kecelakaan_lalin_depan_prev">0</td>
                                 <td id="kecelakaan_lalin_depan">0</td>
                                 <td id="status_kecelakaan_lalin_depan">-</td>
-                                <td  id="persentase_kecelakaan_lalin_depan">-</td>
+                                <td id="persentase_kecelakaan_lalin_depan">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>depan-belakang</td>
                                 <td id="kecelakaan_lalin_depan_belakang_prev">0</td>
                                 <td id="kecelakaan_lalin_depan_belakang">0</td>
                                 <td id="status_kecelakaan_lalin_depan_belakang">-</td>
-                                <td  id="persentase_kecelakaan_lalin_depan_belakang">-</td>
+                                <td id="persentase_kecelakaan_lalin_depan_belakang">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>depan-samping</td>
                                 <td id="kecelakaan_lalin_depan_samping_prev">0</td>
                                 <td id="kecelakaan_lalin_depan_samping">0</td>
                                 <td id="status_kecelakaan_lalin_depan_samping">-</td>
-                                <td  id="persentase_kecelakaan_lalin_depan_samping">-</td>
+                                <td id="persentase_kecelakaan_lalin_depan_samping">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>beruntun</td>
                                 <td id="kecelakaan_lalin_beruntun_prev">0</td>
                                 <td id="kecelakaan_lalin_beruntun">0</td>
                                 <td id="status_kecelakaan_lalin_beruntun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_beruntun">-</td>
+                                <td id="persentase_kecelakaan_lalin_beruntun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>tabrak pejalan kaki</td>
                                 <td id="kecelakaan_lalin_pejalan_kaki_prev">0</td>
                                 <td id="kecelakaan_lalin_pejalan_kaki">0</td>
                                 <td id="status_kecelakaan_lalin_pejalan_kaki">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pejalan_kaki">-</td>
+                                <td id="persentase_kecelakaan_lalin_pejalan_kaki">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>tabrak lari</td>
                                 <td id="kecelakaan_lalin_tabrak_lari_prev">0</td>
                                 <td id="kecelakaan_lalin_tabrak_lari">0</td>
                                 <td id="status_kecelakaan_lalin_tabrak_lari">-</td>
-                                <td  id="persentase_kecelakaan_lalin_tabrak_lari">-</td>
+                                <td id="persentase_kecelakaan_lalin_tabrak_lari">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>tabrak hewan</td>
                                 <td id="kecelakaan_lalin_tabrak_hewan_prev">0</td>
                                 <td id="kecelakaan_lalin_tabrak_hewan">0</td>
                                 <td id="status_kecelakaan_lalin_tabrak_hewan">-</td>
-                                <td  id="persentase_kecelakaan_lalin_tabrak_hewan">-</td>
+                                <td id="persentase_kecelakaan_lalin_tabrak_hewan">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>samping-samping</td>
                                 <td id="kecelakaan_lalin_samping_prev">0</td>
                                 <td id="kecelakaan_lalin_samping">0</td>
                                 <td id="status_kecelakaan_lalin_samping">-</td>
-                                <td  id="persentase_kecelakaan_lalin_samping">-</td>
+                                <td id="persentase_kecelakaan_lalin_samping">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>lainnya</td>
                                 <td id="kecelakaan_lalin_lainnya_prev">0</td>
                                 <td id="kecelakaan_lalin_lainnya">0</td>
                                 <td id="status_kecelakaan_lalin_lainnya">-</td>
-                                <td  id="persentase_kecelakaan_lalin_lainnya">-</td>
+                                <td id="persentase_kecelakaan_lalin_lainnya">-</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">16. PROFESI PELAKU KECELAKAAN LALU LINTAS</td>
@@ -969,49 +969,49 @@
                                 <td id="kecelakaan_lalin_pelaku_pns_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_pns">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_pns">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_pns">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_pns">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>karyawan / swasta</td>
                                 <td id="kecelakaan_lalin_pelaku_swasta_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_swasta">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_swasta">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_swasta">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_swasta">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>pelajar / mahasiswa</td>
                                 <td id="kecelakaan_lalin_pelaku_pelajar_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_pelajar">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_pelajar">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_pelajar">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_pelajar">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>pengemudi</td>
                                 <td id="kecelakaan_lalin_pelaku_pengemudi_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_pengemudi">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_pengemudi">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_pengemudi">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_pengemudi">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>TNI</td>
                                 <td id="kecelakaan_lalin_pelaku_tni_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_tni">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_tni">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_tni">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_tni">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>POLRI</td>
                                 <td id="kecelakaan_lalin_pelaku_polri_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_polri">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_polri">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_polri">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_polri">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>lain - lain</td>
                                 <td id="kecelakaan_lalin_pelaku_lain_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_lain">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_lain">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_lain">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_lain">-</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">17. USIA PELAKU KECELAKAAN LALU LINTAS</td>
@@ -1021,77 +1021,77 @@
                                 <td id="kecelakaan_lalin_pelaku_15tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_15tahun">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_15tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_15tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_15tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>16 - 20 Tahun</td>
                                 <td id="kecelakaan_lalin_pelaku_1620tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_1620tahun">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_1620tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_1620tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_1620tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>21 - 25 Tahun</td>
                                 <td id="kecelakaan_lalin_pelaku_2125tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_2125tahun">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_2125tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_2125tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_2125tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>26 - 30 Tahun</td>
                                 <td id="kecelakaan_lalin_pelaku_2630tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_2630tahun">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_2630tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_2630tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_2630tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>31 - 35 Tahun</td>
                                 <td id="kecelakaan_lalin_pelaku_3135tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_3135tahun">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_3135tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_3135tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_3135tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>36 - 40 Tahun</td>
                                 <td id="kecelakaan_lalin_pelaku_3640tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_3640tahun">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_3640tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_3640tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_3640tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>41 - 45 Tahun</td>
                                 <td id="kecelakaan_lalin_pelaku_4145tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_4145tahun">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_4145tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_4145tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_4145tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>46 - 50 Tahun</td>
                                 <td id="kecelakaan_lalin_pelaku_4650tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_4650tahun">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_4650tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_4650tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_4650tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>51 - 55 Tahun</td>
                                 <td id="kecelakaan_lalin_pelaku_5155tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_5155tahun">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_5155tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_5155tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_5155tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>56 - 60 Tahun</td>
                                 <td id="kecelakaan_lalin_pelaku_5660tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_5660tahun">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_5660tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_5660tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_5660tahun">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>> 60 Tahun</td>
                                 <td id="kecelakaan_lalin_pelaku_60tahun_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_60tahun">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_60tahun">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_60tahun">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_60tahun">-</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">18. SIM PELAKU KECELAKAAN LALU LINTAS</td>
@@ -1101,70 +1101,70 @@
                                 <td id="kecelakaan_lalin_pelaku_sim_a_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_a">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_sim_a">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_sim_a">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_sim_a">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>A Umum</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_a_umum_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_a_umum">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_sim_a_umum">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_sim_a_umum">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_sim_a_umum">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>B1</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_b1_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_b1">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_sim_b1">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_sim_b1">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_sim_b1">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>B1 Umum</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_b1umum_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_b1umum">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_sim_b1umum">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_sim_b1umum">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_sim_b1umum">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>BII</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_bii_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_bii">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_sim_bii">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_sim_bii">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_sim_bii">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>B II Umum</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_bii_umum_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_bii_umum">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_sim_bii_umum">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_sim_bii_umum">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_sim_bii_umum">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>C</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_c_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_c">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_sim_c">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_sim_c">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_sim_c">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>D</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_d_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_d">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_sim_d">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_sim_d">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_sim_d">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>SIM Internasional</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_sim_internasional_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_sim_internasional">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_sim_sim_internasional">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_sim_sim_internasional">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_sim_sim_internasional">-</td>
                             </tr>
                             <tr class="evaluasi comreport">
                                 <td>Tanpa SIM</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_tanpa_sim_prev">0</td>
                                 <td id="kecelakaan_lalin_pelaku_sim_tanpa_sim">0</td>
                                 <td id="status_kecelakaan_lalin_pelaku_sim_tanpa_sim">-</td>
-                                <td  id="persentase_kecelakaan_lalin_pelaku_sim_tanpa_sim">-</td>
+                                <td id="persentase_kecelakaan_lalin_pelaku_sim_tanpa_sim">-</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">19. LOKASI KECELAKAAN LALU LINTAS</td>
@@ -1177,42 +1177,42 @@
                                 <td id="kecelakaan_lalin_kawasan_pemukiman_prev">0</td>
                                 <td id="kecelakaan_lalin_kawasan_pemukiman">0</td>
                                 <td id="status_kecelakaan_lalin_kawasan_pemukiman">-</td>
-                                <td  id="persentase_kecelakaan_lalin_kawasan_pemukiman">-</td>
+                                <td id="persentase_kecelakaan_lalin_kawasan_pemukiman">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>kawasan perbelanjaan</td>
                                 <td id="kecelakaan_lalin_kawasan_perbelanjaan_prev">0</td>
                                 <td id="kecelakaan_lalin_kawasan_perbelanjaan">0</td>
                                 <td id="status_kecelakaan_lalin_kawasan_perbelanjaan">-</td>
-                                <td  id="persentase_kecelakaan_lalin_kawasan_perbelanjaan">-</td>
+                                <td id="persentase_kecelakaan_lalin_kawasan_perbelanjaan">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>perkantoran</td>
                                 <td id="kecelakaan_lalin_kawasan_perkantoran_prev">0</td>
                                 <td id="kecelakaan_lalin_kawasan_perkantoran">0</td>
                                 <td id="status_kecelakaan_lalin_kawasan_perkantoran">-</td>
-                                <td  id="persentase_kecelakaan_lalin_kawasan_perkantoran">-</td>
+                                <td id="persentase_kecelakaan_lalin_kawasan_perkantoran">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>kawasan wisata</td>
                                 <td id="kecelakaan_lalin_kawasan_wisata_prev">0</td>
                                 <td id="kecelakaan_lalin_kawasan_wisata">0</td>
                                 <td id="status_kecelakaan_lalin_kawasan_wisata">-</td>
-                                <td  id="persentase_kecelakaan_lalin_kawasan_wisata">-</td>
+                                <td id="persentase_kecelakaan_lalin_kawasan_wisata">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>kawasan industri</td>
                                 <td id="kecelakaan_lalin_kawasan_industri_prev">0</td>
                                 <td id="kecelakaan_lalin_kawasan_industri">0</td>
                                 <td id="status_kecelakaan_lalin_kawasan_industri">-</td>
-                                <td  id="persentase_kecelakaan_lalin_kawasan_industri">-</td>
+                                <td id="persentase_kecelakaan_lalin_kawasan_industri">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>Lain - Lain</td>
                                 <td id="kecelakaan_lalin_kawasan_lainlain_prev">0</td>
                                 <td id="kecelakaan_lalin_kawasan_lainlain">0</td>
                                 <td id="status_kecelakaan_lalin_kawasan_lainlain">-</td>
-                                <td  id="persentase_kecelakaan_lalin_kawasan_lainlain">-</td>
+                                <td id="persentase_kecelakaan_lalin_kawasan_lainlain">-</td>
                             </tr>
                             <tr>
                                 <td class="subtitle" colspan="5">B. Status Jalan</td>
@@ -1222,28 +1222,28 @@
                                 <td id="kecelakaan_lalin_status_jalan_nasional_prev">0</td>
                                 <td id="kecelakaan_lalin_status_jalan_nasional">0</td>
                                 <td id="status_kecelakaan_lalin_status_jalan_nasional">-</td>
-                                <td  id="persentase_kecelakaan_lalin_status_jalan_nasional">-</td>
+                                <td id="persentase_kecelakaan_lalin_status_jalan_nasional">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>propinsi</td>
                                 <td id="kecelakaan_lalin_status_jalan_propinsi_prev">0</td>
                                 <td id="kecelakaan_lalin_status_jalan_propinsi">0</td>
                                 <td id="status_kecelakaan_lalin_status_jalan_propinsi">-</td>
-                                <td  id="persentase_kecelakaan_lalin_status_jalan_propinsi">-</td>
+                                <td id="persentase_kecelakaan_lalin_status_jalan_propinsi">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>kab/kota</td>
                                 <td id="kecelakaan_lalin_status_jalan_kabkota_prev">0</td>
                                 <td id="kecelakaan_lalin_status_jalan_kabkota">0</td>
                                 <td id="status_kecelakaan_lalin_status_jalan_kabkota">-</td>
-                                <td  id="persentase_kecelakaan_lalin_status_jalan_kabkota">-</td>
+                                <td id="persentase_kecelakaan_lalin_status_jalan_kabkota">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>desa / lingkungan</td>
                                 <td id="kecelakaan_lalin_status_jalan_desa_prev">0</td>
                                 <td id="kecelakaan_lalin_status_jalan_desa">0</td>
                                 <td id="status_kecelakaan_lalin_status_jalan_desa">-</td>
-                                <td  id="persentase_kecelakaan_lalin_status_jalan_desa">-</td>
+                                <td id="persentase_kecelakaan_lalin_status_jalan_desa">-</td>
                             </tr>
                             <tr>
                                 <td class="subtitle" colspan="5">C. Berdasarkan Fungsi Jalan</td>
@@ -1253,28 +1253,28 @@
                                 <td id="kecelakaan_lalin_status_jalan_arteri_prev">0</td>
                                 <td id="kecelakaan_lalin_status_jalan_arteri">0</td>
                                 <td id="status_kecelakaan_lalin_status_jalan_arteri">-</td>
-                                <td  id="persentase_kecelakaan_lalin_status_jalan_arteri">-</td>
+                                <td id="persentase_kecelakaan_lalin_status_jalan_arteri">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>kolektor</td>
                                 <td id="kecelakaan_lalin_status_jalan_kolektor_prev">0</td>
                                 <td id="kecelakaan_lalin_status_jalan_kolektor">0</td>
                                 <td id="status_kecelakaan_lalin_status_jalan_kolektor">-</td>
-                                <td  id="persentase_kecelakaan_lalin_status_jalan_kolektor">-</td>
+                                <td id="persentase_kecelakaan_lalin_status_jalan_kolektor">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>lokal</td>
                                 <td id="kecelakaan_lalin_status_jalan_lokal_prev">0</td>
                                 <td id="kecelakaan_lalin_status_jalan_lokal">0</td>
                                 <td id="status_kecelakaan_lalin_status_jalan_lokal">-</td>
-                                <td  id="persentase_kecelakaan_lalin_status_jalan_lokal">-</td>
+                                <td id="persentase_kecelakaan_lalin_status_jalan_lokal">-</td>
                             </tr>
                             <tr class="evaluasi">
                                 <td>lingkungan</td>
                                 <td id="kecelakaan_lalin_status_jalan_lingkungan_prev">0</td>
                                 <td id="kecelakaan_lalin_status_jalan_lingkungan">0</td>
                                 <td id="status_kecelakaan_lalin_status_jalan_lingkungan">-</td>
-                                <td  id="persentase_kecelakaan_lalin_status_jalan_lingkungan">-</td>
+                                <td id="persentase_kecelakaan_lalin_status_jalan_lingkungan">-</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">20. FAKTOR PENYEBAB KECELAKAAN</td>
