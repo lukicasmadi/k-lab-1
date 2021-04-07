@@ -58,6 +58,18 @@
     margin-bottom: 30px;
 }
 
+.ubah-change {
+    text-transform: capitalize;
+}
+
+.ubah-change a {
+    color: #00adef;
+}
+
+.ubah-change span {
+    color: #fff;
+}
+
 .feather-icon .icon-container {
     cursor: pointer;
 }

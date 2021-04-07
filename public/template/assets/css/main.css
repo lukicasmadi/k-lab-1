@@ -380,6 +380,10 @@ label {
     /* background: #1b2e4b; */
 }
 
+.colorgray {
+    color: #79859b;
+}
+
 .form-control {
     height: auto;
     border: 1px solid #00adef;
@@ -450,8 +454,9 @@ label {
 
 .height-form.height-form {
     height: calc(2.1em + 1.1rem + 2px);
-    font-size: 12px;
-    font-weight: lighter;
+    font-size: 13px;
+    /* font-weight: lighter; */
+    padding-top: 10px;
     color: #79859b;
     margin-bottom: 15px;
 }
@@ -573,8 +578,9 @@ select.form-control.form-custom {
     width: 100%;
     height: calc(2.25rem + 2px);
     vertical-align: middle;
-    background: #fff url(../img/arrow-down.png) no-repeat right 0.75rem center;
-    background-size: 13px 14px;
+    background: url(/img/chevron_big_up.png) no-repeat right 0.75rem center;
+    background-color: transparent;
+    background-size: 10px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -1117,9 +1123,9 @@ select.form-control.form-custom {
     background-color: #00adef !important;
     border-color: #00adef;
     text-transform: uppercase;
-    padding-left: 10px;
+    padding: 7px 10px 6px 10px;
     position: absolute;
-    margin: 20px 0 0 0;
+    margin: 21px 0 0 60px;
     z-index: 2;
 }
 
@@ -2032,11 +2038,11 @@ select.form-control.form-custom {
 }
 
 .badge {
-    font-weight: 600;
+    font-weight: lighter;
     line-height: 1.4;
     padding: 3px 6px;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: lighter;
     transition: all 0.3s ease-out;
     -webkit-transition: all 0.3s ease-out;
 }

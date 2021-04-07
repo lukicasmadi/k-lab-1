@@ -52,18 +52,18 @@ table.dataTable.nowrap td {
 }
 
 div.dataTables_wrapper div.dataTables_length label {
-    position: absolute;
+    /* position: absolute; */
     font-weight: lighter;
     text-align: left;
     white-space: nowrap;
     color: #79859b;
     font-size: 14px;
-    margin: -43px 0 0 255px;
+    /* margin: -43px 0 0 255px; */
     /* font-weight: 600; */
 }
 
 div.dataTables_wrapper div.dataTables_length select {
-    width: 50px;
+    /* width: 50px; */
     display: inline-block;
 }
 

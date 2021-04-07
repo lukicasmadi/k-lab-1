@@ -147,7 +147,7 @@ div.dataTables_wrapper div.dataTables_info {
     font-weight: lighter;
     /* border: 1px solid #191e3a; */
     display: inline-block;
-    padding: 10px 16px;
+    /* padding: 10px 16px; */
     /* border-radius: 6px; */
     font-size: 14px;
 }
@@ -206,13 +206,13 @@ div.dataTables_wrapper div.dataTables_filter input {
 }
 
 .dataTables_wrapper .dataTables_length select.form-control {
-    padding: 5px 17px 5px 5px;
+    padding: 0px 17px 0px 5px;
     -moz-appearance: none;
     /* Firefox */
     -webkit-appearance: none;
     /* Safari and Chrome */
     appearance: none;
-    background: #0D79A4 url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23bfc9d4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") 25px 7px no-repeat;
+    background: #0D79A4 url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23bfc9d4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") 32px 7px no-repeat;
     border: 1px solid #0D79A4;
     color: #fff;
     /* border-radius: 6px; */
@@ -230,7 +230,7 @@ div.dataTables_wrapper div.dataTables_paginate {
 .page-link {
     margin-right: 5px;
     /* border-radius: 50%; */
-    padding: 6px 12px;
+    padding: 3px 10px;
     background: rgba(0, 23, 55, 0.08);
     border: none;
     color: #888ea8;
@@ -241,7 +241,7 @@ div.dataTables_wrapper div.dataTables_paginate {
 }
 
 div.dataTables_wrapper div.dataTables_paginate ul.pagination {
-    margin: 3px 0;
+    margin: 7px 0;
 }
 
 .page-item.disabled .page-link {

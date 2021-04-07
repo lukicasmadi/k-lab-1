@@ -29,31 +29,31 @@
                         @csrf
                         <div class="form-group">
                             <label class="text-popup">Pilih Operasi</label>
-                            <select class="form-control height-form" name="operation_id" id="operation_id">
+                            <select class="form-control form-custom height-form" name="operation_id" id="operation_id">
                                 @foreach($rencanaOperasi as $key => $val)
                                     <option value="{{$key}}">{{$val}}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label>Pilih Tahun Pembanding 1</label>
-                            <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control height-form">
+                        <div class="form-group mt-n3">
+                            <label class="text-popup">Pilih Tahun Pembanding 1</label>
+                            <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control form-custom height-form">
                                 @foreach($prevYear as $py){
                                 <option value="{{ $py }}">{{ $py }}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label>Pilih Tahun Pembanding 2</label>
-                            <select id="tahun_pembanding_kedua" name="tahun_pembanding_kedua" class="form-control height-form">
+                        <div class="form-group mt-n3">
+                            <label class="text-popup">Pilih Tahun Pembanding 2</label>
+                            <select id="tahun_pembanding_kedua" name="tahun_pembanding_kedua" class="form-control form-custom height-form">
                                 @foreach($currentYear as $cy){
                                 <option value="{{ $cy }}">{{ $cy }}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label>Pilih Hari</label>
-                            <input id="tanggal" name="tanggal" class="form-control flatpickr flatpickr-input active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                        <div class="form-group mt-n3">
+                            <label class="text-popup">Pilih Hari</label>
+                            <input id="tanggal" name="tanggal" class="form-control popoups inp-icon flatpickr flatpickr-input active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
                         </div>
                         <input type="submit" name="btnUnduhData" id="btnUnduhData" class="mt-4 mb-4 btn btn-primary" value="Unduh Data">
                     </form>
