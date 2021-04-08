@@ -726,14 +726,13 @@ $('body').on('click', '#btnView', function(e) {
         $('#daily_preview').modal('show')
     })
     .catch(function(error) {
-        // if(error.response.status == 404) {
-        //     swal("Data tidak ditemukan. Periksa kembali data anda", null, "error")
-        // }
+        if(error.response.status == 404) {
+            swal("Data tidak ditemukan. Periksa kembali data anda", null, "error")
+        }
 
-        // if(error.response.status == 401) {
-        //     swal("Anda tidak diijinkan mengakses data ini", null, "error")
-        // }
-        console.log(error)
+        if(error.response.status == 401) {
+            swal("Anda tidak diijinkan mengakses data ini", null, "error")
+        }
     })
 })
 </script>
