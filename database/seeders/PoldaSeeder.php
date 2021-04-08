@@ -335,8 +335,8 @@ class PoldaSeeder extends Seeder
             Polda::create([
                 'uuid' => genUuid(),
                 'name' => 'Sulawesi Tenggara',
-                'short_name' => 'sulteng',
-                'logo' => 'sulteng.png',
+                'short_name' => 'sultra',
+                'logo' => 'sultra.png',
                 'jurisdiction' => null,
                 'headquarters' => null,
                 'type' => null,
