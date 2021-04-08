@@ -56,6 +56,7 @@
         </div>
 
         @include('preview_pages.report_daily_add')
+        @include('preview_pages.report_daily_edit')
         @include('preview_pages.report_daily_preview')
     </div>
 </div>
@@ -90,6 +91,10 @@ $('#daily_preview').on('hidden.bs.modal', function () {
     $(".data_load").empty()
 })
 
+$('#form_edit_rekap').on('hidden.bs.modal', function () {
+    $("#hari_edit").addClass("d-none")
+})
+
 $(document).ready(function () {
 
     $("#btnShowModal").click(function (e) {
@@ -108,6 +113,10 @@ $(document).ready(function () {
     });
 
     $('#hari').datepicker({
+        format: 'yyyy-mm-dd',
+    })
+
+    $('#hari_edit').datepicker({
         format: 'yyyy-mm-dd',
     })
 
@@ -184,7 +193,7 @@ $(document).ready(function () {
                 render: function(data, type, row) {
                     return `
                     <div class="ubah-change">
-                        <a href="`+route('report_download_excel', data)+`" id="btnDownload" data-id="`+data+`">Unduh</a>
+                        <a href="`+route('report_download_excel', data)+`" id="btnDownload" data-id="`+data+`">Unduh</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#" id="btnEdit" data-id="`+data+`">Edit</a>
                     </div>
                     `;
                 },
@@ -730,6 +739,43 @@ $('body').on('click', '#btnView', function(e) {
             swal("Data tidak ditemukan. Periksa kembali data anda", null, "error")
         }
 
+        if(error.response.status == 401) {
+            swal("Anda tidak diijinkan mengakses data ini", null, "error")
+        }
+    })
+})
+
+$('body').on('click', '#btnEdit', function(e) {
+    e.preventDefault()
+    var uuid = $(this).attr('data-id')
+
+    axios.get(route('korlantas_rekap', uuid)).then(function(response) {
+
+        $("#report_name_edit").val(response.data.report_name)
+
+        if(response.data.polda != "polda_all") {
+            $('#polda_edit option[value='+response.data.polda+']').prop("selected", true)
+        }
+
+        $('#year_edit option[value="'+response.data.year+'"]').prop("selected", true)
+
+        $('#rencana_operasi_id_edit option[value='+response.data.rencana_operasi_id+']').prop("selected", true)
+
+        if(response.data.operation_date != "semua_hari") {
+            $("#hari_edit").removeClass("d-none")
+            $('#operation_date_edit option[value="pilih_hari"]').prop("selected", true)
+            $("#hari_edit").val(response.data.operation_date)
+        } else {
+            $('#operation_date_edit option[value="semua_hari"]').prop("selected", true)
+            $("#hari_edit").addClass("d-none")
+        }
+
+        $('#form_edit_rekap').modal('show')
+    })
+    .catch(function(error) {
+        if(error.response.status == 404) {
+            swal("Data tidak ditemukan. Periksa kembali data anda", null, "error")
+        }
         if(error.response.status == 401) {
             swal("Anda tidak diijinkan mengakses data ini", null, "error")
         }

@@ -49,6 +49,17 @@ class KorlantasRekapController extends Controller
         return redirect()->back();
     }
 
+    public function korlantas_rekap($uuid)
+    {
+        $model = KorlantasRekap::whereUuid($uuid)->first();
+
+        if(empty($model)) {
+            abort(404);
+        }
+
+        return $model;
+    }
+
     public function byuuid($uuid)
     {
         $model = KorlantasRekap::with(['rencaraOperasi', 'poldaData'])->whereUuid($uuid)->first();
