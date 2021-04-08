@@ -61,7 +61,7 @@
                     </div>
                 </div>
             <div class="modal-footer">
-                <input type="submit" class="btn btnBlue" value="UNDUH">
+                <input type="submit" class="btn btnBlue" value="BUAT LAPORAN">
             </div>
             </form>
         </div>

@@ -116,6 +116,10 @@
                     <div class="modal-body">
                         <div class="notes-box">
                             <div class="notes-content">
+                                <span class="colorblue">REKAP LAPORAN</span>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                </button>
                                 <span class="colorblue">ALIAS RENCANA OPERASI</span>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                                     <div class="row imgpopup">
@@ -232,7 +236,7 @@ $(document).ready(function () {
                 render: function(data, type, row) {
                     return `
                     <div class="icon-container">
-                        <a href="`+route('get_data_polda_custom_name', data)+`" id="addAliasData" idval="`+data+`"><img src="{{ secure_asset('/img/search.png') }}" width="45%"></a>
+                        <a href="`+route('get_data_polda_custom_name', data)+`" id="addAliasData" idval="`+data+`"><i class="far fa-plus-square" style="font-size: 17px;"></i></a>
                     </div>
                     `;
                 },
