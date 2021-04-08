@@ -35,6 +35,14 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
+            'name' => 'bagops',
+            'email' => 'bagops@gmail.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('crt2021'),
+            'remember_token' => Str::random(10),
+        ]);
+
+        User::create([
             'name' => 'korlantas',
             'email' => 'free@korlantas.com',
             'email_verified_at' => now(),
@@ -353,6 +361,9 @@ class UserSeeder extends Seeder
         $administrator->syncPermissions($allPermission);
 
         $admin = User::whereEmail("berthojoris@gmail.com")->first();
+        $admin->assignRole('administrator');
+
+        $admin = User::whereEmail("bagops@gmail.com")->first();
         $admin->assignRole('administrator');
 
         $admin = User::whereEmail("lukicasmadi@gmail.com")->first();

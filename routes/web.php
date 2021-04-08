@@ -161,6 +161,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/korlantas-rekap/daily/create', 'KorlantasRekapController@store')->name('korlantas_rekap_store');
     Route::get('/custom-name', 'KorlantasRekapController@polda_custom_name')->name('polda_custom_name'); //route kenapa bermasalah?
     Route::post('/custom-name/store', 'KorlantasRekapController@storeCustomName')->name('post_data_polda_custom_name');
+    Route::get('/test', 'TestController@polda')->name('test');
 
     Route::group(['prefix' => 'data'], function () {
         Route::get('/category', 'CategoryController@data')->name('category_data');
