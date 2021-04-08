@@ -84,7 +84,7 @@ $(document).ready(function() {
     var table = $('#tbl_user_polda').DataTable({
         processing: true,
         serverSide: true,
-        pageLength : 5,
+        pageLength : 34,
         ajax: route('uhp_data'),
         "oLanguage": {
             "oPaginate": {

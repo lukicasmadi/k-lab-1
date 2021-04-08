@@ -19,6 +19,7 @@ class CreatePoldasTable extends Migration
             $table->string('name');
             $table->string('short_name');
             $table->string('logo')->nullable();
+            $table->string('polda_assign')->nullable();
             $table->string('jurisdiction')->nullable();
             $table->string('headquarters')->nullable();
             $table->string('type')->nullable();

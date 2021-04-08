@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             LaporanTypeSeeder::class,
             KesatuanSeeder::class,
             RencanaOperasiSeeder::class,
-            // PoldaHasRencanaSeeder::class,
+            UserAssign::class,
         ]);
     }
 }
