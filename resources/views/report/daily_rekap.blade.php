@@ -761,6 +761,8 @@ $('body').on('click', '#btnEdit', function(e) {
 
     axios.get(route('korlantas_rekap', uuid)).then(function(response) {
 
+        $("#uuid_edit").val(response.data.uuid)
+
         $("#report_name_edit").val(response.data.report_name)
 
         if(response.data.polda != "polda_all") {

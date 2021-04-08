@@ -952,4 +952,21 @@ class KorlantasRekapController extends Controller
 
         return $pcon;
     }
+
+    public function update()
+    {
+        $model = KorlantasRekap::updateOrCreate(
+            ['uuid' => request('uuid_edit')],
+            [
+                'report_name' => request('report_name_edit'),
+                'polda' => request('polda_edit'),
+                'year' => request('year_edit'),
+                'rencana_operasi_id' => request('rencana_operasi_id_edit'),
+                'operation_date' => (request('operation_date_edit') == "pilih_hari") ? request('hari_edit') : 'semua_hari',
+            ]
+        );
+
+        flash('Rekap harian berhasil diubah')->success();
+        return redirect()->back();
+    }
 }
