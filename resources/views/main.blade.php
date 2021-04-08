@@ -349,81 +349,17 @@ function donutData() {
         var filled = response.data.filled
         var nofilled = response.data.nofilled
 
-        var donutChart = {
+    var donutChart = {
         chart: {
             height: 350,
             type: 'donut',
             toolbar: {
-                show: false,
-            }
-        },
-        dataLabels: {
-            enabled: false,
-            formatter: function (val) {
-                return val + "%"
-            },
-        },
-        tooltip: {
-            y: {
-                formatter: function(value) {
-                    return value + "%";
-                }
-            }
-        },
-        fill: {
-            type: "gradient",
-            gradient: {
-            shadeIntensity: 0.8,
-            opacityFrom: 0.9,
-            opacityTo: 0.9,
-            stops: [50, 190, 100]
-            }
-        },
-        colors:['#00adef', '#ea1c26'],
-        plotOptions: {
-          pie: {
-            donut: {
-              size: '65%',
-              background: 'transparent',
-              labels: {
-                show: true,
-                name: {
-                  show: true,
-                  fontSize: '12px',
-                  color: undefined,
-                  offsetY: -10,
-                },
-                value: {
-                  show: true,
-                  fontSize: '50px',
-                  color: '20',
-                  offsetY: 16,
-                  formatter: function (val) {
-                    return val + "%"
-                  }
-                },
-                total: {
-                  show: true,
-                  showAlways: false,
-                  label: 'TOTAL DATA',
-                  color: '#888ea8',
-                  formatter: function (w) {
-                    return w.globals.seriesTotals.reduce( function(a, b) {
-                      return a + b + "%"
-                    })
-                  }
-                }
-              }
-            }
-          }
-        },
-        stroke: {
             show: false,
+            }
         },
-        series: [filled, nofilled],
-        labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
+        series: [44, 55],
         responsive: [{
-            breakpoint: 1439,
+            breakpoint: 1480,
             options: {
                 chart: {
                     width: 300
