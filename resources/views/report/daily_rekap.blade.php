@@ -110,7 +110,17 @@ $(document).ready(function () {
         } else {
             $("#hari").addClass("d-none")
         }
-    });
+    })
+
+    $("#operation_date_edit").change(function (e) {
+        e.preventDefault()
+        $("#hari_edit").val('')
+        if($(this).val() == "pilih_hari") {
+            $("#hari_edit").removeClass("d-none")
+        } else {
+            $("#hari_edit").addClass("d-none")
+        }
+    })
 
     $('#hari').datepicker({
         format: 'yyyy-mm-dd',
