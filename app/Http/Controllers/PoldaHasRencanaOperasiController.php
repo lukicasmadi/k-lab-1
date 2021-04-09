@@ -39,7 +39,6 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function index()
     {
-        logger(poldaImage());
         return view('phro.index_polda');
     }
 
@@ -692,7 +691,10 @@ class PoldaHasRencanaOperasiController extends Controller
             date('Y-m-d')
         );
 
-        return view('phro.preview_load', compact('data'));
+        return [
+            'dailyInput' => $dailyInput,
+            'dailyInputPrev' => $dailyInputPrev
+        ];
     }
 
     public function download($uuid)
