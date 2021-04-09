@@ -20,8 +20,8 @@
                                 <thead>
                                     <tr>
                                         <th width="50%">Nama Laporan</th>
-                                        <th width="25%">tahun 2020</th>
-                                        <th width="25%">tahun 2021</th>
+                                        <th width="25%">tahun <span id="idTahunPrev"></span></th>
+                                        <th width="25%">tahun <span id="idTahun"></span></th>
                                     </tr>
                                 </thead>
                                 <tbody>

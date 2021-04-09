@@ -676,6 +676,8 @@ class PoldaHasRencanaOperasiController extends Controller
     {
         $polda = Polda::whereUuid($uuid)->firstOrFail();
         $data = PoldaSubmited::where("polda_id", $polda->id)->where('submited_date', date('Y-m-d'))->firstOrFail();
+        $daily = DailyInput::select('year')->where("polda_submited_id", $data->id)->first();
+        $dailyPrev = DailyInputPrev::select('year')->where("polda_submited_id", $data->id)->first();
 
         $dailyInput = dailyInput(
             $data->rencana_operasi_id,
@@ -693,7 +695,9 @@ class PoldaHasRencanaOperasiController extends Controller
 
         return [
             'dailyInput' => $dailyInput,
-            'dailyInputPrev' => $dailyInputPrev
+            'dailyInputPrev' => $dailyInputPrev,
+            'daily' => $daily,
+            'dailyPrev' => $dailyPrev,
         ];
     }
 

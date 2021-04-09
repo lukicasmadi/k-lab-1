@@ -269,6 +269,9 @@ $(document).ready(function () {
         var uuid = $(this).attr('data-id')
 
         axios.get(route('previewPhroDashboard', uuid)).then(function(response) {
+            $("#idTahunPrev").html(response.data.dailyPrev.year)
+            $("#idTahun").html(response.data.daily.year)
+
             if(response.data.dailyInput) {
                 var dataCurrent = response.data.dailyInput
                 $("#pelanggaran_lalu_lintas_tilang").html(dataCurrent.pelanggaran_lalu_lintas_tilang)
