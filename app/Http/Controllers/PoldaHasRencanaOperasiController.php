@@ -715,7 +715,7 @@ class PoldaHasRencanaOperasiController extends Controller
             return redirect()->back();
         }
 
-        $poldaSubmited = PoldaSubmited::where('polda_id', $polda->id)->first();
+        $poldaSubmited = PoldaSubmited::where('polda_id', $polda->id)->where('submited_date', date('Y-m-d'))->first();
 
         if(empty($poldaSubmited)) {
             flash('Inputan polda tidak ditemukan. Silahkan refresh halaman dan coba lagi')->error();
