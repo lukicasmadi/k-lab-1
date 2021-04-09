@@ -224,7 +224,7 @@ $(document).ready(function () {
                 render: function(data, type, row) {
                     return `
                     <div class="icon-container">
-                        <a href="`+route('report_daily_by_id', data)+`">Unduh</a>
+                        <a href="`+route('report_daily_by_id', data)+`">UNDUH</a>
                     </div>
                     `;
                 },
