@@ -12,12 +12,13 @@ use App\Models\RencanaOperasi;
 use Illuminate\Support\Carbon;
 use App\Exports\PoldaAllExport;
 use App\Exports\DailyInputExport;
+use App\Exports\FilterComparison;
 use App\Exports\PoldaByUuidExport;
 use Illuminate\Support\Facades\DB;
 use App\Exports\NewComparisonExport;
-use App\Exports\FilterComparison;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\DailyInputPrevExport;
+use App\Exports\PoldaDailyComparison;
 use App\Http\Requests\ComparisonExcelRequest;
 
 class ReportController extends Controller
@@ -30,12 +31,28 @@ class ReportController extends Controller
 
     public function byId($uuid)
     {
+        $poldaSubmited = PoldaSubmited::whereUuid($uuid)->first();
+
+        if(empty($poldaSubmited)) {
+            flash('Inputan polda tidak ditemukan. Silahkan refresh halaman dan coba lagi')->error();
+            return redirect()->back();
+        }
+
+        $polda_submited_id = $poldaSubmited->id;
+        $rencana_operasi_id = $poldaSubmited->rencana_operasi_id;
+        $submited_date = $poldaSubmited->submited_date;
         $now = now()->format("Y-m-d");
-        $filename = 'daily-report.xlsx';
 
-        $submitedData = PoldaSubmited::with(['rencanaOperasi', 'polda'])->whereUuid($uuid)->first();
+        $filename = 'polda-self-report-'.poldaShortName().'-'.$now.'.xlsx';
 
-        return Excel::download(new PoldaByUuidExport($submitedData), $filename);
+        return Excel::download(new PoldaDailyComparison(
+            $rencana_operasi_id,
+            yearMinusOneOnly($submited_date),
+            yearOnly($submited_date),
+            $submited_date,
+            $submited_date,
+            poldaName()
+        ), $filename);
     }
 
     public function dailyAllPolda()

@@ -203,6 +203,12 @@ if (! function_exists('poldaName')) {
     }
 }
 
+if (! function_exists('poldaShortName')) {
+    function poldaShortName() {
+        return auth()->user()->polda()->first()->polda->short_name;
+    }
+}
+
 if (! function_exists('poldaImage')) {
     function poldaImage() {
         return UserHasPolda::with('polda')->where("polda_id", poldaId())->first();
