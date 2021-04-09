@@ -701,7 +701,7 @@ class PoldaHasRencanaOperasiController extends Controller
         ];
     }
 
-    public function previewPhroDashboard($uuid)
+    public function previewPhroDashboard(Request $request, $uuid)
     {
         if (! $request->ajax()) {
             abort(401);
@@ -736,6 +736,7 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function download($uuid)
     {
+        return $uuid;
         $polda = Polda::whereUuid($uuid)->first();
 
         $now = now()->format("Y-m-d");
