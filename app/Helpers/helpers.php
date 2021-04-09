@@ -231,14 +231,27 @@ if (! function_exists('hariIni')) {
 
 if (! function_exists('calculation')) {
     function calculation($arrayData) {
-        return array_sum($arrayData);
+        $array = array(
+            'first' => '',
+            'second' => ''
+         );
+
+         $array2 = array_map(function($value) {
+            return $value === NULL ? 0 : $value;
+         }, $arrayData);
+
+        return array_sum($array2);
     }
 }
 
 if (! function_exists('percentageValue')) {
     function percentageValue($tahunKedua, $tahunPertama) {
 
-        if(empty($tahunKedua) && empty($tahunPertama)) {
+        if(is_null($tahunKedua)) {
+            return 0;
+        }
+
+        if(is_null($tahunPertama)) {
             return 0;
         }
 
