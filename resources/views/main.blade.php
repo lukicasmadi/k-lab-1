@@ -141,9 +141,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($dailyInput as $daily)
+                            @foreach ($dailyInput as $index => $daily)
                                 <tr>
-                                    <td>{{ $daily->id }}</td>
+                                    <td>{{ $index + 1 }}</td>
                                     <td>{{ $daily->name }}</td>
                                     <td>
                                         @php
