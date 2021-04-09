@@ -255,6 +255,10 @@ if (! function_exists('percentageValue')) {
             return 0;
         }
 
+        if(($tahunKedua < $tahunPertama) && $tahunKedua == 0) {
+            return 0;
+        }
+
         $output1 = $tahunKedua - $tahunPertama;
         $output2 = $output1 / $tahunPertama;
         $output3 = $output2 * 100;
