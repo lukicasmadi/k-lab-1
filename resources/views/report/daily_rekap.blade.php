@@ -220,6 +220,9 @@ $('body').on('click', '#btnView', function(e) {
 
     axios.get(route('korlantas_rekap_data_byuuid', uuid)).then(function(response) {
 
+        $("#idTahunPrev").html(response.data.dailyPrev)
+        $("#idTahun").html(response.data.daily)
+
         if(response.data.dailyInput) {
             var dataCurrent = response.data.dailyInput
             $("#pelanggaran_lalu_lintas_tilang").html(dataCurrent.pelanggaran_lalu_lintas_tilang)

@@ -107,6 +107,8 @@ class KorlantasRekapController extends Controller
                     $polda,
                     ($operation_date != 'semua_hari') ? $operation_date : "semua_hari",
                 );
+                $dailyPrev = $year;
+                $daily = $year + 1;
             }
         } else {
             // DATA DITEMUKAN DI TABEL CURRENT
@@ -123,11 +125,16 @@ class KorlantasRekapController extends Controller
                 $polda,
                 ($operation_date != 'semua_hari') ? $operation_date : "semua_hari",
             );
+
+            $dailyPrev = $year - 1;
+            $daily = $year;
         }
 
         return [
             'dailyInput' => (empty($dailyInput) || is_null($dailyInput)) ? null : $dailyInput,
-            'dailyInputPrev' => (empty($dailyInputPrev) || is_null($dailyInputPrev)) ? null : $dailyInputPrev
+            'dailyInputPrev' => (empty($dailyInputPrev) || is_null($dailyInputPrev)) ? null : $dailyInputPrev,
+            'daily' => (empty($daily)) ? "" : $daily,
+            'dailyPrev' => (empty($dailyPrev)) ? "" : $dailyPrev,
         ];
     }
 
