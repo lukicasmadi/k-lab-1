@@ -49,6 +49,32 @@ if (! function_exists('dateOnly')) {
     }
 }
 
+if (! function_exists('yearOnly')) {
+    function yearOnly($timestamp) {
+        return Carbon::parse($timestamp)->format('Y');
+    }
+}
+
+if (! function_exists('yearMinusOneOnly')) {
+    function yearMinusOneOnly($timestamp) {
+        $out = Carbon::parse($timestamp)->format('Y');
+        return $out - 1;
+    }
+}
+
+
+if (! function_exists('monthOnly')) {
+    function monthOnly($timestamp) {
+        return Carbon::parse($timestamp)->format('m');
+    }
+}
+
+if (! function_exists('dayOnly')) {
+    function dayOnly($timestamp) {
+        return Carbon::parse($timestamp)->format('d');
+    }
+}
+
 if (! function_exists('timeOnly')) {
     function timeOnly($timestamp) {
         return Carbon::parse($timestamp)->format('h:i:s A');
