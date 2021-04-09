@@ -669,8 +669,12 @@ class PoldaHasRencanaOperasiController extends Controller
         }
     }
 
-    public function preview($uuid)
+    public function preview(Request $request, $uuid)
     {
+        if (! $request->ajax()) {
+            abort(401);
+        }
+
         $data = PoldaSubmited::whereUuid($uuid)->firstOrFail();
         $daily = DailyInput::select('year')->where("polda_submited_id", $data->id)->first();
         $dailyPrev = DailyInputPrev::select('year')->where("polda_submited_id", $data->id)->first();
@@ -699,6 +703,10 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function previewPhroDashboard($uuid)
     {
+        if (! $request->ajax()) {
+            abort(401);
+        }
+
         $polda = Polda::whereUuid($uuid)->firstOrFail();
         $data = PoldaSubmited::where("polda_id", $polda->id)->where('submited_date', date('Y-m-d'))->firstOrFail();
         $daily = DailyInput::select('year')->where("polda_submited_id", $data->id)->first();
