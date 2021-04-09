@@ -671,8 +671,30 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function preview($uuid)
     {
-        $data = PoldaSubmited::with('dailyInput')->whereUuid($uuid)->firstOrFail();
-        return view('phro.preview_load', compact('data'));
+        $data = PoldaSubmited::whereUuid($uuid)->firstOrFail();
+        $daily = DailyInput::select('year')->where("polda_submited_id", $data->id)->first();
+        $dailyPrev = DailyInputPrev::select('year')->where("polda_submited_id", $data->id)->first();
+
+        $dailyInput = dailyInput(
+            $data->rencana_operasi_id,
+            date('Y'),
+            poldaId(),
+            date('Y-m-d')
+        );
+
+        $dailyInputPrev = dailyInputPrev(
+            $data->rencana_operasi_id,
+            date('Y'),
+            poldaId(),
+            date('Y-m-d')
+        );
+
+        return [
+            'dailyInput' => $dailyInput,
+            'dailyInputPrev' => $dailyInputPrev,
+            'daily' => $daily,
+            'dailyPrev' => $dailyPrev,
+        ];
     }
 
     public function previewPhroDashboard($uuid)

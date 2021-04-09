@@ -287,32 +287,33 @@ $(document).ready(function () {
             swal("Get data failed! Maybe you miss something", error.response.data.output, "error")
         })
     })
-})
 
-$('body').on('keypress', '#custom_operation_name', function(e) {
-    if (e.keyCode === 10 || e.keyCode === 13) {
-        e.preventDefault()
+    $('body').on('keypress', '#custom_operation_name', function(e) {
+        if (e.keyCode === 10 || e.keyCode === 13) {
+            e.preventDefault()
 
-        axios.post(route('post_data_polda_custom_name'), {
-            alias: $("#custom_operation_name").val(),
-            operation_id: $("#rencana_operasi_id").val()
-        })
-        .then(function (response) {
-            $("#rencana_operasi_id").val('')
-            if(response.status == 201) {
-                $('#addAlias').modal('hide')
-                swal("Nama alias berhasil anda daftarkan", null, "success")
-            } else if(response.status == 200) {
-                $('#addAlias').modal('hide')
-                swal("Nama alias berhasil diubah", null, "success")
-            } else {
-                swal("Proses gagal. Silahkan cek inputan anda!", null, "error")
-            }
-        })
-        .catch(function (error) {
-            swal("Get data failed! Maybe you miss something", error.response.data.output, "error")
-        })
-    }
+            axios.post(route('post_data_polda_custom_name'), {
+                alias: $("#custom_operation_name").val(),
+                operation_id: $("#rencana_operasi_id").val()
+            })
+            .then(function (response) {
+                $("#rencana_operasi_id").val('')
+                if(response.status == 201) {
+                    $('#addAlias').modal('hide')
+                    swal("Nama alias berhasil anda daftarkan", null, "success")
+                } else if(response.status == 200) {
+                    $('#addAlias').modal('hide')
+                    swal("Nama alias berhasil diubah", null, "success")
+                } else {
+                    swal("Proses gagal. Silahkan cek inputan anda!", null, "error")
+                }
+                table.ajax.reload()
+            })
+            .catch(function (error) {
+                swal("Get data failed! Maybe you miss something", error.response.data.output, "error")
+            })
+        }
+    })
 })
 
 $('#tbl_operation tbody').on('click', 'a.viewData', function(e) {

@@ -36,6 +36,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/preview/{uuid}/report', 'HomeController@previewReport')->name('previewReport');
     Route::get('/forgot-password/request', 'UserController@forgot_password_request')->name('forgot_password_request');
     Route::get('/dashboard/{uuid}/preview', 'PoldaHasRencanaOperasiController@previewPhroDashboard')->name('previewPhroDashboard');
+    Route::get('/dashboard/polda/{uuid}/preview', 'PoldaHasRencanaOperasiController@previewPhroDashboardPolda')->name('previewPhroDashboardPolda');
 
     Route::group(['middleware' => 'user-has-polda'], function () {
         Route::resource('operation-onsite', 'PoldaHasRencanaOperasiController', [
