@@ -23,11 +23,12 @@ class ArticleRequest extends FormRequest
      */
     public function rules()
     {
+        $requiredOnCreate = request()->isMethod('PATCH') ? '' : 'required';
         return [
             'topic' => 'required',
             'desc' => 'required',
             'status' => 'required',
-            'small_img' => 'required',
+            'small_img' => $requiredOnCreate,
         ];
     }
 
@@ -35,7 +36,7 @@ class ArticleRequest extends FormRequest
     {
         return [
             'topic.required' => 'Judul tidak boleh kosong',
-            'desc.unique' => 'Deskripsi tidak boleh kosong',
+            'desc.required' => 'Deskripsi tidak boleh kosong',
             'status.required' => 'Status tidak boleh kosong',
             'small_img.required' => 'Thumbnail belum dipilih',
         ];
