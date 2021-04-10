@@ -59,11 +59,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-right more-article">
+                {{-- <div class="text-right more-article">
                     <a href="/article/all">
                         Lihat Selangkapnya <img src="{{ secure_asset('/img/chevron_big_left.png') }}">
                     </a>
-                </div>
+                </div> --}}
                 <div class="row">
                     @foreach ($articleList as $item)
                         <div class="col-sm-4">
