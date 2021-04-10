@@ -736,7 +736,6 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function download($uuid)
     {
-        return $uuid;
         $polda = Polda::whereUuid($uuid)->first();
 
         $now = now()->format("Y-m-d");
