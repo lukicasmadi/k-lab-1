@@ -106,7 +106,7 @@
             {
                 data: 'uuid',
                 render: function(data, type, row) {
-                    return '<div class="ubah-change"><a href="' + route('polda_edit', data) + '">Ubah</a> <span>|</span> <a href="" uuid="' + data + '" class="confirm">Hapus</a></div>';
+                    return '<div class="ubah-change"><a href="' + route('polda_edit', data) + '">UBAH</a> &nbsp; | &nbsp; <a href="" uuid="' + data + '" class="confirm">HAPUS</a></div>';
                 },
                 searchable: false,
                 sortable: false

@@ -1,10 +1,21 @@
 @extends('layouts.template_admin')
 
+@push('page_title')
+<div class="page-title">
+    <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15.556" viewBox="0 0 20 15.556">
+        <path id="text_align_left" d="M16.333,20.556H3V18.333H16.333ZM23,16.111H3V13.889H23Zm-6.667-4.444H3V9.444H16.333ZM23,7.222H3V5H23Z" transform="translate(-3 -5)" fill="#00adef"/>
+        </svg>
+        <span>EDIT ARTIKEL</span>
+    </h3>
+</div>
+@endpush
+
 @section('content')
 <div class="layout-px-spacing">
     <div class="row layout-top-spacing">
 
-        <div class="col-lg-6 col-12  layout-spacing">
+        <div class="col-lg-12 col-12  layout-spacing">
             <div class="statbox widget box box-shadow">
 
                 @if ($errors->any())
@@ -17,54 +28,31 @@
                     </div>
                 @endif
 
-                <div class="widget-header">
-                    <div class="row">
-                        <div class="col-xl-6 col-md-12 col-sm-12 col-12">
-                            <h4>Update Article</h4>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="widget-content widget-content-area">
                     <form method="POST" action="{{ route('article_update', $articleUuid->uuid) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
                         <input type="hidden" name="id" value="{{ $articleUuid->id }}">
                         <div class="form-group mb-4">
-                            <label><span class="require">*</span>Topic</label>
-                            <input type="text" class="form-control @error('topic') is-invalid @enderror" id="topic" name="topic" placeholder="Topic" autocomplete="off" value="{{ $articleUuid->topic }}">
+                            <label><span class="require">*</span>Judul</label>
+                            <input type="text" class="form-control @error('topic') is-invalid @enderror" id="topic" name="topic" placeholder="Judul" autocomplete="off" value="{{ $articleUuid->topic }}">
                         </div>
 
                         <div class="form-group mb-4">
-                            <label><span class="require">*</span>Description</label>
+                            <label><span class="require">*</span>Deskrsipsi</label>
                             <textarea id="desc" name="desc" class="@error('desc') is-invalid @enderror">{{ $articleUuid->desc }}</textarea>
                         </div>
 
                         <div class="form-group mb-4">
                             <label><span class="require">*</span>Status</label>
                             <select name="status" id="status" class="form-control @error('status') is-invalid @enderror">
-                                <option value="">== Select Status ==</option>
-                                <option value="active" @if ($articleUuid->status == "active") selected @endif>Active</option>
-                                <option value="nonactive" @if ($articleUuid->status == "nonactive") selected @endif>Non Active</option>
+                                <option value="active" @if ($articleUuid->status == "active") selected @endif>AKTIF</option>
+                                <option value="nonactive" @if ($articleUuid->status == "nonactive") selected @endif>TIDAK AKTIF</option>
                             </select>
                         </div>
 
                         <div class="form-group mb-4">
-                            <label><span class="require">*</span>Category</label>
-                            <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror">
-                                <option value="">== Select Category ==</option>
-                                @foreach ($category as $id => $name)
-                                    @if ($articleUuid->category_id == $id)
-                                        <option value="{{ $id }}" selected>{{ $name }}</option>
-                                    @else
-                                        <option value="{{ $id }}">{{ $name }}</option>
-                                    @endif
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <div class="form-group mb-4">
-                            <label>Thumbnail Image</label>
+                            <label>Thumbnail</label>
                             <input type="file" class="form-control @error('small_img') is-invalid @enderror" id="small_img" name="small_img">
                             @error('small_img')
                                 <span class="invalid-feedback" role="alert">
@@ -73,18 +61,8 @@
                             @enderror
                         </div>
 
-                        <div class="form-group mb-4">
-                            <label>Big Image</label>
-                            <input type="file" class="form-control @error('big_img') is-invalid @enderror" id="big_img" name="big_img">
-                            @error('big_img')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <input type="submit" name="submit" class="btn btn-primary mt-3" value="Submit">
-                        <a href="{{ route('article_index') }}" class="btn btn-warning mt-3">Back</a>
+                        <input type="submit" name="submit" class="btn btn-primary mt-3" value="UPDATE">
+                        <a href="{{ route('article_index') }}" class="btn btn-warning mt-3">KEMBALI</a>
                     </form>
                 </div>
             </div>

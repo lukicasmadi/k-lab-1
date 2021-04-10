@@ -99,11 +99,11 @@
                         <p class="mar20">total data laporan</p>
                         <b>34 laporan</b>
                     </h5>
-                    <ul class="tabs tab-pills">
+                    {{-- <ul class="tabs tab-pills">
                         <li>
                             <a href="#" id="filterOperasi" class="tabmenu">Filter Operasi <i class="far fa-filter" style="font-size: 12px;"></i></a>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </div>
 
                 <div class="widget-content">

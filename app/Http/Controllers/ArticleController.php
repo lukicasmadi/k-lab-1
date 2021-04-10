@@ -49,16 +49,9 @@ class ArticleController extends Controller
             $data['small_img'] = $randomName;
         }
 
-        if(request()->hasFile('big_img')) {
-            $file = $request->file('big_img');
-            $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-            Storage::put("/public/upload/article/".$randomName, File::get($file));
-            $data['big_img'] = $randomName;
-        }
-
         Article::create($data);
 
-        flash('Your data has been saved')->success();
+        flash('Artikel telah dibuat')->success();
         return redirect()->route('article_index');
     }
 
@@ -87,14 +80,14 @@ class ArticleController extends Controller
 
         Article::whereId(request('id'))->update($data);
 
-        flash('Your data has been updated')->success();
+        flash('Artikel telah diubah')->success();
         return redirect()->route('article_index');
     }
 
     public function delete(Article $articleUuid)
     {
         $articleUuid->delete();
-        flash('Your data has been deleted')->success();
+        flash('Artikel telah dihapus')->success();
         return redirect()->route('article_index');
     }
 }

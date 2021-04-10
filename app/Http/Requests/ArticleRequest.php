@@ -27,7 +27,17 @@ class ArticleRequest extends FormRequest
             'topic' => 'required',
             'desc' => 'required',
             'status' => 'required',
-            'category_id' => 'required|integer',
+            'small_img' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'topic.required' => 'Judul tidak boleh kosong',
+            'desc.unique' => 'Deskripsi tidak boleh kosong',
+            'status.required' => 'Status tidak boleh kosong',
+            'small_img.required' => 'Thumbnail belum dipilih',
         ];
     }
 }
