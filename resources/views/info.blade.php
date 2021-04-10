@@ -21,13 +21,13 @@
                         <h3>PELAPORAN OPERASI ONLINE BIDANG</h3>
                         <h3>LALU LINTAS KORLANTAS POLRI</h3>
                     </div>
+                    @if (is_null(operationPlans()))
+
+                    @else
                     <p class="text-slogan">
-                        @if (is_null(operationPlans()))
-                            TIDAK ADA OPERASI SAAT INI
-                        @else
-                            GIAT {{ operationPlans()->name }}
-                        @endif
+                        GIAT {{ operationPlans()->name }}
                     </p>
+                    @endif
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
     };
 
     $(document).ready(function () {
-        redirectAfter()
+        // redirectAfter()
 
         doInit(function () {
             if (typeof $ == "undefined") return 1;
