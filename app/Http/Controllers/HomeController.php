@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Polda;
+use App\Models\Article;
 use Carbon\CarbonPeriod;
 use Illuminate\Http\Request;
 use App\Models\PoldaSubmited;
@@ -11,6 +12,21 @@ use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
+
+    public function newsDetail($slug)
+    {
+        return $slug;
+    }
+
+    public function welcomePage()
+    {
+        if (!empty(auth()->user())) {
+            return redirect('/dashboard');
+        } else {
+            $articleList = Article::limit(3)->orderBy('id', 'desc')->get();
+            return view('index', compact('articleList'));
+        }
+    }
 
     public function weeklyPolda()
     {

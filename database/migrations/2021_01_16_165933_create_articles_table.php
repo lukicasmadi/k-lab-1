@@ -17,6 +17,7 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->uuid('uuid');
             $table->string('topic');
+            $table->string('slug');
             $table->longText('desc');
             $table->string('small_img');
             $table->enum('status',['active', 'nonactive'])->default('active');

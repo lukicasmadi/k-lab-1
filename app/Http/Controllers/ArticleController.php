@@ -37,6 +37,7 @@ class ArticleController extends Controller
         $data = [
             'uuid' => genUuid(),
             'topic' => $request->topic,
+            'slug' => Str::of($request->topic)->slug('-'),
             'desc' => $request->desc,
             'status' => $request->status,
             'created_by' => myUserId(),

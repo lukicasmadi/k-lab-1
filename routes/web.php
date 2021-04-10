@@ -3,13 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/home', function () {
-    if (!empty(auth()->user())) {
-        return redirect('/dashboard');
-    } else {
-        return view('index');
-    }
-})->name('home');
+Route::get('/home', 'HomeController@welcomePage')->name('home');
 
 Auth::routes(['register' => false]);
 
@@ -37,6 +31,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/forgot-password/request', 'UserController@forgot_password_request')->name('forgot_password_request');
     Route::get('/dashboard/{uuid}/preview', 'PoldaHasRencanaOperasiController@previewPhroDashboard')->name('previewPhroDashboard');
     Route::get('/dashboard/polda/{uuid}/preview', 'PoldaHasRencanaOperasiController@previewPhroDashboardPolda')->name('previewPhroDashboardPolda');
+    Route::get('/news-update/{slug}', 'HomeController@newsDetail')->name('news_detail');
 
     Route::group(['middleware' => 'user-has-polda'], function () {
         Route::resource('operation-onsite', 'PoldaHasRencanaOperasiController', [

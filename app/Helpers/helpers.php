@@ -7,6 +7,13 @@ use App\Models\UserHasPolda;
 use App\Models\PoldaSubmited;
 use App\Models\RencanaOperasi;
 
+
+if (! function_exists('limitText')) {
+    function limitText($string, $textLenght) {
+        return Str::limit($string, $textLenght);
+    }
+}
+
 if (! function_exists('slugTitle')) {
     function slugTitle($string) {
         return Str::slug($string, '-');
