@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             JenisPelanggaranSeeder::class,
             LaporanTypeSeeder::class,
             KesatuanSeeder::class,
-            RencanaOperasiSeeder::class,
+            // RencanaOperasiSeeder::class,
             UserAssign::class,
         ]);
     }

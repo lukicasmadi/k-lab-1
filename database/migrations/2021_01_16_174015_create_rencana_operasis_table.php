@@ -18,7 +18,7 @@ class CreateRencanaOperasisTable extends Migration
             $table->uuid('uuid');
             $table->string('name');
             $table->string('slug_name');
-            $table->longText('desc');
+            // $table->longText('desc');
             $table->date('start_date');
             $table->date('end_date');
             $table->string('operation_type')->nullable();

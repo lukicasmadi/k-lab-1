@@ -3,9 +3,11 @@
 @section('content')
 <div class="layout-px-spacing">
     <div class="row layout-top-spacing">
-        <blockquote class="blockquote">
-            <p class="d-inline">TIDAK ADA PROJECT YANG SEDANG BERJALAN DI HARI INI</p>
-        </blockquote>
+        <div class="col-md-12">
+            <blockquote class="blockquote">
+                <p class="d-inline">KORLANTAS BELUM MENGINPUT DATA PROJEK YANG SEDANG BERLANGSUNG SAAT INI</p>
+            </blockquote>
+        </div>
     </div>
 </div>
 @endsection

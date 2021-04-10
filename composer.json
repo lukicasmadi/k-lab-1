@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.3|^8.0",
         "barryvdh/laravel-dompdf": "^0.9.0",
+        "fakerphp/faker": "^1.9.1",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -27,8 +28,7 @@
         "spatie/laravel-analytics": "^3.10",
         "spatie/laravel-permission": "^3.18",
         "tightenco/ziggy": "^1.0",
-        "yajra/laravel-datatables-oracle": "^9.15",
-        "fakerphp/faker": "^1.9.1"
+        "yajra/laravel-datatables-oracle": "^9.15"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

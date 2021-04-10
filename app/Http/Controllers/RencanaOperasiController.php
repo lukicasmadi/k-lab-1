@@ -76,9 +76,8 @@ class RencanaOperasiController extends Controller
         $data = [
             'name' => strtoupper(request('nama_operasi')),
             'operation_type' => strtoupper(request('jenis_operasi')),
-            'start_date' => strtoupper(request('tanggal_mulai')),
-            'end_date' => strtoupper(request('tanggal_selesai')),
-            'desc' => strtoupper(request('deskripsi')),
+            'start_date' => dateOnly(request('tanggal_mulai')),
+            'end_date' => dateOnly(request('tanggal_selesai')),
         ];
 
         if(request()->hasFile('attachement')) {
@@ -102,18 +101,11 @@ class RencanaOperasiController extends Controller
 
     public function update(RencanaOperasiUpdateRequest $request, $uuid)
     {
-        // $all_date = $request->operation_periode;
-        // $format = explode(" to ", $all_date);
-
-        // $start_date = Carbon::parse(rtrim($format[0], " "))->format('Y-m-d');
-        // $end_date = Carbon::parse(ltrim($format[1], " "))->format('Y-m-d');
-
-        $data = [
+$data = [
             'name' => strtoupper($request->edit_jenis_operasi),
             'operation_type' => strtoupper($request->edit_nama_operasi),
-            'start_date' => $request->edit_tanggal_mulai,
-            'end_date' => $request->edit_tanggal_selesai,
-            'desc' => $request->edit_deskripsi,
+            'start_date' => dateOnly($request->edit_tanggal_mulai),
+            'end_date' => dateOnly($request->edit_tanggal_selesai),
         ];
 
         RencanaOperasi::whereUuid($request->uuid_edit)->update($data);

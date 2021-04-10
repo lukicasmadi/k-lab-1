@@ -59,45 +59,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-right more-article">
+                {{-- <div class="text-right more-article">
                     <a href="/article/all">
                         Lihat Selangkapnya <img src="{{ secure_asset('/img/chevron_big_left.png') }}">
                     </a>
-                </div>
+                </div> --}}
                 <div class="row">
-                    <div class="col-sm-4">
-                        <div class="col-sm-12 home-article">
-                            <a href="/article/detail">
-                                <img src="{{ secure_asset('/img/article/img_20200113.jpg') }}">
-                                <p>
-                                <label>Senin, 10 Apr 2021</label>
-                                korlantas pimpin pemberangkatan tim pamatwil operasi lilin tahun 2020
-                                </p>
-                            </a>
+                    @foreach ($articleList as $item)
+                        <div class="col-sm-4">
+                            <div class="col-sm-12 home-article">
+                                <a href="{{ route('news_detail', $item->slug) }}">
+                                    <img src="{{ secure_asset('/storage/upload/article/'.$item->small_img) }}" width="50">
+                                    <p>
+                                    <label>{{ indonesianDateTime($item->created_at) }}</label>
+                                    {{ limitText(strip_tags($item->desc), 120) }}
+                                    </p>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="col-sm-12 home-article">
-                        <a href="/article/detail">
-                            <img src="{{ secure_asset('/img/article/img_20200110.jpg') }}">
-                            <p>
-                            <label>Senin, 10 Apr 2021</label>
-                            korlantas pimpin pemberangkatan tim pamatwil operasi lilin tahun 2020
-                            </p>
-                        </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="col-sm-12 home-article">
-                            <a href="/article/detail">
-                                <img src="{{ secure_asset('/img/article/img_20200111.jpg') }}">
-                                <p>
-                                <label>Senin, 10 Apr 2021</label>
-                                korlantas pimpin pemberangkatan tim pamatwil operasi lilin tahun 2020
-                                </p>
-                            </a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

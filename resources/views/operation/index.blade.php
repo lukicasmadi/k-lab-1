@@ -44,7 +44,6 @@
                                 <th>ID</th>
                                 <th width="17%">Nama Operasi</th>
                                 <th width="16%">Jenis Operasi</th>
-                                <th width="24%">Deskripsi</th>
                                 <th width="13%">Tgl Mulai</th>
                                 <th width="14%">Tgl Selesai</th>
                                 <th width="6%">Lihat</th>
@@ -59,7 +58,7 @@
 
 
         <div class="modal fade" id="modalCreateRencanaOperasi" tabindex="-1" role="dialog" aria-labelledby="modalCreateRencanaOperasi" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <form method="POST" action="{{ route('create_rencana_operasi_new') }}">
                         @csrf
@@ -88,21 +87,14 @@
 
                                         <div class="col-md-6 mb-3">
                                             <label class="text-popup">Tanggal Mulai</label>
-                                            <input type="text" name="tanggal_mulai" id="tanggal_mulai" class="form-control popoups inp-icon" value="" placeholder="- yyyy/mm/dd">
+                                            <input type="text" name="tanggal_mulai" id="tanggal_mulai" class="form-control popoups inp-icon" value="" placeholder="- dd-mm-yyyy">
                                         </div>
 
                                         <div class="col-md-6 mb-3">
                                             <label class="text-popup">Tanggal Selesai</label>
-                                            <input type="text" name="tanggal_selesai" id="tanggal_selesai" class="form-control popoups inp-icon" value="" placeholder="- yyyy/mm/dd">
+                                            <input type="text" name="tanggal_selesai" id="tanggal_selesai" class="form-control popoups inp-icon" value="" placeholder="- dd-mm-yyyy">
                                         </div>
 
-                                        <div class="col-md-12 mb-n2">
-                                        <label class="text-popup">Deskripsi</label>
-                                            <div class="d-flex note-description">
-                                                <textarea name="deskripsi" id="deskripsi" class="form-control popoups" maxlength="60" placeholder="- Tulis dekripsi rencana operasi Anda" rows="1"></textarea>
-                                            </div>
-                                            <span class="validation-text"></span>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +108,7 @@
         </div>
 
         <div class="modal fade" id="editRencanaOperasi" tabindex="-1" role="dialog" aria-labelledby="editRencanaOperasi" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <form id="formEdit" method="POST" action="">
                         @csrf
@@ -156,13 +148,6 @@
                                             <input type="text" name="edit_tanggal_selesai" id="edit_tanggal_selesai" class="form-control popoups inp-icon">
                                         </div>
 
-                                        <div class="col-md-12 mb-n2">
-                                        <label class="text-popup">Deskripsi</label>
-                                            <div class="d-flex note-description">
-                                                <textarea name="edit_deskripsi" id="edit_deskripsi" class="form-control popoups" maxlength="60" rows="2"></textarea>
-                                            </div>
-                                            <span class="validation-text"></span>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -212,10 +197,6 @@
                                         <span class="colorgray" id="view_tanggal_selesai"></span>
                                     </div>
 
-                                    <div class="col-md-12 mb-n1">
-                                        <label class="text-popup">Deskripsi</label><br>
-                                        <span class="colorgray" id="view_deskripsi"></span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -256,19 +237,19 @@
 
     $(document).ready(function () {
         $('#tanggal_mulai').datepicker({
-            format: 'yyyy-mm-dd',
+            format: 'dd-mm-yyyy',
         })
 
         $('#tanggal_selesai').datepicker({
-            format: 'yyyy-mm-dd',
+            format: 'dd-mm-yyyy',
         })
 
         $('#edit_tanggal_mulai').datepicker({
-            format: 'yyyy-mm-dd',
+            format: 'dd-mm-yyyy',
         })
 
         $('#edit_tanggal_selesai').datepicker({
-            format: 'yyyy-mm-dd',
+            format: 'dd-mm-yyyy',
         })
 
         $('#notesMailModal').on('hidden.bs.modal', function () {
@@ -315,13 +296,6 @@
                     render: function(data, type, row) {
                         return ifEmptyData(data);
                     },
-                },
-                {
-                    data: 'desc',
-                    render: function(data, type, row) {
-                        return ifEmptyData(data);
-                    },
-                    sortable: false
                 },
                 {
                     data: 'start_date',
