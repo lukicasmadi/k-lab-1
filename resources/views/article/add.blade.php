@@ -39,7 +39,7 @@
 
                         <div class="form-group mb-4">
                             <label><span class="require">*</span>Deskripsi</label>
-                            <textarea id="desc" name="desc" class="@error('desc') is-invalid @enderror">{{ old('desc') }}</textarea>
+                            <textarea id="desc" name="desc" class="editor @error('desc') is-invalid @enderror">{{ old('desc') }}</textarea>
                         </div>
 
                         <div class="form-group mb-4">
@@ -72,11 +72,13 @@
 @endsection
 
 @push('library_css')
-<link rel="stylesheet" href="{{ secure_asset('template/plugins/editors/markdown/simplemde.min.css') }}">
+{{-- <link rel="stylesheet" href="{{ secure_asset('template/plugins/editors/markdown/simplemde.min.css') }}"> --}}
+<link rel="stylesheet" href="{{ secure_asset('template/ckeditor5/sample/styles.css') }}">
 @endpush
 
 @push('library_js')
-<script src="{{ secure_asset('template/plugins/editors/markdown/simplemde.min.js') }}"></script>
+{{-- <script src="{{ secure_asset('template/plugins/editors/markdown/simplemde.min.js') }}"></script> --}}
+<script src="{{ secure_asset('template/ckeditor5/build/ckeditor.js') }}"></script>
 @endpush
 
 @push('page_css')
@@ -86,10 +88,58 @@
 @push('page_js')
 <script>
 $(document).ready(function() {
-    new SimpleMDE({
-        element: document.getElementById("desc"),
-        spellChecker: false,
-    })
+    // new SimpleMDE({
+    //     element: document.getElementById("desc"),
+    //     spellChecker: false,
+    // })
+    ClassicEditor.create(document.querySelector('.editor'), {
+        toolbar: {
+            items: [
+                'heading',
+                '|',
+                'bold',
+                'italic',
+                'link',
+                'bulletedList',
+                'numberedList',
+                '|',
+                'outdent',
+                'indent',
+                '|',
+                'imageUpload',
+                'blockQuote',
+                'insertTable',
+                'mediaEmbed',
+                'undo',
+                'redo'
+            ]
+        },
+        language: 'en',
+        image: {
+            toolbar: [
+                'imageTextAlternative',
+                'imageStyle:full',
+                'imageStyle:side'
+            ]
+        },
+        table: {
+            contentToolbar: [
+                'tableColumn',
+                'tableRow',
+                'mergeTableCells'
+            ]
+        },
+        licenseKey: '',
+    } )
+    .then( editor => {
+        window.editor = editor;
+    } )
+    .catch( error => {
+        console.error( 'Oops, something went wrong!' );
+        console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+        console.warn( 'Build id: 7mbdfn5lcdew-nohdljl880ze' );
+        console.error( error );
+    });
 })
 </script>
 @endpush
