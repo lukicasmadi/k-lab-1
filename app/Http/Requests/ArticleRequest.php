@@ -23,7 +23,7 @@ class ArticleRequest extends FormRequest
      */
     public function rules()
     {
-        $requiredOnCreate = request()->isMethod('PATCH') ? '' : 'required';
+        $requiredOnCreate = request()->isMethod('patch') ? '' : 'required';
         return [
             'topic' => 'required',
             'desc' => 'required',

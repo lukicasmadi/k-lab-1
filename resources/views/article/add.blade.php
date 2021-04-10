@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="form-group mb-4">
-                            <label>Thumbnail</label>
+                            <label><span class="require">*</span>Thumbnail</label>
                             <input type="file" class="form-control @error('small_img') is-invalid @enderror" id="small_img" name="small_img">
                             @error('small_img')
                                 <span class="invalid-feedback" role="alert">
