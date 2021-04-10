@@ -35,7 +35,6 @@
                                 <th>Nama Operasi</th>
                                 <th>Nama Alias</th>
                                 <th>Operasi</th>
-                                <th>Deskripsi</th>
                                 <th>Mulai</th>
                                 <th>Selesai</th>
                                 <th width="6%">Lihat</th>
@@ -203,13 +202,6 @@ $(document).ready(function () {
                 render: function(data, type, row, meta) {
                     return limitTableText(data, 20);
                 },
-            },
-            {
-                data: 'desc',
-                render: function(data, type, row, meta) {
-                    return limitTableText(data, 20);
-                },
-                sortable: false
             },
             {
                 data: 'start_date',

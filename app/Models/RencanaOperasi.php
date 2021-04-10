@@ -35,6 +35,6 @@ class RencanaOperasi extends Model
 
     public function poldaAlias()
     {
-        return $this->hasOne(PoldaCustomOperationName::class)->where('polda_id', poldaId());
+        return $this->hasMany(PoldaCustomOperationName::class);
     }
 }

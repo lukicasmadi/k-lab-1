@@ -42,14 +42,16 @@ class RencanaOperasiController extends Controller
 
     public function dataAlias()
     {
-        $model = RencanaOperasi::with('poldaAlias');
+        $model = RencanaOperasi::with(['poldaAlias' => function($query) {
+            $query->where('polda_id', poldaId());
+        }]);
 
         return datatables()->eloquent($model)
         ->addColumn('alias_name', function (RencanaOperasi $ro) {
-            if(empty($ro->poldaAlias)) {
+            if(empty($ro->poldaAlias) || count($ro->poldaAlias) <= 0) {
                 return "-";
             } else {
-                return $ro->poldaAlias->alias;
+                return $ro->poldaAlias[0]->alias;
             }
         })
         ->toJson();
@@ -101,7 +103,7 @@ class RencanaOperasiController extends Controller
 
     public function update(RencanaOperasiUpdateRequest $request, $uuid)
     {
-$data = [
+        $data = [
             'name' => strtoupper($request->edit_jenis_operasi),
             'operation_type' => strtoupper($request->edit_nama_operasi),
             'start_date' => dateOnly($request->edit_tanggal_mulai),
