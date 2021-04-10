@@ -33,11 +33,13 @@
 
                 @foreach ($listArticle as $item)
                     <div class="col-sm-12 sidebar-article">
-                        <img src="{{ secure_asset('/storage/upload/article/'.$item->small_img) }}">
-                        <p>
-                            <label>{{ indonesianDateTime($item->created_at) }}</label>
-                            {{ limitText(strip_tags($item->desc), 100) }}
-                        </p>
+                        <a href="{{ route('news_detail', $item->slug) }}">
+                            <img src="{{ secure_asset('/storage/upload/article/'.$item->small_img) }}">
+                            <p>
+                                <label>{{ indonesianDateTime($item->created_at) }}</label>
+                                {{ limitText(strip_tags($item->desc), 100) }}
+                            </p>
+                        </a>
                     </div>
                 @endforeach
 
