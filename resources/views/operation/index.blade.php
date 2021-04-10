@@ -77,12 +77,12 @@
                                     <div class="row">
                                         <div class="col-md-12 mb-3">
                                             <label class="text-popup">Jenis Operasi Yang Akan Dilaksanakan</label>
-                                            <input type="text" name="jenis_operasi" id="jenis_operasi" class="form-control popoups" value="" placeholder="- Tulis jenis operasi yang akan Anda laksanakan">
+                                            <input type="text" name="jenis_operasi" id="jenis_operasi" class="form-control popoups" value="" placeholder="- Tulis jenis operasi yang akan Anda laksanakan" autocomplete="off">
                                         </div>
 
                                         <div class="col-md-12 mb-3">
                                             <label class="text-popup">Nama Operasi</label>
-                                            <input type="text" name="nama_operasi" id="nama_operasi" class="form-control popoups" value="" placeholder="- Tulislah nama operasi yang akan Anda buat">
+                                            <input type="text" name="nama_operasi" id="nama_operasi" class="form-control popoups" value="" placeholder="- Tulislah nama operasi yang akan Anda buat" autocomplete="off">
                                         </div>
 
                                         <div class="col-md-6 mb-3">

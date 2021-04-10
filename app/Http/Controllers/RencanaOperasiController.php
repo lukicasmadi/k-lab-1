@@ -82,12 +82,12 @@ class RencanaOperasiController extends Controller
             'end_date' => dateOnly(request('tanggal_selesai')),
         ];
 
-        if(request()->hasFile('attachement')) {
-            $file = $request->file('attachement');
-            $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-            Storage::put("/public/upload/rencana_operasi/".$randomName, File::get($file));
-            $data['attachement'] = $randomName;
-        }
+        // $firstCheck = RencanaOperasi::where('start_date', '>=', dateOnly(request('tanggal_mulai')))->first();
+
+        // if(!empty($firstCheck) || !empty($secondCheck)) {
+        //     flash('Rencana operasi sudah ada didalam range waktu yang anda pilih. Operasi tersebut adalah '.$firstCheck->name)->error();
+        //     return redirect()->route('rencana_operasi_index');
+        // }
 
         RencanaOperasi::create($data);
 
