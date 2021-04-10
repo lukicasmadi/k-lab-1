@@ -163,7 +163,8 @@ div.dataTables_wrapper div.dataTables_filter svg {
     background: #00adef;
     position: absolute;
     top: 5px;
-    right: 42px;
+    /* right: 42px; */
+    right: 0px;
     width: 35px;
     height: 35px;
     padding: 10px 0;
@@ -206,7 +207,7 @@ div.dataTables_wrapper div.dataTables_filter input {
 }
 
 .dataTables_wrapper .dataTables_length select.form-control {
-    padding: 0px 17px 0px 5px;
+    padding: 0px 20px 0px 5px;
     -moz-appearance: none;
     /* Firefox */
     -webkit-appearance: none;

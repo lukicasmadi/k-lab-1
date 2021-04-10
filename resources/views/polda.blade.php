@@ -17,17 +17,15 @@
         <div class="row layout-top-spacing">
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing blendingimg">
                 @if (poldaAlreadyInputToday())
-                    <div class="grid-polda line glowblue" style="display: block; margin: 0 auto;" >
-                        Status laporan hari ini<br />
-                        Sudah Mengirimkan
-                        <br />
+                    <div class="grid-polda line glowpolda" >
+                        <p>status laporan hari ini</p>
+                        <p>sudah Mengirimkan
                         {{ dayNameIndonesia(now()) }}, {{ indonesianDate(now()) }} | {{ timeOnly(now()) }}
                     </div>
                 @else
                     <div class="grid-polda line glowred" style="display: block; margin: 0 auto;">
-                        Status laporan hari ini<br />
-                        Belum Mengirimkan
-                        <br />
+                        <p>status laporan hari ini</p>
+                        <p>belum Mengirimkan
                         {{ dayNameIndonesia(now()) }}, {{ indonesianDate(now()) }} | {{ timeOnly(now()) }}
                     </div>
                 @endif
@@ -181,7 +179,7 @@ $(document).ready(function () {
                     "sNext": '<i class="fas fa-chevron-right dtIconSize"></i>'
                 },
                 "sInfo": "Menampilkan halaman _PAGE_ dari _PAGES_",
-                "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> <img src="{{ secure_asset("/img/cloud_down.png") }}">',
+                "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
                 "sSearchPlaceholder": "CARI DATA...",
                 "sLengthMenu": " _MENU_ ",
                 "sProcessing": '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>',

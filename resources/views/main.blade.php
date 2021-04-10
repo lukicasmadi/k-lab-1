@@ -133,7 +133,6 @@
                     <table id="tbl_daily_submited" class="table">
                         <thead>
                             <tr>
-                                <th>No.</th>
                                 <th>Nama Kesatuan</th>
                                 <th>Status Laporan</th>
                                 <th>Lihat</th>
@@ -143,7 +142,6 @@
                         <tbody>
                             @foreach ($dailyInput as $daily)
                                 <tr>
-                                    <td>{{ $daily->id }}</td>
                                     <td>{{ $daily->name }}</td>
                                     <td>
                                         @php

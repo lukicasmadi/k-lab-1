@@ -461,6 +461,12 @@ label {
     margin-bottom: 15px;
 }
 
+.form-group label.text-popup {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
 .text-popup {
     color: #fff;
     text-transform: uppercase;
@@ -1125,7 +1131,7 @@ select.form-control.form-custom {
     text-transform: uppercase;
     padding: 7px 10px 6px 10px;
     position: absolute;
-    margin: 21px 0 0 60px;
+    margin: 21px 0 0 65px;
     z-index: 2;
 }
 
@@ -2581,8 +2587,8 @@ textarea[readonly] {
 }
 
 .table>tbody>tr>td.titlletd {
-    color: #000;
-    /* padding: 0; */
+    color: #fff;
+    padding: 13px 30px;
 }
 
 .table>tbody>tr>td.subtitle {
