@@ -17,15 +17,15 @@
             <div class="text-center">
         <h1 class="text-logo">SISTEM PELAPORAN</h1>
         <h1 class="text-logo">OPERASI ONLINE BIDANG LALU LINTAS KORLANTAS POLRI</h1>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14.5" height="51.4" class="left-kurung" viewBox="0 0 14.5 51.4"><defs><style>.a{fill:none;stroke:#00adef;stroke-width:3px;}.b{filter:url(#a);}</style><filter id="a" x="0" y="0" width="14.5" height="51.4" filterUnits="userSpaceOnUse"><feOffset input="SourceAlpha"/><feGaussianBlur stdDeviation="1" result="b"/><feFlood flood-color="#00adef" flood-opacity="0.502"/><feComposite operator="in" in2="b"/><feComposite in="SourceGraphic"/></filter></defs><g class="b" transform="matrix(1, 0, 0, 1, 0, 0)"><path class="a" d="M-2356,2531h-7v42.4h7" transform="translate(2367.5 -2526.5)"/></g></svg>
-        <div class="text-slogan">
-            @if (is_null(operationPlans()))
-                TIDAK ADA OPERASI SAAT INI
-            @else
+        @if (is_null(operationPlans()))
+
+        @else
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14.5" height="51.4" class="left-kurung" viewBox="0 0 14.5 51.4"><defs><style>.a{fill:none;stroke:#00adef;stroke-width:3px;}.b{filter:url(#a);}</style><filter id="a" x="0" y="0" width="14.5" height="51.4" filterUnits="userSpaceOnUse"><feOffset input="SourceAlpha"/><feGaussianBlur stdDeviation="1" result="b"/><feFlood flood-color="#00adef" flood-opacity="0.502"/><feComposite operator="in" in2="b"/><feComposite in="SourceGraphic"/></filter></defs><g class="b" transform="matrix(1, 0, 0, 1, 0, 0)"><path class="a" d="M-2356,2531h-7v42.4h7" transform="translate(2367.5 -2526.5)"/></g></svg>
+            <div class="text-slogan">
                 GIAT {{ operationPlans()->name }}
-            @endif
-        </div>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14.5" height="51.4" class="right-kurung" viewBox="0 0 14.5 51.4"><defs><style>.a{fill:none;stroke:#00adef;stroke-width:3px;}.b{filter:url(#a);}</style><filter id="a" x="0" y="0" width="14.5" height="51.4" filterUnits="userSpaceOnUse"><feOffset input="SourceAlpha"/><feGaussianBlur stdDeviation="1" result="b"/><feFlood flood-color="#00adef" flood-opacity="0.502"/><feComposite operator="in" in2="b"/><feComposite in="SourceGraphic"/></filter></defs><g class="b" transform="matrix(1, 0, 0, 1, 0, 0)"><path class="a" d="M-2363,2531h7v42.4h-7" transform="translate(2366 -2526.5)"/></g></svg>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14.5" height="51.4" class="right-kurung" viewBox="0 0 14.5 51.4"><defs><style>.a{fill:none;stroke:#00adef;stroke-width:3px;}.b{filter:url(#a);}</style><filter id="a" x="0" y="0" width="14.5" height="51.4" filterUnits="userSpaceOnUse"><feOffset input="SourceAlpha"/><feGaussianBlur stdDeviation="1" result="b"/><feFlood flood-color="#00adef" flood-opacity="0.502"/><feComposite operator="in" in2="b"/><feComposite in="SourceGraphic"/></filter></defs><g class="b" transform="matrix(1, 0, 0, 1, 0, 0)"><path class="a" d="M-2363,2531h7v42.4h-7" transform="translate(2366 -2526.5)"/></g></svg>
+        @endif
     </div>
     <div class="form-form">
         <div class="form-form-wrap">
