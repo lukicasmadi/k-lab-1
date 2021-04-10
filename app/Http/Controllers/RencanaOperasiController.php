@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\RencanaOperasi;
+use App\Models\OperationExtractDate;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use App\Models\PoldaCustomOperationName;
@@ -82,14 +83,26 @@ class RencanaOperasiController extends Controller
             'end_date' => dateOnly(request('tanggal_selesai')),
         ];
 
-        // $firstCheck = RencanaOperasi::where('start_date', '>=', dateOnly(request('tanggal_mulai')))->first();
+        $firstCheck = OperationExtractDate::with('rencanaOperasi')
+        ->where('extract_date', dateOnly(request('tanggal_mulai')))
+        ->orWhere('extract_date', dateOnly(request('tanggal_selesai')))
+        ->first();
 
-        // if(!empty($firstCheck) || !empty($secondCheck)) {
-        //     flash('Rencana operasi sudah ada didalam range waktu yang anda pilih. Operasi tersebut adalah '.$firstCheck->name)->error();
-        //     return redirect()->route('rencana_operasi_index');
-        // }
+        if(!empty($firstCheck) || !empty($secondCheck)) {
+            flash('Tanggal rencana operasi sudah ada didalam range waktu yang anda pilih. Operasi tersebut adalah '.$firstCheck->rencanaOperasi->name)->error();
+            return redirect()->route('rencana_operasi_index');
+        }
 
-        RencanaOperasi::create($data);
+        $create = RencanaOperasi::create($data);
+
+        $extractDate = extractDateRange(dateOnly(request('tanggal_mulai')), dateOnly(request('tanggal_selesai')));
+
+        foreach($extractDate as $item) {
+            OperationExtractDate::create([
+                'rencana_operasi_id' => $create->id,
+                'extract_date' => $item
+            ]);
+        }
 
         flash('Rencana operasi telah dibuat')->success();
         return redirect()->route('rencana_operasi_index');
