@@ -54,7 +54,7 @@
     };
 
     $(document).ready(function () {
-        // redirectAfter()
+        redirectAfter()
 
         doInit(function () {
             if (typeof $ == "undefined") return 1;
