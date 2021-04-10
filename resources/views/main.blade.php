@@ -99,11 +99,11 @@
                         <p class="mar20">total data laporan</p>
                         <b>34 laporan</b>
                     </h5>
-                    <ul class="tabs tab-pills">
+                    {{-- <ul class="tabs tab-pills">
                         <li>
                             <a href="#" id="filterOperasi" class="tabmenu">Filter Operasi <i class="far fa-filter" style="font-size: 12px;"></i></a>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </div>
 
                 <div class="widget-content">
@@ -189,6 +189,7 @@
 <script src="{{ secure_asset('template/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
 <script src="{{ secure_asset('template/plugins/apex/apexcharts.min.js') }}"></script>
 <script src="{{ secure_asset('template/plugins/table/datatable/datatables.js') }}"></script>
+<script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
 @endpush
 
 @push('library_css')
@@ -243,6 +244,11 @@
 @push('page_js')
 <script>
 $(document).ready(function () {
+
+    var DateTime = luxon.DateTime;
+    DateTime.now().setZone('Asia/Jakarta');
+
+    var now = DateTime.now().setLocale("id");
 
     $("#changeTheme").change(function (e) {
         if($(this).is(":checked")) {
@@ -799,6 +805,8 @@ $(document).ready(function () {
 })
 
 function notificationLoad() {
+    var DateTime = luxon.DateTime
+
     axios.get(route('notifikasi'))
     .then(res => {
         if(_.isEmpty(res.data)) {
@@ -821,7 +829,7 @@ function notificationLoad() {
                     <div class="t-content">
                         <div class="t-uppercontent">
                             <h5>`+polda_name+`</h5>
-                            <span class="">`+moment(created_at).fromNow()+`</span>
+                            <span class="">` + DateTime.fromISO(created_at, { locale: "id" }).toRelative() + `</span>
                         </div>
                         <p>STATUS : `+status+`</p>
                     </div>
