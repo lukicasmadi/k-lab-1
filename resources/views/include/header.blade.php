@@ -117,21 +117,18 @@
                                     </div>
                                 </a>
                                 <ul class="collapse submenu list-unstyled" id="dashboard" data-parent="#topAccordion">
-                                    <li class="{{ request()->is('category/*') || request()->is('category') ? 'active' : '' }}">
-                                        <a href="{{ route('category_index') }}"> Master Kategori Artikel </a>
-                                    </li>
                                     <li class="{{ request()->is('article/*') || request()->is('article') ? 'active' : '' }}">
                                         <a href="{{ route('article_index') }}"> Master Artikel </a>
                                     </li>
                                     <li class="{{ request()->is('polda/*') || request()->is('polda') ? 'active' : '' }}">
                                         <a href="{{ route('polda_index') }}"> Master Polda </a>
                                     </li>
-                                    <li class="{{ request()->is('unit/*') || request()->is('unit') ? 'active' : '' }}">
+                                    {{-- <li class="{{ request()->is('unit/*') || request()->is('unit') ? 'active' : '' }}">
                                         <a href="{{ route('unit_index') }}"> Master Kesatuan </a>
-                                    </li>
-                                    <li class="{{ request()->is('violation/*') || request()->is('violation') ? 'active' : '' }}">
+                                    </li> --}}
+                                    {{-- <li class="{{ request()->is('violation/*') || request()->is('violation') ? 'active' : '' }}">
                                         <a href="{{ route('violation_index') }}"> Master Pelanggaran </a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </li>
                         @endrole

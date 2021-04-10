@@ -17,6 +17,15 @@
     <div class="row layout-top-spacing" id="cancel-row">
         <div class="col-xl-12 col-lg-12 col-sm-12 mb-25 layout-spacing">
             <div class="widget-content">
+                @if ($errors->any())
+                    <div class="alert alert-danger custom">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="col-md-12 text-left mb-3">
                     <div class="text-left">
                         <div class="row">
@@ -34,7 +43,6 @@
                                 <th width="20%">Topic</th>
                                 <th width="20%">Desc</th>
                                 <th width="10%">Status</th>
-                                <th width="20%">Category</th>
                                 <th width="15%">Creator</th>
                                 <th width="15%">Action</th>
                             </tr>
@@ -106,17 +114,13 @@ $(document).ready(function() {
                     },
                 },
                 {
-                    data: 'category.name',
-                    name: 'category.name'
-                },
-                {
                     data: 'user.name',
                     name: 'user.name'
                 },
                 {
                     data: 'uuid',
                     render: function(data, type, row) {
-                        return '<div class="ubah-change"><a href="' + route('article_edit', data) + '">Ubah</a> <span>|</span> <a href="' + route('article_delete', data) + '">Hapus</a></div>';
+                        return '<div class="ubah-change"><a href="' + route('article_edit', data) + '">UBAH</a> <span> &nbsp; | &nbsp; </span> <a href="' + route('article_delete', data) + '">HAPUS</a></div>';
                     },
                     searchable: false,
                     sortable: false
