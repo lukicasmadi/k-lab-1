@@ -22,6 +22,10 @@ try {
 window.axios = require('axios');
 
 window.moment = require('moment');
+// window.luxon = require('luxon');
+// window.luxon.setLocale("el")
+
+// window.momentlocales = require('moment-with-locales-es6');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
