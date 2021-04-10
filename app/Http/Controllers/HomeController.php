@@ -15,7 +15,10 @@ class HomeController extends Controller
 
     public function newsDetail($slug)
     {
-        return $slug;
+        $article = Article::whereSlug($slug)->firstOrFail();
+        $listArticle = Article::where('id', '!=', $article->id)->orderBy("id", "desc")->get();
+
+        return view('article.detail', compact('article', 'listArticle'));
     }
 
     public function welcomePage()

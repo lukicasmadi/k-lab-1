@@ -23,6 +23,7 @@ Route::get('/article/all', function() {
 Route::get('/forgot-password', 'UserController@forgot_password_index')->name('forgot_password_index');
 Route::post('/forgot-password/process', 'UserController@forgot_password_process')->name('forgot_password_process');
 Route::get('/not-assign', 'HomeController@notAssign')->name('notAssign');
+Route::get('/news-update/{slug}', 'HomeController@newsDetail')->name('news_detail');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index')->name('index');
@@ -31,7 +32,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/forgot-password/request', 'UserController@forgot_password_request')->name('forgot_password_request');
     Route::get('/dashboard/{uuid}/preview', 'PoldaHasRencanaOperasiController@previewPhroDashboard')->name('previewPhroDashboard');
     Route::get('/dashboard/polda/{uuid}/preview', 'PoldaHasRencanaOperasiController@previewPhroDashboardPolda')->name('previewPhroDashboardPolda');
-    Route::get('/news-update/{slug}', 'HomeController@newsDetail')->name('news_detail');
 
     Route::group(['middleware' => 'user-has-polda'], function () {
         Route::resource('operation-onsite', 'PoldaHasRencanaOperasiController', [
