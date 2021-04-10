@@ -20,11 +20,11 @@ class RencanaOperasiSeeder extends Seeder
         RencanaOperasi::withoutEvents(function () {
             $now = Carbon::now();
 
-            $pl = "Operasi Patuh";
+            $pl = "Operasi April Siaga";
             RencanaOperasi::create([
                 'uuid' => genUuid(),
                 'name' => $pl,
-                'operation_type' => "OPERASI PATUH 2021",
+                'operation_type' => "OPERASI APRIL SIAGA 2021",
                 'slug_name' => Str::slug($pl, '-'),
                 'desc' => "Operasi untuk menindak pengguna roda 2 di jalan raya yang tidak membawa kelengkapan SIM dan STNK",
                 'start_date' => now(),
@@ -33,18 +33,18 @@ class RencanaOperasiSeeder extends Seeder
                 'updated_by' => User::whereName('korlantas')->first()->id,
             ]);
 
-            $ketupat = "Operasi Ketupat";
-            RencanaOperasi::create([
-                'uuid' => genUuid(),
-                'name' => $ketupat,
-                'operation_type' => "OPERASI KETUPAT 2021",
-                'slug_name' => Str::slug($ketupat, '-'),
-                'desc' => "Operasi untuk mengatur arus lalu lintas selama bulan puasa",
-                'start_date' => "2021-04-01",
-                'end_date' => "2021-04-30",
-                'created_by' => User::whereName('korlantas')->first()->id,
-                'updated_by' => User::whereName('korlantas')->first()->id,
-            ]);
+            // $ketupat = "Operasi Ketupat";
+            // RencanaOperasi::create([
+            //     'uuid' => genUuid(),
+            //     'name' => $ketupat,
+            //     'operation_type' => "OPERASI KETUPAT 2021",
+            //     'slug_name' => Str::slug($ketupat, '-'),
+            //     'desc' => "Operasi untuk mengatur arus lalu lintas selama bulan puasa",
+            //     'start_date' => "2021-04-01",
+            //     'end_date' => "2021-04-30",
+            //     'created_by' => User::whereName('korlantas')->first()->id,
+            //     'updated_by' => User::whereName('korlantas')->first()->id,
+            // ]);
         });
     }
 }

@@ -13,10 +13,10 @@
             <td colspan="7"></td>
         </tr>
         <tr>
-            <td style="text-align: center;" colspan="7">LAPORAN PERBANDINGAN SELURUH POLDA</td>
+            <td style="text-align: center;" colspan="7">LAPORAN HARIAN {{ upperCase(operationPlans()->name) }} POLDA {{ upperCase($polda_name) }}</td>
         </tr>
         <tr>
-            <td style="text-align: center;" colspan="7">TANGGAL: {{ indonesianDate($startDate) }} S/D {{ indonesianDate($endDate) }}</td>
+            <td style="text-align: center;" colspan="7">TANGGAL: {{ upperCase(indonesianDate($startDate)) }}</td>
         </tr>
         <tr>
             <td style="text-align: center;" colspan="7">KORLANTAS</td>
@@ -27,7 +27,7 @@
         <tr>
             <th style="background-color: #eeeeee; text-align: center;" rowspan="3">NO</th>
             <th style="background-color: #eeeeee; text-align: center;" rowspan="3">URAIAN</th>
-            <th style="background-color: #eeeeee; text-align: center;" colspan="6">REKAP HARIAN</th>
+            <th style="background-color: #eeeeee; text-align: center;" colspan="4">REKAP HARIAN</th>
             <th style="background-color: #eeeeee; text-align: center;" rowspan="3">KET</th>
         </tr>
         <tr>

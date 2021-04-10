@@ -18,8 +18,8 @@
     @include('flash::message')
 
     <blockquote class="blockquote">
-        <p class="d-inline">LAPORAN HARIAN OPERASI ZEBRA</p>
-        <span>TANGGAL : 10 FEBRUARI S/D 24 FEBRUARI 2021</span>
+        <p class="d-inline">LAPORAN HARIAN {{ upperCase(operationPlans()->name) }}</p>
+        <span>TANGGAL : {{ upperCase(indonesianDate(operationPlans()->start_date)) }} S/D {{ upperCase(indonesianDate(operationPlans()->end_date)) }}</span>
         <div class="button-onsite">
             <span class="inputan">input data</span>
             <a href="{{ route('phro_index') }}"><span class="seehow">lihat data</span></a>

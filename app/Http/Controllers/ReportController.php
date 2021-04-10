@@ -12,11 +12,13 @@ use App\Models\RencanaOperasi;
 use Illuminate\Support\Carbon;
 use App\Exports\PoldaAllExport;
 use App\Exports\DailyInputExport;
+use App\Exports\FilterComparison;
 use App\Exports\PoldaByUuidExport;
 use Illuminate\Support\Facades\DB;
 use App\Exports\NewComparisonExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\DailyInputPrevExport;
+use App\Exports\PoldaDailyComparison;
 use App\Http\Requests\ComparisonExcelRequest;
 
 class ReportController extends Controller
@@ -29,12 +31,28 @@ class ReportController extends Controller
 
     public function byId($uuid)
     {
+        $poldaSubmited = PoldaSubmited::whereUuid($uuid)->first();
+
+        if(empty($poldaSubmited)) {
+            flash('Inputan polda tidak ditemukan. Silahkan refresh halaman dan coba lagi')->error();
+            return redirect()->back();
+        }
+
+        $polda_submited_id = $poldaSubmited->id;
+        $rencana_operasi_id = $poldaSubmited->rencana_operasi_id;
+        $submited_date = $poldaSubmited->submited_date;
         $now = now()->format("Y-m-d");
-        $filename = 'daily-report.xlsx';
 
-        $submitedData = PoldaSubmited::with(['rencanaOperasi', 'polda'])->whereUuid($uuid)->first();
+        $filename = 'polda-self-report-'.poldaShortName().'-'.$now.'.xlsx';
 
-        return Excel::download(new PoldaByUuidExport($submitedData), $filename);
+        return Excel::download(new PoldaDailyComparison(
+            $rencana_operasi_id,
+            yearMinusOneOnly($submited_date),
+            yearOnly($submited_date),
+            $submited_date,
+            $submited_date,
+            poldaName()
+        ), $filename);
     }
 
     public function dailyAllPolda()
@@ -106,60 +124,27 @@ class ReportController extends Controller
 
     public function downloadExcel($uuid)
     {
-        $korlantasRekap = KorlantasRekap::with(['rencaraOperasi', 'poldaData'])->whereUuid($uuid)->first();
+        $korlantasRekap = KorlantasRekap::with(['rencaraOperasi'])->whereUuid($uuid)->first();
 
-        if(!empty($korlantasRekap)) {
-
-            $now = now()->format("Y-m-d");
-            $rename = (empty($korlantasRekap->report_name)) ? "report" : $korlantasRekap->report_name;
-            $filename = slugTitle($rename).'-'.$now.'.xlsx';
-
-            $findOperation = RencanaOperasi::where("id", $korlantasRekap->rencana_operasi_id)->first();
-
-            $prevYear = DailyInputPrev::where('year', $korlantasRekap->year)
-                ->where('rencana_operasi_id', $korlantasRekap->rencana_operasi_id)
-                ->first();
-
-            if(!empty($prevYear)) {
-
-                return Excel::download(new DailyInputPrevExport(
-                    $korlantasRekap->year,
-                    $korlantasRekap->rencana_operasi_id,
-                    $korlantasRekap->polda,
-                    $korlantasRekap->operation_date,
-                    $korlantasRekap->rencaraOperasi->name,
-                    $korlantasRekap->poldaData,
-                    $findOperation
-                ), $filename);
-
-            } else {
-
-                $currentYear = DailyInput::where('year', $korlantasRekap->year)
-                    ->where('rencana_operasi_id', $korlantasRekap->rencana_operasi_id)
-                    ->first();
-
-                if(!empty($currentYear)) {
-
-                    return Excel::download(new DailyInputExport(
-                        $korlantasRekap->year,
-                        $korlantasRekap->rencana_operasi_id,
-                        $korlantasRekap->polda,
-                        $korlantasRekap->operation_date,
-                        $korlantasRekap->rencaraOperasi->name,
-                        $korlantasRekap->poldaData,
-                        $findOperation
-                    ), $filename);
-
-                } else {
-                    flash('Laporan tidak ditemukan. Pastikan data yang diinput sudah benar!')->warning();
-                    return redirect()->back();
-                }
-            }
-
-        } else {
-            flash('Data rekap laporan tidak ditemukan!')->warning();
+        if(empty($korlantasRekap)) {
+            flash('Laporan tidak ditemukan. Pastikan filter yang anda atur sudah sesuai!')->warning();
             return redirect()->back();
         }
+
+        $id_rencana_operasi = $korlantasRekap->rencaraOperasi->id;
+        $tahun = $korlantasRekap->year;
+        $polda = $korlantasRekap->polda;
+        $tanggal_operasi = $korlantasRekap->operation_date;
+
+        $now = now()->format("Y-m-d");
+        $filename = 'report-'.$now.'.xlsx';
+
+        return Excel::download(new FilterComparison(
+            $polda,
+            $tahun,
+            $id_rencana_operasi,
+            $tanggal_operasi,
+        ), $filename);
     }
 
     public function comparisonGetData()

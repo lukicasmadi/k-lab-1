@@ -9,9 +9,12 @@ use App\Models\UserHasPolda;
 use Illuminate\Http\Request;
 use App\Models\PoldaSubmited;
 use App\Models\DailyInputPrev;
+use Illuminate\Support\Carbon;
 use App\Http\Requests\PHRORequest;
 use Illuminate\Support\Facades\DB;
+use App\Exports\NewComparisonExport;
 use App\Exports\PoldaSubmitedExport;
+use App\Exports\PoldaDailyComparison;
 use Illuminate\Support\Facades\File;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
@@ -39,7 +42,6 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function index()
     {
-        logger(poldaImage());
         return view('phro.index_polda');
     }
 
@@ -667,24 +669,103 @@ class PoldaHasRencanaOperasiController extends Controller
         }
     }
 
-    public function preview($uuid)
+    public function preview(Request $request, $uuid)
     {
-        $data = PoldaSubmited::with('dailyInput')->whereUuid($uuid)->firstOrFail();
-        return view('phro.preview_load', compact('data'));
+        if (! $request->ajax()) {
+            abort(401);
+        }
+
+        $data = PoldaSubmited::whereUuid($uuid)->firstOrFail();
+        $daily = DailyInput::select('year')->where("polda_submited_id", $data->id)->first();
+        $dailyPrev = DailyInputPrev::select('year')->where("polda_submited_id", $data->id)->first();
+
+        $dailyInput = dailyInput(
+            $data->rencana_operasi_id,
+            date('Y'),
+            poldaId(),
+            date('Y-m-d')
+        );
+
+        $dailyInputPrev = dailyInputPrev(
+            $data->rencana_operasi_id,
+            date('Y'),
+            poldaId(),
+            date('Y-m-d')
+        );
+
+        return [
+            'dailyInput' => $dailyInput,
+            'dailyInputPrev' => $dailyInputPrev,
+            'daily' => $daily,
+            'dailyPrev' => $dailyPrev,
+        ];
     }
 
-    public function previewPhroDashboard($uuid)
+    public function previewPhroDashboard(Request $request, $uuid)
     {
+        if (! $request->ajax()) {
+            abort(401);
+        }
+
         $polda = Polda::whereUuid($uuid)->firstOrFail();
-        $data = PoldaSubmited::with('dailyInput')->where("polda_id", $polda->id)->firstOrFail();
-        return view('phro.preview_load', compact('data'));
+        $data = PoldaSubmited::where("polda_id", $polda->id)->where('submited_date', date('Y-m-d'))->firstOrFail();
+        $daily = DailyInput::select('year')->where("polda_submited_id", $data->id)->first();
+        $dailyPrev = DailyInputPrev::select('year')->where("polda_submited_id", $data->id)->first();
+
+        $dailyInput = dailyInput(
+            $data->rencana_operasi_id,
+            date('Y'),
+            $data->polda_id,
+            date('Y-m-d')
+        );
+
+        $dailyInputPrev = dailyInputPrev(
+            $data->rencana_operasi_id,
+            date('Y'),
+            $data->polda_id,
+            date('Y-m-d')
+        );
+
+        return [
+            'dailyInput' => $dailyInput,
+            'dailyInputPrev' => $dailyInputPrev,
+            'daily' => $daily,
+            'dailyPrev' => $dailyPrev,
+        ];
     }
 
     public function download($uuid)
     {
-        $polda = Polda::whereUuid($uuid)->firstOrFail();
+        return $uuid;
+        $polda = Polda::whereUuid($uuid)->first();
+
         $now = now()->format("Y-m-d");
+
+        if(empty($polda)) {
+            flash('Polda tidak ditemukan. Silahkan refresh halaman dan coba lagi')->error();
+            return redirect()->back();
+        }
+
+        $poldaSubmited = PoldaSubmited::where('polda_id', $polda->id)->where('submited_date', date('Y-m-d'))->first();
+
+        if(empty($poldaSubmited)) {
+            flash('Inputan polda tidak ditemukan. Silahkan refresh halaman dan coba lagi')->error();
+            return redirect()->back();
+        }
+
+        $polda_submited_id = $poldaSubmited->id;
+        $rencana_operasi_id = $poldaSubmited->rencana_operasi_id;
+        $submited_date = $poldaSubmited->submited_date;
+
         $filename = 'daily-report-'.$polda->short_name.'-'.$now.'.xlsx';
-        return Excel::download(new PoldaSubmitedExport($uuid), $filename);
+
+        return Excel::download(new PoldaDailyComparison(
+            $rencana_operasi_id,
+            yearMinusOneOnly($submited_date),
+            yearOnly($submited_date),
+            $submited_date,
+            $submited_date,
+            $polda->name
+        ), $filename);
     }
 }

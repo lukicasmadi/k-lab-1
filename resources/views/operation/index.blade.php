@@ -88,7 +88,7 @@
 
                                         <div class="col-md-6 mb-3">
                                             <label class="text-popup">Tanggal Mulai</label>
-                                            <input type="text" name="tanggal_mulai" id="tanggal_mulai" class="form-control popoups inp-icon" value="" placeholder="- yyyy/mm/dd">                                            
+                                            <input type="text" name="tanggal_mulai" id="tanggal_mulai" class="form-control popoups inp-icon" value="" placeholder="- yyyy/mm/dd">
                                         </div>
 
                                         <div class="col-md-6 mb-3">
@@ -348,7 +348,7 @@
                     render: function(data, type, row) {
                         return `
                         <div class="ubah-change">
-                            <a class="editData" idval="`+data+`" href="#">Ubah</a>
+                            <a class="editData" idval="`+data+`" href="#">UBAH</a>
                         </div>
                         `;
                     },

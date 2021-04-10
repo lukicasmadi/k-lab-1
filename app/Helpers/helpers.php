@@ -49,6 +49,32 @@ if (! function_exists('dateOnly')) {
     }
 }
 
+if (! function_exists('yearOnly')) {
+    function yearOnly($timestamp) {
+        return Carbon::parse($timestamp)->format('Y');
+    }
+}
+
+if (! function_exists('yearMinusOneOnly')) {
+    function yearMinusOneOnly($timestamp) {
+        $out = Carbon::parse($timestamp)->format('Y');
+        return $out - 1;
+    }
+}
+
+
+if (! function_exists('monthOnly')) {
+    function monthOnly($timestamp) {
+        return Carbon::parse($timestamp)->format('m');
+    }
+}
+
+if (! function_exists('dayOnly')) {
+    function dayOnly($timestamp) {
+        return Carbon::parse($timestamp)->format('d');
+    }
+}
+
 if (! function_exists('timeOnly')) {
     function timeOnly($timestamp) {
         return Carbon::parse($timestamp)->format('h:i:s A');
@@ -177,6 +203,12 @@ if (! function_exists('poldaName')) {
     }
 }
 
+if (! function_exists('poldaShortName')) {
+    function poldaShortName() {
+        return auth()->user()->polda()->first()->polda->short_name;
+    }
+}
+
 if (! function_exists('poldaImage')) {
     function poldaImage() {
         return UserHasPolda::with('polda')->where("polda_id", poldaId())->first();
@@ -205,14 +237,31 @@ if (! function_exists('hariIni')) {
 
 if (! function_exists('calculation')) {
     function calculation($arrayData) {
-        return array_sum($arrayData);
+        $array = array(
+            'first' => '',
+            'second' => ''
+         );
+
+         $array2 = array_map(function($value) {
+            return $value === NULL ? 0 : $value;
+         }, $arrayData);
+
+        return array_sum($array2);
     }
 }
 
 if (! function_exists('percentageValue')) {
     function percentageValue($tahunKedua, $tahunPertama) {
 
-        if(empty($tahunKedua) && empty($tahunPertama)) {
+        if(is_null($tahunKedua)) {
+            return 0;
+        }
+
+        if(is_null($tahunPertama)) {
+            return 0;
+        }
+
+        if(($tahunKedua < $tahunPertama) && $tahunKedua == 0) {
             return 0;
         }
 
