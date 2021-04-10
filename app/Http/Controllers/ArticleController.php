@@ -86,6 +86,12 @@ class ArticleController extends Controller
 
     public function delete(Article $articleUuid)
     {
+        $fileCheck = Storage::exists('/public/upload/article/'.$articleUuid->small_img);
+
+        if($fileCheck) {
+            Storage::delete('/public/upload/article/'.$articleUuid->small_img);
+        }
+
         $articleUuid->delete();
         flash('Artikel telah dihapus')->success();
         return redirect()->route('article_index');
