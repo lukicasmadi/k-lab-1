@@ -28,7 +28,16 @@ class RencanaOperasiRequest extends FormRequest
             'nama_operasi' => 'required',
             'tanggal_mulai' => 'required',
             'tanggal_selesai' => 'required',
-            'deskripsi' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'jenis_operasi.required' => 'Jenis operasi tidak boleh kosong',
+            'nama_operasi.required' => 'Nama operasi tidak boleh kosong',
+            'tanggal_mulai.required' => 'Tanggal operasi mulai tidak boleh kosong',
+            'tanggal_selesai.required' => 'Tanggal operasi selesai tidak boleh kosong',
         ];
     }
 }

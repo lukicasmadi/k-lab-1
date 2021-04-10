@@ -28,8 +28,18 @@ class RencanaOperasiUpdateRequest extends FormRequest
             'edit_nama_operasi' => 'required',
             'edit_tanggal_mulai' => 'required',
             'edit_tanggal_selesai' => 'required',
-            'edit_deskripsi' => 'required',
             'uuid_edit' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'edit_jenis_operasi.required' => 'Jenis operasi tidak boleh kosong',
+            'edit_nama_operasi.required' => 'Nama operasi tidak boleh kosong',
+            'edit_tanggal_mulai.required' => 'Tanggal operasi mulai tidak boleh kosong',
+            'edit_tanggal_selesai.required' => 'Tanggal operasi selesai tidak boleh kosong',
+            'uuid_edit.required' => 'UUID tdak ditemukan. Silahkan refresh halaman dan coba lagi',
         ];
     }
 }
