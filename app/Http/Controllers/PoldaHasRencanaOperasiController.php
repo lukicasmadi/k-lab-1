@@ -14,10 +14,11 @@ use App\Http\Requests\PHRORequest;
 use Illuminate\Support\Facades\DB;
 use App\Exports\NewComparisonExport;
 use App\Exports\PoldaSubmitedExport;
-use App\Exports\PoldaDailyComparison;
 use Illuminate\Support\Facades\File;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\PoldaDailyComparison;
 use Illuminate\Support\Facades\Storage;
+use App\Models\PoldaCustomOperationName;
 
 class PoldaHasRencanaOperasiController extends Controller
 {
@@ -51,6 +52,13 @@ class PoldaHasRencanaOperasiController extends Controller
 
         if(empty($op)) {
             flash('Tidak ada operasi yang sedang berjalan')->error();
+            return redirect()->route('phro_index');
+        }
+
+        $customNameOperation = PoldaCustomOperationName::where('polda_id', poldaId())->where('rencana_operasi_id', operationPlans()->id)->first();
+
+        if(empty($customNameOperation)) {
+            flash('Anda belum membuat alias dari nama operasi <b>'.operationPlans()->name.'</b>')->error();
             return redirect()->route('phro_index');
         }
 
