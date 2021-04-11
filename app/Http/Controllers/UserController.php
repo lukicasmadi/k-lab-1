@@ -48,10 +48,10 @@ class UserController extends Controller
                 'password' => bcrypt(request('new_password'))
             ]);
 
-            flash('Your data has been updated')->success();
+            flash('Password anda berhasil diganti')->success();
             return redirect()->back();
         } else {
-            flash('Your old password not match in our system')->error();
+            flash('Password lama anda tidak sesuai dengan data di sistem. Silahkan cek kembali')->error();
             return redirect()->back();
         }
     }
@@ -79,7 +79,7 @@ class UserController extends Controller
 
         User::whereId(myUserId())->first()->update($data);
 
-        flash('Your profile has been updated')->success();
+        flash('Profil anda berhasil diubah')->success();
         return redirect()->back();
     }
 
@@ -113,7 +113,7 @@ class UserController extends Controller
                 'password' => request('password'),
             ]);
 
-            flash('Your data has been created')->success();
+            flash('Data user berhasil ditambahkan')->success();
         } else {
             $data = User::findOrFail(request('id_user'));
 
@@ -127,7 +127,7 @@ class UserController extends Controller
             }
 
             $data->update($newData);
-            flash('Your data has been updated')->success();
+            flash('Data user berhasil diubah')->success();
         }
 
         return back();
@@ -140,7 +140,7 @@ class UserController extends Controller
         $data->delete();
 
         return response()->json([
-            'output' => 'Your data has been deleted.',
+            'output' => 'Data user berhasil dihapus',
         ], 200);
     }
 }
