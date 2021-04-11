@@ -3204,13 +3204,21 @@ pre code {
   opacity: 1;
 }
 
+@media (min-width: 1900px) {
+  .form-control::placeholder {
+    font-size: 18px;
+    color: #00adef;
+    opacity: 1;
+  }
+}
+
 .form-control.popoups {
   background-color: transparent;
   font-size: 13px;
 }
 
 .form-control.popoups.inp-icon{
-  background: url(/img/chart.png) no-repeat 100%;
+  background: url(/img/calendar.png) no-repeat 100%;
   background-color: transparent;
   padding-right: 7px;
   background-size: 16px;

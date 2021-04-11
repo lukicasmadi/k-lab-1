@@ -15,23 +15,21 @@
 <div id="content" class="main-content">
     <div class="layout-px-spacing">
         <div class="row layout-top-spacing">
-            <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing blendingimg">
+            <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing blendingimg text-center">
                 @if (poldaAlreadyInputToday())
-                    <div class="grid-polda line glowblue" style="display: block; margin: 0 auto;" >
-                        Status laporan hari ini<br />
-                        Sudah Mengirimkan
-                        <br />
-                        {{ dayNameIndonesia(now()) }}, {{ indonesianDate(now()) }} | {{ timeOnly(now()) }}
+                    <div class="grid-polda line glowpolda" >
+                        <p class="status-lapor">status laporan hari ini</p>
+                        <p class="kirim-lapor">sudah Mengirimkan</p>
+                        <p class="tgl-lapor">{{ dayNameIndonesia(now()) }}, {{ indonesianDate(now()) }} | {{ timeOnly(now()) }}</p>
                     </div>
                 @else
                     <div class="grid-polda line glowred" style="display: block; margin: 0 auto;">
-                        Status laporan hari ini<br />
-                        Belum Mengirimkan
-                        <br />
-                        {{ dayNameIndonesia(now()) }}, {{ indonesianDate(now()) }} | {{ timeOnly(now()) }}
+                        <p class="status-lapor">status laporan hari ini</p>
+                        <p>belum Mengirimkan</p>
+                        <p>{{ dayNameIndonesia(now()) }}, {{ indonesianDate(now()) }} | {{ timeOnly(now()) }}</p>
                     </div>
                 @endif
-                <img src="{{ secure_asset('/img/polda/'.poldaImage()->polda->logo) }}">
+                <img class="imgdetail-polda" src="{{ secure_asset('/img/polda/'.poldaImage()->polda->logo) }}">
             </div>
             <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -46,8 +44,8 @@
                                     <span>TOTAL LAPORAN</span>
                                     </h5>
                                     <p>DATA LAPORAN MINGGUAN</p>
+                                    <div id="donut-chart" class="mt-3"></div>
                                 </div>
-                                <div id="donut-chart"></div>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -60,13 +58,13 @@
                                     <span>TOTAL LAPORAN</span>
                                     </h5>
                                     <p>DATA LAPORAN KESELURUHAN</p>
+                                    <div id="donut-chart-full" class="mt-3"></div>
                                 </div>
-                                <div id="donut-chart-full" class=""></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-n3">
                     <div class="row">
                         <img src="{{ secure_asset('/img/line-polda.png') }}" width="100%">
                     </div>
@@ -183,7 +181,7 @@ $(document).ready(function () {
                     "sNext": '<i class="fas fa-chevron-right dtIconSize"></i>'
                 },
                 "sInfo": "Menampilkan halaman _PAGE_ dari _PAGES_",
-                "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> <img src="{{ secure_asset("/img/cloud_down.png") }}">',
+                "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
                 "sSearchPlaceholder": "CARI DATA...",
                 "sLengthMenu": " _MENU_ ",
                 "sProcessing": '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>',
@@ -786,18 +784,49 @@ function donutDataWeekly() {
                 show: false,
             }
         },
-        dataLabels: {
-            enabled: false,
-            formatter: function (val) {
-                return val + "%"
+        legend: {
+            show: true,
+            showForSingleSeries: false,
+            showForNullSeries: true,
+            showForZeroSeries: true,
+            position: 'bottom',
+            horizontalAlign: 'center', 
+            floating: false,
+            fontSize: '10px',
+            fontWeight: 400,
+            formatter: undefined,
+            inverseOrder: false,
+            width: undefined,
+            height: undefined,
+            tooltipHoverFormatter: undefined,
+            offsetX: 0,
+            offsetY: 40,
+            labels: {
+                colors: undefined,
+                useSeriesColors: false
             },
-        },
-        tooltip: {
-            y: {
-                formatter: function(value) {
-                    return value + "%";
-                }
-            }
+            markers: {
+                width: 12,
+                height: 12,
+                strokeWidth: 0,
+                strokeColor: '#fff',
+                fillColors: undefined,
+                radius: 12,
+                customHTML: undefined,
+                onClick: undefined,
+                offsetX: 0,
+                offsetY: 0
+            },
+            itemMargin: {
+                horizontal: 0,
+                vertical: 5
+            },
+            onItemClick: {
+                toggleDataSeries: true
+            },
+            onItemHover: {
+                highlightDataSeries: true
+            },
         },
         fill: {
             type: "gradient",
@@ -805,10 +834,10 @@ function donutDataWeekly() {
             shadeIntensity: 0.8,
             opacityFrom: 0.9,
             opacityTo: 0.9,
-            stops: [0, 90, 100]
+            stops: [50, 190, 100]
             }
         },
-        colors:['#136487', '#bc1d26'],
+        colors:['#00adef', '#ea1c26'],
         plotOptions: {
           pie: {
             donut: {
@@ -834,11 +863,11 @@ function donutDataWeekly() {
                 total: {
                   show: true,
                   showAlways: false,
-                  label: 'TOTAL DATA',
+                  label: 'TOTAL DATA MASUK',
                   color: '#888ea8',
                   formatter: function (w) {
                     return w.globals.seriesTotals.reduce( function(a, b) {
-                      return a + b + "%"
+                      return a + "%"
                     })
                   }
                 }
@@ -847,15 +876,20 @@ function donutDataWeekly() {
           }
         },
         stroke: {
-            show: false,
+            show: true,
+            curve: 'smooth',
+            lineCap: 'butt',
+            colors: undefined,
+            width: 0,
+            dashArray: 0,      
         },
         series: [filled, nofilled],
         labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
         responsive: [{
-            breakpoint: 5000,
+            breakpoint: 500,
             options: {
                 chart: {
-                    width: 315
+                    width: 100
                 },
                 legend: {
                     position: 'bottom'
@@ -888,18 +922,49 @@ function donutDataFull() {
                 show: false,
             }
         },
-        dataLabels: {
-            enabled: false,
-            formatter: function (val) {
-                return val + "%"
+        legend: {
+            show: true,
+            showForSingleSeries: false,
+            showForNullSeries: true,
+            showForZeroSeries: true,
+            position: 'bottom',
+            horizontalAlign: 'center', 
+            floating: false,
+            fontSize: '10px',
+            fontWeight: 400,
+            formatter: undefined,
+            inverseOrder: false,
+            width: undefined,
+            height: undefined,
+            tooltipHoverFormatter: undefined,
+            offsetX: 0,
+            offsetY: 40,
+            labels: {
+                colors: undefined,
+                useSeriesColors: false
             },
-        },
-        tooltip: {
-            y: {
-                formatter: function(value) {
-                    return value + " %";
-                }
-            }
+            markers: {
+                width: 12,
+                height: 12,
+                strokeWidth: 0,
+                strokeColor: '#fff',
+                fillColors: undefined,
+                radius: 12,
+                customHTML: undefined,
+                onClick: undefined,
+                offsetX: 0,
+                offsetY: 0
+            },
+            itemMargin: {
+                horizontal: 5,
+                vertical: 5
+            },
+            onItemClick: {
+                toggleDataSeries: true
+            },
+            onItemHover: {
+                highlightDataSeries: true
+            },
         },
         fill: {
             type: "gradient",
@@ -907,7 +972,7 @@ function donutDataFull() {
             shadeIntensity: 0.8,
             opacityFrom: 0.9,
             opacityTo: 0.9,
-            stops: [0, 90, 100]
+            stops: [50, 190, 100]
             }
         },
         colors:['#00adef', '#ea1c26'],
@@ -936,11 +1001,11 @@ function donutDataFull() {
                 total: {
                   show: true,
                   showAlways: false,
-                  label: 'TOTAL DATA',
+                  label: 'TOTAL DATA MASUK',
                   color: '#888ea8',
                   formatter: function (w) {
                     return w.globals.seriesTotals.reduce( function(a, b) {
-                      return a + b + "%"
+                      return a + "%"
                     })
                   }
                 }
@@ -949,15 +1014,20 @@ function donutDataFull() {
           }
         },
         stroke: {
-            show: false,
+            show: true,
+            curve: 'smooth',
+            lineCap: 'butt',
+            colors: undefined,
+            width: 0,
+            dashArray: 0,      
         },
         series: [filled, nofilled],
         labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
         responsive: [{
-            breakpoint: 5000,
+            breakpoint: 500,
             options: {
                 chart: {
-                    width: 315
+                    width: 100
                 },
                 legend: {
                     position: 'bottom'

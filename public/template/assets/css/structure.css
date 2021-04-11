@@ -1978,6 +1978,37 @@ transform: translateX(34px);
     box-shadow: 0 0 8px 0 rgba(81, 203, 238, 0.1), 0 0 20px 0 rgba(81, 203, 238, 0.09);
 }
 
+.grid-polda.glowpolda {
+    display: block;
+    margin: 0 auto;
+    border: solid 0.5px #00adef;
+    padding: 10px 20px;
+    background: rgba(0, 173, 239, 0.2);
+    background-image: url(/img/poldablue.png);
+    background-size: 85px;
+    background-repeat: no-repeat;
+    background-position: top;
+    box-shadow: 0 0 8px 0 rgba(81, 203, 238, 0.1), 0 0 20px 0 rgba(81, 203, 238, 0.09);
+}
+
+.grid-polda.glowpolda p {
+    line-height: 1;
+}
+
+.grid-polda.glowpolda p.status-lapor {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.grid-polda.glowpolda p.kirim-lapor {
+    color: #00adef;
+    font-size: 20px;
+}
+
+.grid-polda.glowpolda p.tgl-lapor {
+    font-size: 11px;
+}
+
 .grid-polda.line {
     /* margin-right: 5px; */
 }

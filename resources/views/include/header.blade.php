@@ -30,7 +30,7 @@
                         <li class="menu single-menu {{ request()->is('dashboard') ? 'active' : '' }}">
                             <a href="{{ route('dashboard') }}">
                                 <div>
-                                    <span>Dashboard</span>
+                                    <span>Beranda</span>
                                 </div>
                             </a>
                         </li>
@@ -136,7 +136,7 @@
                         <li class="menu single-menu">
                             <a href="{{ route('dashboard') }}">
                                 <div>
-                                    <span class="tourcolor">Tour Website</span>
+                                    <span class="tourcolor">Panduan</span>
                                 </div>
                             </a>
                         </li>

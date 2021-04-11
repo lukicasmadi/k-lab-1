@@ -66,7 +66,7 @@
                 <div class="table-responsive">
                     <table id="tbl_daily_submited" class="table">
                         <thead>
-                            <tr>
+                            <tr bgcolor="#0E7096">
                                 <th width="31%">Nama Laporan</th>
                                 <th width="27%">tahun 2020</th>
                                 <th width="27%">tahun 2021</th>
@@ -76,7 +76,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="titlletd" bgcolor="#fff" colspan="5">I. DATA TERKAIT MASALAH PELANGGARAN LALU LINTAS</td>
+                                <td class="titlletd" colspan="5">I. DATA TERKAIT MASALAH PELANGGARAN LALU LINTAS</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">1. PELANGGARAN LALU LINTAS</td>
@@ -95,6 +95,7 @@
                                 <td id="status_pelanggaran_lalin_teguran">-</td>
                                 <td id="persentase_pelanggaran_lalin_teguran">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">2. JENIS PELANGGARAN LALU LINTAS</td>
                             </tr>
@@ -150,6 +151,7 @@
                                 <td id="status_pelanggaran_lalin_motor_lain_lain">-</td>
                                 <td id="persentase_pelanggaran_lalin_motor_lain_lain">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr>
                                 <td class="subtitle" colspan="5">B. Mobil Dan Kendaraan Khusus</td>
                             </tr>
@@ -202,6 +204,7 @@
                                 <td id="status_pelanggaran_lalin_mobil_lain_lain">-</td>
                                 <td id="persentase_pelanggaran_lalin_mobil_lain_lain">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">3. BARANG BUKTI YANG DISITA</td>
                             </tr>
@@ -226,6 +229,7 @@
                                 <td id="status_pelanggaran_lalin_barang_bukti_kendaraan">-</td>
                                 <td id="persentase_pelanggaran_lalin_barang_bukti_kendaraan">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">4. KENDARAAN YANG TERLIBAT PELANGGARAN</td>
                             </tr>
@@ -264,6 +268,7 @@
                                 <td id="status_pelanggaran_lalin_terlibat_pelanggaran_khusus">-</td>
                                 <td id="persentase_pelanggaran_lalin_terlibat_pelanggaran_khusus">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">5. PROFESI PELAKU PELANGGARAN</td>
                             </tr>
@@ -316,6 +321,7 @@
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_lainnya">-</td>
                                 <td id="persentase_pelanggaran_lalin_profesi_pelaku_lainnya">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">6. USIA PELAKU PELANGGARAN</td>
                             </tr>
@@ -396,7 +402,7 @@
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_60tahun">-</td>
                                 <td id="persentase_pelanggaran_lalin_profesi_pelaku_60tahun">-</td>
                             </tr>
-                            </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">7. SIM PELAKU PELANGGARAN</td>
                             </tr>
@@ -470,6 +476,7 @@
                                 <td id="status_pelanggaran_lalin_profesi_pelaku_tanpa_sim">-</td>
                                 <td id="persentase_pelanggaran_lalin_profesi_pelaku_tanpa_sim">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">8. LOKASI PELANGGARAN LALU LINTAS</td>
                             </tr>
@@ -511,6 +518,7 @@
                                 <td id="status_pelanggaran_lalin_kawasan_industri">-</td>
                                 <td id="persentase_pelanggaran_lalin_kawasan_industri">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr>
                                 <td class="subtitle" colspan="5">B. Status Jalan</td>
                             </tr>
@@ -542,6 +550,7 @@
                                 <td id="status_pelanggaran_lalin_status_jalan_desa">-</td>
                                 <td id="persentase_pelanggaran_lalin_status_jalan_desa">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr>
                                 <td class="subtitle" colspan="5">C. Berdasarkan Fungsi Jalan</td>
                             </tr>
@@ -573,8 +582,9 @@
                                 <td id="status_pelanggaran_lalin_status_jalan_lingkungan">-</td>
                                 <td id="persentase_pelanggaran_lalin_status_jalan_lingkungan">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr>
-                                <td class="titlletd" bgcolor="#fff" colspan="5">II. DATA TERKAIT MASALAH KECELAKAAN LALU LINTAS</td>
+                                <td class="titlletd" colspan="5">II. DATA TERKAIT MASALAH KECELAKAAN LALU LINTAS</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">9. KECELAKAAN LALU LINTAS</td>
@@ -614,6 +624,7 @@
                                 <td id="status_kecelakaan_lalin_kerugian_materil">-</td>
                                 <td id="persentase_kecelakaan_lalin_kerugian_materil">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">10. BARANG BUKTI YANG DISITA</td>
                             </tr>
@@ -638,6 +649,7 @@
                                 <td id="status_kecelakaan_lalin_barbuk_kendaraan">-</td>
                                 <td id="persentase_kecelakaan_lalin_barbuk_kendaraan">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">11. PROFESI KORBAN KECELAKAAN LALU LINTAS</td>
                             </tr>
@@ -690,6 +702,7 @@
                                 <td id="status_kecelakaan_lalin_lain">-</td>
                                 <td id="persentase_kecelakaan_lalin_lain">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">12. USIA KORBAN KECELAKAAN LALU LINTAS</td>
                             </tr>
@@ -770,6 +783,7 @@
                                 <td id="status_kecelakaan_lalin_60tahun">-</td>
                                 <td id="persentase_kecelakaan_lalin_60tahun">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">13. SIM KORBAN KECELAKAAN LALU LINTAS</td>
                             </tr>
@@ -843,6 +857,7 @@
                                 <td id="status_kecelakaan_lalin_tanpa_sim">-</td>
                                 <td id="persentase_kecelakaan_lalin_tanpa_sim">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">14. KENDARAAN YANG TERLIBAT KECELAKAAN LALU LINTAS</td>
                             </tr>
@@ -888,6 +903,7 @@
                                 <td id="status_kecelakaan_lalin_tidak_bermotor">-</td>
                                 <td id="persentase_kecelakaan_lalin_tidak_bermotor">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">15. JENIS KECELAKAAN LALU LINTAS</td>
                             </tr>
@@ -961,6 +977,7 @@
                                 <td id="status_kecelakaan_lalin_lainnya">-</td>
                                 <td id="persentase_kecelakaan_lalin_lainnya">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">16. PROFESI PELAKU KECELAKAAN LALU LINTAS</td>
                             </tr>
@@ -1013,6 +1030,7 @@
                                 <td id="status_kecelakaan_lalin_pelaku_lain">-</td>
                                 <td id="persentase_kecelakaan_lalin_pelaku_lain">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">17. USIA PELAKU KECELAKAAN LALU LINTAS</td>
                             </tr>
@@ -1093,6 +1111,7 @@
                                 <td id="status_kecelakaan_lalin_pelaku_60tahun">-</td>
                                 <td id="persentase_kecelakaan_lalin_pelaku_60tahun">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">18. SIM PELAKU KECELAKAAN LALU LINTAS</td>
                             </tr>
@@ -1166,6 +1185,7 @@
                                 <td id="status_kecelakaan_lalin_pelaku_sim_tanpa_sim">-</td>
                                 <td id="persentase_kecelakaan_lalin_pelaku_sim_tanpa_sim">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">19. LOKASI KECELAKAAN LALU LINTAS</td>
                             </tr>
@@ -1214,6 +1234,7 @@
                                 <td id="status_kecelakaan_lalin_kawasan_lainlain">-</td>
                                 <td id="persentase_kecelakaan_lalin_kawasan_lainlain">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr>
                                 <td class="subtitle" colspan="5">B. Status Jalan</td>
                             </tr>
@@ -1245,6 +1266,7 @@
                                 <td id="status_kecelakaan_lalin_status_jalan_desa">-</td>
                                 <td id="persentase_kecelakaan_lalin_status_jalan_desa">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr>
                                 <td class="subtitle" colspan="5">C. Berdasarkan Fungsi Jalan</td>
                             </tr>
@@ -1276,6 +1298,7 @@
                                 <td id="status_kecelakaan_lalin_status_jalan_lingkungan">-</td>
                                 <td id="persentase_kecelakaan_lalin_status_jalan_lingkungan">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">20. FAKTOR PENYEBAB KECELAKAAN</td>
                             </tr>
@@ -1370,6 +1393,7 @@
                                 <td id="status_kecelakaan_lalin_penyebab_lainnya">-</td>
                                 <td id="persentase_kecelakaan_lalin_penyebab_lainnya">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="evaluasi">
                                 <td class="subtitle">B. ALAM</td>
                                 <td class="subtitle" id="kecelakaan_lalin_penyebab_alam_prev">0</td>
@@ -1426,6 +1450,7 @@
                                 <td id="status_kecelakaan_lalin_penyebab_prasarana_palangpintu">-</td>
                                 <td id="persentase_kecelakaan_lalin_penyebab_prasarana_palangpintu">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">21. WAKTU KEJADIAN KECELAKAAN LALU LINTAS</td>
                             </tr>
@@ -1485,6 +1510,7 @@
                                 <td id="status_kecelakaan_lalin_waktu_2124">-</td>
                                 <td id="persentase_kecelakaan_lalin_waktu_2124">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">22. KECELAKAAN LALU LINTAS MENONJOL</td>
                             </tr>
@@ -1523,6 +1549,7 @@
                                 <td id="status_kecelakaan_lalin_menonjol_materiil">-</td>
                                 <td id="persentase_kecelakaan_lalin_menonjol_materiil">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">23. KECELAKAAN LALU LINTAS TUNGGAL / OUT OF CONTROL</td>
                             </tr>
@@ -1561,6 +1588,7 @@
                                 <td id="status_kecelakaan_lalin_tunggal_materiil">-</td>
                                 <td id="persentase_kecelakaan_lalin_tunggal_materiil">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">24. TABRAK PEJALAN KAKI</td>
                             </tr>
@@ -1599,6 +1627,7 @@
                                 <td id="status_kecelakaan_lalin_jalan_kaki_materiil">-</td>
                                 <td id="persentase_kecelakaan_lalin_jalan_kaki_materiil">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">25. TABRAK LARI</td>
                             </tr>
@@ -1637,6 +1666,7 @@
                                 <td id="status_kecelakaan_lalin_tabrak_lari_materiil">-</td>
                                 <td id="persentase_kecelakaan_lalin_tabrak_lari_materiil">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">26. TABRAK SEPEDA MOTOR ( R2 )</td>
                             </tr>
@@ -1675,6 +1705,7 @@
                                 <td id="status_kecelakaan_lalin_tabrak_motor_materiil">-</td>
                                 <td id="persentase_kecelakaan_lalin_tabrak_motor_materiil">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">27. TABRAK RANMOR RODA EMPAT ( R4 )</td>
                             </tr>
@@ -1713,6 +1744,7 @@
                                 <td id="status_kecelakaan_lalin_tabrak_roda4_materiil">-</td>
                                 <td id="persentase_kecelakaan_lalin_tabrak_roda4_materiil">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">28. TABRAK KENDARAAN TIDAK BERMOTOR (SEPEDA,BECAK DAYUNG, DELMAN, DOKAR DLL)</td>
                             </tr>
@@ -1751,6 +1783,7 @@
                                 <td id="status_kecelakaan_lalin_tidak_motor_materiil">-</td>
                                 <td id="persentase_kecelakaan_lalin_tidak_motor_materiil">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">29. KECELAKAAN DI PERLINTASAN KA</td>
                             </tr>
@@ -1803,6 +1836,7 @@
                                 <td id="status_kecelakaan_lalin_pelintasan_ka_materiil">-</td>
                                 <td id="persentase_kecelakaan_lalin_pelintasan_ka_materiil">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">30. KECELAKAAN TRANSPORTASI</td>
                             </tr>
@@ -1827,8 +1861,9 @@
                                 <td id="status_kecelakaan_lalin_transportasi_udara">-</td>
                                 <td id="persentase_kecelakaan_lalin_transportasi_udara">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr>
-                                <td class="titlletd" bgcolor="#fff" colspan="5">III. DATA TERKAIT DIKMAS LANTAS</td>
+                                <td class="titlletd" colspan="5">III. DATA TERKAIT DIKMAS LANTAS</td>
                             </tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">31. DIKMAS LANTAS</td>
@@ -1871,6 +1906,7 @@
                                 <td id="status_dikmas_lantas_penluh_langgar">-</td>
                                 <td id="persentase_dikmas_lantas_penluh_langgar">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr>
                                 <td class="subtitle" colspan="5">B. Penyebaran / Pemasangan</td>
                             </tr>
@@ -1902,6 +1938,7 @@
                                 <td id="status_dikmas_lantas_penluh_bilboard">-</td>
                                 <td id="persentase_dikmas_lantas_penluh_bilboard">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr>
                                 <td class="subtitle" colspan="5">C. Program Nasional Keamanan Lalu Lintas</td>
                             </tr>
@@ -1933,6 +1970,7 @@
                                 <td id="status_dikmas_lantas_penluh_pramuka">-</td>
                                 <td id="persentase_dikmas_lantas_penluh_pramuka">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr>
                                 <td class="subtitle" colspan="5">D. Program Nasional Keselamatan Lalu Lintas</td>
                             </tr>
@@ -1985,6 +2023,7 @@
                                 <td id="status_dikmas_lantas_penluh_global_road">-</td>
                                 <td id="persentase_dikmas_lantas_penluh_global_road">-</td>
                             </tr>
+                            <tr><td colspan="5">&nbsp;</td></tr>
                             <tr class="padd-title">
                                 <td bgcolor="#0E7096" colspan="5">32. DATA TERKAIT GIAT KEPOLISIAN GIAT LANTAS</td>
                             </tr>

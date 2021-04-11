@@ -317,7 +317,7 @@ body, html {
 	padding: 0;
 	margin: 0;
 
-	font-family: sans-serif, Arial, Verdana, "Trebuchet MS", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	/* font-family: sans-serif, Arial, Verdana, "Trebuchet MS", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
 	font-size: 16px;
 	line-height: 1.5;
 }
@@ -335,7 +335,7 @@ a {
 	color: #38A5EE;
 }
 
-header .centered {
+/* header .centered {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
@@ -378,7 +378,7 @@ header nav ul li a {
 
 header nav ul li a:hover {
 	text-decoration: underline;
-}
+} */
 
 main .message {
 	padding: 0 0 var(--ck-sample-base-spacing);

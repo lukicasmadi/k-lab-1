@@ -70,6 +70,10 @@
     color: #fff;
 }
 
+.destyle{
+    background: #44a55b;
+}
+
 .feather-icon .icon-container {
     cursor: pointer;
 }

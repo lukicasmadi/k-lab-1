@@ -163,7 +163,8 @@ div.dataTables_wrapper div.dataTables_filter svg {
     background: #00adef;
     position: absolute;
     top: 5px;
-    right: 42px;
+    /* right: 42px; */
+    right: 0px;
     width: 35px;
     height: 35px;
     padding: 10px 0;
@@ -206,13 +207,13 @@ div.dataTables_wrapper div.dataTables_filter input {
 }
 
 .dataTables_wrapper .dataTables_length select.form-control {
-    padding: 0px 17px 0px 5px;
+    padding: 0px 20px 0px 14px;
     -moz-appearance: none;
     /* Firefox */
     -webkit-appearance: none;
     /* Safari and Chrome */
     appearance: none;
-    background: #0D79A4 url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23bfc9d4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") 32px 7px no-repeat;
+    background: #0D79A4 url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23bfc9d4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") 35px 7px no-repeat;
     border: 1px solid #0D79A4;
     color: #fff;
     /* border-radius: 6px; */
