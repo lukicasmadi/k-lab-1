@@ -199,13 +199,6 @@ $(document).ready(function () {
                 },
             },
             {
-                data: 'desc',
-                render: function(data, type, row, meta) {
-                    return limitTableText(data, 20);
-                },
-                sortable: false
-            },
-            {
                 data: 'start_date',
             },
             {

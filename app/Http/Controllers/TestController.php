@@ -6,29 +6,18 @@ use App\Models\User;
 use App\Models\Polda;
 use App\Models\UserHasPolda;
 use Illuminate\Http\Request;
+use App\Models\RencanaOperasi;
 
 class TestController extends Controller
 {
-    public function polda()
+    public function custom()
     {
-        $user = User::whereNotIn('name', ['Bertho', 'Cas', 'bagops', 'korlantas'])->orderBy('id', 'asc')->get();
+        $model = RencanaOperasi::with(['poldaAlias' => function($query) {
+            $query->where('polda_id', 2);
+        }])->get();
 
-        foreach($user as $u) {
+        logger($model);
 
-            $polda = Polda::where('polda_assign', $u->name)->first();
-
-            if(!empty($polda)) {
-
-                UserHasPolda::create([
-                    'user_id' => $u->id,
-                    'polda_id' => $polda->id,
-                ]);
-
-            } else {
-                logger($u->name);
-            }
-
-        }
-
+        return "OK";
     }
 }

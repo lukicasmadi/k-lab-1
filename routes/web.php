@@ -7,19 +7,6 @@ Route::get('/home', 'HomeController@welcomePage')->name('home');
 
 Auth::routes(['register' => false]);
 
-Route::get('/polda/metro', function () {
-    return view('polda');
-});
-
-Route::get('/article/detail', function() {
-    return view('/article/detail');
-});
-
-Route::get('/article/all', function() {
-    return view('/article/all');
-});
-
-
 Route::get('/forgot-password', 'UserController@forgot_password_index')->name('forgot_password_index');
 Route::post('/forgot-password/process', 'UserController@forgot_password_process')->name('forgot_password_process');
 Route::get('/not-assign', 'HomeController@notAssign')->name('notAssign');
@@ -49,33 +36,35 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/operation-onsite/{uuid}/preview', 'PoldaHasRencanaOperasiController@preview')->name('previewPhro');
     });
 
-    Route::resource('operation-plan', 'RencanaOperasiController', [
-        'names' => [
-            'index' => 'rencana_operasi_index',
-            'create' => 'rencana_operasi_create',
-            'store' => 'rencana_operasi_store',
-            'show' => 'rencana_operasi_show',
-            'edit' => 'rencana_operasi_edit',
-            'update' => 'rencana_operasi_update',
-            'destroy' => 'rencana_operasi_destroy',
-        ]
-    ]);
-    Route::get('/operation-plan/download/{filePath}', 'RencanaOperasiController@download')->name('downloadOperationPlan');
-    Route::post('/operation-plan/create-new', 'RencanaOperasiController@store')->name('create_rencana_operasi_new');
-    Route::post('/operation-plan/update-new', 'RencanaOperasiController@update')->name('edit_rencana_operasi_new');
-
-    Route::get('/report/daily', 'ReportController@dailyAllPolda')->name('report_daily_all_polda');
-    Route::post('/report/daily/process', 'ReportController@dailyProcess')->name('report_daily_process');
-    Route::get('/report/daily/polda/{poldaUuid}', 'ReportController@poldaUuid')->name('report_bypolda');
-    Route::get('/report/analysis-evaluation', 'ReportController@comparison')->name('report_comparison');
-    Route::post('/report/analysis-evaluation/process', 'ReportController@comparisonProcess')->name('report_comparison_process');
-    Route::get('/report/daily/id/{uuid}', 'ReportController@byId')->name('report_daily_by_id');
     Route::get('/report/download/{uuid}', 'ReportController@downloadExcel')->name('report_download_excel');
-
 
 
     // Route Hanya Bisa Diakses Oleh Administrator atau Korlantas Pusat
     Route::group(['middleware' => 'admin-or-pusat-only'], function () {
+
+        Route::resource('operation-plan', 'RencanaOperasiController', [
+            'names' => [
+                'index' => 'rencana_operasi_index',
+                'create' => 'rencana_operasi_create',
+                'store' => 'rencana_operasi_store',
+                'show' => 'rencana_operasi_show',
+                'edit' => 'rencana_operasi_edit',
+                'update' => 'rencana_operasi_update',
+                'destroy' => 'rencana_operasi_destroy',
+            ]
+        ]);
+
+        Route::get('/operation-plan/download/{filePath}', 'RencanaOperasiController@download')->name('downloadOperationPlan');
+        Route::post('/operation-plan/create-new', 'RencanaOperasiController@store')->name('create_rencana_operasi_new');
+        Route::post('/operation-plan/update-new', 'RencanaOperasiController@update')->name('edit_rencana_operasi_new');
+
+        Route::get('/report/daily', 'ReportController@dailyAllPolda')->name('report_daily_all_polda');
+        Route::post('/report/daily/process', 'ReportController@dailyProcess')->name('report_daily_process');
+        Route::get('/report/analysis-evaluation', 'ReportController@comparison')->name('report_comparison');
+        Route::post('/report/analysis-evaluation/process', 'ReportController@comparisonProcess')->name('report_comparison_process');
+        Route::get('/report/daily/polda/{poldaUuid}', 'ReportController@poldaUuid')->name('report_bypolda');
+        Route::get('/report/daily/id/{uuid}', 'ReportController@byId')->name('report_daily_by_id');
+
         Route::resource('unit', 'UnitController', [
             'names' => [
                 'index' => 'unit_index',
@@ -158,7 +147,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/korlantas-rekap/daily/update', 'KorlantasRekapController@update')->name('korlantas_rekap_update');
     Route::get('/custom-name', 'KorlantasRekapController@polda_custom_name')->name('polda_custom_name'); //route kenapa bermasalah?
     Route::post('/custom-name/store', 'KorlantasRekapController@storeCustomName')->name('post_data_polda_custom_name');
-    Route::get('/test', 'TestController@polda')->name('test');
+    Route::get('/test', 'TestController@custom')->name('test');
 
     Route::group(['prefix' => 'data'], function () {
         Route::get('/category', 'CategoryController@data')->name('category_data');

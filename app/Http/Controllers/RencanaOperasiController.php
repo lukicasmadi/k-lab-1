@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\RencanaOperasi;
+use App\Models\OperationExtractDate;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use App\Models\PoldaCustomOperationName;
@@ -42,14 +43,16 @@ class RencanaOperasiController extends Controller
 
     public function dataAlias()
     {
-        $model = RencanaOperasi::with('poldaAlias');
+        $model = RencanaOperasi::with(['poldaAlias' => function($query) {
+            $query->where('polda_id', poldaId());
+        }]);
 
         return datatables()->eloquent($model)
         ->addColumn('alias_name', function (RencanaOperasi $ro) {
-            if(empty($ro->poldaAlias)) {
+            if(empty($ro->poldaAlias) || count($ro->poldaAlias) <= 0) {
                 return "-";
             } else {
-                return $ro->poldaAlias->alias;
+                return $ro->poldaAlias[0]->alias;
             }
         })
         ->toJson();
@@ -80,14 +83,26 @@ class RencanaOperasiController extends Controller
             'end_date' => dateOnly(request('tanggal_selesai')),
         ];
 
-        if(request()->hasFile('attachement')) {
-            $file = $request->file('attachement');
-            $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-            Storage::put("/public/upload/rencana_operasi/".$randomName, File::get($file));
-            $data['attachement'] = $randomName;
+        $firstCheck = OperationExtractDate::with('rencanaOperasi')
+        ->where('extract_date', dateOnly(request('tanggal_mulai')))
+        ->orWhere('extract_date', dateOnly(request('tanggal_selesai')))
+        ->first();
+
+        if(!empty($firstCheck) || !empty($secondCheck)) {
+            flash('Tanggal rencana operasi sudah ada didalam range waktu yang anda pilih. Operasi tersebut adalah '.$firstCheck->rencanaOperasi->name)->error();
+            return redirect()->route('rencana_operasi_index');
         }
 
-        RencanaOperasi::create($data);
+        $create = RencanaOperasi::create($data);
+
+        $extractDate = extractDateRange(dateOnly(request('tanggal_mulai')), dateOnly(request('tanggal_selesai')));
+
+        foreach($extractDate as $item) {
+            OperationExtractDate::create([
+                'rencana_operasi_id' => $create->id,
+                'extract_date' => $item
+            ]);
+        }
 
         flash('Rencana operasi telah dibuat')->success();
         return redirect()->route('rencana_operasi_index');
@@ -101,7 +116,7 @@ class RencanaOperasiController extends Controller
 
     public function update(RencanaOperasiUpdateRequest $request, $uuid)
     {
-$data = [
+        $data = [
             'name' => strtoupper($request->edit_jenis_operasi),
             'operation_type' => strtoupper($request->edit_nama_operasi),
             'start_date' => dateOnly($request->edit_tanggal_mulai),

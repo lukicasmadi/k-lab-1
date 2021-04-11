@@ -2,11 +2,17 @@
 
 use Carbon\Carbon;
 use App\Models\User;
+use Carbon\CarbonPeriod;
 use Illuminate\Support\Str;
 use App\Models\UserHasPolda;
 use App\Models\PoldaSubmited;
 use App\Models\RencanaOperasi;
 
+if (! function_exists('extractDateRange')) {
+    function extractDateRange($start, $end) {
+        return CarbonPeriod::create($start, $end);
+    }
+}
 
 if (! function_exists('limitText')) {
     function limitText($string, $textLenght) {

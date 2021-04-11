@@ -185,7 +185,12 @@
                         @php
                             if(!empty(auth()->user())) {
                                 $user = App\Models\User::whereId(myUserId())->first();
-                                echo '<div class="media-body align-self-center" style="margin-right: 35px;"><h6><span>Hi,</span> '.$user->name.'</h6></div>';
+
+                                if(empty($user->profile) || is_null($user->profile)) {
+                                    echo '<div class="media-body align-self-center" style="margin-right: 35px;"><h6><span>Hi,</span> '.$user->name.'</h6></div>';
+                                } else {
+                                    echo '<div class="media-body align-self-center" style="margin-right: 35px;"><h6><span>Hi,</span> '.$user->profile.'</h6></div>';
+                                }
 
                                 if(isAdmin()) {
                                     if(empty($user->avatar)) {

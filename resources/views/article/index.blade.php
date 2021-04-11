@@ -107,9 +107,9 @@ $(document).ready(function() {
                     data: 'status',
                     render: function(data, type, row) {
                         if (data == "active") {
-                            return '<td class="text-center"><span class="shadow-none badge badge-success">' + data + '</span></td>'
+                            return '<td class="text-center"><span class="shadow-none badge badge-success">AKTIF</span></td>'
                         } else {
-                            return '<td class="text-center"><span class="shadow-none badge badge-danger">' + data + '</span></td>'
+                            return '<td class="text-center"><span class="shadow-none badge badge-danger">TIDAK AKTIF</span></td>'
                         }
                     },
                 },

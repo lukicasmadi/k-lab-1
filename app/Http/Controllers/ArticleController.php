@@ -8,7 +8,6 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\ArticleRequest;
-use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -46,7 +45,8 @@ class ArticleController extends Controller
         if(request()->hasFile('small_img')) {
             $file = $request->file('small_img');
             $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-            Storage::put("/public/upload/article/".$randomName, File::get($file));
+            $destinationPath = public_path('img/article/');
+            $file->move($destinationPath, $randomName);
             $data['small_img'] = $randomName;
         }
 
@@ -75,7 +75,8 @@ class ArticleController extends Controller
         if(request()->hasFile('small_img')) {
             $file = $articleUuid->file('small_img');
             $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-            Storage::put("/public/upload/article/".$randomName, File::get($file));
+            $destinationPath = public_path('img/article/');
+            $file->move($destinationPath, $randomName);
             $data['small_img'] = $randomName;
         }
 
@@ -87,10 +88,10 @@ class ArticleController extends Controller
 
     public function delete(Article $articleUuid)
     {
-        $fileCheck = Storage::exists('/public/upload/article/'.$articleUuid->small_img);
+        $articlePath = public_path('img/article/'.$articleUuid->small_img);
 
-        if($fileCheck) {
-            Storage::delete('/public/upload/article/'.$articleUuid->small_img);
+        if (file_exists($articlePath)) {
+            unlink($articlePath);
         }
 
         $articleUuid->delete();
