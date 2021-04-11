@@ -34,7 +34,6 @@
                                 <th width="19%">Nama Operasi</th>
                                 <th width="17%">Nama Alias</th>
                                 <th width="15%">Operasi</th>
-                                <th width="15%">Deskripsi</th>
                                 <th width="14%">Mulai</th>
                                 <th width="14%">Selesai</th>
                                 <th class="text-center" width="3%">Lihat</th>
@@ -224,7 +223,7 @@ $(document).ready(function () {
                     return `
                     <div class="ubah-change text-center">
                         <a href="`+route('get_data_polda_custom_name', data)+`" id="addAliasData" idval="`+data+`">
-                        Ubah
+                        UBAH
                         </a>
                     </div>
                     `;
