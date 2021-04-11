@@ -1991,6 +1991,24 @@ transform: translateX(34px);
     box-shadow: 0 0 8px 0 rgba(81, 203, 238, 0.1), 0 0 20px 0 rgba(81, 203, 238, 0.09);
 }
 
+.grid-polda.glowpolda p {
+    line-height: 1;
+}
+
+.grid-polda.glowpolda p.status-lapor {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.grid-polda.glowpolda p.kirim-lapor {
+    color: #00adef;
+    font-size: 20px;
+}
+
+.grid-polda.glowpolda p.tgl-lapor {
+    font-size: 11px;
+}
+
 .grid-polda.line {
     /* margin-right: 5px; */
 }

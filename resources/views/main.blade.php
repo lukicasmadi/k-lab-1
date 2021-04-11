@@ -6,7 +6,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15.556" viewBox="0 0 20 15.556">
         <path id="text_align_left" d="M16.333,20.556H3V18.333H16.333ZM23,16.111H3V13.889H23Zm-6.667-4.444H3V9.444H16.333ZM23,7.222H3V5H23Z" transform="translate(-3 -5)" fill="#00adef"/>
         </svg>
-        <span>DASHBOARD</span>
+        <span>BERANDA</span>
     </h3>
 </div>
 @endpush
@@ -58,6 +58,7 @@
                 </div>
                 <div class="widget-content" style="margin-top: 5%;">
                     <div class="mx-auto">
+                         <img style="position: absolute; width:15%; bottom: 0;" src="{{ secure_asset('/img/polda/mabes.png') }}">
                         <div id="donut-chart" class=""></div>
                     </div>
                 </div>
@@ -133,6 +134,7 @@
                     <table id="tbl_daily_submited" class="table">
                         <thead>
                             <tr>
+                                <th>No</th>
                                 <th>Nama Kesatuan</th>
                                 <th>Status Laporan</th>
                                 <th>Lihat</th>
@@ -861,9 +863,109 @@ function donutData() {
             show: false,
             }
         },
-        series: [44, 55],
+        legend: {
+            show: true,
+            showForSingleSeries: false,
+            showForNullSeries: true,
+            showForZeroSeries: true,
+            position: 'bottom',
+            horizontalAlign: 'center', 
+            floating: false,
+            fontSize: '12px',
+            fontWeight: 400,
+            formatter: undefined,
+            inverseOrder: false,
+            width: undefined,
+            height: undefined,
+            tooltipHoverFormatter: undefined,
+            offsetX: 0,
+            offsetY: 0,
+            labels: {
+                colors: undefined,
+                useSeriesColors: false
+            },
+            markers: {
+                width: 12,
+                height: 12,
+                strokeWidth: 0,
+                strokeColor: '#fff',
+                fillColors: undefined,
+                radius: 12,
+                customHTML: undefined,
+                onClick: undefined,
+                offsetX: 0,
+                offsetY: 0
+            },
+            itemMargin: {
+                horizontal: 5,
+                vertical: 5
+            },
+            onItemClick: {
+                toggleDataSeries: true
+            },
+            onItemHover: {
+                highlightDataSeries: true
+            },
+        },
+        fill: {
+            type: "gradient",
+            gradient: {
+            shadeIntensity: 0.8,
+            opacityFrom: 0.9,
+            opacityTo: 0.9,
+            stops: [50, 190, 100]
+            }
+        },
+        colors:['#00adef', '#ea1c26'],
+        plotOptions: {
+          pie: {
+            donut: {
+              size: '65%',
+              background: 'transparent',
+              labels: {
+                show: true,
+                name: {
+                  show: true,
+                  fontSize: '12px',
+                  color: undefined,
+                  offsetY: -10,
+                },
+                value: {
+                  show: true,
+                  fontSize: '50px',
+                  color: '20',
+                  offsetY: 16,
+                  formatter: function (val) {
+                    return val + "%"
+                  }
+                },
+                total: {
+                  show: true,
+                  showAlways: false,
+                  label: 'TOTAL DATA MASUK',
+                  color: '#888ea8',
+                  formatter: function (w) {
+                    return w.globals.seriesTotals.reduce( function(a, b) {
+                      return a + "%"
+                    })
+                  }
+                }
+              }
+            }
+          }
+        },
+        stroke: {
+            show: true,
+            curve: 'smooth',
+            lineCap: 'butt',
+            colors: undefined,
+            width: 0,
+            dashArray: 0,      
+        },
+        series: [filled, nofilled],
+        labels: ['[ MASUK ]', ' [ BELUM MASUK ]'],
         responsive: [{
-            breakpoint: 1480,
+            breakpoint: 500,
             options: {
                 chart: {
                     width: 300

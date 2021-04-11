@@ -44,7 +44,7 @@
 
                         <div class="form-group mb-4">
                             <label><span class="require">*</span>Status</label>
-                            <select name="status" id="status" class="form-control @error('status') is-invalid @enderror">
+                            <select name="status" id="status" class="form-control form-custom height-form @error('status') is-invalid @enderror">
                                 <option value="active">AKTIF</option>
                                 <option value="nonactive">TIDAK AKTIF</option>
                             </select>
@@ -52,7 +52,7 @@
 
                         <div class="form-group mb-4">
                             <label><span class="require">*</span>Thumbnail</label>
-                            <input type="file" class="form-control @error('small_img') is-invalid @enderror" id="small_img" name="small_img">
+                            <input type="file" class="form-control form-control-file @error('small_img') is-invalid @enderror" id="small_img" name="small_img">
                             @error('small_img')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
