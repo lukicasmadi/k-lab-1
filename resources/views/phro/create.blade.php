@@ -71,9 +71,9 @@
 
 <script>
 $(document).ready(function () {
-    $("input[type=number]").val("5")
+    // $("input[type=number]").val("5")
     // $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
-    swal("Untuk testing halaman ini akan secara otomatis terisi. \nSilahkan edit jika diperlukan", null, "success")
+    // swal("Untuk testing halaman ini akan secara otomatis terisi. \nSilahkan edit jika diperlukan", null, "success")
 })
 </script>
 @endpush
