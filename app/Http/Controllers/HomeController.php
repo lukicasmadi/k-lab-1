@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function newsDetail($slug)
     {
         $article = Article::whereSlug($slug)->firstOrFail();
-        $listArticle = Article::where('id', '!=', $article->id)->orderBy("id", "desc")->get();
+        $listArticle = Article::where('id', '!=', $article->id)->orderBy("id", "desc")->where('status', 'active')->get();
 
         return view('article.detail', compact('article', 'listArticle'));
     }
@@ -26,7 +26,7 @@ class HomeController extends Controller
         if (!empty(auth()->user())) {
             return redirect('/dashboard');
         } else {
-            $articleList = Article::limit(3)->orderBy('id', 'desc')->get();
+            $articleList = Article::limit(3)->orderBy('id', 'desc')->where('status', 'active')->get();
             return view('index', compact('articleList'));
         }
     }
