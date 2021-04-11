@@ -136,7 +136,7 @@
                         <li class="menu single-menu">
                             <a href="{{ route('dashboard') }}">
                                 <div>
-                                    <span class="tourcolor">Panduan</span>
+                                    <span class="tourcolor">Panduan Web</span>
                                 </div>
                             </a>
                         </li>

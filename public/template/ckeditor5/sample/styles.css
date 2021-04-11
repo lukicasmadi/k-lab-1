@@ -47,7 +47,10 @@ main .ck-editor[role='application'] .ck.ck-content,
 /* Because of sidebar `position: relative`, Edge is overriding the outline of a focused editor. */
 .ck.ck-editor__editable {
 	position: relative;
-	z-index: var(--ck-sample-editor-z-index);
+	background-color: rgba(0, 173, 239, 0.1) !important;
+	border: 1px solid #00adef !important;
+	padding: 0 20px !important;
+	/* z-index: var(--ck-sample-editor-z-index); */
 }
 
 /* --------- DECOUPLED (DOCUMENT) BUILD. ---------------------------------------------*/
@@ -201,7 +204,7 @@ body[ data-editor='InlineEditor'] .collaboration-demo__row {
     justify-content: space-between;
     align-items: center;
     border-bottom: 0;
-    border-radius: 4px 4px 0 0;
+    /* border-radius: 4px 4px 0 0; */
 }
 
 .collaboration-demo__topbar .btn {
@@ -233,7 +236,7 @@ body[ data-editor='InlineEditor'] .collaboration-demo__row {
 	font-size: 0.9em;
 	min-width: 220px;
 	margin: 0 10px;
-	border-radius: 4px;
+	/* border-radius: 4px; */
 	border: 1px solid var(--ck-color-toolbar-border)
 }
 
@@ -264,7 +267,7 @@ body[ data-editor='InlineEditor'] .collaboration-demo__row {
 .collaboration-demo__share button[data-tooltip]::before {
 	content: attr(data-tooltip);
     padding: 5px 15px;
-    border-radius: 3px;
+    /* border-radius: 3px; */
     background: #111;
     color: #fff;
     text-align: center;
@@ -421,10 +424,10 @@ main .message h2 {
 	padding: 8px 16px;
 	font-size: 1rem;
 	user-select: none;
-	border-radius: 4px;
+	/* border-radius: 4px; */
 	transition: color .2s ease-in-out,background-color .2s ease-in-out,border-color .2s ease-in-out,opacity .2s ease-in-out;
 	background-color: var(--ck-sample-color-button-blue);
-	border-color: var(--ck-sample-color-button-blue);
+	/* border-color: var(--ck-sample-color-button-blue); */
 	color: var(--ck-sample-color-white);
 	display: inline-block;
 }

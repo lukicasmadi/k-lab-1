@@ -66,6 +66,10 @@
     color: #00adef;
 }
 
+.ubah-change a:hover {
+    color: #fff;
+}
+
 .ubah-change span {
     color: #fff;
 }
@@ -245,11 +249,12 @@
 
 .page-item.active .page-link {
     background-color: #00adef;
+    padding-top: 5px;
     /* margin-top: 3px; */
 }
 
 .page-item .page-link {
-    margin-top: 3px;
+    margin-top: -1px;
 }
 
 .navbar {

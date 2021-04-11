@@ -3,19 +3,19 @@
 @push('page_title')
 <div class="page-title">
     <h3>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15.556" viewBox="0 0 20 15.556">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="15.556" viewBox="0 0 20 15.556">
         <path id="text_align_left" d="M16.333,20.556H3V18.333H16.333ZM23,16.111H3V13.889H23Zm-6.667-4.444H3V9.444H16.333ZM23,7.222H3V5H23Z" transform="translate(-3 -5)" fill="#00adef"/>
         </svg>
-        <span>DASHBOARD POLDA {{ poldaName() }}</span>
+        <span>BERANDA POLDA {{ poldaName() }}</span>
     </h3>
 </div>
 @endpush
 
 @section('content')
-<div id="content" class="main-content">
+<div id="content" class="main-content mt-n3">
     <div class="layout-px-spacing">
         <div class="row layout-top-spacing">
-            <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing blendingimg text-center">
+            <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing blendingimg text-center mt-4">
                 @if (poldaAlreadyInputToday())
                     <div class="grid-polda line glowpolda" >
                         <p class="status-lapor">status laporan hari ini</p>
@@ -23,10 +23,10 @@
                         <p class="tgl-lapor">{{ dayNameIndonesia(now()) }}, {{ indonesianDate(now()) }} | {{ timeOnly(now()) }}</p>
                     </div>
                 @else
-                    <div class="grid-polda line glowred" style="display: block; margin: 0 auto;">
+                    <div class="grid-polda line glowpoldas" style="display: block; margin: 0 auto;">
                         <p class="status-lapor">status laporan hari ini</p>
-                        <p>belum Mengirimkan</p>
-                        <p>{{ dayNameIndonesia(now()) }}, {{ indonesianDate(now()) }} | {{ timeOnly(now()) }}</p>
+                        <p class="kirim-lapor">belum Mengirimkan</p>
+                        <p class="tgl-lapor">{{ dayNameIndonesia(now()) }}, {{ indonesianDate(now()) }} | {{ timeOnly(now()) }}</p>
                     </div>
                 @endif
                 <img class="imgdetail-polda" src="{{ secure_asset('/img/polda/'.poldaImage()->polda->logo) }}">
@@ -38,13 +38,13 @@
                             <div class="row">
                                 <div class="widget-heading">
                                     <h5 class="mar20">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20">
                                     <path id="pie_chart_outline" d="M12,22A10,10,0,1,1,22,12,10,10,0,0,1,12,22ZM11,4.062A8,8,0,1,0,16.419,18.67l-.1.071.094-.065.059-.041.064-.045.016-.011.009-.007-5.128-5.13A1.51,1.51,0,0,1,11,12.379ZM13.829,13l4.227,4.227.007-.008.005-.006-.01.011A7.944,7.944,0,0,0,19.938,13ZM13,4.062V11h6.938A8,8,0,0,0,13,4.062Z" transform="translate(-2 -2)" fill="#00adef"/>
                                     </svg>
                                     <span>TOTAL LAPORAN</span>
                                     </h5>
                                     <p>DATA LAPORAN MINGGUAN</p>
-                                    <div id="donut-chart" class="mt-3"></div>
+                                    <div id="donut-chart" class="mt-4"></div>
                                 </div>
                             </div>
                         </div>
@@ -52,13 +52,13 @@
                             <div class="row">
                                 <div class="widget-heading">
                                     <h5 class="mar20">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20">
                                     <path id="pie_chart_outline" d="M12,22A10,10,0,1,1,22,12,10,10,0,0,1,12,22ZM11,4.062A8,8,0,1,0,16.419,18.67l-.1.071.094-.065.059-.041.064-.045.016-.011.009-.007-5.128-5.13A1.51,1.51,0,0,1,11,12.379ZM13.829,13l4.227,4.227.007-.008.005-.006-.01.011A7.944,7.944,0,0,0,19.938,13ZM13,4.062V11h6.938A8,8,0,0,0,13,4.062Z" transform="translate(-2 -2)" fill="#00adef"/>
                                     </svg>
                                     <span>TOTAL LAPORAN</span>
                                     </h5>
                                     <p>DATA LAPORAN KESELURUHAN</p>
-                                    <div id="donut-chart-full" class="mt-3"></div>
+                                    <div id="donut-chart-full" class="mt-4"></div>
                                 </div>
                             </div>
                         </div>
@@ -66,11 +66,19 @@
                 </div>
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-n3">
                     <div class="row">
-                        <img src="{{ secure_asset('/img/line-polda.png') }}" width="100%">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1060.5" height="14.001" viewBox="0 0 1060.5 14.001"><defs><style>.a,.c{fill:none;}.a{stroke:#105c7c;}.b{fill:#105c7c;}.d,.e{stroke:none;}.e{fill:#105c7c;}</style></defs><g transform="translate(-1897.781 -612.292)"><line class="a" x2="1060" transform="translate(1898.281 619.792)"/><g transform="translate(1897.781 612.292)"><path class="b" d="M0-.052H25.578l4.422,7H0Z" transform="translate(0 0.052)"/><path class="b" d="M-3.068,0H3.219l3,4.948H0Z" transform="translate(32.44 0.012)"/><path class="b" d="M-3.068,0H.521l3,4.948H0Z" transform="translate(41.727 0.012)"/><path class="b" d="M-3.068,0H-.316l3,4.948H0Z" transform="translate(48.316 0.012)"/></g><g transform="translate(2906.781 612.292)"><path class="b" d="M30-.052H4.422L0,6.948H30Z" transform="translate(21 0.052)"/><path class="b" d="M6.219,0H-.068l-3,4.948H3.151Z" transform="translate(15.409 0.012)"/><path class="b" d="M3.521,0H-.068l-3,4.948H.453Z" transform="translate(8.82 0.012)"/><path class="b" d="M2.684,0H-.068l-3,4.948H-.384Z" transform="translate(3.068 0.012)"/></g><g transform="translate(2138.781 619.292)"><path class="b" d="M547,0H0L4.178,7H95.872l1.871-3H449.259l1.871,3h91.694L547,0Z" transform="translate(15.999)"/><g transform="translate(0 0.001)"><g class="c" transform="translate(0 0)"><path class="d" d="M559.654,0H529.136l4.5,7H575.5L580,0ZM30.519,0H0L4.5,7H46.366l4.5-7Z"/><path class="e" d="M 0.91571044921875 0.5000286102294922 L 4.7720947265625 6.500171661376953 L 20.34539794921875 6.500171661376953 L 46.0931396484375 6.500171661376953 L 49.94879150390625 0.5000286102294922 L 30.51898193359375 0.5000286102294922 L 0.91571044921875 0.5000286102294922 M 530.0517578125 0.5000286102294922 L 533.9080810546875 6.500171661376953 L 549.4813842773438 6.500171661376953 L 575.2282104492188 6.500171661376953 L 579.0838623046875 0.5000286102294922 L 559.6541137695313 0.5000286102294922 L 530.0517578125 0.5000286102294922 M 0 2.86102294921875e-05 L 30.51898193359375 2.86102294921875e-05 L 50.8643798828125 2.86102294921875e-05 L 46.3662109375 7.000171661376953 L 20.34539794921875 7.000171661376953 L 4.4990234375 7.000171661376953 L 0 2.86102294921875e-05 Z M 529.135986328125 2.86102294921875e-05 L 559.6541137695313 2.86102294921875e-05 L 579.9994506835938 2.86102294921875e-05 L 575.5012817382813 7.000171661376953 L 549.4813842773438 7.000171661376953 L 533.635009765625 7.000171661376953 L 529.135986328125 2.86102294921875e-05 Z"/></g></g></g></g></svg>
                     </div>
                 </div>
-                <div class="col-md-12 text-left mb-3"></div>
-                <div class="table-responsive">
+                <div class="col-md-12 text-left mb-3">
+                    <div class="text-left">
+                        <div class="row">
+                            <a class="btn add-none" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 20"><path id="Union_2" data-name="Union 2" d="M-2852-2201a2,2,0,0,1-2-2v-16a2,2,0,0,1,2-2h7a.118.118,0,0,1,.032.006.131.131,0,0,0,.03.006,1.043,1.043,0,0,1,.259.051l.028.009a.492.492,0,0,1,.066.028.993.993,0,0,1,.293.2l6,6a.98.98,0,0,1,.2.293.639.639,0,0,1,.025.068l.009.026a1,1,0,0,1,.049.258.144.144,0,0,0,.007.027.139.139,0,0,1,0,.028v11a2,2,0,0,1-2,2Zm0-2h12v-10h-5a1,1,0,0,1-1-1v-5h-6Zm8-12h2.586l-2.586-2.586Zm-5.333,10v-2h6.667v2Zm0-4v-2h6.667v2Z" transform="translate(2854 2221)" fill="#00adef"/></svg>
+                            data status pelaporan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive mb-5">
                     <table id="tbl_polda_submited" class="table">
                         <thead>
                             <tr>
@@ -78,8 +86,8 @@
                                 <th>NAMA LAPORAN</th>
                                 <th>TANGGAL</th>
                                 <th>JAM</th>
-                                <th>PREVIEW</th>
-                                <th>PILIHAN</th>
+                                <th class="text-center" width="6%">Lihat</th>
+                                <th class="text-center">PILIHAN</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -211,8 +219,10 @@ $(document).ready(function () {
                 data: 'uuid',
                 render: function(data, type, row) {
                     return `
-                    <div class="icon-container">
-                        <a href="`+route('previewPhro', data)+`" class="previewPhro" data-id="`+data+`"><i class="far fa-file-search"></i></a>
+                    <div class="icon-container text-center">
+                        <a href="`+route('previewPhro', data)+`" class="previewPhro" data-id="`+data+`">
+                        <img src="{{ secure_asset('/img/search.png') }}" width="55%">
+                        </a>
                     </div>
                     `;
                 },
@@ -223,8 +233,8 @@ $(document).ready(function () {
                 data: 'uuid',
                 render: function(data, type, row) {
                     return `
-                    <div class="icon-container">
-                        <a href="`+route('report_daily_by_id', data)+`">UNDUH</a>
+                    <div class="ubah-change text-center">
+                        <a href="`+route('report_daily_by_id', data)+`">Unduh</a>
                     </div>
                     `;
                 },
@@ -779,6 +789,7 @@ function donutDataWeekly() {
         var donutChart = {
         chart: {
             height: 300,
+            fontFamily: 'Bahnschrift',
             type: 'donut',
             toolbar: {
                 show: false,
@@ -793,6 +804,7 @@ function donutDataWeekly() {
             horizontalAlign: 'center', 
             floating: false,
             fontSize: '10px',
+            fontFamily: 'Bahnschrift',
             fontWeight: 400,
             formatter: undefined,
             inverseOrder: false,
@@ -819,7 +831,7 @@ function donutDataWeekly() {
             },
             itemMargin: {
                 horizontal: 0,
-                vertical: 5
+                vertical: 10
             },
             onItemClick: {
                 toggleDataSeries: true
@@ -848,14 +860,16 @@ function donutDataWeekly() {
                 name: {
                   show: true,
                   fontSize: '11px',
+                  fontFamily: 'Bahnschrift',
                   color: undefined,
-                  offsetY: -10,
+                  offsetY: -30,
                 },
                 value: {
                   show: true,
-                  fontSize: '35px',
+                  fontSize: '40px',
+                  fontFamily: 'Bahnschrift',
                   color: '20',
-                  offsetY: 16,
+                  offsetY: 0,
                   formatter: function (val) {
                     return val + "%"
                   }
@@ -863,7 +877,7 @@ function donutDataWeekly() {
                 total: {
                   show: true,
                   showAlways: false,
-                  label: 'TOTAL DATA MASUK',
+                  label: 'DATA MASUK',
                   color: '#888ea8',
                   formatter: function (w) {
                     return w.globals.seriesTotals.reduce( function(a, b) {
@@ -880,11 +894,11 @@ function donutDataWeekly() {
             curve: 'smooth',
             lineCap: 'butt',
             colors: undefined,
-            width: 0,
+            width: 1,
             dashArray: 0,      
         },
         series: [filled, nofilled],
-        labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
+        labels: ['&nbsp;[ MASUK ]', '&nbsp;[ BELUM MASUK ]'],
         responsive: [{
             breakpoint: 500,
             options: {
@@ -917,6 +931,7 @@ function donutDataFull() {
         var donutChartFull = {
         chart: {
             height: 300,
+            fontFamily: 'Bahnschrift',
             type: 'donut',
             toolbar: {
                 show: false,
@@ -931,6 +946,7 @@ function donutDataFull() {
             horizontalAlign: 'center', 
             floating: false,
             fontSize: '10px',
+            fontFamily: 'Bahnschrift',
             fontWeight: 400,
             formatter: undefined,
             inverseOrder: false,
@@ -956,8 +972,8 @@ function donutDataFull() {
                 offsetY: 0
             },
             itemMargin: {
-                horizontal: 5,
-                vertical: 5
+                horizontal: 0,
+                vertical: 10
             },
             onItemClick: {
                 toggleDataSeries: true
@@ -986,14 +1002,16 @@ function donutDataFull() {
                 name: {
                   show: true,
                   fontSize: '11px',
+                  fontFamily: 'Bahnschrift',
                   color: undefined,
-                  offsetY: -10,
+                  offsetY: -30,
                 },
                 value: {
                   show: true,
-                  fontSize: '35px',
+                  fontSize: '40px',
+                  fontFamily: 'Bahnschrift',
                   color: '20',
-                  offsetY: 16,
+                  offsetY: 0,
                   formatter: function (val) {
                     return val + "%"
                   }
@@ -1001,7 +1019,7 @@ function donutDataFull() {
                 total: {
                   show: true,
                   showAlways: false,
-                  label: 'TOTAL DATA MASUK',
+                  label: 'DATA MASUK',
                   color: '#888ea8',
                   formatter: function (w) {
                     return w.globals.seriesTotals.reduce( function(a, b) {
@@ -1018,11 +1036,11 @@ function donutDataFull() {
             curve: 'smooth',
             lineCap: 'butt',
             colors: undefined,
-            width: 0,
+            width: 1,
             dashArray: 0,      
         },
         series: [filled, nofilled],
-        labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
+        labels: ['&nbsp;[ MASUK ]', '&nbsp;[ BELUM MASUK ]'],
         responsive: [{
             breakpoint: 500,
             options: {
