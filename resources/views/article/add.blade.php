@@ -15,7 +15,7 @@
 <div class="layout-px-spacing">
     <div class="row layout-top-spacing">
 
-        <div class="col-lg-12 col-12  layout-spacing">
+        <div class="col-lg-12 col-12 mb-5 layout-spacing">
             <div class="statbox widget box box-shadow">
 
                 @if ($errors->any())
@@ -28,30 +28,30 @@
                     </div>
                 @endif
 
-                <div class="widget-content widget-content-area">
+                <div class="widget-content text-artikel">
                     <form method="POST" action="{{ route('article_save') }}" enctype="multipart/form-data">
                         @csrf
 
-                        <div class="form-group mb-4">
-                            <label><span class="require">*</span>Judul</label>
-                            <input type="text" class="form-control @error('topic') is-invalid @enderror" id="topic" name="topic" placeholder="Judul" autocomplete="off" value="{{ old('topic') }}">
+                        <div class="form-group mb-3">
+                            <label>Judul Artikel</label>
+                            <input type="text" class="form-control artikel @error('topic') is-invalid @enderror" id="topic" name="topic" placeholder="" autocomplete="off" value="{{ old('topic') }}">
                         </div>
 
-                        <div class="form-group mb-4">
-                            <label><span class="require">*</span>Deskripsi</label>
+                        <div class="form-group mb-3">
+                            <label>Deskripsi</label>
                             <textarea id="desc" name="desc" class="editor @error('desc') is-invalid @enderror">{{ old('desc') }}</textarea>
                         </div>
 
-                        <div class="form-group mb-4">
-                            <label><span class="require">*</span>Status</label>
+                        <div class="form-group mb-3">
+                            <label>Status</label>
                             <select name="status" id="status" class="form-control form-custom height-form @error('status') is-invalid @enderror">
                                 <option value="active">AKTIF</option>
                                 <option value="nonactive">TIDAK AKTIF</option>
                             </select>
                         </div>
 
-                        <div class="form-group mb-4">
-                            <label><span class="require">*</span>Thumbnail</label>
+                        <div class="form-group mb-2">
+                            <label>Thumbnail</label>
                             <input type="file" class="form-control form-control-file @error('small_img') is-invalid @enderror" id="small_img" name="small_img">
                             @error('small_img')
                                 <span class="invalid-feedback" role="alert">
@@ -60,7 +60,7 @@
                             @enderror
                         </div>
 
-                        <input type="submit" name="submit" class="btn btn-primary mt-3" value="Submit">
+                        <input type="submit" name="submit" id="btn-n-add" class="btn mt-3" value="SUBMIT">
                         <a href="{{ route('article_index') }}" class="btn btn-warning mt-3">KEMBALI</a>
                     </form>
                 </div>

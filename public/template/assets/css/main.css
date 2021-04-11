@@ -347,6 +347,9 @@ label {
     letter-spacing: 1px;
 }
 
+.text-artikel .form-group label {
+    color: #fff;
+}
 
 /*  Disable forms     */
 
@@ -477,7 +480,7 @@ label {
 .text-popup {
     color: #fff;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 @supports (-webkit-overflow-scrolling: touch) {
@@ -1138,12 +1141,28 @@ select.form-control.form-custom {
     text-transform: uppercase;
     padding: 7px 10px 6px 10px;
     position: absolute;
-    margin: 21px 0 0 65px;
+    margin: 21px 0 0 75px;
     z-index: 2;
 }
 
 .add-operasi svg {
     padding-right: 5px;
+}
+
+.add-none {
+    color: #fff !important;
+    background-color: transparent !important;
+    /* border-color: #00adef; */
+    text-transform: uppercase;
+    padding: 7px 0px 6px 0px;
+    position: absolute;
+    margin: 21px 0 0 80px;
+    z-index: 2;
+}
+
+.add-none svg {
+    width: 30px;
+    padding-right: 15px;
 }
 
 .del-operasi {
@@ -2485,7 +2504,7 @@ textarea[readonly] {
     color: #515365;
     font-size: 13px;
     letter-spacing: 1px;
-    padding: 10px 30px 5px 30px;
+    padding: 11px 30px 9px 30px;
 }
 
 .table>thead>tr>th {

@@ -3,9 +3,8 @@
 @push('page_title')
 <div class="page-title">
     <h3>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15.556" viewBox="0 0 20 15.556">
-        <path id="text_align_left" d="M16.333,20.556H3V18.333H16.333ZM23,16.111H3V13.889H23Zm-6.667-4.444H3V9.444H16.333ZM23,7.222H3V5H23Z" transform="translate(-3 -5)" fill="#00adef"/>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20">
+        <path id="calendar_check" d="M19,22H5a2,2,0,0,1-2-2V6A2,2,0,0,1,5,4H7V2H9V4h6V2h2V4h2a2,2,0,0,1,2,2V20A2,2,0,0,1,19,22ZM5,10V20H19V10ZM5,6V8H19V6Zm6,12.414L7.293,14.707l1.414-1.414L11,15.586l4.293-4.293,1.414,1.414L11,18.413Z" transform="translate(-3 -2)" fill="#00adef"/></svg>
         <span>TAMBAH ALIAS RENCANA OPERASI</span>
     </h3>
 </div>
@@ -32,13 +31,14 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nama Operasi</th>
-                                <th>Nama Alias</th>
-                                <th>Operasi</th>
-                                <th>Mulai</th>
-                                <th>Selesai</th>
-                                <th width="6%">Lihat</th>
-                                <th width="6%">Alias</th>
+                                <th width="19%">Nama Operasi</th>
+                                <th width="17%">Nama Alias</th>
+                                <th width="15%">Operasi</th>
+                                <th width="15%">Deskripsi</th>
+                                <th width="14%">Mulai</th>
+                                <th width="14%">Selesai</th>
+                                <th class="text-center" width="3%">Lihat</th>
+                                <th class="text-center" width="3%">Pilihan</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -54,6 +54,9 @@
                         <div class="notes-box">
                             <div class="notes-content">
                                 <span class="colorblue">VIEW RENCANA OPERASI</span>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                </button>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                                     <div class="row imgpopup">
                                         <img src="{{ secure_asset('/img/line_popbottom.png') }}">
@@ -62,44 +65,34 @@
                                 <div class="row">
                                     <input type="hidden" name="uuid_preview" id="uuid_preview">
 
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mb-4">
                                         <label class="text-popup">Alias Nama Operasi</label><br>
-                                        <span id="alias_name"></span>
+                                        <span class="colorgray" id="alias_name"></span>
                                     </div>
 
-                                    <span class="divSpace"></span>
-
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mb-4">
                                         <label class="text-popup">Jenis Operasi Yang Akan Dilaksanakan</label><br>
-                                        <span id="view_jenis_operasi"></span>
+                                        <span class="colorgray" id="view_jenis_operasi"></span>
                                     </div>
 
-                                    <span class="divSpace"></span>
-
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mb-4">
                                         <label class="text-popup">Nama Operasi</label><br>
-                                        <span id="view_nama_operasi"></span>
+                                        <span class="colorgray" id="view_nama_operasi"></span>
                                     </div>
 
-                                    <span class="divSpace"></span>
-
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mb-4">
                                         <label class="text-popup">Tanggal Mulai</label><br>
-                                        <span id="view_tanggal_mulai"></span>
+                                        <span class="colorgray" id="view_tanggal_mulai"></span>
                                     </div>
 
-                                    <span class="divSpace"></span>
-
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mb-4">
                                         <label class="text-popup">Tanggal Selesai</label><br>
-                                        <span id="view_tanggal_selesai"></span>
+                                        <span class="colorgray" id="view_tanggal_selesai"></span>
                                     </div>
-
-                                    <span class="divSpace"></span>
 
                                     <div class="col-md-12">
                                         <label class="text-popup">Deskripsi</label><br>
-                                        <span id="view_deskripsi"></span>
+                                        <span class="colorgray" id="view_deskripsi"></span>
                                     </div>
                                 </div>
                             </div>
@@ -120,7 +113,7 @@
                                     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                                 </button>
                                 <span class="colorblue">ALIAS RENCANA OPERASI</span>
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-1 mb-n3">
                                     <div class="row imgpopup">
                                         <img src="{{ secure_asset('/img/line_popbottom.png') }}">
                                     </div>
@@ -129,9 +122,11 @@
                                     <div class="col-md-12">
                                         <input type="hidden" name="rencana_operasi_id" id="rencana_operasi_id" value="">
                                         <label class="text-popup">Tambahkan atau ubah alias dari nama operasi</label><br>
-                                        <input type="text" class="form-control" name="custom_operation_name" id="custom_operation_name" autocomplete="off">
+                                        <input type="text" class="form-control popoups mt-1" name="custom_operation_name" id="custom_operation_name" autocomplete="off">
                                         <br>
+                                        <div class="text-right" style="margin-right: -5px;">
                                         <button id="submitBtn" class="btn btn-primary">Submit</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -176,7 +171,7 @@ $(document).ready(function () {
                 "sNext": '<i class="fas fa-chevron-right dtIconSize"></i>'
             },
             "sInfo": "Menampilkan halaman _PAGE_ dari _PAGES_",
-            "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> <img src="{{ secure_asset("/img/cloud_down.png") }}">',
+            "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
             "sSearchPlaceholder": "CARI DATA...",
             "sLengthMenu": " _MENU_ ",
             "sProcessing": '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>',
@@ -213,9 +208,9 @@ $(document).ready(function () {
                 data: 'uuid',
                 render: function(data, type, row) {
                     return `
-                    <div class="icon-container">
+                    <div class="icon-container text-center">
                         <a href="#" class="viewData" idval="`+data+`">
-                            <img src="{{ secure_asset('/img/search.png') }}" width="45%">
+                            <img src="{{ secure_asset('/img/search.png') }}" width="55%">
                         </a>
                     </div>
                     `;
@@ -227,8 +222,10 @@ $(document).ready(function () {
                 data: 'uuid',
                 render: function(data, type, row) {
                     return `
-                    <div class="icon-container">
-                        <a href="`+route('get_data_polda_custom_name', data)+`" id="addAliasData" idval="`+data+`"><i class="far fa-plus-square" style="font-size: 17px;"></i></a>
+                    <div class="ubah-change text-center">
+                        <a href="`+route('get_data_polda_custom_name', data)+`" id="addAliasData" idval="`+data+`">
+                        Ubah
+                        </a>
                     </div>
                     `;
                 },

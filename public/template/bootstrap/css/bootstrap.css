@@ -3214,7 +3214,7 @@ pre code {
 
 .form-control.popoups {
   background-color: transparent;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .form-control.popoups.inp-icon{
@@ -3253,6 +3253,36 @@ pre code {
   font-size: 13px;
   color: #79859b;
   opacity: 1;
+ }
+
+ .form-control.artikel:focus {
+  color: #fff;
+}
+
+.form-control.artikel::-webkit-input-placeholder {
+  color: #79859b;
+  opacity: 1;
+ }
+ 
+ .form-control.artikel::-moz-placeholder {
+  color: #79859b;
+  opacity: 1;
+ }
+ 
+ .form-control.artikel:-ms-input-placeholder {
+  color: #79859b;
+  opacity: 1;
+ }
+ 
+ .form-control.artikel::-ms-input-placeholder {
+  color: #79859b;
+  opacity: 1;
+ }
+ 
+ .form-control.artikel::placeholder {
+  color: #79859b;
+  opacity: 1;
+  font-weight: 100;
  }
 
 .form-control:disabled, .form-control[readonly] {
@@ -7008,7 +7038,9 @@ a.badge-dark:focus, a.badge-dark.focus {
   top: 0;
   right: 0;
   float: right;
-  font-size: 1.5rem;
+  margin-right: 10px;
+  margin-top: 6px;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1;
   color: #00adef;
@@ -7248,7 +7280,7 @@ a.close.disabled {
   position: relative;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .modal-footer {

@@ -177,7 +177,7 @@
 }
 
 .widget-heading h5 {
-    font-size: 15px;
+    font-size: 14px;
     display: block;
     color: #e0e6ed;
     margin-bottom: 0;
@@ -194,7 +194,7 @@
 
 .widget-heading p {
     padding-left: 42px;
-    font-size: 11px;
+    font-size: 10px;
     color: #79859b;
     text-transform: uppercase;
 }
