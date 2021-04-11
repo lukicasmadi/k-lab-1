@@ -22,7 +22,7 @@ class AdminOrPusatOnly
             return $next($request);
         } else {
             flash('Akun anda belum diberikan akses ke halaman tersebut. Silahkan hubungi admin')->error();
-            return redirect('/');
+            return redirect('/dashboard');
         }
     }
 }
