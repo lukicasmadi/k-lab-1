@@ -276,26 +276,26 @@ if (! function_exists('removeUnusedString')) {
 if (! function_exists('percentageValue')) {
     function percentageValue($tahunKedua, $tahunPertama) {
 
-        if(is_null(removeUnusedString($tahunKedua))) {
+        if(is_null($tahunKedua)) {
             return 0;
         }
 
-        if(is_null(removeUnusedString($tahunPertama))) {
+        if(is_null($tahunPertama)) {
             return 0;
         }
 
-        if((removeUnusedString($tahunKedua) < removeUnusedString($tahunPertama)) && removeUnusedString($tahunKedua) == 0) {
+        if(($tahunKedua < $tahunPertama) && $tahunKedua == 0) {
             return 0;
         }
 
-        if(removeUnusedString($tahunKedua) == 0 && removeUnusedString($tahunPertama) == 0) {
+        if($tahunKedua == 0 && $tahunPertama == 0) {
             return 0;
         } else {
-            if(removeUnusedString($tahunPertama) == 0 && removeUnusedString($tahunKedua) != 0) {
+            if($tahunPertama == 0 && $tahunKedua != 0) {
                 return "-";
             } else {
-                $output1 = removeUnusedString($tahunKedua) - removeUnusedString($tahunPertama);
-                $output2 = $output1 / removeUnusedString($tahunPertama);
+                $output1 = $tahunKedua - $tahunPertama;
+                $output2 = $output1 / $tahunPertama;
                 $output3 = $output2 * 100;
                 $output4 = round($output3, 2);
 
