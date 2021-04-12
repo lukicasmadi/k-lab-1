@@ -122,6 +122,22 @@ class ReportController extends Controller
         return redirect()->back();
     }
 
+    public function downloadReportToday()
+    {
+        if(empty(operationPlans())) {
+            return "Tidak ada operasi yang sedang berlangsung";
+        }
+
+        $fileName = 'report_all_polda_'.date('d').'.xlsx';
+
+        return Excel::download(new FilterComparison(
+            'polda_all',
+            date('Y'),
+            operationPlans()->id,
+            date('Y-m-d'),
+        ), $fileName);
+    }
+
     public function downloadExcel($uuid)
     {
         $korlantasRekap = KorlantasRekap::with(['rencaraOperasi'])->whereUuid($uuid)->first();

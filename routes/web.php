@@ -38,7 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     Route::get('/report/download/{uuid}', 'ReportController@downloadExcel')->name('report_download_excel');
-
+    Route::get('/today', 'ReportController@downloadReportToday')->name('report_today');
 
     // Route Hanya Bisa Diakses Oleh Administrator atau Korlantas Pusat
     Route::group(['middleware' => 'admin-or-pusat-only'], function () {
