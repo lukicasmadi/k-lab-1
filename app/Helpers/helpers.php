@@ -278,12 +278,20 @@ if (! function_exists('percentageValue')) {
             return 0;
         }
 
-        $output1 = $tahunKedua - $tahunPertama;
-        $output2 = $output1 / $tahunPertama;
-        $output3 = $output2 * 100;
-        $output4 = round($output3, 2);
+        if($tahunKedua == 0 && $tahunPertama == 0) {
+            return 0;
+        } else {
+            if($tahunPertama == 0 && $tahunKedua != 0) {
+                return "-";
+            } else {
+                $output1 = $tahunKedua - $tahunPertama;
+                $output2 = $output1 / $tahunPertama;
+                $output3 = $output2 * 100;
+                $output4 = round($output3, 2);
 
-        return $output4;
+                return $output4;
+            }
+        }
     }
 }
 
