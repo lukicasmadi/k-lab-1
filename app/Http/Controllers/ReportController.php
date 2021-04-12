@@ -128,7 +128,7 @@ class ReportController extends Controller
             return "Tidak ada operasi yang sedang berlangsung";
         }
 
-        $fileName = 'report_all_polda_'.date('d').'.xlsx';
+        $fileName = 'report_all_polda_'.indonesianStandart(date('Y-m-d')).'.xlsx';
 
         return Excel::download(new FilterComparison(
             'polda_all',
