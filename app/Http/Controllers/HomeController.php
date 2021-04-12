@@ -143,7 +143,7 @@ class HomeController extends Controller
     {
         $model = PoldaSubmited::with(['polda' => function($query) {
             $query->select('id', 'name', 'uuid', 'logo');
-        }])->where("submited_date", date("Y-m-d"))->get();
+        }])->where("submited_date", date("Y-m-d"))->orderBy('id', 'desc')->get();
 
         return $model;
     }
