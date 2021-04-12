@@ -69,7 +69,7 @@
                         <div class="col-sm-4">
                             <div class="col-sm-12 home-article">
                                 <a href="{{ route('news_detail', $item->slug) }}">
-                                    <img src="{{ secure_asset('/storage/upload/article/'.$item->small_img) }}" width="50">
+                                    <img src="{{ public_path('img/article/'.$item->small_img) }}" width="50">
                                     <p>
                                     <label>{{ indonesianDateTime($item->created_at) }}</label>
                                     {{ limitText(strip_tags($item->desc), 120) }}
