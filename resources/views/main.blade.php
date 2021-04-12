@@ -807,7 +807,7 @@ $(document).ready(function () {
 
     setInterval(function() {
         window.location.reload();
-    }, 30000);
+    }, 60000);
 })
 
 function notificationLoad() {
