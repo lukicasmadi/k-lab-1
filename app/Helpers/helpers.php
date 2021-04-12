@@ -263,29 +263,39 @@ if (! function_exists('calculation')) {
     }
 }
 
+if (! function_exists('removeUnusedString')) {
+    function removeUnusedString($data) {
+        $removeComma = str_replace(",", "", $data);
+        $removeDot = str_replace(".", "", $removeComma);
+        $removeSpace = str_replace(" ", "", $removeDot);
+
+        return $removeSpace;
+    }
+}
+
 if (! function_exists('percentageValue')) {
     function percentageValue($tahunKedua, $tahunPertama) {
 
-        if(is_null($tahunKedua)) {
+        if(is_null(removeUnusedString($tahunKedua))) {
             return 0;
         }
 
-        if(is_null($tahunPertama)) {
+        if(is_null(removeUnusedString($tahunPertama))) {
             return 0;
         }
 
-        if(($tahunKedua < $tahunPertama) && $tahunKedua == 0) {
+        if((removeUnusedString($tahunKedua) < removeUnusedString($tahunPertama)) && removeUnusedString($tahunKedua) == 0) {
             return 0;
         }
 
-        if($tahunKedua == 0 && $tahunPertama == 0) {
+        if(removeUnusedString($tahunKedua) == 0 && removeUnusedString($tahunPertama) == 0) {
             return 0;
         } else {
-            if($tahunPertama == 0 && $tahunKedua != 0) {
+            if(removeUnusedString($tahunPertama) == 0 && removeUnusedString($tahunKedua) != 0) {
                 return "-";
             } else {
-                $output1 = $tahunKedua - $tahunPertama;
-                $output2 = $output1 / $tahunPertama;
+                $output1 = removeUnusedString($tahunKedua) - removeUnusedString($tahunPertama);
+                $output2 = $output1 / removeUnusedString($tahunPertama);
                 $output3 = $output2 * 100;
                 $output4 = round($output3, 2);
 
