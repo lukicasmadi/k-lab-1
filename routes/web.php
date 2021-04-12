@@ -20,6 +20,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard/{uuid}/preview', 'PoldaHasRencanaOperasiController@previewPhroDashboard')->name('previewPhroDashboard');
     Route::get('/dashboard/polda/{uuid}/preview', 'PoldaHasRencanaOperasiController@previewPhroDashboardPolda')->name('previewPhroDashboardPolda');
 
+    Route::get('/operation-onsite/{uuid}/download', 'PoldaHasRencanaOperasiController@download')->name('downloadPrho');
+
     Route::group(['middleware' => 'user-has-polda'], function () {
         Route::resource('operation-onsite', 'PoldaHasRencanaOperasiController', [
             'names' => [
@@ -32,7 +34,6 @@ Route::group(['middleware' => 'auth'], function () {
                 'destroy' => 'phro_destroy',
             ]
         ]);
-        Route::get('/operation-onsite/{uuid}/download', 'PoldaHasRencanaOperasiController@download')->name('downloadPrho');
         Route::get('/operation-onsite/{uuid}/preview', 'PoldaHasRencanaOperasiController@preview')->name('previewPhro');
     });
 

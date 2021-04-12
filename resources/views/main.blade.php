@@ -804,6 +804,10 @@ $(document).ready(function () {
             $('#daily_preview').modal('show')
         })
     })
+
+    setInterval(function() {
+        window.location.reload();
+    }, 30000);
 })
 
 function notificationLoad() {
@@ -869,7 +873,7 @@ function donutData() {
             showForNullSeries: true,
             showForZeroSeries: true,
             position: 'bottom',
-            horizontalAlign: 'center', 
+            horizontalAlign: 'center',
             floating: false,
             fontSize: '12px',
             fontWeight: 400,
@@ -960,7 +964,7 @@ function donutData() {
             lineCap: 'butt',
             colors: undefined,
             width: 0,
-            dashArray: 0,      
+            dashArray: 0,
         },
         series: [filled, nofilled],
         labels: ['[ MASUK ]', ' [ BELUM MASUK ]'],
