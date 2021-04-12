@@ -11,7 +11,7 @@ use Maatwebsite\Excel\Concerns\FromView;
 class PoldaDailyComparison implements FromView
 {
 
-    public function __construct($operation_id, $start_year, $end_year, $start_date, $end_date, $polda_name)
+    public function __construct($operation_id, $start_year, $end_year, $start_date, $end_date, $polda_name, $polda_id)
     {
         $this->operation_id = $operation_id;
         $this->start_year = $start_year;
@@ -19,6 +19,7 @@ class PoldaDailyComparison implements FromView
         $this->start_date = $start_date;
         $this->end_date = $end_date;
         $this->polda_name = $polda_name;
+        $this->polda_id = $polda_id;
     }
 
     public function view(): View
@@ -283,6 +284,7 @@ class PoldaDailyComparison implements FromView
             sum(giat_lantas_patroli_p) as giat_lantas_patroli')
         ->where('year', $this->start_year)
         ->where('rencana_operasi_id', $this->operation_id)
+        ->where('polda_id', $this->polda_id)
         ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ? ", [$this->start_date, $this->end_date])
         ->first();
 
@@ -546,6 +548,7 @@ class PoldaDailyComparison implements FromView
             sum(giat_lantas_patroli) as giat_lantas_patroli')
         ->where('year', $this->end_year)
         ->where('rencana_operasi_id', $this->operation_id)
+        ->where('polda_id', $this->polda_id)
         ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ? ", [$this->start_date, $this->end_date])
         ->first();
 

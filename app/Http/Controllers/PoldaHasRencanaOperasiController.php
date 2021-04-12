@@ -772,7 +772,8 @@ class PoldaHasRencanaOperasiController extends Controller
             yearOnly($submited_date),
             $submited_date,
             $submited_date,
-            $polda->name
+            $polda->name,
+            $polda->id
         ), $filename);
     }
 }

@@ -51,7 +51,8 @@ class ReportController extends Controller
             yearOnly($submited_date),
             $submited_date,
             $submited_date,
-            poldaName()
+            poldaName(),
+            $poldaSubmited->polda_id,
         ), $filename);
     }
 
