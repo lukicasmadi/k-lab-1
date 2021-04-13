@@ -249,7 +249,7 @@ $(document).ready(function () {
                 $('#addAlias').modal('hide')
                 swal("Nama alias berhasil diubah", null, "success")
             } else {
-                swal("Proses gagal. Silahkan cek inputan anda!", null, "error")
+                swal("Proses gagal. Silakan cek inputan anda!", null, "error")
             }
             table.ajax.reload()
         })
@@ -293,7 +293,7 @@ $(document).ready(function () {
                     $('#addAlias').modal('hide')
                     swal("Nama alias berhasil diubah", null, "success")
                 } else {
-                    swal("Proses gagal. Silahkan cek inputan anda!", null, "error")
+                    swal("Proses gagal. Silakan cek inputan anda!", null, "error")
                 }
                 table.ajax.reload()
             })

@@ -51,7 +51,7 @@ class UserController extends Controller
             flash('Password anda berhasil diganti')->success();
             return redirect()->back();
         } else {
-            flash('Password lama anda tidak sesuai dengan data di sistem. Silahkan cek kembali')->error();
+            flash('Password lama anda tidak sesuai dengan data di sistem. Silakan cek kembali')->error();
             return redirect()->back();
         }
     }

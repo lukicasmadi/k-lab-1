@@ -67,7 +67,7 @@ class PoldaHasRencanaOperasiController extends Controller
         $todayInsert = PoldaSubmited::where("polda_id", $poldaId)->where("submited_date", date("Y-m-d"))->first();
 
         if(!empty($todayInsert)) {
-            flash('Maaf, anda sudah menginput laporan hari ini! Silahkan gunakan menu edit')->error();
+            flash('Maaf, anda sudah menginput laporan hari ini! Silakan gunakan menu ubah')->error();
             return redirect()->route('phro_index');
         }
 
@@ -76,6 +76,13 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function store(PHRORequest $request)
     {
+        $todayInsert = PoldaSubmited::where("polda_id", poldaId())->where("submited_date", date("Y-m-d"))->first();
+
+        if(!empty($todayInsert)) {
+            flash('Maaf, Anda sudah menginput laporan hari ini! Silakan gunakan menu ubah')->error();
+            return redirect()->route('phro_index');
+        }
+
         DB::beginTransaction();
 
         try {
@@ -111,7 +118,7 @@ class PoldaHasRencanaOperasiController extends Controller
         } catch (\Exception $e) {
             DB::rollback();
             logger($e);
-            flash('Data gagal dikirim. Silahkan dicoba kembali atau hubungi admin jika masih gagal')->error();
+            flash('Data gagal dikirim. Silakan dicoba kembali atau hubungi admin jika masih gagal')->error();
             return redirect()->back();
         }
     }
@@ -672,7 +679,7 @@ class PoldaHasRencanaOperasiController extends Controller
         } catch (\Exception $e) {
             DB::rollback();
             logger($e);
-            flash('Data gagal diupdate. Silahkan dicoba kembali atau hubungi admin jika masih gagal')->error();
+            flash('Data gagal diupdate. Silakan dicoba kembali atau hubungi admin jika masih gagal')->error();
             return redirect()->back();
         }
     }
@@ -749,14 +756,14 @@ class PoldaHasRencanaOperasiController extends Controller
         $now = now()->format("Y-m-d");
 
         if(empty($polda)) {
-            flash('Polda tidak ditemukan. Silahkan refresh halaman dan coba lagi')->error();
+            flash('Polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
             return redirect()->back();
         }
 
         $poldaSubmited = PoldaSubmited::where('polda_id', $polda->id)->where('submited_date', date('Y-m-d'))->first();
 
         if(empty($poldaSubmited)) {
-            flash('Inputan polda tidak ditemukan. Silahkan refresh halaman dan coba lagi')->error();
+            flash('Inputan polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
             return redirect()->back();
         }
 

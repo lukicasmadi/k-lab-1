@@ -112,7 +112,7 @@ Atau jika ada kebutuhan re-migrate database dan mulai dari awal dummy datanya, j
 
 -   Setiap halaman yg menggunakan datatable **harus** dibuat codenya didalam `directive`
 -   Daftarkan directive `@push('page_js')` untuk code datatablenya
--   Contoh yang sudah ada silahkan lihat di salah satu file `resources\views\nama_folder\index.blade.php`
+-   Contoh yang sudah ada Silakan lihat di salah satu file `resources\views\nama_folder\index.blade.php`
 
 ## How to provide JSON DATA for datatable
 

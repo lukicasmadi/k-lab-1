@@ -3,7 +3,7 @@
     @if ($errors->any())
         <div class="alert alert-danger custom">
             <ul>
-                <li>Inputan anda belum lengkap. Silahkan diperiksa lagi</li>
+                <li>Inputan anda belum lengkap. Silakan diperiksa lagi</li>
             </ul>
         </div>
     @endif

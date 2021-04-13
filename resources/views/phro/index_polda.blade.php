@@ -36,8 +36,8 @@
                                 <th width="30%">Nama Kesatuan</th>
                                 <th width="30%">Status Laporan</th>
                                 <th width="20%">Tanggal</th>
-                                <th width="6%">Preview</th>
-                                <th width="14%">Action</th>
+                                <th width="6%">Lihat</th>
+                                <th width="14%">Pilihan</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -141,7 +141,7 @@ $(document).ready(function () {
                     if(row['editable'] == true) {
                         return `
                         <div class="ubah-change">
-                            <a href="`+route('phro_edit', data)+`">UBAH</a>
+                            <a href="`+route('phro_edit', data)+`">Ubah</a>
                         </div>
                         `;
                     } else {

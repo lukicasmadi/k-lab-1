@@ -34,7 +34,7 @@ class ReportController extends Controller
         $poldaSubmited = PoldaSubmited::whereUuid($uuid)->first();
 
         if(empty($poldaSubmited)) {
-            flash('Inputan polda tidak ditemukan. Silahkan refresh halaman dan coba lagi')->error();
+            flash('Inputan polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
             return redirect()->back();
         }
 

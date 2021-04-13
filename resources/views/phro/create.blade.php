@@ -76,7 +76,7 @@ $(document).ready(function () {
         $("input[type=number]").val(randomNum)
         $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
     }
-    // swal("Untuk testing halaman ini akan secara otomatis terisi. \nSilahkan edit jika diperlukan", null, "success")
+    // swal("Untuk testing halaman ini akan secara otomatis terisi. \nSilakan edit jika diperlukan", null, "success")
 })
 </script>
 @endpush

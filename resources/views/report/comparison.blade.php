@@ -3439,7 +3439,7 @@ $("#persentase_dikmas_lantas_giatlantas_patroli").html(percentageValue(dataCurre
                 .catch(function(error) {
                     $("#panelLoading").addClass("d-none")
                     $("#panelData").removeClass("d-none")
-                    swal("Data belum lengkap. Silahkan periksa data yang akan diproses", error.response.data.output, "error")
+                    swal("Data belum lengkap. Silakan periksa data yang akan diproses", error.response.data.output, "error")
                 })
             }
         })

@@ -39,7 +39,7 @@ class RencanaOperasiUpdateRequest extends FormRequest
             'edit_nama_operasi.required' => 'Nama operasi tidak boleh kosong',
             'edit_tanggal_mulai.required' => 'Tanggal operasi mulai tidak boleh kosong',
             'edit_tanggal_selesai.required' => 'Tanggal operasi selesai tidak boleh kosong',
-            'uuid_edit.required' => 'UUID tdak ditemukan. Silahkan refresh halaman dan coba lagi',
+            'uuid_edit.required' => 'UUID tdak ditemukan. Silakan refresh halaman dan coba lagi',
         ];
     }
 }
