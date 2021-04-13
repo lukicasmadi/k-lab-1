@@ -1950,14 +1950,18 @@ transform: translateX(34px);
       =============
        Logo Polda
       =============
-  */
+*/
 
-  .grid-polda {
+.grid-polda {
     /* width: 5.25%; */
     text-align: center;
-    padding: 5px 5px;
-    margin-bottom: 5px;
+    padding: 6px 0px;
+    margin-bottom: 1px;
     display: inline-block;
+}
+
+.grid-polda img {
+    padding: 0px 5px;
 }
 
 .grid-polda.glowred {
@@ -2050,7 +2054,7 @@ transform: translateX(34px);
 }
 
 .grid-polda p {
-    font-size: 6px;
+    font-size: 8px;
     text-transform: uppercase;
 }
 

@@ -28,7 +28,7 @@
             @endforeach
         </div>
 
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-1">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-1 mb-n2">
             @foreach ($polda as $key => $val)
                 @if ($key >= 17 && $key <= 33)
                     <div class="cols-sm-1">
@@ -41,7 +41,7 @@
             @endforeach
         </div>
 
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mb-n22">
             <img src="{{ secure_asset('/img/line-poldaup.png') }}" width="100%">
         </div>
 
@@ -52,13 +52,13 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                     <path id="pie_chart_outline" d="M12,22A10,10,0,1,1,22,12,10,10,0,0,1,12,22ZM11,4.062A8,8,0,1,0,16.419,18.67l-.1.071.094-.065.059-.041.064-.045.016-.011.009-.007-5.128-5.13A1.51,1.51,0,0,1,11,12.379ZM13.829,13l4.227,4.227.007-.008.005-.006-.01.011A7.944,7.944,0,0,0,19.938,13ZM13,4.062V11h6.938A8,8,0,0,0,13,4.062Z" transform="translate(-2 -2)" fill="#00adef"/>
                     </svg>
-                    <span class="tour-step tour-step-one">Total Laporan</span>
+                    <span class="tour-step tour-step-one">Total Laporan</span> <span class="dash_operasi" id="projectName"></span>
                     </h5>
                     <p>data laporan harian setiap polda</p>
                 </div>
                 <div class="widget-content" style="margin-top: 5%;">
                     <div class="mx-auto">
-                         <img style="position: absolute; width:15%; bottom: 0;" src="{{ secure_asset('/img/polda/mabes.png') }}">
+                         <img class="poldametro" src="{{ secure_asset('/img/polda/mabes.png') }}">
                         <div id="donut-chart" class=""></div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                     <p>info laporan harian setiap polda</p>
                     </h5>
                 </div>
-                <div class="widget-content">
+                <div class="widget-content mb-4">
                     <div id="loadingPanel" class="centered">Loading Data</div>
                     <div id="dataPanel" class="mt-container mx-auto invisible">
                         <div class="timeline-line"></div>
@@ -85,20 +85,20 @@
             </div>
         </div>
 
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-n22">
             <img src="{{ secure_asset('/img/line-polda.png') }}" width="100%">
         </div>
 
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
             <div class="widget widget-activity-three">
                 <div class="widget-heading">
-                    <h5 class="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <h5 class="ml-n3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-n1" width="20" height="20" viewBox="0 0 20 20">
                             <path id="bar_chart_alt" d="M22,22H2V11.474A2.055,2.055,0,0,1,4,9.368H8V4.105A2.055,2.055,0,0,1,10,2h4a2.055,2.055,0,0,1,2,2.105V7.263h4a2.055,2.055,0,0,1,2,2.105ZM16,9.368V19.895h4V9.368ZM10,4.105V19.895h4V4.105ZM4,11.474v8.421H8V11.474Z" transform="translate(-2 -2)" fill="#00adef"/>
                         </svg>
-                        <span>Data Statistik</span> <span id="projectName"></span>
-                        <p class="mar20">total data laporan</p>
-                        <b>34 laporan</b>
+                        <span>Data Statistik</span>
+                        <p class="mar20 ml-n1">total data laporan</p>
+                        <b class="ml-n1">34 laporan</b>
                     </h5>
                     {{-- <ul class="tabs tab-pills">
                         <li>
@@ -115,17 +115,17 @@
             </div>
         </div>
 
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-n3">
             <img src="{{ secure_asset('/img/line-poldaup.png') }}" width="100%">
         </div>
 
         <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
-            <div class="widget-heading">
+            <div class="widget-heading mt-2">
                 <h5 class="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20">
                     <path id="Union_2" data-name="Union 2" d="M-2852-2201a2,2,0,0,1-2-2v-16a2,2,0,0,1,2-2h7a.118.118,0,0,1,.032.006.131.131,0,0,0,.03.006,1.043,1.043,0,0,1,.259.051l.028.009a.492.492,0,0,1,.066.028.993.993,0,0,1,.293.2l6,6a.98.98,0,0,1,.2.293.639.639,0,0,1,.025.068l.009.026a1,1,0,0,1,.049.258.144.144,0,0,0,.007.027.139.139,0,0,1,0,.028v11a2,2,0,0,1-2,2Zm0-2h12v-10h-5a1,1,0,0,1-1-1v-5h-6Zm8-12h2.586l-2.586-2.586Zm-5.333,10v-2h6.667v2Zm0-4v-2h6.667v2Z" transform="translate(2854 2221)" fill="#00adef"/>
                     </svg>
-                    <span>data status pelaporan</span>
+                    <span class="ml-1">data status pelaporan</span>
                 </h5>
             </div>
 
@@ -134,11 +134,11 @@
                     <table id="tbl_daily_submited" class="table">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Nama Kesatuan</th>
-                                <th>Status Laporan</th>
-                                <th>Lihat</th>
-                                <th>Pilihan</th>
+                                <th><span>No</span></th>
+                                <th><span>Nama Kesatuan</span></th>
+                                <th><span>Status Laporan</span></th>
+                                <th class="text-center" width="6%"><span>Lihat</span></th>
+                                <th class="text-center"><span>Pilihan</span></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -862,6 +862,7 @@ function donutData() {
     var donutChart = {
         chart: {
             height: 350,
+            fontFamily: 'Bahnschrift',
             type: 'donut',
             toolbar: {
             show: false,
@@ -875,7 +876,8 @@ function donutData() {
             position: 'bottom',
             horizontalAlign: 'center',
             floating: false,
-            fontSize: '12px',
+            fontSize: '10px',
+            fontFamily: 'Bahnschrift',
             fontWeight: 400,
             formatter: undefined,
             inverseOrder: false,
@@ -901,8 +903,8 @@ function donutData() {
                 offsetY: 0
             },
             itemMargin: {
-                horizontal: 5,
-                vertical: 5
+                horizontal: 0,
+                vertical: 10
             },
             onItemClick: {
                 toggleDataSeries: true
@@ -931,14 +933,16 @@ function donutData() {
                 name: {
                   show: true,
                   fontSize: '12px',
+                  fontFamily: 'Bahnschrift',
                   color: undefined,
-                  offsetY: -10,
+                  offsetY: -35,
                 },
                 value: {
                   show: true,
-                  fontSize: '50px',
+                  fontSize: '60px',
+                  fontFamily: 'Bahnschrift',
                   color: '20',
-                  offsetY: 16,
+                  offsetY: 17,
                   formatter: function (val) {
                     return val + "%"
                   }
@@ -946,7 +950,7 @@ function donutData() {
                 total: {
                   show: true,
                   showAlways: false,
-                  label: 'TOTAL DATA MASUK',
+                  label: 'DATA MASUK',
                   color: '#888ea8',
                   formatter: function (w) {
                     return w.globals.seriesTotals.reduce( function(a, b) {
@@ -963,11 +967,11 @@ function donutData() {
             curve: 'smooth',
             lineCap: 'butt',
             colors: undefined,
-            width: 0,
+            width: 1,
             dashArray: 0,
         },
         series: [filled, nofilled],
-        labels: ['[ MASUK ]', ' [ BELUM MASUK ]'],
+        labels: ['&nbsp;[ MASUK ]', '&nbsp;[ BELUM MASUK ]'],
         responsive: [{
             breakpoint: 500,
             options: {
@@ -1039,7 +1043,9 @@ function loadDataTable() {
                     } else {
                         return `
                         <div class="icon-container">
-                            <a href="`+route('previewPhroDashboard', data)+`" class="previewPhro" data-id="`+data+`"><i class="far fa-eye"></i></a>
+                            <a href="`+route('previewPhroDashboard', data)+`" class="previewPhro" data-id="`+data+`">
+                            <img src="{{ secure_asset('/img/search.png') }}" width="55%">
+                            </a>
                         </div>
                         `;
                     }
@@ -1052,8 +1058,10 @@ function loadDataTable() {
                         return "-"
                     } else {
                         return `
-                        <div class="icon-container">
-                            <a href="`+route('downloadPrho', data)+`"><i class="far fa-download"></i></a>
+                        <div class="ubah-change text-center">
+                            <a href="`+route('downloadPrho', data)+`">
+                                Unduh
+                            </a>
                         </div>
                         `;
                     }

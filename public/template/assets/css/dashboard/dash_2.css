@@ -394,6 +394,25 @@
     display: none;
 }
 
+.dash_operasi{
+    background-color: rgba(0, 173, 239, 0.1);
+    font-size: 12px;    
+    color: #00adef;
+    padding: 7px 17px 7px 0px;
+    display:inline-block;
+    float: right;
+    right:0;
+}
+
+.poldametro{
+    position: absolute;
+    width: 60px;
+    bottom: 5px;
+    left: 42px;
+    -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 173, 239, 0.4) );
+    filter: drop-shadow(0px 0px 10px rgba(0, 173, 239, 0.4));
+}
+
 
 /*
     ==================

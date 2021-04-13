@@ -344,18 +344,18 @@ blockquote.blockquote {
 
 blockquote.blockquote p {
     color: #00adef;
-    font-size: 17px;
+    font-size: 14px;
 }
 
 blockquote.blockquote span {
     display: block;
     color: #79859b;
-    font-size: 14px;
+    font-size: 10px;
 }
 
 .button-onsite span {
     position: absolute;
-    margin-top: -40px;
+    margin-top: -35px;
     float: right;
     right: 0;
     text-transform: uppercase;
@@ -374,8 +374,8 @@ blockquote.blockquote span {
 
 .button-onsite span.seehow {
     color: #00adef;
-    font-size: 13px;
-    margin-right: 190px;
+    font-size: 12px;
+    margin-right: 45px;
 }
 
 .line-onsite {
