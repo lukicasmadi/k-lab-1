@@ -223,7 +223,7 @@ $(document).ready(function () {
                     return `
                     <div class="ubah-change text-center">
                         <a href="`+route('get_data_polda_custom_name', data)+`" id="addAliasData" idval="`+data+`">
-                        UBAH
+                        Ubah
                         </a>
                     </div>
                     `;

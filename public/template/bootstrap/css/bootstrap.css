@@ -704,8 +704,8 @@ pre code {
 .cols-lg-17 {
   position: relative;
   min-height: 1px;
-  padding-right: 5px;
-  padding-left: 5px;
+  padding-right: 2px;
+  padding-left: 2px;
 }
 
 .cols-xs-1,
@@ -9728,6 +9728,11 @@ button.bg-dark:focus {
   margin-top: -3rem !important;
 }
 
+.mt-n22,
+.my-n22 {
+  margin-top: -2.2rem !important;
+}
+
 .mr-n5,
 .mx-n5 {
   margin-right: -3rem !important;
@@ -9736,6 +9741,11 @@ button.bg-dark:focus {
 .mb-n5,
 .my-n5 {
   margin-bottom: -3rem !important;
+}
+
+.mb-n22,
+.my-n22 {
+  margin-bottom: -2.2rem !important;
 }
 
 .ml-n5,

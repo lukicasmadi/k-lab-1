@@ -114,6 +114,11 @@ table.dataTable thead .sorting_desc:after {
     text-transform: uppercase;
 }
 
+.table>thead>tr>th span {
+    display: block;
+    padding: 7px 0;
+}
+
 .table>tbody>tr>td {
     border: none;
     color: #888ea8;
