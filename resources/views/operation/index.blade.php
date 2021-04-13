@@ -321,7 +321,7 @@
                     render: function(data, type, row) {
                         return `
                         <div class="ubah-change">
-                            <a class="editData" idval="`+data+`" href="#">UBAH</a>
+                            <a class="editData" idval="`+data+`" href="#">Ubah</a>
                         </div>
                         `;
                     },
