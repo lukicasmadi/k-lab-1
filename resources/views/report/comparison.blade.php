@@ -2100,9 +2100,9 @@
 @push('page_js')
 <script>
     function percentageValue(tahunKedua, tahunPertama) {
-        var output1 = tahunKedua - tahunPertama
-        var output2 = output1 / tahunPertama
-        var output3 = output2 * 100
+        var output1 = parseInt(tahunKedua) - parseInt(tahunPertama)
+        var output2 = parseInt(output1) / parseInt(tahunPertama)
+        var output3 = parseInt(output2) * 100
         var output4 = Math.round(output3, 2)
 
         if(!output4) {
@@ -2116,11 +2116,11 @@
         if(!tahunKedua || !tahunPertama) {
             return "-"
         } else {
-            if(tahunKedua > tahunPertama) {
+            if(parseInt(tahunKedua) > parseInt(tahunPertama)) {
                 tanda = '<svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 7.5 10"> <defs> <style>.a{fill:#00adef;}</style> </defs> <path class="a" d="M9.125,6.394,6.881,8.631,6,7.75,9.75,4,13.5,7.75l-.881.881L10.375,6.394V14H9.125Z" transform="translate(-6 -4)"/> </svg> Naik ';
-            } else if(tahunKedua < tahunPertama) {
+            } else if(parseInt(tahunKedua) < parseInt(tahunPertama)) {
                 tanda = '<svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 7.5 10"> <defs> <style>.a{fill:#00adef;}</style> </defs> <path class="a" d="M9.125,11.606,6.881,9.369,6,10.25,9.75,14l3.75-3.75-.881-.881-2.244,2.238V4H9.125Z" transform="translate(-6 -4)"/> </svg> Turun';
-            } else if(tahunKedua == tahunPertama) {
+            } else if(parseInt(tahunKedua) == parseInt(tahunPertama)) {
                 tanda = "Sama";
             } else {
                 tanda = "";
@@ -2151,7 +2151,6 @@
 $("#pelanggaran_lalu_lintas_tilang_prev").html(dataPrev.pelanggaran_lalu_lintas_tilang)
 $("#pelanggaran_lalu_lintas_tilang").html(dataCurrent.pelanggaran_lalu_lintas_tilang)
 $("#status_pelanggaran_lalin_tilang").html(percentageStatus(dataCurrent.pelanggaran_lalu_lintas_tilang, dataPrev.pelanggaran_lalu_lintas_tilang))
-console.log("CURRENT : "+dataCurrent.pelanggaran_lalu_lintas_tilang+" PREV : "+dataPrev.pelanggaran_lalu_lintas_tilang);
 $("#persentase_pelanggaran_lalin_tilang").html(percentageValue(dataCurrent.pelanggaran_lalu_lintas_tilang, dataPrev.pelanggaran_lalu_lintas_tilang))
 
 
