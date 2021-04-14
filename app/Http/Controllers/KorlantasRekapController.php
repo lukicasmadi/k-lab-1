@@ -14,22 +14,6 @@ use App\Http\Requests\KorlantasRekapRequest;
 class KorlantasRekapController extends Controller
 {
 
-    public function store(KorlantasRekapRequest $request)
-    {
-        $model = KorlantasRekap::create([
-            'uuid' => genUuid(),
-            'report_name' => $request->report_name,
-            'polda' => $request->polda,
-            'year' => $request->year,
-            'rencana_operasi_id' => $request->rencana_operasi_id,
-            'operation_date' => ($request->operation_date == "semua_hari") ? "semua_hari" : $request->hari,
-        ]);
-
-        flash('Rekap harian berhasil dibuat')->success();
-
-        return redirect()->back();
-    }
-
     public function korlantas_rekap($uuid)
     {
         $model = KorlantasRekap::whereUuid($uuid)->first();
@@ -156,22 +140,5 @@ class KorlantasRekapController extends Controller
         );
 
         return $pcon;
-    }
-
-    public function update()
-    {
-        $model = KorlantasRekap::updateOrCreate(
-            ['uuid' => request('uuid_edit')],
-            [
-                'report_name' => request('report_name_edit'),
-                'polda' => request('polda_edit'),
-                'year' => request('year_edit'),
-                'rencana_operasi_id' => request('rencana_operasi_id_edit'),
-                'operation_date' => (request('operation_date_edit') == "pilih_hari") ? request('hari_edit') : 'semua_hari',
-            ]
-        );
-
-        flash('Rekap harian berhasil diubah')->success();
-        return redirect()->back();
     }
 }

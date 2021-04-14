@@ -144,14 +144,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/profile/process', 'UserController@profile_process')->name('profile_process');
     Route::get('/change-password', 'UserController@changePassword')->name('change_password');
     Route::post('/change-password/process', 'UserController@change_password_process')->name('change_password_process');
-    Route::post('/korlantas-rekap/daily/create', 'KorlantasRekapController@store')->name('korlantas_rekap_store');
-    Route::post('/korlantas-rekap/daily/update', 'KorlantasRekapController@update')->name('korlantas_rekap_update');
-    Route::get('/custom-name', 'KorlantasRekapController@polda_custom_name')->name('polda_custom_name'); //route kenapa bermasalah?
+    Route::get('/custom-name', 'KorlantasRekapController@polda_custom_name')->name('polda_custom_name');
     Route::post('/custom-name/store', 'KorlantasRekapController@storeCustomName')->name('post_data_polda_custom_name');
     Route::get('/test', 'TestController@custom')->name('test');
 
     //UPGRADE BRANCH
     Route::post('/daily-rekap/create', 'DailyRekapController@store')->name('daily_rekap_store');
+    Route::post('/daily-rekap/update', 'DailyRekapController@update')->name('daily_rekap_update');
 
     Route::group(['prefix' => 'data'], function () {
         Route::get('/category', 'CategoryController@data')->name('category_data');
@@ -183,5 +182,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/report/analysis-evaluation/data', 'ReportController@comparisonGetData')->name('comparison_get_data');
         Route::get('/polda/custom-name/{uuid}', 'KorlantasRekapController@getCustomName')->name('get_data_polda_custom_name');
         Route::get('/korlantas-rekap/{uuid}', 'KorlantasRekapController@korlantas_rekap')->name('korlantas_rekap');
+        Route::get('/rekap/daily/{uuid}', 'DailyRekapController@dailyRekapShow')->name('daily_rekap_show');
     });
 });

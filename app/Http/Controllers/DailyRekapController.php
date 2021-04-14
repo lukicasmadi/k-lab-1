@@ -5,9 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\DailyRekap;
 use Illuminate\Http\Request;
 use App\Http\Requests\DailyRekapRequest;
+use App\Http\Requests\DailyRekapEditRequest;
 
 class DailyRekapController extends Controller
 {
+
+    public function dailyRekapShow($uuid)
+    {
+        $model = DailyRekap::with(['rencanaOperasi', 'poldaData'])->where('uuid', $uuid)->first();
+
+        if(empty($model)) {
+            abort(404);
+        }
+
+        logger($model);
+
+        return $model;
+    }
 
     public function data()
     {
@@ -44,6 +58,25 @@ class DailyRekapController extends Controller
 
         flash('Rekap harian berhasil dibuat')->success();
 
+        return redirect()->back();
+    }
+
+    public function update(DailyRekapEditRequest $request)
+    {
+        $model = DailyRekap::updateOrCreate(
+            ['uuid' => request('uuid_edit')],
+            [
+                'report_name' => $request->report_name_edit,
+                'polda' => $request->polda_edit,
+                'year' => $request->year_edit,
+                'rencana_operasi_id' => $request->rencana_operasi_id_edit,
+                'config_date' => $request->config_date_edit,
+                'operation_date_start' => dateOnly($request->tanggal_mulai_edit),
+                'operation_date_end' => dateOnly($request->tanggal_selesai_edit),
+            ]
+        );
+
+        flash('Rekap harian berhasil diubah')->success();
         return redirect()->back();
     }
 }

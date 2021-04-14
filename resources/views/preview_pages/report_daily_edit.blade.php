@@ -1,7 +1,7 @@
 <div class="modal fade" id="form_edit_rekap" tabindex="-1" role="dialog" aria-labelledby="form_edit_rekap" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <form method="POST" action="{{ route('korlantas_rekap_update') }}" id="form_edit_rekap">
+            <form method="POST" action="{{ route('daily_rekap_update') }}" id="form_edit_rekap">
                 @csrf
                 <div class="modal-body">
                     <div class="notes-box">
@@ -51,11 +51,20 @@
                                 </div>
                                 <div class="col-md-12">
                                     <label class="text-popup">Hari Operasi</label>
-                                    <select class="form-control form-custom height-form" id="operation_date_edit" name="operation_date_edit">
-                                        <option value="semua_hari" selected="selected">-   Semua Hari</option>
-                                        <option value="pilih_hari">-   Pilih Hari</option>
+                                    <select class="form-control form-custom height-form" id="config_date_edit" name="config_date_edit">
+                                        <option value="all" selected="selected">-   Semua Hari</option>
+                                        <option value="custom">-   Pilih Hari</option>
                                     </select>
-                                    <input type="text" name="hari_edit" id="hari_edit" class="form-control popoups inp-icon d-none">
+                                </div>
+
+                                <div class="col-md-6 custom_hari d-none">
+                                    <label class="text-popup">Tanggal Mulai</label>
+                                    <input type="text" name="tanggal_mulai_edit" id="tanggal_mulai_edit" class="form-control popoups inp-icon" value="" placeholder="- dd-mm-yyyy">
+                                </div>
+
+                                <div class="col-md-6 custom_hari d-none">
+                                    <label class="text-popup">Tanggal Selesai</label>
+                                    <input type="text" name="tanggal_selesai_edit" id="tanggal_selesai_edit" class="form-control popoups inp-icon" value="" placeholder="- dd-mm-yyyy">
                                 </div>
                             </div>
                         </div>

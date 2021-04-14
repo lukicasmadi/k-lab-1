@@ -793,7 +793,7 @@ $('body').on('click', '#btnEdit', function(e) {
     e.preventDefault()
     var uuid = $(this).attr('data-id')
 
-    axios.get(route('korlantas_rekap', uuid)).then(function(response) {
+    axios.get(route('daily_rekap_show', uuid)).then(function(response) {
 
         $("#uuid_edit").val(response.data.uuid)
 
@@ -807,13 +807,16 @@ $('body').on('click', '#btnEdit', function(e) {
 
         $('#rencana_operasi_id_edit option[value='+response.data.rencana_operasi_id+']').prop("selected", true)
 
-        if(response.data.operation_date != "all") {
-            $("#hari_edit").removeClass("d-none")
-            $('#operation_date_edit option[value="custom"]').prop("selected", true)
-            $("#hari_edit").val(response.data.operation_date)
+        if(response.data.config_date == "custom") {
+            $('#config_date_edit option[value="custom"]').prop("selected", true)
+            $(".custom_hari").removeClass("d-none")
+            $("#tanggal_mulai_edit").val(response.data.operation_date_start)
+            $("#tanggal_selesai_edit").val(response.data.operation_date_end)
         } else {
-            $('#operation_date_edit option[value="all"]').prop("selected", true)
-            $("#hari_edit").addClass("d-none")
+            $('#config_date_edit option[value="all"]').prop("selected", true)
+            $(".custom_hari").addClass("d-none")
+            $("#tanggal_mulai_edit").val('')
+            $("#tanggal_selesai_edit").val('')
         }
 
         $('#form_edit_rekap').modal('show')
