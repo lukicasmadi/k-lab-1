@@ -1,7 +1,7 @@
 <div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="modalForm" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <form method="POST" action="{{ route('korlantas_rekap_store') }}" id="form_add_rekap">
+            <form method="POST" action="{{ route('daily_rekap_store') }}" id="form_add_rekap">
                 @csrf
                 <div class="modal-body">
                     <div class="notes-box">
@@ -50,9 +50,9 @@
                                 </div>
                                 <div class="col-md-12">
                                     <label class="text-popup">Hari Operasi</label>
-                                    <select class="form-control form-custom height-form" id="operation_date" name="operation_date">
-                                        <option value="semua_hari" selected="selected">-   Semua Hari</option>
-                                        <option value="pilih_hari">-   Pilih Hari</option>
+                                    <select class="form-control form-custom height-form" id="config_date" name="config_date">
+                                        <option value="all" selected="selected">-   Semua Hari</option>
+                                        <option value="custom">-   Pilih Hari</option>
                                     </select>
                                 </div>
 

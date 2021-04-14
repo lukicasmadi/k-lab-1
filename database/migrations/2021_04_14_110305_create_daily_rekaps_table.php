@@ -22,8 +22,8 @@ class CreateDailyRekapsTable extends Migration
             $table->unsignedBigInteger('rencana_operasi_id');
             $table->foreign('rencana_operasi_id')->references('id')->on('rencana_operasis');
             $table->enum("config_date", ['all', 'custom']);
-            $table->date("operation_date_start");
-            $table->date("operation_date_end");
+            $table->date("operation_date_start")->nullable();
+            $table->date("operation_date_end")->nullable();
             $table->timestamps();
         });
     }

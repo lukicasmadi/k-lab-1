@@ -108,24 +108,24 @@ $(document).ready(function () {
         $('#modalForm').modal('show')
     })
 
-    $("#operation_date").change(function (e) {
+    $("#config_date").change(function (e) {
         e.preventDefault()
         $("#tanggal_mulai").val('')
         $("#tanggal_selesai").val('')
 
-        if($(this).val() == "pilih_hari") {
+        if($(this).val() == "custom") {
             $(".custom_hari").removeClass('d-none')
         } else {
             $(".custom_hari").addClass('d-none')
         }
     })
 
-    $("#operation_date_edit").change(function (e) {
+    $("#config_date_edit").change(function (e) {
         e.preventDefault()
         $("#tanggal_mulai").val('')
         $("#tanggal_selesai").val('')
 
-        if($(this).val() == "pilih_hari") {
+        if($(this).val() == "custom") {
             $(".custom_hari").removeClass("d-none")
         } else {
             $(".custom_hari").addClass("d-none")
@@ -134,18 +134,22 @@ $(document).ready(function () {
 
     $('#tanggal_mulai').datepicker({
         format: 'dd-mm-yyyy',
+        todayHighlight: true,
     })
 
     $('#tanggal_selesai').datepicker({
         format: 'dd-mm-yyyy',
+        todayHighlight: true,
     })
 
     $('#tanggal_mulai_edit').datepicker({
         format: 'dd-mm-yyyy',
+        todayHighlight: true,
     })
 
     $('#tanggal_selesai_edit').datepicker({
         format: 'dd-mm-yyyy',
+        todayHighlight: true,
     })
 
     var table = $('#tbl_rekap_daily').DataTable({
@@ -195,7 +199,7 @@ $(document).ready(function () {
             {
                 data: 'operation_date',
                 render: function (data, type, row, meta) {
-                    if(data == "semua_hari") {
+                    if(data == "all") {
                         return "Semua Hari"
                     } else {
                         return data
@@ -794,12 +798,12 @@ $('body').on('click', '#btnEdit', function(e) {
 
         $('#rencana_operasi_id_edit option[value='+response.data.rencana_operasi_id+']').prop("selected", true)
 
-        if(response.data.operation_date != "semua_hari") {
+        if(response.data.operation_date != "all") {
             $("#hari_edit").removeClass("d-none")
-            $('#operation_date_edit option[value="pilih_hari"]').prop("selected", true)
+            $('#operation_date_edit option[value="custom"]').prop("selected", true)
             $("#hari_edit").val(response.data.operation_date)
         } else {
-            $('#operation_date_edit option[value="semua_hari"]').prop("selected", true)
+            $('#operation_date_edit option[value="all"]').prop("selected", true)
             $("#hari_edit").addClass("d-none")
         }
 

@@ -150,6 +150,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/custom-name/store', 'KorlantasRekapController@storeCustomName')->name('post_data_polda_custom_name');
     Route::get('/test', 'TestController@custom')->name('test');
 
+    //UPGRADE BRANCH
+    Route::post('/daily-rekap/create', 'DailyRekapController@store')->name('daily_rekap_store');
+
     Route::group(['prefix' => 'data'], function () {
         Route::get('/category', 'CategoryController@data')->name('category_data');
         Route::get('/article', 'ArticleController@data')->name('article_data');
