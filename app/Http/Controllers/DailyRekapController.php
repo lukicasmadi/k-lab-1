@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DailyRekap;
 use Illuminate\Http\Request;
+use App\Models\RencanaOperasi;
 use App\Http\Requests\DailyRekapRequest;
 use App\Http\Requests\DailyRekapEditRequest;
 
@@ -63,18 +64,35 @@ class DailyRekapController extends Controller
 
     public function update(DailyRekapEditRequest $request)
     {
-        $model = DailyRekap::updateOrCreate(
-            ['uuid' => request('uuid_edit')],
-            [
-                'report_name' => $request->report_name_edit,
-                'polda' => $request->polda_edit,
-                'year' => $request->year_edit,
-                'rencana_operasi_id' => $request->rencana_operasi_id_edit,
-                'config_date' => $request->config_date_edit,
-                'operation_date_start' => dateOnly($request->tanggal_mulai_edit),
+        if($request->config_date_edit == "all") {
+            $ro = RencanaOperasi::where('id', $request->rencana_operasi_id_edit)->first();
+
+            $model = DailyRekap::updateOrCreate(
+                ['uuid' => request('uuid_edit')],
+                [
+                    'report_name' => $request->report_name_edit,
+                    'polda' => $request->polda_edit,
+                    'year' => $request->year_edit,
+                    'rencana_operasi_id' => $request->rencana_operasi_id_edit,
+                    'config_date' => $request->config_date_edit,
+                    'operation_date_start' => dateOnly($ro->start_date),
+                    'operation_date_end' => dateOnly($ro->end_date),
+                ]
+            );
+        } else {
+            $model = DailyRekap::updateOrCreate(
+                ['uuid' => request('uuid_edit')],
+                [
+                    'report_name' => $request->report_name_edit,
+                    'polda' => $request->polda_edit,
+                    'year' => $request->year_edit,
+                    'rencana_operasi_id' => $request->rencana_operasi_id_edit,
+                    'config_date' => $request->config_date_edit,
+                    'operation_date_start' => dateOnly($request->tanggal_mulai_edit),
                 'operation_date_end' => dateOnly($request->tanggal_selesai_edit),
-            ]
-        );
+                ]
+            );
+        }
 
         flash('Rekap harian berhasil diubah')->success();
         return redirect()->back();
