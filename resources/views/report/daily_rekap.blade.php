@@ -82,8 +82,10 @@
 
 $('#modalForm').on('hidden.bs.modal', function () {
     $("#report_name").val('')
-    $("#hari").val('')
-    $("#hari").addClass('d-none')
+    $("#tanggal_mulai").val('')
+    $("#tanggal_selesai").val('')
+    $(".custom_hari").addClass('d-none')
+
     $("#modalForm select").prop('selectedIndex', 0)
 })
 
@@ -92,7 +94,11 @@ $('#daily_preview').on('hidden.bs.modal', function () {
 })
 
 $('#form_edit_rekap').on('hidden.bs.modal', function () {
-    $("#hari_edit").addClass("d-none")
+    $("#tanggal_mulai_edit").val('')
+    $("#tanggal_selesai_edit").val('')
+    $("#custom_hari").addClass('d-none')
+
+    $("#modalForm select").prop('selectedIndex', 0)
 })
 
 $(document).ready(function () {
@@ -104,30 +110,42 @@ $(document).ready(function () {
 
     $("#operation_date").change(function (e) {
         e.preventDefault()
-        $("#hari").val('')
+        $("#tanggal_mulai").val('')
+        $("#tanggal_selesai").val('')
+
         if($(this).val() == "pilih_hari") {
-            $("#hari").removeClass("d-none")
+            $(".custom_hari").removeClass('d-none')
         } else {
-            $("#hari").addClass("d-none")
+            $(".custom_hari").addClass('d-none')
         }
     })
 
     $("#operation_date_edit").change(function (e) {
         e.preventDefault()
-        $("#hari_edit").val('')
+        $("#tanggal_mulai").val('')
+        $("#tanggal_selesai").val('')
+
         if($(this).val() == "pilih_hari") {
-            $("#hari_edit").removeClass("d-none")
+            $(".custom_hari").removeClass("d-none")
         } else {
-            $("#hari_edit").addClass("d-none")
+            $(".custom_hari").addClass("d-none")
         }
     })
 
-    $('#hari').datepicker({
-        format: 'yyyy-mm-dd',
+    $('#tanggal_mulai').datepicker({
+        format: 'dd-mm-yyyy',
     })
 
-    $('#hari_edit').datepicker({
-        format: 'yyyy-mm-dd',
+    $('#tanggal_selesai').datepicker({
+        format: 'dd-mm-yyyy',
+    })
+
+    $('#tanggal_mulai_edit').datepicker({
+        format: 'dd-mm-yyyy',
+    })
+
+    $('#tanggal_selesai_edit').datepicker({
+        format: 'dd-mm-yyyy',
     })
 
     var table = $('#tbl_rekap_daily').DataTable({

@@ -1,5 +1,5 @@
 <div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="modalForm" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <form method="POST" action="{{ route('korlantas_rekap_store') }}" id="form_add_rekap">
                 @csrf
@@ -54,7 +54,16 @@
                                         <option value="semua_hari" selected="selected">-   Semua Hari</option>
                                         <option value="pilih_hari">-   Pilih Hari</option>
                                     </select>
-                                    <input type="text" name="hari" id="hari" class="form-control popoups inp-icon d-none">
+                                </div>
+
+                                <div class="col-md-6 custom_hari d-none">
+                                    <label class="text-popup">Tanggal Mulai</label>
+                                    <input type="text" name="tanggal_mulai" id="tanggal_mulai" class="form-control popoups inp-icon" value="" placeholder="- dd-mm-yyyy">
+                                </div>
+
+                                <div class="col-md-6 custom_hari d-none">
+                                    <label class="text-popup">Tanggal Selesai</label>
+                                    <input type="text" name="tanggal_selesai" id="tanggal_selesai" class="form-control popoups inp-icon" value="" placeholder="- dd-mm-yyyy">
                                 </div>
                             </div>
                         </div>
