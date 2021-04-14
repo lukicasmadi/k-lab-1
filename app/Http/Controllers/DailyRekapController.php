@@ -15,6 +15,7 @@ class DailyRekapController extends Controller
 
     public function dailyRekapExcel($uuid)
     {
+        return $uuid;
         $model = DailyRekap::with(['rencanaOperasi', 'poldaData'])->where('uuid', $uuid)->first();
 
         if(empty($model)) {
