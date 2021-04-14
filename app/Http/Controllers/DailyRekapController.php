@@ -8,6 +8,27 @@ use App\Http\Requests\DailyRekapRequest;
 
 class DailyRekapController extends Controller
 {
+
+    public function data()
+    {
+        $model = DailyRekap::with(['rencanaOperasi', 'poldaData']);
+
+        return datatables()->eloquent($model)
+        ->addColumn('polda_relation', function (DailyRekap $kr) {
+            if(empty($kr->poldaData)) {
+                return "Semua";
+            } else {
+                return $kr->poldaData->name;
+            }
+        })
+        ->addColumn('rencana_operasi_relation', function (DailyRekap $kr) {
+            return $kr->rencanaOperasi->name;
+        })
+        ->toJson();
+
+        return datatables()->eloquent($model)->toJson();
+    }
+
     public function store(DailyRekapRequest $request)
     {
         $model = DailyRekap::create([

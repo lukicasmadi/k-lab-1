@@ -44,7 +44,9 @@
                                 <th width="13%">Polda</th>
                                 <th width="10%">Tahun</th>
                                 <th width="21%">Nama Operasi</th>
-                                <th width="20%">Tanggal Operasi</th>
+                                <th width="20%">Hari</th>
+                                <th width="20%">Mulai</th>
+                                <th width="20%">Selesai</th>
                                 <th width="6%">Lihat</th>
                                 <th width="10%">Pilihan</th>
                             </tr>
@@ -160,7 +162,7 @@ $(document).ready(function () {
                 className: "tengah", "targets": [6]
             }
         ],
-        ajax: route('korlantas_rekap_data'),
+        ajax: route('korlantas_rekap_data_new'),
         "oLanguage": {
             "oPaginate": {
                 "sPrevious": '<i class="fas fa-chevron-left dtIconSize"></i>',
@@ -194,17 +196,23 @@ $(document).ready(function () {
             },
             {
                 data: 'rencana_operasi_relation',
-                name: 'rencaraOperasi.name',
+                name: 'rencanaOperasi.name',
             },
             {
-                data: 'operation_date',
+                data: 'config_date',
                 render: function (data, type, row, meta) {
                     if(data == "all") {
                         return "Semua Hari"
                     } else {
-                        return data
+                        return "Rentang Hari"
                     }
                 }
+            },
+            {
+                data: 'operation_date_start',
+            },
+            {
+                data: 'operation_date_end',
             },
             {
                 data: 'uuid',
@@ -225,7 +233,7 @@ $(document).ready(function () {
                 render: function(data, type, row) {
                     return `
                     <div class="ubah-change">
-                        <a href="`+route('report_download_excel', data)+`" id="btnDownload" data-id="`+data+`">UNDUH</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#" id="btnEdit" data-id="`+data+`">EDIT</a>
+                        <a href="`+route('report_download_excel', data)+`" id="btnDownload" data-id="`+data+`">Unduh</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#" id="btnEdit" data-id="`+data+`">Edit</a>
                     </div>
                     `;
                 },

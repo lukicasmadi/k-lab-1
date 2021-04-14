@@ -15,4 +15,14 @@ class DailyRekap extends Model
     {
         return $this->belongsTo(RencanaOperasi::class, 'rencana_operasi_id', 'id');
     }
+
+    public function poldaData()
+    {
+        return $this->belongsTo(Polda::class, "polda", "id");
+    }
+
+    public function poldaFilter()
+    {
+        return $this->polda()->where('name', '!=', 'polda_all');
+    }
 }
