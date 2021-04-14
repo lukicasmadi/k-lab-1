@@ -8,6 +8,13 @@ use App\Models\UserHasPolda;
 use App\Models\PoldaSubmited;
 use App\Models\RencanaOperasi;
 
+
+if (! function_exists('nowToday')) {
+    function nowToday() {
+        return now()->format("Y-m-d");
+    }
+}
+
 if (! function_exists('extractDateRange')) {
     function extractDateRange($start, $end) {
         return CarbonPeriod::create($start, $end);

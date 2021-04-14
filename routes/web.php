@@ -37,8 +37,6 @@ Route::group(['middleware' => 'auth'], function () {
         ]);
     });
 
-    Route::get('/report/download/{uuid}', 'ReportController@downloadExcel')->name('report_download_excel');
-
     // Route Hanya Bisa Diakses Oleh Administrator atau Korlantas Pusat
     Route::group(['middleware' => 'admin-or-pusat-only'], function () {
         Route::get('/today', 'ReportController@downloadReportToday')->name('report_today');
@@ -151,6 +149,8 @@ Route::group(['middleware' => 'auth'], function () {
     //UPGRADE BRANCH
     Route::post('/daily-rekap/create', 'DailyRekapController@store')->name('daily_rekap_store');
     Route::post('/daily-rekap/update', 'DailyRekapController@update')->name('daily_rekap_update');
+    // Route::get('/report/download/{uuid}', 'ReportController@downloadExcel')->name('report_download_excel');
+    Route::get('/daily-rekap/excel/{uuid}', 'DailyRekapController@dailyRekapExcel')->name('daily_dowmload_excel');
 
     Route::group(['prefix' => 'data'], function () {
         Route::get('/category', 'CategoryController@data')->name('category_data');

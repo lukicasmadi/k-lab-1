@@ -2,14 +2,50 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\NewExport;
 use App\Models\DailyRekap;
 use Illuminate\Http\Request;
 use App\Models\RencanaOperasi;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\DailyRekapRequest;
 use App\Http\Requests\DailyRekapEditRequest;
 
 class DailyRekapController extends Controller
 {
+
+    public function dailyRekapExcel($uuid)
+    {
+        $model = DailyRekap::with(['rencanaOperasi', 'poldaData'])->where('uuid', $uuid)->first();
+
+        if(empty($model)) {
+            flash('Laporan tidak ditemukan. Pastikan filter yang anda atur sudah sesuai!')->warning();
+            return redirect()->back();
+        }
+
+        $polda = $model->polda;
+        $year = $model->year;
+        $rencana_operartion_id = $model->rencana_operasi_id;
+        $config_date = $model->config_date;
+        $start_date = $model->operation_date_start;
+        $end_date = $model->operation_date_end;
+        $prevYear = $year - 1;
+
+        $outputPrev = reportDailyPrev($polda, $prevYear, $rencana_operartion_id, $config_date, $start_date, $end_date);
+        $outputCurrent = reportDailyCurrent($polda, $year, $rencana_operartion_id, $config_date, $start_date, $end_date);
+
+        logger($outputPrev);
+        logger($outputCurrent);
+
+        return "OK";
+
+        // $filename = 'report-'.nowToday().'.xlsx';
+
+        // return Excel::download(new NewExport(
+        //     $outputPrev,
+        //     $outputCurrent,
+        // ), $filename);
+    }
+
     public function dailyRekapShowWithInput($uuid)
     {
         $model = DailyRekap::with(['rencanaOperasi', 'poldaData'])->where('uuid', $uuid)->first();

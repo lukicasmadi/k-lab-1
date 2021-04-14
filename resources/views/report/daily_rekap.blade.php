@@ -234,7 +234,7 @@ $(document).ready(function () {
                 render: function(data, type, row) {
                     return `
                     <div class="ubah-change">
-                        <a href="`+route('report_download_excel', data)+`" id="btnDownload" data-id="`+data+`">Unduh</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#" id="btnEdit" data-id="`+data+`">Edit</a>
+                        <a href="`+route('daily_dowmload_excel', data)+`" id="btnDownload" data-id="`+data+`">Unduh</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#" id="btnEdit" data-id="`+data+`">Edit</a>
                     </div>
                     `;
                 },
