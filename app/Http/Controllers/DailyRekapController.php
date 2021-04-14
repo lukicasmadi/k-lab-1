@@ -10,6 +10,32 @@ use App\Http\Requests\DailyRekapEditRequest;
 
 class DailyRekapController extends Controller
 {
+    public function dailyRekapShowWithInput($uuid)
+    {
+        $model = DailyRekap::with(['rencanaOperasi', 'poldaData'])->where('uuid', $uuid)->first();
+
+        if(empty($model)) {
+            abort(404);
+        }
+
+        $polda = $model->polda;
+        $year = $model->year;
+        $rencana_operartion_id = $model->rencana_operasi_id;
+        $config_date = $model->config_date;
+        $start_date = $model->operation_date_start;
+        $end_date = $model->operation_date_end;
+        $prevYear = $year - 1;
+
+        $outputPrev = reportDailyPrev($polda, $prevYear, $rencana_operartion_id, $config_date, $start_date, $end_date);
+        $outputCurrent = reportDailyCurrent($polda, $year, $rencana_operartion_id, $config_date, $start_date, $end_date);
+
+        return [
+            'dailyInput' => $outputCurrent,
+            'dailyInputPrev' => $outputPrev,
+            'yearNow' => date("Y"),
+            'yearPrev' => date("Y") - 1,
+        ];
+    }
 
     public function dailyRekapShow($uuid)
     {
@@ -18,8 +44,6 @@ class DailyRekapController extends Controller
         if(empty($model)) {
             abort(404);
         }
-
-        logger($model);
 
         return $model;
     }
