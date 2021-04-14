@@ -249,7 +249,6 @@ $('body').on('click', '#btnView', function(e) {
     e.preventDefault()
     var uuid = $(this).attr('data-id')
 
-    // axios.get(route('korlantas_rekap_data_byuuid', uuid)).then(function(response) {
     axios.get(route('daily_rekap_show_with_input', uuid)).then(function(response) {
 
         $("#idTahunPrev").html(response.data.yearPrev)
