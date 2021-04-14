@@ -157,6 +157,7 @@ $(document).ready(function () {
     var table = $('#tbl_rekap_daily').DataTable({
         processing: true,
         serverSide: true,
+        searchDelay: 2000,
         columnDefs: [
             {
                 className: "tengah", "targets": [6]
