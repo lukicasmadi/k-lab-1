@@ -58,7 +58,7 @@
                                 </button>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                                     <div class="row imgpopup">
-                                        <img src="{{ secure_asset('/img/line_popbottom.png') }}">
+                                        <img src="{{ asset('/img/line_popbottom.png') }}">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -114,7 +114,7 @@
                                 <span class="colorblue">ALIAS RENCANA OPERASI</span>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-1 mb-n3">
                                     <div class="row imgpopup">
-                                        <img src="{{ secure_asset('/img/line_popbottom.png') }}">
+                                        <img src="{{ asset('/img/line_popbottom.png') }}">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -140,16 +140,16 @@
 @endsection
 
 @push('library_css')
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/datatables.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/dt-global_style.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/components/custom-sweetalert.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/custom.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/table/datatable/datatables.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/table/datatable/dt-global_style.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/sweetalerts/sweetalert2.min.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('template/assets/css/components/custom-sweetalert.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('template/custom.css') }}">
 @endpush
 
 @push('library_js')
-<script src="{{ secure_asset('template/plugins/table/datatable/datatables.js') }}"></script>
-<script src="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
+<script src="{{ asset('template/plugins/table/datatable/datatables.js') }}"></script>
+<script src="{{ asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
 @endpush
 
 @push('page_js')
@@ -209,7 +209,7 @@ $(document).ready(function () {
                     return `
                     <div class="icon-container text-center">
                         <a href="#" class="viewData" idval="`+data+`">
-                            <img src="{{ secure_asset('/img/search.png') }}" width="55%">
+                            <img src="{{ asset('/img/search.png') }}" width="55%">
                         </a>
                     </div>
                     `;

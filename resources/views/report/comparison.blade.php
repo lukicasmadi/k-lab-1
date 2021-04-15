@@ -2063,7 +2063,7 @@
 
         <div class="col-lg-8 col-12 d-none" id="panelLoading">
             <div class="centerContent">
-                <img src="{{ secure_asset('template/assets/img/loader.gif') }}" alt="" srcset="">
+                <img src="{{ asset('template/assets/img/loader.gif') }}" alt="" srcset="">
             </div>
         </div>
     </div>
@@ -2084,17 +2084,17 @@
 @endsection
 
 @push('library_css')
-<link href="{{ secure_asset('template/plugins/flatpickr/flatpickr.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ secure_asset('template/plugins/flatpickr/custom-flatpickr.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ secure_asset('template/plugins/bootstrap-range-Slider/bootstrap-slider.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ secure_asset('template/custom.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('template/plugins/flatpickr/flatpickr.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('template/plugins/flatpickr/custom-flatpickr.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('template/plugins/bootstrap-range-Slider/bootstrap-slider.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('template/plugins/sweetalerts/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('template/custom.css') }}" rel="stylesheet" type="text/css">
 @endpush
 
 @push('library_js')
-<script src="{{ secure_asset('template/plugins/flatpickr/flatpickr.js') }}"></script>
-<script src="{{ secure_asset('template/plugins/bootstrap-range-Slider/bootstrap-rangeSlider.js') }}"></script>
-<script src="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
+<script src="{{ asset('template/plugins/flatpickr/flatpickr.js') }}"></script>
+<script src="{{ asset('template/plugins/bootstrap-range-Slider/bootstrap-rangeSlider.js') }}"></script>
+<script src="{{ asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
 @endpush
 
 @push('page_js')

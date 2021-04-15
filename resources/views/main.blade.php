@@ -21,7 +21,7 @@
                     <div class="cols-sm-1">
                         <div class="grid-polda line @if (empty($val->dailyInput)) glowred @else glowblue @endif">
                             <p>{{ $val->short_name }}</p>
-                            <img src="{{ secure_asset('/img/polda/'.$val->logo) }}">
+                            <img src="{{ asset('/img/polda/'.$val->logo) }}">
                         </div>
                     </div>
                 @endif
@@ -34,7 +34,7 @@
                     <div class="cols-sm-1">
                         <div class="grid-polda line @if (empty($val->dailyInput)) glowred @else glowblue @endif">
                             <p>{{ $val->short_name }}</p>
-                            <img src="{{ secure_asset('/img/polda/'.$val->logo) }}">
+                            <img src="{{ asset('/img/polda/'.$val->logo) }}">
                         </div>
                     </div>
                 @endif
@@ -42,7 +42,7 @@
         </div>
 
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mb-n22">
-            <img src="{{ secure_asset('/img/line-poldaup.png') }}" width="100%">
+            <img src="{{ asset('/img/line-poldaup.png') }}" width="100%">
         </div>
 
         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
@@ -58,7 +58,7 @@
                 </div>
                 <div class="widget-content" style="margin-top: 5%;">
                     <div class="mx-auto">
-                         <img class="poldametro" src="{{ secure_asset('/img/polda/mabes.png') }}">
+                         <img class="poldametro" src="{{ asset('/img/polda/mabes.png') }}">
                         <div id="donut-chart" class=""></div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
         </div>
 
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-n22">
-            <img src="{{ secure_asset('/img/line-polda.png') }}" width="100%">
+            <img src="{{ asset('/img/line-polda.png') }}" width="100%">
         </div>
 
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
@@ -116,7 +116,7 @@
         </div>
 
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-n3">
-            <img src="{{ secure_asset('/img/line-poldaup.png') }}" width="100%">
+            <img src="{{ asset('/img/line-poldaup.png') }}" width="100%">
         </div>
 
         <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
@@ -188,20 +188,20 @@
 @endsection
 
 @push('library_js')
-<script src="{{ secure_asset('template/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-<script src="{{ secure_asset('template/plugins/apex/apexcharts.min.js') }}"></script>
-<script src="{{ secure_asset('template/plugins/table/datatable/datatables.js') }}"></script>
+<script src="{{ asset('template/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+<script src="{{ asset('template/plugins/apex/apexcharts.min.js') }}"></script>
+<script src="{{ asset('template/plugins/table/datatable/datatables.js') }}"></script>
 <script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
 @endpush
 
 @push('library_css')
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/datatables.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/dt-global_style.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/apex/apexcharts.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/dashboard/dash_2.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/animate/animate.css') }}"/>
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/components/custom-modal.css') }}"/>
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/custom.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/table/datatable/datatables.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/table/datatable/dt-global_style.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/apex/apexcharts.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('template/assets/css/dashboard/dash_2.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/animate/animate.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('template/assets/css/components/custom-modal.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('template/custom.css') }}"/>
 @endpush
 
 @push('page_css')
@@ -1044,7 +1044,7 @@ function loadDataTable() {
                         return `
                         <div class="icon-container">
                             <a href="`+route('previewPhroDashboard', data)+`" class="previewPhro" data-id="`+data+`">
-                            <img src="{{ secure_asset('/img/search.png') }}" width="55%">
+                            <img src="{{ asset('/img/search.png') }}" width="55%">
                             </a>
                         </div>
                         `;

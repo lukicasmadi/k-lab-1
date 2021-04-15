@@ -11,7 +11,7 @@
 
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-popup">
                             <div class="row imgpopup">
-                                <img src="{{ secure_asset('/img/line_popbottom.png') }}">
+                                <img src="{{ asset('/img/line_popbottom.png') }}">
                             </div>
                         </div>
 

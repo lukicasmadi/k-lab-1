@@ -111,5 +111,5 @@
 @endsection
 
 @push('page_css')
-<link rel="stylesheet" href="{{ secure_asset('template/custom.css') }}">
+<link rel="stylesheet" href="{{ asset('template/custom.css') }}">
 @endpush

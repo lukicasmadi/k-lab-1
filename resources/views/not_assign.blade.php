@@ -8,9 +8,9 @@
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
-    <link href="{{ secure_asset('template/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ secure_asset('template/assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ secure_asset('template/assets/css/pages/error/style-400.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('template/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('template/assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('template/assets/css/pages/error/style-400.css') }}" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
 
 </head>
@@ -31,9 +31,9 @@
         </div>
     </div>
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-    <script src="{{ secure_asset('template/assets/js/libs/jquery-3.1.1.min.js') }}"></script>
-    <script src="{{ secure_asset('template/bootstrap/js/popper.min.js') }}"></script>
-    <script src="{{ secure_asset('template/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('template/assets/js/libs/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ asset('template/bootstrap/js/popper.min.js') }}"></script>
+    <script src="{{ asset('template/bootstrap/js/bootstrap.min.js') }}"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 </body>
 </html>

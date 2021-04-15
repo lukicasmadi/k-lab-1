@@ -4,7 +4,7 @@
         <ul class="navbar-nav theme-brand flex-row  text-center">
             <li class="nav-item theme-logo">
                 <a href="index.html">
-                    <img src="{{ secure_asset('img/logo-korlantas.png') }}" class="navbar-logo" alt="logo">
+                    <img src="{{ asset('img/logo-korlantas.png') }}" class="navbar-logo" alt="logo">
                 </a>
             </li>
             <li class="nav-item theme-text">

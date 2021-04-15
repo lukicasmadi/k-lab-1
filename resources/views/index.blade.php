@@ -7,7 +7,7 @@
             <div class="col-sm-12">
                 <div class="page-header">
                 <div class="col-sm-6 head-logo">
-                    <img src="{{ secure_asset('/img/korlantas.png') }}">
+                    <img src="{{ asset('/img/korlantas.png') }}">
                     <h3>korlantas polri</h3>
                 </div>
             <div class="toggle-switch">
@@ -31,11 +31,11 @@
             </div>
         </div>
             <div class="col-sm-8 offset-md-2">
-                <img class="logo-presisi" src="{{ secure_asset('/img/presisi.png') }}">
+                <img class="logo-presisi" src="{{ asset('/img/presisi.png') }}">
             </div>
             <div class="col-sm-2 offset-md-5">
             <a href="{{ route('login') }}">
-                <img class="button-login" src="{{ secure_asset('/img/loginon.png') }}">
+                <img class="button-login" src="{{ asset('/img/loginon.png') }}">
                 <div class="text-center text-login">Login</div>
             </a>
             </div>
@@ -61,7 +61,7 @@
                 </div>
                 {{-- <div class="text-right more-article">
                     <a href="/article/all">
-                        Lihat Selangkapnya <img src="{{ secure_asset('/img/chevron_big_left.png') }}">
+                        Lihat Selangkapnya <img src="{{ asset('/img/chevron_big_left.png') }}">
                     </a>
                 </div> --}}
                 <div class="row">

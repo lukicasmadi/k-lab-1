@@ -29,7 +29,7 @@
                         <p class="tgl-lapor">{{ dayNameIndonesia(now()) }}, {{ indonesianDate(now()) }} | {{ timeOnly(now()) }}</p>
                     </div>
                 @endif
-                <img class="imgdetail-polda" src="{{ secure_asset('/img/polda/'.poldaImage()->polda->logo) }}">
+                <img class="imgdetail-polda" src="{{ asset('/img/polda/'.poldaImage()->polda->logo) }}">
             </div>
             <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -124,17 +124,17 @@
 @endsection
 
 @push('library_css')
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/datatables.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/dt-global_style.css') }}">
-<!-- <link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/apex/apexcharts.css') }}" /> -->
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/dashboard/dash_2.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/animate/animate.css') }}"/>
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/custom.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/table/datatable/datatables.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/table/datatable/dt-global_style.css') }}">
+<!-- <link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/apex/apexcharts.css') }}" /> -->
+<link rel="stylesheet" type="text/css" href="{{ asset('template/assets/css/dashboard/dash_2.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/animate/animate.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('template/custom.css') }}">
 @endpush
 
 @push('library_js')
-<script src="{{ secure_asset('template/plugins/table/datatable/datatables.js') }}"></script>
-<script src="{{ secure_asset('template/plugins/apex/apexcharts.min.js') }}"></script>
+<script src="{{ asset('template/plugins/table/datatable/datatables.js') }}"></script>
+<script src="{{ asset('template/plugins/apex/apexcharts.min.js') }}"></script>
 @endpush
 
 @push('page_css')
@@ -221,7 +221,7 @@ $(document).ready(function () {
                     return `
                     <div class="icon-container text-center">
                         <a href="`+route('previewPhro', data)+`" class="previewPhro" data-id="`+data+`">
-                        <img src="{{ secure_asset('/img/search.png') }}" width="55%">
+                        <img src="{{ asset('/img/search.png') }}" width="55%">
                         </a>
                     </div>
                     `;
@@ -801,7 +801,7 @@ function donutDataWeekly() {
             showForNullSeries: true,
             showForZeroSeries: true,
             position: 'bottom',
-            horizontalAlign: 'center', 
+            horizontalAlign: 'center',
             floating: false,
             fontSize: '10px',
             fontFamily: 'Bahnschrift',
@@ -895,7 +895,7 @@ function donutDataWeekly() {
             lineCap: 'butt',
             colors: undefined,
             width: 1,
-            dashArray: 0,      
+            dashArray: 0,
         },
         series: [filled, nofilled],
         labels: ['&nbsp;[ MASUK ]', '&nbsp;[ BELUM MASUK ]'],
@@ -943,7 +943,7 @@ function donutDataFull() {
             showForNullSeries: true,
             showForZeroSeries: true,
             position: 'bottom',
-            horizontalAlign: 'center', 
+            horizontalAlign: 'center',
             floating: false,
             fontSize: '10px',
             fontFamily: 'Bahnschrift',
@@ -1037,7 +1037,7 @@ function donutDataFull() {
             lineCap: 'butt',
             colors: undefined,
             width: 1,
-            dashArray: 0,      
+            dashArray: 0,
         },
         series: [filled, nofilled],
         labels: ['&nbsp;[ MASUK ]', '&nbsp;[ BELUM MASUK ]'],

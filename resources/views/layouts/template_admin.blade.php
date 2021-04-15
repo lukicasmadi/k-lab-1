@@ -5,20 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>SISLAPOPS</title>
-    <link rel="icon" type="image/x-icon" href="{{ secure_asset('template/assets/img/korlantas.png') }}"/>
-    <link href="{{ secure_asset('template/assets/css/loader.css') }}" rel="stylesheet" type="text/css" />
-    <script src="{{ secure_asset('template/assets/js/loader.js') }}"></script>
+    <link rel="icon" type="image/x-icon" href="{{ asset('template/assets/img/korlantas.png') }}"/>
+    <link href="{{ asset('template/assets/css/loader.css') }}" rel="stylesheet" type="text/css" />
+    <script src="{{ asset('template/assets/js/loader.js') }}"></script>
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="{{ secure_asset('template/assets/font/stylesheet.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ secure_asset('template/bootstrap/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ secure_asset('template/fontawesome5.15.1/css/all.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ secure_asset('template/assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ secure_asset('template/assets/css/bootstrap-tour.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ secure_asset('template/plugins/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ secure_asset('template/assets/css/components/tabs-accordian/custom-accordions.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('template/assets/font/stylesheet.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('template/bootstrap/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('template/fontawesome5.15.1/css/all.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('template/assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('template/assets/css/bootstrap-tour.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('template/plugins/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('template/assets/css/components/tabs-accordian/custom-accordions.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css">
-    <link rel="stylesheet" href="{{ secure_asset('template/flash.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/flash.css') }}">
     <!-- END GLOBAL MANDATORY STYLES -->
     @stack('library_css')
     @stack('page_css')
@@ -53,18 +53,18 @@
     <!-- END MAIN CONTAINER -->
 
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-    <script src="{{ secure_asset('template/assets/js/libs/jquery-3.1.1.min.js') }}"></script>
-    <script src="{{ secure_asset('template/bootstrap/js/popper.min.js') }}"></script>
-    <script src="{{ secure_asset('template/bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ secure_asset('js/app.js') }}"></script>
-    <script src="{{ secure_asset('template/assets/js/custom.js') }}"></script>
-    <script src="{{ secure_asset('template/globalfunction.js') }}"></script>
-    <script src="{{ secure_asset('template/assets/js/app.js') }}"></script>
-    <script src="{{ secure_asset('template/plugins/select2/select2.min.js') }}"></script>
-    <script src="{{ secure_asset('template/assets/js/components/ui-accordions.js') }}"></script>
+    <script src="{{ asset('template/assets/js/libs/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ asset('template/bootstrap/js/popper.min.js') }}"></script>
+    <script src="{{ asset('template/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('template/assets/js/custom.js') }}"></script>
+    <script src="{{ asset('template/globalfunction.js') }}"></script>
+    <script src="{{ asset('template/assets/js/app.js') }}"></script>
+    <script src="{{ asset('template/plugins/select2/select2.min.js') }}"></script>
+    <script src="{{ asset('template/assets/js/components/ui-accordions.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
-    {{-- <script src="{{ secure_asset('template/assets/js/bootstrap-tour.min.js') }}"></script>
-    <script src="{{ secure_asset('template/assets/js/script.js') }}"></script> --}}
+    {{-- <script src="{{ asset('template/assets/js/bootstrap-tour.min.js') }}"></script>
+    <script src="{{ asset('template/assets/js/script.js') }}"></script> --}}
     <script>
         $(document).ready(function() {
             App.init();

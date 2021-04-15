@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-sm-3">
             <div class="col-sm-12 mt-30 head-logo">
-                <img src="{{ secure_asset('/img/korlantas.png') }}">
+                <img src="{{ asset('/img/korlantas.png') }}">
                 <h3>korlantas polri</h3>
             </div>
         </div>
@@ -24,7 +24,7 @@
                     <h3 class="login-arc">login</h3>
                 </a>
                 <a href="{{ route('home') }}">
-                    <h3 class="colorback login-back"><img src="{{ secure_asset('/img/chevron_big_right.png') }}"> kembali</h3>
+                    <h3 class="colorback login-back"><img src="{{ asset('/img/chevron_big_right.png') }}"> kembali</h3>
                 </a>
             </div>
         </div>
@@ -32,7 +32,7 @@
     <div class="col-sm-12">
         <div class="row">
             <div class="col-sm-12 style-3">
-                <img src="{{ secure_asset('/img/article/img_20200110.jpg') }}">
+                <img src="{{ asset('/img/article/img_20200110.jpg') }}">
             </div>
             <div class="col-sm-12">
                 <div class="head-logo">
@@ -42,7 +42,7 @@
                     <div class="col-sm-4">
                         <div class="col-sm-12 home-article">
                             <a href="/article/detail">
-                                <img src="{{ secure_asset('/img/article/img_20200113.jpg') }}">
+                                <img src="{{ asset('/img/article/img_20200113.jpg') }}">
                                 <p>
                                 <label>Senin, 10 Apr 2021</label>
                                 korlantas pimpin pemberangkatan tim pamatwil operasi lilin tahun 2020
@@ -53,7 +53,7 @@
                     <div class="col-sm-4">
                         <div class="col-sm-12 home-article">
                         <a href="/article/detail">
-                            <img src="{{ secure_asset('/img/article/img_20200110.jpg') }}">
+                            <img src="{{ asset('/img/article/img_20200110.jpg') }}">
                             <p>
                             <label>Senin, 10 Apr 2021</label>
                             korlantas pimpin pemberangkatan tim pamatwil operasi lilin tahun 2020
@@ -64,7 +64,7 @@
                     <div class="col-sm-4">
                         <div class="col-sm-12 home-article">
                             <a href="/article/detail">
-                                <img src="{{ secure_asset('/img/article/img_20200111.jpg') }}">
+                                <img src="{{ asset('/img/article/img_20200111.jpg') }}">
                                 <p>
                                 <label>Senin, 10 Apr 2021</label>
                                 korlantas pimpin pemberangkatan tim pamatwil operasi lilin tahun 2020
@@ -80,7 +80,7 @@
                     <div class="col-sm-4">
                         <div class="col-sm-12 home-article">
                             <a href="/article/detail">
-                                <img src="{{ secure_asset('/img/article/img_20200113.jpg') }}">
+                                <img src="{{ asset('/img/article/img_20200113.jpg') }}">
                                 <p>
                                 <label>Senin, 10 Apr 2021</label>
                                 korlantas pimpin pemberangkatan tim pamatwil operasi lilin tahun 2020
@@ -91,7 +91,7 @@
                     <div class="col-sm-4">
                         <div class="col-sm-12 home-article">
                         <a href="/article/detail">
-                            <img src="{{ secure_asset('/img/article/img_20200110.jpg') }}">
+                            <img src="{{ asset('/img/article/img_20200110.jpg') }}">
                             <p>
                             <label>Senin, 10 Apr 2021</label>
                             korlantas pimpin pemberangkatan tim pamatwil operasi lilin tahun 2020
@@ -102,7 +102,7 @@
                     <div class="col-sm-4">
                         <div class="col-sm-12 home-article">
                             <a href="/article/detail">
-                                <img src="{{ secure_asset('/img/article/img_20200111.jpg') }}">
+                                <img src="{{ asset('/img/article/img_20200111.jpg') }}">
                                 <p>
                                 <label>Senin, 10 Apr 2021</label>
                                 korlantas pimpin pemberangkatan tim pamatwil operasi lilin tahun 2020
@@ -115,7 +115,7 @@
                     <div class="col-sm-4">
                         <div class="col-sm-12 home-article">
                             <a href="/article/detail">
-                                <img src="{{ secure_asset('/img/article/img_20200113.jpg') }}">
+                                <img src="{{ asset('/img/article/img_20200113.jpg') }}">
                                 <p>
                                 <label>Senin, 10 Apr 2021</label>
                                 korlantas pimpin pemberangkatan tim pamatwil operasi lilin tahun 2020
@@ -126,7 +126,7 @@
                     <div class="col-sm-4">
                         <div class="col-sm-12 home-article">
                         <a href="/article/detail">
-                            <img src="{{ secure_asset('/img/article/img_20200110.jpg') }}">
+                            <img src="{{ asset('/img/article/img_20200110.jpg') }}">
                             <p>
                             <label>Senin, 10 Apr 2021</label>
                             korlantas pimpin pemberangkatan tim pamatwil operasi lilin tahun 2020
@@ -137,7 +137,7 @@
                     <div class="col-sm-4">
                         <div class="col-sm-12 home-article">
                             <a href="/article/detail">
-                                <img src="{{ secure_asset('/img/article/img_20200111.jpg') }}">
+                                <img src="{{ asset('/img/article/img_20200111.jpg') }}">
                                 <p>
                                 <label>Senin, 10 Apr 2021</label>
                                 korlantas pimpin pemberangkatan tim pamatwil operasi lilin tahun 2020

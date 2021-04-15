@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="col-sm-12 mt-30 head-logo">
-                <img src="{{ secure_asset('/img/korlantas.png') }}">
+                <img src="{{ asset('/img/korlantas.png') }}">
                 <h3>korlantas polri</h3>
             </div>
         </div>
@@ -16,7 +16,7 @@
             <div class="col-sm-8">
                 <div class="head-logo">
                     <a href="{{ route('home') }}">
-                        <h3><img src="{{ secure_asset('/img/chevron_big_right.png') }}"> <span>Kembali ke halaman utama</span></h3>
+                        <h3><img src="{{ asset('/img/chevron_big_right.png') }}"> <span>Kembali ke halaman utama</span></h3>
                     </a>
                 </div>
                 <br>
@@ -43,7 +43,7 @@
                     </div>
                 @endforeach
 
-                {{-- <div class="text-right more-sidebar">Lihat Selangkapnya <img src="{{ secure_asset('/img/chevron_big_right.png') }}"></div> --}}
+                {{-- <div class="text-right more-sidebar">Lihat Selangkapnya <img src="{{ asset('/img/chevron_big_right.png') }}"></div> --}}
 
             </div>
         </div>

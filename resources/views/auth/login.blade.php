@@ -8,11 +8,11 @@
         <div class="col-sm-12">
             <div class="col-sm-12 head-logo">
                 <a href="{{ route('home') }}">
-                    <h3 class="colorback"><img src="{{ secure_asset('/img/chevron_big_right.png') }}"> kembali</h3>
+                    <h3 class="colorback"><img src="{{ asset('/img/chevron_big_right.png') }}"> kembali</h3>
                 </a>
             </div>
             <div class="col-sm-4 offset-md-4">
-                <img class="logo-login" src="{{ secure_asset('/img/korlantas.png') }}">
+                <img class="logo-login" src="{{ asset('/img/korlantas.png') }}">
             </div>
             <div class="text-center">
         <h1 class="text-logo">SISTEM PELAPORAN</h1>

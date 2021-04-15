@@ -66,16 +66,16 @@
 @endsection
 
 @push('library_css')
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/datatables.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/dt-global_style.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/forms/theme-checkbox-radio.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/custom.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/table/datatable/datatables.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/table/datatable/dt-global_style.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('template/assets/css/forms/theme-checkbox-radio.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('template/custom.css') }}">
 @endpush
 
 @push('library_js')
-<script src="{{ secure_asset('template/plugins/table/datatable/datatables.js') }}"></script>
-<script src="{{ secure_asset('template/plugins/table/datatable/datatables.js') }}"></script>
-<script src="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
+<script src="{{ asset('template/plugins/table/datatable/datatables.js') }}"></script>
+<script src="{{ asset('template/plugins/table/datatable/datatables.js') }}"></script>
+<script src="{{ asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
 @endpush
 
 @push('page_js')
@@ -93,7 +93,7 @@ $(document).ready(function() {
             },
             "sInfo": "",
             "sInfoFiltered": "",
-            "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> <img src="{{ secure_asset("/img/cloud_down.png") }}">',
+            "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> <img src="{{ asset("/img/cloud_down.png") }}">',
             "sSearchPlaceholder": "CARI DATA...",
             "sLengthMenu": "",
             "sProcessing": '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>',

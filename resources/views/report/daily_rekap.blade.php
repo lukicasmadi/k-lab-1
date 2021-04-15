@@ -65,18 +65,18 @@
 @endsection
 
 @push('library_css')
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/datatables.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/table/datatable/dt-global_style.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/assets/css/components/custom-sweetalert.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/custom.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ secure_asset('template/datepicker/css/bootstrap-datepicker.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/table/datatable/datatables.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/table/datatable/dt-global_style.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/sweetalerts/sweetalert2.min.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('template/assets/css/components/custom-sweetalert.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('template/custom.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('template/datepicker/css/bootstrap-datepicker.min.css') }}">
 @endpush
 
 @push('library_js')
-<script src="{{ secure_asset('template/plugins/table/datatable/datatables.js') }}"></script>
-<script src="{{ secure_asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
-<script src="{{ secure_asset('template/datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="{{ asset('template/plugins/table/datatable/datatables.js') }}"></script>
+<script src="{{ asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
+<script src="{{ asset('template/datepicker/js/bootstrap-datepicker.min.js') }}"></script>
 @endpush
 
 @push('page_js')
@@ -221,7 +221,7 @@ $(document).ready(function () {
                     return `
                     <div class="icon-container">
                         <a href="#" id="btnView" data-id="`+data+`">
-                            <img src="{{ secure_asset('/img/search.png') }}" width="45%">
+                            <img src="{{ asset('/img/search.png') }}" width="45%">
                         </a>
                     </div>
                     `;

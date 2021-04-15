@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="col-sm-12 mt-30 head-logo">
-                <img src="{{ secure_asset('/img/korlantas.png') }}" />
+                <img src="{{ asset('/img/korlantas.png') }}" />
                 <h3>korlantas polri</h3>
             </div>
         </div>
@@ -16,7 +16,7 @@
             <div class="outgap">
                 <div class="workarea">
                     <div class="center;">
-                        <img class="polwan" src="{{ secure_asset('/img/polwan.png') }}" />
+                        <img class="polwan" src="{{ asset('/img/polwan.png') }}" />
                         <h3>SELAMAT DATANG DI SISTEM</h3>
                         <h3>PELAPORAN OPERASI ONLINE BIDANG</h3>
                         <h3>LALU LINTAS KORLANTAS POLRI</h3>

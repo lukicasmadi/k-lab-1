@@ -72,17 +72,17 @@
 @endsection
 
 @push('library_css')
-{{-- <link rel="stylesheet" href="{{ secure_asset('template/plugins/editors/markdown/simplemde.min.css') }}"> --}}
-<link rel="stylesheet" href="{{ secure_asset('template/ckeditor5/sample/styles.css') }}">
+{{-- <link rel="stylesheet" href="{{ asset('template/plugins/editors/markdown/simplemde.min.css') }}"> --}}
+<link rel="stylesheet" href="{{ asset('template/ckeditor5/sample/styles.css') }}">
 @endpush
 
 @push('library_js')
-{{-- <script src="{{ secure_asset('template/plugins/editors/markdown/simplemde.min.js') }}"></script> --}}
-<script src="{{ secure_asset('template/ckeditor5/build/ckeditor.js') }}"></script>
+{{-- <script src="{{ asset('template/plugins/editors/markdown/simplemde.min.js') }}"></script> --}}
+<script src="{{ asset('template/ckeditor5/build/ckeditor.js') }}"></script>
 @endpush
 
 @push('page_css')
-<link rel="stylesheet" href="{{ secure_asset('template/custom.css') }}">
+<link rel="stylesheet" href="{{ asset('template/custom.css') }}">
 @endpush
 
 @push('page_js')
