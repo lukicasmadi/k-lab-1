@@ -237,18 +237,22 @@
     $(document).ready(function () {
         $('#tanggal_mulai').datepicker({
             format: 'dd-mm-yyyy',
+            todayHighlight: true,
         })
 
         $('#tanggal_selesai').datepicker({
             format: 'dd-mm-yyyy',
+            todayHighlight: true,
         })
 
         $('#edit_tanggal_mulai').datepicker({
             format: 'dd-mm-yyyy',
+            todayHighlight: true,
         })
 
         $('#edit_tanggal_selesai').datepicker({
             format: 'dd-mm-yyyy',
+            todayHighlight: true,
         })
 
         $('#notesMailModal').on('hidden.bs.modal', function () {
