@@ -37,14 +37,16 @@
                             </select>
                         </div>
 
-                        <div class="form-group pembanding d-none">
-                            <label class="text-popup">Pilih Hari Pembanding 1</label>
-                            <input id="tanggal_pembanding_1" name="tanggal_pembanding_1" class="form-control popoups inp-icon flatpickr flatpickr-input active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
-                        </div>
+                        <div class="blocked">
+                            <div class="form-group pembanding d-none">
+                                <label class="text-popup">Pilih Hari Pembanding 1</label>
+                                <input id="tanggal_pembanding_1" name="tanggal_pembanding_1" class="form-control popoups inp-icon flatpickr flatpickr-input active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                            </div>
 
-                        <div class="form-group pembanding d-none">
-                            <label class="text-popup">Pilih Hari Pembanding 2</label>
-                            <input id="tanggal_pembanding_2" name="tanggal_pembanding_2" class="form-control popoups inp-icon flatpickr flatpickr-input active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                            <div class="form-group pembanding d-none">
+                                <label class="text-popup">Pilih Hari Pembanding 2</label>
+                                <input id="tanggal_pembanding_2" name="tanggal_pembanding_2" class="form-control popoups inp-icon flatpickr flatpickr-input active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                            </div>
                         </div>
 
                         <input type="submit" name="btnUnduhData" id="btnUnduhData" class="mt-4 mb-4 btn btn-primary" value="Unduh Data">
