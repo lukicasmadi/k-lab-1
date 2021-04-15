@@ -36,7 +36,7 @@ class DailyRekapController extends Controller
         // $outputCurrent = reportDailyCurrent($polda, $year, $rencana_operartion_id, $config_date, $start_date, $end_date);
 
         $excelPath = public_path('template/excel');
-        $excelTemplate = $excelPath."/format_laporan_operasi_2021.xlsx";
+        $excelTemplate = $excelPath."/format_laporan_operasi_2021";
 
         //load spreadsheet
         $spreadsheet = IOFactory::load($excelTemplate);
