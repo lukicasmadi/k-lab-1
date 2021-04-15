@@ -194,18 +194,18 @@
 
                                 if(isAdmin()) {
                                     if(empty($user->avatar)) {
-                                        echo "<img src='".secure_asset('img/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";
+                                        echo "<img src='".asset('img/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";
                                     } else {
-                                        echo "<img src='".secure_asset('storage/upload/profile/'.$user->avatar)."' class='img-fluid' alt='admin-profile' />";
+                                        echo "<img src='".asset('storage/upload/profile/'.$user->avatar)."' class='img-fluid' alt='admin-profile' />";
                                     }
                                 }
 
                                 if(isPusat()) {
-                                    echo "<img src='".secure_asset('img/polda/mabes.png')."' class='img-fluid' alt='admin-profile' />";
+                                    echo "<img src='".asset('img/polda/mabes.png')."' class='img-fluid' alt='admin-profile' />";
                                 }
 
                                 if(isPolda()) {
-                                    echo "<img src='".secure_asset('img/polda/'.poldaImage()->polda->logo)."' class='img-fluid' alt='admin-profile' />";
+                                    echo "<img src='".asset('img/polda/'.poldaImage()->polda->logo)."' class='img-fluid' alt='admin-profile' />";
                                 }
                             }
                         @endphp
