@@ -76,6 +76,11 @@ $(document).ready(function () {
         $("input[type=number]").val(randomNum)
         $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
     }
+    if(location.hostname == "http://188.166.178.178") {
+        let randomNum = Math.floor((Math.random() * 10) + 1)
+        $("input[type=number]").val(randomNum)
+        $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
+    }
     // swal("Untuk testing halaman ini akan secara otomatis terisi. \nSilakan edit jika diperlukan", null, "success")
 })
 </script>
