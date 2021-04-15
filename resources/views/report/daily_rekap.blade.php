@@ -137,21 +137,25 @@ $(document).ready(function () {
     $('#tanggal_mulai').datepicker({
         format: 'dd-mm-yyyy',
         todayHighlight: true,
+        autoclose: true,
     })
 
     $('#tanggal_selesai').datepicker({
         format: 'dd-mm-yyyy',
         todayHighlight: true,
+        autoclose: true,
     })
 
     $('#tanggal_mulai_edit').datepicker({
         format: 'dd-mm-yyyy',
         todayHighlight: true,
+        autoclose: true,
     })
 
     $('#tanggal_selesai_edit').datepicker({
         format: 'dd-mm-yyyy',
         todayHighlight: true,
+        autoclose: true,
     })
 
     var table = $('#tbl_rekap_daily').DataTable({

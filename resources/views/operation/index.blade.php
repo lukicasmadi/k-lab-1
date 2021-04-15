@@ -238,21 +238,25 @@
         $('#tanggal_mulai').datepicker({
             format: 'dd-mm-yyyy',
             todayHighlight: true,
+            autoclose: true,
         })
 
         $('#tanggal_selesai').datepicker({
             format: 'dd-mm-yyyy',
             todayHighlight: true,
+            autoclose: true,
         })
 
         $('#edit_tanggal_mulai').datepicker({
             format: 'dd-mm-yyyy',
             todayHighlight: true,
+            autoclose: true,
         })
 
         $('#edit_tanggal_selesai').datepicker({
             format: 'dd-mm-yyyy',
             todayHighlight: true,
+            autoclose: true,
         })
 
         $('#notesMailModal').on('hidden.bs.modal', function () {
