@@ -71,11 +71,11 @@
 
 <script>
 $(document).ready(function () {
-    if(location.hostname == "korlantas.test") {
-        let randomNum = Math.floor((Math.random() * 10) + 1)
-        $("input[type=number]").val(randomNum)
-        $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
-    }
+    // if(location.hostname == "korlantas.test") {
+    //     let randomNum = Math.floor((Math.random() * 10) + 1)
+    //     $("input[type=number]").val(randomNum)
+    //     $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
+    // }
     let randomNum = Math.floor((Math.random() * 10) + 1)
     $("input[type=number]").val(randomNum)
     $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
