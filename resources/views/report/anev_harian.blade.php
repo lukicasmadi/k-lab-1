@@ -30,19 +30,23 @@
                         <div class="form-group">
                             <label class="text-popup">Pilih Operasi</label>
                             <select class="form-control form-custom height-form" name="operation_id" id="operation_id">
+                                <option value=""> - Pilih Nama Operasi</option>
                                 @foreach($rencanaOperasi as $key => $val)
                                     <option value="{{$key}}">{{$val}}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group">
+
+                        <div class="form-group pembanding d-none">
                             <label class="text-popup">Pilih Hari Pembanding 1</label>
                             <input id="tanggal_pembanding_1" name="tanggal_pembanding_1" class="form-control popoups inp-icon flatpickr flatpickr-input active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
                         </div>
-                        <div class="form-group">
+
+                        <div class="form-group pembanding d-none">
                             <label class="text-popup">Pilih Hari Pembanding 2</label>
                             <input id="tanggal_pembanding_2" name="tanggal_pembanding_2" class="form-control popoups inp-icon flatpickr flatpickr-input active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
                         </div>
+
                         <input type="submit" name="btnUnduhData" id="btnUnduhData" class="mt-4 mb-4 btn btn-primary" value="Unduh Data">
                     </form>
                 </div>
@@ -2102,16 +2106,45 @@
         }
     }
 
-    $(document).ready(function () {
-        $('#tanggal_pembanding_1').datepicker({
-            format: 'dd-mm-yyyy',
-            todayHighlight: true,
-        })
+    $("#operation_id").on("change", function (e) {
+        e.preventDefault()
 
-        $('#tanggal_pembanding_2').datepicker({
-            format: 'dd-mm-yyyy',
-            todayHighlight: true,
-        })
+        $(".pembanding").addClass("d-none")
+        $('#tanggal_pembanding_1').val('')
+        $('#tanggal_pembanding_2').val('')
+
+        if($(this).val()) {
+            axios.get(route('operation_plan_show', $(this).val()))
+            .then(function (response) {
+                var startDate = response.data.start_date
+                var endDate = response.data.end_date
+
+                $(".pembanding").removeClass("d-none")
+
+                $('#tanggal_pembanding_1').datepicker({
+                    format: 'yyyy-mm-dd',
+                    todayHighlight: true,
+                    autoclose: true,
+                    startDate: startDate,
+                    endDate: endDate,
+                })
+
+                $('#tanggal_pembanding_2').datepicker({
+                    format: 'yyyy-mm-dd',
+                    todayHighlight: true,
+                    autoclose: true,
+                    startDate: startDate,
+                    endDate: endDate,
+                })
+            })
+            .catch(function (error) {
+                swal("Data tidak ditemukan. Silakan periksa data yang akan diproses", null, "error")
+            })
+        }
+    })
+
+    $(document).ready(function () {
+        //
     })
 </script>
 @endpush

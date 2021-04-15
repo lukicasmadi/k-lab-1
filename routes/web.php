@@ -155,6 +155,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/daily-rekap/excel/{uuid}', 'DailyRekapController@dailyRekapExcel')->name('daily_dowmload_excel');
 
     Route::group(['prefix' => 'data'], function () {
+        Route::get('/operation-plan/show/{id}', 'RencanaOperasiController@byId')->name('operation_plan_show');
         Route::get('/category', 'CategoryController@data')->name('category_data');
         Route::get('/article', 'ArticleController@data')->name('article_data');
         Route::get('/polda', 'PoldaController@data')->name('polda_data');

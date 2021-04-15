@@ -15,9 +15,20 @@ use App\Http\Requests\RencanaOperasiUpdateRequest;
 
 class RencanaOperasiController extends Controller
 {
-    public function __construct()
+    // public function __construct()
+    // {
+    //     $this->middleware('can-create-plan')->only('create', 'store', 'edit', 'update');
+    // }
+
+    public function byId($id)
     {
-        $this->middleware('can-create-plan')->only('create', 'store', 'edit', 'update');
+        $data = RencanaOperasi::where("id", $id)->first();
+
+        if(empty($data)) {
+            abort(404);
+        }
+
+        return $data;
     }
 
     public function rencana_operasi_custom_name($uuid)
