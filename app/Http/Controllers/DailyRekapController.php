@@ -7,7 +7,9 @@ use App\Models\DailyRekap;
 use Illuminate\Http\Request;
 use App\Models\RencanaOperasi;
 use Maatwebsite\Excel\Facades\Excel;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 use App\Http\Requests\DailyRekapRequest;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use App\Http\Requests\DailyRekapEditRequest;
 
 class DailyRekapController extends Controller
@@ -15,7 +17,6 @@ class DailyRekapController extends Controller
 
     public function dailyRekapExcel($uuid)
     {
-        return $uuid;
         $model = DailyRekap::with(['rencanaOperasi', 'poldaData'])->where('uuid', $uuid)->first();
 
         if(empty($model)) {
@@ -31,20 +32,29 @@ class DailyRekapController extends Controller
         $end_date = $model->operation_date_end;
         $prevYear = $year - 1;
 
-        $outputPrev = reportDailyPrev($polda, $prevYear, $rencana_operartion_id, $config_date, $start_date, $end_date);
-        $outputCurrent = reportDailyCurrent($polda, $year, $rencana_operartion_id, $config_date, $start_date, $end_date);
+        // $outputPrev = reportDailyPrev($polda, $prevYear, $rencana_operartion_id, $config_date, $start_date, $end_date);
+        // $outputCurrent = reportDailyCurrent($polda, $year, $rencana_operartion_id, $config_date, $start_date, $end_date);
 
-        logger($outputPrev);
-        logger($outputCurrent);
+        $excelPath = public_path('template/excel');
+        $excelTemplate = $excelPath."/format_laporan_operasi_2021.xlsx";
 
-        return "OK";
+        //load spreadsheet
+        $spreadsheet = IOFactory::load($excelTemplate);
 
-        // $filename = 'report-'.nowToday().'.xlsx';
+        $now = now()->format("Y-m-d");
+        $filename = 'report-'.$now.'.xlsx';
 
-        // return Excel::download(new NewExport(
-        //     $outputPrev,
-        //     $outputCurrent,
-        // ), $filename);
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="'.$filename.'.xlsx"');
+
+        //change it
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setCellValue('A6', 'KESATUAN :  TEST');
+
+        //write it again to Filesystem with the same name (=replace)
+        $writer = new Xlsx($spreadsheet);
+
+        $writer->save('php://output');
     }
 
     public function dailyRekapShowWithInput($uuid)
