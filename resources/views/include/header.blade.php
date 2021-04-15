@@ -65,8 +65,11 @@
                                     <li class="{{ request()->is('report/daily') ? 'active' : '' }}">
                                         <a href="{{ route('report_daily_all_polda') }}"> Laporan Rekap Harian </a>
                                     </li>
-                                    <li class="{{ request()->is('report/analysis-evaluation') ? 'active' : '' }}">
-                                        <a href="{{ route('report_comparison') }}"> Laporan Analisa & Evaluasi </a>
+                                    <li class="{{ request()->is('report/anev-compare') ? 'active' : '' }}">
+                                        <a href="{{ route('report_comparison') }}"> Laporan Anev </a>
+                                    </li>
+                                    <li class="{{ request()->is('report/anev-date-compare') ? 'active' : '' }}">
+                                        <a href="{{ route('report_anev_daily') }}"> Laporan Anev Harian </a>
                                     </li>
                                 </ul>
                             </li>

@@ -59,8 +59,10 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/report/daily', 'ReportController@dailyAllPolda')->name('report_daily_all_polda');
         Route::post('/report/daily/process', 'ReportController@dailyProcess')->name('report_daily_process');
-        Route::get('/report/analysis-evaluation', 'ReportController@comparison')->name('report_comparison');
-        Route::post('/report/analysis-evaluation/process', 'ReportController@comparisonProcess')->name('report_comparison_process');
+        Route::get('/report/anev-compare', 'ReportController@comparison')->name('report_comparison');
+        Route::post('/report/anev-compare/process', 'ReportController@comparisonProcess')->name('report_comparison_process');
+        Route::get('/report/anev-date-compare', 'ReportController@anevDateCompare')->name('report_anev_daily');
+        Route::post('/report/anev-date-compare/process', 'ReportController@anevDateCompareProcess')->name('report_anev_daily_process');
         Route::get('/report/daily/polda/{poldaUuid}', 'ReportController@poldaUuid')->name('report_bypolda');
         Route::get('/report/daily/id/{uuid}', 'ReportController@byId')->name('report_daily_by_id');
 

@@ -23,10 +23,14 @@ use App\Http\Requests\ComparisonExcelRequest;
 
 class ReportController extends Controller
 {
-
-    public function __construct()
+    public function anevDateCompare()
     {
-        // $this->middleware('can-create-plan')->only('dailyAllPolda', 'byId', 'comparison', 'dailyProcess', 'comparisonProcess', 'downloadExcel', 'comparisonGetData');
+        $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");
+
+        $currentYear = array_unique(DailyInput::pluck('year')->toArray());
+        $prevYear = array_unique(DailyInputPrev::pluck('year')->toArray());
+
+        return view('report.anev_harian', compact('rencanaOperasi', 'currentYear', 'prevYear'));
     }
 
     public function byId($uuid)
