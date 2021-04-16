@@ -33,4 +33,9 @@ class Polda extends Model
     {
         return $this->hasOne(PoldaSubmited::class);
     }
+
+    public function poldaInput()
+    {
+        return $this->hasMany(DailyInput::class, 'polda_id', 'id');
+    }
 }

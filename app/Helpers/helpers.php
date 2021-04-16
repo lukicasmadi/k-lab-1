@@ -15,6 +15,12 @@ if (! function_exists('nowToday')) {
     }
 }
 
+if (! function_exists('nowTodayIndonesia')) {
+    function nowTodayIndonesia() {
+        return now()->format("d-m-Y");
+    }
+}
+
 if (! function_exists('extractDateRange')) {
     function extractDateRange($start, $end) {
         return CarbonPeriod::create($start, $end);

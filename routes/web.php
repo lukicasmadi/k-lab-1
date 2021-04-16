@@ -39,7 +39,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Route Hanya Bisa Diakses Oleh Administrator atau Korlantas Pusat
     Route::group(['middleware' => 'admin-or-pusat-only'], function () {
+
         Route::get('/today', 'ReportController@downloadReportToday')->name('report_today');
+
+        Route::get('/statistics', 'StatisticController@index')->name('statistics_index');
+        Route::get('/statistics/data', 'StatisticController@data')->name('statistics_data');
 
         Route::resource('operation-plan', 'RencanaOperasiController', [
             'names' => [
