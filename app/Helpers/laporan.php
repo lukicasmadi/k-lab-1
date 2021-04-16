@@ -555,9 +555,15 @@ if (! function_exists('reportDailyCurrent')) {
 //========================================================================================================================================================================
 
 if (! function_exists('excelTemplate')) {
-    function excelTemplate($prev, $current, $kesatuan, $hari_tanggal, $nama, $pangkat, $jabatan, $nama_laporan) {
+    function excelTemplate($template, $prev, $current, $kesatuan, $hari_tanggal, $nama_atasan, $pangkat, $jabatan, $nama_laporan) {
+
         $excelPath = public_path('template/excel');
-        $excelTemplate = $excelPath."/format_laporan_operasi_2021.xlsx";
+
+        if($template == "per_polda") {
+            $excelTemplate = $excelPath."/format_laporan_operasi_2021.xlsx";
+        } else {
+            $excelTemplate = $excelPath."/format_laporan_operasi_2021_all_polda.xlsx";
+        }
 
         //load spreadsheet
         $spreadsheet = IOFactory::load($excelTemplate);
@@ -573,7 +579,7 @@ if (! function_exists('excelTemplate')) {
 
         $sheet->setCellValue('A6', $kesatuan); //NAMA KESATUAN
         $sheet->setCellValue('E417', $hari_tanggal); // TEMPAT, TANGGAL
-        $sheet->setCellValue('E424', $nama); // NAMA
+        $sheet->setCellValue('E424', $nama_atasan); // NAMA ATASAN UNTUK TANDA TANGAN
         $sheet->setCellValue('E425', $pangkat); //PANGKAT & NRP
         $sheet->setCellValue('E419', $jabatan); //JABATAN
         $sheet->setCellValue('A5', $nama_laporan); // NAMA LAPORAN

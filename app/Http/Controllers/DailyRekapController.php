@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Exports\NewExport;
 use App\Models\DailyRekap;
 use Illuminate\Http\Request;
+use App\Models\PoldaSubmited;
 use App\Models\RencanaOperasi;
 use Maatwebsite\Excel\Facades\Excel;
 use PhpOffice\PhpSpreadsheet\IOFactory;
@@ -35,16 +36,33 @@ class DailyRekapController extends Controller
         $prev = reportDailyPrev($polda, $prevYear, $rencana_operartion_id, $config_date, $start_date, $end_date);
         $current = reportDailyCurrent($polda, $year, $rencana_operartion_id, $config_date, $start_date, $end_date);
 
-        excelTemplate(
-            $prev,
-            $current,
-            'KESATUAN : LANTAS',
-            'Jakarta, 13 April 2021',
-            'NAMA : SIWANTO',
-            'AKP NRP 83099999',
-            'KAPOSKO',
-            'LAPORAN HARIAN OPS KESELAMATAN TAHUN 2021'
-        );
+        if($polda != "polda_all") {
+            $poldaSubmited = PoldaSubmited::where('polda_id', $polda)->where('rencana_operasi_id', $rencana_operartion_id)->first();
+
+            excelTemplate(
+                'per_polda',
+                $prev,
+                $current,
+                'KESATUAN : '.$poldaSubmited->nama_kesatuan,
+                $poldaSubmited->nama_kota.", ".indonesianDate(date("Y-m-d")),
+                'NAMA : '.$poldaSubmited->nama_atasan,
+                $poldaSubmited->pangkat_dan_nrp,
+                $poldaSubmited->jabatan,
+                $poldaSubmited->nama_laporan
+            );
+        } else {
+            excelTemplate(
+                'polda_all',
+                $prev,
+                $current,
+                'KESATUAN : '.$poldaSubmited->nama_kesatuan,
+                $poldaSubmited->nama_kota.", ".indonesianDate(date("Y-m-d")),
+                'NAMA : '.$poldaSubmited->nama_atasan,
+                $poldaSubmited->pangkat_dan_nrp,
+                $poldaSubmited->jabatan,
+                $poldaSubmited->nama_laporan
+            );
+        }
     }
 
     public function dailyRekapShowWithInput($uuid)
