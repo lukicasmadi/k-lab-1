@@ -22,22 +22,51 @@ class CreateDailyInputsTable extends Migration
             $table->unsignedBigInteger('rencana_operasi_id');
             $table->foreign('rencana_operasi_id')->references('id')->on('rencana_operasis');
             $table->string("year");
+
             $table->float("pelanggaran_lalu_lintas_tilang", 8, 0)->default(0);
             $table->float("pelanggaran_lalu_lintas_teguran", 8, 0)->default(0);
-            $table->float("pelanggaran_sepeda_motor_gun_helm_sni", 8, 0)->default(0);
+
+            //TAMBAHAN
+            $table->float("pelanggaran_sepeda_motor_kecepatan", 8, 0)->default(0);
+            $table->float("pelanggaran_sepeda_motor_helm", 8, 0)->default(0);
+            $table->float("pelanggaran_sepeda_motor_bonceng_lebih_dari_satu", 8, 0)->default(0);
+            $table->float("pelanggaran_sepeda_motor_marka_menerus_menyalip", 8, 0)->default(0);
             $table->float("pelanggaran_sepeda_motor_melawan_arus", 8, 0)->default(0);
-            $table->float("pelanggaran_sepeda_motor_gun_hp_saat_berkendara", 8, 0)->default(0);
-            $table->float("pelanggaran_sepeda_motor_berkendara_dibawah_pengaruh_alkohol", 8, 0)->default(0);
-            $table->float("pelanggaran_sepeda_motor_melebihi_batas_kecepatan", 8, 0)->default(0);
-            $table->float("pelanggaran_sepeda_motor_berkendara_dibawah_umur", 8, 0)->default(0);
+            $table->float("pelanggaran_sepeda_motor_melanggar_lampu_lalin", 8, 0)->default(0);
+            $table->float("pelanggaran_sepeda_motor_mengemudikan_tidak_wajar", 8, 0)->default(0);
+            $table->float("pelanggaran_sepeda_motor_syarat_teknis_layak_jalan", 8, 0)->default(0);
+            $table->float("pelanggaran_sepeda_motor_tidak_nyala_lampu_siang_malam", 8, 0)->default(0);
+            $table->float("pelanggaran_sepeda_motor_berbelok_tanpa_isyarat", 8, 0)->default(0);
+            $table->float("pelanggaran_sepeda_motor_berbalapan_di_jalan_raya", 8, 0)->default(0);
+            $table->float("pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkir", 8, 0)->default(0);
+            $table->float("pelanggaran_sepeda_motor_melanggar_marka_berhenti", 8, 0)->default(0);
+            $table->float("pelanggaran_sepeda_motor_tidak_patuh_perintah_petugas", 8, 0)->default(0);
+            $table->float("pelanggaran_sepeda_motor_surat_surat", 8, 0)->default(0);
+            $table->float("pelanggaran_sepeda_motor_kelengkapan_kendaraan", 8, 0)->default(0);
             $table->float("pelanggaran_sepeda_motor_lain_lain", 8, 0)->default(0);
-            $table->float("pelanggaran_mobil_melawan_arus");
-            $table->float("pelanggaran_mobil_gun_hp_saat_berkendara", 8, 0)->default(0);
-            $table->float("pelanggaran_mobil_berkendara_dibawah_pengaruh_alkohol", 8, 0)->default(0);
-            $table->float("pelanggaran_mobil_melebihi_batas_kecepatan");
-            $table->float("pelanggaran_mobil_berkendara_dibawah_umur", 8, 0)->default(0);
-            $table->float("pelanggaran_mobil_gun_safety_belt", 8, 0)->default(0);
-            $table->float("pelanggaran_mobil_lain_lain");
+
+            //TAMBAHAN
+            $table->float("pelanggaran_mobil_kecepatan", 8, 0)->default(0);
+            $table->float("pelanggaran_mobil_safety_belt", 8, 0)->default(0);
+            $table->float("pelanggaran_mobil_muatan_overload", 8, 0)->default(0);
+            $table->float("pelanggaran_mobil_marka_menerus_menyalip", 8, 0)->default(0);
+            $table->float("pelanggaran_mobil_melawan_arus", 8, 0)->default(0);
+            $table->float("pelanggaran_mobil_melanggar_lampu_lalin", 8, 0)->default(0);
+            $table->float("pelanggaran_mobil_mengemudi_tidak_wajar", 8, 0)->default(0);
+            $table->float("pelanggaran_mobil_syarat_teknis_layak_jalan", 8, 0)->default(0);
+            $table->float("pelanggaran_mobil_tidak_nyala_lampu_malam", 8, 0)->default(0);
+            $table->float("pelanggaran_mobil_berbelok_tanpa_isyarat", 8, 0)->default(0);
+            $table->float("pelanggaran_mobil_berbalapan_di_jalan_raya", 8, 0)->default(0);
+            $table->float("pelanggaran_mobil_melanggar_rambu_berhenti_dan_parkir", 8, 0)->default(0);
+            $table->float("pelanggaran_mobil_melanggar_marka_berhenti", 8, 0)->default(0);
+            $table->float("pelanggaran_mobil_tidak_patuh_perintah_petugas", 8, 0)->default(0);
+            $table->float("pelanggaran_mobil_surat_surat", 8, 0)->default(0);
+            $table->float("pelanggaran_mobil_kelengkapan_kendaraan", 8, 0)->default(0);
+            $table->float("pelanggaran_mobil_lain_lain", 8, 0)->default(0);
+
+            //TAMBAHAN
+            $table->float("pelanggaran_pejalan_kaki_menyeberang_tidak_pada_tempat", 8, 0)->default(0);
+
             $table->float("barang_bukti_yg_disita_sim", 8, 0)->default(0);
             $table->float("barang_bukti_yg_disita_stnk", 8, 0)->default(0);
             $table->float("barang_bukti_yg_disita_kendaraan", 8, 0)->default(0);
@@ -257,6 +286,10 @@ class CreateDailyInputsTable extends Migration
             $table->float("kecelakaan_transportasi_udara", 8, 0)->default(0);
             $table->float("penlu_melalui_media_cetak", 8, 0)->default(0);
             $table->float("penlu_melalui_media_elektronik", 8, 0)->default(0);
+
+            //TAMBAHAN
+            $table->float("penlu_melalui_media_sosial", 8, 0)->default(0);
+
             $table->float("penlu_melalui_tempat_keramaian", 8, 0)->default(0);
             $table->float("penlu_melalui_tempat_istirahat", 8, 0)->default(0);
             $table->float("penlu_melalui_daerah_rawan_laka_dan_langgar", 8, 0)->default(0);
@@ -279,6 +312,49 @@ class CreateDailyInputsTable extends Migration
             $table->float("giat_lantas_penjagaan", 8, 0)->default(0);
             $table->float("giat_lantas_pengawalan", 8, 0)->default(0);
             $table->float("giat_lantas_patroli", 8, 0)->default(0);
+
+            //TAMBAHAN
+            $table->float("arus_mudik_jumlah_bus_keberangkatan", 8, 0)->default(0);
+            $table->float("arus_mudik_jumlah_penumpang_keberangkatan", 8, 0)->default(0);
+            $table->float("arus_mudik_jumlah_bus_kedatangan", 8, 0)->default(0);
+            $table->float("arus_mudik_jumlah_penumpang_kedatangan", 8, 0)->default(0);
+            $table->float("arus_mudik_total_terminal", 8, 0)->default(0);
+            $table->float("arus_mudik_total_bus_keberangkatan", 8, 0)->default(0);
+            $table->float("arus_mudik_penumpang_keberangkatan", 8, 0)->default(0);
+            $table->float("arus_mudik_total_bus_kedatangan", 8, 0)->default(0);
+            $table->float("arus_mudik_penumpang_kedatangan", 8, 0)->default(0);
+            $table->float("arus_mudik_kereta_api_total_stasiun", 8, 0)->default(0);
+            $table->float("arus_mudik_kereta_api_total_penumpang_keberangkatan", 8, 0)->default(0);
+            $table->float("arus_mudik_kereta_api_total_penumpang_kedatangan", 8, 0)->default(0);
+
+            //TAMBAHAN
+            $table->float("arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan", 8, 0)->default(0);
+            $table->float("arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4", 8, 0)->default(0);
+            $table->float("arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2", 8, 0)->default(0);
+            $table->float("arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan", 8, 0)->default(0);
+            $table->float("arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan_r4", 8, 0)->default(0);
+            $table->float("arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan_r2", 8, 0)->default(0);
+
+            //TAMBAHAN
+            $table->float("arus_mudik_total_pelabuhan", 8, 0)->default(0);
+            $table->float("arus_mudik_pelabuhan_kendaraan_keberangkatan", 8, 0)->default(0);
+            $table->float("arus_mudik_pelabuhan_kendaraan_kedatangan", 8, 0)->default(0);
+            $table->float("arus_mudik_pelabuhan_total_penumpang_keberangkatan", 8, 0)->default(0);
+            $table->float("arus_mudik_pelabuhan_total_penumpang_kedatangan", 8, 0)->default(0);
+
+            //TAMBAHAN
+            $table->float("arus_mudik_bandara_jumlah_penumpang_keberangkatan", 8, 0)->default(0);
+            $table->float("arus_mudik_bandara_jumlah_penumpang_kedatangan", 8, 0)->default(0);
+            $table->float("arus_mudik_total_bandara", 8, 0)->default(0);
+            $table->float("arus_mudik_bandara_total_penumpang_keberangkatan", 8, 0)->default(0);
+            $table->float("arus_mudik_bandara_total_penumpang_kedatangan", 8, 0)->default(0);
+
+            //TAMBAHAN
+            $table->float("prokes_covid_teguran_gar_prokes", 8, 0)->default(0);
+            $table->float("prokes_covid_pembagian_masker", 8, 0)->default(0);
+            $table->float("prokes_covid_sosialisasi_tentang_prokes", 8, 0)->default(0);
+            $table->float("prokes_covid_giat_baksos", 8, 0)->default(0);
+
             $table->timestamps();
         });
     }
