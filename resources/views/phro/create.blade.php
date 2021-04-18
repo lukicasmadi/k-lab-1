@@ -78,7 +78,7 @@ $(document).ready(function () {
     // }
     let randomNum = Math.floor((Math.random() * 10) + 1)
     $("input[type=number]").val(0)
-    $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
+    // $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
     // swal("Untuk testing halaman ini akan secara otomatis terisi. \nSilakan edit jika diperlukan", null, "success")
 })
 </script>
