@@ -478,9 +478,6 @@
                             </div>
                         </div>
 
-
-
-
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12" style="background: #11425C; padding: 10px 0;">
                             <div class="row">
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
@@ -925,6 +922,42 @@
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
                                     <input type="number" class="form-onsite @error('pelanggaran_mobil_lain_lain') is-invalid @enderror" name="pelanggaran_mobil_lain_lain" autocomplete="off" value="{{ old('pelanggaran_mobil_lain_lain') }}">
                                     @error('pelanggaran_mobil_lain_lain')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12" style="background: #11425C; padding: 10px 0;">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-11 col-md-12 col-sm-12 col-12">
+                                C. KENDARAAN TIDAK BERMOTOR DAN PEJALAN KAKI
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                1. MENYEBRANG TIDAK PADA TEMPATNYA
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('pelanggaran_pejalan_kaki_menyeberang_tidak_pada_tempat_p') is-invalid @enderror" name="pelanggaran_pejalan_kaki_menyeberang_tidak_pada_tempat_p" autocomplete="off" value="{{ old('pelanggaran_pejalan_kaki_menyeberang_tidak_pada_tempat_p') }}">
+                                    @error('pelanggaran_pejalan_kaki_menyeberang_tidak_pada_tempat_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('pelanggaran_pejalan_kaki_menyeberang_tidak_pada_tempat') is-invalid @enderror" name="pelanggaran_pejalan_kaki_menyeberang_tidak_pada_tempat" autocomplete="off" value="{{ old('pelanggaran_pejalan_kaki_menyeberang_tidak_pada_tempat') }}">
+                                    @error('pelanggaran_pejalan_kaki_menyeberang_tidak_pada_tempat')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
