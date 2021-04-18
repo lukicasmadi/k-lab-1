@@ -49,6 +49,8 @@
             @include('form.kecelakaan_transportasi_polda')
             @include('form.data_terkait_dimas_lantas_polda')
             @include('form.data_terkait_giat_kepolisian_polda')
+            @include('form.data_terkait_arus_pemudik')
+            @include('form.data_terkait_arus_prokes_covid')
 
             @include('form.button')
 
