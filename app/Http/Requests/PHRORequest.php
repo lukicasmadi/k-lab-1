@@ -315,6 +315,7 @@ class PHRORequest extends FormRequest
             'faktor_penyebab_kecelakaan_manusia' => 'required|integer',
             'faktor_penyebab_kecelakaan_prasarana_jalan' => 'required|integer',
 
+//=========================================================================================================================================================================
 
             'pelanggaran_lalu_lintas_tilang_p' => 'required|integer',
             'pelanggaran_lalu_lintas_teguran_p' => 'required|integer',
