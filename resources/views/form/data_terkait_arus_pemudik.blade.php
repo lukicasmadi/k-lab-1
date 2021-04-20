@@ -369,6 +369,494 @@
                             </div>
                         </div>
 
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12" style="background: #11425C; padding: 10px 0;">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-11 col-md-12 col-sm-12 col-12">
+                                C. PELABUHAN
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                1. JUMLAH KENDARAAN KEBERANGKATAN
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_p') }}">
+                                    @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan') }}">
+                                    @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                a. R4
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4_p') }}">
+                                    @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4') }}">
+                                    @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                b. R2
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2_p') }}">
+                                    @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2') }}">
+                                    @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                2. JUMLAH PENUMPANG KEBERANGKATAN
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan_p') }}">
+                                    @error('arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan') }}">
+                                    @error('arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                3. JUMLAH KENDARAAN KEDATANGAN
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_p') }}">
+                                    @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan') }}">
+                                    @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                a. R4
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4_p') }}">
+                                    @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4') }}">
+                                    @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                b. R2
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2_p') }}">
+                                    @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2') }}">
+                                    @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                4. JUMLAH PENUMPANG KEDATANGAN
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_penumpang_kedatangan_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_penumpang_kedatangan_p') }}">
+                                    @error('arus_mudik_pelabuhan_jumlah_penumpang_kedatangan_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_penumpang_kedatangan" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_penumpang_kedatangan') }}">
+                                    @error('arus_mudik_pelabuhan_jumlah_penumpang_kedatangan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                TOTAL PELABUHAN
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_total_pelabuhan_p') is-invalid @enderror" name="arus_mudik_total_pelabuhan_p" autocomplete="off" value="{{ old('arus_mudik_total_pelabuhan_p') }}">
+                                    @error('arus_mudik_total_pelabuhan_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_total_pelabuhan') is-invalid @enderror" name="arus_mudik_total_pelabuhan" autocomplete="off" value="{{ old('arus_mudik_total_pelabuhan') }}">
+                                    @error('arus_mudik_total_pelabuhan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                TOTAL KENDARAAN KEBERANGKATAN
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_kendaraan_keberangkatan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_kendaraan_keberangkatan_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_kendaraan_keberangkatan_p') }}">
+                                    @error('arus_mudik_pelabuhan_kendaraan_keberangkatan_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_kendaraan_keberangkatan') is-invalid @enderror" name="arus_mudik_pelabuhan_kendaraan_keberangkatan" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_kendaraan_keberangkatan') }}">
+                                    @error('arus_mudik_pelabuhan_kendaraan_keberangkatan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                TOTAL KENDARAAN KEDATANGAN
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_kendaraan_kedatangan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_kendaraan_kedatangan_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_kendaraan_kedatangan_p') }}">
+                                    @error('arus_mudik_pelabuhan_kendaraan_kedatangan_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_kendaraan_kedatangan') is-invalid @enderror" name="arus_mudik_pelabuhan_kendaraan_kedatangan" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_kendaraan_kedatangan') }}">
+                                    @error('arus_mudik_pelabuhan_kendaraan_kedatangan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                TOTAL PENUMPANG KEBERANGKATAN
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_total_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_total_penumpang_keberangkatan_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_total_penumpang_keberangkatan_p') }}">
+                                    @error('arus_mudik_pelabuhan_total_penumpang_keberangkatan_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_total_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_pelabuhan_total_penumpang_keberangkatan" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_total_penumpang_keberangkatan') }}">
+                                    @error('arus_mudik_pelabuhan_total_penumpang_keberangkatan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                TOTAL PENUMPANG KEDATANGAN
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_total_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_total_penumpang_kedatangan_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_total_penumpang_kedatangan_p') }}">
+                                    @error('arus_mudik_pelabuhan_total_penumpang_kedatangan_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_total_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_pelabuhan_total_penumpang_kedatangan" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_total_penumpang_kedatangan') }}">
+                                    @error('arus_mudik_pelabuhan_total_penumpang_kedatangan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12" style="background: #11425C; padding: 10px 0;">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-11 col-md-12 col-sm-12 col-12">
+                                D. BANDARA
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                    JUMLAH PENUMPANG KEBERANGKATAN
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_jumlah_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_bandara_jumlah_penumpang_keberangkatan_p" autocomplete="off" value="{{ old('arus_mudik_bandara_jumlah_penumpang_keberangkatan_p') }}">
+                                    @error('arus_mudik_bandara_jumlah_penumpang_keberangkatan_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_jumlah_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_bandara_jumlah_penumpang_keberangkatan" autocomplete="off" value="{{ old('arus_mudik_bandara_jumlah_penumpang_keberangkatan') }}">
+                                    @error('arus_mudik_bandara_jumlah_penumpang_keberangkatan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                    JUMLAH PENUMPANG KEDATANGAN
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_jumlah_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_bandara_jumlah_penumpang_kedatangan_p" autocomplete="off" value="{{ old('arus_mudik_bandara_jumlah_penumpang_kedatangan_p') }}">
+                                    @error('arus_mudik_bandara_jumlah_penumpang_kedatangan_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_jumlah_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_bandara_jumlah_penumpang_kedatangan" autocomplete="off" value="{{ old('arus_mudik_bandara_jumlah_penumpang_kedatangan') }}">
+                                    @error('arus_mudik_bandara_jumlah_penumpang_kedatangan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                    TOTAL BANDARA
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_total_bandara_p') is-invalid @enderror" name="arus_mudik_total_bandara_p" autocomplete="off" value="{{ old('arus_mudik_total_bandara_p') }}">
+                                    @error('arus_mudik_total_bandara_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_total_bandara') is-invalid @enderror" name="arus_mudik_total_bandara" autocomplete="off" value="{{ old('arus_mudik_total_bandara') }}">
+                                    @error('arus_mudik_total_bandara')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                    TOTAL PENUMPANG KEBERANGKATAN
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_total_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_bandara_total_penumpang_keberangkatan_p" autocomplete="off" value="{{ old('arus_mudik_bandara_total_penumpang_keberangkatan_p') }}">
+                                    @error('arus_mudik_bandara_total_penumpang_keberangkatan_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_total_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_bandara_total_penumpang_keberangkatan" autocomplete="off" value="{{ old('arus_mudik_bandara_total_penumpang_keberangkatan') }}">
+                                    @error('arus_mudik_bandara_total_penumpang_keberangkatan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                    TOTAL PENUMPANG KEDATANGAN
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_total_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_bandara_total_penumpang_kedatangan_p" autocomplete="off" value="{{ old('arus_mudik_bandara_total_penumpang_kedatangan_p') }}">
+                                    @error('arus_mudik_bandara_total_penumpang_kedatangan_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_total_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_bandara_total_penumpang_kedatangan" autocomplete="off" value="{{ old('arus_mudik_bandara_total_penumpang_kedatangan') }}">
+                                    @error('arus_mudik_bandara_total_penumpang_kedatangan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

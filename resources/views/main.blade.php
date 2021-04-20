@@ -1236,7 +1236,7 @@ function projectDaily() {
             var totalPerDate = response.data.totalPerDate
             var projectName = response.data.projectName
 
-            $("#projectName").html("[ "+projectName+" ]")
+            $("#projectName").html(""+projectName+"")
 
             chartRequest.updateSeries([{
                 name: 'Total',
