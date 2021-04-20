@@ -21,12 +21,12 @@ class CreatePoldaSubmitedsTable extends Migration
             $table->unsignedBigInteger('rencana_operasi_id');
             $table->foreign('rencana_operasi_id')->references('id')->on('rencana_operasis');
             $table->string("status");
-            $table->string("nama_kesatuan");
+            $table->string("nama_kesatuan"); /* mulai dari sini */
             $table->string("nama_atasan");
             $table->string("pangkat_dan_nrp");
             $table->string("jabatan");
             $table->string("nama_laporan");
-            $table->string("nama_kota");
+            $table->string("nama_kota"); /* sampai sini */
             $table->date("submited_date");
             $table->timestamps();
         });

@@ -25,6 +25,35 @@
         </div>
     </blockquote>
 
+    <blockquote class="blockquote mb-4">
+        <div class="row mt-3">
+            <div class="col-md-4 mb-4">
+                <label class="text-popup">Nama Kesatuan</label>
+                <input type="text" class="form-control popoups mt-1" name="nama_kesatuan" id="nama_kesatuan" autocomplete="off">
+            </div>
+            <div class="col-md-4 mb-4">
+                <label class="text-popup">Nama Atasan</label>
+                <input type="text" class="form-control popoups mt-1" name="nama_atasan" id="nama_atasan" autocomplete="off">
+            </div>
+            <div class="col-md-4 mb-4">
+                <label class="text-popup">Pangkat dan nrp</label>
+                <input type="text" class="form-control popoups mt-1" name="pangkat_dan_nrp" id="pangkat_dan_nrp" autocomplete="off">
+            </div>
+            <div class="col-md-4 mb-4">
+                <label class="text-popup">Jabatan</label>
+                <input type="text" class="form-control popoups mt-1" name="jabatan" id="jabatan" autocomplete="off">
+            </div>
+            <div class="col-md-4 mb-4">
+                <label class="text-popup">Nama Laporan</label>
+                <input type="text" class="form-control popoups mt-1" name="nama_laporan" id="nama_laporan" autocomplete="off">
+            </div>
+            <div class="col-md-4 mb-4">
+                <label class="text-popup">Nama Kota</label>
+                <input type="text" class="form-control popoups mt-1" name="nama_kota" id="nama_kota" autocomplete="off">
+            </div>
+        </div>
+    </blockquote>
+
     <div class="statbox widget box box-shadow">
         <div id="toggleAccordion">
             <div class="card">
