@@ -24,7 +24,7 @@ class PHRORequest extends FormRequest
     public function messages()
     {
         return [
-            '*.required' => 'Data tidak boleh kosong! Silahkan isi dengan 0',
+            '*.required' => 'Data tidak boleh kosong!',
             '*.integer' => 'Inputan hanya diijinkan numerik 0-9!'
         ];
     }
