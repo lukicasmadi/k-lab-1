@@ -76,6 +76,13 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function store(PHRORequest $request)
     {
+        $op = operationPlans();
+
+        if(empty($op)) {
+            flash('Tidak ada operasi yang sedang berjalan')->error();
+            return redirect()->route('phro_index');
+        }
+
         $todayInsert = PoldaSubmited::where("polda_id", poldaId())->where("submited_date", date("Y-m-d"))->first();
 
         if(!empty($todayInsert)) {
@@ -125,6 +132,13 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function edit($uuid)
     {
+        $op = operationPlans();
+
+        if(empty($op)) {
+            flash('Tidak ada operasi yang sedang berjalan')->error();
+            return redirect()->route('phro_index');
+        }
+
         $data = PoldaSubmited::with('dailyInput', 'dailyInputPrev')->whereUuid($uuid)->firstOrFail();
 
         return view('phro.edit', compact('data', 'uuid'));
@@ -132,6 +146,13 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function update(PHRORequest $request, $uuid)
     {
+        $op = operationPlans();
+
+        if(empty($op)) {
+            flash('Tidak ada operasi yang sedang berjalan')->error();
+            return redirect()->route('phro_index');
+        }
+
         DB::beginTransaction();
 
         try {

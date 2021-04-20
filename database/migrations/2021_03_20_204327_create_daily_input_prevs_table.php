@@ -332,8 +332,10 @@ class CreateDailyInputPrevsTable extends Migration
             $table->float("arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4_p", 8, 0)->default(0);
             $table->float("arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2_p", 8, 0)->default(0);
             $table->float("arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan_p", 8, 0)->default(0);
-            $table->float("arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan_r4_p", 8, 0)->default(0);
-            $table->float("arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan_r2_p", 8, 0)->default(0);
+            $table->float("arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_p", 8, 0)->default(0);
+            $table->float("arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4_p", 8, 0)->default(0);
+            $table->float("arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2_p", 8, 0)->default(0);
+            $table->float("arus_mudik_pelabuhan_jumlah_penumpang_kedatangan_p", 8, 0)->default(0);
 
             //TAMBAHAN
             $table->float("arus_mudik_total_pelabuhan_p", 8, 0)->default(0);
