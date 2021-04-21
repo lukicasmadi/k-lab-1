@@ -2142,11 +2142,14 @@
             .catch(function (error) {
                 swal("Data tidak ditemukan. Silakan periksa data yang akan diproses", null, "error")
             })
+            $("#btnUnduhData").prop('disabled', false)
+        } else {
+            $("#btnUnduhData").prop('disabled', true)
         }
     })
 
     $(document).ready(function () {
-        //
+        $("#btnUnduhData").prop('disabled', true)
     })
 </script>
 @endpush
