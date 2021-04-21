@@ -176,7 +176,7 @@ class ReportController extends Controller
         $date_range = request('date_range');
 
         if(is_null(request('date_range')) || is_null(request('operation_id')) || is_null(request('start_year')) || is_null(request('end_year'))) {
-            abort(401);
+            abort(404);
         }
 
         if (str_contains($date_range, 'to')) {

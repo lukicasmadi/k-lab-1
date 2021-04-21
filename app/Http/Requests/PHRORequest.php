@@ -32,12 +32,12 @@ class PHRORequest extends FormRequest
     public function rules()
     {
         return [
-            'nama_kesatuan' => 'required|integer',
-            'nama_atasan' => 'required|integer',
-            'pangkat_dan_nrp' => 'required|integer',
-            'jabatan' => 'required|integer',
-            'nama_laporan' => 'required|integer',
-            'nama_kota' => 'required|integer',
+            'nama_kesatuan' => 'required',
+            'nama_atasan' => 'required',
+            'pangkat_dan_nrp' => 'required',
+            'jabatan' => 'required',
+            'nama_laporan' => 'required',
+            'nama_kota' => 'required',
 
             'pelanggaran_lalu_lintas_tilang' => 'required|integer',
             'pelanggaran_lalu_lintas_teguran' => 'required|integer',

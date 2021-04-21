@@ -99,6 +99,12 @@ class PoldaHasRencanaOperasiController extends Controller
                 'polda_id' => poldaId(),
                 'rencana_operasi_id' => operationPlans()->id,
                 'status' => "SUDAH MENGIRIMKAN LAPORAN",
+                'nama_kesatuan' => upperCase($request->nama_kesatuan),
+                'nama_atasan' => upperCase($request->nama_atasan),
+                'pangkat_dan_nrp' => upperCase($request->pangkat_dan_nrp),
+                'jabatan' => upperCase($request->jabatan),
+                'nama_laporan' => upperCase($request->nama_laporan),
+                'nama_kota' => upperCase($request->nama_kota),
                 'submited_date' => date("Y-m-d")
             ]);
 
