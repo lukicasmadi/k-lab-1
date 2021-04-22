@@ -55,7 +55,7 @@
                                 1. JUMLAH BUS KEBERANGKATAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_jumlah_bus_keberangkatan_p') is-invalid @enderror" name="arus_mudik_jumlah_bus_keberangkatan_p" autocomplete="off" value="{{ old('arus_mudik_jumlah_bus_keberangkatan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_jumlah_bus_keberangkatan_p') is-invalid @enderror" name="arus_mudik_jumlah_bus_keberangkatan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_jumlah_bus_keberangkatan_p }}">
                                     @error('arus_mudik_jumlah_bus_keberangkatan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -63,7 +63,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_jumlah_bus_keberangkatan') is-invalid @enderror" name="arus_mudik_jumlah_bus_keberangkatan" autocomplete="off" value="{{ old('arus_mudik_jumlah_bus_keberangkatan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_jumlah_bus_keberangkatan') is-invalid @enderror" name="arus_mudik_jumlah_bus_keberangkatan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_jumlah_bus_keberangkatan }}">
                                     @error('arus_mudik_jumlah_bus_keberangkatan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -81,7 +81,7 @@
                                 2. JUMLAH PENUMPANG KEBERANGKATAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_jumlah_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_jumlah_penumpang_keberangkatan_p" autocomplete="off" value="{{ old('arus_mudik_jumlah_penumpang_keberangkatan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_jumlah_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_jumlah_penumpang_keberangkatan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_jumlah_penumpang_keberangkatan_p }}">
                                     @error('arus_mudik_jumlah_penumpang_keberangkatan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -89,7 +89,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_jumlah_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_jumlah_penumpang_keberangkatan" autocomplete="off" value="{{ old('arus_mudik_jumlah_penumpang_keberangkatan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_jumlah_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_jumlah_penumpang_keberangkatan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_jumlah_penumpang_keberangkatan }}">
                                     @error('arus_mudik_jumlah_penumpang_keberangkatan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -107,7 +107,7 @@
                                 3. JUMLAH BUS KEDATANGAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_jumlah_bus_kedatangan_p') is-invalid @enderror" name="arus_mudik_jumlah_bus_kedatangan_p" autocomplete="off" value="{{ old('arus_mudik_jumlah_bus_kedatangan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_jumlah_bus_kedatangan_p') is-invalid @enderror" name="arus_mudik_jumlah_bus_kedatangan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_jumlah_bus_kedatangan_p }}">
                                     @error('arus_mudik_jumlah_bus_kedatangan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -115,7 +115,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_jumlah_bus_kedatangan') is-invalid @enderror" name="arus_mudik_jumlah_bus_kedatangan" autocomplete="off" value="{{ old('arus_mudik_jumlah_bus_kedatangan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_jumlah_bus_kedatangan') is-invalid @enderror" name="arus_mudik_jumlah_bus_kedatangan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_jumlah_bus_kedatangan }}">
                                     @error('arus_mudik_jumlah_bus_kedatangan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -133,7 +133,7 @@
                                 4. JUMLAH PENUMPANG KEDATANGAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_jumlah_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_jumlah_penumpang_kedatangan_p" autocomplete="off" value="{{ old('arus_mudik_jumlah_penumpang_kedatangan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_jumlah_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_jumlah_penumpang_kedatangan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_jumlah_penumpang_kedatangan_p }}">
                                     @error('arus_mudik_jumlah_penumpang_kedatangan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -141,7 +141,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_jumlah_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_jumlah_penumpang_kedatangan" autocomplete="off" value="{{ old('arus_mudik_jumlah_penumpang_kedatangan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_jumlah_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_jumlah_penumpang_kedatangan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_jumlah_penumpang_kedatangan }}">
                                     @error('arus_mudik_jumlah_penumpang_kedatangan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -159,7 +159,7 @@
                                     TOTAL TERMINAL
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_total_terminal_p') is-invalid @enderror" name="arus_mudik_total_terminal_p" autocomplete="off" value="{{ old('arus_mudik_total_terminal_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_total_terminal_p') is-invalid @enderror" name="arus_mudik_total_terminal_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_total_terminal_p }}">
                                     @error('arus_mudik_total_terminal_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -167,7 +167,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_total_terminal') is-invalid @enderror" name="arus_mudik_total_terminal" autocomplete="off" value="{{ old('arus_mudik_total_terminal') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_total_terminal') is-invalid @enderror" name="arus_mudik_total_terminal" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_total_terminal }}">
                                     @error('arus_mudik_total_terminal')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -185,7 +185,7 @@
                                     TOTAL BUS KEBERANGKATAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_total_bus_keberangkatan_p') is-invalid @enderror" name="arus_mudik_total_bus_keberangkatan_p" autocomplete="off" value="{{ old('arus_mudik_total_bus_keberangkatan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_total_bus_keberangkatan_p') is-invalid @enderror" name="arus_mudik_total_bus_keberangkatan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_total_bus_keberangkatan_p }}">
                                     @error('arus_mudik_total_bus_keberangkatan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -193,7 +193,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_total_bus_keberangkatan') is-invalid @enderror" name="arus_mudik_total_bus_keberangkatan" autocomplete="off" value="{{ old('arus_mudik_total_bus_keberangkatan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_total_bus_keberangkatan') is-invalid @enderror" name="arus_mudik_total_bus_keberangkatan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_total_bus_keberangkatan }}">
                                     @error('arus_mudik_total_bus_keberangkatan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -211,7 +211,7 @@
                                     TOTAL PENUMPANG KEBERANGKATAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_penumpang_keberangkatan_p" autocomplete="off" value="{{ old('arus_mudik_penumpang_keberangkatan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_penumpang_keberangkatan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_penumpang_keberangkatan_p }}">
                                     @error('arus_mudik_penumpang_keberangkatan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -219,7 +219,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_penumpang_keberangkatan" autocomplete="off" value="{{ old('arus_mudik_penumpang_keberangkatan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_penumpang_keberangkatan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_penumpang_keberangkatan }}">
                                     @error('arus_mudik_penumpang_keberangkatan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -237,7 +237,7 @@
                                     TOTAL BUS KEDATANGAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_total_bus_kedatangan_p') is-invalid @enderror" name="arus_mudik_total_bus_kedatangan_p" autocomplete="off" value="{{ old('arus_mudik_total_bus_kedatangan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_total_bus_kedatangan_p') is-invalid @enderror" name="arus_mudik_total_bus_kedatangan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_total_bus_kedatangan_p }}">
                                     @error('arus_mudik_total_bus_kedatangan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -245,7 +245,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_total_bus_kedatangan') is-invalid @enderror" name="arus_mudik_total_bus_kedatangan" autocomplete="off" value="{{ old('arus_mudik_total_bus_kedatangan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_total_bus_kedatangan') is-invalid @enderror" name="arus_mudik_total_bus_kedatangan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_total_bus_kedatangan }}">
                                     @error('arus_mudik_total_bus_kedatangan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -263,7 +263,7 @@
                                     TOTAL PENUMPANG KEDATANGAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_penumpang_kedatangan_p" autocomplete="off" value="{{ old('arus_mudik_penumpang_kedatangan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_penumpang_kedatangan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_penumpang_kedatangan_p }}">
                                     @error('arus_mudik_penumpang_kedatangan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -271,7 +271,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_penumpang_kedatangan" autocomplete="off" value="{{ old('arus_mudik_penumpang_kedatangan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_penumpang_kedatangan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_penumpang_kedatangan }}">
                                     @error('arus_mudik_penumpang_kedatangan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -299,7 +299,7 @@
                                     TOTAL STASIUN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_kereta_api_total_stasiun_p') is-invalid @enderror" name="arus_mudik_kereta_api_total_stasiun_p" autocomplete="off" value="{{ old('arus_mudik_kereta_api_total_stasiun_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_kereta_api_total_stasiun_p') is-invalid @enderror" name="arus_mudik_kereta_api_total_stasiun_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_kereta_api_total_stasiun_p }}">
                                     @error('arus_mudik_kereta_api_total_stasiun_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -307,7 +307,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_kereta_api_total_stasiun') is-invalid @enderror" name="arus_mudik_kereta_api_total_stasiun" autocomplete="off" value="{{ old('arus_mudik_kereta_api_total_stasiun') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_kereta_api_total_stasiun') is-invalid @enderror" name="arus_mudik_kereta_api_total_stasiun" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_kereta_api_total_stasiun }}">
                                     @error('arus_mudik_kereta_api_total_stasiun')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -325,7 +325,7 @@
                                     TOTAL PENUMPANG KEBERANGKATAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_kereta_api_total_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_kereta_api_total_penumpang_keberangkatan_p" autocomplete="off" value="{{ old('arus_mudik_kereta_api_total_penumpang_keberangkatan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_kereta_api_total_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_kereta_api_total_penumpang_keberangkatan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_kereta_api_total_penumpang_keberangkatan_p }}">
                                     @error('arus_mudik_kereta_api_total_penumpang_keberangkatan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -333,7 +333,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_kereta_api_total_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_kereta_api_total_penumpang_keberangkatan" autocomplete="off" value="{{ old('arus_mudik_kereta_api_total_penumpang_keberangkatan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_kereta_api_total_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_kereta_api_total_penumpang_keberangkatan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_kereta_api_total_penumpang_keberangkatan }}">
                                     @error('arus_mudik_kereta_api_total_penumpang_keberangkatan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -351,7 +351,7 @@
                                     TOTAL PENUMPANG KEDATANGAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_kereta_api_total_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_kereta_api_total_penumpang_kedatangan_p" autocomplete="off" value="{{ old('arus_mudik_kereta_api_total_penumpang_kedatangan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_kereta_api_total_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_kereta_api_total_penumpang_kedatangan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_kereta_api_total_penumpang_kedatangan_p }}">
                                     @error('arus_mudik_kereta_api_total_penumpang_kedatangan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -359,7 +359,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_kereta_api_total_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_kereta_api_total_penumpang_kedatangan" autocomplete="off" value="{{ old('arus_mudik_kereta_api_total_penumpang_kedatangan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_kereta_api_total_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_kereta_api_total_penumpang_kedatangan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_kereta_api_total_penumpang_kedatangan }}">
                                     @error('arus_mudik_kereta_api_total_penumpang_kedatangan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -387,7 +387,7 @@
                                 1. JUMLAH KENDARAAN KEBERANGKATAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_p }}">
                                     @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -395,7 +395,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan }}">
                                     @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -413,7 +413,7 @@
                                 a. R4
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4_p }}">
                                     @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -421,7 +421,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4 }}">
                                     @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -439,7 +439,7 @@
                                 b. R2
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2_p }}">
                                     @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -447,7 +447,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2 }}">
                                     @error('arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -465,7 +465,7 @@
                                 2. JUMLAH PENUMPANG KEBERANGKATAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan_p }}">
                                     @error('arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -473,7 +473,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan }}">
                                     @error('arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -491,7 +491,7 @@
                                 3. JUMLAH KENDARAAN KEDATANGAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_p }}">
                                     @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -499,7 +499,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan }}">
                                     @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -517,7 +517,7 @@
                                 a. R4
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4_p }}">
                                     @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -525,7 +525,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4 }}">
                                     @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -543,7 +543,7 @@
                                 b. R2
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2_p }}">
                                     @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -551,7 +551,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2 }}">
                                     @error('arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -569,7 +569,7 @@
                                 4. JUMLAH PENUMPANG KEDATANGAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_penumpang_kedatangan_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_penumpang_kedatangan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_penumpang_kedatangan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_pelabuhan_jumlah_penumpang_kedatangan_p }}">
                                     @error('arus_mudik_pelabuhan_jumlah_penumpang_kedatangan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -577,7 +577,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_penumpang_kedatangan" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_jumlah_penumpang_kedatangan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_jumlah_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_pelabuhan_jumlah_penumpang_kedatangan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_pelabuhan_jumlah_penumpang_kedatangan }}">
                                     @error('arus_mudik_pelabuhan_jumlah_penumpang_kedatangan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -595,7 +595,7 @@
                                 TOTAL PELABUHAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_total_pelabuhan_p') is-invalid @enderror" name="arus_mudik_total_pelabuhan_p" autocomplete="off" value="{{ old('arus_mudik_total_pelabuhan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_total_pelabuhan_p') is-invalid @enderror" name="arus_mudik_total_pelabuhan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_total_pelabuhan_p }}">
                                     @error('arus_mudik_total_pelabuhan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -603,7 +603,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_total_pelabuhan') is-invalid @enderror" name="arus_mudik_total_pelabuhan" autocomplete="off" value="{{ old('arus_mudik_total_pelabuhan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_total_pelabuhan') is-invalid @enderror" name="arus_mudik_total_pelabuhan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_total_pelabuhan }}">
                                     @error('arus_mudik_total_pelabuhan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -621,7 +621,7 @@
                                 TOTAL KENDARAAN KEBERANGKATAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_kendaraan_keberangkatan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_kendaraan_keberangkatan_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_kendaraan_keberangkatan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_kendaraan_keberangkatan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_kendaraan_keberangkatan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_pelabuhan_kendaraan_keberangkatan_p }}">
                                     @error('arus_mudik_pelabuhan_kendaraan_keberangkatan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -629,7 +629,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_kendaraan_keberangkatan') is-invalid @enderror" name="arus_mudik_pelabuhan_kendaraan_keberangkatan" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_kendaraan_keberangkatan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_kendaraan_keberangkatan') is-invalid @enderror" name="arus_mudik_pelabuhan_kendaraan_keberangkatan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_pelabuhan_kendaraan_keberangkatan }}">
                                     @error('arus_mudik_pelabuhan_kendaraan_keberangkatan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -647,7 +647,7 @@
                                 TOTAL KENDARAAN KEDATANGAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_kendaraan_kedatangan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_kendaraan_kedatangan_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_kendaraan_kedatangan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_kendaraan_kedatangan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_kendaraan_kedatangan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_pelabuhan_kendaraan_kedatangan_p }}">
                                     @error('arus_mudik_pelabuhan_kendaraan_kedatangan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -655,7 +655,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_kendaraan_kedatangan') is-invalid @enderror" name="arus_mudik_pelabuhan_kendaraan_kedatangan" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_kendaraan_kedatangan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_kendaraan_kedatangan') is-invalid @enderror" name="arus_mudik_pelabuhan_kendaraan_kedatangan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_pelabuhan_kendaraan_kedatangan }}">
                                     @error('arus_mudik_pelabuhan_kendaraan_kedatangan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -673,7 +673,7 @@
                                 TOTAL PENUMPANG KEBERANGKATAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_total_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_total_penumpang_keberangkatan_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_total_penumpang_keberangkatan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_total_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_total_penumpang_keberangkatan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_pelabuhan_total_penumpang_keberangkatan_p }}">
                                     @error('arus_mudik_pelabuhan_total_penumpang_keberangkatan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -681,7 +681,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_total_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_pelabuhan_total_penumpang_keberangkatan" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_total_penumpang_keberangkatan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_total_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_pelabuhan_total_penumpang_keberangkatan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_pelabuhan_total_penumpang_keberangkatan }}">
                                     @error('arus_mudik_pelabuhan_total_penumpang_keberangkatan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -699,7 +699,7 @@
                                 TOTAL PENUMPANG KEDATANGAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_total_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_total_penumpang_kedatangan_p" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_total_penumpang_kedatangan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_total_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_pelabuhan_total_penumpang_kedatangan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_pelabuhan_total_penumpang_kedatangan_p }}">
                                     @error('arus_mudik_pelabuhan_total_penumpang_kedatangan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -707,7 +707,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_total_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_pelabuhan_total_penumpang_kedatangan" autocomplete="off" value="{{ old('arus_mudik_pelabuhan_total_penumpang_kedatangan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_pelabuhan_total_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_pelabuhan_total_penumpang_kedatangan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_pelabuhan_total_penumpang_kedatangan }}">
                                     @error('arus_mudik_pelabuhan_total_penumpang_kedatangan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -735,7 +735,7 @@
                                     JUMLAH PENUMPANG KEBERANGKATAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_jumlah_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_bandara_jumlah_penumpang_keberangkatan_p" autocomplete="off" value="{{ old('arus_mudik_bandara_jumlah_penumpang_keberangkatan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_jumlah_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_bandara_jumlah_penumpang_keberangkatan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_bandara_jumlah_penumpang_keberangkatan_p }}">
                                     @error('arus_mudik_bandara_jumlah_penumpang_keberangkatan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -743,7 +743,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_jumlah_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_bandara_jumlah_penumpang_keberangkatan" autocomplete="off" value="{{ old('arus_mudik_bandara_jumlah_penumpang_keberangkatan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_jumlah_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_bandara_jumlah_penumpang_keberangkatan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_bandara_jumlah_penumpang_keberangkatan }}">
                                     @error('arus_mudik_bandara_jumlah_penumpang_keberangkatan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -761,7 +761,7 @@
                                     JUMLAH PENUMPANG KEDATANGAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_jumlah_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_bandara_jumlah_penumpang_kedatangan_p" autocomplete="off" value="{{ old('arus_mudik_bandara_jumlah_penumpang_kedatangan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_jumlah_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_bandara_jumlah_penumpang_kedatangan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_bandara_jumlah_penumpang_kedatangan_p }}">
                                     @error('arus_mudik_bandara_jumlah_penumpang_kedatangan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -769,7 +769,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_jumlah_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_bandara_jumlah_penumpang_kedatangan" autocomplete="off" value="{{ old('arus_mudik_bandara_jumlah_penumpang_kedatangan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_jumlah_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_bandara_jumlah_penumpang_kedatangan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_bandara_jumlah_penumpang_kedatangan }}">
                                     @error('arus_mudik_bandara_jumlah_penumpang_kedatangan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -787,7 +787,7 @@
                                     TOTAL BANDARA
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_total_bandara_p') is-invalid @enderror" name="arus_mudik_total_bandara_p" autocomplete="off" value="{{ old('arus_mudik_total_bandara_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_total_bandara_p') is-invalid @enderror" name="arus_mudik_total_bandara_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_total_bandara_p }}">
                                     @error('arus_mudik_total_bandara_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -795,7 +795,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_total_bandara') is-invalid @enderror" name="arus_mudik_total_bandara" autocomplete="off" value="{{ old('arus_mudik_total_bandara') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_total_bandara') is-invalid @enderror" name="arus_mudik_total_bandara" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_total_bandara }}">
                                     @error('arus_mudik_total_bandara')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -813,7 +813,7 @@
                                     TOTAL PENUMPANG KEBERANGKATAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_total_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_bandara_total_penumpang_keberangkatan_p" autocomplete="off" value="{{ old('arus_mudik_bandara_total_penumpang_keberangkatan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_total_penumpang_keberangkatan_p') is-invalid @enderror" name="arus_mudik_bandara_total_penumpang_keberangkatan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_bandara_total_penumpang_keberangkatan_p }}">
                                     @error('arus_mudik_bandara_total_penumpang_keberangkatan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -821,7 +821,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_total_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_bandara_total_penumpang_keberangkatan" autocomplete="off" value="{{ old('arus_mudik_bandara_total_penumpang_keberangkatan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_total_penumpang_keberangkatan') is-invalid @enderror" name="arus_mudik_bandara_total_penumpang_keberangkatan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_bandara_total_penumpang_keberangkatan }}">
                                     @error('arus_mudik_bandara_total_penumpang_keberangkatan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -839,7 +839,7 @@
                                     TOTAL PENUMPANG KEDATANGAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_total_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_bandara_total_penumpang_kedatangan_p" autocomplete="off" value="{{ old('arus_mudik_bandara_total_penumpang_kedatangan_p') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_total_penumpang_kedatangan_p') is-invalid @enderror" name="arus_mudik_bandara_total_penumpang_kedatangan_p" autocomplete="off" value="{{ $data->dailyInputPrev->arus_mudik_bandara_total_penumpang_kedatangan_p }}">
                                     @error('arus_mudik_bandara_total_penumpang_kedatangan_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -847,7 +847,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_total_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_bandara_total_penumpang_kedatangan" autocomplete="off" value="{{ old('arus_mudik_bandara_total_penumpang_kedatangan') }}">
+                                    <input type="number" class="form-onsite @error('arus_mudik_bandara_total_penumpang_kedatangan') is-invalid @enderror" name="arus_mudik_bandara_total_penumpang_kedatangan" autocomplete="off" value="{{ $data->dailyInput->arus_mudik_bandara_total_penumpang_kedatangan }}">
                                     @error('arus_mudik_bandara_total_penumpang_kedatangan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
