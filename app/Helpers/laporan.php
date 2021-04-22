@@ -705,14 +705,112 @@ if (! function_exists('excelTemplate')) {
         $sheet->setCellValue('C15', $prev->pelanggaran_lalu_lintas_teguran);
         $sheet->setCellValue('D15', $current->pelanggaran_lalu_lintas_teguran);
 
-        $sheet->setCellValue('C20', $prev->pelanggaran_sepeda_motor_gun_helm_sni);
-        $sheet->setCellValue('D20', $current->pelanggaran_sepeda_motor_gun_helm_sni);
+        $sheet->setCellValue('C19', $prev->pelanggaran_sepeda_motor_kecepatan);
+        $sheet->setCellValue('D19', $current->pelanggaran_sepeda_motor_kecepatan);
+
+        $sheet->setCellValue('C20', $prev->pelanggaran_sepeda_motor_helm);
+        $sheet->setCellValue('D20', $current->pelanggaran_sepeda_motor_helm);
+
+        $sheet->setCellValue('C21', $prev->pelanggaran_sepeda_motor_bonceng_lebih_dari_satu);
+        $sheet->setCellValue('D21', $current->pelanggaran_sepeda_motor_bonceng_lebih_dari_satu);
+
+        $sheet->setCellValue('C22', $prev->pelanggaran_sepeda_motor_marka_menerus_menyalip);
+        $sheet->setCellValue('D22', $current->pelanggaran_sepeda_motor_marka_menerus_menyalip);
 
         $sheet->setCellValue('C23', $prev->pelanggaran_sepeda_motor_melawan_arus);
         $sheet->setCellValue('D23', $current->pelanggaran_sepeda_motor_melawan_arus);
 
+        $sheet->setCellValue('C24', $prev->pelanggaran_sepeda_motor_melanggar_lampu_lalin);
+        $sheet->setCellValue('D24', $current->pelanggaran_sepeda_motor_melanggar_lampu_lalin);
+
+        $sheet->setCellValue('C25', $prev->pelanggaran_sepeda_motor_mengemudikan_tidak_wajar);
+        $sheet->setCellValue('D25', $current->pelanggaran_sepeda_motor_mengemudikan_tidak_wajar);
+
+        $sheet->setCellValue('C26', $prev->pelanggaran_sepeda_motor_syarat_teknis_layak_jalan);
+        $sheet->setCellValue('D26', $current->pelanggaran_sepeda_motor_syarat_teknis_layak_jalan);
+
+        $sheet->setCellValue('C27', $prev->pelanggaran_sepeda_motor_tidak_nyala_lampu_siang_malam);
+        $sheet->setCellValue('D27', $current->pelanggaran_sepeda_motor_tidak_nyala_lampu_siang_malam);
+
+        $sheet->setCellValue('C28', $prev->pelanggaran_sepeda_motor_berbelok_tanpa_isyarat);
+        $sheet->setCellValue('D28', $prev->pelanggaran_sepeda_motor_berbelok_tanpa_isyarat);
+
+        $sheet->setCellValue('C29', $prev->pelanggaran_sepeda_motor_berbalapan_di_jalan_raya);
+        $sheet->setCellValue('D29', $current->pelanggaran_sepeda_motor_berbalapan_di_jalan_raya);
+
+        $sheet->setCellValue('C30', $prev->pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkir);
+        $sheet->setCellValue('D30', $current->pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkir);
+
+        $sheet->setCellValue('C31', $prev->pelanggaran_sepeda_motor_melanggar_marka_berhenti);
+        $sheet->setCellValue('D31', $current->pelanggaran_sepeda_motor_melanggar_marka_berhenti);
+
+        $sheet->setCellValue('C32', $prev->pelanggaran_sepeda_motor_tidak_patuh_perintah_petugas);
+        $sheet->setCellValue('D32', $current->pelanggaran_sepeda_motor_tidak_patuh_perintah_petugas);
+
+        $sheet->setCellValue('C33', $prev->pelanggaran_sepeda_motor_surat_surat);
+        $sheet->setCellValue('D33', $current->pelanggaran_sepeda_motor_surat_surat);
+
+        $sheet->setCellValue('C34', $prev->pelanggaran_sepeda_motor_kelengkapan_kendaraan);
+        $sheet->setCellValue('D34', $current->pelanggaran_sepeda_motor_kelengkapan_kendaraan);
+
         $sheet->setCellValue('C35', $prev->pelanggaran_sepeda_motor_lain_lain);
         $sheet->setCellValue('D35', $current->pelanggaran_sepeda_motor_lain_lain);
+
+        $sheet->setCellValue('C38', $prev->pelanggaran_mobil_kecepatan);
+        $sheet->setCellValue('D38', $current->pelanggaran_mobil_kecepatan);
+
+        $sheet->setCellValue('C39', $prev->pelanggaran_mobil_safety_belt);
+        $sheet->setCellValue('D39', $current->pelanggaran_mobil_safety_belt);
+
+        $sheet->setCellValue('C40', $prev->pelanggaran_mobil_muatan_overload);
+        $sheet->setCellValue('D40', $current->pelanggaran_mobil_muatan_overload);
+
+        $sheet->setCellValue('C41', $prev->pelanggaran_mobil_marka_menerus_menyalip);
+        $sheet->setCellValue('D41', $current->pelanggaran_mobil_marka_menerus_menyalip);
+
+        $sheet->setCellValue('C42', $prev->pelanggaran_mobil_melawan_arus);
+        $sheet->setCellValue('D42', $current->pelanggaran_mobil_melawan_arus);
+
+        $sheet->setCellValue('C43', $prev->pelanggaran_mobil_melanggar_lampu_lalin);
+        $sheet->setCellValue('D43', $current->pelanggaran_mobil_melanggar_lampu_lalin);
+
+        $sheet->setCellValue('C44', $prev->pelanggaran_mobil_mengemudi_tidak_wajar);
+        $sheet->setCellValue('D44', $current->pelanggaran_mobil_mengemudi_tidak_wajar);
+
+        $sheet->setCellValue('C45', $prev->pelanggaran_mobil_syarat_teknis_layak_jalan);
+        $sheet->setCellValue('D45', $current->pelanggaran_mobil_syarat_teknis_layak_jalan);
+
+        $sheet->setCellValue('C46', $prev->pelanggaran_mobil_tidak_nyala_lampu_malam);
+        $sheet->setCellValue('D46', $current->pelanggaran_mobil_tidak_nyala_lampu_malam);
+
+        $sheet->setCellValue('C47', $prev->pelanggaran_mobil_berbelok_tanpa_isyarat);
+        $sheet->setCellValue('D47', $current->pelanggaran_mobil_berbelok_tanpa_isyarat);
+
+        $sheet->setCellValue('C48', $prev->pelanggaran_mobil_berbalapan_di_jalan_raya);
+        $sheet->setCellValue('D48', $current->pelanggaran_mobil_berbalapan_di_jalan_raya);
+
+        $sheet->setCellValue('C49', $prev->pelanggaran_mobil_melanggar_rambu_berhenti_dan_parkir);
+        $sheet->setCellValue('D49', $current->pelanggaran_mobil_melanggar_rambu_berhenti_dan_parkir);
+
+        $sheet->setCellValue('C50', $prev->pelanggaran_mobil_melanggar_marka_berhenti);
+        $sheet->setCellValue('D50', $current->pelanggaran_mobil_melanggar_marka_berhenti);
+
+        $sheet->setCellValue('C51', $prev->pelanggaran_mobil_tidak_patuh_perintah_petugas);
+        $sheet->setCellValue('D51', $current->pelanggaran_mobil_tidak_patuh_perintah_petugas);
+
+        $sheet->setCellValue('C52', $prev->pelanggaran_mobil_surat_surat);
+        $sheet->setCellValue('D52', $current->pelanggaran_mobil_surat_surat);
+
+        $sheet->setCellValue('C53', $prev->pelanggaran_mobil_kelengkapan_kendaraan);
+        $sheet->setCellValue('D53', $current->pelanggaran_mobil_kelengkapan_kendaraan);
+
+        $sheet->setCellValue('C54', $prev->pelanggaran_mobil_lain_lain);
+        $sheet->setCellValue('D54', $current->pelanggaran_mobil_lain_lain);
+
+        $sheet->setCellValue('C57', $prev->pelanggaran_pejalan_kaki_menyeberang_tidak_pada_tempat);
+        $sheet->setCellValue('D57', $current->pelanggaran_pejalan_kaki_menyeberang_tidak_pada_tempat);
+
+        //=============================================================== YANG DIBAWAH SUDAH BENAR ===============================================================
 
         $sheet->setCellValue('C60', $prev->barang_bukti_yg_disita_sim);
         $sheet->setCellValue('D60', $current->barang_bukti_yg_disita_sim);
