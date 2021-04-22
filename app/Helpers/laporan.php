@@ -1469,6 +1469,9 @@ if (! function_exists('excelTemplate')) {
         $sheet->setCellValue('C338', $prev->penlu_melalui_media_elektronik);
         $sheet->setCellValue('D338', $current->penlu_melalui_media_elektronik);
 
+        $sheet->setCellValue('C339', $prev->penlu_melalui_media_sosial);
+        $sheet->setCellValue('D339', $current->penlu_melalui_media_sosial);
+
         $sheet->setCellValue('C340', $prev->penlu_melalui_tempat_keramaian);
         $sheet->setCellValue('D340', $current->penlu_melalui_tempat_keramaian);
 
@@ -1534,6 +1537,82 @@ if (! function_exists('excelTemplate')) {
 
         $sheet->setCellValue('C370', $prev->giat_lantas_patroli);
         $sheet->setCellValue('D370', $current->giat_lantas_patroli);
+
+        $sheet->setCellValue('C375', $prev->arus_mudik_jumlah_bus_keberangkatan);
+        $sheet->setCellValue('D375', $current->arus_mudik_jumlah_bus_keberangkatan);
+
+        $sheet->setCellValue('C376', $prev->arus_mudik_jumlah_penumpang_keberangkatan);
+        $sheet->setCellValue('D376', $current->arus_mudik_jumlah_penumpang_keberangkatan);
+
+        $sheet->setCellValue('C377', $prev->arus_mudik_jumlah_bus_kedatangan);
+        $sheet->setCellValue('D377', $current->arus_mudik_jumlah_bus_kedatangan);
+
+        $sheet->setCellValue('C378', $prev->arus_mudik_jumlah_penumpang_kedatangan);
+        $sheet->setCellValue('D378', $current->arus_mudik_jumlah_penumpang_kedatangan);
+
+        $sheet->setCellValue('C379', $prev->arus_mudik_total_terminal);
+        $sheet->setCellValue('D379', $current->arus_mudik_total_terminal);
+
+        $sheet->setCellValue('C380', $prev->arus_mudik_total_bus_keberangkatan);
+        $sheet->setCellValue('D380', $current->arus_mudik_total_bus_keberangkatan);
+
+        $sheet->setCellValue('C381', $prev->arus_mudik_penumpang_keberangkatan);
+        $sheet->setCellValue('D381', $current->arus_mudik_penumpang_keberangkatan);
+
+        $sheet->setCellValue('C382', $prev->arus_mudik_total_bus_kedatangan);
+        $sheet->setCellValue('D382', $current->arus_mudik_total_bus_kedatangan);
+
+        $sheet->setCellValue('C383', $prev->arus_mudik_penumpang_kedatangan);
+        $sheet->setCellValue('D383', $current->arus_mudik_penumpang_kedatangan);
+
+        $sheet->setCellValue('C385', $prev->arus_mudik_kereta_api_total_stasiun);
+        $sheet->setCellValue('D385', $current->arus_mudik_kereta_api_total_stasiun);
+
+        $sheet->setCellValue('C386', $prev->arus_mudik_kereta_api_total_penumpang_keberangkatan);
+        $sheet->setCellValue('D386', $current->arus_mudik_kereta_api_total_penumpang_keberangkatan);
+
+        $sheet->setCellValue('C387', $prev->arus_mudik_kereta_api_total_penumpang_kedatangan);
+        $sheet->setCellValue('D387', $current->arus_mudik_kereta_api_total_penumpang_kedatangan);
+
+        $sheet->setCellValue('C389', $prev->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan);
+        $sheet->setCellValue('D389', $current->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan);
+
+        $sheet->setCellValue('C390', $prev->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4);
+        $sheet->setCellValue('D390', $current->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4);
+
+        $sheet->setCellValue('C391', $prev->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2);
+        $sheet->setCellValue('D391', $current->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2);
+
+        $sheet->setCellValue('C392', $prev->arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan);
+        $sheet->setCellValue('D392', $current->arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan);
+
+        $sheet->setCellValue('C393', $prev->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan);
+        $sheet->setCellValue('D393', $current->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan);
+
+        $sheet->setCellValue('C394', $prev->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4);
+        $sheet->setCellValue('D394', $current->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4);
+
+        $sheet->setCellValue('C395', $prev->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2);
+        $sheet->setCellValue('D395', $current->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2);
+
+        $sheet->setCellValue('C396', $prev->arus_mudik_pelabuhan_jumlah_penumpang_kedatangan);
+        $sheet->setCellValue('D396', $current->arus_mudik_pelabuhan_jumlah_penumpang_kedatangan);
+
+        $sheet->setCellValue('C397', $prev->arus_mudik_total_pelabuhan);
+        $sheet->setCellValue('D397', $current->arus_mudik_total_pelabuhan);
+
+        $sheet->setCellValue('C398', $prev->arus_mudik_pelabuhan_kendaraan_keberangkatan);
+        $sheet->setCellValue('D398', $current->arus_mudik_pelabuhan_kendaraan_keberangkatan);
+
+        $sheet->setCellValue('C399', $prev->arus_mudik_pelabuhan_kendaraan_kedatangan);
+        $sheet->setCellValue('D399', $current->arus_mudik_pelabuhan_kendaraan_kedatangan);
+
+        $sheet->setCellValue('C400', $prev->arus_mudik_pelabuhan_total_penumpang_keberangkatan);
+        $sheet->setCellValue('D400', $current->arus_mudik_pelabuhan_total_penumpang_keberangkatan);
+
+        $sheet->setCellValue('C401', $prev->arus_mudik_pelabuhan_total_penumpang_kedatangan);
+        $sheet->setCellValue('D401', $current->arus_mudik_pelabuhan_total_penumpang_kedatangan);
+
 
         //write it again to Filesystem with the same name (=replace)
         $writer = new Xlsx($spreadsheet);
