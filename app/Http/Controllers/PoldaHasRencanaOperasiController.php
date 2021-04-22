@@ -922,16 +922,26 @@ class PoldaHasRencanaOperasiController extends Controller
         $prev = reportDailyPrev($polda_submited_id, nowYearMinusOne(), $rencana_operasi_id, 'custom', $now, $now);
         $current = reportDailyCurrent($polda_submited_id, nowYear(), $rencana_operasi_id, 'custom', $now, $now);
 
-        return $prev;
+        excelTemplate(
+            'per_polda',
+            $prev,
+            $current,
+            'KESATUAN : '.$poldaSubmited->nama_kesatuan,
+            $poldaSubmited->nama_kota.", ".indonesianDate(date("Y-m-d")),
+            'NAMA : '.$poldaSubmited->nama_atasan,
+            $poldaSubmited->pangkat_dan_nrp,
+            $poldaSubmited->jabatan,
+            $poldaSubmited->nama_laporan
+        );
 
-        return Excel::download(new PoldaDailyComparison(
-            $rencana_operasi_id,
-            yearMinusOneOnly($submited_date),
-            yearOnly($submited_date),
-            $submited_date,
-            $submited_date,
-            $polda->name,
-            $polda->id
-        ), $filename);
+        // return Excel::download(new PoldaDailyComparison(
+        //     $rencana_operasi_id,
+        //     yearMinusOneOnly($submited_date),
+        //     yearOnly($submited_date),
+        //     $submited_date,
+        //     $submited_date,
+        //     $polda->name,
+        //     $polda->id
+        // ), $filename);
     }
 }
