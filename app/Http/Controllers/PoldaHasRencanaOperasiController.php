@@ -919,6 +919,11 @@ class PoldaHasRencanaOperasiController extends Controller
 
         $filename = 'daily-report-'.$polda->short_name.'-'.$now.'.xlsx';
 
+        $prev = reportDailyPrev($polda_submited_id, nowYearMinusOne(), $rencana_operasi_id, 'custom', $now, $now);
+        $current = reportDailyCurrent($polda_submited_id, nowYear(), $rencana_operasi_id, 'custom', $now, $now);
+
+        return $prev;
+
         return Excel::download(new PoldaDailyComparison(
             $rencana_operasi_id,
             yearMinusOneOnly($submited_date),

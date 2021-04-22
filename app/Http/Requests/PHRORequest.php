@@ -358,7 +358,7 @@ class PHRORequest extends FormRequest
             'prokes_covid_sosialisasi_tentang_prokes' => 'required|integer',
             'prokes_covid_giat_baksos' => 'required|integer',
 
-//=========================================================================================================================================================================
+//====================================================================================================================================================
 
             'pelanggaran_lalu_lintas_tilang_p' => 'required|integer',
             'pelanggaran_lalu_lintas_teguran_p' => 'required|integer',

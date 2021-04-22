@@ -9,6 +9,18 @@ use App\Models\PoldaSubmited;
 use App\Models\RencanaOperasi;
 
 
+if (! function_exists('nowYear')) {
+    function nowYear() {
+        return now()->format("Y");
+    }
+}
+
+if (! function_exists('nowYearMinusOne')) {
+    function nowYearMinusOne() {
+        return now()->format("Y") - 1;
+    }
+}
+
 if (! function_exists('nowToday')) {
     function nowToday() {
         return now()->format("Y-m-d");
