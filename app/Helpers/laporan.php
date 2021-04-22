@@ -1613,6 +1613,33 @@ if (! function_exists('excelTemplate')) {
         $sheet->setCellValue('C401', $prev->arus_mudik_pelabuhan_total_penumpang_kedatangan);
         $sheet->setCellValue('D401', $current->arus_mudik_pelabuhan_total_penumpang_kedatangan);
 
+        $sheet->setCellValue('C403', $prev->arus_mudik_bandara_jumlah_penumpang_keberangkatan);
+        $sheet->setCellValue('D403', $current->arus_mudik_bandara_jumlah_penumpang_keberangkatan);
+
+        $sheet->setCellValue('C404', $prev->arus_mudik_bandara_jumlah_penumpang_kedatangan);
+        $sheet->setCellValue('D404', $current->arus_mudik_bandara_jumlah_penumpang_kedatangan);
+
+        $sheet->setCellValue('C405', $prev->arus_mudik_total_bandara);
+        $sheet->setCellValue('D405', $current->arus_mudik_total_bandara);
+
+        $sheet->setCellValue('C406', $prev->arus_mudik_bandara_total_penumpang_keberangkatan);
+        $sheet->setCellValue('D406', $current->arus_mudik_bandara_total_penumpang_keberangkatan);
+
+        $sheet->setCellValue('C407', $prev->arus_mudik_bandara_total_penumpang_kedatangan);
+        $sheet->setCellValue('D407', $current->arus_mudik_bandara_total_penumpang_kedatangan);
+
+        $sheet->setCellValue('C410', $prev->prokes_covid_teguran_gar_prokes);
+        $sheet->setCellValue('D410', $current->prokes_covid_teguran_gar_prokes);
+
+        $sheet->setCellValue('C411', $prev->prokes_covid_pembagian_masker);
+        $sheet->setCellValue('D411', $current->prokes_covid_pembagian_masker);
+
+        $sheet->setCellValue('C412', $prev->prokes_covid_sosialisasi_tentang_prokes);
+        $sheet->setCellValue('D412', $current->prokes_covid_sosialisasi_tentang_prokes);
+
+        $sheet->setCellValue('C413', $prev->prokes_covid_giat_baksos);
+        $sheet->setCellValue('D413', $current->prokes_covid_giat_baksos);
+
 
         //write it again to Filesystem with the same name (=replace)
         $writer = new Xlsx($spreadsheet);
