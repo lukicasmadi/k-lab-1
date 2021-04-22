@@ -913,14 +913,14 @@ class PoldaHasRencanaOperasiController extends Controller
             return redirect()->back();
         }
 
-        $polda_submited_id = $poldaSubmited->id;
+        $polda_id = $poldaSubmited->polda_id;
         $rencana_operasi_id = $poldaSubmited->rencana_operasi_id;
         $submited_date = $poldaSubmited->submited_date;
 
         $filename = 'daily-report-'.$polda->short_name.'-'.$now.'.xlsx';
 
-        $prev = reportDailyPrev($polda_submited_id, nowYearMinusOne(), $rencana_operasi_id, 'custom', $now, $now);
-        $current = reportDailyCurrent($polda_submited_id, nowYear(), $rencana_operasi_id, 'custom', $now, $now);
+        $prev = reportDailyPrev($polda_id, nowYearMinusOne(), $rencana_operasi_id, 'custom', $now, $now);
+        $current = reportDailyCurrent($polda_id, nowYear(), $rencana_operasi_id, 'custom', $now, $now);
 
         excelTemplate(
             'per_polda',
