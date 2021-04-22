@@ -101,7 +101,32 @@
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
                                 </div>
                                 <div class="col-xl-5 col-md-12 col-sm-12 col-12">
-                                3. TEMPAT KERAMAIAN
+                                3. MEDIA SOSIAL
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('penlu_melalui_media_sosial_p') is-invalid @enderror" name="penlu_melalui_media_sosial_p" autocomplete="off" value="{{ $data->dailyInputPrev->penlu_melalui_media_sosial_p }}">
+                                    @error('penlu_melalui_media_sosial_p')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-3 col-md-12 col-sm-12 col-12">
+                                    <input type="number" class="form-onsite @error('penlu_melalui_media_sosial') is-invalid @enderror" name="penlu_melalui_media_sosial" autocomplete="off" value="{{ $data->dailyInput->penlu_melalui_media_sosial }}">
+                                    @error('penlu_melalui_media_sosial')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 line-onsite">
+                            <div class="row">
+                                <div class="col-xl-1 col-md-12 col-sm-12 col-12">
+                                </div>
+                                <div class="col-xl-5 col-md-12 col-sm-12 col-12">
+                                4. TEMPAT KERAMAIAN
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
                                     <input type="number" class="form-onsite @error('penlu_melalui_tempat_keramaian_p') is-invalid @enderror" name="penlu_melalui_tempat_keramaian_p" autocomplete="off" value="{{ $data->dailyInputPrev->penlu_melalui_tempat_keramaian_p }}">
@@ -126,7 +151,7 @@
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
                                 </div>
                                 <div class="col-xl-5 col-md-12 col-sm-12 col-12">
-                                4. TEMPAT ISTIRAHAT
+                                5. TEMPAT ISTIRAHAT
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
                                     <input type="number" class="form-onsite @error('penlu_melalui_tempat_istirahat_p') is-invalid @enderror" name="penlu_melalui_tempat_istirahat_p" autocomplete="off" value="{{ $data->dailyInputPrev->penlu_melalui_tempat_istirahat_p }}">
@@ -151,7 +176,7 @@
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
                                 </div>
                                 <div class="col-xl-5 col-md-12 col-sm-12 col-12">
-                                5. DAERAH RAWAN LAKA & LANGGAR
+                                6. DAERAH RAWAN LAKA & LANGGAR
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
                                     <input type="number" class="form-onsite @error('penlu_melalui_daerah_rawan_laka_dan_langgar_p') is-invalid @enderror" name="penlu_melalui_daerah_rawan_laka_dan_langgar_p" autocomplete="off" value="{{ $data->dailyInputPrev->penlu_melalui_daerah_rawan_laka_dan_langgar_p }}">
