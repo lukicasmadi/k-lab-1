@@ -54,7 +54,7 @@
 @push('page_js')
 <script>
 
-$(function () {
+$(document).ready(function () {
     // $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast");
 });
 </script>

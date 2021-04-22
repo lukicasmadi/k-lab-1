@@ -26,6 +26,65 @@
         </div>
     </blockquote>
 
+    <blockquote class="blockquote mb-4">
+        <div class="row mt-3">
+            <div class="col-md-4 mb-4">
+                <label class="text-popup">Nama Kesatuan</label>
+                <input type="text" class="form-control popoups mt-1 @error('nama_kesatuan') is-invalid @enderror" name="nama_kesatuan" id="nama_kesatuan" autocomplete="off" value="{{ $data->nama_kesatuan }}">
+                @error('nama_kesatuan')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="col-md-4 mb-4">
+                <label class="text-popup">Nama Atasan</label>
+                <input type="text" class="form-control popoups mt-1 @error('nama_atasan') is-invalid @enderror" name="nama_atasan" id="nama_atasan" autocomplete="off" value="{{ $data->nama_atasan }}">
+                @error('nama_atasan')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="col-md-4 mb-4">
+                <label class="text-popup">Pangkat dan nrp</label>
+                <input type="text" class="form-control popoups mt-1 @error('pangkat_dan_nrp') is-invalid @enderror" name="pangkat_dan_nrp" id="pangkat_dan_nrp" autocomplete="off" value="{{ $data->pangkat_dan_nrp }}">
+                @error('pangkat_dan_nrp')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="col-md-4 mb-4">
+                <label class="text-popup">Jabatan</label>
+                <input type="text" class="form-control popoups mt-1 @error('jabatan') is-invalid @enderror" name="jabatan" id="jabatan" autocomplete="off" value="{{ $data->jabatan }}">
+                @error('jabatan')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="col-md-4 mb-4">
+                <label class="text-popup">Nama Laporan</label>
+                <input type="text" class="form-control popoups mt-1 @error('nama_laporan') is-invalid @enderror" name="nama_laporan" id="nama_laporan" autocomplete="off" value="{{ $data->nama_laporan }}">
+                @error('nama_laporan')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="col-md-4 mb-4">
+                <label class="text-popup">Nama Kota</label>
+                <input type="text" class="form-control popoups mt-1 @error('nama_kota') is-invalid @enderror" name="nama_kota" id="nama_kota" autocomplete="off" value="{{ $data->nama_kota }}">
+                @error('nama_kota')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
+    </blockquote>
+
     <div class="statbox widget box box-shadow">
         <div id="toggleAccordion">
             <div class="card">

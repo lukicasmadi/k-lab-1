@@ -163,10 +163,7 @@ class PoldaHasRencanaOperasiController extends Controller
 
         try {
 
-            $payload = $request->except([
-                '_token',
-                'submit',
-                '_method',
+            $payloadPrev = $request->only([
                 'pelanggaran_lalu_lintas_tilang_p',
                 'pelanggaran_lalu_lintas_teguran_p',
                 'pelanggaran_sepeda_motor_gun_helm_sni_p',
@@ -426,10 +423,7 @@ class PoldaHasRencanaOperasiController extends Controller
                 'faktor_penyebab_kecelakaan_prasarana_jalan_p',
             ]);
 
-            $payloadPrev = $request->except([
-                '_token',
-                'submit',
-                '_method',
+            $payload = $request->only([
                 'pelanggaran_lalu_lintas_tilang',
                 'pelanggaran_lalu_lintas_teguran',
                 'pelanggaran_sepeda_motor_gun_helm_sni',
@@ -698,6 +692,15 @@ class PoldaHasRencanaOperasiController extends Controller
             DailyInputPrev::where("polda_submited_id", $poldaSubmited->id)
                 ->where(DB::raw('DATE(created_at)'), $poldaSubmited->submited_date)
                 ->update($payloadPrev);
+
+            $poldaSubmited->update([
+                'nama_kesatuan' => upperCase($request->nama_kesatuan),
+                'nama_atasan' => upperCase($request->nama_atasan),
+                'pangkat_dan_nrp' => upperCase($request->pangkat_dan_nrp),
+                'jabatan' => upperCase($request->jabatan),
+                'nama_laporan' => upperCase($request->nama_laporan),
+                'nama_kota' => upperCase($request->nama_kota),
+            ]);
 
             DB::commit();
             flash('Seluruh data berhasil diupdate')->success();
