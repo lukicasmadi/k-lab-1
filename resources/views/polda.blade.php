@@ -72,7 +72,7 @@
                 <div class="col-md-12 text-left mb-3">
                     <div class="text-left">
                         <div class="row">
-                            <a class="btn add-none" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 20"><path id="Union_2" data-name="Union 2" d="M-2852-2201a2,2,0,0,1-2-2v-16a2,2,0,0,1,2-2h7a.118.118,0,0,1,.032.006.131.131,0,0,0,.03.006,1.043,1.043,0,0,1,.259.051l.028.009a.492.492,0,0,1,.066.028.993.993,0,0,1,.293.2l6,6a.98.98,0,0,1,.2.293.639.639,0,0,1,.025.068l.009.026a1,1,0,0,1,.049.258.144.144,0,0,0,.007.027.139.139,0,0,1,0,.028v11a2,2,0,0,1-2,2Zm0-2h12v-10h-5a1,1,0,0,1-1-1v-5h-6Zm8-12h2.586l-2.586-2.586Zm-5.333,10v-2h6.667v2Zm0-4v-2h6.667v2Z" transform="translate(2854 2221)" fill="#00adef"/></svg>
+                            <a class="btn add-none" id="data_status_pelaporan" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 20"><path id="Union_2" data-name="Union 2" d="M-2852-2201a2,2,0,0,1-2-2v-16a2,2,0,0,1,2-2h7a.118.118,0,0,1,.032.006.131.131,0,0,0,.03.006,1.043,1.043,0,0,1,.259.051l.028.009a.492.492,0,0,1,.066.028.993.993,0,0,1,.293.2l6,6a.98.98,0,0,1,.2.293.639.639,0,0,1,.025.068l.009.026a1,1,0,0,1,.049.258.144.144,0,0,0,.007.027.139.139,0,0,1,0,.028v11a2,2,0,0,1-2,2Zm0-2h12v-10h-5a1,1,0,0,1-1-1v-5h-6Zm8-12h2.586l-2.586-2.586Zm-5.333,10v-2h6.667v2Zm0-4v-2h6.667v2Z" transform="translate(2854 2221)" fill="#00adef"/></svg>
                             data status pelaporan
                             </a>
                         </div>
@@ -121,46 +121,48 @@
 </div>
 
 @include('preview_pages.report_daily_preview')
+@include('popup.polda_date_range')
 @endsection
 
 @push('library_css')
 <link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/table/datatable/datatables.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/table/datatable/dt-global_style.css') }}">
-<!-- <link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/apex/apexcharts.css') }}" /> -->
 <link rel="stylesheet" type="text/css" href="{{ asset('template/assets/css/dashboard/dash_2.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/animate/animate.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('template/datepicker/css/bootstrap-datepicker.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('template/custom.css') }}">
 @endpush
 
 @push('library_js')
 <script src="{{ asset('template/plugins/table/datatable/datatables.js') }}"></script>
 <script src="{{ asset('template/plugins/apex/apexcharts.min.js') }}"></script>
+<script src="{{ asset('template/datepicker/js/bootstrap-datepicker.min.js') }}"></script>
 @endpush
 
 @push('page_css')
 <style>
-    .apexcharts-canvas {
-        margin: 0 auto;
-    }
+.apexcharts-canvas {
+    margin: 0 auto;
+}
 
-    .apexcharts-title-text {
-        fill: #ffffff;
-    }
-    .apexcharts-yaxis-label {
-        fill: #ffffff;
-    }
-    .apexcharts-xaxis-label {
-        fill: #ffffff;
-    }
-    .apexcharts-legend-text {
-        color: #ffffff!important;
-    }
-    .apexcharts-radialbar-track.apexcharts-track .apexcharts-radialbar-area {
-        stroke: #191e3a;
-    }
-    .apexcharts-pie-label, .apexcharts-datalabel, .apexcharts-datalabel-label, .apexcharts-datalabel-value {
-        fill: #ffffff;
-    }
+.apexcharts-title-text {
+    fill: #ffffff;
+}
+.apexcharts-yaxis-label {
+    fill: #ffffff;
+}
+.apexcharts-xaxis-label {
+    fill: #ffffff;
+}
+.apexcharts-legend-text {
+    color: #ffffff!important;
+}
+.apexcharts-radialbar-track.apexcharts-track .apexcharts-radialbar-area {
+    stroke: #191e3a;
+}
+.apexcharts-pie-label, .apexcharts-datalabel, .apexcharts-datalabel-label, .apexcharts-datalabel-value {
+    fill: #ffffff;
+}
 .widget.widget-activity-three .timeline-line .item-timeline .t-content p {
     margin-bottom: 8px;
     font-size: 12px;
@@ -179,6 +181,20 @@
 @push('page_js')
 <script>
 $(document).ready(function () {
+
+    $('#tanggal_mulai').datepicker({
+        format: 'dd-mm-yyyy',
+        todayHighlight: true,
+        autoclose: true,
+    })
+
+    $('#tanggal_selesai').datepicker({
+        format: 'dd-mm-yyyy',
+        todayHighlight: true,
+        autoclose: true,
+    })
+
+
     var table = $('#tbl_polda_submited').DataTable({
         processing: true,
         serverSide: true,
@@ -247,6 +263,12 @@ $(document).ready(function () {
     donutDataFull()
 })
 
+
+$('body').on('click', '#data_status_pelaporan', function(e) {
+    e.preventDefault()
+    $('#polda_report_date_range').modal('show')
+})
+
 $('#tbl_polda_submited tbody').on('click', '.previewPhro', function(e) {
     e.preventDefault()
     var uuid = $(this).attr('data-id')
@@ -255,7 +277,8 @@ $('#tbl_polda_submited tbody').on('click', '.previewPhro', function(e) {
         $("#idTahunPrev").html(response.data.dailyPrev.year)
         $("#idTahun").html(response.data.daily.year)
 
-        if(response.data.dailyInput) {
+        if(response.data.dailyInput)
+        {
             var dataCurrent = response.data.dailyInput
             $("#pelanggaran_lalu_lintas_tilang").html(dataCurrent.pelanggaran_lalu_lintas_tilang)
             $("#pelanggaran_lalu_lintas_teguran").html(dataCurrent.pelanggaran_lalu_lintas_teguran)
@@ -516,7 +539,8 @@ $('#tbl_polda_submited tbody').on('click', '.previewPhro', function(e) {
             $("#dikmas_lantas_giatlantas_patroli").html(dataCurrent.giat_lantas_patroli)
         }
 
-        if(response.data.dailyInputPrev) {
+        if(response.data.dailyInputPrev)
+        {
             var dataPrev = response.data.dailyInputPrev
             $("#pelanggaran_lalu_lintas_tilang_prev").html(dataPrev.pelanggaran_lalu_lintas_tilang)
             $("#pelanggaran_lalu_lintas_teguran_prev").html(dataPrev.pelanggaran_lalu_lintas_teguran)
@@ -781,7 +805,8 @@ $('#tbl_polda_submited tbody').on('click', '.previewPhro', function(e) {
     })
 })
 
-function donutDataWeekly() {
+function donutDataWeekly()
+{
     axios.get(route('weeklyPolda')).then(function(response) {
         var filled = response.data.filled
         var nofilled = response.data.nofilled
@@ -923,7 +948,8 @@ function donutDataWeekly() {
     })
 }
 
-function donutDataFull() {
+function donutDataFull()
+{
     axios.get(route('fullPolda')).then(function(response) {
         var filled = response.data.filled
         var nofilled = response.data.nofilled

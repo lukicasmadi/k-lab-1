@@ -37,6 +37,8 @@ Route::group(['middleware' => 'auth'], function () {
         ]);
     });
 
+    Route::post('/report/polda/daterange', 'ReportController@poldaByDateRange')->name('polda_report_date_range');
+
     // Route Hanya Bisa Diakses Oleh Administrator atau Korlantas Pusat
     Route::group(['middleware' => 'admin-or-pusat-only'], function () {
 
@@ -69,6 +71,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/report/anev-date-compare/process', 'ReportController@anevDateCompareProcess')->name('report_anev_daily_process');
         Route::get('/report/daily/polda/{poldaUuid}', 'ReportController@poldaUuid')->name('report_bypolda');
         Route::get('/report/daily/id/{uuid}', 'ReportController@byId')->name('report_daily_by_id');
+
 
         Route::resource('unit', 'UnitController', [
             'names' => [

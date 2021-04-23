@@ -197,4 +197,17 @@ class ReportController extends Controller
             'current' => $currentYear
         ];
     }
+
+    public function poldaByDateRange(Request $request)
+    {
+        if(empty($request->tanggal_mulai) || empty($request->tanggal_selesai)) {
+            flash('Tanggal mulai dan selesai harus diisi!')->error();
+            return redirect()->back();
+        }
+
+        $tanggal_mulai = dateOnly($request->tanggal_mulai);
+        $tanggal_selesai = dateOnly($request->tanggal_selesai);
+
+        return $tanggal_mulai;
+    }
 }
