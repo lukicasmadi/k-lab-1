@@ -269,6 +269,11 @@ $('body').on('click', '#data_status_pelaporan', function(e) {
     $('#polda_report_date_range').modal('show')
 })
 
+$('#polda_report_date_range').on('hidden.bs.modal', function () {
+    $("#tanggal_mulai").val('')
+    $("#tanggal_selesai").val('')
+})
+
 $('#tbl_polda_submited tbody').on('click', '.previewPhro', function(e) {
     e.preventDefault()
     var uuid = $(this).attr('data-id')

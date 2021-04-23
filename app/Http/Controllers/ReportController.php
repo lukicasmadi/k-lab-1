@@ -208,6 +208,27 @@ class ReportController extends Controller
         $tanggal_mulai = dateOnly($request->tanggal_mulai);
         $tanggal_selesai = dateOnly($request->tanggal_selesai);
 
-        return $tanggal_mulai;
+        $prev = prevPerPolda(poldaId(), $tanggal_mulai, $tanggal_selesai);
+        $current = currentPerPolda(poldaId(), $tanggal_mulai, $tanggal_selesai);
+
+        $poldaSubmited = PoldaSubmited::where('polda_id', poldaId())->orderBy('id', 'desc')->first();
+
+        if(empty($poldaSubmited)) {
+            flash('Data inputan polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
+            return redirect()->back();
+        }
+
+        excelTemplate(
+            'per_polda',
+            $prev,
+            $current,
+            'KESATUAN : '.$poldaSubmited->nama_kesatuan,
+            $poldaSubmited->nama_kota.", ".indonesianDate(date("Y-m-d")),
+            'NAMA : '.$poldaSubmited->nama_atasan,
+            $poldaSubmited->pangkat_dan_nrp,
+            $poldaSubmited->jabatan,
+            $poldaSubmited->nama_laporan,
+            'polda-'.poldaName().'-'.$request->tanggal_mulai.'-'.$request->tanggal_selesai
+        );
     }
 }
