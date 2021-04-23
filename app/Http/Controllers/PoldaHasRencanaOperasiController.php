@@ -933,15 +933,5 @@ class PoldaHasRencanaOperasiController extends Controller
             $poldaSubmited->jabatan,
             $poldaSubmited->nama_laporan
         );
-
-        // return Excel::download(new PoldaDailyComparison(
-        //     $rencana_operasi_id,
-        //     yearMinusOneOnly($submited_date),
-        //     yearOnly($submited_date),
-        //     $submited_date,
-        //     $submited_date,
-        //     $polda->name,
-        //     $polda->id
-        // ), $filename);
     }
 }
