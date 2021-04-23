@@ -71,7 +71,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/report/anev-date-compare', 'ReportController@anevDateCompare')->name('report_anev_daily');
         Route::post('/report/anev-date-compare/process', 'ReportController@anevDateCompareProcess')->name('report_anev_daily_process');
         Route::get('/report/daily/polda/{poldaUuid}', 'ReportController@poldaUuid')->name('report_bypolda');
-        Route::get('/polda/{short_name}', 'HomeController@openPoldaData')->name('korlantas_open_polda');
+        Route::get('/polda-data/{short_name}', 'HomeController@openPoldaData')->name('korlantas_open_polda');
 
         Route::resource('unit', 'UnitController', [
             'names' => [
