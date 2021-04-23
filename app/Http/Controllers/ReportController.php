@@ -33,33 +33,6 @@ class ReportController extends Controller
         return view('report.anev_harian', compact('rencanaOperasi', 'currentYear', 'prevYear'));
     }
 
-    public function byId($uuid)
-    {
-        $poldaSubmited = PoldaSubmited::whereUuid($uuid)->first();
-
-        if(empty($poldaSubmited)) {
-            flash('Inputan polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
-            return redirect()->back();
-        }
-
-        $polda_submited_id = $poldaSubmited->id;
-        $rencana_operasi_id = $poldaSubmited->rencana_operasi_id;
-        $submited_date = $poldaSubmited->submited_date;
-        $now = now()->format("Y-m-d");
-
-        $filename = 'polda-self-report-'.poldaShortName().'-'.$now.'.xlsx';
-
-        return Excel::download(new PoldaDailyComparison(
-            $rencana_operasi_id,
-            yearMinusOneOnly($submited_date),
-            yearOnly($submited_date),
-            $submited_date,
-            $submited_date,
-            poldaName(),
-            $poldaSubmited->polda_id,
-        ), $filename);
-    }
-
     public function dailyAllPolda()
     {
         $listPolda = Polda::orderBy('id', 'asc')->pluck("name", "id");
@@ -229,6 +202,38 @@ class ReportController extends Controller
             $poldaSubmited->jabatan,
             $poldaSubmited->nama_laporan,
             'polda-'.poldaName().'-'.$request->tanggal_mulai.'-'.$request->tanggal_selesai
+        );
+    }
+
+    public function byId($uuid)
+    {
+        $poldaSubmited = PoldaSubmited::whereUuid($uuid)->first();
+
+        if(empty($poldaSubmited)) {
+            flash('Inputan polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
+            return redirect()->back();
+        }
+
+        $polda_id = $poldaSubmited->polda_id;
+        $rencana_operasi_id = $poldaSubmited->rencana_operasi_id;
+        $submited_date = dateOnly($poldaSubmited->submited_date);
+        $submited_year = yearOnly($poldaSubmited->submited_date);
+        $submited_year_prev = yearOnly($poldaSubmited->submited_date) - 1;
+
+        $prev = reportDailyPrev($polda_id, $submited_year_prev, $rencana_operasi_id, null, $submited_date, $submited_date);
+        $current = reportDailyCurrent($polda_id, $submited_year, $rencana_operasi_id, null, $submited_date, $submited_date);
+
+        excelTemplate(
+            'per_polda',
+            $prev,
+            $current,
+            'KESATUAN : '.$poldaSubmited->nama_kesatuan,
+            $poldaSubmited->nama_kota.", ".indonesianDate($submited_date),
+            'NAMA : '.$poldaSubmited->nama_atasan,
+            $poldaSubmited->pangkat_dan_nrp,
+            $poldaSubmited->jabatan,
+            $poldaSubmited->nama_laporan,
+            'polda-'.poldaName().'-'.indonesianStandart($submited_date)
         );
     }
 }
