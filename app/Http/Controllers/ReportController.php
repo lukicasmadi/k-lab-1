@@ -223,7 +223,7 @@ class ReportController extends Controller
             $prev,
             $current,
             'KESATUAN : '.$poldaSubmited->nama_kesatuan,
-            $poldaSubmited->nama_kota.", ".indonesianDate(date("Y-m-d")),
+            $poldaSubmited->nama_kota.", ".$request->tanggal_mulai.' S/D '.$request->tanggal_selesai,
             'NAMA : '.$poldaSubmited->nama_atasan,
             $poldaSubmited->pangkat_dan_nrp,
             $poldaSubmited->jabatan,
