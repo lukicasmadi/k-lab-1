@@ -267,6 +267,18 @@ if (! function_exists('poldaAlreadyInputToday')) {
     }
 }
 
+if (! function_exists('poldaAlreadyInputTodayById')) {
+    function poldaAlreadyInputTodayById($polda_id) {
+        $now = now()->format('Y-m-d');
+        $submited = PoldaSubmited::where("submited_date", $now)->where('polda_id', $polda_id)->first();
+        if(empty($submited)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+}
+
 if (! function_exists('hariIni')) {
     function hariIni() {
         return now()->format("d-m-Y");

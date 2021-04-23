@@ -217,4 +217,11 @@ class HomeController extends Controller
             'projectName' => $projectRunning->name
         ], 200);
     }
+
+    public function openPoldaData($short_name)
+    {
+        $polda = Polda::where('short_name', $short_name)->firstOrFail();
+
+        return view('korlantas_open_polda', compact('polda'));
+    }
 }
