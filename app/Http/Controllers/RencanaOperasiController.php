@@ -71,6 +71,10 @@ class RencanaOperasiController extends Controller
 
     public function index()
     {
+        if(isAdmin()) {
+            return view('operation.admin_index');
+        }
+
         return view('operation.index');
     }
 
@@ -142,22 +146,12 @@ class RencanaOperasiController extends Controller
 
     public function destroy($uuid)
     {
-        $validation = RencanaOperasi::has('poldaInputRencanaOperasi')->whereUuid($uuid)->count();
+        $data = RencanaOperasi::whereUuid($uuid)->firstOrFail();
 
-        if($validation > 0) {
-            return response()->json([
-                'output' => 'This data is still related to other data',
-            ], 403);
-        } else {
-            $data = RencanaOperasi::whereUuid($uuid)->firstOrFail();
+        $data->delete();
 
-            Storage::delete('/public/upload/rencana_operasi/'.$data->attachement);
-
-            $data->delete();
-
-            return response()->json([
-                'output' => 'Your data has been deleted.',
-            ], 200);
-        }
+        return response()->json([
+            'output' => 'Data berhasil dihapus!',
+        ], 200);
     }
 }
