@@ -344,8 +344,8 @@
             var id = $(this).attr('idval')
 
             swal({
-                title: 'Jika data ini dihapus maka semua inputan polda yang menggunakan data ini akan otomatis terhapus?',
-                text: "Anda yakin?",
+                title: 'Jika data ini dihapus maka semua data yang berelasi dengan data ini akan otomatis terhapus!',
+                text: "Anda Yakin?",
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Delete',
