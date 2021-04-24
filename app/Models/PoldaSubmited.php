@@ -23,6 +23,11 @@ class PoldaSubmited extends Model
         });
     }
 
+    public function scopePerpoldabyid($query, $polda_id)
+    {
+        return $query->where('polda_id', $polda_id);
+    }
+
     public function polda()
     {
         return $this->belongsTo(Polda::class);

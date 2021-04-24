@@ -224,4 +224,21 @@ class HomeController extends Controller
 
         return view('korlantas_open_polda', compact('polda'));
     }
+
+    public function dataSpesificPolda($polda_id)
+    {
+        $model = PoldaSubmited::perpoldabyid($polda_id)->with(['polda', 'rencanaOperasi']);
+
+        return datatables()->eloquent($model)
+        ->addColumn('operation_name', function (PoldaSubmited $ps) {
+            return $ps->rencanaOperasi->name;
+        })
+        ->addColumn('time_created', function (PoldaSubmited $ps) {
+            return timeOnly($ps->created_at);
+        })
+        ->addColumn('polda_name', function (PoldaSubmited $ps) {
+            return $ps->polda->name;
+        })
+        ->toJson();
+    }
 }

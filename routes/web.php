@@ -178,6 +178,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/get-polda-list/{id}', 'UserHasPoldaController@check_user_polda')->name('check_user_polda');
         Route::get('/phro', 'PoldaHasRencanaOperasiController@data')->name('phro_data');
         Route::get('/polda/phro', 'HomeController@data')->name('phro_polda_data');
+        Route::get('/polda/phro/id/{polda_id}', 'HomeController@dataSpesificPolda')->name('phro_polda_data_id');
         Route::get('/totalinputan', 'HomeController@dashboardChart')->name('dashboardChart');
         Route::get('/phro/{uuid}/preview', 'PoldaHasRencanaOperasiController@preview')->name('phro_preview');
         Route::get('/phro/dailycheck', 'HomeController@dailycheck')->name('dailycheck');

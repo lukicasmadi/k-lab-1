@@ -13,6 +13,7 @@
 
 @section('content')
 <div id="content" class="main-content mt-n3">
+    <input type="hidden" name="polda_id" id="polda_id" value="{{ $polda->id }}">
     <div class="layout-px-spacing">
         <div class="row layout-top-spacing">
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing blendingimg text-center mt-4">
@@ -191,73 +192,77 @@ $(document).ready(function () {
         autoclose: true,
     })
 
+    var poldaId = $("#polda_id").val()
 
-    var table = $('#tbl_polda_submited').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: route('phro_polda_data'),
-        "oLanguage": {
-                "oPaginate": {
-                    "sPrevious": '<i class="fas fa-chevron-left dtIconSize"></i>',
-                    "sNext": '<i class="fas fa-chevron-right dtIconSize"></i>'
+    if(poldaId) {
+        var table = $('#tbl_polda_submited').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: route('phro_polda_data_id', poldaId),
+            "oLanguage": {
+                    "oPaginate": {
+                        "sPrevious": '<i class="fas fa-chevron-left dtIconSize"></i>',
+                        "sNext": '<i class="fas fa-chevron-right dtIconSize"></i>'
+                    },
+                    "sInfo": "Menampilkan halaman _PAGE_ dari _PAGES_",
+                    "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
+                    "sSearchPlaceholder": "CARI DATA...",
+                    "sLengthMenu": " _MENU_ ",
+                    "sProcessing": '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>',
                 },
-                "sInfo": "Menampilkan halaman _PAGE_ dari _PAGES_",
-                "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
-                "sSearchPlaceholder": "CARI DATA...",
-                "sLengthMenu": " _MENU_ ",
-                "sProcessing": '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>',
-            },
-        order: [
-            [0, "desc"]
-        ],
-        columns: [
-            {
-                data: 'id',
-                visible: false,
-                searchable: false
-            },
-            {
-                data: 'operation_name',
-                name: 'rencanaOperasi.name'
-            },
-            {
-                data: 'submited_date',
-                name: 'created_at'
-            },
-            {
-                data: 'time_created',
-                name: 'created_at'
-            },
-            {
-                data: 'uuid',
-                render: function(data, type, row) {
-                    return `
-                    <div class="icon-container text-center">
-                        <a href="`+route('previewPhro', data)+`" class="previewPhro" data-id="`+data+`">
-                        <img src="{{ asset('/img/search.png') }}" width="55%">
-                        </a>
-                    </div>
-                    `;
+            order: [
+                [0, "desc"]
+            ],
+            columns: [
+                {
+                    data: 'id',
+                    visible: false,
+                    searchable: false
                 },
-                searchable: false,
-                sortable: false,
-            },
-            {
-                data: 'uuid',
-                render: function(data, type, row) {
-                    return `
-                    <div class="ubah-change text-center">
-                        <a href="`+route('report_daily_by_id', data)+`">Unduh</a>
-                    </div>
-                    `;
+                {
+                    data: 'operation_name',
+                    name: 'rencanaOperasi.name'
                 },
-                searchable: false,
-                sortable: false,
-            },
-        ]
-    })
-    donutDataWeekly()
-    donutDataFull()
+                {
+                    data: 'submited_date',
+                    name: 'created_at'
+                },
+                {
+                    data: 'time_created',
+                    name: 'created_at'
+                },
+                {
+                    data: 'uuid',
+                    render: function(data, type, row) {
+                        return `
+                        <div class="icon-container text-center">
+                            <a href="`+route('previewPhro', data)+`" class="previewPhro" data-id="`+data+`">
+                            <img src="{{ asset('/img/search.png') }}" width="55%">
+                            </a>
+                        </div>
+                        `;
+                    },
+                    searchable: false,
+                    sortable: false,
+                },
+                {
+                    data: 'uuid',
+                    render: function(data, type, row) {
+                        return `
+                        <div class="ubah-change text-center">
+                            <a href="`+route('report_daily_by_id', data)+`">Unduh</a>
+                        </div>
+                        `;
+                    },
+                    searchable: false,
+                    sortable: false,
+                },
+            ]
+        })
+    }
+
+    // donutDataWeekly()
+    // donutDataFull()
 })
 
 
