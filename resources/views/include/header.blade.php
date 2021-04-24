@@ -27,7 +27,7 @@
 
                     <ul class="list-unstyled menu-categories" id="topAccordion">
 
-                        <li class="menu single-menu {{ request()->is('dashboard') ? 'active' : '' }}">
+                        <li class="menu single-menu {{ request()->is('dashboard') || request()->is('polda-data/*') ? 'active' : '' }}">
                             <a href="{{ route('dashboard') }}">
                                 <div>
                                     <span>Beranda</span>

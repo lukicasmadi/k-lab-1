@@ -18,12 +18,14 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             @foreach ($polda as $key => $val)
                 @if ($key >= 0 && $key <= 16)
-                    <div class="cols-sm-1">
-                        <div class="grid-polda line @if (empty($val->dailyInput)) glowred @else glowblue @endif">
-                            <p>{{ $val->short_name }}</p>
-                            <img src="{{ asset('/img/polda/'.$val->logo) }}">
+                    <a href="{{ route('korlantas_open_polda', $val->short_name) }}">
+                        <div class="cols-sm-1">
+                            <div class="grid-polda line @if (empty($val->dailyInput)) glowred @else glowblue @endif">
+                                <p>{{ $val->short_name }}</p>
+                                <img src="{{ asset('/img/polda/'.$val->logo) }}">
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 @endif
             @endforeach
         </div>
@@ -31,12 +33,14 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-1 mb-n2">
             @foreach ($polda as $key => $val)
                 @if ($key >= 17 && $key <= 33)
-                    <div class="cols-sm-1">
-                        <div class="grid-polda line @if (empty($val->dailyInput)) glowred @else glowblue @endif">
-                            <p>{{ $val->short_name }}</p>
-                            <img src="{{ asset('/img/polda/'.$val->logo) }}">
+                    <a href="{{ route('korlantas_open_polda', $val->short_name) }}">
+                        <div class="cols-sm-1">
+                            <div class="grid-polda line @if (empty($val->dailyInput)) glowred @else glowblue @endif">
+                                <p>{{ $val->short_name }}</p>
+                                <img src="{{ asset('/img/polda/'.$val->logo) }}">
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 @endif
             @endforeach
         </div>

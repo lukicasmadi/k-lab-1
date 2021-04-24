@@ -6,7 +6,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="15.556" viewBox="0 0 20 15.556">
         <path id="text_align_left" d="M16.333,20.556H3V18.333H16.333ZM23,16.111H3V13.889H23Zm-6.667-4.444H3V9.444H16.333ZM23,7.222H3V5H23Z" transform="translate(-3 -5)" fill="#00adef"/>
         </svg>
-        <span>BERANDA POLDA {{ poldaName() }}</span>
+        <span>DATA POLDA {{ $polda->name }}</span>
     </h3>
 </div>
 @endpush
@@ -16,7 +16,7 @@
     <div class="layout-px-spacing">
         <div class="row layout-top-spacing">
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing blendingimg text-center mt-4">
-                @if (poldaAlreadyInputToday())
+                @if (poldaAlreadyInputTodayById($polda->id))
                     <div class="grid-polda line glowpolda" >
                         <p class="status-lapor">status laporan hari ini</p>
                         <p class="kirim-lapor">sudah Mengirimkan</p>
@@ -29,7 +29,7 @@
                         <p class="tgl-lapor">{{ dayNameIndonesia(now()) }}, {{ indonesianDate(now()) }} | {{ timeOnly(now()) }}</p>
                     </div>
                 @endif
-                <img class="imgdetail-polda" src="{{ asset('/img/polda/'.poldaImage()->polda->logo) }}">
+                <img class="imgdetail-polda" src="{{ asset('/img/polda/'.$polda->logo) }}">
             </div>
             <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -119,9 +119,6 @@
         </div>
     </div>
 </div>
-
-@include('preview_pages.report_daily_preview')
-@include('popup.polda_date_range')
 @endsection
 
 @push('library_css')

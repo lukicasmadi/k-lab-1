@@ -902,14 +902,14 @@ class PoldaHasRencanaOperasiController extends Controller
         $now = now()->format("Y-m-d");
 
         if(empty($polda)) {
-            flash('Polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
+            flash('Data Polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
             return redirect()->back();
         }
 
         $poldaSubmited = PoldaSubmited::where('polda_id', $polda->id)->where('submited_date', date('Y-m-d'))->first();
 
         if(empty($poldaSubmited)) {
-            flash('Inputan polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
+            flash('Data inputan polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
             return redirect()->back();
         }
 
@@ -933,15 +933,5 @@ class PoldaHasRencanaOperasiController extends Controller
             $poldaSubmited->jabatan,
             $poldaSubmited->nama_laporan
         );
-
-        // return Excel::download(new PoldaDailyComparison(
-        //     $rencana_operasi_id,
-        //     yearMinusOneOnly($submited_date),
-        //     yearOnly($submited_date),
-        //     $submited_date,
-        //     $submited_date,
-        //     $polda->name,
-        //     $polda->id
-        // ), $filename);
     }
 }
