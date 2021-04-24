@@ -57,12 +57,63 @@ class HomeController extends Controller
         return $data;
     }
 
+    public function weeklyPoldaById($id)
+    {
+        $project_start = dateOnly(operationPlans()->start_date);
+        $project_end = dateOnly(operationPlans()->end_date);
+        $project_one_week = dateOnly(incrementDays($project_start, 7));
+
+        $model = PoldaSubmited::whereBetween('submited_date', [$project_start, $project_one_week])->where("polda_id", $id)->count();
+
+        $countDaysAWeek = countDays($project_start, $project_one_week);
+
+        if(empty($model)) {
+            $data = [
+                "filled" => 0,
+                "nofilled" => 100
+            ];
+        } else {
+            $percentage = round((100 * $model) / $countDaysAWeek);
+            $data = [
+                "filled" => $percentage,
+                "nofilled" => 100 - $percentage
+            ];
+        }
+
+        return $data;
+    }
+
     public function fullPolda()
     {
         $project_start = dateOnly(operationPlans()->start_date);
         $project_end = dateOnly(operationPlans()->end_date);
 
         $model = PoldaSubmited::whereBetween('submited_date', [$project_start, $project_end])->where("polda_id", poldaId())->count();
+
+        $countDaysAll = countDays($project_start, $project_end);
+
+        if(empty($model)) {
+            $data = [
+                "filled" => 0,
+                "nofilled" => 100
+            ];
+        } else {
+            $percentage = round((100 * $model) / $countDaysAll);
+            $data = [
+                "filled" => $percentage,
+                "nofilled" => 100 - $percentage
+            ];
+        }
+
+        return $data;
+    }
+
+    public function fullPoldaById($id)
+    {
+        $project_start = dateOnly(operationPlans()->start_date);
+        $project_end = dateOnly(operationPlans()->end_date);
+
+        $model = PoldaSubmited::whereBetween('submited_date', [$project_start, $project_end])->where("polda_id", $id)->count();
 
         $countDaysAll = countDays($project_start, $project_end);
 
@@ -221,6 +272,11 @@ class HomeController extends Controller
     public function openPoldaData($short_name)
     {
         $polda = Polda::where('short_name', $short_name)->firstOrFail();
+
+        session()->forget(['polda_id', 'polda_short_name']);
+
+        session(['polda_id' => $polda->id]);
+        session(['polda_short_name' => $polda->short_name]);
 
         return view('korlantas_open_polda', compact('polda'));
     }

@@ -261,8 +261,8 @@ $(document).ready(function () {
         })
     }
 
-    // donutDataWeekly()
-    // donutDataFull()
+    donutDataWeekly()
+    donutDataFull()
 })
 
 
@@ -814,288 +814,296 @@ $('#tbl_polda_submited tbody').on('click', '.previewPhro', function(e) {
 
 function donutDataWeekly()
 {
-    axios.get(route('weeklyPolda')).then(function(response) {
-        var filled = response.data.filled
-        var nofilled = response.data.nofilled
+    var poldaId = $("#polda_id").val()
 
-        var donutChart = {
-        chart: {
-            height: 300,
-            fontFamily: 'Bahnschrift',
-            type: 'donut',
-            toolbar: {
-                show: false,
-            }
-        },
-        legend: {
-            show: true,
-            showForSingleSeries: false,
-            showForNullSeries: true,
-            showForZeroSeries: true,
-            position: 'bottom',
-            horizontalAlign: 'center',
-            floating: false,
-            fontSize: '10px',
-            fontFamily: 'Bahnschrift',
-            fontWeight: 400,
-            formatter: undefined,
-            inverseOrder: false,
-            width: undefined,
-            height: undefined,
-            tooltipHoverFormatter: undefined,
-            offsetX: 0,
-            offsetY: 40,
-            labels: {
-                colors: undefined,
-                useSeriesColors: false
+    if(poldaId) {
+        axios.get(route('weeklyPoldaById', poldaId)).then(function(response) {
+            var filled = response.data.filled
+            var nofilled = response.data.nofilled
+
+            var donutChart = {
+            chart: {
+                height: 300,
+                fontFamily: 'Bahnschrift',
+                type: 'donut',
+                toolbar: {
+                    show: false,
+                }
             },
-            markers: {
-                width: 12,
-                height: 12,
-                strokeWidth: 0,
-                strokeColor: '#fff',
-                fillColors: undefined,
-                radius: 12,
-                customHTML: undefined,
-                onClick: undefined,
-                offsetX: 0,
-                offsetY: 0
-            },
-            itemMargin: {
-                horizontal: 0,
-                vertical: 10
-            },
-            onItemClick: {
-                toggleDataSeries: true
-            },
-            onItemHover: {
-                highlightDataSeries: true
-            },
-        },
-        fill: {
-            type: "gradient",
-            gradient: {
-            shadeIntensity: 0.8,
-            opacityFrom: 0.9,
-            opacityTo: 0.9,
-            stops: [50, 190, 100]
-            }
-        },
-        colors:['#00adef', '#ea1c26'],
-        plotOptions: {
-          pie: {
-            donut: {
-              size: '65%',
-              background: 'transparent',
-              labels: {
+            legend: {
                 show: true,
-                name: {
-                  show: true,
-                  fontSize: '11px',
-                  fontFamily: 'Bahnschrift',
-                  color: undefined,
-                  offsetY: -30,
+                showForSingleSeries: false,
+                showForNullSeries: true,
+                showForZeroSeries: true,
+                position: 'bottom',
+                horizontalAlign: 'center',
+                floating: false,
+                fontSize: '10px',
+                fontFamily: 'Bahnschrift',
+                fontWeight: 400,
+                formatter: undefined,
+                inverseOrder: false,
+                width: undefined,
+                height: undefined,
+                tooltipHoverFormatter: undefined,
+                offsetX: 0,
+                offsetY: 40,
+                labels: {
+                    colors: undefined,
+                    useSeriesColors: false
                 },
-                value: {
-                  show: true,
-                  fontSize: '40px',
-                  fontFamily: 'Bahnschrift',
-                  color: '20',
-                  offsetY: 0,
-                  formatter: function (val) {
-                    return val + "%"
-                  }
+                markers: {
+                    width: 12,
+                    height: 12,
+                    strokeWidth: 0,
+                    strokeColor: '#fff',
+                    fillColors: undefined,
+                    radius: 12,
+                    customHTML: undefined,
+                    onClick: undefined,
+                    offsetX: 0,
+                    offsetY: 0
                 },
-                total: {
-                  show: true,
-                  showAlways: false,
-                  label: 'DATA MASUK',
-                  color: '#888ea8',
-                  formatter: function (w) {
-                    return w.globals.seriesTotals.reduce( function(a, b) {
-                      return a + "%"
-                    })
-                  }
+                itemMargin: {
+                    horizontal: 0,
+                    vertical: 10
+                },
+                onItemClick: {
+                    toggleDataSeries: true
+                },
+                onItemHover: {
+                    highlightDataSeries: true
+                },
+            },
+            fill: {
+                type: "gradient",
+                gradient: {
+                    shadeIntensity: 0.8,
+                    opacityFrom: 0.9,
+                    opacityTo: 0.9,
+                    stops: [50, 190, 100]
                 }
-              }
-            }
-          }
-        },
-        stroke: {
-            show: true,
-            curve: 'smooth',
-            lineCap: 'butt',
-            colors: undefined,
-            width: 1,
-            dashArray: 0,
-        },
-        series: [filled, nofilled],
-        labels: ['&nbsp;[ MASUK ]', '&nbsp;[ BELUM MASUK ]'],
-        responsive: [{
-            breakpoint: 500,
-            options: {
-                chart: {
-                    width: 100
-                },
-                legend: {
-                    position: 'bottom'
+            },
+            colors:['#00adef', '#ea1c26'],
+            plotOptions: {
+                pie: {
+                    donut: {
+                        size: '65%',
+                        background: 'transparent',
+                        labels: {
+                            show: true,
+                            name: {
+                                show: true,
+                                fontSize: '11px',
+                                fontFamily: 'Bahnschrift',
+                                color: undefined,
+                                offsetY: -30,
+                            },
+                            value: {
+                                show: true,
+                                fontSize: '40px',
+                                fontFamily: 'Bahnschrift',
+                                color: '20',
+                                offsetY: 0,
+                                formatter: function (val) {
+                                    return val + "%"
+                                }
+                            },
+                            total: {
+                                show: true,
+                                showAlways: false,
+                                label: 'DATA MASUK',
+                                color: '#888ea8',
+                                formatter: function (w) {
+                                    return w.globals.seriesTotals.reduce( function(a, b) {
+                                    return a + "%"
+                                    })
+                                }
+                            }
+                        }
+                    }
                 }
-            }
-        }]
+            },
+            stroke: {
+                show: true,
+                curve: 'smooth',
+                lineCap: 'butt',
+                colors: undefined,
+                width: 1,
+                dashArray: 0,
+            },
+            series: [filled, nofilled],
+            labels: ['&nbsp;[ MASUK ]', '&nbsp;[ BELUM MASUK ]'],
+            responsive: [{
+                breakpoint: 500,
+                options: {
+                    chart: {
+                        width: 100
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }]
+        }
+
+        var donut = new ApexCharts(
+            document.querySelector("#donut-chart"),
+            donutChart
+        )
+
+        donut.render()
+        }).catch(function(error) {
+
+        })
     }
-
-    var donut = new ApexCharts(
-        document.querySelector("#donut-chart"),
-        donutChart
-    )
-
-    donut.render()
-    }).catch(function(error) {
-
-    })
 }
 
 function donutDataFull()
 {
-    axios.get(route('fullPolda')).then(function(response) {
-        var filled = response.data.filled
-        var nofilled = response.data.nofilled
+    var poldaId = $("#polda_id").val()
 
-        var donutChartFull = {
-        chart: {
-            height: 300,
-            fontFamily: 'Bahnschrift',
-            type: 'donut',
-            toolbar: {
-                show: false,
-            }
-        },
-        legend: {
-            show: true,
-            showForSingleSeries: false,
-            showForNullSeries: true,
-            showForZeroSeries: true,
-            position: 'bottom',
-            horizontalAlign: 'center',
-            floating: false,
-            fontSize: '10px',
-            fontFamily: 'Bahnschrift',
-            fontWeight: 400,
-            formatter: undefined,
-            inverseOrder: false,
-            width: undefined,
-            height: undefined,
-            tooltipHoverFormatter: undefined,
-            offsetX: 0,
-            offsetY: 40,
-            labels: {
-                colors: undefined,
-                useSeriesColors: false
+    if(poldaId) {
+        axios.get(route('fullPoldaById', poldaId)).then(function(response) {
+            var filled = response.data.filled
+            var nofilled = response.data.nofilled
+
+            var donutChartFull = {
+            chart: {
+                height: 300,
+                fontFamily: 'Bahnschrift',
+                type: 'donut',
+                toolbar: {
+                    show: false,
+                }
             },
-            markers: {
-                width: 12,
-                height: 12,
-                strokeWidth: 0,
-                strokeColor: '#fff',
-                fillColors: undefined,
-                radius: 12,
-                customHTML: undefined,
-                onClick: undefined,
-                offsetX: 0,
-                offsetY: 0
-            },
-            itemMargin: {
-                horizontal: 0,
-                vertical: 10
-            },
-            onItemClick: {
-                toggleDataSeries: true
-            },
-            onItemHover: {
-                highlightDataSeries: true
-            },
-        },
-        fill: {
-            type: "gradient",
-            gradient: {
-            shadeIntensity: 0.8,
-            opacityFrom: 0.9,
-            opacityTo: 0.9,
-            stops: [50, 190, 100]
-            }
-        },
-        colors:['#00adef', '#ea1c26'],
-        plotOptions: {
-          pie: {
-            donut: {
-              size: '65%',
-              background: 'transparent',
-              labels: {
+            legend: {
                 show: true,
-                name: {
-                  show: true,
-                  fontSize: '11px',
-                  fontFamily: 'Bahnschrift',
-                  color: undefined,
-                  offsetY: -30,
+                showForSingleSeries: false,
+                showForNullSeries: true,
+                showForZeroSeries: true,
+                position: 'bottom',
+                horizontalAlign: 'center',
+                floating: false,
+                fontSize: '10px',
+                fontFamily: 'Bahnschrift',
+                fontWeight: 400,
+                formatter: undefined,
+                inverseOrder: false,
+                width: undefined,
+                height: undefined,
+                tooltipHoverFormatter: undefined,
+                offsetX: 0,
+                offsetY: 40,
+                labels: {
+                    colors: undefined,
+                    useSeriesColors: false
                 },
-                value: {
-                  show: true,
-                  fontSize: '40px',
-                  fontFamily: 'Bahnschrift',
-                  color: '20',
-                  offsetY: 0,
-                  formatter: function (val) {
-                    return val + "%"
-                  }
+                markers: {
+                    width: 12,
+                    height: 12,
+                    strokeWidth: 0,
+                    strokeColor: '#fff',
+                    fillColors: undefined,
+                    radius: 12,
+                    customHTML: undefined,
+                    onClick: undefined,
+                    offsetX: 0,
+                    offsetY: 0
                 },
-                total: {
-                  show: true,
-                  showAlways: false,
-                  label: 'DATA MASUK',
-                  color: '#888ea8',
-                  formatter: function (w) {
-                    return w.globals.seriesTotals.reduce( function(a, b) {
-                      return a + "%"
-                    })
-                  }
+                itemMargin: {
+                    horizontal: 0,
+                    vertical: 10
+                },
+                onItemClick: {
+                    toggleDataSeries: true
+                },
+                onItemHover: {
+                    highlightDataSeries: true
+                },
+            },
+            fill: {
+                type: "gradient",
+                gradient: {
+                    shadeIntensity: 0.8,
+                    opacityFrom: 0.9,
+                    opacityTo: 0.9,
+                    stops: [50, 190, 100]
                 }
-              }
-            }
-          }
-        },
-        stroke: {
-            show: true,
-            curve: 'smooth',
-            lineCap: 'butt',
-            colors: undefined,
-            width: 1,
-            dashArray: 0,
-        },
-        series: [filled, nofilled],
-        labels: ['&nbsp;[ MASUK ]', '&nbsp;[ BELUM MASUK ]'],
-        responsive: [{
-            breakpoint: 500,
-            options: {
-                chart: {
-                    width: 100
-                },
-                legend: {
-                    position: 'bottom'
+            },
+            colors:['#00adef', '#ea1c26'],
+            plotOptions: {
+                pie: {
+                    donut: {
+                    size: '65%',
+                    background: 'transparent',
+                    labels: {
+                        show: true,
+                        name: {
+                            show: true,
+                            fontSize: '11px',
+                            fontFamily: 'Bahnschrift',
+                            color: undefined,
+                            offsetY: -30,
+                        },
+                        value: {
+                            show: true,
+                            fontSize: '40px',
+                            fontFamily: 'Bahnschrift',
+                            color: '20',
+                            offsetY: 0,
+                            formatter: function (val) {
+                                return val + "%"
+                            }
+                        },
+                        total: {
+                            show: true,
+                            showAlways: false,
+                            label: 'DATA MASUK',
+                            color: '#888ea8',
+                            formatter: function (w) {
+                                return w.globals.seriesTotals.reduce( function(a, b) {
+                                return a + "%"
+                                })
+                            }
+                        }
+                    }
+                    }
                 }
-            }
-        }]
+            },
+            stroke: {
+                show: true,
+                curve: 'smooth',
+                lineCap: 'butt',
+                colors: undefined,
+                width: 1,
+                dashArray: 0,
+            },
+            series: [filled, nofilled],
+            labels: ['&nbsp;[ MASUK ]', '&nbsp;[ BELUM MASUK ]'],
+            responsive: [{
+                breakpoint: 500,
+                options: {
+                    chart: {
+                        width: 100
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }]
+        }
+
+        var donutFull = new ApexCharts(
+            document.querySelector("#donut-chart-full"),
+            donutChartFull
+        )
+
+        donutFull.render()
+        }).catch(function(error) {
+
+        })
     }
-
-    var donutFull = new ApexCharts(
-        document.querySelector("#donut-chart-full"),
-        donutChartFull
-    )
-
-    donutFull.render()
-    }).catch(function(error) {
-
-    })
 }
 </script>
 @endpush

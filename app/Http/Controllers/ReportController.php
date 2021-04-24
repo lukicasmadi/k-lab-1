@@ -220,20 +220,39 @@ class ReportController extends Controller
         $submited_year = yearOnly($poldaSubmited->submited_date);
         $submited_year_prev = yearOnly($poldaSubmited->submited_date) - 1;
 
-        $prev = reportDailyPrev($polda_id, $submited_year_prev, $rencana_operasi_id, null, $submited_date, $submited_date);
-        $current = reportDailyCurrent($polda_id, $submited_year, $rencana_operasi_id, null, $submited_date, $submited_date);
+        if(isPolda()) {
+            $prev = reportDailyPrev($polda_id, $submited_year_prev, $rencana_operasi_id, null, $submited_date, $submited_date);
+            $current = reportDailyCurrent($polda_id, $submited_year, $rencana_operasi_id, null, $submited_date, $submited_date);
 
-        excelTemplate(
-            'per_polda',
-            $prev,
-            $current,
-            'KESATUAN : '.$poldaSubmited->nama_kesatuan,
-            $poldaSubmited->nama_kota.", ".indonesianDate($submited_date),
-            'NAMA : '.$poldaSubmited->nama_atasan,
-            $poldaSubmited->pangkat_dan_nrp,
-            $poldaSubmited->jabatan,
-            $poldaSubmited->nama_laporan,
-            'polda-'.poldaName().'-'.indonesianStandart($submited_date)
-        );
+            excelTemplate(
+                'per_polda',
+                $prev,
+                $current,
+                'KESATUAN : '.$poldaSubmited->nama_kesatuan,
+                $poldaSubmited->nama_kota.", ".indonesianDate($submited_date),
+                'NAMA : '.$poldaSubmited->nama_atasan,
+                $poldaSubmited->pangkat_dan_nrp,
+                $poldaSubmited->jabatan,
+                $poldaSubmited->nama_laporan,
+                'polda-'.poldaName().'-'.indonesianStandart($submited_date)
+            );
+
+        } else {
+            $prev = reportDailyPrev(session('polda_id'), $submited_year_prev, $rencana_operasi_id, null, $submited_date, $submited_date);
+            $current = reportDailyCurrent(session('polda_id'), $submited_year, $rencana_operasi_id, null, $submited_date, $submited_date);
+
+            excelTemplate(
+                'per_polda',
+                $prev,
+                $current,
+                'KESATUAN : '.$poldaSubmited->nama_kesatuan,
+                $poldaSubmited->nama_kota.", ".indonesianDate($submited_date),
+                'NAMA : '.$poldaSubmited->nama_atasan,
+                $poldaSubmited->pangkat_dan_nrp,
+                $poldaSubmited->jabatan,
+                $poldaSubmited->nama_laporan,
+                'polda-'.session('polda_short_name').'-'.indonesianStandart($submited_date)
+            );
+        }
     }
 }
