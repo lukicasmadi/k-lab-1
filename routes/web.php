@@ -178,13 +178,16 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/get-polda-list/{id}', 'UserHasPoldaController@check_user_polda')->name('check_user_polda');
         Route::get('/phro', 'PoldaHasRencanaOperasiController@data')->name('phro_data');
         Route::get('/polda/phro', 'HomeController@data')->name('phro_polda_data');
+        Route::get('/polda/phro/id/{polda_id}', 'HomeController@dataSpesificPolda')->name('phro_polda_data_id');
         Route::get('/totalinputan', 'HomeController@dashboardChart')->name('dashboardChart');
         Route::get('/phro/{uuid}/preview', 'PoldaHasRencanaOperasiController@preview')->name('phro_preview');
         Route::get('/phro/dailycheck', 'HomeController@dailycheck')->name('dailycheck');
         Route::get('/dashboard/donut', 'HomeController@donut')->name('donut');
         Route::get('/dashboard/notifikasi', 'HomeController@notifikasi')->name('notifikasi');
         Route::get('/dashboard/polda/mingguan', 'HomeController@weeklyPolda')->name('weeklyPolda');
+        Route::get('/dashboard/polda/mingguan/id/{id}', 'HomeController@weeklyPoldaById')->name('weeklyPoldaById');
         Route::get('/dashboard/polda/full', 'HomeController@fullPolda')->name('fullPolda');
+        Route::get('/dashboard/polda/full/id/{id}', 'HomeController@fullPoldaById')->name('fullPoldaById');
         Route::get('/get/rencana-operasi/{uuid}', 'RencanaOperasiController@rencana_operasi_by_uuid')->name('rencana_operasi_by_uuid');
         Route::get('/get/rencana-operasi/custom-name/{uuid}', 'RencanaOperasiController@rencana_operasi_custom_name')->name('rencana_operasi_custom_name');
         Route::get('/rekap/daily', 'DailyRekapController@data')->name('korlantas_rekap_data_new');

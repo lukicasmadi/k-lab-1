@@ -329,7 +329,7 @@
                     render: function(data, type, row) {
                         return `
                         <div class="ubah-change">
-                            <a class="editData" idval="`+data+`" href="#">Ubah</a>
+                            <a class="editData" idval="`+data+`" href="#">Ubah</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a class="delete" idval="`+data+`" href="#">Hapus</a>
                         </div>
                         `;
                     },
@@ -337,6 +337,30 @@
                     sortable: false,
                 }
             ]
+        })
+
+        $('#tbl_operation tbody').on('click', '.delete', function(e) {
+            e.preventDefault()
+            var id = $(this).attr('idval')
+
+            swal({
+                title: 'Jika data ini dihapus maka semua data yang berelasi dengan data ini akan otomatis terhapus!',
+                text: "Anda Yakin?",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Delete',
+                padding: '2em',
+            }).then(function(result) {
+                if (result.value) {
+                    axios.delete(route('rencana_operasi_destroy', id)).then(function(response) {
+                        table.ajax.reload()
+                        swal('Sukses!', response.data.output, 'success')
+                    })
+                    .catch(function(error) {
+                        swal("Gagal", "Data gagal dihapus! Silahkan hubungi admin", "error")
+                    })
+                }
+            })
         })
 
         $('#tbl_operation tbody').on('click', 'a.viewData', function(e) {
