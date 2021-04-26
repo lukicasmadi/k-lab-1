@@ -31,7 +31,7 @@
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
                                 </div>
                                 <div class="col-xl-11 col-md-12 col-sm-12 col-12">
-                                A. SEPEDA MOTOR (psl 47)
+                                A. SEPEDA MOTOR (PSL 47)
                                 </div>
                             </div>
                         </div>
