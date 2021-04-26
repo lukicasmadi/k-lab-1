@@ -143,6 +143,7 @@ class ReportController extends Controller
 
     public function comparisonGetData()
     {
+        // Fungsi ajax untuk tampilin list data di view
         $operation_id = request('operation_id');
         $start_year = request('start_year');
         $end_year = request('end_year');
