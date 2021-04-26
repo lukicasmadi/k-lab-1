@@ -95,9 +95,33 @@ class ReportController extends Controller
         $now = now()->format("Y-m-d");
         $filename = 'comparison-report-'.$now.'.xlsx';
 
-        return Excel::download(new NewComparisonExport($operation_id, $start_year, $end_year, $start_date, $end_date), $filename);
+        $prev = prevAnev($operation_id, $start_date, $end_date, $start_year);
+        $current = currentAnev($operation_id, $start_date, $end_date, $end_year);
 
-        return redirect()->back();
+        logger($prev);
+        logger($current);
+
+        // $poldaSubmited = PoldaSubmited::where('polda_id', poldaId())->orderBy('id', 'desc')->first();
+
+        // if(empty($poldaSubmited)) {
+        //     flash('Data inputan polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
+        //     return redirect()->back();
+        // }
+
+        // excelTemplate(
+        //     'per_polda',
+        //     $prev,
+        //     $current,
+        //     'KESATUAN : '.$poldaSubmited->nama_kesatuan,
+        //     $poldaSubmited->nama_kota.", ".$request->tanggal_mulai.' S/D '.$request->tanggal_selesai,
+        //     'NAMA : '.$poldaSubmited->nama_atasan,
+        //     $poldaSubmited->pangkat_dan_nrp,
+        //     $poldaSubmited->jabatan,
+        //     $poldaSubmited->nama_laporan,
+        //     'polda-'.poldaName().'-'.$request->tanggal_mulai.'-'.$request->tanggal_selesai
+        // );
+
+        // return redirect()->back();
     }
 
     public function downloadReportToday()
