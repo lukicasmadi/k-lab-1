@@ -68,9 +68,9 @@
                         <thead>
                             <tr bgcolor="#0E7096">
                                 <th width="31%">Nama Laporan</th>
-                                <th width="27%">tahun 2020</th>
-                                <th width="27%">tahun 2021</th>
-                                <th width="5%">tren</th>
+                                <th width="27%" id="lbl_tahun_prev">tahun -</th>
+                                <th width="27%" id="lbl_tahun_current">tahun -</th>
+                                <th width="5%">angka</th>
                                 <th width="10%">Persentase</th>
                             </tr>
                         </thead>
@@ -2584,6 +2584,9 @@
 
                         $("#panelLoading").addClass("d-none")
                         $("#panelData").removeClass("d-none")
+
+                        $("#lbl_tahun_prev").html("Tahun "+$("#tahun_pembanding_pertama").val())
+                        $("#lbl_tahun_current").html("Tahun "+$("#tahun_pembanding_kedua").val())
 
                         $("#pelanggaran_lalu_lintas_tilang_p").html(dataPrev.pelanggaran_lalu_lintas_tilang)
                         $("#pelanggaran_lalu_lintas_tilang").html(dataCurrent.pelanggaran_lalu_lintas_tilang)

@@ -62,9 +62,9 @@
                         <thead>
                             <tr bgcolor="#0E7096">
                                 <th width="31%">Nama Laporan</th>
-                                <th width="27%">tahun 2020</th>
-                                <th width="27%">tahun 2021</th>
-                                <th width="5%">tren</th>
+                                <th width="27%" id="lbl_tahun_prev">tahun -</th>
+                                <th width="27%" id="lbl_tahun_current">tahun -</th>
+                                <th width="5%">angka</th>
                                 <th width="10%">Persentase</th>
                             </tr>
                         </thead>
