@@ -33,10 +33,11 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th width="30%">Nama Kesatuan</th>
-                                <th width="30%">Status Laporan</th>
-                                <th width="20%">Tanggal</th>
-                                <th width="6%">Lihat</th>
+                                <th width="20%">Nama Kesatuan</th>
+                                <th width="40%">Status Laporan</th>
+                                <th width="10%">Tanggal</th>
+                                <th width="8%">Lihat</th>
+                                <th width="8%">Upload</th>
                                 <th width="14%">Pilihan</th>
                             </tr>
                         </thead>
@@ -131,6 +132,18 @@ $(document).ready(function () {
                         </a>
                     </div>
                     `;
+                },
+                searchable: false,
+                sortable: false,
+            },
+            {
+                data: 'uuid',
+                render: function(data, type, row) {
+                    return `
+                        <div class="ubah-change">
+                            <a href="`+route('download_document', data)+`">Download</a>
+                        </div>
+                        `;
                 },
                 searchable: false,
                 sortable: false,

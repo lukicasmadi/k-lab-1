@@ -23,6 +23,24 @@ use App\Models\PoldaCustomOperationName;
 class PoldaHasRencanaOperasiController extends Controller
 {
 
+    public function downloadDocument($uuid)
+    {
+        try {
+            $file = PoldaSubmited::with('polda')->where('uuid', $uuid)->firstOrFail();
+
+            $name = explode(".", $file->document_upload);
+
+            $poldaName = $file->polda->name;
+
+            $fileName = $poldaName." Report File ".indonesianStandart($file->submited_date);
+            return response()->download(public_path('document-upload/polda/'.$file->document_upload), $fileName.".".$name[1]);
+        } catch (\Exception $e) {
+            logger($e);
+            flash('Data gagal didownload. Silakan dicoba kembali atau hubungi admin jika masih bermasalah')->error();
+            return redirect(route('phro_index'));
+        }
+    }
+
     public function data()
     {
         $model = PoldaSubmited::perpolda()->with('polda');
@@ -101,21 +119,21 @@ class PoldaHasRencanaOperasiController extends Controller
                 $file->move($destinationPath, $randomName);
                 $data['document_upload'] = $randomName;
             } else {
-                $data['document_upload'] = '-';
+                $data['document_upload'] = 'default.pdf';
             }
 
             $poldaSubmit = PoldaSubmited::create([
                 'uuid' => genUuid(),
                 'polda_id' => poldaId(),
                 'rencana_operasi_id' => operationPlans()->id,
-                'status' => "SUDAH MENGIRIMKAN LAPORAN",
+                'status' => "SUDAH MENGIRIMKAN LAPORAN PADA ".indonesianDateTime(date('Y-m-d H:i:s')),
                 'nama_kesatuan' => upperCase($request->nama_kesatuan),
                 'nama_atasan' => upperCase($request->nama_atasan),
                 'pangkat_dan_nrp' => upperCase($request->pangkat_dan_nrp),
                 'jabatan' => upperCase($request->jabatan),
                 'nama_laporan' => upperCase($request->nama_laporan),
                 'nama_kota' => upperCase($request->nama_kota),
-                'document_upload' => upperCase($request->nama_kota),
+                'document_upload' => $data['document_upload'],
                 'submited_date' => date("Y-m-d")
             ]);
 

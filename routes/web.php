@@ -39,6 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('/report/polda/daterange', 'ReportController@poldaByDateRange')->name('polda_report_date_range');
     Route::get('/report/daily/id/{uuid}', 'ReportController@byId')->name('report_daily_by_id');
+    Route::get('/submited/document/{uuid}', 'PoldaHasRencanaOperasiController@downloadDocument')->name('download_document');
 
     // Route Hanya Bisa Diakses Oleh Administrator atau Korlantas Pusat
     Route::group(['middleware' => 'admin-or-pusat-only'], function () {
