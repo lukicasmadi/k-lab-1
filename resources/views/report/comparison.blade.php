@@ -67,7 +67,9 @@
             </div>
         </div>
 
-        <div class="col-lg-12 col-12" id="panelData"></div>
+        <div class="col-lg-12 col-12">
+            <div class="widget-content widget-content-area" id="panelData"></div>
+        </div>
     </div>
 </div>
 
@@ -133,7 +135,7 @@
             mode: "range",
             onClose: function(selectedDates, dateStr, instance) {
                 if(dateStr) {
-                    $("#panelData").addClass("d-none")
+                    $("#panelData").empty().addClass("d-none")
                     $("#panelLoading").removeClass("d-none")
 
                     axios.post(route('show_excel_to_view'), {})
