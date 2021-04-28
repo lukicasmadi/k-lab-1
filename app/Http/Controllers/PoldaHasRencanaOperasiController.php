@@ -94,6 +94,16 @@ class PoldaHasRencanaOperasiController extends Controller
 
         try {
 
+            if($request->hasFile('document_upload')) {
+                $file = $request->file('document_upload');
+                $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
+                $destinationPath = public_path('document-upload/polda/');
+                $file->move($destinationPath, $randomName);
+                $data['document_upload'] = $randomName;
+            } else {
+                $data['document_upload'] = '-';
+            }
+
             $poldaSubmit = PoldaSubmited::create([
                 'uuid' => genUuid(),
                 'polda_id' => poldaId(),
@@ -105,6 +115,7 @@ class PoldaHasRencanaOperasiController extends Controller
                 'jabatan' => upperCase($request->jabatan),
                 'nama_laporan' => upperCase($request->nama_laporan),
                 'nama_kota' => upperCase($request->nama_kota),
+                'document_upload' => upperCase($request->nama_kota),
                 'submited_date' => date("Y-m-d")
             ]);
 

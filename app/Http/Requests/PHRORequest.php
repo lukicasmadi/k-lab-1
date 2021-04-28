@@ -25,7 +25,10 @@ class PHRORequest extends FormRequest
     {
         return [
             '*.required' => 'Data tidak boleh kosong!',
-            '*.integer' => 'Inputan hanya diijinkan numerik 0-9!'
+            '*.integer' => 'Inputan hanya diijinkan numerik 0-9!',
+            'document_upload.file' => 'File harus diupload',
+            'document_upload.mimes' => 'File harus berekstensi pdf, ppt, word, atau zip. Silahkan pilih kembali file anda',
+            'document_upload.max' => 'Ukuran file yang diijinkan maksimal 50 MB. Silahkan pilih kembali file anda',
         ];
     }
 
@@ -38,6 +41,8 @@ class PHRORequest extends FormRequest
             'jabatan' => 'required',
             'nama_laporan' => 'required',
             'nama_kota' => 'required',
+
+            'document_upload' => 'required|file|mimes:pdf,ppt,pptx,doc,docx,zip|max:50000',
 
             'pelanggaran_lalu_lintas_tilang' => 'required|integer',
             'pelanggaran_lalu_lintas_teguran' => 'required|integer',

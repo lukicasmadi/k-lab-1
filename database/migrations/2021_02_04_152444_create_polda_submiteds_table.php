@@ -27,6 +27,7 @@ class CreatePoldaSubmitedsTable extends Migration
             $table->string("jabatan");
             $table->string("nama_laporan");
             $table->string("nama_kota"); /* sampai sini */
+            $table->string("document_upload")->nullable();
             $table->date("submited_date");
             $table->timestamps();
         });
