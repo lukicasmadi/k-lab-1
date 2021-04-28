@@ -198,5 +198,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/korlantas-rekap/{uuid}', 'KorlantasRekapController@korlantas_rekap')->name('korlantas_rekap');
         Route::get('/rekap/daily/{uuid}', 'DailyRekapController@dailyRekapShow')->name('daily_rekap_show');
         Route::get('/rekap/daily/input/{uuid}', 'DailyRekapController@dailyRekapShowWithInput')->name('daily_rekap_show_with_input');
+        Route::post('/display/excel', 'ReportController@showExcelToView')->name('show_excel_to_view');
     });
 });

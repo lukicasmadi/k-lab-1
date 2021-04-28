@@ -2302,6 +2302,26 @@ if (! function_exists('excelTemplate')) {
     }
 }
 
+if (! function_exists('excelTemplateDisplay')) {
+    function excelTemplateDisplay()
+    {
+        // $excelPath = public_path('template/excel');
+        // $excelTemplate = $excelPath."/format_laporan_operasi_2021.xlsx";
+        // $spreadsheet = IOFactory::createReader($excelTemplate);
+        // $writer = new Xlsx($spreadsheet);
+        // $writer->save('php://output');
+
+        $excelPath = public_path('template/excel');
+        $excelTemplate = $excelPath."/format_laporan_operasi_2021_html.xlsx";
+
+        $reader = IOFactory::createReader('Xlsx');
+        $spreadsheet = $reader->load($excelTemplate);
+        $writer = IOFactory::createWriter($spreadsheet, 'Html');
+        $message = $writer->save('php://output');
+        return $message;
+    }
+}
+
 
 //==============================================================================================================================================
 //==============================================================================================================================================

@@ -299,4 +299,9 @@ class ReportController extends Controller
             );
         }
     }
+
+    public function showExcelToView()
+    {
+        return excelTemplateDisplay();
+    }
 }
