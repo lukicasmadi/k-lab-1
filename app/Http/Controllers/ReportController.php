@@ -196,6 +196,25 @@ class ReportController extends Controller
         ];
     }
 
+    public function comparisonGetDataDateRange()
+    {
+        $operation_id = request('operation_id');
+        $start_date = request('start_date');
+        $end_date = request('end_date');
+
+        if(is_null(request('operation_id')) || is_null(request('start_date')) || is_null(request('end_date'))) {
+            abort(404);
+        }
+
+        $prevYear = laporanPrevDateRange($operation_id, $start_date, $end_date);
+        $currentYear = laporanCurrentDateRange($operation_id, $start_date, $end_date);
+
+        return [
+            'prev' => $prevYear,
+            'current' => $currentYear
+        ];
+    }
+
     public function poldaByDateRange(Request $request)
     {
         if(empty($request->tanggal_mulai) || empty($request->tanggal_selesai)) {

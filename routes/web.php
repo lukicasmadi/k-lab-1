@@ -193,6 +193,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/get/rencana-operasi/custom-name/{uuid}', 'RencanaOperasiController@rencana_operasi_custom_name')->name('rencana_operasi_custom_name');
         Route::get('/rekap/daily', 'DailyRekapController@data')->name('korlantas_rekap_data_new');
         Route::post('/report/analysis-evaluation/data', 'ReportController@comparisonGetData')->name('comparison_get_data');
+        Route::post('/report/analysis-evaluation/data-date-range', 'ReportController@comparisonGetDataDateRange')->name('comparison_get_data_date_range');
         Route::get('/polda/custom-name/{uuid}', 'KorlantasRekapController@getCustomName')->name('get_data_polda_custom_name');
         Route::get('/korlantas-rekap/{uuid}', 'KorlantasRekapController@korlantas_rekap')->name('korlantas_rekap');
         Route::get('/rekap/daily/{uuid}', 'DailyRekapController@dailyRekapShow')->name('daily_rekap_show');

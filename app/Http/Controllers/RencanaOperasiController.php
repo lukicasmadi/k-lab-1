@@ -15,11 +15,6 @@ use App\Http\Requests\RencanaOperasiUpdateRequest;
 
 class RencanaOperasiController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('can-create-plan')->only('create', 'store', 'edit', 'update');
-    // }
-
     public function byId($id)
     {
         $data = RencanaOperasi::where("id", $id)->first();
