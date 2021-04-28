@@ -82,7 +82,7 @@
                 @enderror
             </div>
             <div class="col-md-4 mb-4">
-                <label class="text-popup">Upload Dokomen (pdf, ppt, zip)</label>
+                <label class="text-popup">Upload Dokomen (pdf, ppt, word, zip)</label>
                 <input type="file" class="form-control popoups mt-1 @error('document_upload') is-invalid @enderror" name="document_upload" id="document_upload">
                 @error('document_upload')
                     <span class="invalid-feedback" role="alert">
