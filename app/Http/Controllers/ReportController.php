@@ -19,6 +19,7 @@ use App\Exports\NewComparisonExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\DailyInputPrevExport;
 use App\Exports\PoldaDailyComparison;
+use App\Http\Requests\ReportAnevDisplay;
 use App\Http\Requests\ComparisonExcelRequest;
 
 class ReportController extends Controller
@@ -300,8 +301,22 @@ class ReportController extends Controller
         }
     }
 
-    public function showExcelToView()
+    public function showExcelToView(ReportAnevDisplay $request)
     {
-        return excelTemplateDisplay();
+        $yearPrev = $request->tahun_pembanding_pertama;
+        $yearCurrent = $request->tahun_pembanding_kedua;
+        $rencana_operation_id = $request->operation_id;
+        $start_date = dateOnly($request->tanggal_pembanding_pertama);
+        $end_date = dateOnly($request->tanggal_pembanding_kedua);
+
+        $prev = reportPrevToDisplay($yearPrev, $rencana_operation_id, $start_date, $end_date);
+        $current = reportCurrentToDisplay($yearCurrent, $rencana_operation_id, $start_date, $end_date);
+
+        return excelTemplateDisplay(
+            $prev,
+            $current,
+            $yearPrev,
+            $yearCurrent
+        );
     }
 }

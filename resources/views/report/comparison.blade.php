@@ -27,6 +27,7 @@
                 <div class="widget-content mt-3 widget-content-area">
                     <form action="{{ route('report_comparison_process') }}" id="comparison_form" method="POST">
                         @csrf
+
                         <div class="form-group">
                             <label class="text-popup">Pilih Operasi</label>
                             <select class="form-control form-custom height-form" name="operation_id" id="operation_id">
@@ -35,6 +36,7 @@
                                 @endforeach
                             </select>
                         </div>
+
                         <div class="form-group mt-n3">
                             <label class="text-popup">Pilih Tahun Pembanding 1</label>
                             <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control form-custom height-form">
@@ -43,6 +45,7 @@
                                 @endforeach
                             </select>
                         </div>
+
                         <div class="form-group mt-n3">
                             <label class="text-popup">Pilih Tahun Pembanding 2</label>
                             <select id="tahun_pembanding_kedua" name="tahun_pembanding_kedua" class="form-control form-custom height-form">
@@ -51,10 +54,22 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group mt-n3">
+
+                        {{-- <div class="form-group mt-n3">
                             <label class="text-popup">Pilih Hari</label>
                             <input id="tanggal" name="tanggal" class="form-control popoups inp-icon flatpickr flatpickr-input active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                        </div> --}}
+
+                        <div class="form-group">
+                            <label class="text-popup">Pilih Range Hari Awal</label>
+                            <input id="tanggal_pembanding_pertama" name="tanggal_pembanding_pertama" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
                         </div>
+
+                        <div class="form-group">
+                            <label class="text-popup">Pilih Range Hari Akhir</label>
+                            <input id="tanggal_pembanding_kedua" name="tanggal_pembanding_kedua" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                        </div>
+
                         <input type="submit" name="btnUnduhData" id="btnUnduhData" class="mt-4 mb-4 btn btn-primary" value="Unduh Data">
                     </form>
                 </div>
@@ -88,9 +103,7 @@
 @endsection
 
 @push('library_css')
-<link href="{{ asset('template/plugins/flatpickr/flatpickr.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ asset('template/plugins/flatpickr/custom-flatpickr.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ asset('template/plugins/bootstrap-range-Slider/bootstrap-slider.css') }}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{{ asset('template/datepicker/css/bootstrap-datepicker.min.css') }}">
 <link href="{{ asset('template/plugins/sweetalerts/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('template/custom.css') }}" rel="stylesheet" type="text/css">
 <style>
@@ -101,8 +114,7 @@
 @endpush
 
 @push('library_js')
-<script src="{{ asset('template/plugins/flatpickr/flatpickr.js') }}"></script>
-<script src="{{ asset('template/plugins/bootstrap-range-Slider/bootstrap-rangeSlider.js') }}"></script>
+<script src="{{ asset('template/datepicker/js/bootstrap-datepicker.min.js') }}"></script>
 <script src="{{ asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
 @endpush
 
@@ -131,26 +143,55 @@
 
     $(document).ready(function () {
         $("#btnUnduhData").prop('disabled', true)
-        var f1 = flatpickr(document.getElementById('tanggal'), {
-            mode: "range",
-            onClose: function(selectedDates, dateStr, instance) {
-                if(dateStr) {
-                    $("#panelData").empty().addClass("d-none")
-                    $("#panelLoading").removeClass("d-none")
 
-                    axios.post(route('show_excel_to_view'), {})
-                    .then(function(response) {
-                        $("#panelLoading").addClass("d-none")
-                        $("#panelData").removeClass("d-none")
-
-                        $("#panelData").empty().html(response.data)
-                    })
-                    .catch(function(error) {
-                        swal("Data belum lengkap. Silakan periksa data yang akan diproses", error.response.data.output, "error")
-                    })
-                }
-            }
+        $("#tanggal_pembanding_pertama").datepicker({
+            todayBtn:  1,
+            autoclose: true,
+            todayHighlight: true,
+            format: 'dd-mm-yyyy',
+        }).on('changeDate', function (selected) {
+            var minDate = new Date(selected.date.valueOf())
+            $('#tanggal_pembanding_kedua').datepicker('setStartDate', minDate)
         })
+
+        $("#tanggal_pembanding_kedua").datepicker({
+            todayHighlight: true,
+            format: 'dd-mm-yyyy',
+            autoclose: true,
+        })
+        .on('changeDate', function (selected) {
+            var maxDate = new Date(selected.date.valueOf())
+            $('#tanggal_pembanding_pertama').datepicker('setEndDate', maxDate)
+
+            $("#panelData").empty().addClass("d-none")
+            $("#panelLoading").removeClass("d-none")
+
+            axios.post(route('show_excel_to_view'), {
+                operation_id: $("#operation_id").val(),
+                tahun_pembanding_pertama: $("#tahun_pembanding_pertama").val(),
+                tahun_pembanding_kedua: $("#tahun_pembanding_kedua").val(),
+                tanggal_pembanding_pertama: $("#tanggal_pembanding_pertama").val(),
+                tanggal_pembanding_kedua: $("#tanggal_pembanding_kedua").val(),
+            })
+            .then(function(response) {
+                $("#panelLoading").addClass("d-none")
+                $("#panelData").removeClass("d-none")
+
+                $("#panelData").empty().html(response.data)
+            })
+            .catch(function(error) {
+                swal("Data belum lengkap. Silakan periksa data yang akan diproses", error.response.data.output, "error")
+            })
+        })
+
+        // var f1 = flatpickr(document.getElementById('tanggal'), {
+        //     mode: "range",
+        //     onClose: function(selectedDates, dateStr, instance) {
+        //         if(dateStr) {
+
+        //         }
+        //     }
+        // })
     })
 </script>
 @endpush
