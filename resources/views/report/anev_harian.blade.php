@@ -2526,16 +2526,7 @@
         if(!tahunKedua || !tahunPertama) {
             return "-"
         } else {
-            if(parseInt(tahunKedua) > parseInt(tahunPertama)) {
-                tanda = '<svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 7.5 10"> <defs> <style>.a{fill:#00adef;}</style> </defs> <path class="a" d="M9.125,6.394,6.881,8.631,6,7.75,9.75,4,13.5,7.75l-.881.881L10.375,6.394V14H9.125Z" transform="translate(-6 -4)"/> </svg> Naik ';
-            } else if(parseInt(tahunKedua) < parseInt(tahunPertama)) {
-                tanda = '<svg xmlns="http://www.w3.org/2000/svg" width="7.5" height="10" viewBox="0 0 7.5 10"> <defs> <style>.a{fill:#00adef;}</style> </defs> <path class="a" d="M9.125,11.606,6.881,9.369,6,10.25,9.75,14l3.75-3.75-.881-.881-2.244,2.238V4H9.125Z" transform="translate(-6 -4)"/> </svg> Turun';
-            } else if(parseInt(tahunKedua) == parseInt(tahunPertama)) {
-                tanda = "Sama";
-            } else {
-                tanda = "";
-            }
-            return tanda;
+            return parseInt(tahunKedua) - parseInt(tahunPertama);
         }
     }
 
