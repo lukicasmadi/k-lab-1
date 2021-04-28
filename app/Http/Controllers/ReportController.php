@@ -19,6 +19,7 @@ use App\Exports\NewComparisonExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\DailyInputPrevExport;
 use App\Exports\PoldaDailyComparison;
+use App\Http\Requests\ReportAnevDisplay;
 use App\Http\Requests\ComparisonExcelRequest;
 
 class ReportController extends Controller
@@ -95,9 +96,33 @@ class ReportController extends Controller
         $now = now()->format("Y-m-d");
         $filename = 'comparison-report-'.$now.'.xlsx';
 
-        return Excel::download(new NewComparisonExport($operation_id, $start_year, $end_year, $start_date, $end_date), $filename);
+        $prev = prevAnev($operation_id, $start_date, $end_date, $start_year);
+        $current = currentAnev($operation_id, $start_date, $end_date, $end_year);
 
-        return redirect()->back();
+        logger($prev);
+        logger($current);
+
+        // $poldaSubmited = PoldaSubmited::where('polda_id', poldaId())->orderBy('id', 'desc')->first();
+
+        // if(empty($poldaSubmited)) {
+        //     flash('Data inputan polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
+        //     return redirect()->back();
+        // }
+
+        // excelTemplate(
+        //     'per_polda',
+        //     $prev,
+        //     $current,
+        //     'KESATUAN : '.$poldaSubmited->nama_kesatuan,
+        //     $poldaSubmited->nama_kota.", ".$request->tanggal_mulai.' S/D '.$request->tanggal_selesai,
+        //     'NAMA : '.$poldaSubmited->nama_atasan,
+        //     $poldaSubmited->pangkat_dan_nrp,
+        //     $poldaSubmited->jabatan,
+        //     $poldaSubmited->nama_laporan,
+        //     'polda-'.poldaName().'-'.$request->tanggal_mulai.'-'.$request->tanggal_selesai
+        // );
+
+        // return redirect()->back();
     }
 
     public function downloadReportToday()
@@ -143,6 +168,7 @@ class ReportController extends Controller
 
     public function comparisonGetData()
     {
+        // Fungsi ajax untuk tampilin list data di view
         $operation_id = request('operation_id');
         $start_year = request('start_year');
         $end_year = request('end_year');
@@ -164,6 +190,25 @@ class ReportController extends Controller
             $prevYear = laporanPrev($operation_id, $start_year, $date_range, $date_range);
             $currentYear = laporanCurrent($operation_id, $end_year, $date_range, $date_range);
         }
+
+        return [
+            'prev' => $prevYear,
+            'current' => $currentYear
+        ];
+    }
+
+    public function comparisonGetDataDateRange()
+    {
+        $operation_id = request('operation_id');
+        $start_date = request('start_date');
+        $end_date = request('end_date');
+
+        if(is_null(request('operation_id')) || is_null(request('start_date')) || is_null(request('end_date'))) {
+            abort(404);
+        }
+
+        $prevYear = laporanPrevDateRange($operation_id, $start_date, $end_date);
+        $currentYear = laporanCurrentDateRange($operation_id, $start_date, $end_date);
 
         return [
             'prev' => $prevYear,
@@ -254,5 +299,24 @@ class ReportController extends Controller
                 'polda-'.session('polda_short_name').'-'.indonesianStandart($submited_date)
             );
         }
+    }
+
+    public function showExcelToView(ReportAnevDisplay $request)
+    {
+        $yearPrev = $request->tahun_pembanding_pertama;
+        $yearCurrent = $request->tahun_pembanding_kedua;
+        $rencana_operation_id = $request->operation_id;
+        $start_date = dateOnly($request->tanggal_pembanding_pertama);
+        $end_date = dateOnly($request->tanggal_pembanding_kedua);
+
+        $prev = reportPrevToDisplay($yearPrev, $rencana_operation_id, $start_date, $end_date);
+        $current = reportCurrentToDisplay($yearCurrent, $rencana_operation_id, $start_date, $end_date);
+
+        return excelTemplateDisplay(
+            $prev,
+            $current,
+            $yearPrev,
+            $yearCurrent
+        );
     }
 }

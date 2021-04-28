@@ -4,6 +4,7 @@
 /public/img/article/*
 /public/img/article
 /public/img/profile/*
+/public/document-upload/*
 /storage/*.key
 /vendor
 .env
