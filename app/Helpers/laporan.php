@@ -1345,13 +1345,13 @@ if (! function_exists('excelTemplate')) {
         //change it
         $sheet = $spreadsheet->getActiveSheet();
 
-        $sheet->setCellValue('A6', $kesatuan); //NAMA KESATUAN
+        $sheet->setCellValue('B6', $kesatuan); //NAMA KESATUAN
         $sheet->setCellValue('E417', indonesianDate(date("Y-m-d"))); // TEMPAT, TANGGAL
         $sheet->setCellValue('E424', $nama_atasan); // NAMA ATASAN UNTUK TANDA TANGAN
         $sheet->setCellValue('E425', $pangkat); //PANGKAT & NRP
         $sheet->setCellValue('E419', $jabatan); //JABATAN
-        $sheet->setCellValue('A5', $nama_laporan); // NAMA LAPORAN
-        $sheet->setCellValue('A7', 'HARI/TGL : '.$hari_tanggal); // DIISI HARI TGL
+        //$sheet->setCellValue('A5', $nama_laporan); // NAMA LAPORAN
+        $sheet->setCellValue('B7', 'HARI/TGL : '.$hari_tanggal); // DIISI HARI TGL
 
         $sheet->setCellValue('C14', $prev->pelanggaran_lalu_lintas_tilang);
         $sheet->setCellValue('D14', $current->pelanggaran_lalu_lintas_tilang);

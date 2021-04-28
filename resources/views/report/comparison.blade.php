@@ -136,7 +136,7 @@
                                 <td id="pelanggaran_sepeda_motor_melawan_arus">0</td>
                                 <td id="status_pelanggaran_sepeda_motor_melawan_arus">-</td>
                                 <td id="persentase_pelanggaran_sepeda_motor_melawan_arus">-</td>
-                            </tr>                            
+                            </tr>
                             <tr class="evaluasi">
                                 <td>Melanggar Lampu Lalu Lintas</td>
                                 <td id="pelanggaran_sepeda_motor_melanggar_lampu_lalin_p">0</td>
@@ -2534,7 +2534,7 @@
         var output1 = parseInt(tahunKedua) - parseInt(tahunPertama)
         var output2 = parseInt(output1) / parseInt(tahunPertama)
         var output3 = parseInt(output2) * 100
-        var output4 = Math.round(output3, 2)
+        var output4 = Math.round(parseInt(output3), 2)
 
         if(!output4) {
             return "-"
