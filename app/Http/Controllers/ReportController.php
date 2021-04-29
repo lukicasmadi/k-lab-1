@@ -83,7 +83,22 @@ class ReportController extends Controller
         $start_date = dateOnly($request->tanggal_pembanding_1);
         $end_date = dateOnly($request->tanggal_pembanding_2);
 
-        logger($request->all());
+        $prev = reportPrevToDisplayAnevDateCompare($rencana_operation_id, $start_date, $start_date);
+        $current = reportCurrentToDisplayAnevDateCompare($rencana_operation_id, $end_date, $end_date);
+
+        excelTemplateDateCompare(
+            $prev,
+            $current,
+            'KESATUAN : ',
+            "Perbandingan tanggal ".$start_date.' DAN '.$end_date,
+            '',
+            '',
+            '',
+            '',
+            'Anev Daily Compare '.$start_date.' and '.$end_date,
+            $start_date,
+            $end_date
+        );
     }
 
     public function comparisonProcess(ReportAnevDisplay $request)
