@@ -295,9 +295,4 @@ class ReportController extends Controller
             $yearCurrent
         );
     }
-
-    public function testViewHtml()
-    {
-        return "OK";
-    }
 }
