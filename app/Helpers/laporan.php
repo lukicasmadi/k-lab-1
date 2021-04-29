@@ -4586,24 +4586,957 @@ if (! function_exists('excelTemplateDateCompare')) {
 }
 
 if (! function_exists('excelTemplateDisplay')) {
-    function excelTemplateDisplay($prev, $current, $start_date, $end_date)
+    function excelTemplateDisplay($prev, $current, $prevYear, $currentYear)
     {
         $excelPath = public_path('template/excel');
-        $excelTemplate = $excelPath."/format_laporan_operasi_2021_html_date_compare.xlsx";
+        $excelTemplate = $excelPath."/format_laporan_operasi_2021_html.xlsx";
 
         $reader = IOFactory::createReader('Xlsx');
         $spreadsheet = $reader->load($excelTemplate);
 
         $sheet = $spreadsheet->getActiveSheet();
 
-        $sheet->setCellValue('C2', indonesianStandart($start_date));
-        $sheet->setCellValue('D2', indonesianStandart($end_date));
+        $sheet->setCellValue('C2', $prevYear);
+        $sheet->setCellValue('D2', $currentYear);
 
         $sheet->setCellValue('C6', applyZero($prev->pelanggaran_lalu_lintas_tilang));
         $sheet->setCellValue('D6', applyZero($current->pelanggaran_lalu_lintas_tilang));
 
         $sheet->setCellValue('C7', applyZero($prev->pelanggaran_lalu_lintas_teguran));
         $sheet->setCellValue('D7', applyZero($current->pelanggaran_lalu_lintas_teguran));
+
+        $sheet->setCellValue('C11', applyZero($prev->pelanggaran_sepeda_motor_kecepatan));
+        $sheet->setCellValue('D11', applyZero($current->pelanggaran_sepeda_motor_kecepatan));
+
+        $sheet->setCellValue('C12', applyZero($prev->pelanggaran_sepeda_motor_helm));
+        $sheet->setCellValue('D12', applyZero($current->pelanggaran_sepeda_motor_helm));
+
+        $sheet->setCellValue('C13', applyZero($prev->pelanggaran_sepeda_motor_bonceng_lebih_dari_satu));
+        $sheet->setCellValue('D13', applyZero($current->pelanggaran_sepeda_motor_bonceng_lebih_dari_satu));
+
+        $sheet->setCellValue('C14', applyZero($prev->pelanggaran_sepeda_motor_marka_menerus_menyalip));
+        $sheet->setCellValue('D14', applyZero($current->pelanggaran_sepeda_motor_marka_menerus_menyalip));
+
+        $sheet->setCellValue('C15', applyZero($prev->pelanggaran_sepeda_motor_melawan_arus));
+        $sheet->setCellValue('D15', applyZero($current->pelanggaran_sepeda_motor_melawan_arus));
+
+        $sheet->setCellValue('C16', applyZero($prev->pelanggaran_sepeda_motor_melanggar_lampu_lalin));
+        $sheet->setCellValue('D16', applyZero($current->pelanggaran_sepeda_motor_melanggar_lampu_lalin));
+
+        $sheet->setCellValue('C17', applyZero($prev->pelanggaran_sepeda_motor_mengemudikan_tidak_wajar));
+        $sheet->setCellValue('D17', applyZero($current->pelanggaran_sepeda_motor_mengemudikan_tidak_wajar));
+
+        $sheet->setCellValue('C18', applyZero($prev->pelanggaran_sepeda_motor_syarat_teknis_layak_jalan));
+        $sheet->setCellValue('D18', applyZero($current->pelanggaran_sepeda_motor_syarat_teknis_layak_jalann));
+
+        $sheet->setCellValue('C19', applyZero($prev->pelanggaran_sepeda_motor_tidak_nyala_lampu_siang_malam));
+        $sheet->setCellValue('D19', applyZero($current->pelanggaran_sepeda_motor_tidak_nyala_lampu_siang_malam));
+
+        $sheet->setCellValue('C20', applyZero($prev->pelanggaran_sepeda_motor_berbelok_tanpa_isyarat));
+        $sheet->setCellValue('D20', applyZero($current->pelanggaran_sepeda_motor_berbelok_tanpa_isyarat));
+
+        $sheet->setCellValue('C21', applyZero($prev->pelanggaran_sepeda_motor_berbalapan_di_jalan_raya));
+        $sheet->setCellValue('D21', applyZero($current->pelanggaran_sepeda_motor_berbalapan_di_jalan_raya));
+
+        $sheet->setCellValue('C22', applyZero($prev->pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkir));
+        $sheet->setCellValue('D22', applyZero($current->pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkirn));
+
+        $sheet->setCellValue('C23', applyZero($prev->pelanggaran_sepeda_motor_melanggar_marka_berhenti));
+        $sheet->setCellValue('D23', applyZero($current->pelanggaran_sepeda_motor_melanggar_marka_berhenti));
+
+        $sheet->setCellValue('C24', applyZero($prev->pelanggaran_sepeda_motor_tidak_patuh_perintah_petugas));
+        $sheet->setCellValue('D24', applyZero($current->pelanggaran_sepeda_motor_tidak_patuh_perintah_petugas));
+
+        $sheet->setCellValue('C25', applyZero($prev->pelanggaran_sepeda_motor_surat_surat));
+        $sheet->setCellValue('D25', applyZero($current->pelanggaran_sepeda_motor_surat_surat));
+
+        $sheet->setCellValue('C26', applyZero($prev->pelanggaran_sepeda_motor_kelengkapan_kendaraan));
+        $sheet->setCellValue('D26', applyZero($current->pelanggaran_sepeda_motor_kelengkapan_kendaraan));
+
+        $sheet->setCellValue('C27', applyZero($prev->pelanggaran_sepeda_motor_lain_lain));
+        $sheet->setCellValue('D27', applyZero($current->pelanggaran_sepeda_motor_lain_lain));
+
+        $sheet->setCellValue('C30', applyZero($prev->xpelanggaran_mobil_kecepatan));
+        $sheet->setCellValue('D30', applyZero($current->pelanggaran_mobil_kecepatan));
+
+        $sheet->setCellValue('C31', applyZero($prev->pelanggaran_mobil_safety_belt));
+        $sheet->setCellValue('D31', applyZero($current->pelanggaran_mobil_safety_belt));
+
+        $sheet->setCellValue('C32', applyZero($prev->pelanggaran_mobil_muatan_overload));
+        $sheet->setCellValue('D32', applyZero($current->pelanggaran_mobil_muatan_overload));
+
+        $sheet->setCellValue('C33', applyZero($prev->pelanggaran_mobil_marka_menerus_menyalip));
+        $sheet->setCellValue('D33', applyZero($current->pelanggaran_mobil_marka_menerus_menyalip));
+
+        $sheet->setCellValue('C34', applyZero($prev->pelanggaran_mobil_melawan_arus));
+        $sheet->setCellValue('D34', applyZero($current->pelanggaran_mobil_melawan_arus));
+
+        $sheet->setCellValue('C35', applyZero($prev->pelanggaran_mobil_melanggar_lampu_lalin));
+        $sheet->setCellValue('D35', applyZero($current->pelanggaran_mobil_melanggar_lampu_lalin));
+
+        $sheet->setCellValue('C36', applyZero($prev->pelanggaran_mobil_mengemudi_tidak_wajar));
+        $sheet->setCellValue('D36', applyZero($current->pelanggaran_mobil_mengemudi_tidak_wajar));
+
+        $sheet->setCellValue('C37', applyZero($prev->pelanggaran_mobil_syarat_teknis_layak_jalan));
+        $sheet->setCellValue('D37', applyZero($current->pelanggaran_mobil_syarat_teknis_layak_jalan));
+
+        $sheet->setCellValue('C38', applyZero($prev->pelanggaran_mobil_tidak_nyala_lampu_malam));
+        $sheet->setCellValue('D38', applyZero($current->pelanggaran_mobil_tidak_nyala_lampu_malam));
+
+        $sheet->setCellValue('C39', applyZero($prev->pelanggaran_mobil_berbelok_tanpa_isyarat));
+        $sheet->setCellValue('D39', applyZero($current->pelanggaran_mobil_berbelok_tanpa_isyarat));
+
+        $sheet->setCellValue('C40', applyZero($prev->pelanggaran_mobil_berbalapan_di_jalan_raya));
+        $sheet->setCellValue('D40', applyZero($current->pelanggaran_mobil_berbalapan_di_jalan_raya));
+
+        $sheet->setCellValue('C41', applyZero($prev->pelanggaran_mobil_melanggar_rambu_berhenti_dan_parkir));
+        $sheet->setCellValue('D41', applyZero($current->pelanggaran_mobil_melanggar_rambu_berhenti_dan_parkir));
+
+        $sheet->setCellValue('C42', applyZero($prev->pelanggaran_mobil_melanggar_marka_berhenti));
+        $sheet->setCellValue('D42', applyZero($current->pelanggaran_mobil_melanggar_marka_berhenti));
+
+        $sheet->setCellValue('C43', applyZero($prev->pelanggaran_mobil_tidak_patuh_perintah_petugas));
+        $sheet->setCellValue('D43', applyZero($current->pelanggaran_mobil_tidak_patuh_perintah_petugas));
+
+        $sheet->setCellValue('C44', applyZero($prev->pelanggaran_mobil_surat_surat));
+        $sheet->setCellValue('D44', applyZero($current->pelanggaran_mobil_surat_surat));
+
+        $sheet->setCellValue('C45', applyZero($prev->pelanggaran_mobil_kelengkapan_kendaraan));
+        $sheet->setCellValue('D45', applyZero($current->pelanggaran_mobil_kelengkapan_kendaraan));
+
+        $sheet->setCellValue('C46', applyZero($prev->pelanggaran_mobil_lain_lain));
+        $sheet->setCellValue('D46', applyZero($current->pelanggaran_mobil_lain_lain));
+
+        $sheet->setCellValue('C49', applyZero($prev->pelanggaran_pejalan_kaki_menyeberang_tidak_pada_tempat));
+        $sheet->setCellValue('D49', applyZero($current->pelanggaran_pejalan_kaki_menyeberang_tidak_pada_tempat));
+
+        $sheet->setCellValue('C52', applyZero($prev->barang_bukti_yg_disita_sim));
+        $sheet->setCellValue('D52', applyZero($current->barang_bukti_yg_disita_sim));
+
+        $sheet->setCellValue('C53', applyZero($prev->barang_bukti_yg_disita_stnk));
+        $sheet->setCellValue('D53', applyZero($current->barang_bukti_yg_disita_stnk));
+
+        $sheet->setCellValue('C54', applyZero($prev->barang_bukti_yg_disita_kendaraan));
+        $sheet->setCellValue('D54', applyZero($current->barang_bukti_yg_disita_kendaraan));
+
+        $sheet->setCellValue('C57', applyZero($prev->kendaraan_yang_terlibat_pelanggaran_sepeda_motor));
+        $sheet->setCellValue('D57', applyZero($current->kendaraan_yang_terlibat_pelanggaran_sepeda_motor));
+
+        $sheet->setCellValue('C58', applyZero($prev->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang));
+        $sheet->setCellValue('D58', applyZero($current->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang));
+
+        $sheet->setCellValue('C59', applyZero($prev->kendaraan_yang_terlibat_pelanggaran_mobil_bus));
+        $sheet->setCellValue('D59', applyZero($current->kendaraan_yang_terlibat_pelanggaran_mobil_bus));
+
+        $sheet->setCellValue('C60', applyZero($prev->kendaraan_yang_terlibat_pelanggaran_mobil_barang));
+        $sheet->setCellValue('D60', applyZero($current->kendaraan_yang_terlibat_pelanggaran_mobil_barang));
+
+        $sheet->setCellValue('C61', applyZero($prev->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus));
+        $sheet->setCellValue('D61', applyZero($current->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus));
+
+        $sheet->setCellValue('C64', applyZero($prev->profesi_pelaku_pelanggaran_pns));
+        $sheet->setCellValue('D64', applyZero($current->profesi_pelaku_pelanggaran_pns));
+
+        $sheet->setCellValue('C65', applyZero($prev->profesi_pelaku_pelanggaran_karyawan_swasta));
+        $sheet->setCellValue('D65', applyZero($current->profesi_pelaku_pelanggaran_karyawan_swasta));
+
+        $sheet->setCellValue('C66', applyZero($prev->profesi_pelaku_pelanggaran_pelajar_mahasiswa));
+        $sheet->setCellValue('D66', applyZero($current->profesi_pelaku_pelanggaran_pelajar_mahasiswa));
+
+        $sheet->setCellValue('C67', applyZero($prev->profesi_pelaku_pelanggaran_pengemudi_supir));
+        $sheet->setCellValue('D67', applyZero($current->profesi_pelaku_pelanggaran_pengemudi_supir));
+
+        $sheet->setCellValue('C68', applyZero($prev->profesi_pelaku_pelanggaran_tni));
+        $sheet->setCellValue('D68', applyZero($current->profesi_pelaku_pelanggaran_tni));
+
+        $sheet->setCellValue('C69', applyZero($prev->profesi_pelaku_pelanggaran_polri));
+        $sheet->setCellValue('D69', applyZero($current->profesi_pelaku_pelanggaran_polri));
+
+        $sheet->setCellValue('C70', applyZero($prev->profesi_pelaku_pelanggaran_lain_lain));
+        $sheet->setCellValue('D70', applyZero($current->profesi_pelaku_pelanggaran_lain_lain));
+
+        $sheet->setCellValue('C73', applyZero($prev->usia_pelaku_pelanggaran_kurang_dari_15_tahun));
+        $sheet->setCellValue('D73', applyZero($current->usia_pelaku_pelanggaran_kurang_dari_15_tahun));
+
+        $sheet->setCellValue('C74', applyZero($prev->usia_pelaku_pelanggaran_16_20_tahun));
+        $sheet->setCellValue('D74', applyZero($current->usia_pelaku_pelanggaran_16_20_tahun));
+
+        $sheet->setCellValue('C75', applyZero($prev->usia_pelaku_pelanggaran_21_25_tahun));
+        $sheet->setCellValue('D75', applyZero($current->usia_pelaku_pelanggaran_21_25_tahun));
+
+        $sheet->setCellValue('C76', applyZero($prev->usia_pelaku_pelanggaran_26_30_tahun));
+        $sheet->setCellValue('D76', applyZero($current->usia_pelaku_pelanggaran_26_30_tahun));
+
+        $sheet->setCellValue('C77', applyZero($prev->usia_pelaku_pelanggaran_31_35_tahun));
+        $sheet->setCellValue('D77', applyZero($current->usia_pelaku_pelanggaran_31_35_tahun));
+
+        $sheet->setCellValue('C78', applyZero($prev->usia_pelaku_pelanggaran_36_40_tahun));
+        $sheet->setCellValue('D78', applyZero($current->usia_pelaku_pelanggaran_36_40_tahun));
+
+        $sheet->setCellValue('C79', applyZero($prev->usia_pelaku_pelanggaran_41_45_tahun));
+        $sheet->setCellValue('D79', applyZero($current->usia_pelaku_pelanggaran_41_45_tahun));
+
+        $sheet->setCellValue('C80', applyZero($prev->usia_pelaku_pelanggaran_46_50_tahun));
+        $sheet->setCellValue('D80', applyZero($current->usia_pelaku_pelanggaran_46_50_tahun));
+
+        $sheet->setCellValue('C81', applyZero($prev->usia_pelaku_pelanggaran_51_55_tahun));
+        $sheet->setCellValue('D81', applyZero($current->usia_pelaku_pelanggaran_51_55_tahun));
+
+        $sheet->setCellValue('C82', applyZero($prev->usia_pelaku_pelanggaran_56_60_tahun));
+        $sheet->setCellValue('D82', applyZero($current->usia_pelaku_pelanggaran_56_60_tahun));
+
+        $sheet->setCellValue('C83', applyZero($prev->usia_pelaku_pelanggaran_diatas_60_tahun));
+        $sheet->setCellValue('D83', applyZero($current->usia_pelaku_pelanggaran_diatas_60_tahun));
+
+        $sheet->setCellValue('C86', applyZero($prev->sim_pelaku_pelanggaran_sim_a));
+        $sheet->setCellValue('D86', applyZero($current->sim_pelaku_pelanggaran_sim_a));
+
+        $sheet->setCellValue('C87', applyZero($prev->sim_pelaku_pelanggaran_sim_a_umum));
+        $sheet->setCellValue('D87', applyZero($current->sim_pelaku_pelanggaran_sim_a_umum));
+
+        $sheet->setCellValue('C88', applyZero($prev->sim_pelaku_pelanggaran_sim_b1));
+        $sheet->setCellValue('D88', applyZero($current->sim_pelaku_pelanggaran_sim_b1));
+
+        $sheet->setCellValue('C89', applyZero($prev->sim_pelaku_pelanggaran_sim_b1_umum));
+        $sheet->setCellValue('D89', applyZero($current->sim_pelaku_pelanggaran_sim_b1_umum));
+
+        $sheet->setCellValue('C90', applyZero($prev->sim_pelaku_pelanggaran_sim_b2));
+        $sheet->setCellValue('D90', applyZero($current->sim_pelaku_pelanggaran_sim_b2));
+
+        $sheet->setCellValue('C91', applyZero($prev->sim_pelaku_pelanggaran_sim_b2_umum));
+        $sheet->setCellValue('D91', applyZero($current->sim_pelaku_pelanggaran_sim_b2_umum));
+
+        $sheet->setCellValue('C92', applyZero($prev->sim_pelaku_pelanggaran_sim_c));
+        $sheet->setCellValue('D92', applyZero($current->sim_pelaku_pelanggaran_sim_c));
+
+        $sheet->setCellValue('C93', applyZero($prev->sim_pelaku_pelanggaran_sim_d));
+        $sheet->setCellValue('D93', applyZero($current->sim_pelaku_pelanggaran_sim_d));
+
+        $sheet->setCellValue('C94', applyZero($prev->sim_pelaku_pelanggaran_sim_internasional));
+        $sheet->setCellValue('D94', applyZero($current->sim_pelaku_pelanggaran_sim_internasional));
+
+        $sheet->setCellValue('C95', applyZero($prev->sim_pelaku_pelanggaran_tanpa_sim));
+        $sheet->setCellValue('D95', applyZero($current->sim_pelaku_pelanggaran_tanpa_sim));
+
+        $sheet->setCellValue('C99', applyZero($prev->lokasi_pelanggaran_pemukiman));
+        $sheet->setCellValue('D99', applyZero($current->lokasi_pelanggaran_pemukiman));
+
+        $sheet->setCellValue('C100', applyZero($prev->lokasi_pelanggaran_perbelanjaan));
+        $sheet->setCellValue('D100', applyZero($current->lokasi_pelanggaran_perbelanjaan));
+
+        $sheet->setCellValue('C101', applyZero($prev->lokasi_pelanggaran_perkantoran));
+        $sheet->setCellValue('D101', applyZero($current->lokasi_pelanggaran_perkantoran));
+
+        $sheet->setCellValue('C102', applyZero($prev->lokasi_pelanggaran_wisata));
+        $sheet->setCellValue('D102', applyZero($current->lokasi_pelanggaran_wisata));
+
+        $sheet->setCellValue('C103', applyZero($prev->lokasi_pelanggaran_industri));
+        $sheet->setCellValue('D103', applyZero($current->lokasi_pelanggaran_industri));
+
+        $sheet->setCellValue('C106', applyZero($prev->lokasi_pelanggaran_status_jalan_nasional));
+        $sheet->setCellValue('D106', applyZero($current->lokasi_pelanggaran_status_jalan_nasional));
+
+        $sheet->setCellValue('C107', applyZero($prev->lokasi_pelanggaran_status_jalan_propinsi));
+        $sheet->setCellValue('D107', applyZero($current->lokasi_pelanggaran_status_jalan_propinsi));
+
+        $sheet->setCellValue('C108', applyZero($prev->lokasi_pelanggaran_status_jalan_kab_kota));
+        $sheet->setCellValue('D108', applyZero($current->lokasi_pelanggaran_status_jalan_kab_kota));
+
+        $sheet->setCellValue('C109', applyZero($prev->lokasi_pelanggaran_status_jalan_desa_lingkungan));
+        $sheet->setCellValue('D109', applyZero($current->lokasi_pelanggaran_status_jalan_desa_lingkungan));
+
+        $sheet->setCellValue('C112', applyZero($prev->lokasi_pelanggaran_fungsi_jalan_arteri));
+        $sheet->setCellValue('D112', applyZero($current->lokasi_pelanggaran_fungsi_jalan_arteri));
+
+        $sheet->setCellValue('C113', applyZero($prev->lokasi_pelanggaran_fungsi_jalan_kolektor));
+        $sheet->setCellValue('D113', applyZero($current->lokasi_pelanggaran_fungsi_jalan_kolektor));
+
+        $sheet->setCellValue('C114', applyZero($prev->lokasi_pelanggaran_fungsi_jalan_lokal));
+        $sheet->setCellValue('D114', applyZero($current->lokasi_pelanggaran_fungsi_jalan_lokal));
+
+        $sheet->setCellValue('C115', applyZero($prev->lokasi_pelanggaran_fungsi_jalan_lingkungan));
+        $sheet->setCellValue('D115', applyZero($current->lokasi_pelanggaran_fungsi_jalan_lingkungan));
+
+        $sheet->setCellValue('C119', applyZero($prev->kecelakaan_lalin_jumlah_kejadian));
+        $sheet->setCellValue('D119', applyZero($current->kecelakaan_lalin_jumlah_kejadian));
+
+        $sheet->setCellValue('C120', applyZero($prev->kecelakaan_lalin_jumlah_korban_meninggal));
+        $sheet->setCellValue('D120', applyZero($current->kecelakaan_lalin_jumlah_korban_meninggal));
+
+        $sheet->setCellValue('C121', applyZero($prev->kecelakaan_lalin_jumlah_korban_luka_berat));
+        $sheet->setCellValue('D121', applyZero($current->kecelakaan_lalin_jumlah_korban_luka_berat));
+
+        $sheet->setCellValue('C122', applyZero($prev->kecelakaan_lalin_jumlah_korban_luka_ringan));
+        $sheet->setCellValue('D122', applyZero($current->kecelakaan_lalin_jumlah_korban_luka_ringan));
+
+        $sheet->setCellValue('C123', applyZero($prev->kecelakaan_lalin_jumlah_kerugian_materiil));
+        $sheet->setCellValue('D123', applyZero($current->kecelakaan_lalin_jumlah_kerugian_materiil));
+
+        $sheet->setCellValue('C125', applyZero($prev->kecelakaan_barang_bukti_yg_disita_sim));
+        $sheet->setCellValue('D125', applyZero($current->kecelakaan_barang_bukti_yg_disita_sim));
+
+        $sheet->setCellValue('C126', applyZero($prev->kecelakaan_barang_bukti_yg_disita_stnk));
+        $sheet->setCellValue('D126', applyZero($current->kecelakaan_barang_bukti_yg_disita_stnk));
+
+        $sheet->setCellValue('C127', applyZero($prev->kecelakaan_barang_bukti_yg_disita_kendaraan));
+        $sheet->setCellValue('D127', applyZero($current->kecelakaan_barang_bukti_yg_disita_kendaraan));
+
+        $sheet->setCellValue('C130', applyZero($prev->profesi_korban_kecelakaan_lalin_pns));
+        $sheet->setCellValue('D130', applyZero($current->profesi_korban_kecelakaan_lalin_pns));
+
+        $sheet->setCellValue('C131', applyZero($prev->profesi_korban_kecelakaan_lalin_karwayan_swasta));
+        $sheet->setCellValue('D131', applyZero($current->profesi_korban_kecelakaan_lalin_karwayan_swasta));
+
+        $sheet->setCellValue('C132', applyZero($prev->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa));
+        $sheet->setCellValue('D132', applyZero($current->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa));
+
+        $sheet->setCellValue('C133', applyZero($prev->profesi_korban_kecelakaan_lalin_pengemudi));
+        $sheet->setCellValue('D133', applyZero($current->profesi_korban_kecelakaan_lalin_pengemudi));
+
+        $sheet->setCellValue('C134', applyZero($prev->profesi_korban_kecelakaan_lalin_tni));
+        $sheet->setCellValue('D134', applyZero($current->profesi_korban_kecelakaan_lalin_tni));
+
+        $sheet->setCellValue('C135', applyZero($prev->profesi_korban_kecelakaan_lalin_polri));
+        $sheet->setCellValue('D135', applyZero($current->profesi_korban_kecelakaan_lalin_polri));
+
+        $sheet->setCellValue('C136', applyZero($prev->profesi_korban_kecelakaan_lalin_lain_lain));
+        $sheet->setCellValue('D136', applyZero($current->profesi_korban_kecelakaan_lalin_lain_lain));
+
+        $sheet->setCellValue('C139', applyZero($prev->usia_korban_kecelakaan_kurang_15));
+        $sheet->setCellValue('D139', applyZero($current->usia_korban_kecelakaan_kurang_15));
+
+        $sheet->setCellValue('C140', applyZero($prev->usia_korban_kecelakaan_16_20));
+        $sheet->setCellValue('D140', applyZero($current->usia_korban_kecelakaan_16_20));
+
+        $sheet->setCellValue('C141', applyZero($prev->usia_korban_kecelakaan_21_25));
+        $sheet->setCellValue('D141', applyZero($current->usia_korban_kecelakaan_21_25));
+
+        $sheet->setCellValue('C142', applyZero($prev->usia_korban_kecelakaan_26_30));
+        $sheet->setCellValue('D142', applyZero($current->usia_korban_kecelakaan_26_30));
+
+        $sheet->setCellValue('C143', applyZero($prev->usia_korban_kecelakaan_31_35));
+        $sheet->setCellValue('D143', applyZero($current->usia_korban_kecelakaan_31_35));
+
+        $sheet->setCellValue('C144', applyZero($prev->usia_korban_kecelakaan_36_40));
+        $sheet->setCellValue('D144', applyZero($current->usia_korban_kecelakaan_36_40));
+
+        $sheet->setCellValue('C145', applyZero($prev->usia_korban_kecelakaan_41_45));
+        $sheet->setCellValue('D145', applyZero($current->usia_korban_kecelakaan_41_45));
+
+        $sheet->setCellValue('C146', applyZero($prev->usia_korban_kecelakaan_45_50));
+        $sheet->setCellValue('D146', applyZero($current->usia_korban_kecelakaan_45_50));
+
+        $sheet->setCellValue('C147', applyZero($prev->usia_korban_kecelakaan_51_55));
+        $sheet->setCellValue('D147', applyZero($current->usia_korban_kecelakaan_51_55));
+
+        $sheet->setCellValue('C148', applyZero($prev->usia_korban_kecelakaan_56_60));
+        $sheet->setCellValue('D148', applyZero($current->usia_korban_kecelakaan_56_60));
+
+        $sheet->setCellValue('C149', applyZero($prev->usia_korban_kecelakaan_diatas_60));
+        $sheet->setCellValue('D149', applyZero($current->usia_korban_kecelakaan_diatas_60));
+
+        $sheet->setCellValue('C152', applyZero($prev->sim_korban_kecelakaan_sim_a));
+        $sheet->setCellValue('D152', applyZero($current->sim_korban_kecelakaan_sim_a));
+
+        $sheet->setCellValue('C153', applyZero($prev->sim_korban_kecelakaan_sim_a_umum));
+        $sheet->setCellValue('D153', applyZero($current->sim_korban_kecelakaan_sim_a_umum));
+
+        $sheet->setCellValue('C154', applyZero($prev->sim_korban_kecelakaan_sim_b1));
+        $sheet->setCellValue('D154', applyZero($current->sim_korban_kecelakaan_sim_b1));
+
+        $sheet->setCellValue('C155', applyZero($prev->sim_korban_kecelakaan_sim_b1_umum));
+        $sheet->setCellValue('D155', applyZero($current->sim_korban_kecelakaan_sim_b1_umum));
+
+        $sheet->setCellValue('C156', applyZero($prev->sim_korban_kecelakaan_sim_b2));
+        $sheet->setCellValue('D156', applyZero($current->sim_korban_kecelakaan_sim_b2));
+
+        $sheet->setCellValue('C157', applyZero($prev->sim_korban_kecelakaan_sim_b2_umum));
+        $sheet->setCellValue('D157', applyZero($current->sim_korban_kecelakaan_sim_b2_umum));
+
+        $sheet->setCellValue('C158', applyZero($prev->sim_korban_kecelakaan_sim_c));
+        $sheet->setCellValue('D158', applyZero($current->sim_korban_kecelakaan_sim_c));
+
+        $sheet->setCellValue('C159', applyZero($prev->sim_korban_kecelakaan_sim_d));
+        $sheet->setCellValue('D159', applyZero($current->sim_korban_kecelakaan_sim_d));
+
+        $sheet->setCellValue('C160', applyZero($prev->sim_korban_kecelakaan_sim_internasional));
+        $sheet->setCellValue('D160', applyZero($current->sim_korban_kecelakaan_sim_internasional));
+
+        $sheet->setCellValue('C161', applyZero($prev->sim_korban_kecelakaan_tanpa_sim));
+        $sheet->setCellValue('D161', applyZero($current->sim_korban_kecelakaan_tanpa_sim));
+
+        $sheet->setCellValue('C164', applyZero($prev->kendaraan_yg_terlibat_kecelakaan_sepeda_motor));
+        $sheet->setCellValue('D164', applyZero($current->kendaraan_yg_terlibat_kecelakaan_sepeda_motor));
+
+        $sheet->setCellValue('C165', applyZero($prev->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang));
+        $sheet->setCellValue('D165', applyZero($current->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang));
+
+        $sheet->setCellValue('C166', applyZero($prev->kendaraan_yg_terlibat_kecelakaan_mobil_bus));
+        $sheet->setCellValue('D166', applyZero($current->kendaraan_yg_terlibat_kecelakaan_mobil_bus));
+
+        $sheet->setCellValue('C167', applyZero($prev->kendaraan_yg_terlibat_kecelakaan_mobil_barang));
+        $sheet->setCellValue('D167', applyZero($current->kendaraan_yg_terlibat_kecelakaan_mobil_barang));
+
+        $sheet->setCellValue('C168', applyZero($prev->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus));
+        $sheet->setCellValue('D168', applyZero($current->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus));
+
+        $sheet->setCellValue('C169', applyZero($prev->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor));
+        $sheet->setCellValue('D169', applyZero($current->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor));
+
+        $sheet->setCellValue('C172', applyZero($prev->jenis_kecelakaan_tunggal_ooc));
+        $sheet->setCellValue('D172', applyZero($current->jenis_kecelakaan_tunggal_ooc));
+
+        $sheet->setCellValue('C173', applyZero($prev->jenis_kecelakaan_depan_depan));
+        $sheet->setCellValue('D173', applyZero($current->jenis_kecelakaan_depan_depan));
+
+        $sheet->setCellValue('C174', applyZero($prev->jenis_kecelakaan_depan_belakang));
+        $sheet->setCellValue('D174', applyZero($current->jenis_kecelakaan_depan_belakang));
+
+        $sheet->setCellValue('C175', applyZero($prev->jenis_kecelakaan_depan_samping));
+        $sheet->setCellValue('D175', applyZero($current->jenis_kecelakaan_depan_samping));
+
+        $sheet->setCellValue('C176', applyZero($prev->jenis_kecelakaan_beruntun));
+        $sheet->setCellValue('D176', applyZero($current->jenis_kecelakaan_beruntun));
+
+        $sheet->setCellValue('C177', applyZero($prev->jenis_kecelakaan_pejalan_kaki));
+        $sheet->setCellValue('D177', applyZero($current->jenis_kecelakaan_pejalan_kaki));
+
+        $sheet->setCellValue('C178', applyZero($prev->jenis_kecelakaan_tabrak_lari));
+        $sheet->setCellValue('D178', applyZero($current->jenis_kecelakaan_tabrak_lari));
+
+        $sheet->setCellValue('C179', applyZero($prev->jenis_kecelakaan_tabrak_hewan));
+        $sheet->setCellValue('D179', applyZero($current->jenis_kecelakaan_tabrak_hewan));
+
+        $sheet->setCellValue('C180', applyZero($prev->jenis_kecelakaan_samping_samping));
+        $sheet->setCellValue('D180', applyZero($current->jenis_kecelakaan_samping_samping));
+
+        $sheet->setCellValue('C181', applyZero($prev->jenis_kecelakaan_lainnya));
+        $sheet->setCellValue('D181', applyZero($current->jenis_kecelakaan_lainnya));
+
+        $sheet->setCellValue('C184', applyZero($prev->profesi_pelaku_kecelakaan_lalin_pns));
+        $sheet->setCellValue('D184', applyZero($current->profesi_pelaku_kecelakaan_lalin_pns));
+
+        $sheet->setCellValue('C185', applyZero($prev->profesi_pelaku_kecelakaan_lalin_karyawan_swasta));
+        $sheet->setCellValue('D185', applyZero($current->profesi_pelaku_kecelakaan_lalin_karyawan_swasta));
+
+        $sheet->setCellValue('C186', applyZero($prev->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar));
+        $sheet->setCellValue('D186', applyZero($current->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar));
+
+        $sheet->setCellValue('C187', applyZero($prev->profesi_pelaku_kecelakaan_lalin_pengemudi));
+        $sheet->setCellValue('D187', applyZero($current->profesi_pelaku_kecelakaan_lalin_pengemudi));
+
+        $sheet->setCellValue('C188', applyZero($prev->profesi_pelaku_kecelakaan_lalin_tni));
+        $sheet->setCellValue('D188', applyZero($current->profesi_pelaku_kecelakaan_lalin_tni));
+
+        $sheet->setCellValue('C189', applyZero($prev->profesi_pelaku_kecelakaan_lalin_polri));
+        $sheet->setCellValue('D189', applyZero($current->profesi_pelaku_kecelakaan_lalin_polri));
+
+        $sheet->setCellValue('C190', applyZero($prev->profesi_pelaku_kecelakaan_lalin_lain_lain));
+        $sheet->setCellValue('D190', applyZero($current->profesi_pelaku_kecelakaan_lalin_lain_lain));
+
+        $sheet->setCellValue('C193', applyZero($prev->usia_pelaku_kecelakaan_kurang_dari_15_tahun));
+        $sheet->setCellValue('D193', applyZero($current->usia_pelaku_kecelakaan_kurang_dari_15_tahun));
+
+        $sheet->setCellValue('C194', applyZero($prev->usia_pelaku_kecelakaan_16_20_tahun));
+        $sheet->setCellValue('D194', applyZero($current->usia_pelaku_kecelakaan_16_20_tahun));
+
+        $sheet->setCellValue('C195', applyZero($prev->usia_pelaku_kecelakaan_21_25_tahun));
+        $sheet->setCellValue('D195', applyZero($current->usia_pelaku_kecelakaan_21_25_tahun));
+
+        $sheet->setCellValue('C196', applyZero($prev->usia_pelaku_kecelakaan_26_30_tahun));
+        $sheet->setCellValue('D196', applyZero($current->usia_pelaku_kecelakaan_26_30_tahun));
+
+        $sheet->setCellValue('C197', applyZero($prev->usia_pelaku_kecelakaan_31_35_tahun));
+        $sheet->setCellValue('D197', applyZero($current->usia_pelaku_kecelakaan_31_35_tahun));
+
+        $sheet->setCellValue('C198', applyZero($prev->usia_pelaku_kecelakaan_36_40_tahun));
+        $sheet->setCellValue('D198', applyZero($current->usia_pelaku_kecelakaan_36_40_tahun));
+
+        $sheet->setCellValue('C199', applyZero($prev->usia_pelaku_kecelakaan_41_45_tahun));
+        $sheet->setCellValue('D199', applyZero($current->usia_pelaku_kecelakaan_41_45_tahun));
+
+        $sheet->setCellValue('C200', applyZero($prev->usia_pelaku_kecelakaan_46_50_tahun));
+        $sheet->setCellValue('D200', applyZero($current->usia_pelaku_kecelakaan_46_50_tahun));
+
+        $sheet->setCellValue('C201', applyZero($prev->usia_pelaku_kecelakaan_51_55_tahun));
+        $sheet->setCellValue('D201', applyZero($current->usia_pelaku_kecelakaan_51_55_tahun));
+
+        $sheet->setCellValue('C202', applyZero($prev->usia_pelaku_kecelakaan_56_60_tahun));
+        $sheet->setCellValue('D202', applyZero($current->usia_pelaku_kecelakaan_56_60_tahun));
+
+        $sheet->setCellValue('C203', applyZero($prev->usia_pelaku_kecelakaan_diatas_60_tahun));
+        $sheet->setCellValue('D203', applyZero($current->usia_pelaku_kecelakaan_diatas_60_tahun));
+
+        $sheet->setCellValue('C206', applyZero($prev->sim_pelaku_kecelakaan_sim_a));
+        $sheet->setCellValue('D206', applyZero($current->sim_pelaku_kecelakaan_sim_a));
+
+        $sheet->setCellValue('C207', applyZero($prev->sim_pelaku_kecelakaan_sim_a_umum));
+        $sheet->setCellValue('D207', applyZero($current->sim_pelaku_kecelakaan_sim_a_umum));
+
+        $sheet->setCellValue('C208', applyZero($prev->sim_pelaku_kecelakaan_sim_b1));
+        $sheet->setCellValue('D208', applyZero($current->sim_pelaku_kecelakaan_sim_b1));
+
+        $sheet->setCellValue('C209', applyZero($prev->sim_pelaku_kecelakaan_sim_b1_umum));
+        $sheet->setCellValue('D209', applyZero($current->sim_pelaku_kecelakaan_sim_b1_umum));
+
+        $sheet->setCellValue('C210', applyZero($prev->sim_pelaku_kecelakaan_sim_b2));
+        $sheet->setCellValue('D210', applyZero($current->sim_pelaku_kecelakaan_sim_b2));
+
+        $sheet->setCellValue('C211', applyZero($prev->sim_pelaku_kecelakaan_sim_b2_umum));
+        $sheet->setCellValue('D211', applyZero($current->sim_pelaku_kecelakaan_sim_b2_umum));
+
+        $sheet->setCellValue('C212', applyZero($prev->sim_pelaku_kecelakaan_sim_c));
+        $sheet->setCellValue('D212', applyZero($current->sim_pelaku_kecelakaan_sim_c));
+
+        $sheet->setCellValue('C213', applyZero($prev->sim_pelaku_kecelakaan_sim_d));
+        $sheet->setCellValue('D213', applyZero($current->sim_pelaku_kecelakaan_sim_d));
+
+        $sheet->setCellValue('C214', applyZero($prev->sim_pelaku_kecelakaan_sim_internasional));
+        $sheet->setCellValue('D214', applyZero($current->sim_pelaku_kecelakaan_sim_internasional));
+
+        $sheet->setCellValue('C215', applyZero($prev->sim_pelaku_kecelakaan_tanpa_sim));
+        $sheet->setCellValue('D215', applyZero($current->sim_pelaku_kecelakaan_tanpa_sim));
+
+        $sheet->setCellValue('C219', applyZero($prev->lokasi_kecelakaan_lalin_pemukiman));
+        $sheet->setCellValue('D219', applyZero($current->lokasi_kecelakaan_lalin_pemukiman));
+
+        $sheet->setCellValue('C220', applyZero($prev->lokasi_kecelakaan_lalin_perbelanjaan));
+        $sheet->setCellValue('D220', applyZero($current->lokasi_kecelakaan_lalin_perbelanjaan));
+
+        $sheet->setCellValue('C221', applyZero($prev->lokasi_kecelakaan_lalin_perkantoran));
+        $sheet->setCellValue('D221', applyZero($current->lokasi_kecelakaan_lalin_perkantoran));
+
+        $sheet->setCellValue('C222', applyZero($prev->lokasi_kecelakaan_lalin_wisata));
+        $sheet->setCellValue('D222', applyZero($current->lokasi_kecelakaan_lalin_wisata));
+
+        $sheet->setCellValue('C223', applyZero($prev->lokasi_kecelakaan_lalin_industri));
+        $sheet->setCellValue('D223', applyZero($current->lokasi_kecelakaan_lalin_industri));
+
+        $sheet->setCellValue('C224', applyZero($prev->lokasi_kecelakaan_lalin_lain_lain));
+        $sheet->setCellValue('D224', applyZero($current->lokasi_kecelakaan_lalin_lain_lain));
+
+        $sheet->setCellValue('C227', applyZero($prev->lokasi_kecelakaan_status_jalan_nasional));
+        $sheet->setCellValue('D227', applyZero($current->lokasi_kecelakaan_status_jalan_nasional));
+
+        $sheet->setCellValue('C228', applyZero($prev->lokasi_kecelakaan_status_jalan_propinsi));
+        $sheet->setCellValue('D228', applyZero($current->lokasi_kecelakaan_status_jalan_propinsi));
+
+        $sheet->setCellValue('C229', applyZero($prev->lokasi_kecelakaan_status_jalan_kab_kota));
+        $sheet->setCellValue('D229', applyZero($current->lokasi_kecelakaan_status_jalan_kab_kota));
+
+        $sheet->setCellValue('C230', applyZero($prev->lokasi_kecelakaan_status_jalan_desa_lingkungan));
+        $sheet->setCellValue('D230', applyZero($current->lokasi_kecelakaan_status_jalan_desa_lingkungan));
+
+        $sheet->setCellValue('C233', applyZero($prev->lokasi_kecelakaan_fungsi_jalan_arteri));
+        $sheet->setCellValue('D233', applyZero($current->lokasi_kecelakaan_fungsi_jalan_arteri));
+
+        $sheet->setCellValue('C234', applyZero($prev->lokasi_kecelakaan_fungsi_jalan_kolektor));
+        $sheet->setCellValue('D234', applyZero($current->lokasi_kecelakaan_fungsi_jalan_kolektor));
+
+        $sheet->setCellValue('C235', applyZero($prev->lokasi_kecelakaan_fungsi_jalan_lokal));
+        $sheet->setCellValue('D235', applyZero($current->lokasi_kecelakaan_fungsi_jalan_lokal));
+
+        $sheet->setCellValue('C236', applyZero($prev->lokasi_kecelakaan_fungsi_jalan_lingkungan));
+        $sheet->setCellValue('D236', applyZero($current->lokasi_kecelakaan_fungsi_jalan_lingkungan));
+
+        $sheet->setCellValue('C239', applyZero($prev->faktor_penyebab_kecelakaan_manusia));
+        $sheet->setCellValue('D239', applyZero($current->faktor_penyebab_kecelakaan_manusia));
+
+        $sheet->setCellValue('C240', applyZero($prev->faktor_penyebab_kecelakaan_ngantuk_lelah));
+        $sheet->setCellValue('D240', applyZero($current->faktor_penyebab_kecelakaan_ngantuk_lelah));
+
+        $sheet->setCellValue('C241', applyZero($prev->faktor_penyebab_kecelakaan_mabuk_obat));
+        $sheet->setCellValue('D241', applyZero($current->faktor_penyebab_kecelakaan_mabuk_obat));
+
+        $sheet->setCellValue('C242', applyZero($prev->faktor_penyebab_kecelakaan_sakit));
+        $sheet->setCellValue('D242', applyZero($current->faktor_penyebab_kecelakaan_sakit));
+
+        $sheet->setCellValue('C243', applyZero($prev->faktor_penyebab_kecelakaan_handphone_elektronik));
+        $sheet->setCellValue('D243', applyZero($current->faktor_penyebab_kecelakaan_handphone_elektronik));
+
+        $sheet->setCellValue('C244', applyZero($prev->faktor_penyebab_kecelakaan_menerobos_lampu_merah));
+        $sheet->setCellValue('D244', applyZero($current->faktor_penyebab_kecelakaan_menerobos_lampu_merah));
+
+        $sheet->setCellValue('C245', applyZero($prev->faktor_penyebab_kecelakaan_melanggar_batas_kecepatan));
+        $sheet->setCellValue('D245', applyZero($current->faktor_penyebab_kecelakaan_melanggar_batas_kecepatan));
+
+        $sheet->setCellValue('C246', applyZero($prev->faktor_penyebab_kecelakaan_tidak_menjaga_jarak));
+        $sheet->setCellValue('D246', applyZero($current->faktor_penyebab_kecelakaan_tidak_menjaga_jarak));
+
+        $sheet->setCellValue('C247', applyZero($prev->faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur));
+        $sheet->setCellValue('D247', applyZero($current->faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur));
+
+        $sheet->setCellValue('C248', applyZero($prev->faktor_penyebab_kecelakaan_berpindah_jalur));
+        $sheet->setCellValue('D248', applyZero($current->faktor_penyebab_kecelakaan_berpindah_jalur));
+
+        $sheet->setCellValue('C249', applyZero($prev->faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat));
+        $sheet->setCellValue('D249', applyZero($current->faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat));
+
+        $sheet->setCellValue('C250', applyZero($prev->faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki));
+        $sheet->setCellValue('D250', applyZero($current->faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki));
+
+        $sheet->setCellValue('C251', applyZero($prev->faktor_penyebab_kecelakaan_lainnya));
+        $sheet->setCellValue('D251', applyZero($current->faktor_penyebab_kecelakaan_lainnya));
+
+        $sheet->setCellValue('C252', applyZero($prev->faktor_penyebab_kecelakaan_alam));
+        $sheet->setCellValue('D252', applyZero($current->faktor_penyebab_kecelakaan_alam));
+
+        $sheet->setCellValue('C253', applyZero($prev->faktor_penyebab_kecelakaan_kelaikan_kendaraan));
+        $sheet->setCellValue('D253', applyZero($current->faktor_penyebab_kecelakaan_kelaikan_kendaraan));
+
+        $sheet->setCellValue('C254', applyZero($prev->faktor_penyebab_kecelakaan_kondisi_jalan));
+        $sheet->setCellValue('D254', applyZero($current->faktor_penyebab_kecelakaan_kondisi_jalan));
+
+        $sheet->setCellValue('C255', applyZero($prev->faktor_penyebab_kecelakaan_prasarana_jalan));
+        $sheet->setCellValue('D255', applyZero($current->faktor_penyebab_kecelakaan_prasarana_jalan));
+
+        $sheet->setCellValue('C256', applyZero($prev->faktor_penyebab_kecelakaan_rambuxxx));
+        $sheet->setCellValue('D256', applyZero($current->faktor_penyebab_kecelakaan_rambu));
+
+        $sheet->setCellValue('C257', applyZero($prev->faktor_penyebab_kecelakaan_marka));
+        $sheet->setCellValue('D257', applyZero($current->faktor_penyebab_kecelakaan_marka));
+
+        $sheet->setCellValue('C258', applyZero($prev->faktor_penyebab_kecelakaan_apil));
+        $sheet->setCellValue('D258', applyZero($current->faktor_penyebab_kecelakaan_apil));
+
+        $sheet->setCellValue('C259', applyZero($prev->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu));
+        $sheet->setCellValue('D259', applyZero($current->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu));
+
+        $sheet->setCellValue('C262', applyZero($prev->waktu_kejadian_kecelakaan_00_03));
+        $sheet->setCellValue('D262', applyZero($current->waktu_kejadian_kecelakaan_00_03));
+
+        $sheet->setCellValue('C263', applyZero($prev->waktu_kejadian_kecelakaan_03_06));
+        $sheet->setCellValue('D263', applyZero($current->waktu_kejadian_kecelakaan_03_06));
+
+        $sheet->setCellValue('C264', applyZero($prev->waktu_kejadian_kecelakaan_06_09));
+        $sheet->setCellValue('D264', applyZero($current->waktu_kejadian_kecelakaan_06_09));
+
+        $sheet->setCellValue('C265', applyZero($prev->waktu_kejadian_kecelakaan_09_12));
+        $sheet->setCellValue('D265', applyZero($current->waktu_kejadian_kecelakaan_09_12));
+
+        $sheet->setCellValue('C266', applyZero($prev->waktu_kejadian_kecelakaan_12_15));
+        $sheet->setCellValue('D266', applyZero($current->waktu_kejadian_kecelakaan_12_15));
+
+        $sheet->setCellValue('C267', applyZero($prev->waktu_kejadian_kecelakaan_15_18));
+        $sheet->setCellValue('D267', applyZero($current->waktu_kejadian_kecelakaan_15_18));
+
+        $sheet->setCellValue('C268', applyZero($prev->waktu_kejadian_kecelakaan_18_21));
+        $sheet->setCellValue('D268', applyZero($current->waktu_kejadian_kecelakaan_18_21));
+
+        $sheet->setCellValue('C269', applyZero($prev->waktu_kejadian_kecelakaan_21_24));
+        $sheet->setCellValue('D269', applyZero($current->waktu_kejadian_kecelakaan_21_24));
+
+        $sheet->setCellValue('C272', applyZero($prev->kecelakaan_lalin_menonjol_jumlah_kejadian));
+        $sheet->setCellValue('D272', applyZero($current->kecelakaan_lalin_menonjol_jumlah_kejadian));
+
+        $sheet->setCellValue('C273', applyZero($prev->kecelakaan_lalin_menonjol_korban_meninggal));
+        $sheet->setCellValue('D273', applyZero($current->kecelakaan_lalin_menonjol_korban_meninggal));
+
+        $sheet->setCellValue('C274', applyZero($prev->kecelakaan_lalin_menonjol_korban_luka_berat));
+        $sheet->setCellValue('D274', applyZero($current->kecelakaan_lalin_menonjol_korban_luka_berat));
+
+        $sheet->setCellValue('C275', applyZero($prev->kecelakaan_lalin_menonjol_korban_luka_ringan));
+        $sheet->setCellValue('D275', applyZero($current->kecelakaan_lalin_menonjol_korban_luka_ringan));
+
+        $sheet->setCellValue('C276', applyZero($prev->kecelakaan_lalin_menonjol_materiil));
+        $sheet->setCellValue('D276', applyZero($current->kecelakaan_lalin_menonjol_materiil));
+
+        $sheet->setCellValue('C278', applyZero($prev->kecelakaan_lalin_tunggal_jumlah_kejadian));
+        $sheet->setCellValue('D278', applyZero($current->kecelakaan_lalin_tunggal_jumlah_kejadian));
+
+        $sheet->setCellValue('C279', applyZero($prev->kecelakaan_lalin_tunggal_korban_meninggal));
+        $sheet->setCellValue('D279', applyZero($current->kecelakaan_lalin_tunggal_korban_meninggal));
+
+        $sheet->setCellValue('C280', applyZero($prev->kecelakaan_lalin_tunggal_korban_luka_berat));
+        $sheet->setCellValue('D280', applyZero($current->kecelakaan_lalin_tunggal_korban_luka_berat));
+
+        $sheet->setCellValue('C281', applyZero($prev->kecelakaan_lalin_tunggal_korban_luka_ringan));
+        $sheet->setCellValue('D281', applyZero($current->kecelakaan_lalin_tunggal_korban_luka_ringan));
+
+        $sheet->setCellValue('C282', applyZero($prev->kecelakaan_lalin_tunggal_materiil));
+        $sheet->setCellValue('D282', applyZero($current->kecelakaan_lalin_tunggal_materiil));
+
+        $sheet->setCellValue('C284', applyZero($prev->kecelakaan_lalin_tabrak_pejalan_kaki_jumlah_kejadian));
+        $sheet->setCellValue('D284', applyZero($current->kecelakaan_lalin_tabrak_pejalan_kaki_jumlah_kejadian));
+
+        $sheet->setCellValue('C285', applyZero($prev->kecelakaan_lalin_tabrak_pejalan_kaki_korban_meninggal));
+        $sheet->setCellValue('D285', applyZero($current->kecelakaan_lalin_tabrak_pejalan_kaki_korban_meninggal));
+
+        $sheet->setCellValue('C286', applyZero($prev->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_berat));
+        $sheet->setCellValue('D286', applyZero($current->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_berat));
+
+        $sheet->setCellValue('C287', applyZero($prev->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_ringan));
+        $sheet->setCellValue('D287', applyZero($current->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_ringan));
+
+        $sheet->setCellValue('C288', applyZero($prev->kecelakaan_lalin_tabrak_pejalan_kaki_materiil));
+        $sheet->setCellValue('D288', applyZero($current->kecelakaan_lalin_tabrak_pejalan_kaki_materiil));
+
+        $sheet->setCellValue('C290', applyZero($prev->kecelakaan_lalin_tabrak_lari_jumlah_kejadian));
+        $sheet->setCellValue('D290', applyZero($current->kecelakaan_lalin_tabrak_lari_jumlah_kejadian));
+
+        $sheet->setCellValue('C291', applyZero($prev->kecelakaan_lalin_tabrak_lari_korban_meninggal));
+        $sheet->setCellValue('D291', applyZero($current->kecelakaan_lalin_tabrak_lari_korban_meninggal));
+
+        $sheet->setCellValue('C292', applyZero($prev->kecelakaan_lalin_tabrak_lari_korban_luka_berat));
+        $sheet->setCellValue('D292', applyZero($current->kecelakaan_lalin_tabrak_lari_korban_luka_berat));
+
+        $sheet->setCellValue('C293', applyZero($prev->kecelakaan_lalin_tabrak_lari_korban_luka_ringan));
+        $sheet->setCellValue('D293', applyZero($current->kecelakaan_lalin_tabrak_lari_korban_luka_ringan));
+
+        $sheet->setCellValue('C294', applyZero($prev->kecelakaan_lalin_tabrak_lari_materiil));
+        $sheet->setCellValue('D294', applyZero($current->kecelakaan_lalin_tabrak_lari_materiil));
+
+        $sheet->setCellValue('C296', applyZero($prev->kecelakaan_lalin_tabrak_sepeda_motor_jumlah_kejadian));
+        $sheet->setCellValue('D296', applyZero($current->kecelakaan_lalin_tabrak_sepeda_motor_jumlah_kejadian));
+
+        $sheet->setCellValue('C297', applyZero($prev->kecelakaan_lalin_tabrak_sepeda_motor_korban_meninggal));
+        $sheet->setCellValue('D297', applyZero($current->kecelakaan_lalin_tabrak_sepeda_motor_korban_meninggal));
+
+        $sheet->setCellValue('C298', applyZero($prev->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_berat));
+        $sheet->setCellValue('D298', applyZero($current->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_berat));
+
+        $sheet->setCellValue('C299', applyZero($prev->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_ringan));
+        $sheet->setCellValue('D299', applyZero($current->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_ringan));
+
+        $sheet->setCellValue('C300', applyZero($prev->kecelakaan_lalin_tabrak_sepeda_motor_materiil));
+        $sheet->setCellValue('D300', applyZero($current->kecelakaan_lalin_tabrak_sepeda_motor_materiil));
+
+        $sheet->setCellValue('C302', applyZero($prev->kecelakaan_lalin_tabrak_roda_empat_jumlah_kejadian));
+        $sheet->setCellValue('D302', applyZero($current->kecelakaan_lalin_tabrak_roda_empat_jumlah_kejadian));
+
+        $sheet->setCellValue('C303', applyZero($prev->kecelakaan_lalin_tabrak_roda_empat_korban_meninggal));
+        $sheet->setCellValue('D303', applyZero($current->kecelakaan_lalin_tabrak_roda_empat_korban_meninggal));
+
+        $sheet->setCellValue('C304', applyZero($prev->kecelakaan_lalin_tabrak_roda_empat_korban_luka_berat));
+        $sheet->setCellValue('D304', applyZero($current->kecelakaan_lalin_tabrak_roda_empat_korban_luka_berat));
+
+        $sheet->setCellValue('C305', applyZero($prev->kecelakaan_lalin_tabrak_roda_empat_korban_luka_ringan));
+        $sheet->setCellValue('D305', applyZero($current->kecelakaan_lalin_tabrak_roda_empat_korban_luka_ringan));
+
+        $sheet->setCellValue('C306', applyZero($prev->kecelakaan_lalin_tabrak_roda_empat_materiil));
+        $sheet->setCellValue('D306', applyZero($current->kecelakaan_lalin_tabrak_roda_empat_materiil));
+
+        $sheet->setCellValue('C308', applyZero($prev->kecelakaan_lalin_tabrak_tidak_bermotor_jumlah_kejadian));
+        $sheet->setCellValue('D308', applyZero($current->kecelakaan_lalin_tabrak_tidak_bermotor_jumlah_kejadian));
+
+        $sheet->setCellValue('C309', applyZero($prev->kecelakaan_lalin_tabrak_tidak_bermotor_korban_meninggal));
+        $sheet->setCellValue('D309', applyZero($current->kecelakaan_lalin_tabrak_tidak_bermotor_korban_meninggal));
+
+        $sheet->setCellValue('C310', applyZero($prev->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_berat));
+        $sheet->setCellValue('D310', applyZero($current->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_berat));
+
+        $sheet->setCellValue('C311', applyZero($prev->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_ringan));
+        $sheet->setCellValue('D311', applyZero($current->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_ringan));
+
+        $sheet->setCellValue('C312', applyZero($prev->kecelakaan_lalin_tabrak_tidak_bermotor_materiil));
+        $sheet->setCellValue('D312', applyZero($current->kecelakaan_lalin_tabrak_tidak_bermotor_materiil));
+
+        $sheet->setCellValue('C314', applyZero($prev->kecelakaan_lalin_perlintasan_ka_jumlah_kejadian));
+        $sheet->setCellValue('D314', applyZero($current->kecelakaan_lalin_perlintasan_ka_jumlah_kejadian));
+
+        $sheet->setCellValue('C315', applyZero($prev->kecelakaan_lalin_perlintasan_ka_berpalang_pintu));
+        $sheet->setCellValue('D315', applyZero($current->kecelakaan_lalin_perlintasan_ka_berpalang_pintu));
+
+        $sheet->setCellValue('C316', applyZero($prev->kecelakaan_lalin_perlintasan_ka_tidak_berpalang_pintu));
+        $sheet->setCellValue('D316', applyZero($current->kecelakaan_lalin_perlintasan_ka_tidak_berpalang_pintu));
+
+        $sheet->setCellValue('C317', applyZero($prev->kecelakaan_lalin_perlintasan_ka_korban_luka_ringan));
+        $sheet->setCellValue('D317', applyZero($current->kecelakaan_lalin_perlintasan_ka_korban_luka_ringan));
+
+        $sheet->setCellValue('C318', applyZero($prev->kecelakaan_lalin_perlintasan_ka_korban_luka_berat));
+        $sheet->setCellValue('D318', applyZero($current->kecelakaan_lalin_perlintasan_ka_korban_luka_berat));
+
+        $sheet->setCellValue('C319', applyZero($prev->kecelakaan_lalin_perlintasan_ka_korban_meninggal));
+        $sheet->setCellValue('D319', applyZero($current->kecelakaan_lalin_perlintasan_ka_korban_meninggal));
+
+        $sheet->setCellValue('C320', applyZero($prev->kecelakaan_lalin_perlintasan_ka_materiil));
+        $sheet->setCellValue('D320', applyZero($current->kecelakaan_lalin_perlintasan_ka_materiil));
+
+        $sheet->setCellValue('C322', applyZero($prev->kecelakaan_transportasi_kereta_api));
+        $sheet->setCellValue('D322', applyZero($current->kecelakaan_transportasi_kereta_api));
+
+        $sheet->setCellValue('C323', applyZero($prev->kecelakaan_transportasi_laut_perairan));
+        $sheet->setCellValue('D323', applyZero($current->kecelakaan_transportasi_laut_perairan));
+
+        $sheet->setCellValue('C324', applyZero($prev->kecelakaan_transportasi_udara));
+        $sheet->setCellValue('D324', applyZero($current->kecelakaan_transportasi_udara));
+
+        $sheet->setCellValue('C329', applyZero($prev->penlu_melalui_media_cetak));
+        $sheet->setCellValue('D329', applyZero($current->penlu_melalui_media_cetak));
+
+        $sheet->setCellValue('C330', applyZero($prev->penlu_melalui_media_elektronik));
+        $sheet->setCellValue('D330', applyZero($current->penlu_melalui_media_elektronik));
+
+        $sheet->setCellValue('C331', applyZero($prev->penlu_melalui_media_sosial));
+        $sheet->setCellValue('D331', applyZero($current->penlu_melalui_media_sosial));
+
+        $sheet->setCellValue('C332', applyZero($prev->penlu_melalui_tempat_keramaian));
+        $sheet->setCellValue('D332', applyZero($current->penlu_melalui_tempat_keramaian));
+
+        $sheet->setCellValue('C333', applyZero($prev->penlu_melalui_tempat_istirahat));
+        $sheet->setCellValue('D333', applyZero($current->penlu_melalui_tempat_istirahat));
+
+        $sheet->setCellValue('C334', applyZero($prev->penlu_melalui_daerah_rawan_laka_dan_langgar));
+        $sheet->setCellValue('D334', applyZero($current->penlu_melalui_daerah_rawan_laka_dan_langgar));
+
+        $sheet->setCellValue('C337', applyZero($prev->penyebaran_pemasangan_spanduk));
+        $sheet->setCellValue('D337', applyZero($current->penyebaran_pemasangan_spanduk));
+
+        $sheet->setCellValue('C338', applyZero($prev->penyebaran_pemasangan_leaflet));
+        $sheet->setCellValue('D338', applyZero($current->penyebaran_pemasangan_leaflet));
+
+        $sheet->setCellValue('C339', applyZero($prev->penyebaran_pemasangan_sticker));
+        $sheet->setCellValue('D339', applyZero($current->penyebaran_pemasangan_sticker));
+
+        $sheet->setCellValue('C340', applyZero($prev->penyebaran_pemasangan_bilboard));
+        $sheet->setCellValue('D340', applyZero($current->penyebaran_pemasangan_bilboard));
+
+        $sheet->setCellValue('C343', applyZero($prev->polisi_sahabat_anak));
+        $sheet->setCellValue('D343', applyZero($current->polisi_sahabat_anak));
+
+        $sheet->setCellValue('C344', applyZero($prev->cara_aman_sekolah));
+        $sheet->setCellValue('D344', applyZero($current->cara_aman_sekolah));
+
+        $sheet->setCellValue('C345', applyZero($prev->patroli_keamanan_sekolah));
+        $sheet->setCellValue('D345', applyZero($current->patroli_keamanan_sekolah));
+
+        $sheet->setCellValue('C346', applyZero($prev->pramuka_bhayangkara_krida_lalu_lintas));
+        $sheet->setCellValue('D346', applyZero($current->pramuka_bhayangkara_krida_lalu_lintas));
+
+        $sheet->setCellValue('C349', applyZero($prev->police_goes_to_campus));
+        $sheet->setCellValue('D349', applyZero($current->police_goes_to_campus));
+
+        $sheet->setCellValue('C350', applyZero($prev->safety_riding_driving));
+        $sheet->setCellValue('D350', applyZero($current->safety_riding_driving));
+
+        $sheet->setCellValue('C351', applyZero($prev->forum_lalu_lintas_angkutan_umum));
+        $sheet->setCellValue('D351', applyZero($current->forum_lalu_lintas_angkutan_umum));
+
+        $sheet->setCellValue('C352', applyZero($prev->kampanye_keselamatan));
+        $sheet->setCellValue('D352', applyZero($current->kampanye_keselamatan));
+
+        $sheet->setCellValue('C353', applyZero($prev->sekolah_mengemudi));
+        $sheet->setCellValue('D353', applyZero($current->sekolah_mengemudi));
+
+        $sheet->setCellValue('C354', applyZero($prev->taman_lalu_lintas));
+        $sheet->setCellValue('D354', applyZero($current->taman_lalu_lintas));
+
+        $sheet->setCellValue('C355', applyZero($prev->global_road_safety_partnership_action));
+        $sheet->setCellValue('D355', applyZero($current->global_road_safety_partnership_action));
+
+        $sheet->setCellValue('C359', applyZero($prev->giat_lantas_pengaturan));
+        $sheet->setCellValue('D359', applyZero($current->giat_lantas_pengaturan));
+
+        $sheet->setCellValue('C360', applyZero($prev->giat_lantas_penjagaan));
+        $sheet->setCellValue('D360', applyZero($current->giat_lantas_penjagaan));
+
+        $sheet->setCellValue('C361', applyZero($prev->giat_lantas_pengawalan));
+        $sheet->setCellValue('D361', applyZero($current->giat_lantas_pengawalan));
+
+        $sheet->setCellValue('C362', applyZero($prev->giat_lantas_patroli));
+        $sheet->setCellValue('D362', applyZero($current->giat_lantas_patroli));
+
+        $sheet->setCellValue('C367', applyZero($prev->arus_mudik_jumlah_bus_keberangkatan));
+        $sheet->setCellValue('D367', applyZero($current->arus_mudik_jumlah_bus_keberangkatan));
+
+        $sheet->setCellValue('C368', applyZero($prev->arus_mudik_jumlah_penumpang_keberangkatan));
+        $sheet->setCellValue('D368', applyZero($current->arus_mudik_jumlah_penumpang_keberangkatan));
+
+        $sheet->setCellValue('C369', applyZero($prev->arus_mudik_jumlah_bus_kedatangan));
+        $sheet->setCellValue('D369', applyZero($current->arus_mudik_jumlah_bus_kedatangan));
+
+        $sheet->setCellValue('C370', applyZero($prev->arus_mudik_jumlah_penumpang_kedatangan));
+        $sheet->setCellValue('D370', applyZero($current->arus_mudik_jumlah_penumpang_kedatangan));
+
+        $sheet->setCellValue('C371', applyZero($prev->arus_mudik_total_terminal));
+        $sheet->setCellValue('D371', applyZero($current->arus_mudik_total_terminal));
+
+        $sheet->setCellValue('C372', applyZero($prev->arus_mudik_total_bus_keberangkatan));
+        $sheet->setCellValue('D372', applyZero($current->arus_mudik_total_bus_keberangkatan));
+
+        $sheet->setCellValue('C373', applyZero($prev->arus_mudik_penumpang_keberangkatan));
+        $sheet->setCellValue('D373', applyZero($current->arus_mudik_penumpang_keberangkatan));
+
+        $sheet->setCellValue('C374', applyZero($prev->arus_mudik_total_bus_kedatangan));
+        $sheet->setCellValue('D374', applyZero($current->arus_mudik_total_bus_kedatangan));
+
+        $sheet->setCellValue('C375', applyZero($prev->arus_mudik_penumpang_kedatangan));
+        $sheet->setCellValue('D375', applyZero($current->arus_mudik_penumpang_kedatangan));
+
+        $sheet->setCellValue('C377', applyZero($prev->arus_mudik_kereta_api_total_stasiun));
+        $sheet->setCellValue('D377', applyZero($current->arus_mudik_kereta_api_total_stasiun));
+
+        $sheet->setCellValue('C378', applyZero($prev->arus_mudik_kereta_api_total_penumpang_keberangkatan));
+        $sheet->setCellValue('D378', applyZero($current->arus_mudik_kereta_api_total_penumpang_keberangkatan));
+
+        $sheet->setCellValue('C379', applyZero($prev->arus_mudik_kereta_api_total_penumpang_kedatangan));
+        $sheet->setCellValue('D379', applyZero($current->arus_mudik_kereta_api_total_penumpang_kedatangan));
+
+        $sheet->setCellValue('C381', applyZero($prev->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan));
+        $sheet->setCellValue('D381', applyZero($current->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan));
+
+        $sheet->setCellValue('C382', applyZero($prev->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4));
+        $sheet->setCellValue('D382', applyZero($current->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4));
+
+        $sheet->setCellValue('C383', applyZero($prev->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2));
+        $sheet->setCellValue('D383', applyZero($current->arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2));
+
+        $sheet->setCellValue('C384', applyZero($prev->arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan));
+        $sheet->setCellValue('D384', applyZero($current->arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan));
+
+        $sheet->setCellValue('C385', applyZero($prev->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan));
+        $sheet->setCellValue('D385', applyZero($current->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan));
+
+        $sheet->setCellValue('C386', applyZero($prev->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4));
+        $sheet->setCellValue('D386', applyZero($current->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4));
+
+        $sheet->setCellValue('C387', applyZero($prev->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2));
+        $sheet->setCellValue('D387', applyZero($current->arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2));
+
+        $sheet->setCellValue('C388', applyZero($prev->arus_mudik_pelabuhan_jumlah_penumpang_kedatangan));
+        $sheet->setCellValue('D388', applyZero($current->arus_mudik_pelabuhan_jumlah_penumpang_kedatangan));
+
+        $sheet->setCellValue('C389', applyZero($prev->arus_mudik_total_pelabuhan));
+        $sheet->setCellValue('D389', applyZero($current->arus_mudik_total_pelabuhan));
+
+        $sheet->setCellValue('C390', applyZero($prev->arus_mudik_pelabuhan_kendaraan_keberangkatan));
+        $sheet->setCellValue('D390', applyZero($current->arus_mudik_pelabuhan_kendaraan_keberangkatan));
+
+        $sheet->setCellValue('C391', applyZero($prev->arus_mudik_pelabuhan_kendaraan_kedatangan));
+        $sheet->setCellValue('D391', applyZero($current->arus_mudik_pelabuhan_kendaraan_kedatangan));
+
+        $sheet->setCellValue('C392', applyZero($prev->arus_mudik_pelabuhan_total_penumpang_keberangkatan));
+        $sheet->setCellValue('D392', applyZero($current->arus_mudik_pelabuhan_total_penumpang_keberangkatan));
+
+        $sheet->setCellValue('C393', applyZero($prev->arus_mudik_pelabuhan_total_penumpang_kedatangan));
+        $sheet->setCellValue('D393', applyZero($current->arus_mudik_pelabuhan_total_penumpang_kedatangan));
+
+        $sheet->setCellValue('C395', applyZero($prev->arus_mudik_bandara_jumlah_penumpang_keberangkatan));
+        $sheet->setCellValue('D395', applyZero($current->arus_mudik_bandara_jumlah_penumpang_keberangkatan));
+
+        $sheet->setCellValue('C396', applyZero($prev->arus_mudik_bandara_jumlah_penumpang_kedatangan));
+        $sheet->setCellValue('D396', applyZero($current->arus_mudik_bandara_jumlah_penumpang_kedatangan));
+
+        $sheet->setCellValue('C397', applyZero($prev->arus_mudik_total_bandara));
+        $sheet->setCellValue('D397', applyZero($current->arus_mudik_total_bandara));
+
+        $sheet->setCellValue('C398', applyZero($prev->arus_mudik_bandara_total_penumpang_keberangkatanxxx));
+        $sheet->setCellValue('D398', applyZero($current->arus_mudik_bandara_total_penumpang_keberangkatan));
+
+        $sheet->setCellValue('C399', applyZero($prev->arus_mudik_bandara_total_penumpang_kedatangan));
+        $sheet->setCellValue('D399', applyZero($current->arus_mudik_bandara_total_penumpang_kedatangan));
+
+        $sheet->setCellValue('C402', applyZero($prev->prokes_covid_teguran_gar_prokes));
+        $sheet->setCellValue('D402', applyZero($current->prokes_covid_teguran_gar_prokes));
+
+        $sheet->setCellValue('C403', applyZero($prev->prokes_covid_pembagian_masker));
+        $sheet->setCellValue('D403', applyZero($current->prokes_covid_pembagian_masker));
+
+        $sheet->setCellValue('C404', applyZero($prev->prokes_covid_sosialisasi_tentang_prokes));
+        $sheet->setCellValue('D404', applyZero($current->prokes_covid_sosialisasi_tentang_prokes));
+
+        $sheet->setCellValue('C405', applyZero($prev->prokes_covid_giat_baksos));
+        $sheet->setCellValue('D405', applyZero($current->prokes_covid_giat_baksos));
 
         $writer = IOFactory::createWriter($spreadsheet, 'Html');
         $message = $writer->save('php://output');
