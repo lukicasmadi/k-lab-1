@@ -90,14 +90,14 @@ class ReportController extends Controller
             $prev,
             $current,
             'KESATUAN : ',
-            "Perbandingan tanggal ".$start_date.' DAN '.$end_date,
+            "Perbandingan tanggal ".indonesianStandart($request->tanggal_pembanding_1).' DAN '.indonesianStandart($request->tanggal_pembanding_2),
             '',
             '',
             '',
             '',
-            'Anev Daily Compare '.$start_date.' and '.$end_date,
-            $start_date,
-            $end_date
+            'Anev Daily Compare '.indonesianStandart($request->tanggal_pembanding_1).' and '.indonesianStandart($request->tanggal_pembanding_2),
+            indonesianStandart($request->tanggal_pembanding_1),
+            indonesianStandart($request->tanggal_pembanding_2)
         );
     }
 
@@ -117,12 +117,12 @@ class ReportController extends Controller
             $prev,
             $current,
             'KESATUAN : ',
-            "Seluruh Polda, ".$start_date.' S/D '.$end_date,
+            "Seluruh Polda, ".indonesianStandart($request->tanggal_pembanding_pertama).' S/D '.indonesianStandart($request->tanggal_pembanding_kedua),
             'NAMA : ',
             '',
             '',
             '',
-            'Anev '.$start_date.'-'.$end_date
+            'Anev '.indonesianStandart($request->tanggal_pembanding_pertama).'-'.indonesianStandart($request->tanggal_pembanding_kedua)
         );
     }
 
@@ -334,7 +334,7 @@ class ReportController extends Controller
         $prev = reportPrevToDisplayAnevDateCompare($rencana_operation_id, $start_date, $start_date);
         $current = reportCurrentToDisplayAnevDateCompare($rencana_operation_id, $end_date, $end_date);
 
-        return excelTemplateDisplay(
+        return excelTemplateDisplayDateCompare(
             $prev,
             $current,
             $start_date,
