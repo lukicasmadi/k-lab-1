@@ -8,6 +8,11 @@ use App\Models\UserHasPolda;
 use App\Models\PoldaSubmited;
 use App\Models\RencanaOperasi;
 
+if (! function_exists('applyZero')) {
+    function applyZero($value) {
+        return (empty($value) || is_null($value)) ? 0 : $value;
+    }
+}
 
 if (! function_exists('nowYear')) {
     function nowYear() {

@@ -196,11 +196,6 @@
             }
 
             if($("#tahun_pembanding_pertama").val() != "") {
-                var operationId = $("#operation_id").val()
-                var tahunPertama = $("#tahun_pembanding_pertama").val()
-                var tahunKedua = $("#tahun_pembanding_kedua").val()
-                var tanggalPertama = $("#tanggal_pembanding_pertama").val()
-                var tanggalKedua = $("#tanggal_pembanding_kedua").val()
 
                 popupCenter({
                     url: route('show_excel_to_view', {
