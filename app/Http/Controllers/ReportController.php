@@ -76,53 +76,29 @@ class ReportController extends Controller
         return view('report.comparison', compact('rencanaOperasi', 'currentYear', 'prevYear'));
     }
 
-    public function comparisonProcess(ComparisonExcelRequest $request)
+    public function comparisonProcess(ReportAnevDisplay $request)
     {
-        $operation_id = $request->operation_id;
-        $start_year = $request->tahun_pembanding_pertama;
-        $end_year = $request->tahun_pembanding_kedua;
-        $date_range = $request->tanggal;
+        $yearPrev = $request->tahun_pembanding_pertama;
+        $yearCurrent = $request->tahun_pembanding_kedua;
+        $rencana_operation_id = $request->operation_id;
+        $start_date = dateOnly($request->tanggal_pembanding_pertama);
+        $end_date = dateOnly($request->tanggal_pembanding_kedua);
 
-        if (str_contains($date_range, 'to')) {
-            $format = explode(" to ", $date_range);
+        $prev = reportPrevToDisplay($yearPrev, $rencana_operation_id, $start_date, $end_date);
+        $current = reportCurrentToDisplay($yearCurrent, $rencana_operation_id, $start_date, $end_date);
 
-            $start_date = Carbon::parse(rtrim($format[0], " "))->format('Y-m-d');
-            $end_date = Carbon::parse(ltrim($format[1], " "))->format('Y-m-d');
-        } else {
-            $start_date = $date_range;
-            $end_date = $date_range;
-        }
-
-        $now = now()->format("Y-m-d");
-        $filename = 'comparison-report-'.$now.'.xlsx';
-
-        $prev = prevAnev($operation_id, $start_date, $end_date, $start_year);
-        $current = currentAnev($operation_id, $start_date, $end_date, $end_year);
-
-        logger($prev);
-        logger($current);
-
-        // $poldaSubmited = PoldaSubmited::where('polda_id', poldaId())->orderBy('id', 'desc')->first();
-
-        // if(empty($poldaSubmited)) {
-        //     flash('Data inputan polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
-        //     return redirect()->back();
-        // }
-
-        // excelTemplate(
-        //     'per_polda',
-        //     $prev,
-        //     $current,
-        //     'KESATUAN : '.$poldaSubmited->nama_kesatuan,
-        //     $poldaSubmited->nama_kota.", ".$request->tanggal_mulai.' S/D '.$request->tanggal_selesai,
-        //     'NAMA : '.$poldaSubmited->nama_atasan,
-        //     $poldaSubmited->pangkat_dan_nrp,
-        //     $poldaSubmited->jabatan,
-        //     $poldaSubmited->nama_laporan,
-        //     'polda-'.poldaName().'-'.$request->tanggal_mulai.'-'.$request->tanggal_selesai
-        // );
-
-        // return redirect()->back();
+        excelTemplate(
+            'per_polda',
+            $prev,
+            $current,
+            'KESATUAN : ',
+            "Seluruh Polda, ".$start_date.' S/D '.$end_date,
+            'NAMA : ',
+            '',
+            '',
+            '',
+            'Report Korlantas '.$start_date.'-'.$end_date
+        );
     }
 
     public function downloadReportToday()
