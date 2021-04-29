@@ -70,7 +70,7 @@
                             <input id="tanggal_pembanding_kedua" name="tanggal_pembanding_kedua" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
                         </div>
 
-                        <input type="submit" name="btnUnduhData" id="btnUnduhData" class="mt-4 mb-4 btn btn-primary" value="Unduh Data">
+                        <input type="submit" name="btnUnduhData" id="btnUnduhData" class="mt-4 mb-4 btn btn-primary" value="Unduh Data" disabled>
                     </form>
                 </div>
             </div>
@@ -141,8 +141,12 @@
         }
     }
 
-    $(document).ready(function () {
+    $(document).on('change', '#operation_id, #tahun_pembanding_pertama, #tahun_pembanding_kedua, #tanggal_pembanding_pertama', function() {
         $("#btnUnduhData").prop('disabled', true)
+        $("#panelData").empty().addClass("d-none")
+    })
+
+    $(document).ready(function () {
 
         $("#tanggal_pembanding_pertama").datepicker({
             todayBtn:  1,
@@ -163,35 +167,30 @@
             var maxDate = new Date(selected.date.valueOf())
             $('#tanggal_pembanding_pertama').datepicker('setEndDate', maxDate)
 
+            $("#btnUnduhData").prop('disabled', false)
+
             $("#panelData").empty().addClass("d-none")
             $("#panelLoading").removeClass("d-none")
 
-            axios.post(route('show_excel_to_view'), {
-                operation_id: $("#operation_id").val(),
-                tahun_pembanding_pertama: $("#tahun_pembanding_pertama").val(),
-                tahun_pembanding_kedua: $("#tahun_pembanding_kedua").val(),
-                tanggal_pembanding_pertama: $("#tanggal_pembanding_pertama").val(),
-                tanggal_pembanding_kedua: $("#tanggal_pembanding_kedua").val(),
-            })
-            .then(function(response) {
-                $("#panelLoading").addClass("d-none")
-                $("#panelData").removeClass("d-none")
+            if($("#tahun_pembanding_pertama").val() != "") {
+                axios.post(route('show_excel_to_view'), {
+                    operation_id: $("#operation_id").val(),
+                    tahun_pembanding_pertama: $("#tahun_pembanding_pertama").val(),
+                    tahun_pembanding_kedua: $("#tahun_pembanding_kedua").val(),
+                    tanggal_pembanding_pertama: $("#tanggal_pembanding_pertama").val(),
+                    tanggal_pembanding_kedua: $("#tanggal_pembanding_kedua").val(),
+                })
+                .then(function(response) {
+                    $("#panelLoading").addClass("d-none")
+                    $("#panelData").removeClass("d-none")
 
-                $("#panelData").empty().html(response.data)
-            })
-            .catch(function(error) {
-                swal("Data belum lengkap. Silakan periksa data yang akan diproses", error.response.data.output, "error")
-            })
+                    $("#panelData").empty().html(response.data)
+                })
+                .catch(function(error) {
+                    swal("Data belum lengkap. Silakan periksa data yang akan diproses", error.response.data.output, "error")
+                })
+            }
         })
-
-        // var f1 = flatpickr(document.getElementById('tanggal'), {
-        //     mode: "range",
-        //     onClose: function(selectedDates, dateStr, instance) {
-        //         if(dateStr) {
-
-        //         }
-        //     }
-        // })
     })
 </script>
 @endpush
