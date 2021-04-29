@@ -4628,7 +4628,7 @@ if (! function_exists('excelTemplateDisplay')) {
         $sheet->setCellValue('D17', applyZero($current->pelanggaran_sepeda_motor_mengemudikan_tidak_wajar));
 
         $sheet->setCellValue('C18', applyZero($prev->pelanggaran_sepeda_motor_syarat_teknis_layak_jalan));
-        $sheet->setCellValue('D18', applyZero($current->pelanggaran_sepeda_motor_syarat_teknis_layak_jalann));
+        $sheet->setCellValue('D18', applyZero($current->pelanggaran_sepeda_motor_syarat_teknis_layak_jalan));
 
         $sheet->setCellValue('C19', applyZero($prev->pelanggaran_sepeda_motor_tidak_nyala_lampu_siang_malam));
         $sheet->setCellValue('D19', applyZero($current->pelanggaran_sepeda_motor_tidak_nyala_lampu_siang_malam));
@@ -4640,7 +4640,7 @@ if (! function_exists('excelTemplateDisplay')) {
         $sheet->setCellValue('D21', applyZero($current->pelanggaran_sepeda_motor_berbalapan_di_jalan_raya));
 
         $sheet->setCellValue('C22', applyZero($prev->pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkir));
-        $sheet->setCellValue('D22', applyZero($current->pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkirn));
+        $sheet->setCellValue('D22', applyZero($current->pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkir));
 
         $sheet->setCellValue('C23', applyZero($prev->pelanggaran_sepeda_motor_melanggar_marka_berhenti));
         $sheet->setCellValue('D23', applyZero($current->pelanggaran_sepeda_motor_melanggar_marka_berhenti));
@@ -4657,7 +4657,7 @@ if (! function_exists('excelTemplateDisplay')) {
         $sheet->setCellValue('C27', applyZero($prev->pelanggaran_sepeda_motor_lain_lain));
         $sheet->setCellValue('D27', applyZero($current->pelanggaran_sepeda_motor_lain_lain));
 
-        $sheet->setCellValue('C30', applyZero($prev->xpelanggaran_mobil_kecepatan));
+        $sheet->setCellValue('C30', applyZero($prev->pelanggaran_mobil_kecepatan));
         $sheet->setCellValue('D30', applyZero($current->pelanggaran_mobil_kecepatan));
 
         $sheet->setCellValue('C31', applyZero($prev->pelanggaran_mobil_safety_belt));
@@ -5191,7 +5191,7 @@ if (! function_exists('excelTemplateDisplay')) {
         $sheet->setCellValue('C255', applyZero($prev->faktor_penyebab_kecelakaan_prasarana_jalan));
         $sheet->setCellValue('D255', applyZero($current->faktor_penyebab_kecelakaan_prasarana_jalan));
 
-        $sheet->setCellValue('C256', applyZero($prev->faktor_penyebab_kecelakaan_rambuxxx));
+        $sheet->setCellValue('C256', applyZero($prev->faktor_penyebab_kecelakaan_rambu));
         $sheet->setCellValue('D256', applyZero($current->faktor_penyebab_kecelakaan_rambu));
 
         $sheet->setCellValue('C257', applyZero($prev->faktor_penyebab_kecelakaan_marka));
@@ -5521,7 +5521,7 @@ if (! function_exists('excelTemplateDisplay')) {
         $sheet->setCellValue('C397', applyZero($prev->arus_mudik_total_bandara));
         $sheet->setCellValue('D397', applyZero($current->arus_mudik_total_bandara));
 
-        $sheet->setCellValue('C398', applyZero($prev->arus_mudik_bandara_total_penumpang_keberangkatanxxx));
+        $sheet->setCellValue('C398', applyZero($prev->arus_mudik_bandara_total_penumpang_keberangkatan));
         $sheet->setCellValue('D398', applyZero($current->arus_mudik_bandara_total_penumpang_keberangkatan));
 
         $sheet->setCellValue('C399', applyZero($prev->arus_mudik_bandara_total_penumpang_kedatangan));
@@ -5589,7 +5589,7 @@ if (! function_exists('excelTemplateDisplayDateCompare')) {
         $sheet->setCellValue('D17', applyZero($current->pelanggaran_sepeda_motor_mengemudikan_tidak_wajar));
 
         $sheet->setCellValue('C18', applyZero($prev->pelanggaran_sepeda_motor_syarat_teknis_layak_jalan));
-        $sheet->setCellValue('D18', applyZero($current->pelanggaran_sepeda_motor_syarat_teknis_layak_jalann));
+        $sheet->setCellValue('D18', applyZero($current->pelanggaran_sepeda_motor_syarat_teknis_layak_jalan));
 
         $sheet->setCellValue('C19', applyZero($prev->pelanggaran_sepeda_motor_tidak_nyala_lampu_siang_malam));
         $sheet->setCellValue('D19', applyZero($current->pelanggaran_sepeda_motor_tidak_nyala_lampu_siang_malam));
@@ -5601,7 +5601,7 @@ if (! function_exists('excelTemplateDisplayDateCompare')) {
         $sheet->setCellValue('D21', applyZero($current->pelanggaran_sepeda_motor_berbalapan_di_jalan_raya));
 
         $sheet->setCellValue('C22', applyZero($prev->pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkir));
-        $sheet->setCellValue('D22', applyZero($current->pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkirn));
+        $sheet->setCellValue('D22', applyZero($current->pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkir));
 
         $sheet->setCellValue('C23', applyZero($prev->pelanggaran_sepeda_motor_melanggar_marka_berhenti));
         $sheet->setCellValue('D23', applyZero($current->pelanggaran_sepeda_motor_melanggar_marka_berhenti));
@@ -5618,7 +5618,7 @@ if (! function_exists('excelTemplateDisplayDateCompare')) {
         $sheet->setCellValue('C27', applyZero($prev->pelanggaran_sepeda_motor_lain_lain));
         $sheet->setCellValue('D27', applyZero($current->pelanggaran_sepeda_motor_lain_lain));
 
-        $sheet->setCellValue('C30', applyZero($prev->xpelanggaran_mobil_kecepatan));
+        $sheet->setCellValue('C30', applyZero($prev->pelanggaran_mobil_kecepatan));
         $sheet->setCellValue('D30', applyZero($current->pelanggaran_mobil_kecepatan));
 
         $sheet->setCellValue('C31', applyZero($prev->pelanggaran_mobil_safety_belt));
@@ -6152,7 +6152,7 @@ if (! function_exists('excelTemplateDisplayDateCompare')) {
         $sheet->setCellValue('C255', applyZero($prev->faktor_penyebab_kecelakaan_prasarana_jalan));
         $sheet->setCellValue('D255', applyZero($current->faktor_penyebab_kecelakaan_prasarana_jalan));
 
-        $sheet->setCellValue('C256', applyZero($prev->faktor_penyebab_kecelakaan_rambuxxx));
+        $sheet->setCellValue('C256', applyZero($prev->faktor_penyebab_kecelakaan_rambu));
         $sheet->setCellValue('D256', applyZero($current->faktor_penyebab_kecelakaan_rambu));
 
         $sheet->setCellValue('C257', applyZero($prev->faktor_penyebab_kecelakaan_marka));
@@ -6482,7 +6482,7 @@ if (! function_exists('excelTemplateDisplayDateCompare')) {
         $sheet->setCellValue('C397', applyZero($prev->arus_mudik_total_bandara));
         $sheet->setCellValue('D397', applyZero($current->arus_mudik_total_bandara));
 
-        $sheet->setCellValue('C398', applyZero($prev->arus_mudik_bandara_total_penumpang_keberangkatanxxx));
+        $sheet->setCellValue('C398', applyZero($prev->arus_mudik_bandara_total_penumpang_keberangkatan));
         $sheet->setCellValue('D398', applyZero($current->arus_mudik_bandara_total_penumpang_keberangkatan));
 
         $sheet->setCellValue('C399', applyZero($prev->arus_mudik_bandara_total_penumpang_kedatangan));
