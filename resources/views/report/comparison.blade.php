@@ -185,6 +185,10 @@
                     $("#panelData").removeClass("d-none")
 
                     $("#panelData").empty().html(response.data)
+
+                    $('html, body').animate({
+                        scrollTop: $("#panelData").offset().top
+                    }, 'fast')
                 })
                 .catch(function(error) {
                     swal("Data belum lengkap. Silakan periksa data yang akan diproses", error.response.data.output, "error")
