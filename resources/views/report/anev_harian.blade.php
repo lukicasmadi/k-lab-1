@@ -89,26 +89,6 @@
 
 @push('page_js')
 <script>
-    function percentageValue(tahunKedua, tahunPertama) {
-        var output1 = parseInt(tahunKedua) - parseInt(tahunPertama)
-        var output2 = parseInt(output1) / parseInt(tahunPertama)
-        var output3 = parseInt(output2) * 100
-        var output4 = Math.round(parseInt(output3), 2)
-
-        if(!output4) {
-            return "-"
-        } else {
-            return output4+"%";
-        }
-    }
-
-    function percentageStatus(tahunKedua, tahunPertama) {
-        if(!tahunKedua || !tahunPertama) {
-            return "-"
-        } else {
-            return parseInt(tahunKedua) - parseInt(tahunPertama);
-        }
-    }
 
     $("#operation_id").on("change", function (e) {
         e.preventDefault()
@@ -190,8 +170,8 @@
                 popupCenter({
                     url: route('show_excel_to_view_anev', {
                         operation_id: operation_id,
-                        start_date: startDate,
-                        end_date: endDate,
+                        tanggal_pembanding_1: startDate,
+                        tanggal_pembanding_2: endDate,
                     }),
                     title: 'Detail',
                     w: 1000, h: 600

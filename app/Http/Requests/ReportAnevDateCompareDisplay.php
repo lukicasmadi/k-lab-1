@@ -25,8 +25,8 @@ class ReportAnevDateCompareDisplay extends FormRequest
     {
         return [
             'operation_id' => 'required',
-            'start_date' => 'required',
-            'end_date' => 'required',
+            'tanggal_pembanding_1' => 'required',
+            'tanggal_pembanding_2' => 'required',
         ];
     }
 }
