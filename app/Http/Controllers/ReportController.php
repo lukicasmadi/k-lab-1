@@ -300,4 +300,21 @@ class ReportController extends Controller
             $yearCurrent
         );
     }
+
+    public function showExcelToViewAnevDateCompare(ReportAnevDateCompareDisplay $request)
+    {
+        $rencana_operation_id = $request->operation_id;
+        $start_date = dateOnly($request->start_date);
+        $end_date = dateOnly($request->end_date);
+
+        $prev = reportPrevToDisplayAnevDateCompare($rencana_operation_id, $start_date, $start_date);
+        $current = reportCurrentToDisplayAnevDateCompare($rencana_operation_id, $end_date, $end_date);
+
+        return excelTemplateDisplay(
+            $prev,
+            $current,
+            $start_date,
+            $end_date
+        );
+    }
 }

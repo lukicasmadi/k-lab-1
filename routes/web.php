@@ -199,5 +199,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/rekap/daily/{uuid}', 'DailyRekapController@dailyRekapShow')->name('daily_rekap_show');
         Route::get('/rekap/daily/input/{uuid}', 'DailyRekapController@dailyRekapShowWithInput')->name('daily_rekap_show_with_input');
         Route::get('/display/excel', 'ReportController@showExcelToView')->name('show_excel_to_view');
+        Route::get('/display/excel/anev-date-compare', 'ReportController@showExcelToViewAnevDateCompare')->name('show_excel_to_view_anev');
     });
 });

@@ -188,7 +188,7 @@
 
             if(operation_id != "" && startDate != "") {
                 popupCenter({
-                    url: route('comparison_get_data_date_range', {
+                    url: route('show_excel_to_view_anev', {
                         operation_id: operation_id,
                         start_date: startDate,
                         end_date: endDate,
