@@ -21,79 +21,99 @@
         </div>
     @endif
     <div class="row layout-top-spacing">
+
         <div class="col-lg-12 col-12">
             <div class="statbox widget box box-shadow">
                 @include('flash::message')
                 <div class="widget-content mt-3 widget-content-area">
+
                     <form action="{{ route('report_comparison_process') }}" id="comparison_form" method="POST">
                         @csrf
 
-                        <div class="form-group">
-                            <label class="text-popup">Pilih Operasi</label>
-                            <select class="form-control form-custom height-form" name="operation_id" id="operation_id">
-                                @foreach($rencanaOperasi as $key => $val)
-                                    <option value="{{$key}}">{{$val}}</option>
-                                @endforeach
-                            </select>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="text-popup">Pilih Operasi</label>
+                                <select class="form-control form-custom height-form" name="operation_id" id="operation_id">
+                                    @foreach($rencanaOperasi as $key => $val)
+                                        <option value="{{$key}}">{{$val}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Tahun Pembanding 1</label>
+                                <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control form-custom height-form">
+                                    @foreach($prevYear as $py){
+                                    <option value="{{ $py }}">{{ $py }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Tahun Pembanding 2</label>
+                                <select id="tahun_pembanding_kedua" name="tahun_pembanding_kedua" class="form-control form-custom height-form">
+                                    @foreach($currentYear as $cy){
+                                    <option value="{{ $cy }}">{{ $cy }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Range Hari Awal</label>
+                                <input id="tanggal_pembanding_pertama" name="tanggal_pembanding_pertama" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Range Hari Akhir</label>
+                                <input id="tanggal_pembanding_kedua" name="tanggal_pembanding_kedua" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                            </div>
+
+                            <div class="col-md-12">
+                                <input type="submit" name="btnUnduhData" id="btnUnduhData" class="mt-4 mb-4 btn btn-primary" value="Unduh Data" disabled>
+                            </div>
                         </div>
 
-                        <div class="form-group mt-n3">
-                            <label class="text-popup">Pilih Tahun Pembanding 1</label>
-                            <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control form-custom height-form">
-                                @foreach($prevYear as $py){
-                                <option value="{{ $py }}">{{ $py }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <div class="form-group mt-n3">
-                            <label class="text-popup">Pilih Tahun Pembanding 2</label>
-                            <select id="tahun_pembanding_kedua" name="tahun_pembanding_kedua" class="form-control form-custom height-form">
-                                @foreach($currentYear as $cy){
-                                <option value="{{ $cy }}">{{ $cy }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        {{-- <div class="form-group mt-n3">
-                            <label class="text-popup">Pilih Hari</label>
-                            <input id="tanggal" name="tanggal" class="form-control popoups inp-icon flatpickr flatpickr-input active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
-                        </div> --}}
-
-                        <div class="form-group">
-                            <label class="text-popup">Pilih Range Hari Awal</label>
-                            <input id="tanggal_pembanding_pertama" name="tanggal_pembanding_pertama" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="text-popup">Pilih Range Hari Akhir</label>
-                            <input id="tanggal_pembanding_kedua" name="tanggal_pembanding_kedua" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
-                        </div>
-
-                        <input type="submit" name="btnUnduhData" id="btnUnduhData" class="mt-4 mb-4 btn btn-primary" value="Unduh Data">
                     </form>
+
                 </div>
             </div>
         </div>
 
         <div class="col-lg-12 col-12 d-none" id="panelLoading">
-            <div class="centerContent">
-                <img src="{{ asset('template/assets/img/loader.gif') }}" alt="" srcset="">
+            <div class="row">
+                <div class="centerContent">
+                    <img src="{{ asset('template/assets/img/loader.gif') }}" alt="" srcset="">
+                </div>
             </div>
         </div>
 
         <div class="col-lg-12 col-12">
-            <div class="widget-content widget-content-area" id="panelData"></div>
+            <div class="row">
+                <div class="widget-content widget-content-area" id="panelDatax"></div>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="debugModal" tabindex="-1" role="dialog" aria-labelledby="debugModal" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade" id="showData" tabindex="-1" role="dialog" aria-labelledby="showData" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-body">
                 <div class="notes-box">
-                    <div class="notes-content" id="debugdata"></div>
+                    <div class="notes-content">
+                        <span class="colorblue">LIHAT DATA</span>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        </button>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-popup">
+                            <div class="row imgpopup">
+                                <img src="{{ asset('/img/line_popbottom.png') }}">
+                            </div>
+                        </div>
+                        <div class="row" id="panelData">
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -141,8 +161,12 @@
         }
     }
 
-    $(document).ready(function () {
+    $(document).on('change', '#operation_id, #tahun_pembanding_pertama, #tahun_pembanding_kedua, #tanggal_pembanding_pertama', function() {
         $("#btnUnduhData").prop('disabled', true)
+        $("#panelData").empty().addClass("d-none")
+    })
+
+    $(document).ready(function () {
 
         $("#tanggal_pembanding_pertama").datepicker({
             todayBtn:  1,
@@ -163,35 +187,36 @@
             var maxDate = new Date(selected.date.valueOf())
             $('#tanggal_pembanding_pertama').datepicker('setEndDate', maxDate)
 
+            $("#btnUnduhData").prop('disabled', false)
+
             $("#panelData").empty().addClass("d-none")
             $("#panelLoading").removeClass("d-none")
 
-            axios.post(route('show_excel_to_view'), {
-                operation_id: $("#operation_id").val(),
-                tahun_pembanding_pertama: $("#tahun_pembanding_pertama").val(),
-                tahun_pembanding_kedua: $("#tahun_pembanding_kedua").val(),
-                tanggal_pembanding_pertama: $("#tanggal_pembanding_pertama").val(),
-                tanggal_pembanding_kedua: $("#tanggal_pembanding_kedua").val(),
-            })
-            .then(function(response) {
-                $("#panelLoading").addClass("d-none")
-                $("#panelData").removeClass("d-none")
+            if($("#tahun_pembanding_pertama").val() != "") {
+                axios.post(route('show_excel_to_view'), {
+                    operation_id: $("#operation_id").val(),
+                    tahun_pembanding_pertama: $("#tahun_pembanding_pertama").val(),
+                    tahun_pembanding_kedua: $("#tahun_pembanding_kedua").val(),
+                    tanggal_pembanding_pertama: $("#tanggal_pembanding_pertama").val(),
+                    tanggal_pembanding_kedua: $("#tanggal_pembanding_kedua").val(),
+                })
+                .then(function(response) {
+                    $("#panelLoading").addClass("d-none")
+                    $("#panelData").removeClass("d-none")
 
-                $("#panelData").empty().html(response.data)
-            })
-            .catch(function(error) {
-                swal("Data belum lengkap. Silakan periksa data yang akan diproses", error.response.data.output, "error")
-            })
+                    $("#panelData").empty().html(response.data)
+
+                    $('#showData').modal('show')
+
+                    $('html, body').animate({
+                        scrollTop: $("#panelData").offset().top
+                    }, 'fast')
+                })
+                .catch(function(error) {
+                    swal("Data belum lengkap. Silakan periksa data yang akan diproses", error.response.data.output, "error")
+                })
+            }
         })
-
-        // var f1 = flatpickr(document.getElementById('tanggal'), {
-        //     mode: "range",
-        //     onClose: function(selectedDates, dateStr, instance) {
-        //         if(dateStr) {
-
-        //         }
-        //     }
-        // })
     })
 </script>
 @endpush
