@@ -84,6 +84,7 @@
 @push('library_js')
 <script src="{{ asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
 <script src="{{ asset('template/datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
 @endpush
 
 @push('page_js')
@@ -119,25 +120,29 @@
         if($(this).val()) {
             axios.get(route('operation_plan_show', $(this).val()))
             .then(function (response) {
+
+                var DateTime = luxon.DateTime;
+                var now = DateTime.now().setLocale("id")
+
                 var startDate = response.data.start_date
                 var endDate = response.data.end_date
 
                 $(".pembanding").removeClass("d-none")
 
                 $('#tanggal_pembanding_1').datepicker({
-                    format: 'yyyy-mm-dd',
+                    format: 'dd-mm-yyyy',
                     todayHighlight: true,
                     autoclose: true,
-                    startDate: startDate,
-                    endDate: endDate,
+                    startDate: DateTime.fromISO(startDate).toFormat('dd-MM-yyyy'),
+                    endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
                 })
 
                 $('#tanggal_pembanding_2').datepicker({
-                    format: 'yyyy-mm-dd',
+                    format: 'dd-mm-yyyy',
                     todayHighlight: true,
                     autoclose: true,
-                    startDate: startDate,
-                    endDate: endDate,
+                    startDate: DateTime.fromISO(startDate).toFormat('dd-MM-yyyy'),
+                    endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
                 })
             })
             .catch(function (error) {
