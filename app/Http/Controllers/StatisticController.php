@@ -13,8 +13,6 @@ class StatisticController extends Controller
         $model = Polda::with(['poldaInput' => function($query) {
             $query->whereRaw("DATE(created_at) = ?", [date('Y-m-d')]);
         }])->get();
-
-        logger($model);
     }
 
     public function index()

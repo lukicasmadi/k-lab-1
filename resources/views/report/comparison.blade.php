@@ -44,7 +44,7 @@
                                 <label class="text-popup">Pilih Tahun Pembanding 1</label>
                                 <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control form-custom height-form">
                                     @foreach($prevYear as $py){
-                                    <option value="{{ $py }}">{{ $py }}</option>
+                                        <option value="{{ $py }}">{{ $py }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -53,7 +53,7 @@
                                 <label class="text-popup">Pilih Tahun Pembanding 2</label>
                                 <select id="tahun_pembanding_kedua" name="tahun_pembanding_kedua" class="form-control form-custom height-form">
                                     @foreach($currentYear as $cy){
-                                    <option value="{{ $cy }}">{{ $cy }}</option>
+                                        <option value="{{ $cy }}">{{ $cy }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -140,26 +140,6 @@
 
 @push('page_js')
 <script>
-    function percentageValue(tahunKedua, tahunPertama) {
-        var output1 = parseInt(tahunKedua) - parseInt(tahunPertama)
-        var output2 = parseInt(output1) / parseInt(tahunPertama)
-        var output3 = parseInt(output2) * 100
-        var output4 = Math.round(parseInt(output3), 2)
-
-        if(!output4) {
-            return "-"
-        } else {
-            return output4+"%";
-        }
-    }
-
-    function percentageStatus(tahunKedua, tahunPertama) {
-        if(!tahunKedua || !tahunPertama) {
-            return "-"
-        } else {
-            return parseInt(tahunKedua) - parseInt(tahunPertama);
-        }
-    }
 
     $(document).on('change', '#operation_id, #tahun_pembanding_pertama, #tahun_pembanding_kedua, #tanggal_pembanding_pertama', function() {
         $("#btnUnduhData").prop('disabled', true)
@@ -189,32 +169,47 @@
 
             $("#btnUnduhData").prop('disabled', false)
 
-            $("#panelData").empty().addClass("d-none")
             $("#panelLoading").removeClass("d-none")
 
+            const popupCenter = ({url, title, w, h}) => {
+                // Fixes dual-screen position                             Most browsers      Firefox
+                const dualScreenLeft = window.screenLeft !==  undefined ? window.screenLeft : window.screenX;
+                const dualScreenTop = window.screenTop !==  undefined   ? window.screenTop  : window.screenY;
+
+                const width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+                const height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+                const systemZoom = width / window.screen.availWidth;
+                const left = (width - w) / 2 / systemZoom + dualScreenLeft
+                const top = (height - h) / 2 / systemZoom + dualScreenTop
+                const newWindow = window.open(url, title,
+                `
+                scrollbars=yes,
+                width=${w / systemZoom},
+                height=${h / systemZoom},
+                top=${top},
+                left=${left}
+                `
+                )
+
+                if (window.focus) newWindow.focus();
+            }
+
             if($("#tahun_pembanding_pertama").val() != "") {
-                axios.post(route('show_excel_to_view'), {
-                    operation_id: $("#operation_id").val(),
-                    tahun_pembanding_pertama: $("#tahun_pembanding_pertama").val(),
-                    tahun_pembanding_kedua: $("#tahun_pembanding_kedua").val(),
-                    tanggal_pembanding_pertama: $("#tanggal_pembanding_pertama").val(),
-                    tanggal_pembanding_kedua: $("#tanggal_pembanding_kedua").val(),
-                })
-                .then(function(response) {
-                    $("#panelLoading").addClass("d-none")
-                    $("#panelData").removeClass("d-none")
 
-                    $("#panelData").empty().html(response.data)
-
-                    $('#showData').modal('show')
-
-                    $('html, body').animate({
-                        scrollTop: $("#panelData").offset().top
-                    }, 'fast')
+                popupCenter({
+                    url: route('show_excel_to_view', {
+                        operation_id: $("#operation_id").val(),
+                        tahun_pembanding_pertama: $("#tahun_pembanding_pertama").val(),
+                        tahun_pembanding_kedua: $("#tahun_pembanding_kedua").val(),
+                        tanggal_pembanding_pertama: $("#tanggal_pembanding_pertama").val(),
+                        tanggal_pembanding_kedua: $("#tanggal_pembanding_kedua").val(),
+                    }),
+                    title: 'Detail',
+                    w: 1000, h: 600
                 })
-                .catch(function(error) {
-                    swal("Data belum lengkap. Silakan periksa data yang akan diproses", error.response.data.output, "error")
-                })
+
+                $("#panelLoading").addClass("d-none")
             }
         })
     })

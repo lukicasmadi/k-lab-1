@@ -16,8 +16,6 @@ class TestController extends Controller
             $query->where('polda_id', 2);
         }])->get();
 
-        logger($model);
-
         return "OK";
     }
 }

@@ -21,6 +21,7 @@ use App\Exports\DailyInputPrevExport;
 use App\Exports\PoldaDailyComparison;
 use App\Http\Requests\ReportAnevDisplay;
 use App\Http\Requests\ComparisonExcelRequest;
+use App\Http\Requests\ReportAnevDateCompareDisplay;
 
 class ReportController extends Controller
 {
@@ -76,6 +77,30 @@ class ReportController extends Controller
         return view('report.comparison', compact('rencanaOperasi', 'currentYear', 'prevYear'));
     }
 
+    public function anevDateCompareProcess(ReportAnevDateCompareDisplay $request)
+    {
+        $rencana_operation_id = $request->operation_id;
+        $start_date = dateOnly($request->tanggal_pembanding_1);
+        $end_date = dateOnly($request->tanggal_pembanding_2);
+
+        $prev = reportPrevToDisplayAnevDateCompare($rencana_operation_id, $start_date, $start_date);
+        $current = reportCurrentToDisplayAnevDateCompare($rencana_operation_id, $end_date, $end_date);
+
+        excelTemplateDateCompare(
+            $prev,
+            $current,
+            'KESATUAN : ',
+            "Perbandingan tanggal ".$start_date.' DAN '.$end_date,
+            '',
+            '',
+            '',
+            '',
+            'Anev Daily Compare '.$start_date.' and '.$end_date,
+            $start_date,
+            $end_date
+        );
+    }
+
     public function comparisonProcess(ReportAnevDisplay $request)
     {
         $yearPrev = $request->tahun_pembanding_pertama;
@@ -97,7 +122,30 @@ class ReportController extends Controller
             '',
             '',
             '',
-            'Report Korlantas '.$start_date.'-'.$end_date
+            'Anev '.$start_date.'-'.$end_date
+        );
+    }
+
+    public function comparisonGetDataDateRange(ReportAnevDateCompareDisplay $request)
+    {
+        $operation_id = $request->operation_id;
+        $start_date = dateOnly($request->start_date);
+        $end_date = dateOnly($request->end_date);
+
+        $firstData = laporanAnevDateCompareFirst($operation_id, $start_date, $start_date);
+        $secondData = laporanAnevDateCompareSecond($operation_id, $end_date, $end_date);
+
+        excelTemplate(
+            'per_polda',
+            $firstData,
+            $secondData,
+            'KESATUAN : ',
+            "Seluruh Polda, ".$start_date.' S/D '.$end_date,
+            'NAMA : ',
+            '',
+            '',
+            '',
+            'Anev Date Compare'.$start_date.'-'.$end_date
         );
     }
 
@@ -166,25 +214,6 @@ class ReportController extends Controller
             $prevYear = laporanPrev($operation_id, $start_year, $date_range, $date_range);
             $currentYear = laporanCurrent($operation_id, $end_year, $date_range, $date_range);
         }
-
-        return [
-            'prev' => $prevYear,
-            'current' => $currentYear
-        ];
-    }
-
-    public function comparisonGetDataDateRange()
-    {
-        $operation_id = request('operation_id');
-        $start_date = request('start_date');
-        $end_date = request('end_date');
-
-        if(is_null(request('operation_id')) || is_null(request('start_date')) || is_null(request('end_date'))) {
-            abort(404);
-        }
-
-        $prevYear = laporanPrevDateRange($operation_id, $start_date, $end_date);
-        $currentYear = laporanCurrentDateRange($operation_id, $start_date, $end_date);
 
         return [
             'prev' => $prevYear,
@@ -293,6 +322,23 @@ class ReportController extends Controller
             $current,
             $yearPrev,
             $yearCurrent
+        );
+    }
+
+    public function showExcelToViewAnevDateCompare(ReportAnevDateCompareDisplay $request)
+    {
+        $rencana_operation_id = $request->operation_id;
+        $start_date = dateOnly($request->tanggal_pembanding_1);
+        $end_date = dateOnly($request->tanggal_pembanding_2);
+
+        $prev = reportPrevToDisplayAnevDateCompare($rencana_operation_id, $start_date, $start_date);
+        $current = reportCurrentToDisplayAnevDateCompare($rencana_operation_id, $end_date, $end_date);
+
+        return excelTemplateDisplay(
+            $prev,
+            $current,
+            $start_date,
+            $end_date
         );
     }
 }
