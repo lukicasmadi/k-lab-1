@@ -21,10 +21,10 @@
         </div>
     @endif
     <div class="row layout-top-spacing">
-        <div class="col-lg-12 col-12 mb-25 layout-spacing">
+        <div class="col-lg-12 col-12">
             <div class="statbox widget box box-shadow">
                 @include('flash::message')
-                <div class="widget-content mt-3 widget-content-area">
+                <div class="widget-content">
 
                     <form action="{{ route('report_anev_daily_process') }}" id="form_anev_harian" method="POST">
                         @csrf

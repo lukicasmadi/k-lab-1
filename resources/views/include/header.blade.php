@@ -36,13 +36,13 @@
                         </li>
 
                         @role('access_pusat|administrator')
-                            <li class="menu single-menu {{ request()->is('statistics') || request()->is('statistics/*') ? 'active' : '' }}">
+                            <!-- <li class="menu single-menu {{ request()->is('statistics') || request()->is('statistics/*') ? 'active' : '' }}">
                                 <a href="{{ route('statistics_index') }}">
                                     <div>
                                         <span>Data Statistik</span>
                                     </div>
                                 </a>
-                            </li>
+                            </li> -->
 
                             <li class="menu single-menu {{
                                 request()->is('operation-plan') ||
