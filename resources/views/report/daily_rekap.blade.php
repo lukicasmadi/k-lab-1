@@ -71,12 +71,14 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('template/assets/css/components/custom-sweetalert.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('template/custom.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('template/datepicker/css/bootstrap-datepicker.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/loading.css') }}">
 @endpush
 
 @push('library_js')
 <script src="{{ asset('template/plugins/table/datatable/datatables.js') }}"></script>
 <script src="{{ asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
 <script src="{{ asset('template/datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
 @endpush
 
 @push('page_js')
@@ -105,6 +107,9 @@ $('#form_edit_rekap').on('hidden.bs.modal', function () {
 
 $(document).ready(function () {
 
+    var DateTime = luxon.DateTime;
+    var now = DateTime.now().setLocale("id")
+
     $("#btnShowModal").click(function (e) {
         e.preventDefault()
         $('#modalForm').modal('show')
@@ -132,30 +137,6 @@ $(document).ready(function () {
         } else {
             $(".custom_hari").addClass("d-none")
         }
-    })
-
-    $('#tanggal_mulai').datepicker({
-        format: 'dd-mm-yyyy',
-        todayHighlight: true,
-        autoclose: true,
-    })
-
-    $('#tanggal_selesai').datepicker({
-        format: 'dd-mm-yyyy',
-        todayHighlight: true,
-        autoclose: true,
-    })
-
-    $('#tanggal_mulai_edit').datepicker({
-        format: 'dd-mm-yyyy',
-        todayHighlight: true,
-        autoclose: true,
-    })
-
-    $('#tanggal_selesai_edit').datepicker({
-        format: 'dd-mm-yyyy',
-        todayHighlight: true,
-        autoclose: true,
     })
 
     var table = $('#tbl_rekap_daily').DataTable({
@@ -215,9 +196,15 @@ $(document).ready(function () {
             },
             {
                 data: 'operation_date_start',
+                render: function(data, type, row) {
+                    return DateTime.fromISO(data).toFormat('dd-MM-yyyy')
+                }
             },
             {
                 data: 'operation_date_end',
+                render: function(data, type, row) {
+                    return DateTime.fromISO(data).toFormat('dd-MM-yyyy')
+                }
             },
             {
                 data: 'uuid',
@@ -247,6 +234,20 @@ $(document).ready(function () {
             }
         ]
     })
+})
+
+$('body').on('change', '#rencana_operasi_id', function(e) {
+    e.preventDefault()
+
+    $("#div_hari_operasi").prop('selectedIndex', 0)
+    $("#div_tanggal_mulai").val('')
+    $("#div_tanggal_selesai").val('')
+
+    if($(this).val() != "") {
+        checkDateRange()
+    } else {
+        $("#div_hari_operasi").addClass("d-none")
+    }
 })
 
 $('body').on('click', '#btnView', function(e) {
@@ -834,5 +835,58 @@ $('body').on('click', '#btnEdit', function(e) {
         }
     })
 })
+
+function checkDateRange() {
+    var rencana_operasi_id = $("#rencana_operasi_id").val()
+
+    $("#loadingPanel").removeClass('d-none')
+
+    axios.get(route('get_rencana_operasi_date_range', rencana_operasi_id))
+    .then(response => {
+
+        $("#loadingPanel").addClass('d-none')
+
+        var data = response.data
+        var startDate = data.start_date
+        var endDate = data.end_date
+
+        $('#tanggal_mulai').datepicker({
+            format: 'dd-mm-yyyy',
+            todayHighlight: true,
+            autoclose: true,
+            startDate: DateTime.fromISO(startDate).toFormat('dd-MM-yyyy'),
+            endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
+        })
+
+        $('#tanggal_selesai').datepicker({
+            format: 'dd-mm-yyyy',
+            todayHighlight: true,
+            autoclose: true,
+            startDate: DateTime.fromISO(startDate).toFormat('dd-MM-yyyy'),
+            endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
+        })
+
+        $('#tanggal_mulai_edit').datepicker({
+            format: 'dd-mm-yyyy',
+            todayHighlight: true,
+            autoclose: true,
+            startDate: DateTime.fromISO(startDate).toFormat('dd-MM-yyyy'),
+            endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
+        })
+
+        $('#tanggal_selesai_edit').datepicker({
+            format: 'dd-mm-yyyy',
+            todayHighlight: true,
+            autoclose: true,
+            startDate: DateTime.fromISO(startDate).toFormat('dd-MM-yyyy'),
+            endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
+        })
+
+        $("#div_hari_operasi").removeClass("d-none")
+    })
+    .catch(err => {
+        console.error(err);
+    })
+}
 </script>
 @endpush

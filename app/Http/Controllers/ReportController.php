@@ -25,6 +25,14 @@ use App\Http\Requests\ReportAnevDateCompareDisplay;
 
 class ReportController extends Controller
 {
+
+    public function getDateRangeRencanaOperasi($id)
+    {
+        $rencanaOperasi = RencanaOperasi::where('id', $id)->firstOrFail();
+
+        return $rencanaOperasi;
+    }
+
     public function anevDateCompare()
     {
         $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");
