@@ -27,6 +27,14 @@
                 <div class="show-more">
                     {!! $article->desc !!}
                 </div>
+
+                <div class="kategori-more">
+                    operasi lilin
+                </div>
+
+                <div class="kategori-more">
+                    operasi lilin
+                </div>
             </div>
 
             <div class="col-sm-4 mb-5">
