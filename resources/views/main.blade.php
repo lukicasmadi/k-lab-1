@@ -260,6 +260,10 @@ $(document).ready(function () {
             w: 1000, h: 600
         })
     })
+
+    setInterval(function() {
+        loadPoldaImage()
+    }, 10000)
 })
 
 function loadPoldaImage() {
@@ -734,7 +738,6 @@ function projectDaily() {
                 console.log('Error', error.message)
             }
         })
-        loadPoldaImage()
     }, 5000)
 }
 </script>
