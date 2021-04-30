@@ -15,35 +15,7 @@
 <div class="layout-px-spacing">
     <div class="row layout-top-spacing">
 
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            @foreach ($polda as $key => $val)
-                @if ($key >= 0 && $key <= 16)
-                    <a href="{{ route('korlantas_open_polda', $val->short_name) }}">
-                        <div class="cols-sm-1">
-                            <div class="grid-polda line @if (empty($val->dailyInput)) glowred @else glowblue @endif">
-                                <p>{{ $val->short_name }}</p>
-                                <img src="{{ asset('/img/polda/'.$val->logo) }}">
-                            </div>
-                        </div>
-                    </a>
-                @endif
-            @endforeach
-        </div>
-
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-1 mb-n2">
-            @foreach ($polda as $key => $val)
-                @if ($key >= 17 && $key <= 33)
-                    <a href="{{ route('korlantas_open_polda', $val->short_name) }}">
-                        <div class="cols-sm-1">
-                            <div class="grid-polda line @if (empty($val->dailyInput)) glowred @else glowblue @endif">
-                                <p>{{ $val->short_name }}</p>
-                                <img src="{{ asset('/img/polda/'.$val->logo) }}">
-                            </div>
-                        </div>
-                    </a>
-                @endif
-            @endforeach
-        </div>
+        <div class="poldaLogo"></div>
 
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mb-n22">
             <img src="{{ asset('/img/line-poldaup.png') }}" width="100%">
@@ -268,10 +240,10 @@ $(document).ready(function () {
     notificationLoad()
     projectDaily()
     donutData()
+    loadPoldaImage()
 
     $("#filterOperasi").click(function (e) {
         e.preventDefault();
-        alert("filter")
     })
 
     const ps = new PerfectScrollbar(document.querySelector('.mt-container'))
@@ -288,11 +260,11 @@ $(document).ready(function () {
             w: 1000, h: 600
         })
     })
-
-    setInterval(function() {
-        window.location.reload();
-    }, 60000);
 })
+
+function loadPoldaImage() {
+    $(".poldaLogo").empty().load(route('polda_image_list'));
+}
 
 function notificationLoad() {
     var DateTime = luxon.DateTime
@@ -715,7 +687,8 @@ function projectDaily() {
     chartRequest.render()
 
     setInterval(function() {
-        axios.get(route('dashboardChart')).then(function(response) {
+        axios.get(route('dashboardChart'))
+        .then(function(response) {
             var rangeDate = response.data.rangeDate
             var totalPerDate = response.data.totalPerDate
             var projectName = response.data.projectName
@@ -761,6 +734,7 @@ function projectDaily() {
                 console.log('Error', error.message)
             }
         })
+        loadPoldaImage()
     }, 5000)
 }
 </script>
