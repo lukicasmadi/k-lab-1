@@ -4913,7 +4913,7 @@ if (! function_exists('excelTemplate')) {
 }
 
 if (! function_exists('excelTemplateDateCompare')) {
-    function excelTemplateDateCompare($prev, $current, $kesatuan, $hari_tanggal, $nama_atasan, $pangkat, $jabatan, $nama_laporan, $customFileName=null, $start_date, $end_date)
+    function excelTemplateDateCompare($prev, $current, $kesatuan, $hari_tanggal, $nama_atasan, $pangkat, $jabatan, $nama_laporan, string $customFileName = null, $start_date, $end_date)
     {
 
         $excelPath = public_path('template/excel');
