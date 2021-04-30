@@ -58,6 +58,15 @@
     margin-bottom: 30px;
 }
 
+.ubah-disable {
+    text-transform: capitalize;
+    color: #999;
+}
+
+.ubah-disable span {
+    color: #999;
+}
+
 .ubah-change {
     text-transform: capitalize;
 }

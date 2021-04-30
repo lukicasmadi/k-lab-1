@@ -25,10 +25,225 @@
         <div class="col-lg-12 col-12">
             <div class="statbox widget box box-shadow">
                 @include('flash::message')
-                <div class="widget-content mt-3 widget-content-area">
+                <div class="widget-content">
 
                     <form action="{{ route('report_comparison_process') }}" id="comparison_form" method="POST">
                         @csrf
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="text-popup">Pilih Operasi</label>
+                                <select class="form-control form-custom height-form" name="operation_id" id="operation_id">
+                                    @foreach($rencanaOperasi as $key => $val)
+                                        <option value="{{$key}}">{{$val}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Tahun Pembanding 1</label>
+                                <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control form-custom height-form">
+                                    @foreach($prevYear as $py){
+                                        <option value="{{ $py }}">{{ $py }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Tahun Pembanding 2</label>
+                                <select id="tahun_pembanding_kedua" name="tahun_pembanding_kedua" class="form-control form-custom height-form">
+                                    @foreach($currentYear as $cy){
+                                        <option value="{{ $cy }}">{{ $cy }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Range Hari Awal</label>
+                                <input id="tanggal_pembanding_pertama" name="tanggal_pembanding_pertama" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Range Hari Akhir</label>
+                                <input id="tanggal_pembanding_kedua" name="tanggal_pembanding_kedua" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                            </div>
+
+                            <div class="col-md-12">
+                                <input type="submit" name="btnUnduhData" id="btnUnduhData" class="mt-4 mb-4 btn btn-primary" value="Unduh Data" disabled>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="text-popup">Pilih Operasi</label>
+                                <select class="form-control form-custom height-form" name="operation_id" id="operation_id">
+                                    @foreach($rencanaOperasi as $key => $val)
+                                        <option value="{{$key}}">{{$val}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Tahun Pembanding 1</label>
+                                <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control form-custom height-form">
+                                    @foreach($prevYear as $py){
+                                        <option value="{{ $py }}">{{ $py }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Tahun Pembanding 2</label>
+                                <select id="tahun_pembanding_kedua" name="tahun_pembanding_kedua" class="form-control form-custom height-form">
+                                    @foreach($currentYear as $cy){
+                                        <option value="{{ $cy }}">{{ $cy }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Range Hari Awal</label>
+                                <input id="tanggal_pembanding_pertama" name="tanggal_pembanding_pertama" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Range Hari Akhir</label>
+                                <input id="tanggal_pembanding_kedua" name="tanggal_pembanding_kedua" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                            </div>
+
+                            <div class="col-md-12">
+                                <input type="submit" name="btnUnduhData" id="btnUnduhData" class="mt-4 mb-4 btn btn-primary" value="Unduh Data" disabled>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="text-popup">Pilih Operasi</label>
+                                <select class="form-control form-custom height-form" name="operation_id" id="operation_id">
+                                    @foreach($rencanaOperasi as $key => $val)
+                                        <option value="{{$key}}">{{$val}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Tahun Pembanding 1</label>
+                                <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control form-custom height-form">
+                                    @foreach($prevYear as $py){
+                                        <option value="{{ $py }}">{{ $py }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Tahun Pembanding 2</label>
+                                <select id="tahun_pembanding_kedua" name="tahun_pembanding_kedua" class="form-control form-custom height-form">
+                                    @foreach($currentYear as $cy){
+                                        <option value="{{ $cy }}">{{ $cy }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Range Hari Awal</label>
+                                <input id="tanggal_pembanding_pertama" name="tanggal_pembanding_pertama" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Range Hari Akhir</label>
+                                <input id="tanggal_pembanding_kedua" name="tanggal_pembanding_kedua" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                            </div>
+
+                            <div class="col-md-12">
+                                <input type="submit" name="btnUnduhData" id="btnUnduhData" class="mt-4 mb-4 btn btn-primary" value="Unduh Data" disabled>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="text-popup">Pilih Operasi</label>
+                                <select class="form-control form-custom height-form" name="operation_id" id="operation_id">
+                                    @foreach($rencanaOperasi as $key => $val)
+                                        <option value="{{$key}}">{{$val}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Tahun Pembanding 1</label>
+                                <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control form-custom height-form">
+                                    @foreach($prevYear as $py){
+                                        <option value="{{ $py }}">{{ $py }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Tahun Pembanding 2</label>
+                                <select id="tahun_pembanding_kedua" name="tahun_pembanding_kedua" class="form-control form-custom height-form">
+                                    @foreach($currentYear as $cy){
+                                        <option value="{{ $cy }}">{{ $cy }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Range Hari Awal</label>
+                                <input id="tanggal_pembanding_pertama" name="tanggal_pembanding_pertama" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Range Hari Akhir</label>
+                                <input id="tanggal_pembanding_kedua" name="tanggal_pembanding_kedua" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                            </div>
+
+                            <div class="col-md-12">
+                                <input type="submit" name="btnUnduhData" id="btnUnduhData" class="mt-4 mb-4 btn btn-primary" value="Unduh Data" disabled>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="text-popup">Pilih Operasi</label>
+                                <select class="form-control form-custom height-form" name="operation_id" id="operation_id">
+                                    @foreach($rencanaOperasi as $key => $val)
+                                        <option value="{{$key}}">{{$val}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Tahun Pembanding 1</label>
+                                <select id="tahun_pembanding_pertama" name="tahun_pembanding_pertama" class="form-control form-custom height-form">
+                                    @foreach($prevYear as $py){
+                                        <option value="{{ $py }}">{{ $py }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Tahun Pembanding 2</label>
+                                <select id="tahun_pembanding_kedua" name="tahun_pembanding_kedua" class="form-control form-custom height-form">
+                                    @foreach($currentYear as $cy){
+                                        <option value="{{ $cy }}">{{ $cy }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Range Hari Awal</label>
+                                <input id="tanggal_pembanding_pertama" name="tanggal_pembanding_pertama" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="text-popup">Pilih Range Hari Akhir</label>
+                                <input id="tanggal_pembanding_kedua" name="tanggal_pembanding_kedua" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -">
+                            </div>
+
+                            <div class="col-md-12">
+                                <input type="submit" name="btnUnduhData" id="btnUnduhData" class="mt-4 mb-4 btn btn-primary" value="Unduh Data" disabled>
+                            </div>
+                        </div>
 
                         <div class="row">
                             <div class="col-md-12">

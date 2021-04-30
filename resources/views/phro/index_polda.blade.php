@@ -128,7 +128,7 @@ $(document).ready(function () {
                     return `
                     <div class="icon-container">
                         <a href="`+route('previewPhro', data)+`" class="previewPhro" data-id="`+data+`">
-                            <img src="{{ asset('/img/search.png') }}" width="30%">
+                            <img src="{{ asset('/img/search.png') }}">
                         </a>
                     </div>
                     `;
@@ -142,7 +142,10 @@ $(document).ready(function () {
                     if(row['editable'] == true) {
                         return `
                         <div class="ubah-change">
-                            <a href="`+route('phro_edit', data)+`">Ubah</a> | <a href="`+route('download_document', data)+`">Unduh Berkas</a>
+                            <a href="`+route('phro_edit', data)+`">Ubah</a> | <a href="`+route('download_document', data)+`">Unduh</a>
+                        </div>
+                        <div class="ubah-disable">
+                            Ubah | Unduh
                         </div>
                         `;
                     } else {

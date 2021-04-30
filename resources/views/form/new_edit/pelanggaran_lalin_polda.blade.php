@@ -21,7 +21,6 @@
         <p class="d-inline">LAPORAN HARIAN {{ upperCase(operationPlans()->name) }}</p>
         <span>TANGGAL : {{ upperCase(indonesianDate(operationPlans()->start_date)) }} S/D {{ upperCase(indonesianDate(operationPlans()->end_date)) }}</span>
         <div class="button-onsite">
-            <span class="inputan">input data</span>
             <a href="{{ route('phro_index') }}"><span class="seehow">lihat data</span></a>
         </div>
     </blockquote>
