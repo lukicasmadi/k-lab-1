@@ -34,11 +34,10 @@
                             <tr>
                                 <th>ID</th>
                                 <th width="20%">Nama Kesatuan</th>
-                                <th width="40%">Status Laporan</th>
-                                <th width="10%">Tanggal</th>
-                                <th width="8%">Lihat</th>
-                                <th width="8%">Upload</th>
-                                <th width="14%">Pilihan</th>
+                                <th width="35%">Status Laporan</th>
+                                <th width="15%">Tanggal</th>
+                                <th width="12%">Lihat</th>
+                                <th width="18%">Pilihan</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -136,25 +135,25 @@ $(document).ready(function () {
                 searchable: false,
                 sortable: false,
             },
-            {
-                data: 'uuid',
-                render: function(data, type, row) {
-                    return `
-                        <div class="ubah-change">
-                            <a href="`+route('download_document', data)+`">Download</a>
-                        </div>
-                        `;
-                },
-                searchable: false,
-                sortable: false,
-            },
+            // {
+            //     data: 'uuid',
+            //     render: function(data, type, row) {
+            //         return `
+            //             <div class="ubah-change">
+            //                 <a href="`+route('download_document', data)+`">Download</a>
+            //             </div>
+            //             `;
+            //     },
+            //     searchable: false,
+            //     sortable: false,
+            // },
             {
                 data: 'uuid',
                 render: function(data, type, row) {
                     if(row['editable'] == true) {
                         return `
                         <div class="ubah-change">
-                            <a href="`+route('phro_edit', data)+`">Ubah</a>
+                            <a href="`+route('phro_edit', data)+`">Ubah</a> | <a href="`+route('download_document', data)+`">Unduh</a>
                         </div>
                         `;
                     } else {
