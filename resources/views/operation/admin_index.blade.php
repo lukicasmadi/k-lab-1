@@ -224,6 +224,7 @@
 <script src="{{ asset('template/plugins/table/datatable/datatables.js') }}"></script>
 <script src="{{ asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
 <script src="{{ asset('template/datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
 @endpush
 
 @push('page_js')
@@ -235,6 +236,10 @@
     });
 
     $(document).ready(function () {
+
+        var DateTime = luxon.DateTime;
+        var now = DateTime.now().setLocale("id")
+
         $('#tanggal_mulai').datepicker({
             format: 'dd-mm-yyyy',
             todayHighlight: true,
@@ -306,9 +311,15 @@
                 },
                 {
                     data: 'start_date',
+                    render: function(data, type, row) {
+                        return DateTime.fromISO(data).toFormat('dd-MM-yyyy')
+                    }
                 },
                 {
                     data: 'end_date',
+                    render: function(data, type, row) {
+                        return DateTime.fromISO(data).toFormat('dd-MM-yyyy')
+                    }
                 },
                 {
                     data: 'uuid',

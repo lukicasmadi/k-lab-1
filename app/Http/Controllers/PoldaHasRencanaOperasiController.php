@@ -861,67 +861,37 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function preview(Request $request, $uuid)
     {
-        if (! $request->ajax()) {
-            abort(401);
-        }
+        $poldaSubmited = PoldaSubmited::whereUuid($uuid)->firstOrFail();
+        $daily = DailyInput::select('year')->where("polda_submited_id", $poldaSubmited->id)->first();
+        $dailyPrev = DailyInputPrev::select('year')->where("polda_submited_id", $poldaSubmited->id)->first();
+        $prevYear = $daily->year - 1;
 
-        $data = PoldaSubmited::whereUuid($uuid)->firstOrFail();
-        $daily = DailyInput::select('year')->where("polda_submited_id", $data->id)->first();
-        $dailyPrev = DailyInputPrev::select('year')->where("polda_submited_id", $data->id)->first();
+        $prev = reportDailyPrev($poldaSubmited->polda_id, $prevYear, $poldaSubmited->rencana_operasi_id, null, $poldaSubmited->submited_date, $poldaSubmited->submited_date);
+        $current = reportDailyCurrent($poldaSubmited->polda_id, $daily->year, $poldaSubmited->rencana_operasi_id, null, $poldaSubmited->submited_date, $poldaSubmited->submited_date);
 
-        $dailyInput = dailyInput(
-            $data->rencana_operasi_id,
-            date('Y'),
-            poldaId(),
-            date('Y-m-d')
+        return excelTemplateDisplay(
+            $prev,
+            $current,
+            yearMinus(),
+            year()
         );
-
-        $dailyInputPrev = dailyInputPrev(
-            $data->rencana_operasi_id,
-            date('Y'),
-            poldaId(),
-            date('Y-m-d')
-        );
-
-        return [
-            'dailyInput' => $dailyInput,
-            'dailyInputPrev' => $dailyInputPrev,
-            'daily' => $daily,
-            'dailyPrev' => $dailyPrev,
-        ];
     }
 
     public function previewPhroDashboard(Request $request, $uuid)
     {
-        if (! $request->ajax()) {
-            abort(401);
-        }
-
         $polda = Polda::whereUuid($uuid)->firstOrFail();
-        $data = PoldaSubmited::where("polda_id", $polda->id)->where('submited_date', date('Y-m-d'))->firstOrFail();
-        $daily = DailyInput::select('year')->where("polda_submited_id", $data->id)->first();
-        $dailyPrev = DailyInputPrev::select('year')->where("polda_submited_id", $data->id)->first();
 
-        $dailyInput = dailyInput(
-            $data->rencana_operasi_id,
-            date('Y'),
-            $data->polda_id,
-            date('Y-m-d')
+        $poldaSubmited = PoldaSubmited::where("polda_id", $polda->id)->where('submited_date', nowToday())->firstOrFail();
+
+        $prev = reportDailyPrev($polda->id, yearMinus(), $poldaSubmited->rencana_operasi_id, null, nowToday(), nowToday());
+        $current = reportDailyCurrent($polda->id, year(), $poldaSubmited->rencana_operasi_id, null, nowToday(), nowToday());
+
+        return excelTemplateDisplay(
+            $prev,
+            $current,
+            yearMinus(),
+            year()
         );
-
-        $dailyInputPrev = dailyInputPrev(
-            $data->rencana_operasi_id,
-            date('Y'),
-            $data->polda_id,
-            date('Y-m-d')
-        );
-
-        return [
-            'dailyInput' => $dailyInput,
-            'dailyInputPrev' => $dailyInputPrev,
-            'daily' => $daily,
-            'dailyPrev' => $dailyPrev,
-        ];
     }
 
     public function download($uuid)

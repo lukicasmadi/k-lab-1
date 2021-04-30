@@ -18,10 +18,12 @@
 
                             <div class="row">
                                 <input type="hidden" name="uuid_edit" id="uuid_edit" value="">
+
                                 <div class="col-md-12 mb-3">
                                     <label class="text-popup">Nama Laporan</label>
                                     <input type="text" name="report_name_edit" id="report_name_edit" class="form-control popoups" autocomplete="off" placeholder="- Tulis jenis operasi yang akan Anda laksanakan">
                                 </div>
+
                                 <div class="col-md-12">
                                     <label class="text-popup">Pilih Polda</label>
                                     <select class="form-control form-custom height-form" id="polda_edit" name="polda_edit">
@@ -31,6 +33,7 @@
                                         @endforeach
                                     </select>
                                 </div>
+
                                 <div class="col-md-12">
                                     <label class="text-popup">Tahun</label>
                                     <select class="form-control form-custom height-form" id="year_edit" name="year_edit">
@@ -40,6 +43,7 @@
                                         @endforeach
                                     </select>
                                 </div>
+
                                 <div class="col-md-12">
                                     <label class="text-popup">Nama Operasi</label>
                                     <select class="form-control form-custom height-form" id="rencana_operasi_id_edit" name="rencana_operasi_id_edit">
@@ -49,12 +53,21 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-md-12">
+
+                                <div class="col-md-12 div_hari_operasi">
                                     <label class="text-popup">Hari Operasi</label>
                                     <select class="form-control form-custom height-form" id="config_date_edit" name="config_date_edit">
                                         <option value="all" selected="selected">-   Semua Hari</option>
                                         <option value="custom">-   Pilih Hari</option>
                                     </select>
+                                </div>
+
+                                <div class="col-md-12 d-none loadingPanel">
+                                    <div class="loadingio-spinner-ellipsis-fvt532hptk7">
+                                        <div class="ldio-7zzkgq4jab8">
+                                            <div></div><div></div><div></div><div></div><div></div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="col-md-6 custom_hari d-none">

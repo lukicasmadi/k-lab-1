@@ -136,6 +136,7 @@
 @push('library_js')
 <script src="{{ asset('template/datepicker/js/bootstrap-datepicker.min.js') }}"></script>
 <script src="{{ asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
+<script src="{{ asset('js/popup.js') }}"></script>
 @endpush
 
 @push('page_js')
@@ -170,30 +171,6 @@
             $("#btnUnduhData").prop('disabled', false)
 
             $("#panelLoading").removeClass("d-none")
-
-            const popupCenter = ({url, title, w, h}) => {
-                // Fixes dual-screen position                             Most browsers      Firefox
-                const dualScreenLeft = window.screenLeft !==  undefined ? window.screenLeft : window.screenX;
-                const dualScreenTop = window.screenTop !==  undefined   ? window.screenTop  : window.screenY;
-
-                const width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
-                const height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
-
-                const systemZoom = width / window.screen.availWidth;
-                const left = (width - w) / 2 / systemZoom + dualScreenLeft
-                const top = (height - h) / 2 / systemZoom + dualScreenTop
-                const newWindow = window.open(url, title,
-                `
-                scrollbars=yes,
-                width=${w / systemZoom},
-                height=${h / systemZoom},
-                top=${top},
-                left=${left}
-                `
-                )
-
-                if (window.focus) newWindow.focus();
-            }
 
             if($("#tahun_pembanding_pertama").val() != "") {
 

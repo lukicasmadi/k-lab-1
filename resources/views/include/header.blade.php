@@ -267,4 +267,13 @@
         </div>
     </div>
 </div>
-<!--  END NAVBAR  -->
+
+@push('page_js')
+<script>
+$(document).ready(function () {
+    $('#changeTheme').click(function() {
+        alert("Fitur ini masih dalam tahap pengembangan")
+    })
+})
+</script>
+@endpush
