@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Polda;
 use App\Models\Article;
 use Carbon\CarbonPeriod;
+use App\Models\CountDown;
 use Illuminate\Http\Request;
 use App\Models\PoldaSubmited;
 use Illuminate\Support\Facades\DB;
@@ -243,6 +244,8 @@ class HomeController extends Controller
     {
         $projectRunning = operationPlans();
 
+        $dateCountDown = CountDown::where('rencana_operasi_id', $projectRunning->id)->where('tanggal', nowToday())->first();
+
         $period = CarbonPeriod::create($projectRunning->start_date, $projectRunning->end_date);
 
         $rangeDate = [];
@@ -265,7 +268,7 @@ class HomeController extends Controller
         return response()->json([
             'rangeDate' => $rangeDate,
             'totalPerDate' => $totalPerDate,
-            'projectName' => $projectRunning->name
+            'projectName' => $dateCountDown->deskripsi
         ], 200);
     }
 

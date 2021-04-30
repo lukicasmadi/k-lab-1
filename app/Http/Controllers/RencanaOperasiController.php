@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\CountDown;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\RencanaOperasi;
@@ -107,11 +108,21 @@ class RencanaOperasiController extends Controller
 
         $extractDate = extractDateRange(dateOnly(request('tanggal_mulai')), dateOnly(request('tanggal_selesai')));
 
-        foreach($extractDate as $item) {
+        $count = 1;
+
+        foreach($extractDate as $key => $item) {
             OperationExtractDate::create([
                 'rencana_operasi_id' => $create->id,
                 'extract_date' => $item
             ]);
+
+            CountDown::create([
+                'rencana_operasi_id' => $create->id,
+                'tanggal' => $item,
+                'deskripsi' => $request->nama_operasi." Hari Ke-".$count,
+            ]);
+
+            $count++;
         }
 
         flash('Rencana operasi telah dibuat')->success();
