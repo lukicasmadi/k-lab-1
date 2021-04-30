@@ -67,29 +67,29 @@ class DailyRekapController extends Controller
 
     public function dailyRekapShowWithInput($uuid)
     {
-        $model = DailyRekap::with(['rencanaOperasi', 'poldaData'])->where('uuid', $uuid)->first();
+        $dailyRekap = DailyRekap::with(['rencanaOperasi', 'poldaData'])->where('uuid', $uuid)->first();
 
-        if(empty($model)) {
-            abort(404);
-        }
+        $polda = $dailyRekap->polda;
 
-        $polda = $model->polda;
-        $year = $model->year;
-        $rencana_operartion_id = $model->rencana_operasi_id;
-        $config_date = $model->config_date;
-        $start_date = $model->operation_date_start;
-        $end_date = $model->operation_date_end;
-        $prevYear = $year - 1;
+        $currentYear = $dailyRekap->year;
+        $prevYear = $currentYear - 1;
 
-        $outputPrev = reportDailyPrev($polda, $prevYear, $rencana_operartion_id, $config_date, $start_date, $end_date);
-        $outputCurrent = reportDailyCurrent($polda, $year, $rencana_operartion_id, $config_date, $start_date, $end_date);
+        $rencana_operartion_id = $dailyRekap->rencana_operasi_id;
 
-        return [
-            'dailyInput' => $outputCurrent,
-            'dailyInputPrev' => $outputPrev,
-            'yearNow' => date("Y"),
-            'yearPrev' => date("Y") - 1,
-        ];
+        $config_date = $dailyRekap->config_date;
+
+        $start_date = $dailyRekap->operation_date_start;
+        $end_date = $dailyRekap->operation_date_end;
+
+        $prev = reportPrevToDisplay($prevYear, $rencana_operartion_id, $start_date, $end_date);
+        $current = reportCurrentToDisplay($currentYear, $rencana_operartion_id, $start_date, $end_date);
+
+        return excelTemplateDisplay(
+            $prev,
+            $current,
+            $prevYear,
+            $currentYear
+        );
     }
 
     public function dailyRekapShow($uuid)
