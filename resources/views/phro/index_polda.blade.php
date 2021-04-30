@@ -144,9 +144,6 @@ $(document).ready(function () {
                         <div class="ubah-change">
                             <a href="`+route('phro_edit', data)+`">Ubah</a> | <a href="`+route('download_document', data)+`">Unduh</a>
                         </div>
-                        <div class="ubah-disable">
-                            Ubah | Unduh
-                        </div>
                         `;
                     } else {
                         return "";
