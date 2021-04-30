@@ -38,7 +38,6 @@ class DailyRekapController extends Controller
 
         if($polda != "polda_all") {
             $poldaSubmited = PoldaSubmited::where('polda_id', $polda)->where('rencana_operasi_id', $rencana_operartion_id)->first();
-
             excelTemplate(
                 'per_polda',
                 $prev,
@@ -55,12 +54,12 @@ class DailyRekapController extends Controller
                 'polda_all',
                 $prev,
                 $current,
-                'KESATUAN : '.$poldaSubmited->nama_kesatuan,
-                $poldaSubmited->nama_kota.", ".indonesianDate(date("Y-m-d")),
-                'NAMA : '.$poldaSubmited->nama_atasan,
-                $poldaSubmited->pangkat_dan_nrp,
-                $poldaSubmited->jabatan,
-                $poldaSubmited->nama_laporan
+                'KESATUAN : [ SELURUH POLDA ]',
+                indonesianDate(date("Y-m-d")),
+                '',
+                '',
+                '',
+                ''
             );
         }
     }
