@@ -16,7 +16,7 @@
     <div class="row layout-top-spacing">
         <div class="col-md-12">
             <blockquote class="blockquote">
-                <p class="d-inline">KORLANTAS BELUM MENGINPUT DATA PROJEK YANG SEDANG BERLANGSUNG SAAT INI</p>
+                <p class="d-inline">KORLANTAS BELUM MENGINPUT DATA OPERASI YANG SEDANG BERLANGSUNG SAAT INI</p>
             </blockquote>
         </div>
     </div>
