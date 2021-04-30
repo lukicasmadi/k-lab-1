@@ -88,6 +88,7 @@ $('#modalForm').on('hidden.bs.modal', function () {
     $("#report_name").val('')
     $("#tanggal_mulai").val('')
     $("#tanggal_selesai").val('')
+
     $(".custom_hari").addClass('d-none')
     $(".div_hari_operasi").addClass('d-none')
     $(".div_tanggal_mulai").addClass('d-none')
@@ -103,7 +104,11 @@ $('#daily_preview').on('hidden.bs.modal', function () {
 $('#form_edit_rekap').on('hidden.bs.modal', function () {
     $("#tanggal_mulai_edit").val('')
     $("#tanggal_selesai_edit").val('')
-    $("#custom_hari").addClass('d-none')
+
+    $(".custom_hari").addClass('d-none')
+    $(".div_hari_operasi").addClass('d-none')
+    $(".div_tanggal_mulai").addClass('d-none')
+    $(".div_tanggal_selesai").addClass('d-none')
 
     $("#modalForm select").prop('selectedIndex', 0)
 })
@@ -802,6 +807,9 @@ $('body').on('click', '#btnEdit', function(e) {
     e.preventDefault()
     var uuid = $(this).attr('data-id')
 
+    var DateTime = luxon.DateTime;
+    var now = DateTime.now().setLocale("id")
+
     axios.get(route('daily_rekap_show', uuid)).then(function(response) {
 
         $("#uuid_edit").val(response.data.uuid)
@@ -819,8 +827,8 @@ $('body').on('click', '#btnEdit', function(e) {
         if(response.data.config_date == "custom") {
             $('#config_date_edit option[value="custom"]').prop("selected", true)
             $(".custom_hari").removeClass("d-none")
-            $("#tanggal_mulai_edit").val(response.data.operation_date_start)
-            $("#tanggal_selesai_edit").val(response.data.operation_date_end)
+            $("#tanggal_mulai_edit").val(DateTime.fromISO(response.data.operation_date_start).toFormat('dd-MM-yyyy'))
+            $("#tanggal_selesai_edit").val(DateTime.fromISO(response.data.operation_date_end).toFormat('dd-MM-yyyy'))
         } else {
             $('#config_date_edit option[value="all"]').prop("selected", true)
             $(".custom_hari").addClass("d-none")
@@ -843,7 +851,7 @@ $('body').on('click', '#btnEdit', function(e) {
 function checkDateRange() {
     var rencana_operasi_id = $("#rencana_operasi_id").val()
 
-    $("#loadingPanel").removeClass('d-none')
+    $(".loadingPanel").removeClass('d-none')
 
     axios.get(route('get_rencana_operasi_date_range', rencana_operasi_id))
     .then(response => {
@@ -851,7 +859,7 @@ function checkDateRange() {
         var DateTime = luxon.DateTime;
         var now = DateTime.now().setLocale("id")
 
-        $("#loadingPanel").addClass('d-none')
+        $(".loadingPanel").addClass('d-none')
 
         var data = response.data
         var startDate = data.start_date

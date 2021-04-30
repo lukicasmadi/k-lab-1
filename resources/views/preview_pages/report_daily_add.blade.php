@@ -56,7 +56,7 @@
                                     </select>
                                 </div>
 
-                                <div class="col-md-12 d-none" id="loadingPanel">
+                                <div class="col-md-12 d-none loadingPanel">
                                     <div class="loadingio-spinner-ellipsis-fvt532hptk7">
                                         <div class="ldio-7zzkgq4jab8">
                                             <div></div><div></div><div></div><div></div><div></div>
