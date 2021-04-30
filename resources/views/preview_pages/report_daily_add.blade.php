@@ -48,7 +48,7 @@
                                             @endforeach
                                     </select>
                                 </div>
-                                <div class="col-md-12 d-none" id="div_hari_operasi">
+                                <div class="col-md-12 d-none div_hari_operasi">
                                     <label class="text-popup">Hari Operasi</label>
                                     <select class="form-control form-custom height-form" id="config_date" name="config_date">
                                         <option value="all" selected="selected">-   Semua Hari</option>
@@ -64,12 +64,12 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6 custom_hari d-none" id="div_tanggal_mulai">
+                                <div class="col-md-6 custom_hari d-none div_tanggal_mulai">
                                     <label class="text-popup">Tanggal Mulai</label>
                                     <input type="text" name="tanggal_mulai" id="tanggal_mulai" class="form-control popoups inp-icon" value="" placeholder="- dd-mm-yyyy">
                                 </div>
 
-                                <div class="col-md-6 custom_hari d-none" id="div_tanggal_selesai">
+                                <div class="col-md-6 custom_hari d-none div_tanggal_selesai">
                                     <label class="text-popup">Tanggal Selesai</label>
                                     <input type="text" name="tanggal_selesai" id="tanggal_selesai" class="form-control popoups inp-icon" value="" placeholder="- dd-mm-yyyy">
                                 </div>

@@ -89,6 +89,9 @@ $('#modalForm').on('hidden.bs.modal', function () {
     $("#tanggal_mulai").val('')
     $("#tanggal_selesai").val('')
     $(".custom_hari").addClass('d-none')
+    $(".div_hari_operasi").addClass('d-none')
+    $(".div_tanggal_mulai").addClass('d-none')
+    $(".div_tanggal_selesai").addClass('d-none')
 
     $("#modalForm select").prop('selectedIndex', 0)
 })
@@ -240,13 +243,14 @@ $('body').on('change', '#rencana_operasi_id', function(e) {
     e.preventDefault()
 
     $("#div_hari_operasi").prop('selectedIndex', 0)
-    $("#div_tanggal_mulai").val('')
-    $("#div_tanggal_selesai").val('')
 
     if($(this).val() != "") {
         checkDateRange()
+        $("#config_date").prop('selectedIndex', 0)
     } else {
-        $("#div_hari_operasi").addClass("d-none")
+        $(".div_hari_operasi").addClass("d-none")
+        $(".div_tanggal_mulai").addClass('d-none')
+        $(".div_tanggal_selesai").addClass('d-none')
     }
 })
 
@@ -844,11 +848,16 @@ function checkDateRange() {
     axios.get(route('get_rencana_operasi_date_range', rencana_operasi_id))
     .then(response => {
 
+        var DateTime = luxon.DateTime;
+        var now = DateTime.now().setLocale("id")
+
         $("#loadingPanel").addClass('d-none')
 
         var data = response.data
         var startDate = data.start_date
         var endDate = data.end_date
+
+        $(".div_hari_operasi").removeClass("d-none")
 
         $('#tanggal_mulai').datepicker({
             format: 'dd-mm-yyyy',
@@ -881,8 +890,6 @@ function checkDateRange() {
             startDate: DateTime.fromISO(startDate).toFormat('dd-MM-yyyy'),
             endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
         })
-
-        $("#div_hari_operasi").removeClass("d-none")
     })
     .catch(err => {
         console.error(err);
