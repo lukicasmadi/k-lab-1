@@ -12,7 +12,7 @@
 @endpush
 
 @section('content')
-<form method="POST" action="{{ route('phro_update', $uuid) }}">
+<form method="POST" action="{{ route('phro_update', $uuid) }}" enctype="multipart/form-data">
     @csrf
     @method('PATCH')
     <div class="layout-px-spacing">

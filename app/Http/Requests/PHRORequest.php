@@ -34,6 +34,8 @@ class PHRORequest extends FormRequest
 
     public function rules()
     {
+        $requiredOnCreate = request()->isMethod('patch') ? 'file|mimes:pdf,ppt,pptx,doc,docx,zip|max:50000' : 'required|file|mimes:pdf,ppt,pptx,doc,docx,zip|max:50000';
+
         return [
             'nama_kesatuan' => 'required',
             'nama_atasan' => 'required',
@@ -42,7 +44,7 @@ class PHRORequest extends FormRequest
             'nama_laporan' => 'required',
             'nama_kota' => 'required',
 
-            'document_upload' => 'required|file|mimes:pdf,ppt,pptx,doc,docx,zip|max:50000',
+            'document_upload' => $requiredOnCreate,
 
             'pelanggaran_lalu_lintas_tilang' => 'required|integer',
             'pelanggaran_lalu_lintas_teguran' => 'required|integer',

@@ -27,6 +27,7 @@
 
     <blockquote class="blockquote mb-4">
         <div class="row mt-3">
+
             <div class="col-md-4 mb-4">
                 <label class="text-popup">Nama Kesatuan</label>
                 <input type="text" class="form-control popoups mt-1 @error('nama_kesatuan') is-invalid @enderror" name="nama_kesatuan" id="nama_kesatuan" autocomplete="off" value="{{ $data->nama_kesatuan }}">
@@ -36,6 +37,7 @@
                     </span>
                 @enderror
             </div>
+
             <div class="col-md-4 mb-4">
                 <label class="text-popup">Nama Atasan</label>
                 <input type="text" class="form-control popoups mt-1 @error('nama_atasan') is-invalid @enderror" name="nama_atasan" id="nama_atasan" autocomplete="off" value="{{ $data->nama_atasan }}">
@@ -45,6 +47,7 @@
                     </span>
                 @enderror
             </div>
+
             <div class="col-md-4 mb-4">
                 <label class="text-popup">Pangkat dan nrp</label>
                 <input type="text" class="form-control popoups mt-1 @error('pangkat_dan_nrp') is-invalid @enderror" name="pangkat_dan_nrp" id="pangkat_dan_nrp" autocomplete="off" value="{{ $data->pangkat_dan_nrp }}">
@@ -54,6 +57,7 @@
                     </span>
                 @enderror
             </div>
+
             <div class="col-md-4 mb-4">
                 <label class="text-popup">Jabatan</label>
                 <input type="text" class="form-control popoups mt-1 @error('jabatan') is-invalid @enderror" name="jabatan" id="jabatan" autocomplete="off" value="{{ $data->jabatan }}">
@@ -63,6 +67,7 @@
                     </span>
                 @enderror
             </div>
+
             <div class="col-md-4 mb-4">
                 <label class="text-popup">Nama Laporan</label>
                 <input type="text" class="form-control popoups mt-1 @error('nama_laporan') is-invalid @enderror" name="nama_laporan" id="nama_laporan" autocomplete="off" value="{{ $data->nama_laporan }}">
@@ -72,6 +77,7 @@
                     </span>
                 @enderror
             </div>
+
             <div class="col-md-4 mb-4">
                 <label class="text-popup">Nama Kota</label>
                 <input type="text" class="form-control popoups mt-1 @error('nama_kota') is-invalid @enderror" name="nama_kota" id="nama_kota" autocomplete="off" value="{{ $data->nama_kota }}">
@@ -81,6 +87,23 @@
                     </span>
                 @enderror
             </div>
+
+            <div class="col-md-12">
+                <blockquote class="blockquote">
+                    <p class="d-inline">Dokumen form ini pernah diupload. Jika anda ingin menggantinya silahkan gunakan menu upload dibawah. Jika tidak, biarkan kosong</p>
+                </blockquote>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <label class="text-popup">Upload Dokomen (pdf, ppt, word, zip)</label>
+                <input type="file" class="form-control popoups mt-1 @error('document_upload') is-invalid @enderror" name="document_upload" id="document_upload">
+                @error('document_upload')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
         </div>
     </blockquote>
 

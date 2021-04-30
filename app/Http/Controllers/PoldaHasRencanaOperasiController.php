@@ -193,6 +193,13 @@ class PoldaHasRencanaOperasiController extends Controller
             return redirect()->route('phro_index');
         }
 
+        $poldaSubmited = PoldaSubmited::whereUuid($uuid)->firstOrFail();
+
+        if(dateOnly($poldaSubmited->submited_date) != nowToday()) {
+            flash('Anda tidak diijinkan mengubah data yang telah lewat')->error();
+            return redirect()->route('phro_index');
+        }
+
         DB::beginTransaction();
 
         try {
@@ -828,8 +835,6 @@ class PoldaHasRencanaOperasiController extends Controller
                 'prokes_covid_giat_baksos',
             ]);
 
-            $poldaSubmited = PoldaSubmited::whereUuid($uuid)->firstOrFail();
-
             DailyInput::where("polda_submited_id", $poldaSubmited->id)
                 ->where(DB::raw('DATE(created_at)'), $poldaSubmited->submited_date)
                 ->update($payload);
@@ -838,14 +843,24 @@ class PoldaHasRencanaOperasiController extends Controller
                 ->where(DB::raw('DATE(created_at)'), $poldaSubmited->submited_date)
                 ->update($payloadPrev);
 
-            $poldaSubmited->update([
+            $dataPoldaSubmited = [
                 'nama_kesatuan' => upperCase($request->nama_kesatuan),
                 'nama_atasan' => upperCase($request->nama_atasan),
                 'pangkat_dan_nrp' => upperCase($request->pangkat_dan_nrp),
                 'jabatan' => upperCase($request->jabatan),
                 'nama_laporan' => upperCase($request->nama_laporan),
                 'nama_kota' => upperCase($request->nama_kota),
-            ]);
+            ];
+
+            if($request->hasFile('document_upload')) {
+                $file = $request->file('document_upload');
+                $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
+                $destinationPath = public_path('document-upload/polda/');
+                $file->move($destinationPath, $randomName);
+                $dataPoldaSubmited['document_upload'] = $randomName;
+            }
+
+            $poldaSubmited->update($dataPoldaSubmited);
 
             DB::commit();
             flash('Seluruh data berhasil diupdate')->success();
