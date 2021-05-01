@@ -146,7 +146,11 @@ $(document).ready(function () {
                         </div>
                         `;
                     } else {
-                        return "";
+                        return `
+                        <div class="ubah-change">
+                            <a href="`+route('download_document', data)+`">Unduh</a>
+                        </div>
+                        `;
                     }
                 },
                 searchable: false,
