@@ -19,6 +19,7 @@
     <link href="{{ asset('template/assets/css/components/tabs-accordian/custom-accordions.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css">
     <link rel="stylesheet" href="{{ asset('template/flash.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/assets/css/introjs.css') }}">
     <!-- END GLOBAL MANDATORY STYLES -->
     @stack('library_css')
     @stack('page_css')
@@ -64,8 +65,7 @@
     <script src="{{ asset('template/plugins/select2/select2.min.js') }}"></script>
     <script src="{{ asset('template/assets/js/components/ui-accordions.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
-    {{-- <script src="{{ asset('template/assets/js/bootstrap-tour.min.js') }}"></script>
-    <script src="{{ asset('template/assets/js/script.js') }}"></script> --}}
+    <script src="{{ asset('template/assets/js/intro.min.js') }}"></script>
     <script>
         $(document).ready(function() {
             App.init();
