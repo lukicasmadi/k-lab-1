@@ -349,4 +349,11 @@ class ReportController extends Controller
             $end_date
         );
     }
+
+    public function reportAllPoldaDetail()
+    {
+        $polda = Polda::with('poldaInputToday')->select('id', 'uuid', 'name', 'short_name')->get();
+
+        return $polda;
+    }
 }
