@@ -8,6 +8,12 @@ use App\Models\UserHasPolda;
 use App\Models\PoldaSubmited;
 use App\Models\RencanaOperasi;
 
+if (! function_exists('avoidNull')) {
+    function avoidNull($value) {
+        return (is_null($value)) ? 0 : $value;
+    }
+}
+
 if (! function_exists('applyZero')) {
     function applyZero($value) {
         return (empty($value) || is_null($value)) ? 0 : $value;
@@ -77,6 +83,12 @@ if (! function_exists('dayNameIndonesia')) {
 if (! function_exists('indonesianDate')) {
     function indonesianDate($timestamp) {
         return Carbon::parse($timestamp)->format('d M Y');
+    }
+}
+
+if (! function_exists('indonesianFullDayAndDate')) {
+    function indonesianFullDayAndDate($timestamp) {
+        return Carbon::parse($timestamp)->isoFormat('dddd').", ".Carbon::parse($timestamp)->format('d M Y');
     }
 }
 

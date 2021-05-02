@@ -352,8 +352,8 @@ class ReportController extends Controller
 
     public function reportAllPoldaDetail()
     {
-        $polda = Polda::with('poldaInputToday')->select('id', 'uuid', 'name', 'short_name')->get();
+        $polda = Polda::with('poldaInputCurrentToday', 'poldaInputPrevToday')->select('id', 'uuid', 'name', 'short_name')->orderBy('id', 'desc')->get();
 
-        return $polda;
+        return dailyReportDetail($polda);
     }
 }

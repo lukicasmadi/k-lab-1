@@ -9938,3 +9938,34 @@ if (! function_exists('dailyInputPrevButCustomYear')) {
         return $dailyInputPrev;
     }
 }
+
+if (! function_exists('dailyReportDetail')) {
+    function dailyReportDetail($poldaYangKe)
+    {
+        $excelPath = public_path('template/excel');
+        $excelTemplate = $excelPath."/format_laporan_detail_daily.xlsx";
+        $spreadsheet = IOFactory::load($excelTemplate);
+        $now = now()->format("Y-m-d");
+        $filename = 'Report All Polda '.$now;
+
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="'.$filename.'.xlsx"');
+
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $sheet->setCellValue('A5', 'LAPORAN HARIAN '.upperCase(operationPlans()->name));
+        $sheet->setCellValue('A7', 'HARI/TGL : '.indonesianFullDayAndDate(date("Y-m-d")));
+
+        $sheet->setCellValue('C10', nowYearMinusOne());
+        $sheet->setCellValue('D10', nowYear());
+
+        $sheet->setCellValue('C14', (is_null($poldaYangKe[0]->poldaInputPrevToday)) ? 0 : $poldaYangKe[0]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
+        $sheet->setCellValue('D14', (is_null($poldaYangKe[0]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[0]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
+
+        $sheet->setCellValue('BQ14', (is_null($poldaYangKe[33]->poldaInputPrevToday)) ? 0 : $poldaYangKe[33]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
+        $sheet->setCellValue('BR14', (is_null($poldaYangKe[33]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[33]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
+
+        $writer = new Xlsx($spreadsheet);
+        $writer->save('php://output');
+    }
+}

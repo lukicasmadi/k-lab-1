@@ -23,7 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/operation-onsite/{uuid}/download', 'PoldaHasRencanaOperasiController@download')->name('downloadPrho');
     Route::get('/operation-onsite/{uuid}/preview', 'PoldaHasRencanaOperasiController@preview')->name('previewPhro');
-    Route::get('/polda/all/compare-daily', 'ReportController@reportAllPoldaDetail')->name('report_all_polda_compare');
+    Route::get('/report/polda/all/daily-compare', 'ReportController@reportAllPoldaDetail')->name('report_all_polda_compare');
 
     Route::group(['middleware' => 'user-has-polda'], function () {
         Route::resource('operation-onsite', 'PoldaHasRencanaOperasiController', [
