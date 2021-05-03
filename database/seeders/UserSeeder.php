@@ -363,7 +363,7 @@ class UserSeeder extends Seeder
         $admin = User::whereEmail("berthojoris@gmail.com")->first();
         $admin->assignRole('administrator');
 
-        $admin = User::whereEmail("bagops@gmail.com")->first();
+        $admin = User::whereEmail("crt@gmail.com")->first();
         $admin->assignRole('administrator');
 
         $admin = User::whereEmail("lukicasmadi@gmail.com")->first();
