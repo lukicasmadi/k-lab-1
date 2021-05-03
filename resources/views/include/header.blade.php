@@ -78,9 +78,11 @@
                                         <a href="{{ route('report_anev_daily') }}"> Laporan Anev Harian </a>
                                     </li>
                                     @if (!empty(operationPlans()))
-                                        <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
-                                            <a href="{{ route('report_all_polda_compare') }}"> Laporan Perbandingan Harian </a>
-                                        </li>
+                                        @if (authUser()->id == 1)
+                                            <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
+                                                <a href="{{ route('report_all_polda_compare') }}"> Laporan Perbandingan Harian </a>
+                                            </li>
+                                        @endif
                                     @endif
                                 </ul>
                             </li>
