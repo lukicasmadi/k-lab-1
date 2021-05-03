@@ -15,7 +15,7 @@
 <div class="layout-px-spacing">
     <div class="row layout-top-spacing">
 
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
             <div class="widget widget-activity-three">
                 <div class="widget-heading">
                     <h5 class="ml-n3">
@@ -72,52 +72,38 @@ function statistikLanggarLalin() {
             height: 350,
             type: 'bar',
             toolbar: {
-            show: false,
+                show: false,
             }
-        },
-        plotOptions: {
-            bar: {
-                horizontal: false,
-                columnWidth: '55%',
-            },
         },
         dataLabels: {
             enabled: false
         },
         stroke: {
             show: true,
-            width: 2,
+            width: 0,
             colors: ['transparent']
+        },
+        series: [{
+            name: 'Tilang',
+            data: [44]
+        }, {
+            name: 'Teguran',
+            data: [76]
+        }],
+        xaxis: {
+            categories: ['2021'],
         },
         title: {
           text: 'PELANGGARAN LALU LINTAS'
         },
-        series: [{
-            name: 'Net Profit',
-            data: [44, 55]
-        }, {
-            name: 'Revenue',
-            data: [76, 85]
-        }],
-        fill: {
-            opacity: 1
-
-        },
-        tooltip: {
-            y: {
-                formatter: function (val) {
-                    return "$ " + val + " thousands"
-                }
-            }
-        }
     }
 
     var chart = new ApexCharts(
         document.querySelector("#statistik_pelanggaran_lalin"),
         sCol
-    );
+    )
 
-    chart.render();
+    chart.render()
 }
 </script>
 @endpush
