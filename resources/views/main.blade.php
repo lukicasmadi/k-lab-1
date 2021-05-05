@@ -21,7 +21,7 @@
             <img src="{{ asset('/img/line-poldaup.png') }}" width="100%">
         </div>
 
-        
+
 
         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
             <div class="">
@@ -433,7 +433,7 @@ function donutData() {
             dashArray: 0,
         },
         series: [filled, nofilled],
-        labels: ['&nbsp;[ MASUK ]', '&nbsp;[ BELUM MASUK ]'],
+        labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
         responsive: [{
             breakpoint: 500,
             options: {
