@@ -28,12 +28,17 @@ class PoldaHasRencanaOperasiController extends Controller
         try {
             $file = PoldaSubmited::with('polda')->where('uuid', $uuid)->firstOrFail();
 
-            $name = explode(".", $file->document_upload);
+            if(empty($file->document_upload) || is_null($file->document_upload)) {
+                flash('Dokumen tidak ditemukan. Pastikan anda telah mengunggahnya pada halaman tambah/edit laporan')->warning();
+                return redirect(route('phro_index'));
+            } else {
+                $name = explode(".", $file->document_upload);
 
-            $poldaName = $file->polda->name;
+                $poldaName = $file->polda->name;
 
-            $fileName = $poldaName." Report File ".indonesianStandart($file->submited_date);
-            return response()->download(public_path('document-upload/polda/'.$file->document_upload), $fileName.".".$name[1]);
+                $fileName = $poldaName." Report File ".indonesianStandart($file->submited_date);
+                return response()->download(public_path('document-upload/polda/'.$file->document_upload), $fileName.".".$name[1]);
+            }
         } catch (\Exception $e) {
             logger($e);
             flash('Data gagal didownload. Silakan dicoba kembali atau hubungi admin jika masih bermasalah')->error();
@@ -119,7 +124,7 @@ class PoldaHasRencanaOperasiController extends Controller
                 $file->move($destinationPath, $randomName);
                 $data['document_upload'] = $randomName;
             } else {
-                $data['document_upload'] = 'default.pdf';
+                $data['document_upload'] = '';
             }
 
             $poldaSubmit = PoldaSubmited::create([

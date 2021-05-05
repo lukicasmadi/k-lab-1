@@ -34,7 +34,8 @@ class PHRORequest extends FormRequest
 
     public function rules()
     {
-        $requiredOnCreate = request()->isMethod('patch') ? 'file|mimes:pdf,ppt,pptx,doc,docx,zip|max:50000' : 'required|file|mimes:pdf,ppt,pptx,doc,docx,zip|max:50000';
+        // $requiredOnCreate = request()->isMethod('patch') ? 'file|mimes:pdf,ppt,pptx,doc,docx,zip|max:50000' : 'required|file|mimes:pdf,ppt,pptx,doc,docx,zip|max:50000';
+        $requiredOnCreate = 'file|mimes:pdf,ppt,pptx,doc,docx,zip|max:50000';
 
         return [
             'nama_kesatuan' => 'required',
