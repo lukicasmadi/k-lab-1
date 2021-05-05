@@ -28,7 +28,7 @@ class PoldaRequest extends FormRequest
             'name' => 'required',
             'short_name' => 'required',
             'logo' => $logo,
-            'jurisdiction' => 'required',
+            'jurisdiction' => 'nullable',
             'headquarters' => 'nullable',
             'type' => 'nullable',
             'official_site' => 'nullable',
