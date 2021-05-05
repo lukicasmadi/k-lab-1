@@ -34,9 +34,9 @@
                             <tr>
                                 <th>ID</th>
                                 <th width="20%">Nama Kesatuan</th>
-                                <th width="35%">Status Laporan</th>
-                                <th width="15%">Tanggal</th>
-                                <th width="12%">Lihat</th>
+                                <th width="45%">Status Laporan</th>
+                                <th width="14%">Tanggal</th>
+                                <th width="3%">Lihat</th>
                                 <th width="18%">Pilihan</th>
                             </tr>
                         </thead>
@@ -128,7 +128,7 @@ $(document).ready(function () {
                     return `
                     <div class="icon-container">
                         <a href="`+route('previewPhro', data)+`" class="previewPhro" data-id="`+data+`">
-                            <img src="{{ asset('/img/search.png') }}">
+                            <img src="{{ asset('/img/search.png') }}" width="22px">
                         </a>
                     </div>
                     `;

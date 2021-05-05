@@ -44,9 +44,9 @@
                                 <th>ID</th>
                                 <th width="17%">Nama Operasi</th>
                                 <th width="16%">Jenis Operasi</th>
-                                <th width="13%">Tgl Mulai</th>
-                                <th width="14%">Tgl Selesai</th>
-                                <th width="6%">Lihat</th>
+                                <th width="15%">Tgl Mulai</th>
+                                <th width="15%">Tgl Selesai</th>
+                                <th width="3%">Lihat</th>
                                 <th width="10%">Pilihan</th>
                             </tr>
                         </thead>
@@ -316,7 +316,7 @@
                         return `
                         <div class="icon-container">
                             <a href="#" class="viewData" idval="`+data+`">
-                                <img src="{{ asset('/img/search.png') }}" width="45%">
+                                <img src="{{ asset('/img/search.png') }}" width="22px">
                             </a>
                         </div>
                         `;

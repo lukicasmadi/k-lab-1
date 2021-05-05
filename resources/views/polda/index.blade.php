@@ -31,8 +31,8 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Name</th>
-                                <th>Short Name</th>
+                                <th>Nama Polda</th>
+                                <th>Nama Singkatan</th>
                                 <th>Logo</th>
                                 <th>Action</th>
                             </tr>
@@ -106,7 +106,7 @@
             {
                 data: 'uuid',
                 render: function(data, type, row) {
-                    return '<div class="ubah-change"><a href="' + route('polda_edit', data) + '">UBAH</a> &nbsp; | &nbsp; <a href="" uuid="' + data + '" class="confirm">HAPUS</a></div>';
+                    return '<div class="ubah-change"><a href="' + route('polda_edit', data) + '">Ubah</a> | <a href="" uuid="' + data + '" class="confirm">Hapus</a></div>';
                 },
                 searchable: false,
                 sortable: false

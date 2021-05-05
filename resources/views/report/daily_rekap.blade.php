@@ -40,15 +40,15 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th width="20%">Nama Laporan</th>
-                                <th width="13%">Polda</th>
-                                <th width="10%">Tahun</th>
-                                <th width="21%">Nama Operasi</th>
-                                <th width="20%">Hari</th>
-                                <th width="20%">Mulai</th>
-                                <th width="20%">Selesai</th>
-                                <th width="6%">Lihat</th>
-                                <th width="10%">Pilihan</th>
+                                <th width="10%">Nama Laporan</th>
+                                <th width="10%">Polda</th>
+                                <th width="7%">Tahun</th>
+                                <th width="10%">Nama Operasi</th>
+                                <th width="10%">Hari</th>
+                                <th width="15%">Mulai</th>
+                                <th width="15%">Selesai</th>
+                                <th width="3%">Lihat</th>
+                                <th width="20%">Pilihan</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -221,7 +221,7 @@ $(document).ready(function () {
                     return `
                     <div class="icon-container">
                         <a href="#" id="btnView" data-id="`+data+`">
-                            <img src="{{ asset('/img/search.png') }}" width="45%">
+                            <img src="{{ asset('/img/search.png') }}" width="22px">
                         </a>
                     </div>
                     `;
@@ -234,7 +234,7 @@ $(document).ready(function () {
                 render: function(data, type, row) {
                     return `
                     <div class="ubah-change">
-                        <a href="`+route('daily_dowmload_excel', data)+`" id="btnDownload" data-id="`+data+`">Unduh</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#" id="btnEdit" data-id="`+data+`">Edit</a>
+                        <a href="`+route('daily_dowmload_excel', data)+`" id="btnDownload" data-id="`+data+`">Unduh</a> | <a href="#" id="btnEdit" data-id="`+data+`">Edit</a>
                     </div>
                     `;
                 },

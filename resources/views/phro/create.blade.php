@@ -15,7 +15,7 @@
 <form method="POST" action="{{ route('phro_store') }}" enctype="multipart/form-data">
     @csrf
     <div class="layout-px-spacing">
-        <div class="row layout-top-spacing">
+        <div class="row layout-top-spacing text-artikel">
 
             @include('form.pelanggaran_lalin_polda')
             @include('form.jenis_pelanggaran_lalin_polda')
@@ -63,15 +63,18 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/sweetalerts/sweetalert2.min.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('template/assets/css/components/custom-sweetalert.css') }}" />
 <link rel="stylesheet" href="{{ asset('template/custom.css') }}">
+<link rel="stylesheet" href="{{ asset('template/plugins/file-upload/file-upload-with-preview.min.css') }}">
 @endpush
 
 @push('library_js')
 <script src="{{ asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
+<script src="{{ asset('template/plugins/file-upload/file-upload-with-preview.min.js') }}"></script>
 @endpush
 
 @push('page_js')
 
 <script>
+var firstUpload = new FileUploadWithPreview('myFirstImage')
 $(document).ready(function () {
     if(location.hostname == "korlantas.test") {
 
