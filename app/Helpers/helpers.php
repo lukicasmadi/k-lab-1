@@ -8,6 +8,16 @@ use App\Models\UserHasPolda;
 use App\Models\PoldaSubmited;
 use App\Models\RencanaOperasi;
 
+if (! function_exists('datePassed')) {
+    function datePassed($targetDate) {
+        if(Carbon::now()->lessThan($targetDate)) {
+            return "belum_lewat";
+        } else {
+            return "sudah_lewat";
+        }
+    }
+}
+
 if (! function_exists('avoidNull')) {
     function avoidNull($value) {
         return (is_null($value)) ? 0 : $value;
@@ -150,7 +160,7 @@ if (! function_exists('indonesianStandart')) {
 
 if (! function_exists('countDays')) {
     function countDays($start, $end) {
-        return Carbon::parse($end)->diffInDays($start);
+        return Carbon::parse($end)->diffInDays($start) + 1;
     }
 }
 

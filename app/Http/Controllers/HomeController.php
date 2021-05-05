@@ -36,45 +36,25 @@ class HomeController extends Controller
     {
         $project_start = dateOnly(operationPlans()->start_date);
         $project_end = dateOnly(operationPlans()->end_date);
-        $project_one_week = dateOnly(incrementDays($project_start, 7));
+        $half_week = dateOnly(incrementDays($project_start, 5));
+        $half_week_plus_one = dateOnly(incrementDays($project_start, 6));
 
-        $model = PoldaSubmited::whereBetween('submited_date', [$project_start, $project_one_week])->where("polda_id", poldaId())->count();
+        $full = countDays($project_start, $project_end);
+        $finalHalf = round($full / 2);
 
-        $countDaysAWeek = countDays($project_start, $project_one_week);
-
-        if(empty($model)) {
-            $data = [
-                "filled" => 0,
-                "nofilled" => 100
-            ];
+        if(datePassed($half_week) == "belum_lewat") {
+            $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$project_start, $half_week])->where("polda_id", poldaId())->count();
         } else {
-            $percentage = round((100 * $model) / $countDaysAWeek);
-            $data = [
-                "filled" => $percentage,
-                "nofilled" => 100 - $percentage
-            ];
+            $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$half_week_plus_one, $project_end])->where("polda_id", poldaId())->count();
         }
 
-        return $data;
-    }
-
-    public function weeklyPoldaById($id)
-    {
-        $project_start = dateOnly(operationPlans()->start_date);
-        $project_end = dateOnly(operationPlans()->end_date);
-        $project_one_week = dateOnly(incrementDays($project_start, 7));
-
-        $model = PoldaSubmited::whereBetween('submited_date', [$project_start, $project_one_week])->where("polda_id", $id)->count();
-
-        $countDaysAWeek = countDays($project_start, $project_one_week);
-
-        if(empty($model)) {
+        if(empty($count_polda_input_daily) || $count_polda_input_daily <= 0) {
             $data = [
                 "filled" => 0,
                 "nofilled" => 100
             ];
         } else {
-            $percentage = round((100 * $model) / $countDaysAWeek);
+            $percentage = round((100 * $count_polda_input_daily) / $finalHalf, 1);
             $data = [
                 "filled" => $percentage,
                 "nofilled" => 100 - $percentage
@@ -89,17 +69,49 @@ class HomeController extends Controller
         $project_start = dateOnly(operationPlans()->start_date);
         $project_end = dateOnly(operationPlans()->end_date);
 
-        $model = PoldaSubmited::whereBetween('submited_date', [$project_start, $project_end])->where("polda_id", poldaId())->count();
+        $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$project_start, $project_end])->where("polda_id", poldaId())->count();
 
         $countDaysAll = countDays($project_start, $project_end);
 
-        if(empty($model)) {
+        if(empty($count_polda_input_daily) || $count_polda_input_daily <= 0) {
             $data = [
                 "filled" => 0,
                 "nofilled" => 100
             ];
         } else {
-            $percentage = round((100 * $model) / $countDaysAll);
+            $percentage = round((100 * $count_polda_input_daily) / $countDaysAll, 1);
+            $data = [
+                "filled" => $percentage,
+                "nofilled" => 100 - $percentage
+            ];
+        }
+
+        return $data;
+    }
+
+    public function weeklyPoldaById($id)
+    {
+        $project_start = dateOnly(operationPlans()->start_date);
+        $project_end = dateOnly(operationPlans()->end_date);
+        $half_week = dateOnly(incrementDays($project_start, 5));
+        $half_week_plus_one = dateOnly(incrementDays($project_start, 6));
+
+        $full = countDays($project_start, $project_end);
+        $finalHalf = round($full / 2);
+
+        if(datePassed($half_week) == "belum_lewat") {
+            $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$project_start, $half_week])->where("polda_id", $id)->count();
+        } else {
+            $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$half_week_plus_one, $project_end])->where("polda_id", $id)->count();
+        }
+
+        if(empty($count_polda_input_daily) || $count_polda_input_daily <= 0) {
+            $data = [
+                "filled" => 0,
+                "nofilled" => 100
+            ];
+        } else {
+            $percentage = round((100 * $count_polda_input_daily) / $finalHalf, 1);
             $data = [
                 "filled" => $percentage,
                 "nofilled" => 100 - $percentage
@@ -114,17 +126,17 @@ class HomeController extends Controller
         $project_start = dateOnly(operationPlans()->start_date);
         $project_end = dateOnly(operationPlans()->end_date);
 
-        $model = PoldaSubmited::whereBetween('submited_date', [$project_start, $project_end])->where("polda_id", $id)->count();
+        $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$project_start, $project_end])->where("polda_id", $id)->count();
 
         $countDaysAll = countDays($project_start, $project_end);
 
-        if(empty($model)) {
+        if(empty($count_polda_input_daily) || $count_polda_input_daily <= 0) {
             $data = [
                 "filled" => 0,
                 "nofilled" => 100
             ];
         } else {
-            $percentage = round((100 * $model) / $countDaysAll);
+            $percentage = round((100 * $count_polda_input_daily) / $countDaysAll, 1);
             $data = [
                 "filled" => $percentage,
                 "nofilled" => 100 - $percentage
