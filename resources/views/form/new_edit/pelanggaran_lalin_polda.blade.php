@@ -19,7 +19,7 @@
 
     <blockquote class="blockquote">
         <p class="d-inline">LAPORAN HARIAN {{ upperCase(operationPlans()->name) }}</p>
-        <span>TANGGAL : {{ upperCase(indonesianDate(operationPlans()->start_date)) }} S/D {{ upperCase(indonesianDate(operationPlans()->end_date)) }}</span>
+        <span class="sub-inline">TANGGAL : {{ upperCase(indonesianDate(operationPlans()->start_date)) }} S/D {{ upperCase(indonesianDate(operationPlans()->end_date)) }}</span>
         <div class="button-onsite">
             <a href="{{ route('phro_index') }}"><span class="seehow">lihat data</span></a>
         </div>
@@ -94,14 +94,21 @@
                 </blockquote>
             </div>
 
-            <div class="col-md-4 mb-4">
-                <label class="text-popup">Upload Dokomen (pdf, ppt, word, zip)</label>
-                <input type="file" class="form-control popoups mt-1 @error('document_upload') is-invalid @enderror" name="document_upload" id="document_upload">
-                @error('document_upload')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+            <div class="col-md-12 mb-4">
+            <div class="custom-file-container mb-4" data-upload-id="myFirstImage">
+                    <label>Upload Dokomen (pdf, ppt, word, zip) <a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"></a></label>
+                    <label class="custom-file-container__custom-file" >
+                        <input type="file" class="custom-file-container__custom-file__custom-file-input @error('document_upload') is-invalid @enderror" name="document_upload" id="document_upload">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                        @error('document_upload')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                        <span class="custom-file-container__custom-file__custom-file-control"></span>
+                    </label>
+                    <div class="custom-file-container__image-preview" style="display: none;"></div>
+                </div>
             </div>
 
         </div>

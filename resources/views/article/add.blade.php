@@ -42,25 +42,30 @@
                             <textarea id="desc" name="desc" class="editor @error('desc') is-invalid @enderror">{{ old('desc') }}</textarea>
                         </div>
 
-                        <div class="form-group mb-3">
+                        <div class="form-group mb-1">
                             <label>Status</label>
-                            <select name="status" id="status" class="form-control form-custom height-form @error('status') is-invalid @enderror">
+                            <select name="status" id="status" class="form-control form-custom artc-form @error('status') is-invalid @enderror">
                                 <option value="active">AKTIF</option>
                                 <option value="nonactive">TIDAK AKTIF</option>
                             </select>
                         </div>
 
-                        <div class="form-group mb-2">
-                            <label>Thumbnail</label>
-                            <input type="file" class="form-control form-control-file @error('small_img') is-invalid @enderror" id="small_img" name="small_img">
-                            @error('small_img')
+                        <div class="custom-file-container mb-4" data-upload-id="myFirstImage">
+                            <label>Thumbnail <a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"></a></label>
+                            <label class="custom-file-container__custom-file" >
+                                <input type="file" class="custom-file-container__custom-file__custom-file-input @error('small_img') is-invalid @enderror" id="small_img" name="small_img" accept="image/*">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                @error('small_img')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
-                            @enderror
+                                @enderror
+                                <span class="custom-file-container__custom-file__custom-file-control"></span>
+                            </label>
+                            <div class="custom-file-container__image-preview" style="display: none;"></div>
                         </div>
 
-                        <input type="submit" name="submit" id="btn-n-add" class="btn mt-3" value="SUBMIT">
+                        <input type="submit" name="submit" id="btn-n-add" class="btn mt-3 mr-1" value="SUBMIT">
                         <a href="{{ route('article_index') }}" class="btn btn-warning mt-3">KEMBALI</a>
                     </form>
                 </div>
@@ -79,14 +84,17 @@
 @push('library_js')
 {{-- <script src="{{ asset('template/plugins/editors/markdown/simplemde.min.js') }}"></script> --}}
 <script src="{{ asset('template/ckeditor5/build/ckeditor.js') }}"></script>
+<script src="{{ asset('template/plugins/file-upload/file-upload-with-preview.min.js') }}"></script>
 @endpush
 
 @push('page_css')
 <link rel="stylesheet" href="{{ asset('template/custom.css') }}">
+<link rel="stylesheet" href="{{ asset('template/plugins/file-upload/file-upload-with-preview.min.css') }}">
 @endpush
 
 @push('page_js')
 <script>
+var firstUpload = new FileUploadWithPreview('myFirstImage')
 $(document).ready(function() {
     // new SimpleMDE({
     //     element: document.getElementById("desc"),

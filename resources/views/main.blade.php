@@ -21,6 +21,8 @@
             <img src="{{ asset('/img/line-poldaup.png') }}" width="100%">
         </div>
 
+        
+
         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
             <div class="">
                 <div class="widget-heading">

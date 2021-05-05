@@ -356,7 +356,7 @@ blockquote.blockquote p {
     font-size: 14px;
 }
 
-blockquote.blockquote span {
+blockquote.blockquote span.sub-inline {
     display: block;
     color: #79859b;
     font-size: 10px;

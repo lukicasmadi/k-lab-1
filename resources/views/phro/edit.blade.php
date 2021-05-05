@@ -62,11 +62,16 @@
 
 @push('page_css')
 <link rel="stylesheet" href="{{ asset('template/custom.css') }}">
+<link rel="stylesheet" href="{{ asset('template/plugins/file-upload/file-upload-with-preview.min.css') }}">
+@endpush
+
+@push('library_js')
+<script src="{{ asset('template/plugins/file-upload/file-upload-with-preview.min.js') }}"></script>
 @endpush
 
 @push('page_js')
 <script>
-
+var firstUpload = new FileUploadWithPreview('myFirstImage')
 $(document).ready(function () {
     // $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast");
 });

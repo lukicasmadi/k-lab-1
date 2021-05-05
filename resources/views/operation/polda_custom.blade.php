@@ -209,7 +209,7 @@ $(document).ready(function () {
                     return `
                     <div class="icon-container text-center">
                         <a href="#" class="viewData" idval="`+data+`">
-                            <img src="{{ asset('/img/search.png') }}" width="55%">
+                            <img src="{{ asset('/img/search.png') }}" width="22px">
                         </a>
                     </div>
                     `;
