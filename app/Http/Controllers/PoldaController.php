@@ -67,10 +67,10 @@ class PoldaController extends Controller
         $data = [
             'name' => request('name'),
             'short_name' => request('short_name'),
-            'jurisdiction' => request('jurisdiction'),
-            'headquarters' => request('headquarters'),
-            'type' => request('type'),
-            'official_site' => request('official_site'),
+            'jurisdiction' => '',
+            'headquarters' => '',
+            'type' => '',
+            'official_site' => '',
         ];
 
         if(request()->hasFile('logo')) {
