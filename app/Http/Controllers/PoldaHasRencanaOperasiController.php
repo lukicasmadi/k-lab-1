@@ -196,7 +196,7 @@ class PoldaHasRencanaOperasiController extends Controller
         $poldaSubmited = PoldaSubmited::whereUuid($uuid)->firstOrFail();
 
         if(dateOnly($poldaSubmited->submited_date) != nowToday()) {
-            flash('Anda tidak diijinkan mengubah data yang telah lewat')->error();
+            flash('Anda tidak diijinkan mengubah data yang telah lewat hari penginputannya')->error();
             return redirect()->route('phro_index');
         }
 
