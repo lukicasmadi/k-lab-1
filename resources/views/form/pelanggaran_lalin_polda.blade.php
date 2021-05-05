@@ -86,7 +86,7 @@
                     <label>Upload Dokumen (pdf, ppt, word, zip) <a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"></a></label>
                     <label class="custom-file-container__custom-file" >
                         <input type="file" class="custom-file-container__custom-file__custom-file-input @error('document_upload') is-invalid @enderror" name="document_upload" id="document_upload">
-                        <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                        <input type="hidden" name="MAX_FILE_SIZE" value="52428800" />
                         @error('document_upload')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
