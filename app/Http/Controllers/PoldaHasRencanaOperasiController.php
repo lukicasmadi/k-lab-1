@@ -69,7 +69,7 @@ class PoldaHasRencanaOperasiController extends Controller
         $op = operationPlans();
 
         if(empty($op)) {
-            flash('Tidak ada operasi yang sedang berjalan')->error();
+            flash('Tidak ada operasi yang sedang berjalan saat ini')->error();
             return redirect()->route('phro_index');
         }
 
@@ -97,7 +97,7 @@ class PoldaHasRencanaOperasiController extends Controller
         $op = operationPlans();
 
         if(empty($op)) {
-            flash('Tidak ada operasi yang sedang berjalan')->error();
+            flash('Tidak ada operasi yang sedang berjalan saat ini')->error();
             return redirect()->route('phro_index');
         }
 
@@ -170,7 +170,7 @@ class PoldaHasRencanaOperasiController extends Controller
         $op = operationPlans();
 
         if(empty($op)) {
-            flash('Tidak ada operasi yang sedang berjalan')->error();
+            flash('Tidak ada operasi yang sedang berjalan saat ini')->error();
             return redirect()->route('phro_index');
         }
 
@@ -189,14 +189,14 @@ class PoldaHasRencanaOperasiController extends Controller
         $op = operationPlans();
 
         if(empty($op)) {
-            flash('Tidak ada operasi yang sedang berjalan')->error();
+            flash('Tidak ada operasi yang sedang berjalan saat ini')->error();
             return redirect()->route('phro_index');
         }
 
         $poldaSubmited = PoldaSubmited::whereUuid($uuid)->firstOrFail();
 
         if(dateOnly($poldaSubmited->submited_date) != nowToday()) {
-            flash('Anda tidak diijinkan mengubah data yang telah lewat')->error();
+            flash('Anda tidak diijinkan mengubah data yang telah lewat hari penginputannya')->error();
             return redirect()->route('phro_index');
         }
 

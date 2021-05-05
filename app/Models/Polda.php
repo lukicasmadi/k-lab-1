@@ -34,8 +34,13 @@ class Polda extends Model
         return $this->hasOne(PoldaSubmited::class);
     }
 
-    public function poldaInput()
+    public function poldaInputCurrentToday()
     {
-        return $this->hasMany(DailyInput::class, 'polda_id', 'id');
+        return $this->hasOne(DailyInput::class, 'polda_id', 'id')->whereRaw("DATE(created_at) >= ?", [nowToday()]);
+    }
+
+    public function poldaInputPrevToday()
+    {
+        return $this->hasOne(DailyInputPrev::class, 'polda_id', 'id')->whereRaw("DATE(created_at) >= ?", [nowToday()]);
     }
 }

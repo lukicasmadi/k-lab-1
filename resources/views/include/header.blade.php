@@ -36,13 +36,17 @@
                         </li>
 
                         @role('access_pusat|administrator')
-                            <!-- <li class="menu single-menu {{ request()->is('statistics') || request()->is('statistics/*') ? 'active' : '' }}">
-                                <a href="{{ route('statistics_index') }}">
-                                    <div>
-                                        <span>Data Statistik</span>
-                                    </div>
-                                </a>
-                            </li> -->
+                            @if (!empty(operationPlans()))
+                                @if (authUser()->id == 1)
+                                    <li class="menu single-menu {{ request()->is('statistics') || request()->is('statistics/*') ? 'active' : '' }}">
+                                        <a href="{{ route('statistics_index') }}">
+                                            <div>
+                                                <span>Data Statistik</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                @endif
+                            @endif
 
                             <li class="menu single-menu {{
                                 request()->is('operation-plan') ||
@@ -77,6 +81,13 @@
                                     <li class="{{ request()->is('report/anev-date-compare') ? 'active' : '' }}">
                                         <a href="{{ route('report_anev_daily') }}"> Laporan Anev Harian </a>
                                     </li>
+                                    @if (!empty(operationPlans()))
+                                        @if (authUser()->id == 1)
+                                            <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
+                                                <a href="{{ route('report_all_polda_compare') }}"> Laporan Perbandingan Harian </a>
+                                            </li>
+                                        @endif
+                                    @endif
                                 </ul>
                             </li>
                         @endrole
