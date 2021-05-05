@@ -69,7 +69,7 @@ class PoldaHasRencanaOperasiController extends Controller
         $op = operationPlans();
 
         if(empty($op)) {
-            flash('Tidak ada operasi yang sedang berjalan')->error();
+            flash('Tidak ada operasi yang sedang berjalan saat ini')->error();
             return redirect()->route('phro_index');
         }
 
@@ -97,7 +97,7 @@ class PoldaHasRencanaOperasiController extends Controller
         $op = operationPlans();
 
         if(empty($op)) {
-            flash('Tidak ada operasi yang sedang berjalan')->error();
+            flash('Tidak ada operasi yang sedang berjalan saat ini')->error();
             return redirect()->route('phro_index');
         }
 
@@ -170,7 +170,7 @@ class PoldaHasRencanaOperasiController extends Controller
         $op = operationPlans();
 
         if(empty($op)) {
-            flash('Tidak ada operasi yang sedang berjalan')->error();
+            flash('Tidak ada operasi yang sedang berjalan saat ini')->error();
             return redirect()->route('phro_index');
         }
 
@@ -189,7 +189,7 @@ class PoldaHasRencanaOperasiController extends Controller
         $op = operationPlans();
 
         if(empty($op)) {
-            flash('Tidak ada operasi yang sedang berjalan')->error();
+            flash('Tidak ada operasi yang sedang berjalan saat ini')->error();
             return redirect()->route('phro_index');
         }
 
