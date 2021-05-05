@@ -28,10 +28,10 @@ class PoldaRequest extends FormRequest
             'name' => 'required',
             'short_name' => 'required',
             'logo' => $logo,
-            // 'jurisdiction' => 'nullable',
-            // 'headquarters' => 'nullable',
-            // 'type' => 'nullable',
-            // 'official_site' => 'nullable',
+            'jurisdiction' => 'nullable',
+            'headquarters' => 'nullable',
+            'type' => 'nullable',
+            'official_site' => 'nullable',
         ];
     }
 }
