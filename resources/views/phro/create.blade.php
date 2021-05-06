@@ -77,7 +77,7 @@
 <script>
 var firstUpload = new FileUploadWithPreview('myFirstImage')
 $(document).ready(function () {
-    // $("input[type=number]").val('0')
+    $("input[type=number]").val('0')
     // if(location.hostname == "korlantas.test") {
     //     let randomNum = Math.floor((Math.random() * 10) + 1)
     //     $("input[type=number]").val(randomNum)
