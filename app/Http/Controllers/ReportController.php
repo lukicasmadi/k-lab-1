@@ -163,14 +163,24 @@ class ReportController extends Controller
             return "Tidak ada operasi yang sedang berlangsung";
         }
 
-        $fileName = 'report_all_polda_'.indonesianStandart(date('Y-m-d')).'.xlsx';
+        $tanggal_mulai = nowToday();
+        $tanggal_selesai = nowToday();
 
-        return Excel::download(new FilterComparison(
-            'polda_all',
-            date('Y'),
-            operationPlans()->id,
-            date('Y-m-d'),
-        ), $fileName);
+        $prev = allPoldaPrevByDate($tanggal_mulai, $tanggal_selesai);
+        $current = allPoldaCurrentByDate($tanggal_mulai, $tanggal_selesai);
+
+        excelTemplate(
+            'per_polda',
+            $prev,
+            $current,
+            'KESATUAN : ',
+            "SEMUA POLDA, ".indonesianFullDayAndDate(date('Y-m-d')),
+            'NAMA : ',
+            '',
+            '',
+            '',
+            'REPORT ALL POLDA'
+        );
     }
 
     public function downloadExcel($uuid)
