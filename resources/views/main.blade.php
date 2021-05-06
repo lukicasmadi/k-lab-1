@@ -15,13 +15,35 @@
 <div class="layout-px-spacing">
     <div class="row layout-top-spacing">
 
-        <div class="poldaLogo"></div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            @foreach ($poldaAtas as $key => $val)
+                <a href="{{ route('korlantas_open_polda', $val->short_name) }}">
+                    <div class="cols-sm-1">
+                        <div id="{{ $val->short_name }}" class="grid-polda line glowred">
+                            <p>{{ $val->short_name }}</p>
+                            <img src="{{ asset('/img/polda/'.$val->logo) }}">
+                        </div>
+                    </div>
+                </a>
+            @endforeach
+        </div>
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-1 mb-n2">
+            @foreach ($poldaBawah as $key => $val)
+                <a href="{{ route('korlantas_open_polda', $val->short_name) }}">
+                    <div class="cols-sm-1">
+                        <div id="{{ $val->short_name }}" class="grid-polda line glowred">
+                            <p>{{ $val->short_name }}</p>
+                            <img src="{{ asset('/img/polda/'.$val->logo) }}">
+                        </div>
+                    </div>
+                </a>
+            @endforeach
+        </div>
 
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mb-n22">
             <img src="{{ asset('/img/line-poldaup.png') }}" width="100%">
         </div>
-
-
 
         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
             <div class="">
@@ -239,10 +261,10 @@ $(document).ready(function () {
         }
     })
 
+    changePoldaClass()
     notificationLoad()
     projectDaily()
     donutData()
-    loadPoldaImage()
 
     $("#filterOperasi").click(function (e) {
         e.preventDefault();
@@ -264,12 +286,24 @@ $(document).ready(function () {
     })
 
     setInterval(function() {
-        loadPoldaImage()
+        changePoldaClass()
     }, 10000)
 })
 
-function loadPoldaImage() {
-    $(".poldaLogo").empty().load(route('polda_image_list'));
+function changePoldaClass() {
+    axios.get(route('today_check'))
+    .then(response => {
+        $.each(response.data, function(key, value) {
+            if(_.isEmpty(value.daily_input)) {
+                $('#' + value.short_name).removeClass("glowblue").addClass("glowred")
+            } else {
+                $('#' + value.short_name).removeClass("glowred").addClass("glowblue")
+            }
+        })
+    })
+    .catch(err => {
+        console.error(err);
+    })
 }
 
 function notificationLoad() {

@@ -19,7 +19,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/forgot-password/request', 'UserController@forgot_password_request')->name('forgot_password_request');
     Route::get('/dashboard/{uuid}/preview', 'PoldaHasRencanaOperasiController@previewPhroDashboard')->name('previewPhroDashboard');
     Route::get('/dashboard/polda/{uuid}/preview', 'PoldaHasRencanaOperasiController@previewPhroDashboardPolda')->name('previewPhroDashboardPolda');
-    Route::get('/polda/image-list', 'HomeController@polda_image_list')->name('polda_image_list');
+    Route::get('/polda/today-check', 'HomeController@todayCheck')->name('today_check');
 
     Route::get('/operation-onsite/{uuid}/download', 'PoldaHasRencanaOperasiController@download')->name('downloadPrho');
     Route::get('/operation-onsite/{uuid}/preview', 'PoldaHasRencanaOperasiController@preview')->name('previewPhro');

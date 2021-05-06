@@ -173,25 +173,16 @@ class HomeController extends Controller
         return view('not_assign');
     }
 
-    public function polda_image_list()
+    public function todayCheck()
     {
-        $poldaAtas = Polda::select("id", "uuid", "name", "short_name", "logo")
+        $polda = Polda::select("id", "uuid", "name", "short_name", "logo")
             ->with(['dailyInput' => function($query) {
-                $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
+                $query->where(DB::raw('DATE(created_at)'), nowToday());
             }])
             ->orderBy("name", "asc")
-            ->skip(0)->take(17)
             ->get();
 
-        $poldaBawah = Polda::select("id", "uuid", "name", "short_name", "logo")
-            ->with(['dailyInput' => function($query) {
-                $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
-            }])
-            ->orderBy("name", "asc")
-            ->skip(17)->take(17)
-            ->get();
-
-        return view('include.polda_logo', compact('poldaAtas', 'poldaBawah'));
+        return $polda;
     }
 
     public function dashboard()
@@ -209,18 +200,21 @@ class HomeController extends Controller
         if(isPolda()) {
             return view('polda');
         } else {
-            $polda = Polda::select("id", "uuid", "name", "short_name", "logo")
-                ->with(['dailyInput' => function($query) {
-                    $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
-                }])
+            $poldaAtas = Polda::select("id", "uuid", "name", "short_name", "logo")
                 ->orderBy("name", "asc")
+                ->skip(0)->take(17)
+                ->get();
+
+            $poldaBawah = Polda::select("id", "uuid", "name", "short_name", "logo")
+                ->orderBy("name", "asc")
+                ->skip(17)->take(17)
                 ->get();
 
             $dailyInput = Polda::with(['dailyInput' => function($query) {
-                $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
+                $query->where(DB::raw('DATE(created_at)'), nowToday());
             }])->orderBy("name", "asc")->get();
 
-            return view('main', compact('polda', 'dailyInput'));
+            return view('main', compact('poldaAtas', 'poldaBawah', 'dailyInput'));
         }
     }
 
