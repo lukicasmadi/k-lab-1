@@ -51,6 +51,7 @@
             @include('form.data_terkait_giat_kepolisian_polda')
             @include('form.data_terkait_arus_pemudik')
             @include('form.data_terkait_arus_prokes_covid')
+            @include('form.peyekatan')
 
             @include('form.button')
 
@@ -76,7 +77,7 @@
 <script>
 var firstUpload = new FileUploadWithPreview('myFirstImage')
 $(document).ready(function () {
-    $("input[type=number]").val('0')
+    // $("input[type=number]").val('0')
     // if(location.hostname == "korlantas.test") {
     //     let randomNum = Math.floor((Math.random() * 10) + 1)
     //     $("input[type=number]").val(randomNum)

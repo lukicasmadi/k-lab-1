@@ -522,6 +522,11 @@ class PoldaHasRencanaOperasiController extends Controller
                 'prokes_covid_pembagian_masker_p',
                 'prokes_covid_sosialisasi_tentang_prokes_p',
                 'prokes_covid_giat_baksos_p',
+                'penyekatan_motor_p',
+                'penyekatan_mobil_penumpang_p',
+                'penyekatan_mobil_bus_p',
+                'penyekatan_mobil_barang_p',
+                'penyekatan_kendaraan_khusus_p',
             ]);
 
             $payload = $request->only([
@@ -838,6 +843,11 @@ class PoldaHasRencanaOperasiController extends Controller
                 'prokes_covid_pembagian_masker',
                 'prokes_covid_sosialisasi_tentang_prokes',
                 'prokes_covid_giat_baksos',
+                'penyekatan_motor',
+                'penyekatan_mobil_penumpang',
+                'penyekatan_mobil_bus',
+                'penyekatan_mobil_barang',
+                'penyekatan_kendaraan_khusus',
             ]);
 
             DailyInput::where("polda_submited_id", $poldaSubmited->id)
