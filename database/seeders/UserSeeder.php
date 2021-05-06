@@ -46,7 +46,7 @@ class UserSeeder extends Seeder
             'name' => 'korlantas',
             'email' => 'free@korlantas.com',
             'email_verified_at' => now(),
-            'password' => bcrypt('korlantas2012'),
+            'password' => bcrypt('crt2021'),
             'remember_token' => Str::random(10),
         ]);
 
