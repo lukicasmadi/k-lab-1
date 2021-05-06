@@ -277,32 +277,34 @@ class HomeController extends Controller
     {
         $projectRunning = operationPlans();
 
-        $dateCountDown = CountDown::where('rencana_operasi_id', $projectRunning->id)->where('tanggal', nowToday())->first();
+        if(!empty($projectRunning)) {
+            $dateCountDown = CountDown::where('rencana_operasi_id', $projectRunning->id)->where('tanggal', nowToday())->first();
 
-        $period = CarbonPeriod::create($projectRunning->start_date, $projectRunning->end_date);
+            $period = CarbonPeriod::create($projectRunning->start_date, $projectRunning->end_date);
 
-        $rangeDate = [];
-        $totalPerDate = [];
+            $rangeDate = [];
+            $totalPerDate = [];
 
-        foreach ($period as $date) {
-            array_push($rangeDate, $date->format('Y-m-d'));
-        }
-
-        foreach($rangeDate as $d) {
-            $total =  DB::table('polda_submiteds')->where('submited_date', $d)->count();
-
-            if($total == 0) {
-                array_push($totalPerDate, 0);
-            } else {
-                array_push($totalPerDate, $total);
+            foreach ($period as $date) {
+                array_push($rangeDate, $date->format('Y-m-d'));
             }
-        }
 
-        return response()->json([
-            'rangeDate' => $rangeDate,
-            'totalPerDate' => $totalPerDate,
-            'projectName' => $dateCountDown->deskripsi
-        ], 200);
+            foreach($rangeDate as $d) {
+                $total =  DB::table('polda_submiteds')->where('submited_date', $d)->count();
+
+                if($total == 0) {
+                    array_push($totalPerDate, 0);
+                } else {
+                    array_push($totalPerDate, $total);
+                }
+            }
+
+            return response()->json([
+                'rangeDate' => $rangeDate,
+                'totalPerDate' => $totalPerDate,
+                'projectName' => $dateCountDown->deskripsi
+            ], 200);
+        }
     }
 
     public function openPoldaData($short_name)
