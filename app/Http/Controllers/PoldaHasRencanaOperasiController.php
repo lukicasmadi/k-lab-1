@@ -924,6 +924,24 @@ class PoldaHasRencanaOperasiController extends Controller
         );
     }
 
+    public function downloadAttachment($uuid)
+    {
+        $polda = Polda::whereUuid($uuid)->first();
+
+        if(empty($polda)) {
+            flash('Data Polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
+            return redirect()->back();
+        }
+
+        $poldaSubmited = PoldaSubmited::where('polda_id', $polda->id)->where('submited_date', nowToday())->first();
+
+        if(empty($poldaSubmited)) {
+            flash('Data inputan polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
+            return redirect()->back();
+        }
+        return response()->download(public_path('document-upload/polda/'.$poldaSubmited->document_upload));
+    }
+
     public function download($uuid)
     {
         $polda = Polda::whereUuid($uuid)->first();

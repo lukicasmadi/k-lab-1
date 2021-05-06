@@ -22,6 +22,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/polda/today-check', 'HomeController@todayCheck')->name('today_check');
 
     Route::get('/operation-onsite/{uuid}/download', 'PoldaHasRencanaOperasiController@download')->name('downloadPrho');
+    Route::get('/operation-onsite/{uuid}/attachment', 'PoldaHasRencanaOperasiController@downloadAttachment')->name('downloadAttachment');
     Route::get('/operation-onsite/{uuid}/preview', 'PoldaHasRencanaOperasiController@preview')->name('previewPhro');
     Route::get('/report/polda/all/daily-compare', 'ReportController@reportAllPoldaDetail')->name('report_all_polda_compare');
 

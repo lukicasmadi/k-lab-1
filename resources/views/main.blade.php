@@ -138,7 +138,8 @@
                                 <th><span>Nama Kesatuan</span></th>
                                 <th><span>Status Laporan</span></th>
                                 <th class="text-center" width="6%"><span>Lihat</span></th>
-                                <th class="text-center"><span>Pilihan</span></th>
+                                <th class="text-center" width="6%"><span>Pilihan</span></th>
+                                <th class="text-center" width="6%"><span>Lampiran</span></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -157,20 +158,29 @@
                                     </td>
                                     <td>
                                         @if (!empty($daily->dailyInput))
-                                            <div class="icon-container">
+                                            <div class="text-center icon-container">
                                                 <a href="{{ route('previewPhroDashboard', $daily->uuid) }}" class="previewPhro" data-id="{{ $daily->uuid }}"><i class="far fa-eye"></i></a>
                                             </div>
                                         @else
-                                            -
+                                        <div class="text-center">-</div>
                                         @endif
                                     </td>
                                     <td>
                                         @if (!empty($daily->dailyInput))
-                                            <div class="icon-container">
+                                            <div class="text-center icon-container">
                                                 <a href="{{ route('downloadPrho', $daily->uuid) }}"><i class="far fa-download"></i></a>
                                             </div>
                                         @else
-                                            -
+                                            <div class="text-center">-</div>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if (empty($daily->dailyInput))
+                                            <div class="text-center icon-container">-</div>
+                                        @else
+                                            <div class="text-center icon-container">
+                                                <a href="{{ route('downloadAttachment', $daily->uuid) }}"><i class="far fa-paperclip"></i></a>
+                                            </div>
                                         @endif
                                     </td>
                                 </tr>
