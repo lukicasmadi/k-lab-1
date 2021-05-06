@@ -139,7 +139,7 @@
                                 <th><span>Status Laporan</span></th>
                                 <th class="text-center" width="6%"><span>Lihat</span></th>
                                 <th class="text-center" width="6%"><span>Pilihan</span></th>
-                                <th class="text-center" width="6%"><span>Lampiran</span></th>
+                                {{-- <th class="text-center" width="6%"><span>Lampiran</span></th> --}}
                             </tr>
                         </thead>
                         <tbody>
@@ -174,7 +174,7 @@
                                             <div class="text-center">-</div>
                                         @endif
                                     </td>
-                                    <td>
+                                    {{-- <td>
                                         @if (empty($daily->dailyInput))
                                             <div class="text-center icon-container">-</div>
                                         @else
@@ -182,7 +182,7 @@
                                                 <a href="{{ route('downloadAttachment', $daily->uuid) }}"><i class="far fa-paperclip"></i></a>
                                             </div>
                                         @endif
-                                    </td>
+                                    </td> --}}
                                 </tr>
                             @endforeach
                         </tbody>
