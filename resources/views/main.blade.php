@@ -296,6 +296,7 @@ $(document).ready(function () {
     })
 
     setInterval(function() {
+        notificationLoad()
         changePoldaClass()
     }, 10000)
 })
@@ -318,6 +319,7 @@ function changePoldaClass() {
 
 function notificationLoad() {
     var DateTime = luxon.DateTime
+    $(".timeline-line").empty()
 
     axios.get(route('notifikasi'))
     .then(res => {
