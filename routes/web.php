@@ -203,5 +203,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/display/excel', 'ReportController@showExcelToView')->name('show_excel_to_view');
         Route::get('/display/excel/anev-date-compare', 'ReportController@showExcelToViewAnevDateCompare')->name('show_excel_to_view_anev');
         Route::get('/rencana-operasi/date-range/{id}', 'ReportController@getDateRangeRencanaOperasi')->name('get_rencana_operasi_date_range');
+        Route::get('/totalinputan/bychart/{indexData}', 'HomeController@viewInputFromChart')->name('viewInputFromChart');
     });
 });

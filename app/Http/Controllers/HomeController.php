@@ -267,6 +267,31 @@ class HomeController extends Controller
         })->toJson();
     }
 
+    public function viewInputFromChart($indexData)
+    {
+        $projectRunning = operationPlans();
+
+        if(empty($projectRunning)) {
+            return [];
+        }
+
+        $period = CarbonPeriod::create($projectRunning->start_date, $projectRunning->end_date);
+
+        $rangeDate = [];
+
+        foreach ($period as $date) {
+            array_push($rangeDate, $date->format('Y-m-d'));
+        }
+
+        $whereDate = $rangeDate[$indexData];
+
+        $polda = Polda::with(['dailyInput' => function($q) use($whereDate) {
+            $q->select('id', 'polda_id', 'status', 'submited_date', 'rencana_operasi_id')->where('submited_date', '=', $whereDate);
+        }])->select('id', 'name')->get();
+
+        excelViewAbsensi($polda, indonesianFullDayAndDate($whereDate));
+    }
+
     public function dashboardChart()
     {
         $projectRunning = operationPlans();
@@ -277,6 +302,7 @@ class HomeController extends Controller
             $period = CarbonPeriod::create($projectRunning->start_date, $projectRunning->end_date);
 
             $rangeDate = [];
+            $rangeDateReformat = [];
             $totalPerDate = [];
 
             foreach ($period as $date) {
@@ -293,8 +319,12 @@ class HomeController extends Controller
                 }
             }
 
+            foreach($rangeDate as $rd) {
+                array_push($rangeDateReformat, indonesianStandart($rd));
+            }
+
             return response()->json([
-                'rangeDate' => $rangeDate,
+                'rangeDate' => $rangeDateReformat,
                 'totalPerDate' => $totalPerDate,
                 'projectName' => $dateCountDown->deskripsi
             ], 200);

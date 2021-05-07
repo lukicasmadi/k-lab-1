@@ -8592,6 +8592,62 @@ if (! function_exists('excelTemplateDisplayDateCompare')) {
     }
 }
 
+if (! function_exists('excelViewAbsensi')) {
+    function excelViewAbsensi($data, $tanggal)
+    {
+        $excelPath = public_path('template/excel');
+
+        $excelTemplate = $excelPath."/absensi.xlsx";
+
+        $reader = IOFactory::createReader('Xlsx');
+        $spreadsheet = $reader->load($excelTemplate);
+
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $sheet->setCellValue('A1', $tanggal);
+
+        $sheet->setCellValue('B3', (is_null($data[0]->dailyInput)) ? 'BELUM' : upperCase($data[0]->dailyInput->status));
+        $sheet->setCellValue('B4', (is_null($data[1]->dailyInput)) ? 'BELUM' : upperCase($data[1]->dailyInput->status));
+        $sheet->setCellValue('B5', (is_null($data[2]->dailyInput)) ? 'BELUM' : upperCase($data[2]->dailyInput->status));
+        $sheet->setCellValue('B6', (is_null($data[3]->dailyInput)) ? 'BELUM' : upperCase($data[3]->dailyInput->status));
+        $sheet->setCellValue('B7', (is_null($data[4]->dailyInput)) ? 'BELUM' : upperCase($data[4]->dailyInput->status));
+        $sheet->setCellValue('B8', (is_null($data[5]->dailyInput)) ? 'BELUM' : upperCase($data[5]->dailyInput->status));
+        $sheet->setCellValue('B9', (is_null($data[6]->dailyInput)) ? 'BELUM' : upperCase($data[6]->dailyInput->status));
+        $sheet->setCellValue('B10', (is_null($data[7]->dailyInput)) ? 'BELUM' : upperCase($data[7]->dailyInput->status));
+        $sheet->setCellValue('B11', (is_null($data[8]->dailyInput)) ? 'BELUM' : upperCase($data[8]->dailyInput->status));
+        $sheet->setCellValue('B12', (is_null($data[9]->dailyInput)) ? 'BELUM' : upperCase($data[9]->dailyInput->status));
+        $sheet->setCellValue('B13', (is_null($data[10]->dailyInput)) ? 'BELUM' : upperCase($data[10]->dailyInput->status));
+        $sheet->setCellValue('B14', (is_null($data[11]->dailyInput)) ? 'BELUM' : upperCase($data[11]->dailyInput->status));
+        $sheet->setCellValue('B15', (is_null($data[12]->dailyInput)) ? 'BELUM' : upperCase($data[12]->dailyInput->status));
+        $sheet->setCellValue('B16', (is_null($data[13]->dailyInput)) ? 'BELUM' : upperCase($data[13]->dailyInput->status));
+        $sheet->setCellValue('B17', (is_null($data[14]->dailyInput)) ? 'BELUM' : upperCase($data[14]->dailyInput->status));
+        $sheet->setCellValue('B18', (is_null($data[15]->dailyInput)) ? 'BELUM' : upperCase($data[15]->dailyInput->status));
+        $sheet->setCellValue('B19', (is_null($data[16]->dailyInput)) ? 'BELUM' : upperCase($data[16]->dailyInput->status));
+        $sheet->setCellValue('B20', (is_null($data[17]->dailyInput)) ? 'BELUM' : upperCase($data[17]->dailyInput->status));
+        $sheet->setCellValue('B21', (is_null($data[18]->dailyInput)) ? 'BELUM' : upperCase($data[18]->dailyInput->status));
+        $sheet->setCellValue('B22', (is_null($data[19]->dailyInput)) ? 'BELUM' : upperCase($data[19]->dailyInput->status));
+        $sheet->setCellValue('B23', (is_null($data[20]->dailyInput)) ? 'BELUM' : upperCase($data[20]->dailyInput->status));
+        $sheet->setCellValue('B24', (is_null($data[21]->dailyInput)) ? 'BELUM' : upperCase($data[21]->dailyInput->status));
+        $sheet->setCellValue('B25', (is_null($data[22]->dailyInput)) ? 'BELUM' : upperCase($data[22]->dailyInput->status));
+        $sheet->setCellValue('B26', (is_null($data[23]->dailyInput)) ? 'BELUM' : upperCase($data[23]->dailyInput->status));
+        $sheet->setCellValue('B27', (is_null($data[24]->dailyInput)) ? 'BELUM' : upperCase($data[24]->dailyInput->status));
+        $sheet->setCellValue('B28', (is_null($data[25]->dailyInput)) ? 'BELUM' : upperCase($data[25]->dailyInput->status));
+        $sheet->setCellValue('B29', (is_null($data[26]->dailyInput)) ? 'BELUM' : upperCase($data[26]->dailyInput->status));
+        $sheet->setCellValue('B30', (is_null($data[27]->dailyInput)) ? 'BELUM' : upperCase($data[27]->dailyInput->status));
+        $sheet->setCellValue('B31', (is_null($data[28]->dailyInput)) ? 'BELUM' : upperCase($data[28]->dailyInput->status));
+        $sheet->setCellValue('B32', (is_null($data[29]->dailyInput)) ? 'BELUM' : upperCase($data[29]->dailyInput->status));
+        $sheet->setCellValue('B33', (is_null($data[30]->dailyInput)) ? 'BELUM' : upperCase($data[30]->dailyInput->status));
+        $sheet->setCellValue('B34', (is_null($data[31]->dailyInput)) ? 'BELUM' : upperCase($data[31]->dailyInput->status));
+        $sheet->setCellValue('B35', (is_null($data[32]->dailyInput)) ? 'BELUM' : upperCase($data[32]->dailyInput->status));
+        $sheet->setCellValue('B36', (is_null($data[33]->dailyInput)) ? 'BELUM' : upperCase($data[33]->dailyInput->status));
+
+        $writer = IOFactory::createWriter($spreadsheet, 'Html');
+        $message = $writer->save('php://output');
+
+        return $message;
+    }
+}
+
 //==============================================================================================================================================
 
 if (! function_exists('laporanPrev')) {

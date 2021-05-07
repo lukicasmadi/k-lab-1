@@ -199,7 +199,7 @@
 
 @push('library_js')
 <script src="{{ asset('template/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-<script src="{{ asset('template/plugins/apex/apexcharts.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="{{ asset('template/plugins/table/datatable/datatables.js') }}"></script>
 <script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
 <script src="{{ asset('js/popup.js') }}"></script>
@@ -273,7 +273,7 @@ $(document).ready(function () {
 
     changePoldaClass()
     notificationLoad()
-    projectDaily()
+    absensiPolda()
     donutData()
 
     $("#filterOperasi").click(function (e) {
@@ -581,7 +581,17 @@ function loadDataTable() {
     })
 }
 
-function projectDaily() {
+function checkInputByChart(id) {
+    popupCenter({
+        url: route('viewInputFromChart', {
+            indexData: id,
+        }),
+        title: 'Detail',
+        w: 700, h: 700
+    })
+}
+
+function absensiPolda() {
     var options = {
         chart: {
             fontFamily: 'Quicksand, sans-serif',
@@ -600,6 +610,11 @@ function projectDaily() {
             toolbar: {
                 show: false
             },
+            events: {
+                click: function(event, chartContext, config) {
+                    checkInputByChart(config.dataPointIndex)
+                }
+            }
         },
         colors: ['#1490cb'],
         dataLabels: {
@@ -623,7 +638,10 @@ function projectDaily() {
             width: 2,
             lineCap: 'square'
         },
-        series: [],
+        series: [{
+            name: "Total",
+            data: []
+        }],
         xaxis: {
             axisBorder: {
                 show: false
@@ -747,22 +765,8 @@ function projectDaily() {
 
             $("#projectName").html(""+projectName+"")
 
-            chartRequest.updateSeries([{
-                name: 'Total',
-                data: totalPerDate
-            }])
-
             chartRequest.updateOptions({
                 xaxis: {
-                    axisBorder: {
-                        show: false
-                    },
-                    axisTicks: {
-                        show: false
-                    },
-                    crosshairs: {
-                        show: true
-                    },
                     labels: {
                         offsetX: 0,
                         offsetY: 5,
@@ -775,6 +779,12 @@ function projectDaily() {
                     categories: rangeDate
                 },
             })
+
+            chartRequest.updateSeries([{
+                name: 'Total',
+                data: totalPerDate
+            }])
+
         }).catch(function(error) {
             if (error.response) {
                 console.log(error.response.data)
