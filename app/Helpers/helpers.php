@@ -98,7 +98,7 @@ if (! function_exists('indonesianDate')) {
 
 if (! function_exists('indonesianFullDayAndDate')) {
     function indonesianFullDayAndDate($timestamp) {
-        return Carbon::parse($timestamp)->isoFormat('dddd').", ".Carbon::parse($timestamp)->format('d M Y');
+        return Carbon::parse($timestamp)->isoFormat('dddd, D MMMM Y')." ".Carbon::parse($timestamp)->format('H:i:s');
     }
 }
 

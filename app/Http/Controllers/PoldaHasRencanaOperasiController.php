@@ -131,7 +131,7 @@ class PoldaHasRencanaOperasiController extends Controller
                 'uuid' => genUuid(),
                 'polda_id' => poldaId(),
                 'rencana_operasi_id' => operationPlans()->id,
-                'status' => "SUDAH MENGIRIMKAN LAPORAN PADA ".indonesianDateTime(date('Y-m-d H:i:s')),
+                'status' => "Sudah mengirimkan laporan pada ".indonesianFullDayAndDate(date('Y-m-d H:i:s')),
                 'nama_kesatuan' => upperCase($request->nama_kesatuan),
                 'nama_atasan' => upperCase($request->nama_atasan),
                 'pangkat_dan_nrp' => upperCase($request->pangkat_dan_nrp),

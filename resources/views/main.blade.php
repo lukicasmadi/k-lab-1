@@ -587,7 +587,7 @@ function checkInputByChart(id) {
             indexData: id,
         }),
         title: 'Detail',
-        w: 700, h: 700
+        w: 750, h: 700
     })
 }
 

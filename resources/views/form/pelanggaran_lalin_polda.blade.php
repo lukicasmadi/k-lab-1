@@ -83,7 +83,7 @@
             </div>
             <div class="col-md-12 mb-4">
                 <div class="custom-file-container mb-4" data-upload-id="myFirstImage">
-                    <label>Upload Dokumen (pdf, ppt, word, zip) <a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"></a></label>
+                    <label>Unggah Berkas (pdf, ppt, word, zip) <a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"></a></label>
                     <label class="custom-file-container__custom-file" >
                         <input type="file" class="custom-file-container__custom-file__custom-file-input @error('document_upload') is-invalid @enderror" name="document_upload" id="document_upload">
                         <input type="hidden" name="MAX_FILE_SIZE" value="52428800" />
