@@ -269,6 +269,10 @@ class HomeController extends Controller
 
     public function viewInputFromChart($indexData)
     {
+        if (str_contains($indexData, '-')) {
+            abort(404);
+        }
+
         $projectRunning = operationPlans();
 
         if(empty($projectRunning)) {
@@ -283,13 +287,19 @@ class HomeController extends Controller
             array_push($rangeDate, $date->format('Y-m-d'));
         }
 
+        $countData = count($rangeDate) - 1;
+
+        if($indexData > $countData) {
+            abort(404);
+        }
+
         $whereDate = $rangeDate[$indexData];
 
         $polda = Polda::with(['dailyInput' => function($q) use($whereDate) {
             $q->select('id', 'polda_id', 'status', 'submited_date', 'rencana_operasi_id')->where('submited_date', '=', $whereDate);
         }])->select('id', 'name')->get();
 
-        excelViewAbsensi($polda, indonesianFullDayAndDate($whereDate));
+        excelViewAbsensi($polda, IdFullDateOnly($whereDate));
     }
 
     public function dashboardChart()

@@ -345,7 +345,7 @@ function notificationLoad() {
                             <h5>`+polda_name+`</h5>
                             <span class="">` + DateTime.fromISO(created_at, { locale: "id" }).toRelative() + `</span>
                         </div>
-                        <p>STATUS : `+status+`</p>
+                        <p>STATUS : `+status.toUpperCase()+`</p>
                     </div>
                 </div>
                 `;
