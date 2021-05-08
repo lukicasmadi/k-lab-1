@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="row">
-                                <div class="widget-heading">
+                                <div class="widget-heading col-md-12">
                                     <h5 class="mar20">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20">
                                     <path id="pie_chart_outline" d="M12,22A10,10,0,1,1,22,12,10,10,0,0,1,12,22ZM11,4.062A8,8,0,1,0,16.419,18.67l-.1.071.094-.065.059-.041.064-.045.016-.011.009-.007-5.128-5.13A1.51,1.51,0,0,1,11,12.379ZM13.829,13l4.227,4.227.007-.008.005-.006-.01.011A7.944,7.944,0,0,0,19.938,13ZM13,4.062V11h6.938A8,8,0,0,0,13,4.062Z" transform="translate(-2 -2)" fill="#00adef"/>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="row">
-                                <div class="widget-heading">
+                                <div class="widget-heading col-md-12">
                                     <h5 class="mar20">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20">
                                     <path id="pie_chart_outline" d="M12,22A10,10,0,1,1,22,12,10,10,0,0,1,12,22ZM11,4.062A8,8,0,1,0,16.419,18.67l-.1.071.094-.065.059-.041.064-.045.016-.011.009-.007-5.128-5.13A1.51,1.51,0,0,1,11,12.379ZM13.829,13l4.227,4.227.007-.008.005-.006-.01.011A7.944,7.944,0,0,0,19.938,13ZM13,4.062V11h6.938A8,8,0,0,0,13,4.062Z" transform="translate(-2 -2)" fill="#00adef"/>
@@ -323,7 +323,7 @@ function donutDataWeekly()
             height: undefined,
             tooltipHoverFormatter: undefined,
             offsetX: 0,
-            offsetY: 40,
+            offsetY: 15,
             labels: {
                 colors: undefined,
                 useSeriesColors: false
@@ -409,7 +409,7 @@ function donutDataWeekly()
             dashArray: 0,
         },
         series: [filled, nofilled],
-        labels: ['&nbsp;[ MASUK ]', '&nbsp;[ BELUM MASUK ]'],
+        labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
         responsive: [{
             breakpoint: 500,
             options: {
@@ -466,7 +466,7 @@ function donutDataFull()
             height: undefined,
             tooltipHoverFormatter: undefined,
             offsetX: 0,
-            offsetY: 40,
+            offsetY: 15,
             labels: {
                 colors: undefined,
                 useSeriesColors: false
@@ -552,7 +552,7 @@ function donutDataFull()
             dashArray: 0,
         },
         series: [filled, nofilled],
-        labels: ['&nbsp;[ MASUK ]', '&nbsp;[ BELUM MASUK ]'],
+        labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
         responsive: [{
             breakpoint: 500,
             options: {

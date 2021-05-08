@@ -153,7 +153,7 @@ class PoldaSeeder extends Seeder
             Polda::create([
                 'uuid' => genUuid(),
                 'name' => 'Metropolitan Jakarta Raya',
-                'short_name' => 'metro jaya',
+                'short_name' => 'metro-jaya',
                 'logo' => 'metro_jaya.png',
                 'polda_assign' => 'poldametrojaya',
                 'jurisdiction' => null,

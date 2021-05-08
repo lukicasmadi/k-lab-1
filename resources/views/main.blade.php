@@ -15,7 +15,31 @@
 <div class="layout-px-spacing">
     <div class="row layout-top-spacing">
 
-        <div class="poldaLogo"></div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            @foreach ($poldaAtas as $key => $val)
+                <a href="{{ route('korlantas_open_polda', $val->short_name) }}">
+                    <div class="cols-sm-1">
+                        <div id="{{ $val->short_name }}" class="grid-polda line glowred">
+                            <p>{{ $val->short_name }}</p>
+                            <img src="{{ asset('/img/polda/'.$val->logo) }}">
+                        </div>
+                    </div>
+                </a>
+            @endforeach
+        </div>
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-1 mb-n2">
+            @foreach ($poldaBawah as $key => $val)
+                <a href="{{ route('korlantas_open_polda', $val->short_name) }}">
+                    <div class="cols-sm-1">
+                        <div id="{{ $val->short_name }}" class="grid-polda line glowred">
+                            <p>{{ $val->short_name }}</p>
+                            <img src="{{ asset('/img/polda/'.$val->logo) }}">
+                        </div>
+                    </div>
+                </a>
+            @endforeach
+        </div>
 
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mb-n22">
             <img src="{{ asset('/img/line-poldaup.png') }}" width="100%">
@@ -114,7 +138,8 @@
                                 <th><span>Nama Kesatuan</span></th>
                                 <th><span>Status Laporan</span></th>
                                 <th class="text-center" width="6%"><span>Lihat</span></th>
-                                <th class="text-center"><span>Pilihan</span></th>
+                                <th class="text-center" width="6%"><span>Pilihan</span></th>
+                                <th class="text-center" width="6%"><span>Lampiran</span></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -133,20 +158,29 @@
                                     </td>
                                     <td>
                                         @if (!empty($daily->dailyInput))
-                                            <div class="icon-container">
+                                            <div class="text-center icon-container">
                                                 <a href="{{ route('previewPhroDashboard', $daily->uuid) }}" class="previewPhro" data-id="{{ $daily->uuid }}"><i class="far fa-eye"></i></a>
                                             </div>
                                         @else
-                                            -
+                                        <div class="text-center">-</div>
                                         @endif
                                     </td>
                                     <td>
                                         @if (!empty($daily->dailyInput))
-                                            <div class="icon-container">
+                                            <div class="text-center icon-container">
                                                 <a href="{{ route('downloadPrho', $daily->uuid) }}"><i class="far fa-download"></i></a>
                                             </div>
                                         @else
-                                            -
+                                            <div class="text-center">-</div>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if (empty($daily->dailyInput))
+                                            <div class="text-center icon-container">-</div>
+                                        @else
+                                            <div class="text-center icon-container">
+                                                <a href="{{ route('downloadAttachment', $daily->uuid) }}"><i class="far fa-paperclip"></i></a>
+                                            </div>
                                         @endif
                                     </td>
                                 </tr>
@@ -165,7 +199,7 @@
 
 @push('library_js')
 <script src="{{ asset('template/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-<script src="{{ asset('template/plugins/apex/apexcharts.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="{{ asset('template/plugins/table/datatable/datatables.js') }}"></script>
 <script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
 <script src="{{ asset('js/popup.js') }}"></script>
@@ -237,10 +271,10 @@ $(document).ready(function () {
         }
     })
 
+    changePoldaClass()
     notificationLoad()
-    projectDaily()
+    absensiPolda()
     donutData()
-    loadPoldaImage()
 
     $("#filterOperasi").click(function (e) {
         e.preventDefault();
@@ -262,16 +296,30 @@ $(document).ready(function () {
     })
 
     setInterval(function() {
-        loadPoldaImage()
+        notificationLoad()
+        changePoldaClass()
     }, 10000)
 })
 
-function loadPoldaImage() {
-    $(".poldaLogo").empty().load(route('polda_image_list'));
+function changePoldaClass() {
+    axios.get(route('today_check'))
+    .then(response => {
+        $.each(response.data, function(key, value) {
+            if(_.isEmpty(value.daily_input)) {
+                $('#' + value.short_name).removeClass("glowblue").addClass("glowred")
+            } else {
+                $('#' + value.short_name).removeClass("glowred").addClass("glowblue")
+            }
+        })
+    })
+    .catch(err => {
+        console.error(err);
+    })
 }
 
 function notificationLoad() {
     var DateTime = luxon.DateTime
+    $(".timeline-line").empty()
 
     axios.get(route('notifikasi'))
     .then(res => {
@@ -297,7 +345,7 @@ function notificationLoad() {
                             <h5>`+polda_name+`</h5>
                             <span class="">` + DateTime.fromISO(created_at, { locale: "id" }).toRelative() + `</span>
                         </div>
-                        <p>STATUS : `+status+`</p>
+                        <p>STATUS : `+status.toUpperCase()+`</p>
                     </div>
                 </div>
                 `;
@@ -431,7 +479,7 @@ function donutData() {
             dashArray: 0,
         },
         series: [filled, nofilled],
-        labels: ['&nbsp;[ MASUK ]', '&nbsp;[ BELUM MASUK ]'],
+        labels: ['[ MASUK ]', '[ BELUM MASUK ]'],
         responsive: [{
             breakpoint: 500,
             options: {
@@ -533,7 +581,17 @@ function loadDataTable() {
     })
 }
 
-function projectDaily() {
+function checkInputByChart(id) {
+    popupCenter({
+        url: route('viewInputFromChart', {
+            indexData: id,
+        }),
+        title: 'Detail',
+        w: 750, h: 700
+    })
+}
+
+function absensiPolda() {
     var options = {
         chart: {
             fontFamily: 'Quicksand, sans-serif',
@@ -552,6 +610,11 @@ function projectDaily() {
             toolbar: {
                 show: false
             },
+            events: {
+                click: function(event, chartContext, config) {
+                    checkInputByChart(config.dataPointIndex)
+                }
+            }
         },
         colors: ['#1490cb'],
         dataLabels: {
@@ -575,7 +638,10 @@ function projectDaily() {
             width: 2,
             lineCap: 'square'
         },
-        series: [],
+        series: [{
+            name: "Total",
+            data: []
+        }],
         xaxis: {
             axisBorder: {
                 show: false
@@ -699,22 +765,8 @@ function projectDaily() {
 
             $("#projectName").html(""+projectName+"")
 
-            chartRequest.updateSeries([{
-                name: 'Total',
-                data: totalPerDate
-            }])
-
             chartRequest.updateOptions({
                 xaxis: {
-                    axisBorder: {
-                        show: false
-                    },
-                    axisTicks: {
-                        show: false
-                    },
-                    crosshairs: {
-                        show: true
-                    },
                     labels: {
                         offsetX: 0,
                         offsetY: 5,
@@ -727,6 +779,12 @@ function projectDaily() {
                     categories: rangeDate
                 },
             })
+
+            chartRequest.updateSeries([{
+                name: 'Total',
+                data: totalPerDate
+            }])
+
         }).catch(function(error) {
             if (error.response) {
                 console.log(error.response.data)

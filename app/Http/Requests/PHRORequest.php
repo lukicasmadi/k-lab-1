@@ -34,7 +34,8 @@ class PHRORequest extends FormRequest
 
     public function rules()
     {
-        $requiredOnCreate = request()->isMethod('patch') ? 'file|mimes:pdf,ppt,pptx,doc,docx,zip|max:50000' : 'required|file|mimes:pdf,ppt,pptx,doc,docx,zip|max:50000';
+        // $requiredOnCreate = request()->isMethod('patch') ? 'file|mimes:pdf,ppt,pptx,doc,docx,zip|max:50000' : 'required|file|mimes:pdf,ppt,pptx,doc,docx,zip|max:50000';
+        $requiredOnCreate = 'file|mimes:pdf,ppt,pptx,doc,docx,zip|max:50000';
 
         return [
             'nama_kesatuan' => 'required',
@@ -365,7 +366,13 @@ class PHRORequest extends FormRequest
             'prokes_covid_sosialisasi_tentang_prokes' => 'required|integer',
             'prokes_covid_giat_baksos' => 'required|integer',
 
-//====================================================================================================================================================
+            'penyekatan_motor' => 'required|integer',
+            'penyekatan_mobil_penumpang' => 'required|integer',
+            'penyekatan_mobil_bus' => 'required|integer',
+            'penyekatan_mobil_barang' => 'required|integer',
+            'penyekatan_kendaraan_khusus' => 'required|integer',
+
+//================================================================= BATAS VALIDASI FORM CURRENT DAN PREV =================================================================
 
             'pelanggaran_lalu_lintas_tilang_p' => 'required|integer',
             'pelanggaran_lalu_lintas_teguran_p' => 'required|integer',
@@ -685,6 +692,12 @@ class PHRORequest extends FormRequest
             'prokes_covid_pembagian_masker_p' => 'required|integer',
             'prokes_covid_sosialisasi_tentang_prokes_p' => 'required|integer',
             'prokes_covid_giat_baksos_p' => 'required|integer',
+
+            'penyekatan_motor_p' => 'required|integer',
+            'penyekatan_mobil_penumpang_p' => 'required|integer',
+            'penyekatan_mobil_bus_p' => 'required|integer',
+            'penyekatan_mobil_barang_p' => 'required|integer',
+            'penyekatan_kendaraan_khusus_p' => 'required|integer',
         ];
     }
 }

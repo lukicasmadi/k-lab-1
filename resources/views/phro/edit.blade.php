@@ -52,6 +52,7 @@
             @include('form.new_edit.data_terkait_giat_kepolisian_polda')
             @include('form.new_edit.data_terkait_arus_pemudik')
             @include('form.new_edit.data_terkait_arus_prokes_covid')
+            @include('form.new_edit.peyekatan')
 
             @include('form.new_edit.button')
 
@@ -73,7 +74,7 @@
 <script>
 var firstUpload = new FileUploadWithPreview('myFirstImage')
 $(document).ready(function () {
-    // $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast");
+    // $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
 });
 </script>
 @endpush

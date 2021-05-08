@@ -19,9 +19,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/forgot-password/request', 'UserController@forgot_password_request')->name('forgot_password_request');
     Route::get('/dashboard/{uuid}/preview', 'PoldaHasRencanaOperasiController@previewPhroDashboard')->name('previewPhroDashboard');
     Route::get('/dashboard/polda/{uuid}/preview', 'PoldaHasRencanaOperasiController@previewPhroDashboardPolda')->name('previewPhroDashboardPolda');
-    Route::get('/polda/image-list', 'HomeController@polda_image_list')->name('polda_image_list');
+    Route::get('/polda/today-check', 'HomeController@todayCheck')->name('today_check');
 
     Route::get('/operation-onsite/{uuid}/download', 'PoldaHasRencanaOperasiController@download')->name('downloadPrho');
+    Route::get('/operation-onsite/{uuid}/attachment', 'PoldaHasRencanaOperasiController@downloadAttachment')->name('downloadAttachment');
     Route::get('/operation-onsite/{uuid}/preview', 'PoldaHasRencanaOperasiController@preview')->name('previewPhro');
     Route::get('/report/polda/all/daily-compare', 'ReportController@reportAllPoldaDetail')->name('report_all_polda_compare');
 
@@ -202,5 +203,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/display/excel', 'ReportController@showExcelToView')->name('show_excel_to_view');
         Route::get('/display/excel/anev-date-compare', 'ReportController@showExcelToViewAnevDateCompare')->name('show_excel_to_view_anev');
         Route::get('/rencana-operasi/date-range/{id}', 'ReportController@getDateRangeRencanaOperasi')->name('get_rencana_operasi_date_range');
+        Route::get('/totalinputan/bychart/{indexData}', 'HomeController@viewInputFromChart')->name('viewInputFromChart');
     });
 });

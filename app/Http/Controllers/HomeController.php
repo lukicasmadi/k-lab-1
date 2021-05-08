@@ -36,45 +36,25 @@ class HomeController extends Controller
     {
         $project_start = dateOnly(operationPlans()->start_date);
         $project_end = dateOnly(operationPlans()->end_date);
-        $project_one_week = dateOnly(incrementDays($project_start, 7));
+        $half_week = dateOnly(incrementDays($project_start, 5));
+        $half_week_plus_one = dateOnly(incrementDays($project_start, 6));
 
-        $model = PoldaSubmited::whereBetween('submited_date', [$project_start, $project_one_week])->where("polda_id", poldaId())->count();
+        $full = countDays($project_start, $project_end);
+        $finalHalf = round($full / 2);
 
-        $countDaysAWeek = countDays($project_start, $project_one_week);
-
-        if(empty($model)) {
-            $data = [
-                "filled" => 0,
-                "nofilled" => 100
-            ];
+        if(datePassed($half_week) == "belum_lewat") {
+            $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$project_start, $half_week])->where("polda_id", poldaId())->count();
         } else {
-            $percentage = round((100 * $model) / $countDaysAWeek);
-            $data = [
-                "filled" => $percentage,
-                "nofilled" => 100 - $percentage
-            ];
+            $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$half_week_plus_one, $project_end])->where("polda_id", poldaId())->count();
         }
 
-        return $data;
-    }
-
-    public function weeklyPoldaById($id)
-    {
-        $project_start = dateOnly(operationPlans()->start_date);
-        $project_end = dateOnly(operationPlans()->end_date);
-        $project_one_week = dateOnly(incrementDays($project_start, 7));
-
-        $model = PoldaSubmited::whereBetween('submited_date', [$project_start, $project_one_week])->where("polda_id", $id)->count();
-
-        $countDaysAWeek = countDays($project_start, $project_one_week);
-
-        if(empty($model)) {
+        if(empty($count_polda_input_daily) || $count_polda_input_daily <= 0) {
             $data = [
                 "filled" => 0,
                 "nofilled" => 100
             ];
         } else {
-            $percentage = round((100 * $model) / $countDaysAWeek);
+            $percentage = round((100 * $count_polda_input_daily) / $finalHalf, 1);
             $data = [
                 "filled" => $percentage,
                 "nofilled" => 100 - $percentage
@@ -89,17 +69,49 @@ class HomeController extends Controller
         $project_start = dateOnly(operationPlans()->start_date);
         $project_end = dateOnly(operationPlans()->end_date);
 
-        $model = PoldaSubmited::whereBetween('submited_date', [$project_start, $project_end])->where("polda_id", poldaId())->count();
+        $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$project_start, $project_end])->where("polda_id", poldaId())->count();
 
         $countDaysAll = countDays($project_start, $project_end);
 
-        if(empty($model)) {
+        if(empty($count_polda_input_daily) || $count_polda_input_daily <= 0) {
             $data = [
                 "filled" => 0,
                 "nofilled" => 100
             ];
         } else {
-            $percentage = round((100 * $model) / $countDaysAll);
+            $percentage = round((100 * $count_polda_input_daily) / $countDaysAll, 1);
+            $data = [
+                "filled" => $percentage,
+                "nofilled" => 100 - $percentage
+            ];
+        }
+
+        return $data;
+    }
+
+    public function weeklyPoldaById($id)
+    {
+        $project_start = dateOnly(operationPlans()->start_date);
+        $project_end = dateOnly(operationPlans()->end_date);
+        $half_week = dateOnly(incrementDays($project_start, 5));
+        $half_week_plus_one = dateOnly(incrementDays($project_start, 6));
+
+        $full = countDays($project_start, $project_end);
+        $finalHalf = round($full / 2);
+
+        if(datePassed($half_week) == "belum_lewat") {
+            $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$project_start, $half_week])->where("polda_id", $id)->count();
+        } else {
+            $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$half_week_plus_one, $project_end])->where("polda_id", $id)->count();
+        }
+
+        if(empty($count_polda_input_daily) || $count_polda_input_daily <= 0) {
+            $data = [
+                "filled" => 0,
+                "nofilled" => 100
+            ];
+        } else {
+            $percentage = round((100 * $count_polda_input_daily) / $finalHalf, 1);
             $data = [
                 "filled" => $percentage,
                 "nofilled" => 100 - $percentage
@@ -114,17 +126,17 @@ class HomeController extends Controller
         $project_start = dateOnly(operationPlans()->start_date);
         $project_end = dateOnly(operationPlans()->end_date);
 
-        $model = PoldaSubmited::whereBetween('submited_date', [$project_start, $project_end])->where("polda_id", $id)->count();
+        $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$project_start, $project_end])->where("polda_id", $id)->count();
 
         $countDaysAll = countDays($project_start, $project_end);
 
-        if(empty($model)) {
+        if(empty($count_polda_input_daily) || $count_polda_input_daily <= 0) {
             $data = [
                 "filled" => 0,
                 "nofilled" => 100
             ];
         } else {
-            $percentage = round((100 * $model) / $countDaysAll);
+            $percentage = round((100 * $count_polda_input_daily) / $countDaysAll, 1);
             $data = [
                 "filled" => $percentage,
                 "nofilled" => 100 - $percentage
@@ -161,25 +173,16 @@ class HomeController extends Controller
         return view('not_assign');
     }
 
-    public function polda_image_list()
+    public function todayCheck()
     {
-        $poldaAtas = Polda::select("id", "uuid", "name", "short_name", "logo")
+        $polda = Polda::select("id", "uuid", "name", "short_name", "logo")
             ->with(['dailyInput' => function($query) {
-                $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
+                $query->where(DB::raw('DATE(created_at)'), nowToday());
             }])
             ->orderBy("name", "asc")
-            ->skip(0)->take(17)
             ->get();
 
-        $poldaBawah = Polda::select("id", "uuid", "name", "short_name", "logo")
-            ->with(['dailyInput' => function($query) {
-                $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
-            }])
-            ->orderBy("name", "asc")
-            ->skip(17)->take(17)
-            ->get();
-
-        return view('include.polda_logo', compact('poldaAtas', 'poldaBawah'));
+        return $polda;
     }
 
     public function dashboard()
@@ -197,18 +200,21 @@ class HomeController extends Controller
         if(isPolda()) {
             return view('polda');
         } else {
-            $polda = Polda::select("id", "uuid", "name", "short_name", "logo")
-                ->with(['dailyInput' => function($query) {
-                    $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
-                }])
+            $poldaAtas = Polda::select("id", "uuid", "name", "short_name", "logo")
                 ->orderBy("name", "asc")
+                ->skip(0)->take(17)
+                ->get();
+
+            $poldaBawah = Polda::select("id", "uuid", "name", "short_name", "logo")
+                ->orderBy("name", "asc")
+                ->skip(17)->take(17)
                 ->get();
 
             $dailyInput = Polda::with(['dailyInput' => function($query) {
-                $query->where(DB::raw('DATE(created_at)'), date("Y-m-d"));
+                $query->where(DB::raw('DATE(created_at)'), nowToday());
             }])->orderBy("name", "asc")->get();
 
-            return view('main', compact('polda', 'dailyInput'));
+            return view('main', compact('poldaAtas', 'poldaBawah', 'dailyInput'));
         }
     }
 
@@ -261,36 +267,78 @@ class HomeController extends Controller
         })->toJson();
     }
 
-    public function dashboardChart()
+    public function viewInputFromChart($indexData)
     {
+        if (str_contains($indexData, '-')) {
+            abort(404);
+        }
+
         $projectRunning = operationPlans();
 
-        $dateCountDown = CountDown::where('rencana_operasi_id', $projectRunning->id)->where('tanggal', nowToday())->first();
+        if(empty($projectRunning)) {
+            return [];
+        }
 
         $period = CarbonPeriod::create($projectRunning->start_date, $projectRunning->end_date);
 
         $rangeDate = [];
-        $totalPerDate = [];
 
         foreach ($period as $date) {
             array_push($rangeDate, $date->format('Y-m-d'));
         }
 
-        foreach($rangeDate as $d) {
-            $total =  DB::table('polda_submiteds')->where('submited_date', $d)->count();
+        $countData = count($rangeDate) - 1;
 
-            if($total == 0) {
-                array_push($totalPerDate, 0);
-            } else {
-                array_push($totalPerDate, $total);
-            }
+        if($indexData > $countData) {
+            abort(404);
         }
 
-        return response()->json([
-            'rangeDate' => $rangeDate,
-            'totalPerDate' => $totalPerDate,
-            'projectName' => $dateCountDown->deskripsi
-        ], 200);
+        $whereDate = $rangeDate[$indexData];
+
+        $polda = Polda::with(['dailyInput' => function($q) use($whereDate) {
+            $q->select('id', 'polda_id', 'status', 'submited_date', 'rencana_operasi_id')->where('submited_date', '=', $whereDate);
+        }])->select('id', 'name')->get();
+
+        excelViewAbsensi($polda, IdFullDateOnly($whereDate));
+    }
+
+    public function dashboardChart()
+    {
+        $projectRunning = operationPlans();
+
+        if(!empty($projectRunning)) {
+            $dateCountDown = CountDown::where('rencana_operasi_id', $projectRunning->id)->where('tanggal', nowToday())->first();
+
+            $period = CarbonPeriod::create($projectRunning->start_date, $projectRunning->end_date);
+
+            $rangeDate = [];
+            $rangeDateReformat = [];
+            $totalPerDate = [];
+
+            foreach ($period as $date) {
+                array_push($rangeDate, $date->format('Y-m-d'));
+            }
+
+            foreach($rangeDate as $d) {
+                $total =  DB::table('polda_submiteds')->where('submited_date', $d)->count();
+
+                if($total == 0) {
+                    array_push($totalPerDate, 0);
+                } else {
+                    array_push($totalPerDate, $total);
+                }
+            }
+
+            foreach($rangeDate as $rd) {
+                array_push($rangeDateReformat, indonesianStandart($rd));
+            }
+
+            return response()->json([
+                'rangeDate' => $rangeDateReformat,
+                'totalPerDate' => $totalPerDate,
+                'projectName' => $dateCountDown->deskripsi
+            ], 200);
+        }
     }
 
     public function openPoldaData($short_name)

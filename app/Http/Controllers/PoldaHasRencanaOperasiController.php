@@ -28,12 +28,17 @@ class PoldaHasRencanaOperasiController extends Controller
         try {
             $file = PoldaSubmited::with('polda')->where('uuid', $uuid)->firstOrFail();
 
-            $name = explode(".", $file->document_upload);
+            if(empty($file->document_upload) || is_null($file->document_upload)) {
+                flash('Dokumen tidak ditemukan. Pastikan anda telah mengunggahnya pada halaman tambah/edit laporan')->warning();
+                return redirect(route('phro_index'));
+            } else {
+                $name = explode(".", $file->document_upload);
 
-            $poldaName = $file->polda->name;
+                $poldaName = $file->polda->name;
 
-            $fileName = $poldaName." Report File ".indonesianStandart($file->submited_date);
-            return response()->download(public_path('document-upload/polda/'.$file->document_upload), $fileName.".".$name[1]);
+                $fileName = $poldaName." Report File ".indonesianStandart($file->submited_date);
+                return response()->download(public_path('document-upload/polda/'.$file->document_upload), $fileName.".".$name[1]);
+            }
         } catch (\Exception $e) {
             logger($e);
             flash('Data gagal didownload. Silakan dicoba kembali atau hubungi admin jika masih bermasalah')->error();
@@ -119,14 +124,14 @@ class PoldaHasRencanaOperasiController extends Controller
                 $file->move($destinationPath, $randomName);
                 $data['document_upload'] = $randomName;
             } else {
-                $data['document_upload'] = 'default.pdf';
+                $data['document_upload'] = '';
             }
 
             $poldaSubmit = PoldaSubmited::create([
                 'uuid' => genUuid(),
                 'polda_id' => poldaId(),
                 'rencana_operasi_id' => operationPlans()->id,
-                'status' => "SUDAH MENGIRIMKAN LAPORAN PADA ".indonesianDateTime(date('Y-m-d H:i:s')),
+                'status' => "Sudah mengirimkan laporan pada ".indonesianFullDayAndDate(date('Y-m-d H:i:s')),
                 'nama_kesatuan' => upperCase($request->nama_kesatuan),
                 'nama_atasan' => upperCase($request->nama_atasan),
                 'pangkat_dan_nrp' => upperCase($request->pangkat_dan_nrp),
@@ -517,6 +522,11 @@ class PoldaHasRencanaOperasiController extends Controller
                 'prokes_covid_pembagian_masker_p',
                 'prokes_covid_sosialisasi_tentang_prokes_p',
                 'prokes_covid_giat_baksos_p',
+                'penyekatan_motor_p',
+                'penyekatan_mobil_penumpang_p',
+                'penyekatan_mobil_bus_p',
+                'penyekatan_mobil_barang_p',
+                'penyekatan_kendaraan_khusus_p',
             ]);
 
             $payload = $request->only([
@@ -833,6 +843,11 @@ class PoldaHasRencanaOperasiController extends Controller
                 'prokes_covid_pembagian_masker',
                 'prokes_covid_sosialisasi_tentang_prokes',
                 'prokes_covid_giat_baksos',
+                'penyekatan_motor',
+                'penyekatan_mobil_penumpang',
+                'penyekatan_mobil_bus',
+                'penyekatan_mobil_barang',
+                'penyekatan_kendaraan_khusus',
             ]);
 
             DailyInput::where("polda_submited_id", $poldaSubmited->id)
@@ -907,6 +922,30 @@ class PoldaHasRencanaOperasiController extends Controller
             yearMinus(),
             year()
         );
+    }
+
+    public function downloadAttachment($uuid)
+    {
+        $polda = Polda::whereUuid($uuid)->first();
+
+        if(empty($polda)) {
+            flash('Data Polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
+            return redirect()->back();
+        }
+
+        $poldaSubmited = PoldaSubmited::where('polda_id', $polda->id)->where('submited_date', nowToday())->first();
+
+        if(empty($poldaSubmited)) {
+            flash('Data inputan polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
+            return redirect()->back();
+        }
+
+        if(empty($poldaSubmited->document_upload) || is_null($poldaSubmited->document_upload)) {
+            flash('Polda '.$polda->name.' tidak mengupload file dokumen')->error();
+            return redirect()->back();
+        }
+
+        return response()->download(public_path('document-upload/polda/'.$poldaSubmited->document_upload));
     }
 
     public function download($uuid)
