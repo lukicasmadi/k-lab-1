@@ -199,7 +199,7 @@
 
 @push('library_js')
 <script src="{{ asset('template/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="{{ asset('template/plugins/dist-apex/apexcharts.min.js') }}"></script>
 <script src="{{ asset('template/plugins/table/datatable/datatables.js') }}"></script>
 <script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
 <script src="{{ asset('js/popup.js') }}"></script>
@@ -208,7 +208,7 @@
 @push('library_css')
 <link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/table/datatable/datatables.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/table/datatable/dt-global_style.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/apex/apexcharts.css') }}" />
+<!-- <link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/dist-apex/apexcharts.css') }}" /> -->
 <link rel="stylesheet" type="text/css" href="{{ asset('template/assets/css/dashboard/dash_2.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/animate/animate.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('template/assets/css/components/custom-modal.css') }}"/>
@@ -232,6 +232,7 @@
     }
     .apexcharts-legend-text {
         color: #ffffff!important;
+        padding-right: 20px;
     }
     .apexcharts-radialbar-track.apexcharts-track .apexcharts-radialbar-area {
         stroke: #191e3a;
@@ -424,6 +425,7 @@ function donutData() {
         fill: {
             type: "gradient",
             gradient: {
+            // shade: 'dark',
             shadeIntensity: 0.8,
             opacityFrom: 0.9,
             opacityTo: 0.9,
