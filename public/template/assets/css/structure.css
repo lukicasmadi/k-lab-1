@@ -1181,8 +1181,8 @@ transform: translateX(34px);
 }
 
 .navbar .navbar-item .nav-item.user-profile-dropdown .dropdown-menu .dropdown-item:hover {
-    background-color: #00adef;
-    /* border-radius: 5px; */
+    background-color: #00adef !important;
+    margin: 0 3px !important;
 }
 
 .navbar .navbar-item .nav-item.user-profile-dropdown .dropdown-menu .dropdown-item a {
@@ -1191,6 +1191,10 @@ transform: translateX(34px);
     font-size: 13px;
     font-weight: 600;
     padding: 9px 14px;
+}
+
+.navbar .navbar-item .nav-item.user-profile-dropdown .dropdown-menu .dropdown-item:before {
+    background-color: transparent;
 }
 
 .navbar .navbar-item .nav-item.user-profile-dropdown .dropdown-menu .dropdown-item.active,

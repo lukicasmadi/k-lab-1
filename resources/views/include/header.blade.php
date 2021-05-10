@@ -29,7 +29,7 @@
 
                         <li class="menu single-menu {{ request()->is('dashboard') || request()->is('polda-data/*') ? 'active' : '' }}">
                             <a href="{{ route('dashboard') }}">
-                                <div>
+                                <div data-step="1" data-intro="Klik Menu Dashboard untuk melihat keseluruhan data POLDA yang sudah terkirim">
                                     <span>Beranda</span>
                                 </div>
                             </a>
@@ -56,7 +56,7 @@
                                 ? 'active' : ''
                                 }}">
                                 <a href="{{ route('rencana_operasi_index') }}">
-                                    <div>
+                                    <div data-step="2" data-intro="Klik Menu Rencana Operasi Lorem Ipsum has been the industry's standard dummy text ever since">
                                         <span>Rencana Operasi</span>
                                     </div>
                                 </a>
@@ -66,7 +66,7 @@
                                 request()->is('report/*') ? 'active' : ''
                                 }}">
                                 <a href="#reportpusat" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
-                                    <div>
+                                    <div data-step="3" data-intro="Klik Menu Laporan Lorem Ipsum has been the industry's standard dummy text ever since">
                                         <span>Laporan</span>
                                     </div>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -95,7 +95,7 @@
                         @role('access_daerah')
                             <li class="menu single-menu {{ request()->is('custom-name') ? 'active' : '' }}">
                                 <a href="{{ route('polda_custom_name') }}">
-                                    <div>
+                                    <div data-step="4" data-intro="Klik Menu RENCANA OPERASI Lorem Ipsum has been the industry's standard dummy text ever since">
                                         <span>RENCANA OPERASI</span>
                                     </div>
                                 </a>
@@ -104,7 +104,7 @@
                                 request()->is('report/*') || request()->is('operation-onsite') || request()->is('operation-onsite/*') ? 'active' : ''
                                 }}">
                                 <a href="#reportpusat" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
-                                    <div>
+                                    <div data-step="5" data-intro="Klik Menu Laporan Lorem Ipsum has been the industry's standard dummy text ever since">
                                         <span>Laporan</span>
                                     </div>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -132,7 +132,7 @@
                                     ? 'active' : ''
                                 }}">
                                 <a href="#dashboard" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
-                                    <div class="">
+                                    <div class="" data-step="6" data-intro="Klik Menu Manajemen Data Lorem Ipsum has been the industry's standard dummy text ever since">
                                         <span>Manajemen Data</span>
                                     </div>
                                 </a>
@@ -154,7 +154,7 @@
                         @endrole
 
                         <li class="menu single-menu">
-                            <a href="{{ route('dashboard') }}">
+                            <a href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress', true).start();">
                                 <div>
                                     <span class="tourcolor">Panduan Web</span>
                                 </div>
@@ -201,7 +201,7 @@
             <li class="nav-item dropdown user-profile-dropdown order-lg-0 order-1">
                 <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="user-profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <svg style="margin-right: 33px; position: absolute;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                <div class="media">
+                <div class="media" data-step="7" data-intro="Klik Detail User Lorem Ipsum has been the industry's standard dummy text ever since">
                         @php
                             if(!empty(auth()->user())) {
                                 $user = App\Models\User::whereId(myUserId())->first();
@@ -267,7 +267,7 @@
 <div class="layout-px-spacing">
     <div class="page-header">
         @stack('page_title')
-        <div class="toggle-switch">
+        <div class="toggle-switch" data-step="8" data-intro="Klik Button Switch Lorem Ipsum has been the industry's standard dummy text ever since">
             <label class="switch s-icons s-outline  s-outline-secondary">
                 <input type="checkbox" checked="" class="theme-shifter" id="changeTheme">
                 <span class="slider round">
