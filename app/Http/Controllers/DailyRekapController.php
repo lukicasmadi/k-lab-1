@@ -18,19 +18,19 @@ class DailyRekapController extends Controller
 
     public function dailyRekapExcel($uuid)
     {
-        $model = DailyRekap::with(['rencanaOperasi', 'poldaData'])->where('uuid', $uuid)->first();
+        $dailyRekap = DailyRekap::with(['rencanaOperasi', 'poldaData'])->where('uuid', $uuid)->first();
 
-        if(empty($model)) {
+        if(empty($dailyRekap)) {
             flash('Laporan tidak ditemukan. Pastikan filter yang anda atur sudah sesuai!')->warning();
             return redirect()->back();
         }
 
-        $polda = $model->polda;
-        $year = $model->year;
-        $rencana_operartion_id = $model->rencana_operasi_id;
-        $config_date = $model->config_date;
-        $start_date = $model->operation_date_start;
-        $end_date = $model->operation_date_end;
+        $polda = $dailyRekap->polda;
+        $year = $dailyRekap->year;
+        $rencana_operartion_id = $dailyRekap->rencana_operasi_id;
+        $config_date = $dailyRekap->config_date;
+        $start_date = $dailyRekap->operation_date_start;
+        $end_date = $dailyRekap->operation_date_end;
         $prevYear = $year - 1;
 
         $prev = reportDailyPrev($polda, $prevYear, $rencana_operartion_id, $config_date, $start_date, $end_date);
@@ -54,12 +54,12 @@ class DailyRekapController extends Controller
                 'polda_all',
                 $prev,
                 $current,
-                'KESATUAN : [ SELURUH POLDA ]',
+                'KESATUAN : '.$dailyRekap->kesatuan,
                 indonesianDate(date("Y-m-d")),
-                '',
-                '',
-                '',
-                ''
+                'NAMA : '.$dailyRekap->atasan,
+                $dailyRekap->pangkat_nrp,
+                $dailyRekap->jabatan,
+                $dailyRekap->report_name
             );
         }
     }
