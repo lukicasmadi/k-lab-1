@@ -369,4 +369,21 @@ class HomeController extends Controller
         })
         ->toJson();
     }
+
+    public function openPoldaDataDownloadAttachment($uuid)
+    {
+        $poldaSubmited = PoldaSubmited::with('polda')->whereUuid($uuid)->first();
+
+        if(empty($poldaSubmited)) {
+            flash('Data inputan polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
+            return redirect()->back();
+        }
+
+        if(empty($poldaSubmited->document_upload) || is_null($poldaSubmited->document_upload)) {
+            flash('Polda '.$poldaSubmited->polda->name.' tidak mengupload file dokumen pada inputan yg dipilih')->error();
+            return redirect()->back();
+        }
+
+        return response()->download(public_path('document-upload/polda/'.$poldaSubmited->document_upload));
+    }
 }

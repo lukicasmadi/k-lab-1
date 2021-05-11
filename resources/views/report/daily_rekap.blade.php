@@ -40,15 +40,15 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th width="10%">Nama Laporan</th>
+                                <th width="15%">Nama Laporan</th>
                                 <th width="10%">Polda</th>
                                 <th width="7%">Tahun</th>
-                                <th width="10%">Nama Operasi</th>
+                                <th width="15%">Nama Operasi</th>
                                 <th width="10%">Hari</th>
-                                <th width="15%">Mulai</th>
-                                <th width="15%">Selesai</th>
+                                <th width="10%">Mulai</th>
+                                <th width="10%">Selesai</th>
                                 <th width="3%">Lihat</th>
-                                <th width="20%">Pilihan</th>
+                                <th width="10%">Pilihan</th>
                             </tr>
                         </thead>
                         <tbody></tbody>

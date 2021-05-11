@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/operation-onsite/{uuid}/attachment', 'PoldaHasRencanaOperasiController@downloadAttachment')->name('downloadAttachment');
     Route::get('/operation-onsite/{uuid}/preview', 'PoldaHasRencanaOperasiController@preview')->name('previewPhro');
     Route::get('/report/polda/all/daily-compare', 'ReportController@reportAllPoldaDetail')->name('report_all_polda_compare');
+    Route::get('/polda-data/{uuid}/attachment', 'HomeController@openPoldaDataDownloadAttachment')->name('openPoldaDataDownloadAttachment');
 
     Route::group(['middleware' => 'user-has-polda'], function () {
         Route::resource('operation-onsite', 'PoldaHasRencanaOperasiController', [

@@ -133,6 +133,11 @@ class DailyRekapController extends Controller
             'config_date' => $request->config_date,
             'operation_date_start' => dateOnly($request->tanggal_mulai),
             'operation_date_end' => dateOnly($request->tanggal_selesai),
+            'kesatuan' => $request->kesatuan,
+            'atasan' => $request->atasan,
+            'pangkat_nrp' => $request->pangkat_nrp,
+            'jabatan' => $request->jabatan,
+            'kota' => $request->kota,
         ]);
 
         flash('Rekap harian berhasil dibuat')->success();

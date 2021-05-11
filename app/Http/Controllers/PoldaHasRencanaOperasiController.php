@@ -929,7 +929,7 @@ class PoldaHasRencanaOperasiController extends Controller
         $polda = Polda::whereUuid($uuid)->first();
 
         if(empty($polda)) {
-            flash('Data Polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
+            flash('Data polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
             return redirect()->back();
         }
 
