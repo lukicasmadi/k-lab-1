@@ -132,7 +132,7 @@
                                     ? 'active' : ''
                                 }}">
                                 <a href="#dashboard" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
-                                    <div class="" data-step="6" data-intro="Klik Menu Manajemen Data untuk mengatur semua master data">
+                                    <div class="" data-step="6" data-intro="Menu Manajemen Data untuk mengatur semua master data">
                                         <span>Manajemen Data</span>
                                     </div>
                                 </a>
