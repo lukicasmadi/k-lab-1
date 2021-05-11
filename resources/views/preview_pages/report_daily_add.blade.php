@@ -17,10 +17,12 @@
                             </div>
 
                             <div class="row">
+
                                 <div class="col-md-12 mb-3">
                                     <label class="text-popup">Nama Laporan</label>
                                     <input type="text" name="report_name" id="report_name" class="form-control popoups" autocomplete="off" placeholder="- Tulis jenis operasi yang akan Anda laksanakan">
                                 </div>
+
                                 <div class="col-md-12">
                                     <label class="text-popup">Pilih Polda</label>
                                     <select class="form-control form-custom height-form" id="polda" name="polda">
@@ -30,6 +32,7 @@
                                             @endforeach
                                     </select>
                                 </div>
+
                                 <div class="col-md-12">
                                     <label class="text-popup">Tahun</label>
                                     <select class="form-control form-custom height-form" id="year" name="year">
@@ -39,6 +42,7 @@
                                             @endforeach
                                     </select>
                                 </div>
+
                                 <div class="col-md-12">
                                     <label class="text-popup">Nama Operasi</label>
                                     <select class="form-control form-custom height-form" id="rencana_operasi_id" name="rencana_operasi_id">
@@ -48,6 +52,32 @@
                                             @endforeach
                                     </select>
                                 </div>
+
+                                <div class="col-md-12">
+                                    <label class="text-popup">Kesatuan</label>
+                                    <input type="text" name="kesatuan" id="kesatuan" class="form-control popoups" autocomplete="off" placeholder="- Kesatuan">
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label class="text-popup">Atasan</label>
+                                    <input type="text" name="atasan" id="atasan" class="form-control popoups" autocomplete="off" placeholder="- Atasan">
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label class="text-popup">Pangkat dan NRP</label>
+                                    <input type="text" name="pangkat_nrp" id="pangkat_nrp" class="form-control popoups" autocomplete="off" placeholder="- Pangkat dan NRP">
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label class="text-popup">Jabatan</label>
+                                    <input type="text" name="jabatan" id="jabatan" class="form-control popoups" autocomplete="off" placeholder="- Jabatan">
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label class="text-popup">Kota</label>
+                                    <input type="text" name="kota" id="kota" class="form-control popoups" autocomplete="off" placeholder="- Kota">
+                                </div>
+
                                 <div class="col-md-12 d-none div_hari_operasi">
                                     <label class="text-popup">Hari Operasi</label>
                                     <select class="form-control form-custom height-form" id="config_date" name="config_date">
@@ -73,6 +103,7 @@
                                     <label class="text-popup">Tanggal Selesai</label>
                                     <input type="text" name="tanggal_selesai" id="tanggal_selesai" class="form-control popoups inp-icon" value="" placeholder="- dd-mm-yyyy">
                                 </div>
+
                             </div>
                         </div>
                     </div>

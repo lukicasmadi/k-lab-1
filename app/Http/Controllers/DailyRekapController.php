@@ -18,19 +18,24 @@ class DailyRekapController extends Controller
 
     public function dailyRekapExcel($uuid)
     {
-        $model = DailyRekap::with(['rencanaOperasi', 'poldaData'])->where('uuid', $uuid)->first();
+        $dailyRekap = DailyRekap::with(['rencanaOperasi', 'poldaData'])->where('uuid', $uuid)->first();
 
-        if(empty($model)) {
+        if(empty($dailyRekap)) {
             flash('Laporan tidak ditemukan. Pastikan filter yang anda atur sudah sesuai!')->warning();
             return redirect()->back();
         }
 
-        $polda = $model->polda;
-        $year = $model->year;
-        $rencana_operartion_id = $model->rencana_operasi_id;
-        $config_date = $model->config_date;
-        $start_date = $model->operation_date_start;
-        $end_date = $model->operation_date_end;
+        if(empty($dailyRekap->kesatuan) || empty($dailyRekap->atasan) || empty($dailyRekap->pangkat_nrp) || empty($dailyRekap->jabatan) || empty($dailyRekap->kota)) {
+            flash('Data laphar belum lengkap. Silahkan gunakan menu ubah untuk memperbaharui data')->warning();
+            return redirect()->back();
+        }
+
+        $polda = $dailyRekap->polda;
+        $year = $dailyRekap->year;
+        $rencana_operartion_id = $dailyRekap->rencana_operasi_id;
+        $config_date = $dailyRekap->config_date;
+        $start_date = $dailyRekap->operation_date_start;
+        $end_date = $dailyRekap->operation_date_end;
         $prevYear = $year - 1;
 
         $prev = reportDailyPrev($polda, $prevYear, $rencana_operartion_id, $config_date, $start_date, $end_date);
@@ -54,12 +59,12 @@ class DailyRekapController extends Controller
                 'polda_all',
                 $prev,
                 $current,
-                'KESATUAN : [ SELURUH POLDA ]',
+                'KESATUAN : '.$dailyRekap->kesatuan,
                 indonesianDate(date("Y-m-d")),
-                '',
-                '',
-                '',
-                ''
+                'NAMA : '.$dailyRekap->atasan,
+                $dailyRekap->pangkat_nrp,
+                $dailyRekap->jabatan,
+                $dailyRekap->report_name
             );
         }
     }
@@ -133,6 +138,11 @@ class DailyRekapController extends Controller
             'config_date' => $request->config_date,
             'operation_date_start' => dateOnly($request->tanggal_mulai),
             'operation_date_end' => dateOnly($request->tanggal_selesai),
+            'kesatuan' => $request->kesatuan,
+            'atasan' => $request->atasan,
+            'pangkat_nrp' => $request->pangkat_nrp,
+            'jabatan' => $request->jabatan,
+            'kota' => $request->kota,
         ]);
 
         flash('Rekap harian berhasil dibuat')->success();
@@ -155,6 +165,11 @@ class DailyRekapController extends Controller
                     'config_date' => $request->config_date_edit,
                     'operation_date_start' => dateOnly($ro->start_date),
                     'operation_date_end' => dateOnly($ro->end_date),
+                    'kesatuan' => $request->kesatuan_edit,
+                    'atasan' => $request->atasan_edit,
+                    'pangkat_nrp' => $request->pangkat_nrp_edit,
+                    'jabatan' => $request->jabatan_edit,
+                    'kota' => $request->kota_edit,
                 ]
             );
         } else {
@@ -167,7 +182,12 @@ class DailyRekapController extends Controller
                     'rencana_operasi_id' => $request->rencana_operasi_id_edit,
                     'config_date' => $request->config_date_edit,
                     'operation_date_start' => dateOnly($request->tanggal_mulai_edit),
-                'operation_date_end' => dateOnly($request->tanggal_selesai_edit),
+                    'operation_date_end' => dateOnly($request->tanggal_selesai_edit),
+                    'kesatuan' => $request->kesatuan_edit,
+                    'atasan' => $request->atasan_edit,
+                    'pangkat_nrp' => $request->pangkat_nrp_edit,
+                    'jabatan' => $request->jabatan_edit,
+                    'kota' => $request->kota_edit,
                 ]
             );
         }

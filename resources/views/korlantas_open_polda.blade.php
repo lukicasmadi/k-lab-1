@@ -15,6 +15,7 @@
 <div id="content" class="main-content mt-n3">
     <input type="hidden" name="polda_id" id="polda_id" value="{{ $polda->id }}">
     <div class="layout-px-spacing">
+        @include('flash::message')
         <div class="row layout-top-spacing">
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing blendingimg text-center mt-4">
                 @if (poldaAlreadyInputTodayById($polda->id))
@@ -89,6 +90,7 @@
                                 <th>JAM</th>
                                 <th class="text-center" width="6%">Lihat</th>
                                 <th class="text-center">PILIHAN</th>
+                                <th class="text-center">LAMPIRAN</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -252,6 +254,18 @@ $(document).ready(function () {
                         return `
                         <div class="ubah-change text-center">
                             <a href="`+route('report_daily_by_id', data)+`">Unduh</a>
+                        </div>
+                        `;
+                    },
+                    searchable: false,
+                    sortable: false,
+                },
+                {
+                    data: 'uuid',
+                    render: function(data, type, row) {
+                        return `
+                        <div class="ubah-change text-center">
+                            <a href="`+route('openPoldaDataDownloadAttachment', data)+`">Lampiran</a>
                         </div>
                         `;
                     },

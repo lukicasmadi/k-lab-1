@@ -31,6 +31,11 @@ class DailyRekapRequest extends FormRequest
             'config_date' => 'required',
             'tanggal_mulai' => 'required_if:config_date,custom_date',
             'tanggal_selesai' => 'required_if:config_date,custom_date',
+            'kesatuan' => 'required',
+            'atasan' => 'required',
+            'pangkat_nrp' => 'required',
+            'jabatan' => 'required',
+            'kota' => 'required',
         ];
     }
 
@@ -45,6 +50,11 @@ class DailyRekapRequest extends FormRequest
             'config_date.required' => 'Pilihan hari operasi tidak boleh kosong',
             'tanggal_mulai.required' => 'Pilihan hari mulai tidak boleh kosong',
             'tanggal_selesai.required' => 'Pilihan hari selesai tidak boleh kosong',
+            'kesatuan.required' => 'Kesatuan tidak boleh kosong',
+            'atasan.required' => 'Nama atasan tidak boleh kosong',
+            'pangkat_nrp.required' => 'Pangkat dan NRP tidak boleh kosong',
+            'jabatan.required' => 'Nama jabatan tidak boleh kosong',
+            'kota.required' => 'Kota tidak boleh kosong',
         ];
     }
 }

@@ -77,18 +77,18 @@
 <script>
 var firstUpload = new FileUploadWithPreview('myFirstImage')
 $(document).ready(function () {
-    $("input[type=number]").val('0')
-    // if(location.hostname == "korlantas.test") {
-    //     let randomNum = Math.floor((Math.random() * 10) + 1)
-    //     $("input[type=number]").val(randomNum)
-    //     $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
-    //     $("#nama_kesatuan").val("KESATUAN LANTAS")
-    //     $("#nama_atasan").val("BRIAN")
-    //     $("#pangkat_dan_nrp").val("AKP NRP 12345")
-    //     $("#jabatan").val("KASAT LANTAS")
-    //     $("#nama_laporan").val("LAPORAN HARIAN")
-    //     $("#nama_kota").val("ACEH")
-    // }
+    // $("input[type=number]").val('0')
+    if(location.hostname == "korlantas.test") {
+        let randomNum = Math.floor((Math.random() * 10) + 1)
+        $("input[type=number]").val(randomNum)
+        $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
+        $("#nama_kesatuan").val("LANTAS")
+        $("#nama_atasan").val("BRIAN")
+        $("#pangkat_dan_nrp").val("AKP NRP 12345")
+        $("#jabatan").val("KASAT LANTAS")
+        $("#nama_laporan").val("LAPORAN HARIAN")
+        $("#nama_kota").val("ACEH")
+    }
 })
 </script>
 @endpush

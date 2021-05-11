@@ -4650,11 +4650,7 @@ if (! function_exists('excelTemplate')) {
 
         $excelPath = public_path('template/excel');
 
-        if($template == "per_polda") {
-            $excelTemplate = $excelPath."/format_laporan_operasi_2021.xlsx";
-        } else {
-            $excelTemplate = $excelPath."/format_laporan_operasi_2021_all_polda.xlsx";
-        }
+        $excelTemplate = $excelPath."/format_laporan_operasi_2021.xlsx";
 
         //load spreadsheet
         $spreadsheet = IOFactory::load($excelTemplate);

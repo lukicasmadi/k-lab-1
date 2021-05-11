@@ -131,7 +131,7 @@ class PoldaHasRencanaOperasiController extends Controller
                 'uuid' => genUuid(),
                 'polda_id' => poldaId(),
                 'rencana_operasi_id' => operationPlans()->id,
-                'status' => "Sudah mengirimkan laporan pada ".indonesianFullDayAndDate(date('Y-m-d H:i:s')),
+                'status' => "Sudah mengirimkan - ".indonesianFullDayAndDate(date('Y-m-d H:i:s')),
                 'nama_kesatuan' => upperCase($request->nama_kesatuan),
                 'nama_atasan' => upperCase($request->nama_atasan),
                 'pangkat_dan_nrp' => upperCase($request->pangkat_dan_nrp),
@@ -929,7 +929,7 @@ class PoldaHasRencanaOperasiController extends Controller
         $polda = Polda::whereUuid($uuid)->first();
 
         if(empty($polda)) {
-            flash('Data Polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
+            flash('Data polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
             return redirect()->back();
         }
 

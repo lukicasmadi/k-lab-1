@@ -40,15 +40,15 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th width="10%">Nama Laporan</th>
+                                <th width="15%">Nama Laporan</th>
                                 <th width="10%">Polda</th>
                                 <th width="7%">Tahun</th>
-                                <th width="10%">Nama Operasi</th>
+                                <th width="15%">Nama Operasi</th>
                                 <th width="10%">Hari</th>
-                                <th width="15%">Mulai</th>
-                                <th width="15%">Selesai</th>
+                                <th width="10%">Mulai</th>
+                                <th width="10%">Selesai</th>
                                 <th width="3%">Lihat</th>
-                                <th width="20%">Pilihan</th>
+                                <th width="10%">Pilihan</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -234,7 +234,7 @@ $(document).ready(function () {
                 render: function(data, type, row) {
                     return `
                     <div class="ubah-change">
-                        <a href="`+route('daily_dowmload_excel', data)+`" id="btnDownload" data-id="`+data+`">Unduh</a> | <a href="#" id="btnEdit" data-id="`+data+`">Edit</a>
+                        <a href="`+route('daily_dowmload_excel', data)+`" id="btnDownload" data-id="`+data+`">Unduh</a> | <a href="#" id="btnEdit" data-id="`+data+`">Ubah</a>
                     </div>
                     `;
                 },
@@ -285,6 +285,12 @@ $('body').on('click', '#btnEdit', function(e) {
         $("#uuid_edit").val(response.data.uuid)
 
         $("#report_name_edit").val(response.data.report_name)
+
+        $("#kesatuan_edit").val(response.data.kesatuan)
+        $("#atasan_edit").val(response.data.atasan)
+        $("#pangkat_nrp_edit").val(response.data.pangkat_nrp)
+        $("#jabatan_edit").val(response.data.jabatan)
+        $("#kota_edit").val(response.data.kota)
 
         if(response.data.polda != "polda_all") {
             $('#polda_edit option[value='+response.data.polda+']').prop("selected", true)
