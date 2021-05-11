@@ -53,27 +53,27 @@
                                     </select>
                                 </div>
 
-                                <div class="col-md-12">
+                                <div class="col-md-12 mb-3">
                                     <label class="text-popup">Kesatuan</label>
                                     <input type="text" name="kesatuan" id="kesatuan" class="form-control popoups" autocomplete="off" placeholder="- Kesatuan">
                                 </div>
 
-                                <div class="col-md-12">
+                                <div class="col-md-12 mb-3">
                                     <label class="text-popup">Atasan</label>
                                     <input type="text" name="atasan" id="atasan" class="form-control popoups" autocomplete="off" placeholder="- Atasan">
                                 </div>
 
-                                <div class="col-md-12">
+                                <div class="col-md-12 mb-3">
                                     <label class="text-popup">Pangkat dan NRP</label>
                                     <input type="text" name="pangkat_nrp" id="pangkat_nrp" class="form-control popoups" autocomplete="off" placeholder="- Pangkat dan NRP">
                                 </div>
 
-                                <div class="col-md-12">
+                                <div class="col-md-12 mb-3">
                                     <label class="text-popup">Jabatan</label>
                                     <input type="text" name="jabatan" id="jabatan" class="form-control popoups" autocomplete="off" placeholder="- Jabatan">
                                 </div>
 
-                                <div class="col-md-12">
+                                <div class="col-md-12 mb-3">
                                     <label class="text-popup">Kota</label>
                                     <input type="text" name="kota" id="kota" class="form-control popoups" autocomplete="off" placeholder="- Kota">
                                 </div>
