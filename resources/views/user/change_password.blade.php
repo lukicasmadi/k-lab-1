@@ -15,17 +15,17 @@
 <div class="layout-px-spacing">
     <div class="row layout-top-spacing">
 
-        <div class="col-lg-6 col-12  layout-spacing">
+        <div class="col-lg-12 col-12 mb-5 layout-spacing">
             @include('flash::message')
             <div class="statbox widget box box-shadow">
 
-                <div class="widget-content widget-content-area">
+                <div class="widget-content text-artikel">
                     <form method="POST" action="{{ route('change_password_process') }}">
                         @csrf
 
                         <div class="form-group mb-4">
                             <label>Password Sekarang</label>
-                            <input type="password" class="form-control @error('current_password') is-invalid @enderror" id="current_password" name="current_password" placeholder="Password Sekarang" autocomplete="off" value="">
+                            <input type="password" class="form-control artikel @error('current_password') is-invalid @enderror" id="current_password" name="current_password" placeholder="Password Sekarang" autocomplete="off" value="">
                             @error('current_password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -35,7 +35,7 @@
 
                         <div class="form-group mb-4">
                             <label>Password Baru</label>
-                            <input type="password" class="form-control @error('new_password') is-invalid @enderror" id="new_password" name="new_password" placeholder="Password Baru" autocomplete="off" value="">
+                            <input type="password" class="form-control artikel @error('new_password') is-invalid @enderror" id="new_password" name="new_password" placeholder="Password Baru" autocomplete="off" value="">
                             @error('new_password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -45,7 +45,7 @@
 
                         <div class="form-group mb-4">
                             <label>Konfirmasi Password Baru</label>
-                            <input type="password" class="form-control @error('new_password_confirmation') is-invalid @enderror" id="new_password_confirmation" name="new_password_confirmation" placeholder="Konfirmasi Password Baru" autocomplete="off" value="">
+                            <input type="password" class="form-control artikel @error('new_password_confirmation') is-invalid @enderror" id="new_password_confirmation" name="new_password_confirmation" placeholder="Konfirmasi Password Baru" autocomplete="off" value="">
                             @error('new_password_confirmation')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -53,7 +53,8 @@
                             @enderror
                         </div>
 
-                        <input type="submit" name="submit" class="btn btn-primary mt-3" value="Update">
+                        <input type="submit" name="submit" class="btn btn-primary mt-3 mr-1" value="Update">
+                        <a href="{{ route('article_index') }}" class="btn btn-warning mt-3">KEMBALI</a>
                     </form>
                 </div>
             </div>

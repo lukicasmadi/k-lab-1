@@ -44,7 +44,7 @@
                                     </select>
                                 </div>
 
-                                <div class="col-md-12">
+                                <div class="col-md-12 mb-3">
                                     <label class="text-popup">Nama Operasi</label>
                                     <select class="form-control form-custom height-form" id="rencana_operasi_id_edit" name="rencana_operasi_id_edit">
                                         <option selected="selected" value="">-   Pilih operasi yang akan Anda laksanakan</option>
@@ -54,27 +54,27 @@
                                     </select>
                                 </div>
 
-                                <div class="col-md-12">
+                                <div class="col-md-12 mb-3">
                                     <label class="text-popup">Kesatuan</label>
                                     <input type="text" name="kesatuan_edit" id="kesatuan_edit" class="form-control popoups" autocomplete="off" placeholder="- Kesatuan">
                                 </div>
 
-                                <div class="col-md-12">
+                                <div class="col-md-12 mb-3">
                                     <label class="text-popup">Atasan</label>
                                     <input type="text" name="atasan_edit" id="atasan_edit" class="form-control popoups" autocomplete="off" placeholder="- Atasan">
                                 </div>
 
-                                <div class="col-md-12">
+                                <div class="col-md-12 mb-3">
                                     <label class="text-popup">Pangkat dan NRP</label>
                                     <input type="text" name="pangkat_nrp_edit" id="pangkat_nrp_edit" class="form-control popoups" autocomplete="off" placeholder="- Pangkat dan NRP">
                                 </div>
 
-                                <div class="col-md-12">
+                                <div class="col-md-12 mb-3">
                                     <label class="text-popup">Jabatan</label>
                                     <input type="text" name="jabatan_edit" id="jabatan_edit" class="form-control popoups" autocomplete="off" placeholder="- Jabatan">
                                 </div>
 
-                                <div class="col-md-12">
+                                <div class="col-md-12 mb-3">
                                     <label class="text-popup">Kota</label>
                                     <input type="text" name="kota_edit" id="kota_edit" class="form-control popoups" autocomplete="off" placeholder="- Kota">
                                 </div>
