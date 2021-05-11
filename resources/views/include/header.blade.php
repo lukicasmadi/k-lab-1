@@ -29,7 +29,7 @@
 
                         <li class="menu single-menu {{ request()->is('dashboard') || request()->is('polda-data/*') ? 'active' : '' }}">
                             <a href="{{ route('dashboard') }}">
-                                <div data-step="1" data-intro="Klik Menu Dashboard untuk melihat keseluruhan data POLDA yang sudah terkirim">
+                                <div data-step="1" data-intro="Menu Dashboard untuk melihat keseluruhan data polda yang sudah terkirim secara list, grafik dan download data">
                                     <span>Beranda</span>
                                 </div>
                             </a>
@@ -56,7 +56,7 @@
                                 ? 'active' : ''
                                 }}">
                                 <a href="{{ route('rencana_operasi_index') }}">
-                                    <div data-step="2" data-intro="Klik Menu Rencana Operasi Lorem Ipsum has been the industry's standard dummy text ever since">
+                                    <div data-step="2" data-intro="Menu Rencana Operasi digunakan untuk menambahkan rencana operasi yang akan dijalankan oleh polda">
                                         <span>Rencana Operasi</span>
                                     </div>
                                 </a>
@@ -66,7 +66,7 @@
                                 request()->is('report/*') ? 'active' : ''
                                 }}">
                                 <a href="#reportpusat" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
-                                    <div data-step="3" data-intro="Klik Menu Laporan Lorem Ipsum has been the industry's standard dummy text ever since">
+                                    <div data-step="3" data-intro="Menu Laporan digunakan untuk membuat laporan harian, perbandingan dan download data">
                                         <span>Laporan</span>
                                     </div>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -95,7 +95,7 @@
                         @role('access_daerah')
                             <li class="menu single-menu {{ request()->is('custom-name') ? 'active' : '' }}">
                                 <a href="{{ route('polda_custom_name') }}">
-                                    <div data-step="4" data-intro="Klik Menu RENCANA OPERASI Lorem Ipsum has been the industry's standard dummy text ever since">
+                                    <div data-step="4" data-intro="Menu RENCANA OPERASI ">
                                         <span>RENCANA OPERASI</span>
                                     </div>
                                 </a>
@@ -132,7 +132,7 @@
                                     ? 'active' : ''
                                 }}">
                                 <a href="#dashboard" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
-                                    <div class="" data-step="6" data-intro="Klik Menu Manajemen Data Lorem Ipsum has been the industry's standard dummy text ever since">
+                                    <div class="" data-step="6" data-intro="Klik Menu Manajemen Data untuk mengatur semua master data">
                                         <span>Manajemen Data</span>
                                     </div>
                                 </a>
@@ -201,7 +201,7 @@
             <li class="nav-item dropdown user-profile-dropdown order-lg-0 order-1">
                 <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="user-profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <svg style="margin-right: 33px; position: absolute;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                <div class="media" data-step="7" data-intro="Klik Detail User Lorem Ipsum has been the industry's standard dummy text ever since">
+                <div class="media" data-step="7" data-intro="Menu User digunakan untuk mengubah password, profil dan keluar dari sistem">
                         @php
                             if(!empty(auth()->user())) {
                                 $user = App\Models\User::whereId(myUserId())->first();
@@ -267,7 +267,7 @@
 <div class="layout-px-spacing">
     <div class="page-header">
         @stack('page_title')
-        <div class="toggle-switch" data-step="8" data-intro="Klik Button Switch Lorem Ipsum has been the industry's standard dummy text ever since">
+        <div class="toggle-switch" data-step="8" data-intro="Tombol mengubah tema digunakan untuk mengganti tema pada website">
             <label class="switch s-icons s-outline  s-outline-secondary">
                 <input type="checkbox" checked="" class="theme-shifter" id="changeTheme">
                 <span class="slider round">
