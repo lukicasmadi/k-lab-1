@@ -286,6 +286,12 @@ $('body').on('click', '#btnEdit', function(e) {
 
         $("#report_name_edit").val(response.data.report_name)
 
+        $("#kesatuan_edit").val(response.data.kesatuan)
+        $("#atasan_edit").val(response.data.atasan)
+        $("#pangkat_nrp_edit").val(response.data.pangkat_nrp)
+        $("#jabatan_edit").val(response.data.jabatan)
+        $("#kota_edit").val(response.data.kota)
+
         if(response.data.polda != "polda_all") {
             $('#polda_edit option[value='+response.data.polda+']').prop("selected", true)
         }

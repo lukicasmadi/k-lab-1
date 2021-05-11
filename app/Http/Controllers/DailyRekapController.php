@@ -160,6 +160,11 @@ class DailyRekapController extends Controller
                     'config_date' => $request->config_date_edit,
                     'operation_date_start' => dateOnly($ro->start_date),
                     'operation_date_end' => dateOnly($ro->end_date),
+                    'kesatuan' => $request->kesatuan_edit,
+                    'atasan' => $request->atasan_edit,
+                    'pangkat_nrp' => $request->pangkat_nrp_edit,
+                    'jabatan' => $request->jabatan_edit,
+                    'kota' => $request->kota_edit,
                 ]
             );
         } else {
@@ -172,7 +177,12 @@ class DailyRekapController extends Controller
                     'rencana_operasi_id' => $request->rencana_operasi_id_edit,
                     'config_date' => $request->config_date_edit,
                     'operation_date_start' => dateOnly($request->tanggal_mulai_edit),
-                'operation_date_end' => dateOnly($request->tanggal_selesai_edit),
+                    'operation_date_end' => dateOnly($request->tanggal_selesai_edit),
+                    'kesatuan' => $request->kesatuan_edit,
+                    'atasan' => $request->atasan_edit,
+                    'pangkat_nrp' => $request->pangkat_nrp_edit,
+                    'jabatan' => $request->jabatan_edit,
+                    'kota' => $request->kota_edit,
                 ]
             );
         }
