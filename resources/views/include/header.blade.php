@@ -36,18 +36,6 @@
                         </li>
 
                         @role('access_pusat|administrator')
-                            @if (!empty(operationPlans()))
-                                @if (authUser()->id == 1)
-                                    <li class="menu single-menu {{ request()->is('statistics') || request()->is('statistics/*') ? 'active' : '' }}">
-                                        <a href="{{ route('statistics_index') }}">
-                                            <div>
-                                                <span>Data Statistik</span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                @endif
-                            @endif
-
                             <li class="menu single-menu {{
                                 request()->is('operation-plan') ||
                                 request()->is('operation-plan/*') ||
