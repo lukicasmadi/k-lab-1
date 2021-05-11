@@ -95,7 +95,7 @@
                         @role('access_daerah')
                             <li class="menu single-menu {{ request()->is('custom-name') ? 'active' : '' }}">
                                 <a href="{{ route('polda_custom_name') }}">
-                                    <div data-step="4" data-intro="Menu RENCANA OPERASI ">
+                                    <div data-step="4" data-intro="Menu Rencana Operasi digunakan untuk menambahkan alias pada rencana operasi yang akan dijalankan oleh polda">
                                         <span>RENCANA OPERASI</span>
                                     </div>
                                 </a>
@@ -104,7 +104,7 @@
                                 request()->is('report/*') || request()->is('operation-onsite') || request()->is('operation-onsite/*') ? 'active' : ''
                                 }}">
                                 <a href="#reportpusat" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
-                                    <div data-step="5" data-intro="Klik Menu Laporan Lorem Ipsum has been the industry's standard dummy text ever since">
+                                    <div data-step="5" data-intro="Menu Laporan digunakan untuk membuat laporan harian polda">
                                         <span>Laporan</span>
                                     </div>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -285,6 +285,7 @@ $(document).ready(function () {
     $('#changeTheme').click(function() {
         alert("Fitur ini masih dalam tahap pengembangan")
     })
+    introJs().start()
 })
 </script>
 @endpush
