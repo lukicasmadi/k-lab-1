@@ -25,6 +25,11 @@ class DailyRekapController extends Controller
             return redirect()->back();
         }
 
+        if(empty($dailyRekap->kesatuan) || empty($dailyRekap->atasan) || empty($dailyRekap->pangkat_nrp) || empty($dailyRekap->jabatan) || empty($dailyRekap->kota)) {
+            flash('Data laphar belum lengkap. Silahkan gunakan menu ubah untuk memperbaharui data')->warning();
+            return redirect()->back();
+        }
+
         $polda = $dailyRekap->polda;
         $year = $dailyRekap->year;
         $rencana_operartion_id = $dailyRekap->rencana_operasi_id;
