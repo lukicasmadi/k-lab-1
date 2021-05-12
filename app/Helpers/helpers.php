@@ -103,6 +103,12 @@ if (! function_exists('indonesianFullDayAndDate')) {
     }
 }
 
+if (! function_exists('indonesiaDayAndDate')) {
+    function indonesiaDayAndDate($timestamp) {
+        return Carbon::parse($timestamp)->isoFormat('dddd, D MMMM Y');
+    }
+}
+
 if (! function_exists('IdFullDateOnly')) {
     function IdFullDateOnly($timestamp) {
         return Carbon::parse($timestamp)->isoFormat('dddd, D MMMM Y');
