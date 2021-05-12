@@ -77,7 +77,7 @@
 <script>
 var firstUpload = new FileUploadWithPreview('myFirstImage')
 $(document).ready(function () {
-    if(location.hostname == "korlantas.test") {
+    if($('meta[name=env_var]').attr('content') == "local") {
         let randomNum = Math.floor((Math.random() * 10) + 1)
         $("input[type=number]").val(randomNum)
         $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
