@@ -1334,10 +1334,10 @@ if (! function_exists('reportCurrentToDisplay')) {
 if (! function_exists('reportDailyPrev')) {
     function reportDailyPrev($polda, $year, $rencana_operation_id, $config_date, $start_date, $end_date) {
 
-        $check = DailyInputPrev::where('rencana_operasi_id', $rencana_operation_id)->where('year', $year)->first();
+        $check = DailyInputPrev::where('rencana_operasi_id', $rencana_operation_id)->where('year', $year)->where('polda_id', $polda)->first();
 
         if(empty($check)) {
-            $secondCheck = DailyInput::where('rencana_operasi_id', $rencana_operation_id)->where('year', $year)->first();
+            $secondCheck = DailyInput::where('rencana_operasi_id', $rencana_operation_id)->where('year', $year)->where('polda_id', $polda)->first();
 
             if(empty($secondCheck)) {
                 $outputLaporanPrev = DailyInputPrev::selectRaw('
@@ -1995,6 +1995,7 @@ if (! function_exists('reportDailyPrev')) {
                 ->where('rencana_operasi_id', $rencana_operation_id)
                 ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
                 ->first();
+
                 return $outputLaporanCurrent;
             }
         } else {
@@ -2333,10 +2334,10 @@ if (! function_exists('reportDailyPrev')) {
 if (! function_exists('reportDailyCurrent')) {
     function reportDailyCurrent($polda, $year, $rencana_operation_id, $config_date, $start_date, $end_date) {
 
-        $check = DailyInput::where('rencana_operasi_id', $rencana_operation_id)->where('year', $year)->first();
+        $check = DailyInput::where('rencana_operasi_id', $rencana_operation_id)->where('year', $year)->where('polda_id', $polda)->first();
 
         if(empty($check)) {
-            $secondCheck = DailyInputPrev::where('rencana_operasi_id', $rencana_operation_id)->where('year', $year)->first();
+            $secondCheck = DailyInputPrev::where('rencana_operasi_id', $rencana_operation_id)->where('year', $year)->where('polda_id', $polda)->first();
 
             if(empty($secondCheck)) {
                 $outputLaporanCurrent = DailyInput::selectRaw('

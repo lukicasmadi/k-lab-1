@@ -78,7 +78,7 @@
                                     <input type="text" name="kota" id="kota" class="form-control popoups" autocomplete="off" placeholder="- Kota">
                                 </div>
 
-                                <div class="col-md-12 d-none div_hari_operasi">
+                                <div class="col-md-12 div_hari_operasi">
                                     <label class="text-popup">Hari Operasi</label>
                                     <select class="form-control form-custom height-form" id="config_date" name="config_date">
                                         <option value="all" selected="selected">-   Semua Hari</option>

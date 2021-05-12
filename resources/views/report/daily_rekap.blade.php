@@ -91,7 +91,7 @@ $('#modalForm').on('hidden.bs.modal', function () {
     $("#tanggal_selesai").val('')
 
     $(".custom_hari").addClass('d-none')
-    $(".div_hari_operasi").addClass('d-none')
+    // $(".div_hari_operasi").addClass('d-none')
     $(".div_tanggal_mulai").addClass('d-none')
     $(".div_tanggal_selesai").addClass('d-none')
 
@@ -107,7 +107,7 @@ $('#form_edit_rekap').on('hidden.bs.modal', function () {
     $("#tanggal_selesai_edit").val('')
 
     $(".custom_hari").addClass('d-none')
-    $(".div_hari_operasi").addClass('d-none')
+    // $(".div_hari_operasi").addClass('d-none')
     $(".div_tanggal_mulai").addClass('d-none')
     $(".div_tanggal_selesai").addClass('d-none')
 
@@ -254,7 +254,7 @@ $('body').on('change', '#rencana_operasi_id', function(e) {
         checkDateRange()
         $("#config_date").prop('selectedIndex', 0)
     } else {
-        $(".div_hari_operasi").addClass("d-none")
+        // $(".div_hari_operasi").addClass("d-none")
         $(".div_tanggal_mulai").addClass('d-none')
         $(".div_tanggal_selesai").addClass('d-none')
     }
@@ -305,6 +305,22 @@ $('body').on('click', '#btnEdit', function(e) {
             $(".custom_hari").removeClass("d-none")
             $("#tanggal_mulai_edit").val(DateTime.fromISO(response.data.operation_date_start).toFormat('dd-MM-yyyy'))
             $("#tanggal_selesai_edit").val(DateTime.fromISO(response.data.operation_date_end).toFormat('dd-MM-yyyy'))
+
+            $('#tanggal_mulai_edit').datepicker({
+                format: 'dd-mm-yyyy',
+                todayHighlight: true,
+                autoclose: true,
+                // startDate: DateTime.fromISO(response.data.operation_date_start).toFormat('dd-MM-yyyy'),
+                // endDate: DateTime.fromISO(response.data.operation_date_end).toFormat('dd-MM-yyyy'),
+            })
+
+            $('#tanggal_selesai_edit').datepicker({
+                format: 'dd-mm-yyyy',
+                todayHighlight: true,
+                autoclose: true,
+                // startDate: DateTime.fromISO(response.data.operation_date_start).toFormat('dd-MM-yyyy'),
+                // endDate: DateTime.fromISO(response.data.operation_date_end).toFormat('dd-MM-yyyy'),
+            })
         } else {
             $('#config_date_edit option[value="all"]').prop("selected", true)
             $(".custom_hari").addClass("d-none")
@@ -341,7 +357,7 @@ function checkDateRange() {
         var startDate = data.start_date
         var endDate = data.end_date
 
-        $(".div_hari_operasi").removeClass("d-none")
+        // $(".div_hari_operasi").removeClass("d-none")
 
         $('#tanggal_mulai').datepicker({
             format: 'dd-mm-yyyy',
