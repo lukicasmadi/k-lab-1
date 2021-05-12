@@ -375,21 +375,21 @@ function checkDateRange() {
             endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
         })
 
-        $('#tanggal_mulai_edit').datepicker({
-            format: 'dd-mm-yyyy',
-            todayHighlight: true,
-            autoclose: true,
-            startDate: DateTime.fromISO(startDate).toFormat('dd-MM-yyyy'),
-            endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
-        })
+        // $('#tanggal_mulai_edit').datepicker({
+        //     format: 'dd-mm-yyyy',
+        //     todayHighlight: true,
+        //     autoclose: true,
+        //     startDate: DateTime.fromISO(startDate).toFormat('dd-MM-yyyy'),
+        //     endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
+        // })
 
-        $('#tanggal_selesai_edit').datepicker({
-            format: 'dd-mm-yyyy',
-            todayHighlight: true,
-            autoclose: true,
-            startDate: DateTime.fromISO(startDate).toFormat('dd-MM-yyyy'),
-            endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
-        })
+        // $('#tanggal_selesai_edit').datepicker({
+        //     format: 'dd-mm-yyyy',
+        //     todayHighlight: true,
+        //     autoclose: true,
+        //     startDate: DateTime.fromISO(startDate).toFormat('dd-MM-yyyy'),
+        //     endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
+        // })
     })
     .catch(err => {
         console.error(err);

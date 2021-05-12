@@ -85,8 +85,8 @@ class DailyRekapController extends Controller
         $start_date = $dailyRekap->operation_date_start;
         $end_date = $dailyRekap->operation_date_end;
 
-        $prev = reportPrevToDisplay($prevYear, $rencana_operartion_id, $start_date, $end_date);
-        $current = reportCurrentToDisplay($currentYear, $rencana_operartion_id, $start_date, $end_date);
+        $prev = reportPrevToDisplayByPoldaId($prevYear, $rencana_operartion_id, $start_date, $end_date, $polda);
+        $current = reportCurrentToDisplayByPoldaId($currentYear, $rencana_operartion_id, $start_date, $end_date, $polda);
 
         return excelTemplateDisplay(
             $prev,
