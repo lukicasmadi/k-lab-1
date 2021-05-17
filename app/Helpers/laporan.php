@@ -991,7 +991,9 @@ if (! function_exists('reportPrevToDisplayByPoldaId')) {
             sum(penyekatan_mobil_barang_p) as penyekatan_mobil_barang,
             sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus')
         ->where('year', $year)
-        ->where('polda_id', $poldaId)
+        ->when($poldaId != 'polda_all', function ($query) use ($poldaId) {
+            return $query->where('polda_id', $poldaId);
+        })
         ->where('rencana_operasi_id', $rencana_operation_id)
         ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
         ->first();
@@ -1322,7 +1324,9 @@ if (! function_exists('reportCurrentToDisplayByPoldaId')) {
             sum(penyekatan_mobil_barang) as penyekatan_mobil_barang,
             sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus')
         ->where('year', $year)
-        ->where('polda_id', $poldaId)
+        ->when($poldaId != 'polda_all', function ($query) use ($poldaId) {
+            return $query->where('polda_id', $poldaId);
+        })
         ->where('rencana_operasi_id', $rencana_operation_id)
         ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
         ->first();
