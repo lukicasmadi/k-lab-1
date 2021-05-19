@@ -164,7 +164,7 @@ class RencanaOperasiController extends Controller
             CountDown::create([
                 'rencana_operasi_id' => $findRO->id,
                 'tanggal' => $item,
-                'deskripsi' => $request->nama_operasi." Hari Ke-".$count,
+                'deskripsi' => $request->edit_nama_operasi." Hari Ke-".$count,
             ]);
 
             $count++;
