@@ -1239,7 +1239,6 @@ if (! function_exists('excelTemplateDateCompare')) {
         $sheet->setCellValue('E435', $nama_atasan); // NAMA ATASAN UNTUK TANDA TANGAN
         $sheet->setCellValue('E430', $pangkat); //PANGKAT & NRP
         $sheet->setCellValue('E436', $jabatan); //JABATAN
-        //$sheet->setCellValue('A5', $nama_laporan); // NAMA LAPORAN
         $sheet->setCellValue('B7', 'HARI/TGL : '.$hari_tanggal); // DIISI HARI TGL
         $sheet->setCellValue('C10', $start_date);
         $sheet->setCellValue('D10', $end_date);
@@ -2198,11 +2197,11 @@ if (! function_exists('excelTemplateDateCompare')) {
         $sheet->setCellValue('C420', applyZero($prev->penyekatan_kendaraan_khusus));
         $sheet->setCellValue('D420', applyZero($current->penyekatan_kendaraan_khusus));
 
-        // $sheet->setCellValue('C423', applyZero($prev->rapid_test_antigen_positif));
-        // $sheet->setCellValue('D423', applyZero($current->rapid_test_antigen_positif));
+        $sheet->setCellValue('C423', applyZero($prev->rapid_test_antigen_positif));
+        $sheet->setCellValue('D423', applyZero($current->rapid_test_antigen_positif));
 
-        // $sheet->setCellValue('C424', applyZero($prev->rapid_test_antigen_positif));
-        // $sheet->setCellValue('D424', applyZero($current->rapid_test_antigen_positif));
+        $sheet->setCellValue('C424', applyZero($prev->rapid_test_antigen_positif));
+        $sheet->setCellValue('D424', applyZero($current->rapid_test_antigen_positif));
 
 
         //write it again to Filesystem with the same name (=replace)
@@ -4163,11 +4162,11 @@ if (! function_exists('excelTemplateDisplayDateCompare')) {
         $sheet->setCellValue('C412', applyZero($prev->penyekatan_kendaraan_khusus));
         $sheet->setCellValue('D412', applyZero($current->penyekatan_kendaraan_khusus));
 
-        // $sheet->setCellValue('C423', applyZero($prev->rapid_test_antigen_positif));
-        // $sheet->setCellValue('D423', applyZero($current->rapid_test_antigen_positif));
+        $sheet->setCellValue('C415', applyZero($prev->rapid_test_antigen_positif));
+        $sheet->setCellValue('D415', applyZero($current->rapid_test_antigen_positif));
 
-        // $sheet->setCellValue('C424', applyZero($prev->rapid_test_antigen_positif));
-        // $sheet->setCellValue('D424', applyZero($current->rapid_test_antigen_positif));
+        $sheet->setCellValue('C416', applyZero($prev->rapid_test_antigen_positif));
+        $sheet->setCellValue('D416', applyZero($current->rapid_test_antigen_positif));
 
         $writer = IOFactory::createWriter($spreadsheet, 'Html');
         $message = $writer->save('php://output');
