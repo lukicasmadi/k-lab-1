@@ -329,7 +329,9 @@ if (! function_exists('reportPrevToDisplayAnevDateCompare')) {
             sum(penyekatan_mobil_penumpang_p) as penyekatan_mobil_penumpang,
             sum(penyekatan_mobil_bus_p) as penyekatan_mobil_bus,
             sum(penyekatan_mobil_barang_p) as penyekatan_mobil_barang,
-            sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus')
+            sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus,
+            sum(rapid_test_antigen_positif_p) as rapid_test_antigen_positif,
+            sum(rapid_test_antigen_negatif_p) as rapid_test_antigen_negatif')
         ->where('rencana_operasi_id', $rencana_operation_id)
         ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
         ->first();
@@ -658,7 +660,9 @@ if (! function_exists('reportCurrentToDisplayAnevDateCompare')) {
             sum(penyekatan_mobil_penumpang) as penyekatan_mobil_penumpang,
             sum(penyekatan_mobil_bus) as penyekatan_mobil_bus,
             sum(penyekatan_mobil_barang) as penyekatan_mobil_barang,
-            sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus')
+            sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus,
+            sum(rapid_test_antigen_positif) as rapid_test_antigen_positif,
+            sum(rapid_test_antigen_negatif) as rapid_test_antigen_negatif')
         ->where('rencana_operasi_id', $rencana_operation_id)
         ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
         ->first();
@@ -989,7 +993,9 @@ if (! function_exists('reportPrevToDisplayByPoldaId')) {
             sum(penyekatan_mobil_penumpang_p) as penyekatan_mobil_penumpang,
             sum(penyekatan_mobil_bus_p) as penyekatan_mobil_bus,
             sum(penyekatan_mobil_barang_p) as penyekatan_mobil_barang,
-            sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus')
+            sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus,
+            sum(rapid_test_antigen_positif_p) as rapid_test_antigen_positif,
+            sum(rapid_test_antigen_negatif_p) as rapid_test_antigen_negatif')
         ->where('year', $year)
         ->when($poldaId != 'polda_all', function ($query) use ($poldaId) {
             return $query->where('polda_id', $poldaId);
@@ -1322,7 +1328,9 @@ if (! function_exists('reportCurrentToDisplayByPoldaId')) {
             sum(penyekatan_mobil_penumpang) as penyekatan_mobil_penumpang,
             sum(penyekatan_mobil_bus) as penyekatan_mobil_bus,
             sum(penyekatan_mobil_barang) as penyekatan_mobil_barang,
-            sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus')
+            sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus,
+            sum(rapid_test_antigen_positif) as rapid_test_antigen_positif,
+            sum(rapid_test_antigen_negatif) as rapid_test_antigen_negatif')
         ->where('year', $year)
         ->when($poldaId != 'polda_all', function ($query) use ($poldaId) {
             return $query->where('polda_id', $poldaId);
@@ -1657,7 +1665,9 @@ if (! function_exists('reportPrevToDisplay')) {
             sum(penyekatan_mobil_penumpang_p) as penyekatan_mobil_penumpang,
             sum(penyekatan_mobil_bus_p) as penyekatan_mobil_bus,
             sum(penyekatan_mobil_barang_p) as penyekatan_mobil_barang,
-            sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus')
+            sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus,
+            sum(rapid_test_antigen_positif_p) as rapid_test_antigen_positif,
+            sum(rapid_test_antigen_negatif_p) as rapid_test_antigen_negatif')
         ->where('year', $year)
         ->where('rencana_operasi_id', $rencana_operation_id)
         ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
@@ -1987,7 +1997,9 @@ if (! function_exists('reportCurrentToDisplay')) {
             sum(penyekatan_mobil_penumpang) as penyekatan_mobil_penumpang,
             sum(penyekatan_mobil_bus) as penyekatan_mobil_bus,
             sum(penyekatan_mobil_barang) as penyekatan_mobil_barang,
-            sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus')
+            sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus,
+            sum(rapid_test_antigen_positif) as rapid_test_antigen_positif,
+            sum(rapid_test_antigen_negatif) as rapid_test_antigen_negatif')
         ->where('year', $year)
         ->where('rencana_operasi_id', $rencana_operation_id)
         ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
@@ -2326,7 +2338,9 @@ if (! function_exists('reportDailyPrev')) {
                     sum(penyekatan_mobil_penumpang_p) as penyekatan_mobil_penumpang,
                     sum(penyekatan_mobil_bus_p) as penyekatan_mobil_bus,
                     sum(penyekatan_mobil_barang_p) as penyekatan_mobil_barang,
-                    sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus')
+                    sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus,
+                    sum(rapid_test_antigen_positif_p) as rapid_test_antigen_positif,
+                    sum(rapid_test_antigen_negatif_p) as rapid_test_antigen_negatif')
                 ->when($polda != 'polda_all', function ($query) use ($polda) {
                     return $query->where('polda_id', $polda);
                 })
@@ -2655,7 +2669,9 @@ if (! function_exists('reportDailyPrev')) {
                     sum(penyekatan_mobil_penumpang) as penyekatan_mobil_penumpang,
                     sum(penyekatan_mobil_bus) as penyekatan_mobil_bus,
                     sum(penyekatan_mobil_barang) as penyekatan_mobil_barang,
-                    sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus')
+                    sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus,
+                    sum(rapid_test_antigen_positif) as rapid_test_antigen_positif,
+                    sum(rapid_test_antigen_negatif) as rapid_test_antigen_negatif')
                 ->when($polda != 'polda_all', function ($query) use ($polda) {
                     return $query->where('polda_id', $polda);
                 })
@@ -2985,7 +3001,9 @@ if (! function_exists('reportDailyPrev')) {
                 sum(penyekatan_mobil_penumpang_p) as penyekatan_mobil_penumpang,
                 sum(penyekatan_mobil_bus_p) as penyekatan_mobil_bus,
                 sum(penyekatan_mobil_barang_p) as penyekatan_mobil_barang,
-                sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus')
+                sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus,
+                sum(rapid_test_antigen_positif_p) as rapid_test_antigen_positif,
+                sum(rapid_test_antigen_negatif_p) as rapid_test_antigen_negatif')
             ->when($polda != 'polda_all', function ($query) use ($polda) {
                 return $query->where('polda_id', $polda);
             })
@@ -3326,7 +3344,9 @@ if (! function_exists('reportDailyCurrent')) {
                     sum(penyekatan_mobil_penumpang) as penyekatan_mobil_penumpang,
                     sum(penyekatan_mobil_bus) as penyekatan_mobil_bus,
                     sum(penyekatan_mobil_barang) as penyekatan_mobil_barang,
-                    sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus')
+                    sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus,
+                    sum(rapid_test_antigen_positif) as rapid_test_antigen_positif,
+                    sum(rapid_test_antigen_negatif) as rapid_test_antigen_negatif')
                 ->when($polda != 'polda_all', function ($query) use ($polda) {
                     return $query->where('polda_id', $polda);
                 })
@@ -3654,7 +3674,9 @@ if (! function_exists('reportDailyCurrent')) {
                     sum(penyekatan_mobil_penumpang_p) as penyekatan_mobil_penumpang,
                     sum(penyekatan_mobil_bus_p) as penyekatan_mobil_bus,
                     sum(penyekatan_mobil_barang_p) as penyekatan_mobil_barang,
-                    sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus')
+                    sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus,
+                    sum(rapid_test_antigen_positif_p) as rapid_test_antigen_positif,
+                    sum(rapid_test_antigen_negatif_p) as rapid_test_antigen_negatif')
                 ->when($polda != 'polda_all', function ($query) use ($polda) {
                     return $query->where('polda_id', $polda);
                 })
@@ -3984,7 +4006,9 @@ if (! function_exists('reportDailyCurrent')) {
                 sum(penyekatan_mobil_penumpang) as penyekatan_mobil_penumpang,
                 sum(penyekatan_mobil_bus) as penyekatan_mobil_bus,
                 sum(penyekatan_mobil_barang) as penyekatan_mobil_barang,
-                sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus')
+                sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus,
+                sum(rapid_test_antigen_positif) as rapid_test_antigen_positif,
+                sum(rapid_test_antigen_negatif) as rapid_test_antigen_negatif')
             ->when($polda != 'polda_all', function ($query) use ($polda) {
                 return $query->where('polda_id', $polda);
             })
@@ -4317,7 +4341,9 @@ if (! function_exists('prevPerPolda')) {
             sum(penyekatan_mobil_penumpang_p) as penyekatan_mobil_penumpang,
             sum(penyekatan_mobil_bus_p) as penyekatan_mobil_bus,
             sum(penyekatan_mobil_barang_p) as penyekatan_mobil_barang,
-            sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus')
+            sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus,
+            sum(rapid_test_antigen_positif_p) as rapid_test_antigen_positif,
+            sum(rapid_test_antigen_negatif_p) as rapid_test_antigen_negatif')
         ->where('polda_id', $polda_id)
         ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
         ->first();
@@ -4646,7 +4672,9 @@ if (! function_exists('currentPerPolda')) {
             sum(penyekatan_mobil_penumpang) as penyekatan_mobil_penumpang,
             sum(penyekatan_mobil_bus) as penyekatan_mobil_bus,
             sum(penyekatan_mobil_barang) as penyekatan_mobil_barang,
-            sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus')
+            sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus,
+            sum(rapid_test_antigen_positif) as rapid_test_antigen_positif,
+            sum(rapid_test_antigen_negatif) as rapid_test_antigen_negatif')
         ->where('polda_id', $polda_id)
         ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
         ->first();
@@ -4975,7 +5003,9 @@ if (! function_exists('allPoldaCurrentByDate')) {
             sum(penyekatan_mobil_penumpang) as penyekatan_mobil_penumpang,
             sum(penyekatan_mobil_bus) as penyekatan_mobil_bus,
             sum(penyekatan_mobil_barang) as penyekatan_mobil_barang,
-            sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus')
+            sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus,
+            sum(rapid_test_antigen_positif) as rapid_test_antigen_positif,
+            sum(rapid_test_antigen_negatif) as rapid_test_antigen_negatif')
         ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
         ->first();
 
@@ -5303,7 +5333,9 @@ if (! function_exists('allPoldaPrevByDate')) {
             sum(penyekatan_mobil_penumpang_p) as penyekatan_mobil_penumpang,
             sum(penyekatan_mobil_bus_p) as penyekatan_mobil_bus,
             sum(penyekatan_mobil_barang_p) as penyekatan_mobil_barang,
-            sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus')
+            sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus,
+            sum(rapid_test_antigen_positif_p) as rapid_test_antigen_positif,
+            sum(rapid_test_antigen_negatif_p) as rapid_test_antigen_negatif')
         ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
         ->first();
 
