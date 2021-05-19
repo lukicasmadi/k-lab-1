@@ -703,7 +703,7 @@ class PHRORequest extends FormRequest
             'penyekatan_kendaraan_khusus_p' => 'required|integer',
 
             'rapid_test_antigen_positif_p' => 'required|integer',
-            'rapid_test_antigen_positif_p' => 'required|integer',
+            'rapid_test_antigen_negatif_p' => 'required|integer',
         ];
     }
 }
