@@ -101,8 +101,6 @@ class PoldaHasRencanaOperasiController extends Controller
     {
         $op = operationPlans();
 
-        return $request->all();
-
         if(empty($op)) {
             flash('Tidak ada operasi yang sedang berjalan saat ini')->error();
             return redirect()->route('phro_index');

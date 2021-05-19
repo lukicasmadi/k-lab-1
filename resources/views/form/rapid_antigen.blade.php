@@ -45,16 +45,16 @@
                                 A. POSITIF
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('rapid_check_positif_p') is-invalid @enderror" name="rapid_check_positif_p" autocomplete="off" value="{{ old('rapid_check_positif_p') }}">
-                                    @error('rapid_check_positif_p')
+                                    <input type="number" class="form-onsite @error('rapid_test_antigen_positif_p') is-invalid @enderror" name="rapid_test_antigen_positif_p" autocomplete="off" value="{{ old('rapid_test_antigen_positif_p') }}">
+                                    @error('rapid_test_antigen_positif_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('rapid_check_positif') is-invalid @enderror" name="rapid_check_positif" autocomplete="off" value="{{ old('rapid_check_positif') }}">
-                                    @error('rapid_check_positif')
+                                    <input type="number" class="form-onsite @error('rapid_test_antigen_positif') is-invalid @enderror" name="rapid_test_antigen_positif" autocomplete="off" value="{{ old('rapid_test_antigen_positif') }}">
+                                    @error('rapid_test_antigen_positif')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -70,16 +70,16 @@
                                 B. NEGATIF
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('rapid_check_negatif_p') is-invalid @enderror" name="rapid_check_negatif_p" autocomplete="off" value="{{ old('rapid_check_negatif_p') }}">
-                                    @error('rapid_check_negatif_p')
+                                    <input type="number" class="form-onsite @error('rapid_test_antigen_negatif_p') is-invalid @enderror" name="rapid_test_antigen_negatif_p" autocomplete="off" value="{{ old('rapid_test_antigen_negatif_p') }}">
+                                    @error('rapid_test_antigen_negatif_p')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                                 <div class="col-xl-3 col-md-12 col-sm-12 col-12">
-                                    <input type="number" class="form-onsite @error('rapid_check_negatif') is-invalid @enderror" name="rapid_check_negatif" autocomplete="off" value="{{ old('rapid_check_negatif') }}">
-                                    @error('rapid_check_negatif')
+                                    <input type="number" class="form-onsite @error('rapid_test_antigen_negatif') is-invalid @enderror" name="rapid_test_antigen_negatif" autocomplete="off" value="{{ old('rapid_test_antigen_negatif') }}">
+                                    @error('rapid_test_antigen_negatif')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
