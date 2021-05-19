@@ -235,7 +235,7 @@ if (! function_exists('excelTemplate')) {
         $sheet = $spreadsheet->getActiveSheet();
 
         $sheet->setCellValue('B6', $kesatuan); //NAMA KESATUAN
-        $sheet->setCellValue('E428', indonesianDate(date("Y-m-d"))); // TEMPAT, TANGGAL
+        $sheet->setCellValue('E428', indonesiaDayAndDate(date("Y-m-d"))); // TEMPAT, TANGGAL
         $sheet->setCellValue('E434', $nama_atasan); // NAMA ATASAN UNTUK TANDA TANGAN
         $sheet->setCellValue('E435', $pangkat); //PANGKAT & NRP
         $sheet->setCellValue('E429', $jabatan); //JABATAN
@@ -1195,6 +1195,12 @@ if (! function_exists('excelTemplate')) {
         $sheet->setCellValue('C420', applyZero($prev->penyekatan_kendaraan_khusus));
         $sheet->setCellValue('D420', applyZero($current->penyekatan_kendaraan_khusus));
 
+        $sheet->setCellValue('C423', applyZero($prev->rapid_test_antigen_positif));
+        $sheet->setCellValue('D423', applyZero($current->rapid_test_antigen_positif));
+
+        $sheet->setCellValue('C424', applyZero($prev->rapid_test_antigen_positif));
+        $sheet->setCellValue('D424', applyZero($current->rapid_test_antigen_positif));
+
 
         //write it again to Filesystem with the same name (=replace)
         $writer = new Xlsx($spreadsheet);
@@ -1217,9 +1223,9 @@ if (! function_exists('excelTemplateDateCompare')) {
         $now = now()->format("Y-m-d");
 
         if(is_null($customFileName) || empty($customFileName)) {
-            $filename = 'report-'.$now;
+            $filename = 'REPORT '.$now;
         } else {
-            $filename = 'report-'.$customFileName;
+            $filename = 'REPORT '.$customFileName;
         }
 
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -1229,7 +1235,7 @@ if (! function_exists('excelTemplateDateCompare')) {
         $sheet = $spreadsheet->getActiveSheet();
 
         $sheet->setCellValue('B6', $kesatuan); //NAMA KESATUAN
-        $sheet->setCellValue('E428', indonesianDate(date("Y-m-d"))); // TEMPAT, TANGGAL
+        $sheet->setCellValue('E428', indonesiaDayAndDate(date("Y-m-d"))); // TEMPAT, TANGGAL
         $sheet->setCellValue('E435', $nama_atasan); // NAMA ATASAN UNTUK TANDA TANGAN
         $sheet->setCellValue('E430', $pangkat); //PANGKAT & NRP
         $sheet->setCellValue('E436', $jabatan); //JABATAN
@@ -2191,6 +2197,12 @@ if (! function_exists('excelTemplateDateCompare')) {
 
         $sheet->setCellValue('C420', applyZero($prev->penyekatan_kendaraan_khusus));
         $sheet->setCellValue('D420', applyZero($current->penyekatan_kendaraan_khusus));
+
+        // $sheet->setCellValue('C423', applyZero($prev->rapid_test_antigen_positif));
+        // $sheet->setCellValue('D423', applyZero($current->rapid_test_antigen_positif));
+
+        // $sheet->setCellValue('C424', applyZero($prev->rapid_test_antigen_positif));
+        // $sheet->setCellValue('D424', applyZero($current->rapid_test_antigen_positif));
 
 
         //write it again to Filesystem with the same name (=replace)
@@ -4150,6 +4162,12 @@ if (! function_exists('excelTemplateDisplayDateCompare')) {
 
         $sheet->setCellValue('C412', applyZero($prev->penyekatan_kendaraan_khusus));
         $sheet->setCellValue('D412', applyZero($current->penyekatan_kendaraan_khusus));
+
+        // $sheet->setCellValue('C423', applyZero($prev->rapid_test_antigen_positif));
+        // $sheet->setCellValue('D423', applyZero($current->rapid_test_antigen_positif));
+
+        // $sheet->setCellValue('C424', applyZero($prev->rapid_test_antigen_positif));
+        // $sheet->setCellValue('D424', applyZero($current->rapid_test_antigen_positif));
 
         $writer = IOFactory::createWriter($spreadsheet, 'Html');
         $message = $writer->save('php://output');
