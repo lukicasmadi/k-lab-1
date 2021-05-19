@@ -235,11 +235,10 @@ if (! function_exists('excelTemplate')) {
         $sheet = $spreadsheet->getActiveSheet();
 
         $sheet->setCellValue('B6', $kesatuan); //NAMA KESATUAN
-        $sheet->setCellValue('E423', indonesianDate(date("Y-m-d"))); // TEMPAT, TANGGAL
-        $sheet->setCellValue('E430', $nama_atasan); // NAMA ATASAN UNTUK TANDA TANGAN
-        $sheet->setCellValue('E431', $pangkat); //PANGKAT & NRP
-        $sheet->setCellValue('E425', $jabatan); //JABATAN
-        //$sheet->setCellValue('A5', $nama_laporan); // NAMA LAPORAN
+        $sheet->setCellValue('E428', indonesianDate(date("Y-m-d"))); // TEMPAT, TANGGAL
+        $sheet->setCellValue('E434', $nama_atasan); // NAMA ATASAN UNTUK TANDA TANGAN
+        $sheet->setCellValue('E435', $pangkat); //PANGKAT & NRP
+        $sheet->setCellValue('E429', $jabatan); //JABATAN
         $sheet->setCellValue('B7', 'HARI/TGL : '.$hari_tanggal); // DIISI HARI TGL
 
         $sheet->setCellValue('C14', applyZero($prev->pelanggaran_lalu_lintas_tilang));
