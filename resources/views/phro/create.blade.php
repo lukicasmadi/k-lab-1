@@ -52,6 +52,7 @@
             @include('form.data_terkait_arus_pemudik')
             @include('form.data_terkait_arus_prokes_covid')
             @include('form.peyekatan')
+            @include('form.rapid_antigen')
 
             @include('form.button')
 

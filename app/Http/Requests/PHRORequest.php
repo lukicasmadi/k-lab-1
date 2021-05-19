@@ -372,6 +372,9 @@ class PHRORequest extends FormRequest
             'penyekatan_mobil_barang' => 'required|integer',
             'penyekatan_kendaraan_khusus' => 'required|integer',
 
+            'rapid_test_antigen_positif' => 'required|integer',
+            'rapid_test_antigen_negatif' => 'required|integer',
+
 //================================================================= BATAS VALIDASI FORM CURRENT DAN PREV =================================================================
 
             'pelanggaran_lalu_lintas_tilang_p' => 'required|integer',
@@ -698,6 +701,9 @@ class PHRORequest extends FormRequest
             'penyekatan_mobil_bus_p' => 'required|integer',
             'penyekatan_mobil_barang_p' => 'required|integer',
             'penyekatan_kendaraan_khusus_p' => 'required|integer',
+
+            'rapid_test_antigen_positif_p' => 'required|integer',
+            'rapid_test_antigen_positif_p' => 'required|integer',
         ];
     }
 }
