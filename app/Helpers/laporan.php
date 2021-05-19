@@ -6366,10 +6366,10 @@ if (! function_exists('excelTemplateDateCompare')) {
         $sheet = $spreadsheet->getActiveSheet();
 
         $sheet->setCellValue('B6', $kesatuan); //NAMA KESATUAN
-        $sheet->setCellValue('E417', indonesianDate(date("Y-m-d"))); // TEMPAT, TANGGAL
-        $sheet->setCellValue('E424', $nama_atasan); // NAMA ATASAN UNTUK TANDA TANGAN
-        $sheet->setCellValue('E425', $pangkat); //PANGKAT & NRP
-        $sheet->setCellValue('E419', $jabatan); //JABATAN
+        $sheet->setCellValue('E428', indonesianDate(date("Y-m-d"))); // TEMPAT, TANGGAL
+        $sheet->setCellValue('E435', $nama_atasan); // NAMA ATASAN UNTUK TANDA TANGAN
+        $sheet->setCellValue('E430', $pangkat); //PANGKAT & NRP
+        $sheet->setCellValue('E436', $jabatan); //JABATAN
         //$sheet->setCellValue('A5', $nama_laporan); // NAMA LAPORAN
         $sheet->setCellValue('B7', 'HARI/TGL : '.$hari_tanggal); // DIISI HARI TGL
         $sheet->setCellValue('C10', $start_date);
@@ -9667,7 +9667,9 @@ if (! function_exists('laporanPrev')) {
             sum(penyekatan_mobil_penumpang_p) as penyekatan_mobil_penumpang,
             sum(penyekatan_mobil_bus_p) as penyekatan_mobil_bus,
             sum(penyekatan_mobil_barang_p) as penyekatan_mobil_barang,
-            sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus')
+            sum(penyekatan_kendaraan_khusus_p) as penyekatan_kendaraan_khusus,
+            sum(rapid_test_antigen_positif_p) as rapid_test_antigen_positif,
+            sum(rapid_test_antigen_negatif_p) as rapid_test_antigen_negatif')
         ->where('year', $year)
         ->where('rencana_operasi_id', $operation_id)
         ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
@@ -9997,7 +9999,9 @@ if (! function_exists('laporanCurrent')) {
             sum(penyekatan_mobil_penumpang) as penyekatan_mobil_penumpang,
             sum(penyekatan_mobil_bus) as penyekatan_mobil_bus,
             sum(penyekatan_mobil_barang) as penyekatan_mobil_barang,
-            sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus')
+            sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus,
+            sum(rapid_test_antigen_positif) as rapid_test_antigen_positif,
+            sum(rapid_test_antigen_negatif) as rapid_test_antigen_negatif')
         ->where('year', $year)
         ->where('rencana_operasi_id', $operation_id)
         ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
@@ -10656,7 +10660,9 @@ if (! function_exists('laporanAnevDateCompareSecond')) {
             sum(penyekatan_mobil_penumpang) as penyekatan_mobil_penumpang,
             sum(penyekatan_mobil_bus) as penyekatan_mobil_bus,
             sum(penyekatan_mobil_barang) as penyekatan_mobil_barang,
-            sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus')
+            sum(penyekatan_kendaraan_khusus) as penyekatan_kendaraan_khusus,
+            sum(rapid_test_antigen_positif) as rapid_test_antigen_positif,
+            sum(rapid_test_antigen_negatif) as rapid_test_antigen_negatif')
         ->where('rencana_operasi_id', $operation_id)
         ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
         ->first();

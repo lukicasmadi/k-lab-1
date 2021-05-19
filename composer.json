@@ -58,7 +58,7 @@
         "files": [
             "app/Helpers/helpers.php",
             "app/Helpers/laporan.php",
-            "app/Helpers/laporan_custom.php"
+            "app/Helpers/based_query.php"
         ]
     },
     "autoload-dev": {
