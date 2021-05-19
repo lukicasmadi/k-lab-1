@@ -252,18 +252,6 @@
             autoclose: true,
         })
 
-        $('#edit_tanggal_mulai').datepicker({
-            format: 'dd-mm-yyyy',
-            todayHighlight: true,
-            autoclose: true,
-        })
-
-        $('#edit_tanggal_selesai').datepicker({
-            format: 'dd-mm-yyyy',
-            todayHighlight: true,
-            autoclose: true,
-        })
-
         $('#notesMailModal').on('hidden.bs.modal', function () {
             $("#nama_operasi").val('')
             $("#jenis_operasi").val('')
@@ -401,14 +389,27 @@
         })
 
         $('#tbl_operation tbody').on('click', 'a.editData', function(e) {
+
+            $('#edit_tanggal_mulai').datepicker({
+                format: 'dd-mm-yyyy',
+                todayHighlight: true,
+                autoclose: true,
+            })
+
+            $('#edit_tanggal_selesai').datepicker({
+                format: 'dd-mm-yyyy',
+                todayHighlight: true,
+                autoclose: true,
+            })
+
             e.preventDefault()
             var uuid = $(this).attr("idval")
             axios.get(route('rencana_operasi_by_uuid', uuid)).then(function(response) {
                 if(response.status == 200) {
                     $("#edit_jenis_operasi").val(response.data.operation_type)
                     $("#edit_nama_operasi").val(response.data.name)
-                    $("#edit_tanggal_mulai").val(response.data.start_date)
-                    $("#edit_tanggal_selesai").val(response.data.end_date)
+                    $("#edit_tanggal_mulai").val(DateTime.fromISO(response.data.start_date).toFormat('dd-MM-yyyy'))
+                    $("#edit_tanggal_selesai").val(DateTime.fromISO(response.data.end_date).toFormat('dd-MM-yyyy'))
                     $("#edit_deskripsi").val(response.data.desc)
                     $("#uuid_edit").val(uuid)
                     $("#formEdit").attr("action", route('edit_rencana_operasi_new'))
