@@ -137,6 +137,8 @@ class RencanaOperasiController extends Controller
 
     public function update(RencanaOperasiUpdateRequest $request, $uuid)
     {
+        $findRO = RencanaOperasi::whereUuid($request->uuid_edit)->first();
+
         $data = [
             'name' => strtoupper($request->edit_jenis_operasi),
             'operation_type' => strtoupper($request->edit_nama_operasi),
@@ -146,7 +148,29 @@ class RencanaOperasiController extends Controller
 
         RencanaOperasi::whereUuid($request->uuid_edit)->update($data);
 
-        flash('Your data has been updated')->success();
+        OperationExtractDate::where('rencana_operasi_id', $findRO->id)->delete();
+        CountDown::where('rencana_operasi_id', $findRO->id)->delete();
+
+        $extractDate = extractDateRange(dateOnly($request->edit_tanggal_mulai), dateOnly($request->edit_tanggal_selesai));
+
+        $count = 1;
+
+        foreach($extractDate as $key => $item) {
+            OperationExtractDate::create([
+                'rencana_operasi_id' => $findRO->id,
+                'extract_date' => $item
+            ]);
+
+            CountDown::create([
+                'rencana_operasi_id' => $findRO->id,
+                'tanggal' => $item,
+                'deskripsi' => $request->nama_operasi." Hari Ke-".$count,
+            ]);
+
+            $count++;
+        }
+
+        flash('Rencana operasi telah diubah')->success();
         return redirect()->route('rencana_operasi_index');
     }
 
@@ -157,7 +181,7 @@ class RencanaOperasiController extends Controller
         $data->delete();
 
         return response()->json([
-            'output' => 'Data berhasil dihapus!',
+            'output' => 'Rencana operasi telah dihapus!',
         ], 200);
     }
 }
