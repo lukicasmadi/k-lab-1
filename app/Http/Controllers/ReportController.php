@@ -358,13 +358,6 @@ class ReportController extends Controller
             indonesianStandart($start_date),
             indonesianStandart($end_date)
         );
-
-        // return excelTemplateDisplay(
-        //     $prev,
-        //     $current,
-        //     indonesianStandart($start_date),
-        //     indonesianStandart($end_date)
-        // );
     }
 
     public function reportAllPoldaDetail()
