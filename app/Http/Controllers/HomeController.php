@@ -19,6 +19,10 @@ class HomeController extends Controller
         return [
             'tilang' => laporanHarian()->tilang,
             'teguran' => laporanHarian()->teguran,
+            'jumlah_kejadian' => laporanHarian()->jumlah_kejadian,
+            'jumlah_korban_meninggal' => laporanHarian()->jumlah_korban_meninggal,
+            'jumlah_korban_luka_berat' => laporanHarian()->jumlah_korban_luka_berat,
+            'jumlah_korban_luka_ringan' => laporanHarian()->jumlah_korban_luka_ringan,
             'year' => date("Y")
         ];
     }

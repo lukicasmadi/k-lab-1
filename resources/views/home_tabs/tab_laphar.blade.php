@@ -14,7 +14,13 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 layout-spacing">
                     <div class="mx-auto">
-                        <div id="total_laphar" class=""></div>
+                        <div id="total_laphar_pelanggaran_lalin" class=""></div>
+                    </div>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 layout-spacing">
+                    <div class="mx-auto">
+                        <div id="total_laphar_kecelakaan_lalin" class=""></div>
                     </div>
                 </div>
             </div>
@@ -26,9 +32,122 @@
 <script>
 $(document).ready(function () {
     loadLeftChart()
+    loadRightChart()
 })
 
-function loadLeftChart() {
+function loadRightChart()
+{
+    var chartKanan = {
+        chart: {
+            fontFamily: 'Quicksand, sans-serif',
+            height: 365,
+            type: 'bar',
+            toolbar: {
+                show: false,
+            }
+        },
+        plotOptions: {
+            bar: {
+                horizontal: false,
+                columnWidth: '55%',
+                endingShape: 'rounded'
+            },
+        },
+        dataLabels: {
+            enabled: false
+        },
+        noData: {
+            text: "Loading Data",
+            align: 'center',
+            verticalAlign: 'middle',
+            offsetX: 0,
+            offsetY: 0,
+            style: {
+                color: "#ffffff",
+                fontSize: '20px',
+                fontFamily: "Quicksand, sans-serif",
+            },
+        },
+        stroke: {
+            show: true,
+            width: 2,
+            colors: ['transparent']
+        },
+        series: [],
+        xaxis: {
+            categories: [],
+        },
+        yaxis: {
+            title: {
+                text: 'Total'
+            }
+        },
+        fill: {
+            opacity: 1
+        },
+    }
+
+    var rightChart = new ApexCharts(
+        document.querySelector("#total_laphar_kecelakaan_lalin"),
+        chartKanan
+    )
+
+    rightChart.render()
+
+    setInterval(function() {
+        axios.get(route('chart_laphar'))
+        .then(function(response) {
+
+            rightChart.updateOptions({
+                xaxis: {
+                    labels: {
+                        offsetX: 0,
+                        offsetY: 5,
+                        style: {
+                            fontSize: '12px',
+                            fontFamily: 'Quicksand, sans-serif',
+                            cssClass: 'apexcharts-xaxis-title',
+                        },
+                    },
+                    categories: [response.data.year]
+                },
+            })
+
+            rightChart.updateSeries([
+                {
+                    name: 'Jumlah Kejadian',
+                    data: [response.data.jumlah_kejadian]
+                },
+                {
+                    name: 'Korban Meninggal Dunia',
+                    data: [response.data.jumlah_korban_meninggal]
+                },
+                {
+                    name: 'Korban Luka Berat',
+                    data: [response.data.jumlah_korban_luka_berat]
+                },
+                {
+                    name: 'Korban Luka Ringan',
+                    data: [response.data.jumlah_korban_luka_ringan]
+                }
+            ])
+
+        }).catch(function(error) {
+            if (error.response) {
+                console.log(error.response.data)
+                console.log(error.response.status)
+                console.log(error.response.headers)
+            } else if (error.request) {
+                console.log(error.request)
+            } else {
+                console.log('Error', error.message)
+            }
+        })
+    }, 5000)
+}
+
+function loadLeftChart()
+{
     var sCol = {
         chart: {
             fontFamily: 'Quicksand, sans-serif',
@@ -80,7 +199,7 @@ function loadLeftChart() {
     }
 
     var leftChart = new ApexCharts(
-        document.querySelector("#total_laphar"),
+        document.querySelector("#total_laphar_pelanggaran_lalin"),
         sCol
     )
 
