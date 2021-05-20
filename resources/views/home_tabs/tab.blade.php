@@ -2,7 +2,6 @@
     <div class="widget-content justify-pill">
 
         <ul class="nav nav-pills2 nav-fill" id="justify-pills-tab" role="tablist">
-
             <li class="nav-item mr-3">
                 <a class="nav-link2 active" id="tab_link_absesnsi_polda" data-toggle="pill" href="#absensi" role="tab" aria-controls="absensi" aria-selected="true">Data Absensi Polda</a>
             </li>
@@ -26,8 +25,9 @@
             <li class="nav-item mr-3">
                 <a class="nav-link2" id="tab_link_total_all" data-toggle="pill" href="#total-all" role="tab" aria-controls="total-all" aria-selected="false">Semua Data Laporan</a>
             </li>
-
         </ul>
+
+        <div style="margin-top: 20px;"></div>
 
         <div class="tab-content" id="justify-pills-tabContent">
             <div class="tab-pane fade show active" id="absensi" role="tabpanel" aria-labelledby="tab_link_absesnsi_polda">
