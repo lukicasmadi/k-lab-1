@@ -25,9 +25,21 @@
 @push('page_js')
 <script>
 $(document).ready(function () {
+
+    loadLeftChart()
+    // $.getJSON(route('chart_laphar'), function(response) {
+    //     leftChart.updateSeries([{
+    //         name: 'Sales',
+    //         data: response.tilang
+    //     }])
+    // })
+})
+
+function loadLeftChart() {
     var sCol = {
         chart: {
-            height: 350,
+            fontFamily: 'Quicksand, sans-serif',
+            height: 365,
             type: 'bar',
             toolbar: {
                 show: false,
@@ -43,20 +55,26 @@ $(document).ready(function () {
         dataLabels: {
             enabled: false
         },
+        noData: {
+            text: "Loading Data",
+            align: 'center',
+            verticalAlign: 'middle',
+            offsetX: 0,
+            offsetY: 0,
+            style: {
+                color: "#ffffff",
+                fontSize: '20px',
+                fontFamily: "Quicksand, sans-serif",
+            },
+        },
         stroke: {
             show: true,
             width: 2,
             colors: ['transparent']
         },
-        series: [{
-            name: 'Tilang',
-            data: [44]
-        }, {
-            name: 'Teguran',
-            data: [76]
-        }],
+        series: [],
         xaxis: {
-            categories: ['2021'],
+            categories: [],
         },
         yaxis: {
             title: {
@@ -65,16 +83,55 @@ $(document).ready(function () {
         },
         fill: {
             opacity: 1
-
         },
     }
 
-    var chart = new ApexCharts(
+    var leftChart = new ApexCharts(
         document.querySelector("#total_laphar"),
         sCol
     )
 
-    chart.render()
-})
+    leftChart.render()
+
+    setInterval(function() {
+        axios.get(route('chart_laphar'))
+        .then(function(response) {
+
+            leftChart.updateOptions({
+                xaxis: {
+                    labels: {
+                        offsetX: 0,
+                        offsetY: 5,
+                        style: {
+                            fontSize: '12px',
+                            fontFamily: 'Quicksand, sans-serif',
+                            cssClass: 'apexcharts-xaxis-title',
+                        },
+                    },
+                    categories: [response.data.year]
+                },
+            })
+
+            leftChart.updateSeries([{
+                name: 'Tilang',
+                data: [response.data.tilang]
+            }, {
+                name: 'Teguran',
+                data: [response.data.teguran]
+            }])
+
+        }).catch(function(error) {
+            if (error.response) {
+                console.log(error.response.data)
+                console.log(error.response.status)
+                console.log(error.response.headers)
+            } else if (error.request) {
+                console.log(error.request)
+            } else {
+                console.log('Error', error.message)
+            }
+        })
+    }, 5000)
+}
 </script>
 @endpush

@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
+    public function chart_laphar()
+    {
+        $left = [laporanHarian()->tilang, laporanHarian()->teguran];
+        return [
+            'tilang' => laporanHarian()->tilang,
+            'teguran' => laporanHarian()->teguran,
+            'year' => date("Y")
+        ];
+    }
 
     public function newsDetail($slug)
     {
