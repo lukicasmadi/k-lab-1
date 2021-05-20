@@ -25,14 +25,7 @@
 @push('page_js')
 <script>
 $(document).ready(function () {
-
     loadLeftChart()
-    // $.getJSON(route('chart_laphar'), function(response) {
-    //     leftChart.updateSeries([{
-    //         name: 'Sales',
-    //         data: response.tilang
-    //     }])
-    // })
 })
 
 function loadLeftChart() {
