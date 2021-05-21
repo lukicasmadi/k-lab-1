@@ -87,11 +87,11 @@ function totalKecelakaanLalinCurrent()
                 data: [50]
             },
             {
-                name: 'L Berat',
+                name: 'Lk Berat',
                 data: [10]
             },
             {
-                name: 'L Ringan',
+                name: 'Lk Ringan',
                 data: [12]
             }
         ],
@@ -163,11 +163,11 @@ function totalKecelakaanLalinPrev()
                 data: [76]
             },
             {
-                name: 'L Berat',
+                name: 'Lk Berat',
                 data: [12]
             },
             {
-                name: 'L Ringan',
+                name: 'Lk Ringan',
                 data: [20]
             }
         ],
