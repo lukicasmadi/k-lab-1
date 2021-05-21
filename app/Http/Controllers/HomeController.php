@@ -15,14 +15,14 @@ class HomeController extends Controller
 {
     public function chart_laphar()
     {
-        $left = [laporanHarian()->tilang, laporanHarian()->teguran];
+        $left = [chartCurrent()->tilang, chartCurrent()->teguran];
         return [
-            'tilang' => laporanHarian()->tilang,
-            'teguran' => laporanHarian()->teguran,
-            'jumlah_kejadian' => laporanHarian()->jumlah_kejadian,
-            'jumlah_korban_meninggal' => laporanHarian()->jumlah_korban_meninggal,
-            'jumlah_korban_luka_berat' => laporanHarian()->jumlah_korban_luka_berat,
-            'jumlah_korban_luka_ringan' => laporanHarian()->jumlah_korban_luka_ringan,
+            'tilang' => chartCurrent()->tilang,
+            'teguran' => chartCurrent()->teguran,
+            'jumlah_kejadian' => chartCurrent()->jumlah_kejadian,
+            'jumlah_korban_meninggal' => chartCurrent()->jumlah_korban_meninggal,
+            'jumlah_korban_luka_berat' => chartCurrent()->jumlah_korban_luka_berat,
+            'jumlah_korban_luka_ringan' => chartCurrent()->jumlah_korban_luka_ringan,
             'year' => date("Y")
         ];
     }

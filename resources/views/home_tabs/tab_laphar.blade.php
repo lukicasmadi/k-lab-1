@@ -12,13 +12,13 @@
         </div>
         <div class="widget-content">
             <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 layout-spacing">
+                <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12 layout-spacing">
                     <div class="mx-auto">
                         <div id="total_laphar_pelanggaran_lalin" class=""></div>
                     </div>
                 </div>
 
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 layout-spacing">
+                <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 layout-spacing">
                     <div class="mx-auto">
                         <div id="total_laphar_kecelakaan_lalin" class=""></div>
                     </div>
@@ -64,7 +64,7 @@ function loadRightChart()
             offsetY: 0,
             style: {
                 color: "#ffffff",
-                fontSize: '20px',
+                fontSize: '15px',
                 fontFamily: "Quicksand, sans-serif",
             },
         },
@@ -175,7 +175,7 @@ function loadLeftChart()
             offsetY: 0,
             style: {
                 color: "#ffffff",
-                fontSize: '20px',
+                fontSize: '15px',
                 fontFamily: "Quicksand, sans-serif",
             },
         },
