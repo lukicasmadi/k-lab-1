@@ -70,7 +70,7 @@ function loadRightChart()
         },
         stroke: {
             show: true,
-            width: 2,
+            // width: 20,
             colors: ['transparent']
         },
         series: [],
@@ -161,7 +161,7 @@ function loadLeftChart()
             bar: {
                 horizontal: false,
                 columnWidth: '55%',
-                endingShape: 'rounded'
+                endingShape: 'rounded',
             },
         },
         dataLabels: {
@@ -181,7 +181,7 @@ function loadLeftChart()
         },
         stroke: {
             show: true,
-            width: 2,
+            // width: 20,
             colors: ['transparent']
         },
         series: [],
