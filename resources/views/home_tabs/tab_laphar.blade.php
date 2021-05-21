@@ -70,7 +70,7 @@ function loadRightChart()
         },
         stroke: {
             show: true,
-            // width: 20,
+            width: 2,
             colors: ['transparent']
         },
         series: [],
@@ -98,39 +98,32 @@ function loadRightChart()
         axios.get(route('chart_laphar'))
         .then(function(response) {
 
-            rightChart.updateOptions({
-                xaxis: {
-                    labels: {
-                        offsetX: 0,
-                        offsetY: 5,
-                        style: {
-                            fontSize: '12px',
-                            fontFamily: 'Quicksand, sans-serif',
-                            cssClass: 'apexcharts-xaxis-title',
-                        },
+            if(!_.isEmpty(response.data)) {
+                rightChart.updateOptions({
+                    xaxis: {
+                        categories: [response.data.year]
                     },
-                    categories: [response.data.year]
-                },
-            })
+                })
 
-            rightChart.updateSeries([
-                {
-                    name: 'Jumlah Kejadian',
-                    data: [response.data.jumlah_kejadian]
-                },
-                {
-                    name: 'Korban Meninggal Dunia',
-                    data: [response.data.jumlah_korban_meninggal]
-                },
-                {
-                    name: 'Korban Luka Berat',
-                    data: [response.data.jumlah_korban_luka_berat]
-                },
-                {
-                    name: 'Korban Luka Ringan',
-                    data: [response.data.jumlah_korban_luka_ringan]
-                }
-            ])
+                rightChart.updateSeries([
+                    {
+                        name: 'Jumlah Kejadian',
+                        data: [response.data.jumlah_kejadian]
+                    },
+                    {
+                        name: 'Korban Meninggal Dunia',
+                        data: [response.data.jumlah_korban_meninggal]
+                    },
+                    {
+                        name: 'Korban Luka Berat',
+                        data: [response.data.jumlah_korban_luka_berat]
+                    },
+                    {
+                        name: 'Korban Luka Ringan',
+                        data: [response.data.jumlah_korban_luka_ringan]
+                    }
+                ])
+            }
 
         }).catch(function(error) {
             if (error.response) {
@@ -181,7 +174,7 @@ function loadLeftChart()
         },
         stroke: {
             show: true,
-            // width: 20,
+            width: 2,
             colors: ['transparent']
         },
         series: [],
@@ -209,28 +202,21 @@ function loadLeftChart()
         axios.get(route('chart_laphar'))
         .then(function(response) {
 
-            leftChart.updateOptions({
-                xaxis: {
-                    labels: {
-                        offsetX: 0,
-                        offsetY: 5,
-                        style: {
-                            fontSize: '12px',
-                            fontFamily: 'Quicksand, sans-serif',
-                            cssClass: 'apexcharts-xaxis-title',
-                        },
+            if(!_.isEmpty(response.data)) {
+                leftChart.updateOptions({
+                    xaxis: {
+                        categories: [response.data.year]
                     },
-                    categories: [response.data.year]
-                },
-            })
+                })
 
-            leftChart.updateSeries([{
-                name: 'Tilang',
-                data: [response.data.tilang]
-            }, {
-                name: 'Teguran',
-                data: [response.data.teguran]
-            }])
+                leftChart.updateSeries([{
+                    name: 'Tilang',
+                    data: [response.data.tilang]
+                }, {
+                    name: 'Teguran',
+                    data: [response.data.teguran]
+                }])
+            }
 
         }).catch(function(error) {
             if (error.response) {
