@@ -70,7 +70,6 @@ function leftChart()
         },
         fill: {
             opacity: 1
-
         },
     }
 

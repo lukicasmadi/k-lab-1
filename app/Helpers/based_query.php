@@ -691,3 +691,20 @@ if (! function_exists('chartPrev')) {
         return $output;
     }
 }
+
+if (! function_exists('chartCurrentFullOperation')) {
+    function chartCurrentFullOperation() {
+        $now = date("Y-m-d");
+        $output = DailyInput::selectRaw('
+            sum(pelanggaran_lalu_lintas_tilang) as tilang,
+            sum(pelanggaran_lalu_lintas_teguran) as teguran,
+            sum(kecelakaan_lalin_jumlah_kejadian) as jumlah_kejadian,
+            sum(kecelakaan_lalin_jumlah_korban_meninggal) as jumlah_korban_meninggal,
+            sum(kecelakaan_lalin_jumlah_korban_luka_berat) as jumlah_korban_luka_berat,
+            sum(kecelakaan_lalin_jumlah_korban_luka_ringan) as jumlah_korban_luka_ringan')
+            ->whereRaw("DATE(created_at) = ?", [$now])
+            ->first();
+
+        return $output;
+    }
+}

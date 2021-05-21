@@ -98,6 +98,11 @@ function totalKecelakaanLalinCurrent()
         xaxis: {
             categories: ['2021'],
         },
+        yaxis: {
+            title: {
+                text: 'Total'
+            }
+        },
         fill: {
             opacity: 1
         },
@@ -169,6 +174,11 @@ function totalKecelakaanLalinPrev()
         xaxis: {
             categories: ['2020'],
         },
+        yaxis: {
+            title: {
+                text: 'Total'
+            }
+        },
         fill: {
             opacity: 1
         },
@@ -216,6 +226,11 @@ function totalLaphar()
         }],
         xaxis: {
             categories: ['2020', '2021'],
+        },
+        yaxis: {
+            title: {
+                text: 'Total'
+            }
         },
         fill: {
             opacity: 1
