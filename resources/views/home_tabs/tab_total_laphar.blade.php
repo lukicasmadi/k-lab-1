@@ -12,14 +12,19 @@
         </div>
         <div class="widget-content">
             <div class="row">
-                <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12 layout-spacing">
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 layout-spacing">
                     <div class="mx-auto">
                         <div id="total_laphar_daily" class=""></div>
                     </div>
                 </div>
-                <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 layout-spacing">
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 layout-spacing">
                     <div class="mx-auto">
-                        <div id="total_kecelakaan_lalin_daily" class=""></div>
+                        <div id="total_kecelakaan_lalin_daily_prev" class=""></div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 layout-spacing">
+                    <div class="mx-auto">
+                        <div id="total_kecelakaan_lalin_daily_current" class=""></div>
                     </div>
                 </div>
             </div>
@@ -31,12 +36,13 @@
 <script>
 $(document).ready(function () {
     totalLaphar()
-    totalKecelakaanLalin()
+    totalKecelakaanLalinPrev()
+    totalKecelakaanLalinCurrent()
 })
 
-function totalKecelakaanLalin()
+function totalKecelakaanLalinCurrent()
 {
-    var total_kecelakaan_lalin_daily = {
+    var total_kecelakaan_lalin_daily_current = {
         chart: {
             height: 350,
             type: 'bar',
@@ -73,29 +79,24 @@ function totalKecelakaanLalin()
         },
         series: [
             {
-                name: 'Jumlah Kejadian',
-                data: [44]
+                name: 'Kejadian',
+                data: [30]
             },
             {
-                name: 'Korban Meninggal Dunia',
-                data: [76]
+                name: 'Meninggal',
+                data: [50]
             },
             {
-                name: 'Korban Luka Berat',
+                name: 'L Berat',
+                data: [10]
+            },
+            {
+                name: 'L Ringan',
                 data: [12]
-            },
-            {
-                name: 'Korban Luka Ringan',
-                data: [20]
             }
         ],
         xaxis: {
-            categories: ['2020', '2021'],
-        },
-        yaxis: {
-            title: {
-                text: 'Total'
-            }
+            categories: ['2021'],
         },
         fill: {
             opacity: 1
@@ -103,8 +104,79 @@ function totalKecelakaanLalin()
     }
 
     var chart = new ApexCharts(
-        document.querySelector("#total_kecelakaan_lalin_daily"),
-        total_kecelakaan_lalin_daily
+        document.querySelector("#total_kecelakaan_lalin_daily_current"),
+        total_kecelakaan_lalin_daily_current
+    )
+
+    chart.render()
+}
+
+function totalKecelakaanLalinPrev()
+{
+    var total_kecelakaan_lalin_daily_prev = {
+        chart: {
+            height: 350,
+            type: 'bar',
+            toolbar: {
+                show: false,
+            }
+        },
+        plotOptions: {
+            bar: {
+                horizontal: false,
+                columnWidth: '55%',
+                endingShape: 'rounded'
+            },
+        },
+        dataLabels: {
+            enabled: false
+        },
+        noData: {
+            text: "Loading Data",
+            align: 'center',
+            verticalAlign: 'middle',
+            offsetX: 0,
+            offsetY: 0,
+            style: {
+                color: "#ffffff",
+                fontSize: '20px',
+                fontFamily: "Quicksand, sans-serif",
+            },
+        },
+        stroke: {
+            show: true,
+            width: 2,
+            colors: ['transparent']
+        },
+        series: [
+            {
+                name: 'Kejadian',
+                data: [44]
+            },
+            {
+                name: 'Meninggal',
+                data: [76]
+            },
+            {
+                name: 'L Berat',
+                data: [12]
+            },
+            {
+                name: 'L Ringan',
+                data: [20]
+            }
+        ],
+        xaxis: {
+            categories: ['2020'],
+        },
+        fill: {
+            opacity: 1
+        },
+    }
+
+    var chart = new ApexCharts(
+        document.querySelector("#total_kecelakaan_lalin_daily_prev"),
+        total_kecelakaan_lalin_daily_prev
     )
 
     chart.render()
@@ -145,14 +217,8 @@ function totalLaphar()
         xaxis: {
             categories: ['2020', '2021'],
         },
-        yaxis: {
-            title: {
-                text: 'Total'
-            }
-        },
         fill: {
             opacity: 1
-
         },
     }
 
