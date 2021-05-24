@@ -116,10 +116,33 @@ class RencanaOperasiController extends Controller
                 'extract_date' => $item
             ]);
 
+            if($count >= 1 && $count <= 7) {
+                $week = 1;
+            } else if($count > 7 && $count <= 14) {
+                $week = 2;
+            } else if($count > 14 && $count <= 21) {
+                $week = 3;
+            } else if($count > 21 && $count <= 28) {
+                $week = 4;
+            } else if($count > 28 && $count <= 35) {
+                $week = 5;
+            } else if($count > 35 && $count <= 42) {
+                $week = 6;
+            } else if($count > 42 && $count <= 49) {
+                $week = 7;
+            } else if($count > 49 && $count <= 56) {
+                $week = 8;
+            } else if($count > 56 && $count <= 63) {
+                $week = 9;
+            } else if($count > 63 && $count <= 70) {
+                $week = 10;
+            }
+
             CountDown::create([
                 'rencana_operasi_id' => $create->id,
                 'tanggal' => $item,
                 'deskripsi' => $request->nama_operasi." Hari Ke-".$count,
+                'week' => $week,
             ]);
 
             $count++;
@@ -161,10 +184,33 @@ class RencanaOperasiController extends Controller
                 'extract_date' => $item
             ]);
 
+            if($count >= 1 && $count <= 7) {
+                $week = 1;
+            } else if($count > 7 && $count <= 14) {
+                $week = 2;
+            } else if($count > 14 && $count <= 21) {
+                $week = 3;
+            } else if($count > 21 && $count <= 28) {
+                $week = 4;
+            } else if($count > 28 && $count <= 35) {
+                $week = 5;
+            } else if($count > 35 && $count <= 42) {
+                $week = 6;
+            } else if($count > 42 && $count <= 49) {
+                $week = 7;
+            } else if($count > 49 && $count <= 56) {
+                $week = 8;
+            } else if($count > 56 && $count <= 63) {
+                $week = 9;
+            } else if($count > 63 && $count <= 70) {
+                $week = 10;
+            }
+
             CountDown::create([
                 'rencana_operasi_id' => $findRO->id,
                 'tanggal' => $item,
                 'deskripsi' => $request->edit_nama_operasi." Hari Ke-".$count,
+                'week' => $week,
             ]);
 
             $count++;

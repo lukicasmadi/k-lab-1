@@ -6,6 +6,7 @@ use App\Models\Polda;
 use App\Models\Article;
 use Carbon\CarbonPeriod;
 use App\Models\CountDown;
+use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use App\Models\PoldaSubmited;
 use Illuminate\Support\Facades\DB;
@@ -47,19 +48,13 @@ class HomeController extends Controller
 
     public function weeklyPolda()
     {
-        $project_start = dateOnly(operationPlans()->start_date);
-        $project_end = dateOnly(operationPlans()->end_date);
-        $half_week = dateOnly(incrementDays($project_start, 5));
-        $half_week_plus_one = dateOnly(incrementDays($project_start, 6));
+        $count = CountDown::where("tanggal", nowToday())->first();
+        $days = CountDown::select('id', 'tanggal', 'week')->where("week", $count->week)->orderBy('id', 'asc')->get()->toArray();
+        $allDaysAWeek = count($days);
+        $firstDate = Arr::first($days)['tanggal'];
+        $lastDate = Arr::last($days)['tanggal'];
 
-        $full = countDays($project_start, $project_end);
-        $finalHalf = round($full / 2);
-
-        if(datePassed($half_week) == "belum_lewat") {
-            $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$project_start, $half_week])->where("polda_id", poldaId())->count();
-        } else {
-            $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$half_week_plus_one, $project_end])->where("polda_id", poldaId())->count();
-        }
+        $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$firstDate, $lastDate])->where("polda_id", poldaId())->count();
 
         if(empty($count_polda_input_daily) || $count_polda_input_daily <= 0) {
             $data = [
@@ -67,10 +62,10 @@ class HomeController extends Controller
                 "nofilled" => 100
             ];
         } else {
-            $percentage = round((100 * $count_polda_input_daily) / $finalHalf, 1);
+            $percentage = round((100 * $count_polda_input_daily) / $allDaysAWeek, 1);
             $data = [
-                "filled" => $percentage,
-                "nofilled" => 100 - $percentage
+                "filled" => (int)$percentage,
+                "nofilled" => 100 - (int)$percentage
             ];
         }
 
@@ -94,8 +89,8 @@ class HomeController extends Controller
         } else {
             $percentage = round((100 * $count_polda_input_daily) / $countDaysAll, 1);
             $data = [
-                "filled" => $percentage,
-                "nofilled" => 100 - $percentage
+                "filled" => (int)$percentage,
+                "nofilled" => 100 - (int)$percentage
             ];
         }
 
@@ -104,19 +99,18 @@ class HomeController extends Controller
 
     public function weeklyPoldaById($id)
     {
-        $project_start = dateOnly(operationPlans()->start_date);
-        $project_end = dateOnly(operationPlans()->end_date);
-        $half_week = dateOnly(incrementDays($project_start, 5));
-        $half_week_plus_one = dateOnly(incrementDays($project_start, 6));
+        $count = CountDown::where("tanggal", nowToday())->first();
+        $days = CountDown::select('id', 'tanggal', 'week')->where("week", $count->week)->orderBy('id', 'asc')->get()->toArray();
+        $allDaysAWeek = count($days);
+        $firstDate = Arr::first($days)['tanggal'];
+        $lastDate = Arr::last($days)['tanggal'];
 
-        $full = countDays($project_start, $project_end);
-        $finalHalf = round($full / 2);
+        $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$firstDate, $lastDate])->where("polda_id", $id)->count();
 
-        if(datePassed($half_week) == "belum_lewat") {
-            $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$project_start, $half_week])->where("polda_id", $id)->count();
-        } else {
-            $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$half_week_plus_one, $project_end])->where("polda_id", $id)->count();
-        }
+        // logger("HARI PERTAMA DALAM MINGGU : ".$firstDate);
+        // logger("HARI TERAKHIR DALAM MINGGU : ".$lastDate);
+        // logger("YANG SUDAH DIINPUT : ".$count_polda_input_daily);
+        // logger("TOTAL HARI SEMINGGU : ".$allDaysAWeek);
 
         if(empty($count_polda_input_daily) || $count_polda_input_daily <= 0) {
             $data = [
@@ -124,10 +118,10 @@ class HomeController extends Controller
                 "nofilled" => 100
             ];
         } else {
-            $percentage = round((100 * $count_polda_input_daily) / $finalHalf, 1);
+            $percentage = round((100 * $count_polda_input_daily) / $allDaysAWeek, 1);
             $data = [
-                "filled" => $percentage,
-                "nofilled" => 100 - $percentage
+                "filled" => (int)$percentage,
+                "nofilled" => 100 - (int)$percentage
             ];
         }
 
@@ -151,8 +145,8 @@ class HomeController extends Controller
         } else {
             $percentage = round((100 * $count_polda_input_daily) / $countDaysAll, 1);
             $data = [
-                "filled" => $percentage,
-                "nofilled" => 100 - $percentage
+                "filled" => (int)$percentage,
+                "nofilled" => 100 - (int)$percentage
             ];
         }
 
