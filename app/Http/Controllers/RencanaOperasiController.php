@@ -7,6 +7,7 @@ use App\Models\CountDown;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\RencanaOperasi;
+use Illuminate\Support\Facades\DB;
 use App\Models\OperationExtractDate;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -104,52 +105,65 @@ class RencanaOperasiController extends Controller
             return redirect()->route('rencana_operasi_index');
         }
 
-        $create = RencanaOperasi::create($data);
+        DB::beginTransaction();
 
-        $extractDate = extractDateRange(dateOnly(request('tanggal_mulai')), dateOnly(request('tanggal_selesai')));
+        try {
 
-        $count = 1;
+            $create = RencanaOperasi::create($data);
 
-        foreach($extractDate as $key => $item) {
-            OperationExtractDate::create([
-                'rencana_operasi_id' => $create->id,
-                'extract_date' => $item
-            ]);
+            $extractDate = extractDateRange(dateOnly(request('tanggal_mulai')), dateOnly(request('tanggal_selesai')));
 
-            if($count >= 1 && $count <= 7) {
-                $week = 1;
-            } else if($count > 7 && $count <= 14) {
-                $week = 2;
-            } else if($count > 14 && $count <= 21) {
-                $week = 3;
-            } else if($count > 21 && $count <= 28) {
-                $week = 4;
-            } else if($count > 28 && $count <= 35) {
-                $week = 5;
-            } else if($count > 35 && $count <= 42) {
-                $week = 6;
-            } else if($count > 42 && $count <= 49) {
-                $week = 7;
-            } else if($count > 49 && $count <= 56) {
-                $week = 8;
-            } else if($count > 56 && $count <= 63) {
-                $week = 9;
-            } else if($count > 63 && $count <= 70) {
-                $week = 10;
+            $count = 1;
+
+            foreach($extractDate as $key => $item) {
+                OperationExtractDate::create([
+                    'rencana_operasi_id' => $create->id,
+                    'extract_date' => $item
+                ]);
+
+                if($count >= 1 && $count <= 7) {
+                    $week = 1;
+                } else if($count > 7 && $count <= 14) {
+                    $week = 2;
+                } else if($count > 14 && $count <= 21) {
+                    $week = 3;
+                } else if($count > 21 && $count <= 28) {
+                    $week = 4;
+                } else if($count > 28 && $count <= 35) {
+                    $week = 5;
+                } else if($count > 35 && $count <= 42) {
+                    $week = 6;
+                } else if($count > 42 && $count <= 49) {
+                    $week = 7;
+                } else if($count > 49 && $count <= 56) {
+                    $week = 8;
+                } else if($count > 56 && $count <= 63) {
+                    $week = 9;
+                } else if($count > 63 && $count <= 70) {
+                    $week = 10;
+                }
+
+                CountDown::create([
+                    'rencana_operasi_id' => $create->id,
+                    'tanggal' => $item,
+                    'deskripsi' => $request->nama_operasi." Hari Ke-".$count,
+                    'week' => $week,
+                ]);
+
+                $count++;
             }
 
-            CountDown::create([
-                'rencana_operasi_id' => $create->id,
-                'tanggal' => $item,
-                'deskripsi' => $request->nama_operasi." Hari Ke-".$count,
-                'week' => $week,
-            ]);
+            DB::commit();
 
-            $count++;
+            flash('Rencana operasi telah dibuat')->success();
+            return redirect()->route('rencana_operasi_index');
+
+        } catch (\Exception $e) {
+            DB::rollback();
+            logger($e);
+            flash('Data gagal dikirim. Silakan dicoba kembali atau hubungi admin jika masih gagal')->error();
+            return redirect()->back();
         }
-
-        flash('Rencana operasi telah dibuat')->success();
-        return redirect()->route('rencana_operasi_index');
     }
 
     public function edit($uuid)
@@ -169,55 +183,68 @@ class RencanaOperasiController extends Controller
             'end_date' => dateOnly($request->edit_tanggal_selesai),
         ];
 
-        RencanaOperasi::whereUuid($request->uuid_edit)->update($data);
+        DB::beginTransaction();
 
-        OperationExtractDate::where('rencana_operasi_id', $findRO->id)->delete();
-        CountDown::where('rencana_operasi_id', $findRO->id)->delete();
+        try {
 
-        $extractDate = extractDateRange(dateOnly($request->edit_tanggal_mulai), dateOnly($request->edit_tanggal_selesai));
+            RencanaOperasi::whereUuid($request->uuid_edit)->update($data);
 
-        $count = 1;
+            OperationExtractDate::where('rencana_operasi_id', $findRO->id)->delete();
+            CountDown::where('rencana_operasi_id', $findRO->id)->delete();
 
-        foreach($extractDate as $key => $item) {
-            OperationExtractDate::create([
-                'rencana_operasi_id' => $findRO->id,
-                'extract_date' => $item
-            ]);
+            $extractDate = extractDateRange(dateOnly($request->edit_tanggal_mulai), dateOnly($request->edit_tanggal_selesai));
 
-            if($count >= 1 && $count <= 7) {
-                $week = 1;
-            } else if($count > 7 && $count <= 14) {
-                $week = 2;
-            } else if($count > 14 && $count <= 21) {
-                $week = 3;
-            } else if($count > 21 && $count <= 28) {
-                $week = 4;
-            } else if($count > 28 && $count <= 35) {
-                $week = 5;
-            } else if($count > 35 && $count <= 42) {
-                $week = 6;
-            } else if($count > 42 && $count <= 49) {
-                $week = 7;
-            } else if($count > 49 && $count <= 56) {
-                $week = 8;
-            } else if($count > 56 && $count <= 63) {
-                $week = 9;
-            } else if($count > 63 && $count <= 70) {
-                $week = 10;
+            $count = 1;
+
+            foreach($extractDate as $key => $item) {
+                OperationExtractDate::create([
+                    'rencana_operasi_id' => $findRO->id,
+                    'extract_date' => $item
+                ]);
+
+                if($count >= 1 && $count <= 7) {
+                    $week = 1;
+                } else if($count > 7 && $count <= 14) {
+                    $week = 2;
+                } else if($count > 14 && $count <= 21) {
+                    $week = 3;
+                } else if($count > 21 && $count <= 28) {
+                    $week = 4;
+                } else if($count > 28 && $count <= 35) {
+                    $week = 5;
+                } else if($count > 35 && $count <= 42) {
+                    $week = 6;
+                } else if($count > 42 && $count <= 49) {
+                    $week = 7;
+                } else if($count > 49 && $count <= 56) {
+                    $week = 8;
+                } else if($count > 56 && $count <= 63) {
+                    $week = 9;
+                } else if($count > 63 && $count <= 70) {
+                    $week = 10;
+                }
+
+                CountDown::create([
+                    'rencana_operasi_id' => $findRO->id,
+                    'tanggal' => $item,
+                    'deskripsi' => $request->edit_nama_operasi." Hari Ke-".$count,
+                    'week' => $week,
+                ]);
+
+                $count++;
             }
 
-            CountDown::create([
-                'rencana_operasi_id' => $findRO->id,
-                'tanggal' => $item,
-                'deskripsi' => $request->edit_nama_operasi." Hari Ke-".$count,
-                'week' => $week,
-            ]);
+            DB::commit();
 
-            $count++;
+            flash('Rencana operasi telah diubah')->success();
+            return redirect()->route('rencana_operasi_index');
+
+        } catch (\Exception $e) {
+            DB::rollback();
+            logger($e);
+            flash('Data gagal dikirim. Silakan dicoba kembali atau hubungi admin jika masih gagal')->error();
+            return redirect()->back();
         }
-
-        flash('Rencana operasi telah diubah')->success();
-        return redirect()->route('rencana_operasi_index');
     }
 
     public function destroy($uuid)
