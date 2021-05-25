@@ -278,6 +278,7 @@ $(document).ready(function () {
         notificationLoad()
         changePoldaClass()
         donutData()
+        absensiPolda()
     }, 10000)
 })
 
@@ -752,47 +753,45 @@ function absensiPolda() {
 
     chartRequest.render()
 
-    setInterval(function() {
-        axios.get(route('dashboardChart'))
-        .then(function(response) {
-            var rangeDate = response.data.rangeDate
-            var totalPerDate = response.data.totalPerDate
-            var projectName = response.data.projectName
+    axios.get(route('dashboardChart'))
+    .then(function(response) {
+        var rangeDate = response.data.rangeDate
+        var totalPerDate = response.data.totalPerDate
+        var projectName = response.data.projectName
 
-            $("#projectName").html(""+projectName+"")
+        $("#projectName").html(""+projectName+"")
 
-            chartRequest.updateOptions({
-                xaxis: {
-                    labels: {
-                        offsetX: 0,
-                        offsetY: 5,
-                        style: {
-                            fontSize: '12px',
-                            fontFamily: 'Quicksand, sans-serif',
-                            cssClass: 'apexcharts-xaxis-title',
-                        },
+        chartRequest.updateOptions({
+            xaxis: {
+                labels: {
+                    offsetX: 0,
+                    offsetY: 5,
+                    style: {
+                        fontSize: '12px',
+                        fontFamily: 'Quicksand, sans-serif',
+                        cssClass: 'apexcharts-xaxis-title',
                     },
-                    categories: rangeDate
                 },
-            })
-
-            chartRequest.updateSeries([{
-                name: 'Total',
-                data: totalPerDate
-            }])
-
-        }).catch(function(error) {
-            if (error.response) {
-                console.log(error.response.data)
-                console.log(error.response.status)
-                console.log(error.response.headers)
-            } else if (error.request) {
-                console.log(error.request)
-            } else {
-                console.log('Error', error.message)
-            }
+                categories: rangeDate
+            },
         })
-    }, 5000)
+
+        chartRequest.updateSeries([{
+            name: 'Total',
+            data: totalPerDate
+        }])
+
+    }).catch(function(error) {
+        if (error.response) {
+            console.log(error.response.data)
+            console.log(error.response.status)
+            console.log(error.response.headers)
+        } else if (error.request) {
+            console.log(error.request)
+        } else {
+            console.log('Error', error.message)
+        }
+    })
 }
 </script>
 @endpush

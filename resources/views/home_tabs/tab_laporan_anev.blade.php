@@ -201,7 +201,7 @@ function loadAnevChart()
                 console.log('Error', error.message)
             }
         })
-    }, 5000)
+    }, 10000)
 }
 </script>
 @endpush
