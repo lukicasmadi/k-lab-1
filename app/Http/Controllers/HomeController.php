@@ -15,6 +15,30 @@ use Illuminate\Support\Facades\Storage;
 class HomeController extends Controller
 {
 
+    public function chart_anev_all()
+    {
+        return [
+            'tilang' => chartAnevCurrent(true)->tilang,
+            'teguran' => chartAnevCurrent(true)->teguran,
+
+            'tilang_prev' => chartAnevPrev(true)->tilang,
+            'teguran_prev' => chartAnevPrev(true)->teguran,
+
+            'jumlah_kejadian' => chartCurrent(true)->jumlah_kejadian,
+            'jumlah_korban_meninggal' => chartCurrent(true)->jumlah_korban_meninggal,
+            'jumlah_korban_luka_berat' => chartCurrent(true)->jumlah_korban_luka_berat,
+            'jumlah_korban_luka_ringan' => chartCurrent(true)->jumlah_korban_luka_ringan,
+
+            'jumlah_kejadian_prev' => chartAnevPrev(true)->jumlah_kejadian,
+            'jumlah_korban_meninggal_prev' => chartAnevPrev(true)->jumlah_korban_meninggal,
+            'jumlah_korban_luka_berat_prev' => chartAnevPrev(true)->jumlah_korban_luka_berat,
+            'jumlah_korban_luka_ringan_prev' => chartAnevPrev(true)->jumlah_korban_luka_ringan,
+
+            'year' => (int)date("Y"),
+            'prev_year' => date("Y") - 1
+        ];
+    }
+
     public function chart_anev()
     {
         return [
