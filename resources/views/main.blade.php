@@ -758,27 +758,25 @@ function absensiPolda() {
 
         $("#projectName").html(""+projectName+"")
 
-        if(!_.isEmpty(response.data)) {
-            chartRequest.updateOptions({
-                xaxis: {
-                    labels: {
-                        offsetX: 0,
-                        offsetY: 5,
-                        style: {
-                            fontSize: '12px',
-                            fontFamily: 'Quicksand, sans-serif',
-                            cssClass: 'apexcharts-xaxis-title',
-                        },
+        chartRequest.updateOptions({
+            xaxis: {
+                labels: {
+                    offsetX: 0,
+                    offsetY: 5,
+                    style: {
+                        fontSize: '12px',
+                        fontFamily: 'Quicksand, sans-serif',
+                        cssClass: 'apexcharts-xaxis-title',
                     },
-                    categories: rangeDate
                 },
-            })
+                categories: rangeDate
+            },
+        })
 
-            chartRequest.updateSeries([{
-                name: 'Total',
-                data: totalPerDate
-            }])
-        }
+        chartRequest.updateSeries([{
+            name: 'Total',
+            data: totalPerDate
+        }])
 
     }).catch(function(error) {
         if (error.response) {
