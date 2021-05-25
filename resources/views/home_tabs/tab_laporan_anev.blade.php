@@ -51,6 +51,7 @@ function loadAnevChart()
                 show: false,
             }
         },
+        colors:['#00adef', '#ea1c26'],
         plotOptions: {
             bar: {
                 horizontal: false,
@@ -95,6 +96,7 @@ function loadAnevChart()
                 show: false,
             }
         },
+        colors:['#00adef', '#ea1c26', '#fd7e14', '#ffc107'],
         plotOptions: {
             bar: {
                 horizontal: false,
