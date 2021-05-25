@@ -158,7 +158,7 @@ function loadAnevChart()
             anevRightChart.updateSeries(
             [
                 {
-                    name: "Kejadian",
+                    name: "Jumlah Kejadian",
                     data:
                     [
                         response.data.jumlah_kejadian_prev,
