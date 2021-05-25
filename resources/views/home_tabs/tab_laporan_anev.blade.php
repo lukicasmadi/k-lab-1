@@ -53,13 +53,16 @@ function leftChart()
             width: 2,
             colors: ['transparent']
         },
-        series: [{
-            name: 'Net Profit',
-            data: [44, 55, 57, 56]
-        }, {
-            name: 'Revenue',
-            data: [76, 85, 101, 98]
-        }],
+        series: [
+            {
+                name: 'Net Profit',
+                data: [44, 55, 57, 56]
+            },
+            {
+                name: 'Revenue',
+                data: [76, 85, 101, 98]
+            }
+        ],
         xaxis: {
             categories: ['Feb', 'Mar'],
         },
