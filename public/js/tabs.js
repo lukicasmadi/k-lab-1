@@ -393,6 +393,165 @@ jQuery(function () {
   };
   var rightLapharAll = new ApexCharts(document.querySelector("#total_laphar_kecelakaan_lalin_all_project"), optionLapHarAllRight);
   rightLapharAll.render(); //=================================================================================================================================================
+
+  var configAnevChartPelanggaran = {
+    chart: {
+      height: 350,
+      type: 'bar',
+      toolbar: {
+        show: false
+      }
+    },
+    colors: ['#00adef', '#ea1c26'],
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: '55%',
+        endingShape: 'rounded'
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ['transparent']
+    },
+    series: [],
+    xaxis: {
+      categories: []
+    },
+    yaxis: {
+      title: {
+        text: 'Total'
+      }
+    },
+    fill: {
+      opacity: 1
+    }
+  };
+  var anevLeftChart = new ApexCharts(document.querySelector("#anev_pelanggaran_lalin"), configAnevChartPelanggaran);
+  anevLeftChart.render();
+  var configAnevChartKecelakaan = {
+    chart: {
+      height: 350,
+      type: 'bar',
+      toolbar: {
+        show: false
+      }
+    },
+    colors: ['#00adef', '#ea1c26', '#fd7e14', '#ffc107'],
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: '55%',
+        endingShape: 'rounded'
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ['transparent']
+    },
+    series: [],
+    xaxis: {
+      categories: []
+    },
+    yaxis: {
+      title: {
+        text: 'Total'
+      }
+    },
+    fill: {
+      opacity: 1
+    }
+  };
+  var anevRightChart = new ApexCharts(document.querySelector("#anev_kecelakaan_lalin"), configAnevChartKecelakaan);
+  anevRightChart.render(); //=================================================================================================================================================
+
+  var optionAnivAllLeft = {
+    chart: {
+      height: 350,
+      type: 'bar',
+      toolbar: {
+        show: false
+      }
+    },
+    colors: ['#00adef', '#ea1c26'],
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: '55%',
+        endingShape: 'rounded'
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ['transparent']
+    },
+    series: [],
+    xaxis: {
+      categories: []
+    },
+    yaxis: {
+      title: {
+        text: 'Total'
+      }
+    },
+    fill: {
+      opacity: 1
+    }
+  };
+  var anevAllleft = new ApexCharts(document.querySelector("#anev_pelanggaran_lalin_total"), optionAnivAllLeft);
+  anevAllleft.render();
+  var optionAnivAllRight = {
+    chart: {
+      height: 350,
+      type: 'bar',
+      toolbar: {
+        show: false
+      }
+    },
+    colors: ['#00adef', '#ea1c26', '#fd7e14', '#ffc107'],
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: '55%',
+        endingShape: 'rounded'
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ['transparent']
+    },
+    series: [],
+    xaxis: {
+      categories: []
+    },
+    yaxis: {
+      title: {
+        text: 'Total'
+      }
+    },
+    fill: {
+      opacity: 1
+    }
+  };
+  var anevAllRight = new ApexCharts(document.querySelector("#anev_kecelakaan_lalin_total"), optionAnivAllRight);
+  anevAllRight.render(); //=================================================================================================================================================
+  //=================================================================================================================================================
   //=================================================================================================================================================
   //=================================================================================================================================================
 
@@ -489,6 +648,72 @@ jQuery(function () {
       }, {
         name: 'Korban Luka Ringan',
         data: [data.jumlah_korban_luka_ringan]
+      }]);
+    });
+    chart_anev = wrapAjax(route('chart_anev'));
+    chart_anev.done(function (data, statusText, jqXHR) {
+      anevLeftChart.updateOptions({
+        xaxis: {
+          categories: [data.prev_year, data.year]
+        }
+      });
+      anevLeftChart.updateSeries([{
+        name: "Tilang",
+        data: [data.tilang_prev, data.teguran_prev]
+      }, {
+        name: "Teguran",
+        data: [data.tilang, data.teguran]
+      }]);
+      anevRightChart.updateOptions({
+        xaxis: {
+          categories: [data.prev_year, data.year]
+        }
+      });
+      anevRightChart.updateSeries([{
+        name: "Jumlah Kejadian",
+        data: [data.jumlah_kejadian_prev, data.jumlah_kejadian]
+      }, {
+        name: "Meninggal",
+        data: [data.jumlah_korban_meninggal_prev, data.jumlah_korban_meninggal]
+      }, {
+        name: "Luka Berat",
+        data: [data.jumlah_korban_luka_berat_prev, data.jumlah_korban_luka_berat]
+      }, {
+        name: "Luka Ringan",
+        data: [data.jumlah_korban_luka_ringan_prev, data.jumlah_korban_luka_ringan]
+      }]);
+    });
+    chart_anev_all = wrapAjax(route('chart_anev_all'));
+    chart_anev_all.done(function (data, statusText, jqXHR) {
+      anevAllleft.updateOptions({
+        xaxis: {
+          categories: [data.prev_year, data.year]
+        }
+      });
+      anevAllleft.updateSeries([{
+        name: "Tilang",
+        data: [data.tilang_prev, data.teguran_prev]
+      }, {
+        name: "Teguran",
+        data: [data.tilang, data.teguran]
+      }]);
+      anevAllRight.updateOptions({
+        xaxis: {
+          categories: [data.prev_year, data.year]
+        }
+      });
+      anevAllRight.updateSeries([{
+        name: "Jumlah Kejadian",
+        data: [data.jumlah_kejadian_prev, data.jumlah_kejadian]
+      }, {
+        name: "Meninggal",
+        data: [data.jumlah_korban_meninggal_prev, data.jumlah_korban_meninggal]
+      }, {
+        name: "Luka Berat",
+        data: [data.jumlah_korban_luka_berat_prev, data.jumlah_korban_luka_berat]
+      }, {
+        name: "Luka Ringan",
+        data: [data.jumlah_korban_luka_ringan_prev, data.jumlah_korban_luka_ringan]
       }]);
     });
   }, $('meta[name=reload_time]').attr('content')); // https://lodash.com/docs/#isEmpty
@@ -749,8 +974,6 @@ function checkInputByChart(id) {
     h: 700
   });
 }
-
-function absensiPolda() {}
 
 function wrapAjax(dataURL) {
   respObj = $.ajax({
