@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <meta name="env_var" content="{{ config('app.env') }}">
+    <meta name="reload_time" content="30000">
     <title>SISLAPOPS</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('template/assets/img/korlantas.png') }}"/>
     <link href="{{ asset('template/assets/css/loader.css') }}" rel="stylesheet" type="text/css" />

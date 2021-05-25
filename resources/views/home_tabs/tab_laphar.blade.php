@@ -28,6 +28,10 @@
     </div>
 </div>
 
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-n3">
+    <img src="{{ asset('/img/line-poldaup.png') }}" width="100%">
+</div>
+
 @push('page_js')
 <script>
 $(document).ready(function () {
@@ -35,7 +39,7 @@ $(document).ready(function () {
 
     setInterval(function() {
         loadChartProjectDaily()
-    }, 10000)
+    }, $('meta[name=reload_time]').attr('content'))
 })
 
 function loadChartProjectDaily()

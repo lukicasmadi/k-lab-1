@@ -275,11 +275,11 @@ $(document).ready(function () {
     })
 
     setInterval(function() {
+        absensiPolda()
         notificationLoad()
         changePoldaClass()
         donutData()
-        absensiPolda()
-    }, 10000)
+    }, $('meta[name=reload_time]').attr('content'))
 })
 
 function changePoldaClass() {
