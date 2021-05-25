@@ -18,21 +18,21 @@ class HomeController extends Controller
     public function chart_anev()
     {
         return [
-            'tilang' => chartAnevCurrent()->tilang,
-            'teguran' => chartAnevCurrent()->teguran,
+            'tilang' => chartAnevCurrent(false)->tilang,
+            'teguran' => chartAnevCurrent(false)->teguran,
 
-            'tilang_prev' => chartAnevPrev()->tilang,
-            'teguran_prev' => chartAnevPrev()->teguran,
+            'tilang_prev' => chartAnevPrev(false)->tilang,
+            'teguran_prev' => chartAnevPrev(false)->teguran,
 
-            'jumlah_kejadian' => chartCurrent()->jumlah_kejadian,
-            'jumlah_korban_meninggal' => chartCurrent()->jumlah_korban_meninggal,
-            'jumlah_korban_luka_berat' => chartCurrent()->jumlah_korban_luka_berat,
-            'jumlah_korban_luka_ringan' => chartCurrent()->jumlah_korban_luka_ringan,
+            'jumlah_kejadian' => chartCurrent(false)->jumlah_kejadian,
+            'jumlah_korban_meninggal' => chartCurrent(false)->jumlah_korban_meninggal,
+            'jumlah_korban_luka_berat' => chartCurrent(false)->jumlah_korban_luka_berat,
+            'jumlah_korban_luka_ringan' => chartCurrent(false)->jumlah_korban_luka_ringan,
 
-            'jumlah_kejadian_prev' => chartAnevPrev()->jumlah_kejadian,
-            'jumlah_korban_meninggal_prev' => chartAnevPrev()->jumlah_korban_meninggal,
-            'jumlah_korban_luka_berat_prev' => chartAnevPrev()->jumlah_korban_luka_berat,
-            'jumlah_korban_luka_ringan_prev' => chartAnevPrev()->jumlah_korban_luka_ringan,
+            'jumlah_kejadian_prev' => chartAnevPrev(false)->jumlah_kejadian,
+            'jumlah_korban_meninggal_prev' => chartAnevPrev(false)->jumlah_korban_meninggal,
+            'jumlah_korban_luka_berat_prev' => chartAnevPrev(false)->jumlah_korban_luka_berat,
+            'jumlah_korban_luka_ringan_prev' => chartAnevPrev(false)->jumlah_korban_luka_ringan,
 
             'year' => (int)date("Y"),
             'prev_year' => date("Y") - 1

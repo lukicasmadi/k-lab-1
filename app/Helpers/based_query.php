@@ -692,8 +692,7 @@ if (! function_exists('chartLapharFullProject')) {
 }
 
 if (! function_exists('chartAnevCurrent')) {
-    function chartAnevCurrent() {
-        $now = date("Y-m-d");
+    function chartAnevCurrent($full=false) {
         $output = DailyInput::selectRaw('
             sum(pelanggaran_lalu_lintas_tilang) as tilang,
             sum(pelanggaran_lalu_lintas_teguran) as teguran,
@@ -701,7 +700,12 @@ if (! function_exists('chartAnevCurrent')) {
             sum(kecelakaan_lalin_jumlah_korban_meninggal) as jumlah_korban_meninggal,
             sum(kecelakaan_lalin_jumlah_korban_luka_berat) as jumlah_korban_luka_berat,
             sum(kecelakaan_lalin_jumlah_korban_luka_ringan) as jumlah_korban_luka_ringan')
-            ->whereRaw("DATE(created_at) = ?", [$now])
+            ->when($full == true, function ($q) {
+                return $q->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [dateOnly(operationPlans()->start_date), dateOnly(operationPlans()->end_date)]);
+            })
+            ->when($full == false, function ($q) {
+                return $q->whereRaw("DATE(created_at) = ?", [date("Y-m-d")]);
+            })
             ->first();
 
         return $output;
@@ -709,8 +713,7 @@ if (! function_exists('chartAnevCurrent')) {
 }
 
 if (! function_exists('chartAnevPrev')) {
-    function chartAnevPrev() {
-        $now = date("Y-m-d");
+    function chartAnevPrev($full=false) {
         $output = DailyInputPrev::selectRaw('
             sum(pelanggaran_lalu_lintas_tilang_p) as tilang,
             sum(pelanggaran_lalu_lintas_teguran_p) as teguran,
@@ -718,7 +721,12 @@ if (! function_exists('chartAnevPrev')) {
             sum(kecelakaan_lalin_jumlah_korban_meninggal_p) as jumlah_korban_meninggal,
             sum(kecelakaan_lalin_jumlah_korban_luka_berat_p) as jumlah_korban_luka_berat,
             sum(kecelakaan_lalin_jumlah_korban_luka_ringan_p) as jumlah_korban_luka_ringan')
-            ->whereRaw("DATE(created_at) = ?", [$now])
+            ->when($full == true, function ($q) {
+                return $q->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [dateOnly(operationPlans()->start_date), dateOnly(operationPlans()->end_date)]);
+            })
+            ->when($full == false, function ($q) {
+                return $q->whereRaw("DATE(created_at) = ?", [date("Y-m-d")]);
+            })
             ->first();
 
         return $output;
