@@ -21,10 +21,6 @@
             <li class="nav-item mr-3">
                 <a class="nav-link2" id="tab_link_data_total_laporan_anev" data-toggle="pill" href="#total-laporan-anev" role="tab" aria-controls="total-laporan-anev" aria-selected="false">Data Total Laporan Anev</a>
             </li>
-
-            <li class="nav-item mr-3">
-                <a class="nav-link2" id="tab_link_total_all" data-toggle="pill" href="#total-all" role="tab" aria-controls="total-all" aria-selected="false">Semua Data Laporan</a>
-            </li>
         </ul>
 
         <div style="margin-top: 20px;"></div>
@@ -48,10 +44,6 @@
 
             <div class="tab-pane fade" id="total-laporan-anev" role="tabpanel" aria-labelledby="tab_link_data_laporan_anev">
                 @include('home_tabs.tab_total_laporan_anev')
-            </div>
-
-            <div class="tab-pane fade" id="total-all" role="tabpanel" aria-labelledby="tab_link_total_all">
-                @include('home_tabs.tab_all_data')
             </div>
         </div>
     </div>
