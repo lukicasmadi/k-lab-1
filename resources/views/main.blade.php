@@ -250,9 +250,9 @@ $(document).ready(function () {
         }
     })
 
+    absensiPolda()
     changePoldaClass()
     notificationLoad()
-    absensiPolda()
     donutData()
 
     $("#filterOperasi").click(function (e) {
@@ -283,8 +283,7 @@ $(document).ready(function () {
 })
 
 function changePoldaClass() {
-    axios.get(route('today_check'))
-    .then(response => {
+    axios.get(route('today_check')).then(response => {
         $.each(response.data, function(key, value) {
             if(_.isEmpty(value.daily_input)) {
                 $('#' + value.short_name).removeClass("glowblue").addClass("glowred")
@@ -410,7 +409,6 @@ function donutData() {
                 fill: {
                     type: "gradient",
                     gradient: {
-                    // shade: 'dark',
                     shadeIntensity: 0.8,
                     opacityFrom: 0.9,
                     opacityTo: 0.9,
