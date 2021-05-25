@@ -15,9 +15,32 @@ use Illuminate\Support\Facades\Storage;
 class HomeController extends Controller
 {
 
+    public function chart_anev()
+    {
+        return [
+            'tilang' => chartAnevCurrent()->tilang,
+            'teguran' => chartAnevCurrent()->teguran,
+
+            'tilang_prev' => chartAnevPrev()->tilang,
+            'teguran_prev' => chartAnevPrev()->teguran,
+
+            'jumlah_kejadian' => chartCurrent()->jumlah_kejadian,
+            'jumlah_korban_meninggal' => chartCurrent()->jumlah_korban_meninggal,
+            'jumlah_korban_luka_berat' => chartCurrent()->jumlah_korban_luka_berat,
+            'jumlah_korban_luka_ringan' => chartCurrent()->jumlah_korban_luka_ringan,
+
+            'jumlah_kejadian_prev' => chartAnevPrev()->jumlah_kejadian,
+            'jumlah_korban_meninggal_prev' => chartAnevPrev()->jumlah_korban_meninggal,
+            'jumlah_korban_luka_berat_prev' => chartAnevPrev()->jumlah_korban_luka_berat,
+            'jumlah_korban_luka_ringan_prev' => chartAnevPrev()->jumlah_korban_luka_ringan,
+
+            'year' => (int)date("Y"),
+            'prev_year' => date("Y") - 1
+        ];
+    }
+
     public function chart_laphar_all_project()
     {
-        $left = [chartLapharFullProject()->tilang, chartLapharFullProject()->teguran];
         return [
             'tilang' => chartLapharFullProject()->tilang,
             'teguran' => chartLapharFullProject()->teguran,
@@ -31,7 +54,6 @@ class HomeController extends Controller
 
     public function chart_laphar()
     {
-        $left = [chartCurrent()->tilang, chartCurrent()->teguran];
         return [
             'tilang' => chartCurrent()->tilang,
             'teguran' => chartCurrent()->teguran,

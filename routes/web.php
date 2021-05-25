@@ -207,5 +207,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/totalinputan/bychart/{indexData}', 'HomeController@viewInputFromChart')->name('viewInputFromChart');
         Route::get('/chart/laphar', 'HomeController@chart_laphar')->name('chart_laphar');
         Route::get('/chart/laphar/all', 'HomeController@chart_laphar_all_project')->name('chart_laphar_all_project');
+        Route::get('/chart/anev', 'HomeController@chart_anev')->name('chart_anev');
     });
 });

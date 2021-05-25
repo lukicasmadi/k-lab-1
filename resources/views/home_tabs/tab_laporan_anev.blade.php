@@ -12,9 +12,12 @@
         </div>
         <div class="widget-content">
             <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 layout-spacing">
                     <div class="mx-auto">
-                        <div id="anev" class=""></div>
+                        <div id="anev_pelanggaran_lalin" class=""></div>
+                    </div>
+                    <div class="mx-auto">
+                        <div id="anev_kecelakaan_lalin" class=""></div>
                     </div>
                 </div>
             </div>
@@ -25,12 +28,12 @@
 @push('page_js')
 <script>
 $(document).ready(function () {
-    leftChart()
+    loadAnevChart()
 })
 
-function leftChart()
+function loadAnevChart()
 {
-    var sCol = {
+    var configAnevChart = {
         chart: {
             height: 350,
             type: 'bar',
@@ -53,18 +56,9 @@ function leftChart()
             width: 2,
             colors: ['transparent']
         },
-        series: [
-            {
-                name: 'Net Profit',
-                data: [44, 55, 57, 56]
-            },
-            {
-                name: 'Revenue',
-                data: [76, 85, 101, 98]
-            }
-        ],
+        series: [],
         xaxis: {
-            categories: ['Feb', 'Mar'],
+            categories: [],
         },
         yaxis: {
             title: {
@@ -76,12 +70,50 @@ function leftChart()
         },
     }
 
-    var chart = new ApexCharts(
-        document.querySelector("#anev"),
-        sCol
+    var anevLeftChart = new ApexCharts(
+        document.querySelector("#anev_pelanggaran_lalin"),
+        configAnevChart
     )
 
-    chart.render()
+    anevLeftChart.render()
+
+    setInterval(function() {
+        axios.get(route('chart_anev'))
+        .then(function(response) {
+
+            if(!_.isEmpty(response.data)) {
+
+                anevLeftChart.updateOptions({
+                    xaxis: {
+                        categories: [response.data.prev_year, response.data.year]
+                    },
+                })
+
+                anevLeftChart.updateSeries(
+                [
+                    {
+                        name: "Tilang",
+                        data: [response.data.tilang_prev, response.data.teguran_prev]
+                    },
+                    {
+                        name: "Teguran",
+                        data: [response.data.tilang, response.data.teguran]
+                    }
+                ])
+            }
+
+        }).catch(function(error) {
+            if (error.response) {
+                console.log(error.response.data)
+                console.log(error.response.status)
+                console.log(error.response.headers)
+            } else if (error.request) {
+                console.log(error.request)
+            } else {
+                console.log('Error', error.message)
+            }
+        })
+    }, 5000)
 }
 </script>
 @endpush
