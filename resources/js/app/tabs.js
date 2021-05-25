@@ -29,6 +29,8 @@ jQuery(function() {
     })
 
     donutChart()
+    changePoldaClass()
+    notificationLoad()
 
     var optionsAbsensiPolda = {
         chart: {
@@ -846,6 +848,8 @@ jQuery(function() {
         })
 
         donutChart()
+        changePoldaClass()
+        notificationLoad()
 
     }, $('meta[name=reload_time]').attr('content'))
 
@@ -910,82 +914,6 @@ function notificationLoad() {
         .catch(err => {
             console.error(err);
         })
-}
-
-function loadDataTable() {
-    var table = $('#tbl_daily_submited').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: route('dailycheck'),
-        "oLanguage": {
-            "oPaginate": {
-                "sPrevious": '<i class="fas fa-arrow-circle-left dtIconSize"></i>',
-                "sNext": '<i class="fas fa-arrow-circle-right dtIconSize"></i>'
-            },
-            "sInfo": "Showing page _PAGE_ of _PAGES_",
-            "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
-            "sSearchPlaceholder": "Search...",
-            "sLengthMenu": "Results :  _MENU_",
-            "sProcessing": '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>',
-        },
-        order: [
-            [0, "desc"]
-        ],
-        columns: [{
-                data: 'id',
-                visible: false,
-                searchable: false
-            },
-            {
-                data: 'name',
-            },
-            {
-                data: 'has_submited',
-                name: 'dailyInput.status',
-                render: function(data, type, row) {
-                    if (data == "BELUM MENGIRIMKAN LAPORAN") {
-                        return `<p class="red">` + data + `</p>`
-                    } else {
-                        return `<p>` + data + `</p>`
-                    }
-                },
-            },
-            {
-                data: 'uuid',
-                render: function(data, type, row) {
-                    if (row.has_submited == "BELUM MENGIRIMKAN LAPORAN") {
-                        return "-"
-                    } else {
-                        return `
-                        <div class="icon-container">
-                            <a href="` + route('previewPhroDashboard', data) + `" class="previewPhro" data-id="` + data + `">
-                            <img src="{{ asset('/img/search.png') }}" width="55%">
-                            </a>
-                        </div>
-                        `;
-                    }
-                },
-            },
-            {
-                data: 'uuid',
-                render: function(data, type, row) {
-                    if (row.has_submited == "BELUM MENGIRIMKAN LAPORAN") {
-                        return "-"
-                    } else {
-                        return `
-                        <div class="ubah-change text-center">
-                            <a href="` + route('downloadPrho', data) + `">
-                                Unduh
-                            </a>
-                        </div>
-                        `;
-                    }
-                },
-                searchable: false,
-                sortable: false,
-            }
-        ]
-    })
 }
 
 function checkInputByChart(id) {
