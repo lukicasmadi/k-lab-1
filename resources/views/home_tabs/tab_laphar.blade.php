@@ -31,12 +31,68 @@
 @push('page_js')
 <script>
 $(document).ready(function () {
-    loadLeftChart()
-    loadRightChart()
+    loadChartProjectDaily()
 })
 
-function loadRightChart()
+function loadChartProjectDaily()
 {
+    var sCol = {
+        chart: {
+            fontFamily: 'Quicksand, sans-serif',
+            height: 365,
+            type: 'bar',
+            toolbar: {
+                show: false,
+            }
+        },
+        plotOptions: {
+            bar: {
+                horizontal: false,
+                columnWidth: '55%',
+                endingShape: 'rounded',
+            },
+        },
+        dataLabels: {
+            enabled: false
+        },
+        noData: {
+            text: "Loading Data",
+            align: 'center',
+            verticalAlign: 'middle',
+            offsetX: 0,
+            offsetY: 0,
+            style: {
+                color: "#ffffff",
+                fontSize: '15px',
+                fontFamily: "Quicksand, sans-serif",
+            },
+        },
+        stroke: {
+            show: true,
+            width: 2,
+            colors: ['transparent']
+        },
+        series: [],
+        xaxis: {
+            categories: [],
+        },
+        yaxis: {
+            title: {
+                text: 'Total'
+            }
+        },
+        fill: {
+            opacity: 1
+        },
+    }
+
+    var leftChart = new ApexCharts(
+        document.querySelector("#total_laphar_pelanggaran_lalin"),
+        sCol
+    )
+
+    leftChart.render()
+
     var chartKanan = {
         chart: {
             fontFamily: 'Quicksand, sans-serif',
@@ -99,6 +155,20 @@ function loadRightChart()
         .then(function(response) {
 
             if(!_.isEmpty(response.data)) {
+                leftChart.updateOptions({
+                    xaxis: {
+                        categories: [response.data.year]
+                    },
+                })
+
+                leftChart.updateSeries([{
+                    name: 'Tilang',
+                    data: [response.data.tilang]
+                }, {
+                    name: 'Teguran',
+                    data: [response.data.teguran]
+                }])
+
                 rightChart.updateOptions({
                     xaxis: {
                         categories: [response.data.year]
@@ -123,99 +193,6 @@ function loadRightChart()
                         data: [response.data.jumlah_korban_luka_ringan]
                     }
                 ])
-            }
-
-        }).catch(function(error) {
-            if (error.response) {
-                console.log(error.response.data)
-                console.log(error.response.status)
-                console.log(error.response.headers)
-            } else if (error.request) {
-                console.log(error.request)
-            } else {
-                console.log('Error', error.message)
-            }
-        })
-    }, 5000)
-}
-
-function loadLeftChart()
-{
-    var sCol = {
-        chart: {
-            fontFamily: 'Quicksand, sans-serif',
-            height: 365,
-            type: 'bar',
-            toolbar: {
-                show: false,
-            }
-        },
-        plotOptions: {
-            bar: {
-                horizontal: false,
-                columnWidth: '55%',
-                endingShape: 'rounded',
-            },
-        },
-        dataLabels: {
-            enabled: false
-        },
-        noData: {
-            text: "Loading Data",
-            align: 'center',
-            verticalAlign: 'middle',
-            offsetX: 0,
-            offsetY: 0,
-            style: {
-                color: "#ffffff",
-                fontSize: '15px',
-                fontFamily: "Quicksand, sans-serif",
-            },
-        },
-        stroke: {
-            show: true,
-            width: 2,
-            colors: ['transparent']
-        },
-        series: [],
-        xaxis: {
-            categories: [],
-        },
-        yaxis: {
-            title: {
-                text: 'Total'
-            }
-        },
-        fill: {
-            opacity: 1
-        },
-    }
-
-    var leftChart = new ApexCharts(
-        document.querySelector("#total_laphar_pelanggaran_lalin"),
-        sCol
-    )
-
-    leftChart.render()
-
-    setInterval(function() {
-        axios.get(route('chart_laphar'))
-        .then(function(response) {
-
-            if(!_.isEmpty(response.data)) {
-                leftChart.updateOptions({
-                    xaxis: {
-                        categories: [response.data.year]
-                    },
-                })
-
-                leftChart.updateSeries([{
-                    name: 'Tilang',
-                    data: [response.data.tilang]
-                }, {
-                    name: 'Teguran',
-                    data: [response.data.teguran]
-                }])
             }
 
         }).catch(function(error) {

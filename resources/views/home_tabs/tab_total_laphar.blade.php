@@ -30,11 +30,10 @@
 @push('page_js')
 <script>
 $(document).ready(function () {
-    loadLeftChartProjectAll()
-    loadRightChartProjectAll()
+    loadChartProjectAll()
 })
 
-function loadLeftChartProjectAll()
+function loadChartProjectAll()
 {
     var lapharAllLeft = {
         chart: {
@@ -93,43 +92,7 @@ function loadLeftChartProjectAll()
 
     leftChartProjectAll.render()
 
-    setInterval(function() {
-        axios.get(route('chart_laphar_all_project'))
-        .then(function(response) {
-
-            if(!_.isEmpty(response.data)) {
-                leftChartProjectAll.updateOptions({
-                    xaxis: {
-                        categories: [response.data.year]
-                    },
-                })
-
-                leftChartProjectAll.updateSeries([{
-                    name: 'Tilang',
-                    data: [response.data.tilang]
-                }, {
-                    name: 'Teguran',
-                    data: [response.data.teguran]
-                }])
-            }
-
-        }).catch(function(error) {
-            if (error.response) {
-                console.log(error.response.data)
-                console.log(error.response.status)
-                console.log(error.response.headers)
-            } else if (error.request) {
-                console.log(error.request)
-            } else {
-                console.log('Error', error.message)
-            }
-        })
-    }, 5000)
-}
-
-function loadRightChartProjectAll()
-{
-    var chartKanan = {
+    var lapharAllRight = {
         chart: {
             fontFamily: 'Quicksand, sans-serif',
             height: 365,
@@ -179,25 +142,41 @@ function loadRightChartProjectAll()
         },
     }
 
-    var rightChart = new ApexCharts(
-        document.querySelector("#total_laphar_kecelakaan_lalin"),
-        chartKanan
+    var rightChartProjectAll = new ApexCharts(
+        document.querySelector("#total_laphar_kecelakaan_lalin_all_project"),
+        lapharAllRight
     )
 
-    rightChart.render()
+    rightChartProjectAll.render()
 
     setInterval(function() {
-        axios.get(route('chart_laphar'))
+        axios.get(route('chart_laphar_all_project'))
         .then(function(response) {
 
             if(!_.isEmpty(response.data)) {
-                rightChart.updateOptions({
+
+                leftChartProjectAll.updateOptions({
                     xaxis: {
                         categories: [response.data.year]
                     },
                 })
 
-                rightChart.updateSeries([
+                leftChartProjectAll.updateSeries([{
+                    name: 'Tilang',
+                    data: [response.data.tilang]
+                }, {
+                    name: 'Teguran',
+                    data: [response.data.teguran]
+                }])
+
+
+                rightChartProjectAll.updateOptions({
+                    xaxis: {
+                        categories: [response.data.year]
+                    },
+                })
+
+                rightChartProjectAll.updateSeries([
                     {
                         name: 'Jumlah Kejadian',
                         data: [response.data.jumlah_kejadian]
