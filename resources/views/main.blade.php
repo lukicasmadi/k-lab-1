@@ -93,6 +93,8 @@
             @if (!empty(operationPlans()))
                 @if (authUser()->id == 1)
                     @include('home_tabs.tab')
+                @else
+                    @include('home_tabs.tab_absensi')
                 @endif
             @endif
         @endrole
