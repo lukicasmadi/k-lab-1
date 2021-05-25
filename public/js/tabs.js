@@ -289,6 +289,113 @@ jQuery(function () {
   var rightLaphar = new ApexCharts(document.querySelector("#total_laphar_kecelakaan_lalin"), optionLapHarRight);
   rightLaphar.render(); //=================================================================================================================================================
 
+  var optionLapHarAllLeft = {
+    chart: {
+      fontFamily: 'Quicksand, sans-serif',
+      height: 365,
+      type: 'bar',
+      toolbar: {
+        show: false
+      }
+    },
+    colors: ['#00adef', '#ea1c26'],
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: '55%',
+        endingShape: 'rounded'
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    noData: {
+      text: "Loading Data",
+      align: 'center',
+      verticalAlign: 'middle',
+      offsetX: 0,
+      offsetY: 0,
+      style: {
+        color: "#ffffff",
+        fontSize: '15px',
+        fontFamily: "Quicksand, sans-serif"
+      }
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ['transparent']
+    },
+    series: [],
+    xaxis: {
+      categories: []
+    },
+    yaxis: {
+      title: {
+        text: 'Total'
+      }
+    },
+    fill: {
+      opacity: 1
+    }
+  };
+  var leftLapharAll = new ApexCharts(document.querySelector("#total_laphar_pelanggaran_lalin_all_project"), optionLapHarAllLeft);
+  leftLapharAll.render();
+  var optionLapHarAllRight = {
+    chart: {
+      fontFamily: 'Quicksand, sans-serif',
+      height: 365,
+      type: 'bar',
+      toolbar: {
+        show: false
+      }
+    },
+    colors: ['#00adef', '#ea1c26', '#fd7e14', '#ffc107'],
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: '55%',
+        endingShape: 'rounded'
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    noData: {
+      text: "Loading Data",
+      align: 'center',
+      verticalAlign: 'middle',
+      offsetX: 0,
+      offsetY: 0,
+      style: {
+        color: "#ffffff",
+        fontSize: '15px',
+        fontFamily: "Quicksand, sans-serif"
+      }
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ['transparent']
+    },
+    series: [],
+    xaxis: {
+      categories: []
+    },
+    yaxis: {
+      title: {
+        text: 'Total'
+      }
+    },
+    fill: {
+      opacity: 1
+    }
+  };
+  var rightLapharAll = new ApexCharts(document.querySelector("#total_laphar_kecelakaan_lalin_all_project"), optionLapHarAllRight);
+  rightLapharAll.render(); //=================================================================================================================================================
+  //=================================================================================================================================================
+  //=================================================================================================================================================
+
   setInterval(function () {
     dashboardChart = wrapAjax(route('dashboardChart'));
     dashboardChart.done(function (data, statusText, jqXHR) {
@@ -338,6 +445,39 @@ jQuery(function () {
         }
       });
       rightLaphar.updateSeries([{
+        name: 'Jumlah Kejadian',
+        data: [data.jumlah_kejadian]
+      }, {
+        name: 'Korban Meninggal Dunia',
+        data: [data.jumlah_korban_meninggal]
+      }, {
+        name: 'Korban Luka Berat',
+        data: [data.jumlah_korban_luka_berat]
+      }, {
+        name: 'Korban Luka Ringan',
+        data: [data.jumlah_korban_luka_ringan]
+      }]);
+    });
+    chart_laphar_all_project = wrapAjax(route('chart_laphar_all_project'));
+    chart_laphar_all_project.done(function (data, statusText, jqXHR) {
+      leftLapharAll.updateOptions({
+        xaxis: {
+          categories: [data.year]
+        }
+      });
+      leftLapharAll.updateSeries([{
+        name: 'Tilang',
+        data: [data.tilang]
+      }, {
+        name: 'Teguran',
+        data: [data.teguran]
+      }]);
+      rightLapharAll.updateOptions({
+        xaxis: {
+          categories: [data.year]
+        }
+      });
+      rightLapharAll.updateSeries([{
         name: 'Jumlah Kejadian',
         data: [data.jumlah_kejadian]
       }, {

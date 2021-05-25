@@ -12,8 +12,8 @@
     <script src="{{ asset('template/assets/js/loader.js') }}"></script>
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="{{ asset('template/assets/font/stylesheet.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('template/bootstrap/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('template/assets/font/stylesheet.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('template/fontawesome5.15.1/css/all.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('template/assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('template/plugins/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
