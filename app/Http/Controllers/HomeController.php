@@ -14,6 +14,21 @@ use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
+
+    public function chart_laphar_all_project()
+    {
+        $left = [chartLapharFullProject()->tilang, chartLapharFullProject()->teguran];
+        return [
+            'tilang' => chartLapharFullProject()->tilang,
+            'teguran' => chartLapharFullProject()->teguran,
+            'jumlah_kejadian' => chartLapharFullProject()->jumlah_kejadian,
+            'jumlah_korban_meninggal' => chartLapharFullProject()->jumlah_korban_meninggal,
+            'jumlah_korban_luka_berat' => chartLapharFullProject()->jumlah_korban_luka_berat,
+            'jumlah_korban_luka_ringan' => chartLapharFullProject()->jumlah_korban_luka_ringan,
+            'year' => date("Y")
+        ];
+    }
+
     public function chart_laphar()
     {
         $left = [chartCurrent()->tilang, chartCurrent()->teguran];

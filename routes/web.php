@@ -206,5 +206,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/rencana-operasi/date-range/{id}', 'ReportController@getDateRangeRencanaOperasi')->name('get_rencana_operasi_date_range');
         Route::get('/totalinputan/bychart/{indexData}', 'HomeController@viewInputFromChart')->name('viewInputFromChart');
         Route::get('/chart/laphar', 'HomeController@chart_laphar')->name('chart_laphar');
+        Route::get('/chart/laphar/all', 'HomeController@chart_laphar_all_project')->name('chart_laphar_all_project');
     });
 });
