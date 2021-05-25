@@ -16,6 +16,8 @@
                     <div class="mx-auto">
                         <div id="anev_pelanggaran_lalin" class=""></div>
                     </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 layout-spacing">
                     <div class="mx-auto">
                         <div id="anev_kecelakaan_lalin" class=""></div>
                     </div>
@@ -33,7 +35,7 @@ $(document).ready(function () {
 
 function loadAnevChart()
 {
-    var configAnevChart = {
+    var configAnevChartPelanggaran = {
         chart: {
             height: 350,
             type: 'bar',
@@ -72,10 +74,54 @@ function loadAnevChart()
 
     var anevLeftChart = new ApexCharts(
         document.querySelector("#anev_pelanggaran_lalin"),
-        configAnevChart
+        configAnevChartPelanggaran
     )
 
     anevLeftChart.render()
+
+    var configAnevChartKecelakaan = {
+        chart: {
+            height: 350,
+            type: 'bar',
+            toolbar: {
+                show: false,
+            }
+        },
+        plotOptions: {
+            bar: {
+                horizontal: false,
+                columnWidth: '55%',
+                endingShape: 'rounded'
+            },
+        },
+        dataLabels: {
+            enabled: false
+        },
+        stroke: {
+            show: true,
+            width: 2,
+            colors: ['transparent']
+        },
+        series: [],
+        xaxis: {
+            categories: [],
+        },
+        yaxis: {
+            title: {
+                text: 'Total'
+            }
+        },
+        fill: {
+            opacity: 1
+        },
+    }
+
+    var anevRightChart = new ApexCharts(
+        document.querySelector("#anev_kecelakaan_lalin"),
+        configAnevChartKecelakaan
+    )
+
+    anevRightChart.render()
 
     setInterval(function() {
         axios.get(route('chart_anev'))
@@ -99,6 +145,48 @@ function loadAnevChart()
                         name: "Teguran",
                         data: [response.data.tilang, response.data.teguran]
                     }
+                ])
+
+                anevRightChart.updateOptions({
+                    xaxis: {
+                        categories: [response.data.prev_year, response.data.year]
+                    },
+                })
+
+                anevRightChart.updateSeries(
+                [
+                    {
+                        name: "Kejadian",
+                        data:
+                        [
+                            response.data.jumlah_kejadian_prev,
+                            response.data.jumlah_kejadian,
+                        ]
+                    },
+                    {
+                        name: "Meninggal",
+                        data:
+                        [
+                            response.data.jumlah_korban_meninggal_prev,
+                            response.data.jumlah_korban_meninggal,
+                        ]
+                    },
+                    {
+                        name: "Luka Berat",
+                        data:
+                        [
+                            response.data.jumlah_korban_luka_berat_prev,
+                            response.data.jumlah_korban_luka_berat,
+                        ]
+                    },
+                    {
+                        name: "Luka Ringan",
+                        data:
+                        [
+                            response.data.jumlah_korban_luka_ringan_prev,
+                            response.data.jumlah_korban_luka_ringan,
+                        ]
+                    },
                 ])
             }
 
