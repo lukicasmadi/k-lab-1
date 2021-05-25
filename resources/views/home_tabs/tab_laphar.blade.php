@@ -32,6 +32,10 @@
 <script>
 $(document).ready(function () {
     loadChartProjectDaily()
+
+    setInterval(function() {
+        loadChartProjectDaily()
+    }, 10000)
 })
 
 function loadChartProjectDaily()
@@ -150,63 +154,60 @@ function loadChartProjectDaily()
 
     rightChart.render()
 
-    setInterval(function() {
-        axios.get(route('chart_laphar'))
-        .then(function(response) {
+    axios.get(route('chart_laphar')).then(function(response) {
 
-            if(!_.isEmpty(response.data)) {
-                leftChart.updateOptions({
-                    xaxis: {
-                        categories: [response.data.year]
-                    },
-                })
+        if(!_.isEmpty(response.data)) {
+            leftChart.updateOptions({
+                xaxis: {
+                    categories: [response.data.year]
+                },
+            })
 
-                leftChart.updateSeries([{
-                    name: 'Tilang',
-                    data: [response.data.tilang]
-                }, {
-                    name: 'Teguran',
-                    data: [response.data.teguran]
-                }])
+            leftChart.updateSeries([{
+                name: 'Tilang',
+                data: [response.data.tilang]
+            }, {
+                name: 'Teguran',
+                data: [response.data.teguran]
+            }])
 
-                rightChart.updateOptions({
-                    xaxis: {
-                        categories: [response.data.year]
-                    },
-                })
+            rightChart.updateOptions({
+                xaxis: {
+                    categories: [response.data.year]
+                },
+            })
 
-                rightChart.updateSeries([
-                    {
-                        name: 'Jumlah Kejadian',
-                        data: [response.data.jumlah_kejadian]
-                    },
-                    {
-                        name: 'Korban Meninggal Dunia',
-                        data: [response.data.jumlah_korban_meninggal]
-                    },
-                    {
-                        name: 'Korban Luka Berat',
-                        data: [response.data.jumlah_korban_luka_berat]
-                    },
-                    {
-                        name: 'Korban Luka Ringan',
-                        data: [response.data.jumlah_korban_luka_ringan]
-                    }
-                ])
-            }
+            rightChart.updateSeries([
+                {
+                    name: 'Jumlah Kejadian',
+                    data: [response.data.jumlah_kejadian]
+                },
+                {
+                    name: 'Korban Meninggal Dunia',
+                    data: [response.data.jumlah_korban_meninggal]
+                },
+                {
+                    name: 'Korban Luka Berat',
+                    data: [response.data.jumlah_korban_luka_berat]
+                },
+                {
+                    name: 'Korban Luka Ringan',
+                    data: [response.data.jumlah_korban_luka_ringan]
+                }
+            ])
+        }
 
-        }).catch(function(error) {
-            if (error.response) {
-                console.log(error.response.data)
-                console.log(error.response.status)
-                console.log(error.response.headers)
-            } else if (error.request) {
-                console.log(error.request)
-            } else {
-                console.log('Error', error.message)
-            }
-        })
-    }, 10000)
+    }).catch(function(error) {
+        if (error.response) {
+            console.log(error.response.data)
+            console.log(error.response.status)
+            console.log(error.response.headers)
+        } else if (error.request) {
+            console.log(error.request)
+        } else {
+            console.log('Error', error.message)
+        }
+    })
 }
 </script>
 @endpush

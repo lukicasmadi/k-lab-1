@@ -31,6 +31,10 @@
 <script>
 $(document).ready(function () {
     loadAnevChart()
+
+    setInterval(function() {
+        loadAnevChart()
+    }, 10000)
 })
 
 function loadAnevChart()
@@ -123,85 +127,82 @@ function loadAnevChart()
 
     anevRightChart.render()
 
-    setInterval(function() {
-        axios.get(route('chart_anev'))
-        .then(function(response) {
+    axios.get(route('chart_anev')).then(function(response) {
 
-            if(!_.isEmpty(response.data)) {
+        if(!_.isEmpty(response.data)) {
 
-                anevLeftChart.updateOptions({
-                    xaxis: {
-                        categories: [response.data.prev_year, response.data.year]
-                    },
-                })
+            anevLeftChart.updateOptions({
+                xaxis: {
+                    categories: [response.data.prev_year, response.data.year]
+                },
+            })
 
-                anevLeftChart.updateSeries(
-                [
-                    {
-                        name: "Tilang",
-                        data: [response.data.tilang_prev, response.data.teguran_prev]
-                    },
-                    {
-                        name: "Teguran",
-                        data: [response.data.tilang, response.data.teguran]
-                    }
-                ])
+            anevLeftChart.updateSeries(
+            [
+                {
+                    name: "Tilang",
+                    data: [response.data.tilang_prev, response.data.teguran_prev]
+                },
+                {
+                    name: "Teguran",
+                    data: [response.data.tilang, response.data.teguran]
+                }
+            ])
 
-                anevRightChart.updateOptions({
-                    xaxis: {
-                        categories: [response.data.prev_year, response.data.year]
-                    },
-                })
+            anevRightChart.updateOptions({
+                xaxis: {
+                    categories: [response.data.prev_year, response.data.year]
+                },
+            })
 
-                anevRightChart.updateSeries(
-                [
-                    {
-                        name: "Kejadian",
-                        data:
-                        [
-                            response.data.jumlah_kejadian_prev,
-                            response.data.jumlah_kejadian,
-                        ]
-                    },
-                    {
-                        name: "Meninggal",
-                        data:
-                        [
-                            response.data.jumlah_korban_meninggal_prev,
-                            response.data.jumlah_korban_meninggal,
-                        ]
-                    },
-                    {
-                        name: "Luka Berat",
-                        data:
-                        [
-                            response.data.jumlah_korban_luka_berat_prev,
-                            response.data.jumlah_korban_luka_berat,
-                        ]
-                    },
-                    {
-                        name: "Luka Ringan",
-                        data:
-                        [
-                            response.data.jumlah_korban_luka_ringan_prev,
-                            response.data.jumlah_korban_luka_ringan,
-                        ]
-                    },
-                ])
-            }
+            anevRightChart.updateSeries(
+            [
+                {
+                    name: "Kejadian",
+                    data:
+                    [
+                        response.data.jumlah_kejadian_prev,
+                        response.data.jumlah_kejadian,
+                    ]
+                },
+                {
+                    name: "Meninggal",
+                    data:
+                    [
+                        response.data.jumlah_korban_meninggal_prev,
+                        response.data.jumlah_korban_meninggal,
+                    ]
+                },
+                {
+                    name: "Luka Berat",
+                    data:
+                    [
+                        response.data.jumlah_korban_luka_berat_prev,
+                        response.data.jumlah_korban_luka_berat,
+                    ]
+                },
+                {
+                    name: "Luka Ringan",
+                    data:
+                    [
+                        response.data.jumlah_korban_luka_ringan_prev,
+                        response.data.jumlah_korban_luka_ringan,
+                    ]
+                },
+            ])
+        }
 
-        }).catch(function(error) {
-            if (error.response) {
-                console.log(error.response.data)
-                console.log(error.response.status)
-                console.log(error.response.headers)
-            } else if (error.request) {
-                console.log(error.request)
-            } else {
-                console.log('Error', error.message)
-            }
-        })
-    }, 10000)
+    }).catch(function(error) {
+        if (error.response) {
+            console.log(error.response.data)
+            console.log(error.response.status)
+            console.log(error.response.headers)
+        } else if (error.request) {
+            console.log(error.request)
+        } else {
+            console.log('Error', error.message)
+        }
+    })
 }
 </script>
 @endpush
