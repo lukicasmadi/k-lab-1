@@ -285,7 +285,6 @@ $(document).ready(function () {
     $('#changeTheme').click(function() {
         alert("Fitur ini masih dalam tahap pengembangan")
     })
-    introJs().start()
 })
 </script>
 @endpush

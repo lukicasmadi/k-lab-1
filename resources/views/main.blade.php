@@ -341,7 +341,7 @@
 @push('page_js')
 <script>
 $(document).ready(function () {
-
+    introJs().start()
     var DateTime = luxon.DateTime;
     DateTime.now().setZone('Asia/Jakarta');
 
