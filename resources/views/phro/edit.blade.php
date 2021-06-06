@@ -53,6 +53,7 @@
             @include('form.new_edit.data_terkait_arus_pemudik')
             @include('form.new_edit.data_terkait_arus_prokes_covid')
             @include('form.new_edit.peyekatan')
+            @include('form.new_edit.rapid_antigen')
 
             @include('form.new_edit.button')
 

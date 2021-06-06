@@ -98,7 +98,7 @@ class ReportController extends Controller
             $prev,
             $current,
             'KESATUAN : ',
-            "Perbandingan tanggal ".indonesianStandart($request->tanggal_pembanding_1).' DAN '.indonesianStandart($request->tanggal_pembanding_2),
+            "PERBANDINGAN TANGGAL ".indonesianStandart($request->tanggal_pembanding_1).' DAN '.indonesianStandart($request->tanggal_pembanding_2),
             '',
             '',
             '',
@@ -355,8 +355,8 @@ class ReportController extends Controller
         return excelTemplateDisplayDateCompare(
             $prev,
             $current,
-            $start_date,
-            $end_date
+            indonesianStandart($start_date),
+            indonesianStandart($end_date)
         );
     }
 

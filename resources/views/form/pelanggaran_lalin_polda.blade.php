@@ -19,7 +19,7 @@
 
     <blockquote class="blockquote mb-4">
         <p class="d-inline">LAPORAN HARIAN {{ upperCase(operationPlans()->name) }}</p>
-        <span class="sub-inline">TANGGAL : {{ upperCase(indonesianDate(operationPlans()->start_date)) }} S/D {{ upperCase(indonesianDate(operationPlans()->end_date)) }}</span>
+        <span class="sub-inline">TANGGAL : {{ upperCase(indonesiaDayAndDate(operationPlans()->start_date)) }} S/D {{ upperCase(indonesiaDayAndDate(operationPlans()->end_date)) }}</span>
         <div class="button-onsite">
             <a href="{{ route('phro_index') }}"><span class="seehow">lihat data</span></a>
         </div>

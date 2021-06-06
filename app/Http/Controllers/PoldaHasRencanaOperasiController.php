@@ -527,6 +527,8 @@ class PoldaHasRencanaOperasiController extends Controller
                 'penyekatan_mobil_bus_p',
                 'penyekatan_mobil_barang_p',
                 'penyekatan_kendaraan_khusus_p',
+                'rapid_test_antigen_positif_p',
+                'rapid_test_antigen_negatif_p',
             ]);
 
             $payload = $request->only([
@@ -848,6 +850,8 @@ class PoldaHasRencanaOperasiController extends Controller
                 'penyekatan_mobil_bus',
                 'penyekatan_mobil_barang',
                 'penyekatan_kendaraan_khusus',
+                'rapid_test_antigen_positif',
+                'rapid_test_antigen_negatif'
             ]);
 
             DailyInput::where("polda_submited_id", $poldaSubmited->id)

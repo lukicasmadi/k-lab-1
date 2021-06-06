@@ -48,7 +48,7 @@ class DailyRekapController extends Controller
                 $prev,
                 $current,
                 'KESATUAN : '.$poldaSubmited->nama_kesatuan,
-                $poldaSubmited->nama_kota.", ".indonesianDate(date("Y-m-d")),
+                $poldaSubmited->nama_kota.", ".indonesiaDayAndDate(date("Y-m-d")),
                 'NAMA : '.$poldaSubmited->nama_atasan,
                 $poldaSubmited->pangkat_dan_nrp,
                 $poldaSubmited->jabatan,
@@ -60,7 +60,7 @@ class DailyRekapController extends Controller
                 $prev,
                 $current,
                 'KESATUAN : '.$dailyRekap->kesatuan,
-                indonesianDate(date("Y-m-d")),
+                indonesiaDayAndDate(date("Y-m-d")),
                 'NAMA : '.$dailyRekap->atasan,
                 $dailyRekap->pangkat_nrp,
                 $dailyRekap->jabatan,
@@ -85,8 +85,8 @@ class DailyRekapController extends Controller
         $start_date = $dailyRekap->operation_date_start;
         $end_date = $dailyRekap->operation_date_end;
 
-        $prev = reportPrevToDisplay($prevYear, $rencana_operartion_id, $start_date, $end_date);
-        $current = reportCurrentToDisplay($currentYear, $rencana_operartion_id, $start_date, $end_date);
+        $prev = reportPrevToDisplayByPoldaId($prevYear, $rencana_operartion_id, $start_date, $end_date, $polda);
+        $current = reportCurrentToDisplayByPoldaId($currentYear, $rencana_operartion_id, $start_date, $end_date, $polda);
 
         return excelTemplateDisplay(
             $prev,

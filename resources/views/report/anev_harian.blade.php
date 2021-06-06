@@ -110,21 +110,21 @@
 
                 $(".pembanding").removeClass("d-none")
 
-                $('#tanggal_pembanding_1').datepicker({
-                    format: 'dd-mm-yyyy',
-                    todayHighlight: true,
-                    autoclose: true,
-                    startDate: DateTime.fromISO(startDate).toFormat('dd-MM-yyyy'),
-                    endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
-                })
+                // $('#tanggal_pembanding_1').datepicker({
+                //     format: 'dd-mm-yyyy',
+                //     todayHighlight: true,
+                //     autoclose: true,
+                //     startDate: DateTime.fromISO(startDate).toFormat('dd-MM-yyyy'),
+                //     endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
+                // })
 
-                $('#tanggal_pembanding_2').datepicker({
-                    format: 'dd-mm-yyyy',
-                    todayHighlight: true,
-                    autoclose: true,
-                    startDate: DateTime.fromISO(startDate).toFormat('dd-MM-yyyy'),
-                    endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
-                })
+                // $('#tanggal_pembanding_2').datepicker({
+                //     format: 'dd-mm-yyyy',
+                //     todayHighlight: true,
+                //     autoclose: true,
+                //     startDate: DateTime.fromISO(startDate).toFormat('dd-MM-yyyy'),
+                //     endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
+                // })
             })
             .catch(function (error) {
                 swal("Data tidak ditemukan. Silakan periksa data yang akan diproses", null, "error")
@@ -162,7 +162,21 @@
     })
 
     $(document).ready(function () {
-        //
+        $('#tanggal_pembanding_1').datepicker({
+            format: 'dd-mm-yyyy',
+            todayHighlight: true,
+            autoclose: true,
+            // startDate: DateTime.fromISO(startDate).toFormat('dd-MM-yyyy'),
+            // endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
+        })
+
+        $('#tanggal_pembanding_2').datepicker({
+            format: 'dd-mm-yyyy',
+            todayHighlight: true,
+            autoclose: true,
+            // startDate: DateTime.fromISO(startDate).toFormat('dd-MM-yyyy'),
+            // endDate: DateTime.fromISO(endDate).toFormat('dd-MM-yyyy'),
+        })
     })
 </script>
 @endpush

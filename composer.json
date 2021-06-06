@@ -14,7 +14,6 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "haruncpi/laravel-id-generator": "^1.0",
         "intervention/image": "^2.5",
         "laracasts/flash": "^3.2",
         "laravel/framework": "^8.12",
@@ -23,10 +22,6 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
         "maatwebsite/excel": "^3.1",
-        "marcin-orlowski/laravel-api-response-builder": "^9.2",
-        "mckenziearts/laravel-notify": "^2.1",
-        "spatie/laravel-activitylog": "^3.16",
-        "spatie/laravel-analytics": "^3.10",
         "spatie/laravel-permission": "^3.18",
         "tightenco/ziggy": "^1.0",
         "yajra/laravel-datatables-oracle": "^9.15"
@@ -58,7 +53,7 @@
         "files": [
             "app/Helpers/helpers.php",
             "app/Helpers/laporan.php",
-            "app/Helpers/laporan_custom.php"
+            "app/Helpers/based_query.php"
         ]
     },
     "autoload-dev": {
