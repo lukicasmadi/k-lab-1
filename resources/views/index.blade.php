@@ -20,6 +20,10 @@
                     </span>
                 </label>
             </div>
+            <label id="switch" class="switch">
+            <input type="checkbox" onchange="toggleTheme()" id="slider">
+            <span class="slider round"></span>
+        </label>
         </div>
             <div class="col-sm-8 offset-md-2">
                 <img class="logo-presisi" src="{{ asset('/img/presisi.png') }}">

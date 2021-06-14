@@ -15,7 +15,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #1f4e65 url(/img/futuretech.jpg);
+  background: var(--color-secondary);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -23,6 +23,19 @@ body {
 
 body .overflow {
   overflow-x: hidden; }
+
+  .theme-light {
+    --color-primary: #0060df;
+    --color-secondary: #1f4e65 url(/img/futuretech.jpg);
+    --color-accent: #fd6f53;
+    --font-color: #000000;
+  }
+  .theme-dark {
+    --color-primary: #17ed90;
+    --color-secondary: url(https://mojok.co/terminal/wp-content/uploads/2020/09/maxresdefault-5-800x540.jpg);
+    --color-accent: #12cdea;
+    --font-color: #ffffff;
+  }
 
 .logo-login {
   margin-top: 15px;
