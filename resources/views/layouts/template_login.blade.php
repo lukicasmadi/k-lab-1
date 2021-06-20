@@ -15,33 +15,6 @@
     <!-- END GLOBAL MANDATORY STYLES -->
     <link rel="stylesheet" type="text/css" href="{{ asset('template/assets/css/forms/theme-checkbox-radio.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('template/assets/css/forms/switches.css') }}">
-    <script>
-    // function to set a given theme/color-scheme
-            function setTheme(themeName) {
-                localStorage.setItem('theme', themeName);
-                document.documentElement.className = themeName;
-            }
-
-            // function to toggle between light and dark theme
-            function toggleTheme() {
-                if (localStorage.getItem('theme') === 'theme-dark') {
-                    setTheme('theme-light');
-                } else {
-                    setTheme('theme-dark');
-                }
-            }
-
-            // Immediately invoked function to set the theme on initial load
-            (function () {
-                if (localStorage.getItem('theme') === 'theme-dark') {
-                    setTheme('theme-dark');
-                    document.getElementById('slider').checked = false;
-                } else {
-                    setTheme('theme-light');
-                document.getElementById('slider').checked = true;
-                }
-            })();
-    </script>
 </head>
 <body class="form">
 <div class="">
@@ -49,6 +22,7 @@
     @include('include.footer_wrapper')
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
     <script src="{{ asset('template/assets/js/libs/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ asset('template/assets/js/switched.js') }}"></script>
     <script src="{{ asset('template/bootstrap/js/popper.min.js') }}"></script>
     <script src="{{ asset('template/bootstrap/js/bootstrap.min.js') }}"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->

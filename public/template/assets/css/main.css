@@ -27,13 +27,45 @@ body {
     font-family: 'Bahnschrift';
 }
 
+.theme-light {
+    --bg-polda: url(/img/circle_shinedetail.png);
+    --bg-formlogin: rgba(0, 173, 239, 0.1);
+    --bg-popups: #11394A;
+    --txt-popups: #fff;
+    --searh-table: block;
+    --searhligh-table: none;
+    --opacity-popup: 1;
+    --border-form: 1px solid #00adef; 
+    --input-operasi: #1b2e4b;
+}
+
+.theme-dark {
+    --bg-polda: url(/img/circle_shinedetail_light.png);
+    --bg-formlogin: rgba(255, 255, 255, 0.2);
+    --bg-popups: #fff;
+    --txt-popups: #105c7c;
+    --searh-table: none;
+    --searhligh-table: block;
+    --opacity-popup: 0.3;
+    --border-form: 1px solid rgba(16, 92, 124, 0.3);
+    --input-operasi: #fefefe;
+}
+
+.searh-on {
+    display: var(--searh-table);
+}
+  
+.searh-off {
+    display: var(--searhligh-table);
+}
+
 .blendingimg {
     height: 100%;
     /* overflow: auto; */
     margin: 30px 0 100px 0;
     padding: 0 50px;
     /* background-image: linear-gradient(#161D25, #172631, #1A4B61); */
-    background: url(/img/circle_shinedetail.png);
+    background: var(--bg-polda);
     background-size: 100%;
     background-blend-mode: overlay;
     background-repeat: no-repeat;
@@ -143,7 +175,7 @@ mark {
 .modal-content {
     display: inline-flex;
     color: #fff;
-    background: #11394A;
+    background: var(--bg-popups);
     border: 12px solid transparent;
     border-image: url(/img/border.png);
     border-image-slice: 30;
@@ -209,7 +241,7 @@ blockquote.blockquote {
     color: #00adef;
     padding: 20px 20px 20px 14px;
     font-size: 0.875rem;
-    background-color: #1b2e4b;
+    background-color: var(--input-operasi);
     /* border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
     border: 1px solid #1b2e4b;
@@ -349,7 +381,7 @@ label {
 }
 
 .text-artikel .form-group label {
-    color: #fff;
+    color: var(--txt-popups);
 }
 
 /*  Disable forms     */
@@ -378,7 +410,7 @@ label {
 .form-onsite {
     height: auto;
     border: 0px solid #00adef;
-    color: #fff;
+    color: var(--txt-popups);
     font-size: 15px;
     padding: 8px 10px;
     letter-spacing: 1px;
@@ -397,14 +429,14 @@ label {
 
 .form-control {
     height: auto;
-    border: 1px solid #00adef;
-    color: #fff;
+    border: var(--border-form);
+    color: var(--txt-popups);
     font-size: 15px;
     padding: 8px 10px;
     letter-spacing: 1px;
     height: calc(1.1em + 1.1rem + 2px);
     padding: .75rem 1.25rem;
-    background: rgba(0, 173, 239, 0.1);
+    background: var(--bg-formlogin);
     outline: none;
     box-shadow: 0 0 8px 0 rgba(81, 203, 238, 0.1), 0 0 20px 0 rgba(81, 203, 238, 0.09);
     /* border-radius: 6px; */
@@ -419,7 +451,7 @@ label {
     box-shadow: none;
     border-color: #00adef;
     color: #25d5e4;
-    background-color: rgba(0, 173, 239, 0.1);
+    background-color: var(--bg-formlogin);
 }
 
 .form-control::-webkit-input-placeholder,
@@ -456,6 +488,7 @@ label {
 
 .imgpopup {
     margin-bottom: -100px;
+    opacity: var(--opacity-popup);
 }
 
 .imgpopup img {
@@ -474,7 +507,7 @@ label {
 }
 
 .height-form.height-form:focus {
-    color: #fff;
+    color: var(--txt-popups);
 }
 
 .artc-form.artc-form {
@@ -483,12 +516,12 @@ label {
     /* font-weight: lighter; */
     padding-top: 10px;
     /* color: #79859b; */
-    color: #fff;
+    color: var(--txt-popups);
     margin-bottom: 15px;
 }
 
 .artc-form.artc-form:focus {
-    color: #fff;
+    color: var(--txt-popups);
 }
 
 .form-group label.text-popup {
@@ -498,7 +531,7 @@ label {
 }
 
 .text-popup {
-    color: #fff;
+    color: var(--txt-popups);
     text-transform: uppercase;
     font-size: 12px;
 }
@@ -800,7 +833,7 @@ select.form-control.form-custom {
     touch-action: manipulation;
     cursor: pointer;
     background-color: #f1f2f3;
-    box-shadow: 0px 5px 20px 0 rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0px 5px 20px 0 rgba(0, 0, 0, 0.1); */
     will-change: opacity, transform;
     transition: all 0.3s ease-out;
     -webkit-transition: all 0.3s ease-out;
@@ -1170,7 +1203,7 @@ select.form-control.form-custom {
 }
 
 .add-none {
-    color: #fff !important;
+    color: var(--txt-popups) !important;
     background-color: transparent !important;
     /* border-color: #00adef; */
     text-transform: uppercase;
@@ -2627,8 +2660,15 @@ textarea[readonly] {
     text-transform: uppercase;
 }
 
+.table>thead {
+    /* border-top: 1px solid #191e3a;
+    border-bottom: 1px solid #191e3a; */
+    background: rgba(0, 173, 239, 0.6);
+    color: #fff;
+}
+
 .table>thead>tr>th {
-    color: #d3d3d3;
+    color: #fff;
 }
 
 .table>tbody>tr>td {

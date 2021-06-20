@@ -32,7 +32,7 @@
             <div class="col-sm-4 mb-5">
 
                 <div class="more-right">
-                    <div>Berita Terkini <svg xmlns="http://www.w3.org/2000/svg" width="379.5" height="7.5" viewBox="0 0 379.5 7.5"><defs><style>.a{fill:none;stroke:#105c7c;}.b{fill:#105c7c;}</style></defs><g transform="translate(-1400.5 -153)"><path class="a" d="M-1743,149h379.5" transform="translate(3143.5 11)"/><g transform="translate(1729 153)"><path class="b" d="M30-.052H4.422L0,6.948H30Z" transform="translate(21 0.052)"/><path class="b" d="M6.219,0H-.068l-3,4.948H3.151Z" transform="translate(15.409 0.012)"/><path class="b" d="M3.521,0H-.068l-3,4.948H.453Z" transform="translate(8.82 0.012)"/><path class="b" d="M2.684,0H-.068l-3,4.948H-.384Z" transform="translate(3.068 0.012)"/></g></g></svg></div>
+                    <div>Berita Terkini <svg xmlns="http://www.w3.org/2000/svg" width="379.5" height="7.5" viewBox="0 0 379.5 7.5"><defs></defs><g transform="translate(-1400.5 -153)"><path class="a" d="M-1743,149h379.5" transform="translate(3143.5 11)"/><g transform="translate(1729 153)"><path class="b" d="M30-.052H4.422L0,6.948H30Z" transform="translate(21 0.052)"/><path class="b" d="M6.219,0H-.068l-3,4.948H3.151Z" transform="translate(15.409 0.012)"/><path class="b" d="M3.521,0H-.068l-3,4.948H.453Z" transform="translate(8.82 0.012)"/><path class="b" d="M2.684,0H-.068l-3,4.948H-.384Z" transform="translate(3.068 0.012)"/></g></g></svg></div>
                 </div>
 
                 @foreach ($listArticle as $item)
@@ -50,7 +50,7 @@
                 <div class="text-right more-sidebar">Lihat Selangkapnya <img src="{{ asset('/img/chevron_big_right.png') }}"></div>
 
                 <div class="more-right mt-4">
-                    <div>Berita Lainnya <svg xmlns="http://www.w3.org/2000/svg" width="379.5" height="7.5" viewBox="0 0 379.5 7.5"><defs><style>.a{fill:none;stroke:#105c7c;}.b{fill:#105c7c;}</style></defs><g transform="translate(-1400.5 -153)"><path class="a" d="M-1743,149h379.5" transform="translate(3143.5 11)"/><g transform="translate(1729 153)"><path class="b" d="M30-.052H4.422L0,6.948H30Z" transform="translate(21 0.052)"/><path class="b" d="M6.219,0H-.068l-3,4.948H3.151Z" transform="translate(15.409 0.012)"/><path class="b" d="M3.521,0H-.068l-3,4.948H.453Z" transform="translate(8.82 0.012)"/><path class="b" d="M2.684,0H-.068l-3,4.948H-.384Z" transform="translate(3.068 0.012)"/></g></g></svg></div>
+                    <div>Berita Lainnya <svg xmlns="http://www.w3.org/2000/svg" width="379.5" height="7.5" viewBox="0 0 379.5 7.5"><defs></defs><g transform="translate(-1400.5 -153)"><path class="a" d="M-1743,149h379.5" transform="translate(3143.5 11)"/><g transform="translate(1729 153)"><path class="b" d="M30-.052H4.422L0,6.948H30Z" transform="translate(21 0.052)"/><path class="b" d="M6.219,0H-.068l-3,4.948H3.151Z" transform="translate(15.409 0.012)"/><path class="b" d="M3.521,0H-.068l-3,4.948H.453Z" transform="translate(8.82 0.012)"/><path class="b" d="M2.684,0H-.068l-3,4.948H-.384Z" transform="translate(3.068 0.012)"/></g></g></svg></div>
                 </div>
 
                 @foreach ($listArticle as $item)

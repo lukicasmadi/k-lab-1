@@ -316,7 +316,8 @@
                         return `
                         <div class="icon-container">
                             <a href="#" class="viewData" idval="`+data+`">
-                                <img src="{{ asset('/img/search.png') }}" width="22px">
+                                <img src="{{ asset('/img/search.png') }}" class="searh-on" width="22px">
+                                <img src="{{ asset('/img/searchoff.png') }}" class="searh-off" width="22px">
                             </a>
                         </div>
                         `;

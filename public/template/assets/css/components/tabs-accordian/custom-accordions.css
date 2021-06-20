@@ -14,15 +14,34 @@
 /*
     Basic
 */
+
+.theme-light {
+  --bg-accordion: rgba(11, 101, 138, 1);
+  --bg-second: rgba(17, 66, 92, 1);
+  --color-accordion: #fff;
+}
+
+.theme-dark {
+  --bg-accordion: rgb(0, 173, 239, 0.1);
+  --bg-second: rgb(0, 173, 239, 0.3);
+  --color-accordion: #105c7c;
+}
+
 .card {
+  color: var(--color-accordion) !important;
   border: none;
   border-radius: unset;
   margin-bottom: 4px;
   background: transparent; }
 
+.second-toogle {
+  background: var(--bg-second);
+  padding: 10px 0;
+}
+
 .card-header {
   
-  background-color: #0B658A;
+  background-color: var(--bg-accordion);
   /* color: #f8538d; */
   border-radius: unset;
   padding: 0;
@@ -35,9 +54,9 @@
     font-size: 14px;
     letter-spacing: 1px; }
     .card-header section > div.collapsed {
-      color: #fff; }
+      color: var(--color-accordion); }
     .card-header section > div:not(.collapsed) {
-      color: #fff;
+      color: var(--color-accordion);
       /* border-bottom: 2px solid #1b2e4b; */
       font-weight: normal }
     .card-header section > div .icons {
