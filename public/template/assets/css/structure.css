@@ -43,7 +43,7 @@ body {
     font-family: 'Bahnschrift';
     margin: 0 auto;
     padding: 0;
-    background: #1a4a61 url(/img/dashboard.jpg);
+    background: var(--bg-dashboard);
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -73,7 +73,41 @@ h3,
 h4,
 h5,
 h6 {
-    color: #ebedf2;
+    color: var(--colorlogo-text);
+}
+
+.theme-light {
+    --bg-dashboard: #1a4a61 url(/img/dashboard.jpg);
+    --colorlogo-text: #ebedf2;
+    --dashboard-text : #fff;
+    --dashboard-menu : #fafafa;
+    --dashboard-tour : #b8fb3c;
+    --dashboard-login: #00adef;
+    --dashboard-title : #bfc9d4;
+    --dashboard-polda : #ebedf2;
+    --dashboard-linetop: block;
+    --dashboard-linetoplight: none;
+}
+
+.theme-dark {
+    --bg-dashboard: #e9f0f8 url(/img/backround_arclight.jpg);
+    --colorlogo-text: #105c7c;
+    --dashboard-text : #105c7c;
+    --dashboard-menu : #105c7c;
+    --dashboard-tour : #00adef;
+    --dashboard-login : #105c7c;
+    --dashboard-title : #00adef;
+    --dashboard-polda : #113e51;
+    --dashboard-linetop: none;
+    --dashboard-linetoplight: block;
+}
+
+.linetop-dashboard {
+    display: var(--dashboard-linetop);
+}
+  
+.linetoplight-dashboard {
+    display: var(--dashboard-linetoplight);
 }
 
 :focus {
@@ -94,7 +128,7 @@ h6 {
 p {
     margin-top: 0;
     margin-bottom: 0.625rem;
-    color: #ebedf2;
+    color: var(--dashboard-polda);
 }
 
 hr {
@@ -374,7 +408,7 @@ color: #fff;
 .page-header .switch.s-icons .slider svg.feather-sun {
 left: 17px;
 color: #00adef;
-fill: #12394d;
+fill: #BBE8FA;
 }
 .page-header .switch.s-icons .slider svg.feather-moon {
 right: 17px;
@@ -439,8 +473,8 @@ transform: translateX(17px)
 .page-header .switch.s-icons .slider {
     width: 64px;
     height: 30px;
-    background: #12394d;
-    border-color: #12394d;
+    background: #BBE8FA;
+    border-color: #BBE8FA;
 }
 .page-header .switch.s-outline-secondary input:checked + .slider { background: #12394d; }
     
@@ -537,7 +571,7 @@ transform: translateX(34px);
     /* font-weight: 700; */
     letter-spacing: 1px;
     margin-left: 8px;
-    color: #fff;
+    color: var(--dashboard-text);
     font-size: 15px;
 }
 
@@ -1129,7 +1163,7 @@ transform: translateX(34px);
     width: 37px;
     height: 37px;
     border-radius: 6px;
-    box-shadow: 0 0px 0.9px rgba(0, 0, 0, 0.07), 0 0px 7px rgba(0, 0, 0, 0.14);
+    /* box-shadow: 0 0px 0.9px rgba(0, 0, 0, 0.07), 0 0px 7px rgba(0, 0, 0, 0.14); */
     margin-right: 18px;
     border: none;
 }
@@ -1139,14 +1173,14 @@ transform: translateX(34px);
 }
 
 .navbar .navbar-item .nav-item.user-profile-dropdown a.user .media .media-body h6 {
-    color: #00adef;
+    color: var(--dashboard-login);
     font-size: 13px;
     /* font-weight: 600; */
     margin-bottom: 0;
 }
 
 .navbar .navbar-item .nav-item.user-profile-dropdown a.user .media .media-body h6 span {
-    color: #00adef;
+    color: var(--dashboard-login);
 }
 
 .navbar .navbar-item .nav-item.user-profile-dropdown a.user .media .media-body p {
@@ -1266,7 +1300,7 @@ transform: translateX(34px);
     margin-bottom: 0;
     margin: 0;
     font-size: 14px;
-    color: #bfc9d4;
+    color: var(--dashboard-title);
     font-weight: 500;
     letter-spacing: 0;
     text-transform: uppercase;
@@ -1550,11 +1584,11 @@ transform: translateX(34px);
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu a>div span {
         font-size: 12px;
-        color: #fafafa;
+        color: var(--dashboard-menu);
         vertical-align: text-bottom;
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu a>div span.tourcolor {
-        color: #b8fb3c;
+        color: var(--dashboard-tour);
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu>.dropdown-toggle svg.feather-chevron-down {
         display: none;
@@ -1616,7 +1650,7 @@ transform: translateX(34px);
         padding: 4px 24px;
         font-size: 12px;
         /* font-weight: 600; */
-        color: #fff;
+        color: var(--dashboard-text);
         /* letter-spacing: 0px; */
         line-height: 24px;
     }

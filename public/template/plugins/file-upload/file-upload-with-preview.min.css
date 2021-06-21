@@ -8,12 +8,23 @@
 			@Import	Mixins
 	===============================
 */
+.theme-light {
+  --txt-uploads: #fff;
+  --line-uploads: 1px solid #00adef;
+  --bg-uploads: rgba(0, 173, 239, 0.1);
+}
+
+.theme-dark {
+  --txt-uploads: #105c7c;
+  --line-uploads: 1px solid rgba(16, 92, 124, 0.3);
+  --bg-uploads: rgba(0, 173, 239, 0);
+}
 .custom-file-container {
   box-sizing: border-box;
   position: relative;
   display: block; }
   .custom-file-container label {
-    color: #fff; }
+    color: var(--txt-uploads); }
     .custom-file-container label .custom-file-container__image-clear {
       color: #e0e6ed; }
 
@@ -53,13 +64,13 @@
   background-clip: padding-box;
   /* border-radius: .25rem; */
   height: auto;
-  border: 1px solid #00adef;
+  border: var(--line-uploads);
   box-shadow: 0 0 8px 0 rgba(81, 203, 238, 0.1), 0 0 20px 0 rgba(81, 203, 238, 0.09);
-  color: #fff;
+  color: var(--txt-uploads);
   font-size: 15px;
   padding: 8px 10px;
   letter-spacing: 1px;
-  background-color: rgba(0, 173, 239, 0.1); }
+  background-color: var(--bg-uploads); }
 
 .custom-file-container__custom-file__custom-file-control__button {
   box-sizing: border-box;

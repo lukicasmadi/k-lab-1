@@ -42,7 +42,8 @@
         </div>
 
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mb-n22">
-            <img src="{{ asset('/img/line-poldaup.png') }}" width="100%">
+            <img class="linetop-dashboard" src="{{ asset('/img/line-poldaup.png') }}" width="100%">
+            <img class="linetoplight-dashboard" src="{{ asset('/img/line-poldaup-light.png') }}" width="100%">
         </div>
 
         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
@@ -86,7 +87,8 @@
         </div>
 
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-n22">
-            <img src="{{ asset('/img/line-polda.png') }}" width="100%">
+            <img class="linetop-dashboard" src="{{ asset('/img/line-polda.png') }}" width="100%">
+            <img class="linetoplight-dashboard" src="{{ asset('/img/line-polda-light.png') }}" width="100%">
         </div>
 
         @role('access_pusat|administrator')
@@ -109,7 +111,7 @@
                 </h5>
             </div>
 
-            <div class="widget-content">
+            <div class="widget-content mt-4">
                 <div class="table-responsive">
                     <table id="tbl_daily_submited" class="table">
                         <thead>
@@ -194,6 +196,15 @@
 
 @push('page_css')
 <style>
+    .theme-light {
+        --piechart-color: #fff;
+        --piechart-legend: #fff;
+    }
+
+    .theme-dark {
+        --piechart-color: #105c7c;
+        --piechart-legend: #105c7c;
+    }
     .apexcharts-canvas {
         margin: 0 auto;
     }
@@ -208,14 +219,14 @@
         fill: #ffffff;
     }
     .apexcharts-legend-text {
-        color: #ffffff!important;
+        color: var(--piechart-legend) !important;
         padding-right: 20px;
     }
     .apexcharts-radialbar-track.apexcharts-track .apexcharts-radialbar-area {
         stroke: #191e3a;
     }
-    .apexcharts-pie-label, .apexcharts-datalabel, .apexcharts-datalabel-label, .apexcharts-datalabel-value {
-        fill: #ffffff;
+    .apexcharts-datalabel, .apexcharts-datalabel-label, .apexcharts-datalabel-value {
+        fill: var(--piechart-color);
     }
 .widget.widget-activity-three .timeline-line .item-timeline .t-content p {
     margin-bottom: 8px;

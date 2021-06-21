@@ -37,7 +37,7 @@
                 </div>
                 <div id="defaultAccordion03" class="collapse show" aria-labelledby="heading03" data-parent="#toggleAccordion">
                     <div class="card-body">
-                        <div class="col-xl-12 col-md-12 col-sm-12 col-12" style="background: #11425C; padding: 10px 0;">
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 second-toogle">
                             <div class="row">
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
                                 </div>
@@ -281,7 +281,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-12 col-md-12 col-sm-12 col-12" style="background: #11425C; padding: 10px 0;">
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 second-toogle">
                             <div class="row">
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
                                 </div>
@@ -369,7 +369,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-12 col-md-12 col-sm-12 col-12" style="background: #11425C; padding: 10px 0;">
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 second-toogle">
                             <div class="row">
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
                                 </div>
@@ -717,7 +717,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-12 col-md-12 col-sm-12 col-12" style="background: #11425C; padding: 10px 0;">
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 second-toogle">
                             <div class="row">
                                 <div class="col-xl-1 col-md-12 col-sm-12 col-12">
                                 </div>

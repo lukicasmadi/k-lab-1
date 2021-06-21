@@ -35,6 +35,16 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+.theme-light {
+  --input-formwrap : #00adef;
+  --txt-popups: #fff;
+ }
+
+.theme-dark {
+  --input-formwrap : #7aa2ac;
+  --txt-popups: #105c7c;
+}
+
 *,
 *::before,
 *::after {
@@ -3201,14 +3211,14 @@ pre code {
 
 .form-control::placeholder {
   font-size: 12px;
-  color: #00adef;
+  color: var(--input-formwrap);
   opacity: 1;
 }
 
 @media (min-width: 1900px) {
   .form-control::placeholder {
     font-size: 18px;
-    color: #00adef;
+    color: var(--input-formwrap);
     opacity: 1;
   }
 }
@@ -3227,7 +3237,7 @@ pre code {
 }
 
 .form-control.popoups:focus {
-  color: #fff;
+  color: var(--txt-popups);
 }
 
 .form-control.popoups::-webkit-input-placeholder {
@@ -3257,7 +3267,7 @@ pre code {
  }
 
  .form-control.artikel:focus {
-  color: #fff;
+  color: var(--txt-popups);
 }
 
 .form-control.artikel::-webkit-input-placeholder {
@@ -9761,7 +9771,7 @@ button.bg-dark:focus {
 
 .mt-n22,
 .my-n22 {
-  margin-top: -2.2rem !important;
+  margin-top: -2rem !important;
 }
 
 .mr-n5,
@@ -9776,7 +9786,7 @@ button.bg-dark:focus {
 
 .mb-n22,
 .my-n22 {
-  margin-bottom: -2.2rem !important;
+  margin-bottom: -2rem !important;
 }
 
 .ml-n5,

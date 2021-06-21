@@ -1,3 +1,16 @@
+.theme-light {
+    --report-text: #e0e6ed;
+    --report-notif: #fff;
+    --logo-mabes: drop-shadow(0px 0px 10px rgba(0, 173, 239, 0.4));
+
+}
+
+.theme-dark {
+    --report-text: #00adef;
+    --report-notif: #00adef;
+    --logo-mabes: drop-shadow(0px 0px 10px rgba(0, 173, 239, 0));
+}
+
 .layout-spacing {
     padding-bottom: 25px;
 }
@@ -179,7 +192,7 @@
 .widget-heading h5 {
     font-size: 14px;
     display: block;
-    color: #e0e6ed;
+    color: var(--report-text);
     margin-bottom: 0;
     text-transform: uppercase;
 }
@@ -265,7 +278,7 @@
 .widget.widget-activity-three .widget-heading h5 {
     font-size: 15px;
     display: block;
-    color: #fff;
+    color: var(--report-notif);
     /* font-weight: 600; */
     margin-bottom: 0;
     text-transform: uppercase;
@@ -409,8 +422,8 @@
     width: 60px;
     bottom: 5px;
     left: 42px;
-    -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 173, 239, 0.4) );
-    filter: drop-shadow(0px 0px 10px rgba(0, 173, 239, 0.4));
+    -webkit-filter: var(--logo-mabes);
+    filter: var(--logo-mabes);
 }
 
 
