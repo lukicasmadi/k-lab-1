@@ -66,7 +66,7 @@
                 </div>
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-n3">
                     <div class="row">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1060.5" height="14.001" viewBox="0 0 1060.5 14.001"><defs><style>.a,.c{fill:none;}.a{stroke:#105c7c;}.b{fill:#105c7c;}.d,.e{stroke:none;}.e{fill:#105c7c;}</style></defs><g transform="translate(-1897.781 -612.292)"><line class="a" x2="1060" transform="translate(1898.281 619.792)"/><g transform="translate(1897.781 612.292)"><path class="b" d="M0-.052H25.578l4.422,7H0Z" transform="translate(0 0.052)"/><path class="b" d="M-3.068,0H3.219l3,4.948H0Z" transform="translate(32.44 0.012)"/><path class="b" d="M-3.068,0H.521l3,4.948H0Z" transform="translate(41.727 0.012)"/><path class="b" d="M-3.068,0H-.316l3,4.948H0Z" transform="translate(48.316 0.012)"/></g><g transform="translate(2906.781 612.292)"><path class="b" d="M30-.052H4.422L0,6.948H30Z" transform="translate(21 0.052)"/><path class="b" d="M6.219,0H-.068l-3,4.948H3.151Z" transform="translate(15.409 0.012)"/><path class="b" d="M3.521,0H-.068l-3,4.948H.453Z" transform="translate(8.82 0.012)"/><path class="b" d="M2.684,0H-.068l-3,4.948H-.384Z" transform="translate(3.068 0.012)"/></g><g transform="translate(2138.781 619.292)"><path class="b" d="M547,0H0L4.178,7H95.872l1.871-3H449.259l1.871,3h91.694L547,0Z" transform="translate(15.999)"/><g transform="translate(0 0.001)"><g class="c" transform="translate(0 0)"><path class="d" d="M559.654,0H529.136l4.5,7H575.5L580,0ZM30.519,0H0L4.5,7H46.366l4.5-7Z"/><path class="e" d="M 0.91571044921875 0.5000286102294922 L 4.7720947265625 6.500171661376953 L 20.34539794921875 6.500171661376953 L 46.0931396484375 6.500171661376953 L 49.94879150390625 0.5000286102294922 L 30.51898193359375 0.5000286102294922 L 0.91571044921875 0.5000286102294922 M 530.0517578125 0.5000286102294922 L 533.9080810546875 6.500171661376953 L 549.4813842773438 6.500171661376953 L 575.2282104492188 6.500171661376953 L 579.0838623046875 0.5000286102294922 L 559.6541137695313 0.5000286102294922 L 530.0517578125 0.5000286102294922 M 0 2.86102294921875e-05 L 30.51898193359375 2.86102294921875e-05 L 50.8643798828125 2.86102294921875e-05 L 46.3662109375 7.000171661376953 L 20.34539794921875 7.000171661376953 L 4.4990234375 7.000171661376953 L 0 2.86102294921875e-05 Z M 529.135986328125 2.86102294921875e-05 L 559.6541137695313 2.86102294921875e-05 L 579.9994506835938 2.86102294921875e-05 L 575.5012817382813 7.000171661376953 L 549.4813842773438 7.000171661376953 L 533.635009765625 7.000171661376953 L 529.135986328125 2.86102294921875e-05 Z"/></g></g></g></g></svg>
+                        <svg class="polda-line" xmlns="http://www.w3.org/2000/svg" width="1060.5" height="14.001" viewBox="0 0 1060.5 14.001"><defs><style>.a,.c{fill:none;}.a{stroke:#105c7c;}.b{fill:#105c7c;}.d,.e{stroke:none;}.e{fill:#105c7c;}</style></defs><g transform="translate(-1897.781 -612.292)"><line class="a" x2="1060" transform="translate(1898.281 619.792)"/><g transform="translate(1897.781 612.292)"><path class="b" d="M0-.052H25.578l4.422,7H0Z" transform="translate(0 0.052)"/><path class="b" d="M-3.068,0H3.219l3,4.948H0Z" transform="translate(32.44 0.012)"/><path class="b" d="M-3.068,0H.521l3,4.948H0Z" transform="translate(41.727 0.012)"/><path class="b" d="M-3.068,0H-.316l3,4.948H0Z" transform="translate(48.316 0.012)"/></g><g transform="translate(2906.781 612.292)"><path class="b" d="M30-.052H4.422L0,6.948H30Z" transform="translate(21 0.052)"/><path class="b" d="M6.219,0H-.068l-3,4.948H3.151Z" transform="translate(15.409 0.012)"/><path class="b" d="M3.521,0H-.068l-3,4.948H.453Z" transform="translate(8.82 0.012)"/><path class="b" d="M2.684,0H-.068l-3,4.948H-.384Z" transform="translate(3.068 0.012)"/></g><g transform="translate(2138.781 619.292)"><path class="b" d="M547,0H0L4.178,7H95.872l1.871-3H449.259l1.871,3h91.694L547,0Z" transform="translate(15.999)"/><g transform="translate(0 0.001)"><g class="c" transform="translate(0 0)"><path class="d" d="M559.654,0H529.136l4.5,7H575.5L580,0ZM30.519,0H0L4.5,7H46.366l4.5-7Z"/><path class="e" d="M 0.91571044921875 0.5000286102294922 L 4.7720947265625 6.500171661376953 L 20.34539794921875 6.500171661376953 L 46.0931396484375 6.500171661376953 L 49.94879150390625 0.5000286102294922 L 30.51898193359375 0.5000286102294922 L 0.91571044921875 0.5000286102294922 M 530.0517578125 0.5000286102294922 L 533.9080810546875 6.500171661376953 L 549.4813842773438 6.500171661376953 L 575.2282104492188 6.500171661376953 L 579.0838623046875 0.5000286102294922 L 559.6541137695313 0.5000286102294922 L 530.0517578125 0.5000286102294922 M 0 2.86102294921875e-05 L 30.51898193359375 2.86102294921875e-05 L 50.8643798828125 2.86102294921875e-05 L 46.3662109375 7.000171661376953 L 20.34539794921875 7.000171661376953 L 4.4990234375 7.000171661376953 L 0 2.86102294921875e-05 Z M 529.135986328125 2.86102294921875e-05 L 559.6541137695313 2.86102294921875e-05 L 579.9994506835938 2.86102294921875e-05 L 575.5012817382813 7.000171661376953 L 549.4813842773438 7.000171661376953 L 533.635009765625 7.000171661376953 L 529.135986328125 2.86102294921875e-05 Z"/></g></g></g></g></svg>
                     </div>
                 </div>
                 <div class="col-md-12 text-left mb-3">
@@ -142,10 +142,24 @@
 
 @push('page_css')
 <style>
+.theme-light {
+    --piechart-color: #fff;
+    --piechart-legend: #fff;
+    --piechart-legend: #fff;
+    --line-opacity: 1;
+}
+
+.theme-dark {
+    --piechart-color: #105c7c;
+    --piechart-legend: #105c7c;
+    --line-opacity: 0.3;
+}
 .apexcharts-canvas {
     margin: 0 auto;
 }
-
+.polda-line {
+    opacity: var(--line-opacity);
+}
 .apexcharts-title-text {
     fill: #ffffff;
 }
@@ -156,13 +170,13 @@
     fill: #ffffff;
 }
 .apexcharts-legend-text {
-    color: #ffffff!important;
+    color: var(--piechart-legend) !important;
 }
 .apexcharts-radialbar-track.apexcharts-track .apexcharts-radialbar-area {
     stroke: #191e3a;
 }
-.apexcharts-pie-label, .apexcharts-datalabel, .apexcharts-datalabel-label, .apexcharts-datalabel-value {
-    fill: #ffffff;
+.apexcharts-datalabel, .apexcharts-datalabel-label, .apexcharts-datalabel-value {
+    fill: var(--piechart-color);
 }
 .widget.widget-activity-three .timeline-line .item-timeline .t-content p {
     margin-bottom: 8px;
@@ -238,7 +252,8 @@ $(document).ready(function () {
                     return `
                     <div class="icon-container text-center">
                         <a href="`+route('previewPhro', data)+`" class="previewPhro" data-id="`+data+`">
-                        <img src="{{ asset('/img/search.png') }}" width="55%">
+                            <img src="{{ asset('/img/search.png') }}" class="searh-on" width="22px">
+                            <img src="{{ asset('/img/searchoff.png') }}" class="searh-off" width="22px">
                         </a>
                     </div>
                     `;

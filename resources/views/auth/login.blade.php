@@ -6,11 +6,6 @@
     <div class="row">
     <div class="centered">
         <div class="col-sm-12">
-            <div class="col-sm-12 head-logo">
-                <a href="{{ route('home') }}">
-                    <h3 class="colorback"><img src="{{ asset('/img/chevron_big_right.png') }}"> kembali</h3>
-                </a>
-            </div>
             <div class="col-sm-4 offset-md-4">
                 <img class="logo-login" src="{{ asset('/img/korlantas.png') }}">
             </div>
@@ -20,11 +15,11 @@
         @if (is_null(operationPlans()))
 
         @else
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14.5" height="51.4" class="left-kurung" viewBox="0 0 14.5 51.4"><defs><style>.a{fill:none;stroke:#00adef;stroke-width:3px;}.b{filter:url(#a);}</style><filter id="a" x="0" y="0" width="14.5" height="51.4" filterUnits="userSpaceOnUse"><feOffset input="SourceAlpha"/><feGaussianBlur stdDeviation="1" result="b"/><feFlood flood-color="#00adef" flood-opacity="0.502"/><feComposite operator="in" in2="b"/><feComposite in="SourceGraphic"/></filter></defs><g class="b" transform="matrix(1, 0, 0, 1, 0, 0)"><path class="a" d="M-2356,2531h-7v42.4h7" transform="translate(2367.5 -2526.5)"/></g></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14.5" height="51.4" class="left-kurung" viewBox="0 0 14.5 51.4"><defs><filter id="a" x="0" y="0" width="14.5" height="51.4" filterUnits="userSpaceOnUse"><feOffset input="SourceAlpha"/><feGaussianBlur stdDeviation="1" result="b"/><feFlood flood-color="#00adef" flood-opacity="0.502"/><feComposite operator="in" in2="b"/><feComposite in="SourceGraphic"/></filter></defs><g class="b" transform="matrix(1, 0, 0, 1, 0, 0)"><path class="a" d="M-2356,2531h-7v42.4h7" transform="translate(2367.5 -2526.5)"/></g></svg>
             <div class="text-slogan">
                 GIAT {{ operationPlans()->name }}
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14.5" height="51.4" class="right-kurung" viewBox="0 0 14.5 51.4"><defs><style>.a{fill:none;stroke:#00adef;stroke-width:3px;}.b{filter:url(#a);}</style><filter id="a" x="0" y="0" width="14.5" height="51.4" filterUnits="userSpaceOnUse"><feOffset input="SourceAlpha"/><feGaussianBlur stdDeviation="1" result="b"/><feFlood flood-color="#00adef" flood-opacity="0.502"/><feComposite operator="in" in2="b"/><feComposite in="SourceGraphic"/></filter></defs><g class="b" transform="matrix(1, 0, 0, 1, 0, 0)"><path class="a" d="M-2363,2531h7v42.4h-7" transform="translate(2366 -2526.5)"/></g></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14.5" height="51.4" class="right-kurung" viewBox="0 0 14.5 51.4"><defs><filter id="a" x="0" y="0" width="14.5" height="51.4" filterUnits="userSpaceOnUse"><feOffset input="SourceAlpha"/><feGaussianBlur stdDeviation="1" result="b"/><feFlood flood-color="#00adef" flood-opacity="0.502"/><feComposite operator="in" in2="b"/><feComposite in="SourceGraphic"/></filter></defs><g class="b" transform="matrix(1, 0, 0, 1, 0, 0)"><path class="a" d="M-2363,2531h7v42.4h-7" transform="translate(2366 -2526.5)"/></g></svg>
         @endif
     </div>
     <div class="form-form">
@@ -66,6 +61,11 @@
                                     LogIn
                                     </button>
                                 </div>
+                            </div>
+                            <div class="col-sm-12 footer-button">
+                                <a href="{{ route('home') }}">
+                                    <h3 class="colorback text-center"><img src="{{ asset('/img/chevron_big_right.png') }}"> Kembali ke halaman utama</h3>
+                                </a>
                             </div>
                         </div>
                     </form>

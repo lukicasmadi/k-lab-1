@@ -15,14 +15,38 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #1a4a61 url(/img/backround_arc.jpg);
+  background: var(--bgdetl-article);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  max-width: 100%; }
+  max-width: 100%;
+}
 
 body .overflow {
-  overflow-x: hidden; }
+  overflow-x: hidden;
+}
+
+.theme-light {
+  --bgdetl-article: #1a4a61 url(/img/backround_arc.jpg);
+  --svgpath-change: #00adef;
+  --svgline-change: #00adef;
+  --bgline-article: url(/img/border.png);
+  --bgcolor-article: #105C7C;
+  --bggradient-article : linear-gradient(108deg, rgba(16, 92, 124, 0.3) 1%, rgba(16, 92, 124, 0.3) 99%);
+  --glassmor-article : url(/img/futuretech.jpg) no-repeat center center fixed;
+  --txtdetl-article : #ebedf2;
+}
+
+.theme-dark {
+  --bgdetl-article: #e9f0f8 url(/img/backround_arclight.jpg);
+  --svgpath-change: #fff;
+  --svgline-change: #fff;
+  --bgline-article: url(/img/border-light.png);
+  --bgcolor-article: #fff;
+  --bggradient-article : linear-gradient(108deg, rgba(255, 255, 255, 0.1) 1%, rgba(255, 255, 255, 0.1) 99%);
+  --glassmor-article : url(/img/futuretech-light.jpg) no-repeat center center fixed;
+  --txtdetl-article : #105c7c;
+}
 
 .logo-login {
   margin-top: 15px;
@@ -205,11 +229,13 @@ body .overflow {
 
 .show-more p b {
   font-weight: bolder;
+  color: var(--txtdetl-article);
 }
 
 .show-more p {
   font-weight: lighter;
   font-size: 12px;
+  color: var(--txtdetl-article);
 }
 
 .kategori-more {
@@ -242,25 +268,36 @@ body .overflow {
   width: 100%;
 }
 
+.sidebar-article::before {
+  background: var(--glassmor-article);;
+  background-size: 100%;
+}
+
 .sidebar-article {
+  position: relative;
   display: inline-flex;
   font-size: 11px;
   color: #fff;
-  background:  #105C7C; 
+  background:  var(--bgcolor-article); 
   border: 12px solid transparent;   
-  border-image: url(/img/border.png);
+  border-image: var(--bgline-article);
   border-image-slice: 30;
   border-image-repeat: stretch;
-  /* padding: 0;
-  margin: 0; */
-  /* border: 1px solid #00adef; */
   margin: 10px 0 0 0;
-    /* padding: 0 0 0 5px; */
-  box-shadow: 0 0 8px 0 rgba(81, 203, 238, 0.2), 0 0 20px 0 rgba(81, 203, 238, 0.03);
+  width: 100%;
+  background: var(--bggradient-article);
+}
 
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-  background-image: linear-gradient(108deg, rgba(16, 92, 124, 0.4) 1%, rgba(16, 92, 124, 0.05) 99%);
+.sidebar-article::before {
+  content: '';
+  margin: -10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: blur(3.5px);
+  z-index: -1;
 }
 
 .sidebar-article img {
@@ -275,6 +312,7 @@ body .overflow {
   margin: 0px 0px -2px 30px;
   line-height: 1.39;
   text-transform: capitalize;
+  color: var(--txtdetl-article);
 }
 
 .sidebar-article p label {
@@ -343,7 +381,7 @@ body .overflow {
   overflow: hidden;
   height: 300px;
   margin: 20px 0;
-  border: 2px solid #105C7C;
+  /* border: 2px solid #105C7C; */
 }
 
 .style-3 img {
@@ -424,7 +462,7 @@ body .overflow {
 
 .more-right{
   margin: 8px 0 9px 0;
-  color: #fff;
+  color: var(--txtdetl-article);
   text-transform: uppercase;
   font-size: 12px;
 }
@@ -434,6 +472,14 @@ body .overflow {
   width: 69%;
   padding-left: 7px;
   margin-top: 7px;
+}
+
+.more-right svg path.a {
+  stroke: var(--svgpath-change);
+}
+
+.more-right svg path.b {
+  fill: var(--svgline-change);
 }
 
 .more-sidebar{

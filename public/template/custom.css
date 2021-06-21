@@ -1,3 +1,19 @@
+.theme-light {
+    --table-tdhome: #fff;
+    --table-arrow: #fff;
+    --ubah-color: #00adef;
+    --ubah-hover: #fff;
+    --line-operation: solid 1px #105c7c;
+}
+
+.theme-dark {
+    --table-tdhome: #105c7c;
+    --table-arrow: rgba(16, 92, 124, 0.3);
+    --ubah-color: #105c7c;
+    --ubah-hover: #00adef;
+    --line-operation: solid 1px rgb(16, 92, 124, 0.1);
+}
+
 .circle-inner {
     width: 100px;
     height: 100px;
@@ -72,11 +88,11 @@
 }
 
 .ubah-change a {
-    color: #00adef;
+    color: var(--ubah-color);
 }
 
 .ubah-change a:hover {
-    color: #fff;
+    color: var(--ubah-hover);
 }
 
 .ubah-change span {
@@ -177,7 +193,7 @@
 }
 
 .table>tbody>tr>td {
-    color: #fff;
+    color: var(--table-tdhome);
     font-size: 12px;
     letter-spacing: 1px;
     /* background: #009688; */
@@ -242,7 +258,7 @@
 
 .dtIconSize {
     font-size: 15px;
-    color: #fff;
+    color: var(--table-arrow);
 }
 
 .checkboxRole {
@@ -388,7 +404,7 @@ blockquote.blockquote span.sub-inline {
 }
 
 .line-onsite {
-    border-bottom: solid 1px #105c7c;
+    border-bottom: var(--line-operation);
     padding: 10px 0 0 0;
 }
 

@@ -15,7 +15,7 @@
             @include('common.svg_polwan')
             <div class="outgap">
                 <div class="workarea">
-                    <div class="center;">
+                    <div class="center">
                         <img class="polwan" src="{{ asset('/img/polwan.png') }}" />
                         <h3>SELAMAT DATANG DI SISTEM</h3>
                         <h3>PELAPORAN OPERASI ONLINE BIDANG</h3>
@@ -24,7 +24,7 @@
                     @if (is_null(operationPlans()))
 
                     @else
-                    <p class="text-slogan">
+                    <p class="text-welcome">
                         GIAT {{ operationPlans()->name }}
                     </p>
                     @endif

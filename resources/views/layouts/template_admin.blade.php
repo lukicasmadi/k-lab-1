@@ -58,6 +58,7 @@
 
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
     <script src="{{ asset('template/assets/js/libs/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ asset('template/assets/js/switched.js') }}"></script>
     <script src="{{ asset('template/bootstrap/js/popper.min.js') }}"></script>
     <script src="{{ asset('template/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>

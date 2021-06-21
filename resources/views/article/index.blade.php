@@ -120,7 +120,7 @@ $(document).ready(function() {
                 {
                     data: 'uuid',
                     render: function(data, type, row) {
-                        return '<div class="ubah-change"><a href="' + route('article_edit', data) + '">Ubah</a> <span> | </span> <a href="' + route('article_delete', data) + '">Hapus</a></div>';
+                        return '<div class="ubah-change"><a href="' + route('article_edit', data) + '">Ubah</a> | <a href="' + route('article_delete', data) + '">Hapus</a></div>';
                     },
                     searchable: false,
                     sortable: false
