@@ -410,3 +410,145 @@ if (! function_exists('yearMinus')) {
         return date("Y") - 1;
     }
 }
+
+if (! function_exists('poldaFlag')) {
+    function poldaFlag($poldaName) {
+        if($poldaName == 'Papua') {
+            $alpha = ['C', 'D'];
+        }
+
+        if($poldaName == 'Papua Barat') {
+            $alpha = ['E', 'F'];
+        }
+
+        if($poldaName == 'Maluku Utara') {
+            $alpha = ['G', 'H'];
+        }
+
+        if($poldaName == 'Maluku') {
+            $alpha = ['I', 'J'];
+        }
+
+        if($poldaName == 'Sulawesi Barat') {
+            $alpha = ['K', 'L'];
+        }
+
+        if($poldaName == 'Sulawesi Selatan') {
+            $alpha = ['M', 'N'];
+        }
+
+        if($poldaName == 'Sulawesi Tenggara') {
+            $alpha = ['O', 'P'];
+        }
+
+        if($poldaName == 'Sulawesi Tengah') {
+            $alpha = ['Q', 'R'];
+        }
+
+        if($poldaName == 'Gorontalo') {
+            $alpha = ['S', 'T'];
+        }
+
+        if($poldaName == 'Sulawesi Utara') {
+            $alpha = ['U', 'V'];
+        }
+
+        if($poldaName == 'Kalimantan Selatan') {
+            $alpha = ['W', 'X'];
+        }
+
+        if($poldaName == 'Kalimantan Utara') {
+            $alpha = ['Y', 'Z'];
+        }
+
+        if($poldaName == 'Kalimantan Timur') {
+            $alpha = ['AA', 'AB'];
+        }
+
+        if($poldaName == 'Kalimantan Tengah') {
+            $alpha = ['AC', 'AD'];
+        }
+
+        if($poldaName == 'Kalimantan Barat') {
+            $alpha = ['AE', 'AF'];
+        }
+
+        if($poldaName == 'Nusa Tenggara Timur') {
+            $alpha = ['AG', 'AH'];
+        }
+
+        if($poldaName == 'Nusa Tenggara Barat') {
+            $alpha = ['AI', 'AJ'];
+        }
+
+        if($poldaName == 'Bali') {
+            $alpha = ['AK', 'AL'];
+        }
+
+        if($poldaName == 'Jawa Timur') {
+            $alpha = ['AM', 'AN'];
+        }
+
+        if($poldaName == 'Daerah Istimewa Yogyakarta') {
+            $alpha = ['AO', 'AP'];
+        }
+
+        if($poldaName == 'Jawa Tengah') {
+            $alpha = ['AQ', 'AR'];
+        }
+
+        if($poldaName == 'Banten') {
+            $alpha = ['AS', 'AT'];
+        }
+
+        if($poldaName == 'Jawa Barat') {
+            $alpha = ['AU', 'AV'];
+        }
+
+        if($poldaName == 'Metropolitan Jakarta Raya') {
+            $alpha = ['AW', 'AX'];
+        }
+
+        if($poldaName == 'Lampung') {
+            $alpha = ['AY', 'AZ'];
+        }
+
+        if($poldaName == 'Bengkulu') {
+            $alpha = ['BA', 'BB'];
+        }
+
+        if($poldaName == 'Sumatera Selatan') {
+            $alpha = ['BC', 'BD'];
+        }
+
+        if($poldaName == 'Kepulauan Bangka Belitung') {
+            $alpha = ['BE', 'BF'];
+        }
+
+        if($poldaName == 'Kepulauan Riau') {
+            $alpha = ['BG', 'BH'];
+        }
+
+        if($poldaName == 'Riau') {
+            $alpha = ['BI', 'BJ'];
+        }
+
+        if($poldaName == 'Jambi') {
+            $alpha = ['BK', 'BL'];
+        }
+
+        if($poldaName == 'Sumatera Barat') {
+            $alpha = ['BM', 'BN'];
+        }
+
+        if($poldaName == 'Sumatera Utara') {
+            $alpha = ['BO', 'BP'];
+        }
+
+        if($poldaName == 'Aceh') {
+            $alpha = ['BQ', 'BR'];
+        }
+
+        return $alpha;
+    }
+}

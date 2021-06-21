@@ -4350,6 +4350,7 @@ if (! function_exists('dailyReportDetail')) {
             '240',
             '245',
             '246',
+            '247',
             '268',
             '269',
             '278',
@@ -4386,34 +4387,22 @@ if (! function_exists('dailyReportDetail')) {
             '414',
         ];
 
-        $poldaWithAlpa = [
-            ['C', 'D'],
-            ['E', 'F'],
-            ['G', 'H'],
-        ];
-
         foreach($poldaYangKe as $polda) {
-            $alpha = [];
 
             if(!is_null($polda->poldaInputCurrentToday)) {
-
-                if($polda->name == 'Papua') {
-                    $alpha = ['C', 'D'];
-                }
-
-                if($polda->name == 'Aceh') {
-                    $alpha = ['BQ', 'BR'];
-                }
 
                 for($i=14; $i<=413; $i++) {
                     if (in_array($i, $skip)) {
                         continue;
                     } else {
-                        $sheet->setCellValue($alpha[0].$i, $polda->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-                        $sheet->setCellValue($alpha[1].$i, $polda->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
+                        $flagName = poldaFlag($polda->name);
+
+                        $sheet->setCellValue($flagName[0].$i, $polda->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
+                        $sheet->setCellValue($flagName[1].$i, $polda->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
                     }
                 }
             } else {
+                //
             }
         }
 
