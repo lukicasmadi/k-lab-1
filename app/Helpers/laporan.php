@@ -4296,107 +4296,128 @@ if (! function_exists('dailyReportDetail')) {
         $sheet->setCellValue('C10', nowYearMinusOne());
         $sheet->setCellValue('D10', nowYear());
 
-        $sheet->setCellValue('C14', (is_null($poldaYangKe[0]->poldaInputPrevToday)) ? 0 : $poldaYangKe[0]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('D14', (is_null($poldaYangKe[0]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[0]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
+        $skip = [
+            '16',
+            '17',
+            '18',
+            '36',
+            '37',
+            '55',
+            '56',
+            '58',
+            '59',
+            '63',
+            '64',
+            '70',
+            '71',
+            '79',
+            '80',
+            '92',
+            '93',
+            '104',
+            '105',
+            '106',
+            '112',
+            '113',
+            '118',
+            '119',
+            '124',
+            '125',
+            '126',
+            '132',
+            '136',
+            '137',
+            '145',
+            '146',
+            '158',
+            '159',
+            '170',
+            '171',
+            '178',
+            '179',
+            '190',
+            '191',
+            '199',
+            '200',
+            '212',
+            '213',
+            '224',
+            '225',
+            '226',
+            '233',
+            '234',
+            '239',
+            '240',
+            '245',
+            '246',
+            '268',
+            '269',
+            '278',
+            '279',
+            '285',
+            '291',
+            '297',
+            '303',
+            '309',
+            '315',
+            '321',
+            '329',
+            '333',
+            '334',
+            '335',
+            '336',
+            '343',
+            '344',
+            '349',
+            '350',
+            '355',
+            '356',
+            '364',
+            '365',
+            '366',
+            '371',
+            '372',
+            '373',
+            '374',
+            '384',
+            '388',
+            '408',
+            '409',
+            '414',
+        ];
 
-        $sheet->setCellValue('E14', (is_null($poldaYangKe[1]->poldaInputPrevToday)) ? 0 : $poldaYangKe[1]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('F14', (is_null($poldaYangKe[1]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[1]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
+        $poldaWithAlpa = [
+            ['C', 'D'],
+            ['E', 'F'],
+            ['G', 'H'],
+        ];
 
-        $sheet->setCellValue('G14', (is_null($poldaYangKe[2]->poldaInputPrevToday)) ? 0 : $poldaYangKe[2]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('H14', (is_null($poldaYangKe[2]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[2]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
+        foreach($poldaYangKe as $polda) {
+            $alpha = [];
 
-        $sheet->setCellValue('I14', (is_null($poldaYangKe[3]->poldaInputPrevToday)) ? 0 : $poldaYangKe[3]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('J14', (is_null($poldaYangKe[3]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[3]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
+            if(!is_null($polda->poldaInputCurrentToday)) {
 
-        $sheet->setCellValue('K14', (is_null($poldaYangKe[4]->poldaInputPrevToday)) ? 0 : $poldaYangKe[4]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('L14', (is_null($poldaYangKe[4]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[4]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
+                if($polda->name == 'Papua') {
+                    $alpha = ['C', 'D'];
+                }
 
-        $sheet->setCellValue('M14', (is_null($poldaYangKe[5]->poldaInputPrevToday)) ? 0 : $poldaYangKe[5]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('N14', (is_null($poldaYangKe[5]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[5]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
+                if($polda->name == 'Aceh') {
+                    $alpha = ['BQ', 'BR'];
+                }
 
-        $sheet->setCellValue('O14', (is_null($poldaYangKe[6]->poldaInputPrevToday)) ? 0 : $poldaYangKe[6]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('P14', (is_null($poldaYangKe[6]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[6]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
+                for($i=14; $i<=413; $i++) {
+                    if (in_array($i, $skip)) {
+                        continue;
+                    } else {
+                        $sheet->setCellValue($alpha[0].$i, $polda->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
+                        $sheet->setCellValue($alpha[1].$i, $polda->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
+                    }
+                }
+            } else {
+            }
+        }
 
-        $sheet->setCellValue('Q14', (is_null($poldaYangKe[7]->poldaInputPrevToday)) ? 0 : $poldaYangKe[7]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('R14', (is_null($poldaYangKe[7]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[7]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('S14', (is_null($poldaYangKe[8]->poldaInputPrevToday)) ? 0 : $poldaYangKe[8]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('T14', (is_null($poldaYangKe[8]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[8]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('U14', (is_null($poldaYangKe[9]->poldaInputPrevToday)) ? 0 : $poldaYangKe[9]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('V14', (is_null($poldaYangKe[9]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[9]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('W14', (is_null($poldaYangKe[10]->poldaInputPrevToday)) ? 0 : $poldaYangKe[10]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('X14', (is_null($poldaYangKe[10]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[10]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('Y14', (is_null($poldaYangKe[11]->poldaInputPrevToday)) ? 0 : $poldaYangKe[11]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('Z14', (is_null($poldaYangKe[11]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[11]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('AA14', (is_null($poldaYangKe[12]->poldaInputPrevToday)) ? 0 : $poldaYangKe[12]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('AB14', (is_null($poldaYangKe[12]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[12]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('AC14', (is_null($poldaYangKe[13]->poldaInputPrevToday)) ? 0 : $poldaYangKe[13]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('AD14', (is_null($poldaYangKe[13]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[13]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('AE14', (is_null($poldaYangKe[14]->poldaInputPrevToday)) ? 0 : $poldaYangKe[14]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('AF14', (is_null($poldaYangKe[14]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[14]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('AG14', (is_null($poldaYangKe[15]->poldaInputPrevToday)) ? 0 : $poldaYangKe[15]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('AH14', (is_null($poldaYangKe[15]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[15]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('AI14', (is_null($poldaYangKe[16]->poldaInputPrevToday)) ? 0 : $poldaYangKe[16]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('AJ14', (is_null($poldaYangKe[16]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[16]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('AK14', (is_null($poldaYangKe[17]->poldaInputPrevToday)) ? 0 : $poldaYangKe[17]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('AL14', (is_null($poldaYangKe[17]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[17]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('AM14', (is_null($poldaYangKe[18]->poldaInputPrevToday)) ? 0 : $poldaYangKe[18]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('AN14', (is_null($poldaYangKe[18]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[18]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('AO14', (is_null($poldaYangKe[19]->poldaInputPrevToday)) ? 0 : $poldaYangKe[19]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('AP14', (is_null($poldaYangKe[19]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[19]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('AQ14', (is_null($poldaYangKe[20]->poldaInputPrevToday)) ? 0 : $poldaYangKe[20]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('AR14', (is_null($poldaYangKe[20]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[20]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('AS14', (is_null($poldaYangKe[21]->poldaInputPrevToday)) ? 0 : $poldaYangKe[21]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('AT14', (is_null($poldaYangKe[21]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[21]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('AU14', (is_null($poldaYangKe[22]->poldaInputPrevToday)) ? 0 : $poldaYangKe[22]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('AV14', (is_null($poldaYangKe[22]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[22]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('AW14', (is_null($poldaYangKe[23]->poldaInputPrevToday)) ? 0 : $poldaYangKe[23]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('AX14', (is_null($poldaYangKe[23]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[23]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('AY14', (is_null($poldaYangKe[24]->poldaInputPrevToday)) ? 0 : $poldaYangKe[24]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('AZ14', (is_null($poldaYangKe[24]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[24]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('BA14', (is_null($poldaYangKe[25]->poldaInputPrevToday)) ? 0 : $poldaYangKe[25]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('BB14', (is_null($poldaYangKe[25]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[25]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('BC14', (is_null($poldaYangKe[26]->poldaInputPrevToday)) ? 0 : $poldaYangKe[26]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('BD14', (is_null($poldaYangKe[26]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[26]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('BE14', (is_null($poldaYangKe[27]->poldaInputPrevToday)) ? 0 : $poldaYangKe[27]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('BF14', (is_null($poldaYangKe[27]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[27]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('BG14', (is_null($poldaYangKe[28]->poldaInputPrevToday)) ? 0 : $poldaYangKe[28]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('BH14', (is_null($poldaYangKe[28]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[28]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('BI14', (is_null($poldaYangKe[29]->poldaInputPrevToday)) ? 0 : $poldaYangKe[29]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('BJ14', (is_null($poldaYangKe[29]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[29]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('BK14', (is_null($poldaYangKe[30]->poldaInputPrevToday)) ? 0 : $poldaYangKe[30]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('BL14', (is_null($poldaYangKe[30]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[30]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('BM14', (is_null($poldaYangKe[31]->poldaInputPrevToday)) ? 0 : $poldaYangKe[31]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('BN14', (is_null($poldaYangKe[31]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[31]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('BO14', (is_null($poldaYangKe[32]->poldaInputPrevToday)) ? 0 : $poldaYangKe[32]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('BP14', (is_null($poldaYangKe[32]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[32]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
-
-        $sheet->setCellValue('BQ14', (is_null($poldaYangKe[33]->poldaInputPrevToday)) ? 0 : $poldaYangKe[33]->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-        $sheet->setCellValue('BR14', (is_null($poldaYangKe[33]->poldaInputCurrentToday)) ? 0 : $poldaYangKe[33]->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
+        //================================================================= BATAS PENGERJAAN ==============================================================================
 
         $writer = new Xlsx($spreadsheet);
         $writer->save('php://output');
