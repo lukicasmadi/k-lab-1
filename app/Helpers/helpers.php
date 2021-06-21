@@ -413,139 +413,140 @@ if (! function_exists('yearMinus')) {
 
 if (! function_exists('poldaFlag')) {
     function poldaFlag($poldaName) {
-        if($poldaName == 'Papua') {
+
+        if($poldaName == 'Papua') {   // Array ke 0
             $alpha = ['C', 'D'];
         }
 
-        if($poldaName == 'Papua Barat') {
+        if($poldaName == 'Papua Barat') {   // Array ke 1
             $alpha = ['E', 'F'];
         }
 
-        if($poldaName == 'Maluku Utara') {
+        if($poldaName == 'Maluku Utara') {   // Array ke 2
             $alpha = ['G', 'H'];
         }
 
-        if($poldaName == 'Maluku') {
+        if($poldaName == 'Maluku') {   // Array ke 3
             $alpha = ['I', 'J'];
         }
 
-        if($poldaName == 'Sulawesi Barat') {
+        if($poldaName == 'Sulawesi Barat') {   // Array ke 4
             $alpha = ['K', 'L'];
         }
 
-        if($poldaName == 'Sulawesi Selatan') {
+        if($poldaName == 'Sulawesi Selatan') {   // Array ke 5
             $alpha = ['M', 'N'];
         }
 
-        if($poldaName == 'Sulawesi Tenggara') {
+        if($poldaName == 'Sulawesi Tenggara') {   // Array ke 6
             $alpha = ['O', 'P'];
         }
 
-        if($poldaName == 'Sulawesi Tengah') {
+        if($poldaName == 'Sulawesi Tengah') {  // Array ke 7
             $alpha = ['Q', 'R'];
         }
 
-        if($poldaName == 'Gorontalo') {
+        if($poldaName == 'Gorontalo') {   // Array ke 8
             $alpha = ['S', 'T'];
         }
 
-        if($poldaName == 'Sulawesi Utara') {
+        if($poldaName == 'Sulawesi Utara') {   // Array ke 9
             $alpha = ['U', 'V'];
         }
 
-        if($poldaName == 'Kalimantan Selatan') {
+        if($poldaName == 'Kalimantan Selatan') {   // Array ke 10
             $alpha = ['W', 'X'];
         }
 
-        if($poldaName == 'Kalimantan Utara') {
+        if($poldaName == 'Kalimantan Utara') {   // Array ke 11
             $alpha = ['Y', 'Z'];
         }
 
-        if($poldaName == 'Kalimantan Timur') {
+        if($poldaName == 'Kalimantan Timur') {   // Array ke 12
             $alpha = ['AA', 'AB'];
         }
 
-        if($poldaName == 'Kalimantan Tengah') {
+        if($poldaName == 'Kalimantan Tengah') {   // Array ke 13
             $alpha = ['AC', 'AD'];
         }
 
-        if($poldaName == 'Kalimantan Barat') {
+        if($poldaName == 'Kalimantan Barat') {   // Array ke 14
             $alpha = ['AE', 'AF'];
         }
 
-        if($poldaName == 'Nusa Tenggara Timur') {
+        if($poldaName == 'Nusa Tenggara Timur') {   // Array ke 15
             $alpha = ['AG', 'AH'];
         }
 
-        if($poldaName == 'Nusa Tenggara Barat') {
+        if($poldaName == 'Nusa Tenggara Barat') {   // Array ke 16
             $alpha = ['AI', 'AJ'];
         }
 
-        if($poldaName == 'Bali') {
+        if($poldaName == 'Bali') {   // Array ke 17
             $alpha = ['AK', 'AL'];
         }
 
-        if($poldaName == 'Jawa Timur') {
+        if($poldaName == 'Jawa Timur') {   // Array ke 18
             $alpha = ['AM', 'AN'];
         }
 
-        if($poldaName == 'Daerah Istimewa Yogyakarta') {
+        if($poldaName == 'Daerah Istimewa Yogyakarta') {   // Array ke 19
             $alpha = ['AO', 'AP'];
         }
 
-        if($poldaName == 'Jawa Tengah') {
+        if($poldaName == 'Jawa Tengah') {   // Array ke 20
             $alpha = ['AQ', 'AR'];
         }
 
-        if($poldaName == 'Banten') {
+        if($poldaName == 'Banten') {   // Array ke 21
             $alpha = ['AS', 'AT'];
         }
 
-        if($poldaName == 'Jawa Barat') {
+        if($poldaName == 'Jawa Barat') {   // Array ke 22
             $alpha = ['AU', 'AV'];
         }
 
-        if($poldaName == 'Metropolitan Jakarta Raya') {
+        if($poldaName == 'Metropolitan Jakarta Raya') {   // Array ke 23
             $alpha = ['AW', 'AX'];
         }
 
-        if($poldaName == 'Lampung') {
+        if($poldaName == 'Lampung') {   // Array ke 24
             $alpha = ['AY', 'AZ'];
         }
 
-        if($poldaName == 'Bengkulu') {
+        if($poldaName == 'Bengkulu') {   // Array ke 25
             $alpha = ['BA', 'BB'];
         }
 
-        if($poldaName == 'Sumatera Selatan') {
+        if($poldaName == 'Sumatera Selatan') {   // Array ke 26
             $alpha = ['BC', 'BD'];
         }
 
-        if($poldaName == 'Kepulauan Bangka Belitung') {
+        if($poldaName == 'Kepulauan Bangka Belitung') {   // Array ke 27
             $alpha = ['BE', 'BF'];
         }
 
-        if($poldaName == 'Kepulauan Riau') {
+        if($poldaName == 'Kepulauan Riau') {   // Array ke 28
             $alpha = ['BG', 'BH'];
         }
 
-        if($poldaName == 'Riau') {
+        if($poldaName == 'Riau') {   // Array ke 29
             $alpha = ['BI', 'BJ'];
         }
 
-        if($poldaName == 'Jambi') {
+        if($poldaName == 'Jambi') {   // Array ke 30
             $alpha = ['BK', 'BL'];
         }
 
-        if($poldaName == 'Sumatera Barat') {
+        if($poldaName == 'Sumatera Barat') {   // Array ke 31
             $alpha = ['BM', 'BN'];
         }
 
-        if($poldaName == 'Sumatera Utara') {
+        if($poldaName == 'Sumatera Utara') {   // Array ke 32
             $alpha = ['BO', 'BP'];
         }
 
-        if($poldaName == 'Aceh') {
+        if($poldaName == 'Aceh') {   // Array ke 33
             $alpha = ['BQ', 'BR'];
         }
 
