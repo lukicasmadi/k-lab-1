@@ -364,6 +364,7 @@ class ReportController extends Controller
     {
         if(!empty(authUser())) {
             $polda = Polda::with('poldaInputCurrentToday', 'poldaInputPrevToday')->select('id', 'uuid', 'name', 'short_name')->orderBy('id', 'desc')->get();
+
             return dailyReportDetail($polda);
         } else {
             abort(404);

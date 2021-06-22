@@ -4291,7 +4291,7 @@ if (! function_exists('dailyReportDetail')) {
         $sheet = $spreadsheet->getActiveSheet();
 
         $sheet->setCellValue('A5', 'LAPORAN HARIAN '.upperCase(operationPlans()->name));
-        $sheet->setCellValue('A7', 'HARI/TGL : '.indonesianFullDayAndDate(date("Y-m-d")));
+        $sheet->setCellValue('A7', 'HARI/TGL : '.indonesianFullDayAndDate(date("Y-m-d H:i:s")));
 
         $sheet->setCellValue('C10', nowYearMinusOne());
         $sheet->setCellValue('D10', nowYear());
@@ -4387,9 +4387,18 @@ if (! function_exists('dailyReportDetail')) {
             '414',
         ];
 
+
         foreach($poldaYangKe as $polda) {
 
             if(!is_null($polda->poldaInputCurrentToday)) {
+
+                $temp = [];
+
+                foreach($polda->poldaInputCurrentToday->toArray() as $key=>$value) {
+                    array_push($temp, $value);
+                }
+
+                $start = 5;
 
                 for($i=14; $i<=413; $i++) {
                     if (in_array($i, $skip)) {
@@ -4397,16 +4406,33 @@ if (! function_exists('dailyReportDetail')) {
                     } else {
                         $flagName = poldaFlag($polda->name);
 
-                        $sheet->setCellValue($flagName[0].$i, $polda->poldaInputPrevToday->pelanggaran_lalu_lintas_tilang_p);
-                        $sheet->setCellValue($flagName[1].$i, $polda->poldaInputCurrentToday->pelanggaran_lalu_lintas_tilang);
+                        $sheet->setCellValue($flagName[0].$i, $temp[$start++]);
                     }
                 }
-            } else {
-                //
+            }
+
+            if(!is_null($polda->poldaInputPrevToday)) {
+
+                $temp = [];
+
+                foreach($polda->poldaInputPrevToday->toArray() as $key=>$value) {
+                    array_push($temp, $value);
+                }
+
+                $start = 5;
+
+                for($i=14; $i<=413; $i++) {
+                    if (in_array($i, $skip)) {
+                        continue;
+                    } else {
+                        $flagName = poldaFlag($polda->name);
+
+                        $sheet->setCellValue($flagName[1].$i, $temp[$start++]);
+                    }
+                }
             }
         }
 
-        //================================================================= BATAS PENGERJAAN ==============================================================================
 
         $writer = new Xlsx($spreadsheet);
         $writer->save('php://output');
