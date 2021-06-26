@@ -36,7 +36,7 @@ body .overflow {
   --bggradient-article : linear-gradient(108deg, rgba(16, 92, 124, 0.3) 1%, rgba(16, 92, 124, 0.3) 99%);
   --glassmor-article : url(/img/futuretech.jpg) no-repeat center center fixed;
   --txtdetl-article : #ebedf2;
-  --autofill-change: 0 0 0px 1000px #17465F inset;
+  --autofill-change: 0 0 0px 1000px rgba(23, 70, 95, 0.5) inset;
   --txt-slogan : #fff;
   --bg-slogan : rgba(0, 173, 239, 0.2);
   --border-slogan : 1.5px solid #00adef;
