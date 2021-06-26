@@ -239,7 +239,7 @@ div.dataTables_wrapper div.dataTables_paginate {
     right: 0;
     margin: 0;
     white-space: nowrap;
-    text-align: right;/
+    text-align: right;
     display: inline-block;
 }
 
@@ -325,3 +325,21 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
         margin-bottom: 40px;
     }
 }
+
+@media (max-width: 575.98px) {
+    .dataTables_wrapper .dataTables_length select.form-control {
+        position: absolute;
+        margin-top: 55px;
+        left: 0;
+        width: 65px;
+    }
+    
+    .dataTables_wrapper .form-control {
+        margin-top: 41px;
+    }
+
+    div.dataTables_wrapper div.dataTables_filter svg {
+        margin-top: 36px;
+    }
+}
+

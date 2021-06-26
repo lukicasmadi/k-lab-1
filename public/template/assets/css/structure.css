@@ -87,6 +87,7 @@ h6 {
     --dashboard-polda : #ebedf2;
     --dashboard-linetop: block;
     --dashboard-linetoplight: none;
+    --header-polda: #113e51;
 }
 
 .theme-dark {
@@ -100,6 +101,7 @@ h6 {
     --dashboard-polda : #113e51;
     --dashboard-linetop: none;
     --dashboard-linetoplight: block;
+    --header-polda: #113e51;
 }
 
 .linetop-dashboard {
@@ -168,6 +170,11 @@ code {
     -ms-flex-pack: start;
     justify-content: flex-start;
 }
+
+.mobilelite {
+    display: none;
+}
+
 
 #container.fixed-header {
     margin-top: 56px;
@@ -1160,7 +1167,7 @@ transform: translateX(34px);
 }
 
 .navbar .navbar-item .nav-item.user-profile-dropdown a.user .media img {
-    width: 37px;
+    /* width: 37px; */
     height: 37px;
     border-radius: 6px;
     /* box-shadow: 0 0px 0.9px rgba(0, 0, 0, 0.07), 0 0px 7px rgba(0, 0, 0, 0.14); */
@@ -1432,6 +1439,27 @@ transform: translateX(34px);
     vertical-align: text-top;
 }
 
+@media (max-width: 480px) {
+    .mobilelite {
+        display: inline;
+    }
+    .mobile_panduan {
+        display: none;
+    }
+    .page-header {
+        padding: 75px 0 0 0;
+    }
+    .footer-wrapper {
+        height: 45px;
+    }
+    .footer-wrapper .footer-section p {
+        font-size: 9px;
+    }
+    .layout-px-menu {
+        padding: 0 !important;
+    }
+}
+
 @media (max-width: 767px) {
     .nav-logo {
         display: none;
@@ -1513,6 +1541,9 @@ transform: translateX(34px);
     }
     .page-header .custom-dropdown-icon a.dropdown-toggle {
         display: none;
+    }
+    .footer-wrapper {
+        height: 55px;
     }
 }
 
@@ -1769,10 +1800,10 @@ transform: translateX(34px);
         left: 0;
         right: 0;
         z-index: 999;
-        background: #191e3a;
+        background: var(--header-polda);
     }
     .main-content {
-        padding-top: 65px;
+        padding-top: 5px;
     }
     .navbar {
         padding: 10px 0 10px 0;
@@ -1856,7 +1887,7 @@ transform: translateX(34px);
   */
     #topbar .theme-brand {
         background-color: #191e3a;
-        padding: 11px 0 11px 0;
+        padding: 7px 0;
         justify-content: center;
     }
     #topbar .theme-brand li.theme-logo {

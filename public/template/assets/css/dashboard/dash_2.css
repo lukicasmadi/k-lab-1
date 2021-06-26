@@ -15,9 +15,9 @@
     padding-bottom: 25px;
 }
 
-.footer-wrapper {
+/* .footer-wrapper {
     padding: 10px 0 10px 0;
-}
+} */
 
 .widget {
     position: relative;
@@ -968,5 +968,16 @@
     }
     .widget-statistic .col-12:not(:last-child) .widget-one_hybrid {
         margin-bottom: 40px
+    }
+    .layout-spacing {
+        padding-bottom: 50px;
+    }
+    .poldametro{
+        position: absolute;
+        width: 40px;
+        bottom: 35px;
+        left: 2px;
+        -webkit-filter: var(--logo-mabes);
+        filter: var(--logo-mabes);
     }
 }

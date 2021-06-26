@@ -43,7 +43,7 @@ body .overflow {
   --input-formwrap : #00adef;
  }
 .theme-dark {
-  --bghome-change: url(/img/futuretech-light.jpg);
+  --bghome-change: #ccdbee url(/img/futuretech-light.jpg);
   --logohome-change: none;
   --logohomeligh-change: block;
   --newstext-change: #105c7c;
@@ -281,15 +281,16 @@ svg.right-kurung path.a {
   text-transform: uppercase;
   position: absolute;
   color: #fff;
-  margin-top: -87px;
+  margin-top: -90px;
   margin-left: 0.2px;
   left: 50%;
+  width: 27%;
   transform: translate(-50%, -70%);
-  padding: 25px;
+  /* padding: 25px; */
   /* background-image: linear-gradient(#0B6992, #16374B); */
-  border-radius: 50%;
-  /* z-index: -1; */
-  z-index: 999;
+  /* border-radius: 50%; */
+  z-index: -1;
+  /* z-index: 999; */
 }
 
 .show-more p b {
@@ -591,6 +592,10 @@ svg.right-kurung path.a {
   width:100%;
   height:38px;
   background:#113e51;
+}
+
+#nav-two a audio {
+  display: none;
 }
 
 .form-form {
@@ -905,6 +910,204 @@ select:-webkit-autofill:focus {
     =====================
 */
 
+/* @media (max-width: 480px) {
+  body .overflow {
+    overflow-x:  auto; }
+
+  .centered {
+    margin-top: 15px;
+    margin-bottom: 75px;
+    height: auto;
+  }
+
+  .home-article {
+    margin: 10px 0 5px 0;
+  }
+
+  .logo-presisi {
+    display: var(--logohome-change);
+    margin: 125px auto 10px auto;
+    width: 80%;
+  }
+  .logolight-presisi {
+    display: var(--logohomeligh-change);
+    margin: 125px auto 10px auto;
+    width: 80%;
+  }
+  .button-login {
+    display: var(--logohome-change);
+    margin: 100px auto 100px auto;
+    width: 30%;
+  }
+  .button-loginlight {
+    display: var(--logohomeligh-change);
+    margin: 100px auto 100px auto;
+    width: 30%;
+  }
+  .text-login {
+    margin-top: -102px;
+    transform: translate(-50%, -150%);
+    width: 13%;
+  }
+
+	.line-article svg path {
+    display: none;
+  }
+  
+  .line-article svg line {
+    stroke: var(--svgline-change);
+    display: none;
+  }
+} */
+
+@media (max-width: 767px) {
+  body .overflow {
+    overflow-x:  auto; }
+
+  .centered {
+    margin-top: 15px;
+    margin-bottom: 75px;
+    height: auto;
+  }
+
+  .home-article {
+    margin: 10px 0 5px 0;
+  }
+
+  .logo-presisi {
+    display: var(--logohome-change);
+    margin: 125px auto 10px auto;
+    width: 80%;
+  }
+  .logolight-presisi {
+    display: var(--logohomeligh-change);
+    margin: 125px auto 10px auto;
+    width: 80%;
+  }
+  .button-login {
+    display: var(--logohome-change);
+    margin: 100px auto 100px auto;
+    width: 30%;
+  }
+  .button-loginlight {
+    display: var(--logohomeligh-change);
+    margin: 100px auto 100px auto;
+    width: 30%;
+  }
+  .text-login {
+    margin-top: -101px;
+    transform: translate(-50%, -150%);
+    width: 14%;
+  }
+
+	.line-article svg path {
+    display: none;
+  }
+  
+  .line-article svg line {
+    stroke: var(--svgline-change);
+    display: none;
+  }
+
+  .text-logo {
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 0.5;
+  }
+
+  .tx-mobile {
+    line-height: 1.2;
+  }
+
+  .logo-login{
+    width: 35%;
+    margin-top: 115px;
+  }
+
+  .form-form {
+    width: 100%;
+   }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) { 
+
+  .centered {
+    margin-top: 45px;
+    margin-bottom: 75px;
+    height: auto;
+  }
+  .logo-presisi {
+    display: var(--logohome-change);
+    margin: 100px auto 10px auto;
+    width: 80%;
+  }
+  .logolight-presisi {
+    display: var(--logohomeligh-change);
+    margin: 100px auto 10px auto;
+    width: 80%;
+  }
+  .button-login {
+    display: var(--logohome-change);
+    margin: 120px auto 100px auto;
+    width: 100%;
+  }
+  .button-loginlight {
+    display: var(--logohomeligh-change);
+    margin: 120px auto 100px auto;
+    width: 100%;
+  }
+  .text-login {
+    margin-top: -99px;
+    transform: translate(-50%, -150%);
+    width: 38%;
+  }
+
+	.line-article svg path {
+    display: none;
+  }
+  
+  .line-article svg line {
+    stroke: var(--svgline-change);
+    display: none;
+  }
+
+  .text-logo {
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 0.5;
+  }
+
+  .tx-mobile {
+    line-height: 1.2;
+  }
+
+  .logo-login{
+    width: 35%;
+    margin-top: 115px;
+  }
+
+  .title-news{
+    position: absolute;
+    margin-top: -20px;
+  }
+
+  .home-article img {
+    float: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    width: 100%;
+  }
+
+  .home-article p {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .form-form {
+    width: 100%;
+   }
+}
+
 @media screen and (min-width: 1920px) {
   .head-logo h3 {
     margin: 0;
@@ -912,6 +1115,7 @@ select:-webkit-autofill:focus {
     line-height: 1.39;
     font-size: 20px;
     text-transform: uppercase;
+    margin-top: -10px;
   }
   /* .head-logo img {
     top: 0;
@@ -926,17 +1130,24 @@ select:-webkit-autofill:focus {
     margin-top: 5px;
   }
   .logo-presisi {
-    margin: 65px auto 80px auto;
+    margin: 65px auto 90px auto;
+  }
+  .logolight-presisi {
+    margin: 65px auto 90px auto;
   }
   .button-login {
-    margin: 50px auto 80px auto;
-    width: 55%;
+    margin: 75px auto 80px auto;
+    width: 60%;
+  }
+  .button-loginlight {
+    margin: 75px auto 80px auto;
+    width: 60%;
   }
   .text-login {
-    font-size: 14px;
-    margin-top: -120px;
+    width: 27%;
+    margin-top: -127px;
     transform: translate(-50%, -80%);
-    padding: 25px;
+    /* padding: 25px; */
   }
   .title-news{
     color: #fff;
@@ -1019,8 +1230,33 @@ select:-webkit-autofill:focus {
 }
 
 @media screen and (min-width: 2500px) {
+  .head-logo h3 {
+    margin-top: -7px;
+  }
   .logo-presisi {
-    width: 10%;
+    display: var(--logohome-change);
+    margin: 135px auto 150px auto;
+    width: 80%;
+  }
+  .logolight-presisi {
+    display: var(--logohomeligh-change);
+    margin: 135px auto 150px auto;
+    width: 80%;
+  }
+  .button-login {
+    display: var(--logohome-change);
+    margin: 135px auto 150px auto;
+    width: 80%;
+  }
+  .button-loginlight {
+    display: var(--logohomeligh-change);
+    margin: 135px auto 150px auto;
+    width: 80%;
+  }
+  .text-login {
+    margin-top: -150px;
+    transform: translate(-50%, -150%);
+    width: 35%;
   }
 }
 
