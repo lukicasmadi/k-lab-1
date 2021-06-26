@@ -1023,6 +1023,27 @@ pre code {
   margin-left: 0%;
 }
 
+
+@media (max-width: 480px) {
+  .cols-sm-1 {
+      float: left;
+      margin-bottom: 4px;
+  }
+  .cols-sm-1 {
+      width: 16.65%;
+  }
+}
+
+@media screen and (min-width: 540px) and (max-width: 720px) { 
+  .cols-sm-1 {
+    float: left;
+    margin-bottom: 4px;
+  }
+  .cols-sm-1 {
+      width: 16.65%;
+  }
+}
+
 @media (min-width: 768px) {
   .cols-sm-1,
   .cols-sm-2,

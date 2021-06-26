@@ -26,9 +26,9 @@
                     </div>
                 </a>
             @endforeach
-        </div>
+        <!-- </div> -->
 
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-1 mb-n2">
+        <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-1 mb-n2"> -->
             @foreach ($poldaBawah as $key => $val)
                 <a href="{{ route('korlantas_open_polda', $val->short_name) }}">
                     <div class="cols-sm-1">

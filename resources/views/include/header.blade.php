@@ -252,6 +252,186 @@
         </ul>
     </header>
 </div>
+<div class="main-container mobilelite" id="container">
+
+        <div class="overlay"></div>
+        <div class="search-overlay"></div>
+
+            <div class="topbar-nav header navbar" role="banner">
+                <nav id="topbar">
+                    <ul class="navbar-nav theme-brand flex-row  text-center">
+                        <li class="nav-item theme-logo">
+                            <a href="{{ route('dashboard') }}">
+                                <img src="{{ asset('img/logo-korlantas.png') }}" class="navbar-logo" alt="logo">
+                            </a>
+                        </li>
+                        <li class="nav-item theme-text">
+                            <a href="{{ route('dashboard') }}" class="nav-link">SISLAPOPS</a>
+                        </li>
+                    </ul>
+
+                    <ul class="list-unstyled menu-categories" id="topAccordion">
+
+                        <li class="menu single-menu {{ request()->is('dashboard') || request()->is('polda-data/*') ? 'active' : '' }}">
+                            <a href="{{ route('dashboard') }}">
+                                <div data-step="1" data-intro="Menu Dashboard untuk melihat keseluruhan data polda yang sudah terkirim secara list, grafik dan download data">
+                                    <span>Beranda</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        @role('access_pusat|administrator')
+                            <li class="menu single-menu {{
+                                request()->is('operation-plan') ||
+                                request()->is('operation-plan/*') ||
+                                request()->is('operation-onsite') ||
+                                request()->is('operation-onsite/*')
+                                ? 'active' : ''
+                                }}">
+                                <a href="{{ route('rencana_operasi_index') }}">
+                                    <div data-step="2" data-intro="Menu Rencana Operasi digunakan untuk menambahkan rencana operasi yang akan dijalankan oleh polda">
+                                        <span>Rencana Operasi</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="menu single-menu {{
+                                request()->is('report/*') ? 'active' : ''
+                                }}">
+                                <a href="#reportpusat" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
+                                    <div data-step="3" data-intro="Menu Laporan digunakan untuk membuat laporan harian, perbandingan dan download data">
+                                        <span>Laporan</span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </a>
+                                <ul class="collapse submenu list-unstyled" id="reportpusat" data-parent="#topAccordion">
+                                    <li class="{{ request()->is('report/daily') ? 'active' : '' }}">
+                                        <a href="{{ route('report_daily_all_polda') }}"> Laporan Rekap Harian </a>
+                                    </li>
+                                    <li class="{{ request()->is('report/anev-compare') ? 'active' : '' }}">
+                                        <a href="{{ route('report_comparison') }}"> Laporan Anev </a>
+                                    </li>
+                                    <li class="{{ request()->is('report/anev-date-compare') ? 'active' : '' }}">
+                                        <a href="{{ route('report_anev_daily') }}"> Laporan Anev Harian </a>
+                                    </li>
+                                    @if (!empty(operationPlans()))
+                                        @if (authUser()->id == 1)
+                                            <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
+                                                <a href="{{ route('report_all_polda_compare') }}"> Laporan Perbandingan Harian </a>
+                                            </li>
+                                        @endif
+                                    @endif
+                                </ul>
+                            </li>
+                        @endrole
+
+                        @role('access_daerah')
+                            <li class="menu single-menu {{ request()->is('custom-name') ? 'active' : '' }}">
+                                <a href="{{ route('polda_custom_name') }}">
+                                    <div data-step="4" data-intro="Menu Rencana Operasi digunakan untuk menambahkan alias pada rencana operasi yang akan dijalankan oleh polda">
+                                        <span>RENCANA OPERASI</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="menu single-menu {{
+                                request()->is('report/*') || request()->is('operation-onsite') || request()->is('operation-onsite/*') ? 'active' : ''
+                                }}">
+                                <a href="#reportpusat" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
+                                    <div data-step="5" data-intro="Menu Laporan digunakan untuk membuat laporan harian polda">
+                                        <span>Laporan</span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </a>
+                                <ul class="collapse submenu list-unstyled" id="reportpusat" data-parent="#topAccordion">
+                                    <li class="{{ request()->is('operation-onsite') || request()->is('operation-onsite/*') ? 'active' : '' }}">
+                                        <a href="{{ route('phro_index') }}"> Laporan Operasi </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endrole
+
+                        @role('administrator|access_pusat')
+                            <li class="menu single-menu {{
+                                    request()->is('category') ||
+                                    request()->is('category/*') ||
+                                    request()->is('article') ||
+                                    request()->is('article/*') ||
+                                    request()->is('polda') ||
+                                    request()->is('polda/*') ||
+                                    request()->is('unit') ||
+                                    request()->is('unit/*') ||
+                                    request()->is('violation') ||
+                                    request()->is('violation/*')
+                                    ? 'active' : ''
+                                }}">
+                                <a href="#dashboard" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
+                                    <div class="" data-step="6" data-intro="Menu Manajemen Data untuk mengatur semua master data">
+                                        <span>Manajemen Data</span>
+                                    </div>
+                                </a>
+                                <ul class="collapse submenu list-unstyled" id="dashboard" data-parent="#topAccordion">
+                                    <li class="{{ request()->is('article/*') || request()->is('article') ? 'active' : '' }}">
+                                        <a href="{{ route('article_index') }}"> Master Artikel </a>
+                                    </li>
+                                    <li class="{{ request()->is('polda/*') || request()->is('polda') ? 'active' : '' }}">
+                                        <a href="{{ route('polda_index') }}"> Master Polda </a>
+                                    </li>
+                                    {{-- <li class="{{ request()->is('unit/*') || request()->is('unit') ? 'active' : '' }}">
+                                        <a href="{{ route('unit_index') }}"> Master Kesatuan </a>
+                                    </li> --}}
+                                    {{-- <li class="{{ request()->is('violation/*') || request()->is('violation') ? 'active' : '' }}">
+                                        <a href="{{ route('violation_index') }}"> Master Pelanggaran </a>
+                                    </li> --}}
+                                </ul>
+                            </li>
+                        @endrole
+
+                        <li class="menu single-menu mobile_panduan">
+                            <a href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress', true).start();">
+                                <div>
+                                    <span class="tourcolor">Panduan Web</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        @role('administrator')
+                            <li class="menu single-menu {{
+                                request()->is('access/*') ? 'active' : ''
+                                }}">
+                                <a href="#acl" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
+                                    <div>
+                                        <span>Akses</span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </a>
+                                <ul class="collapse submenu list-unstyled" id="acl" data-parent="#topAccordion">
+                                    <li class="{{ request()->is('access/role') || request()->is('access/role/*') ? 'active' : '' }}">
+                                        <a href="{{ route('role_index') }}"> Manajemen Role </a>
+                                    </li>
+                                    <li class="{{ request()->is('access/permission') || request()->is('access/permission/*') ? 'active' : '' }}">
+                                        <a href="{{ route('permission_index') }}"> Manajemen Permission </a>
+                                    </li>
+                                    <li class="{{ request()->is('access/permission-to-role') || request()->is('access/permission-to-role/*') ? 'active' : '' }}">
+                                        <a href="{{ route('permission_to_role_index') }}"> Attach Permission To Role </a>
+                                    </li>
+                                    <li class="{{ request()->is('access/user-to-role') || request()->is('access/user-to-role/*') ? 'active' : '' }}">
+                                        <a href="{{ route('user_to_role_index') }}"> Attach User To Role </a>
+                                    </li>
+                                    <li class="{{ request()->is('access/user/*') || request()->is('access/user') ? 'active' : '' }}">
+                                        <a href="{{ route('user_index') }}"> Manajemen User </a>
+                                    </li>
+                                    <li class="{{ request()->is('access/polda/*') || request()->is('access/polda') ? 'active' : '' }}">
+                                        <a href="{{ route('polda_access_index') }}"> Akses Polda </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endrole
+
+                    </ul>
+                </nav>
+            </div>
+        
+</div>
 <div class="layout-px-spacing">
     <div class="page-header">
         @stack('page_title')

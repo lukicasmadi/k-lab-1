@@ -1192,6 +1192,7 @@ select.form-control.form-custom {
     background-color: #00adef !important;
     border-color: #00adef;
     text-transform: uppercase;
+    display: block;
     padding: 7px 10px 6px 10px;
     position: absolute;
     margin: 21px 0 0 75px;
@@ -3346,4 +3347,8 @@ table .badge-dark {
     /* .logo-login{
         display: none;
     } */
+    .add-operasi {
+        width: 100%;
+        margin: 35px 0 0 0;
+    }
 }
