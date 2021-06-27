@@ -36,7 +36,7 @@ body {
     --searhligh-table: none;
     --opacity-popup: 1;
     --border-form: 1px solid #00adef; 
-    --input-operasi: #1b2e4b;
+    --input-operasi: rgba(0, 173, 239, 0.3);
 }
 
 .theme-dark {
@@ -48,7 +48,7 @@ body {
     --searhligh-table: block;
     --opacity-popup: 0.3;
     --border-form: 1px solid rgba(16, 92, 124, 0.3);
-    --input-operasi: #fefefe;
+    --input-operasi: rgba(0, 173, 239, 0.5);
 }
 
 .searh-on {
