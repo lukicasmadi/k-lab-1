@@ -11,7 +11,7 @@
             </div>
             <div class="text-center">
         <h1 class="text-logo">SISTEM PELAPORAN</h1>
-        <h1 class="text-logo">OPERASI ONLINE BIDANG LALU LINTAS KORLANTAS POLRI</h1>
+        <h1 class="text-logo tx-mobile">OPERASI ONLINE BIDANG LALU LINTAS KORLANTAS POLRI</h1>
         @if (is_null(operationPlans()))
 
         @else
@@ -52,7 +52,9 @@
                                 @enderror
                             </div>
                             <div class="d-sm-flex justify-content-between">
-                                <div class="field-wrapper">
+                                <div id="nav-two" class="field-wrapper">
+                                <a href="{{ route('login') }}">
+                                <audio id="sound" controls preload="auto"><source src="{{ asset('/img/sfx.mp3') }}" controls></source></audio>
                                     <button type="submit" class="btn btn-primary dodneon" value="">
                                     <span></span>
                                     <span></span>
@@ -60,6 +62,7 @@
                                     <span></span>
                                     LogIn
                                     </button>
+                                </a>
                                 </div>
                             </div>
                             <div class="col-sm-12 footer-button">
@@ -97,6 +100,21 @@ $(document).ready(function () {
             $(this).val('hide')
         }
     })
+
+    $("#nav-two a")
+    .each(function(i) {
+        if (i != 0) {
+        $("#sound")
+            .clone()
+            .attr("id", "sound" + i)
+            .appendTo($(this).parent());
+        }
+        $(this).data("beep", i);
+    })
+    .mouseenter(function() {
+        $("#sound" + $(this).data("beep"))[0].play();
+    });
+    $("#sound").attr("id", "sound0");
 })
 </script>
 @endpush
