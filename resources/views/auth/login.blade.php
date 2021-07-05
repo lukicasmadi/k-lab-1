@@ -10,7 +10,7 @@
                 <img class="logo-login" src="{{ asset('/img/korlantas.png') }}">
             </div>
             <div class="text-center">
-        <h1 class="text-logo">SISTEM PELAPORAN</h1>
+        <h1 class="text-logo">SISTEM PELAPORAN APLIKASI</h1>
         <h1 class="text-logo tx-mobile">OPERASI ONLINE BIDANG LALU LINTAS KORLANTAS POLRI</h1>
         @if (is_null(operationPlans()))
 
