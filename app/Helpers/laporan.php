@@ -4231,7 +4231,6 @@ if (! function_exists('excelViewAbsensi')) {
     }
 }
 
-//==============================================================================================================================================
 
 if (! function_exists('laporanPrev')) {
     function laporanPrev($operation_id, $year, $start_date, $end_date) {
