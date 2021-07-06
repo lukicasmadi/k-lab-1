@@ -87,7 +87,7 @@ h6 {
     --dashboard-polda : #fff;
     --dashboard-linetop: block;
     --dashboard-linetoplight: none;
-    --header-polda: #113e51;
+    --header-polda: #162c3a;
     --mobile-menu: #162C3A;
     --mobile-submenu: #113E51;
 }
@@ -100,10 +100,10 @@ h6 {
     --dashboard-tour : #00adef;
     --dashboard-login : #105c7c;
     --dashboard-title : #00adef;
-    --dashboard-polda : #fff;
+    --dashboard-polda : #105c7c;
     --dashboard-linetop: none;
     --dashboard-linetoplight: block;
-    --header-polda: #113e51;
+    --header-polda: #eef4fc;
     --mobile-menu: #EEF4FC;
     --mobile-submenu: #fff;
 }
@@ -609,7 +609,7 @@ transform: translateX(34px);
 .navbar .sidebarCollapse {
     display: inline-block;
     position: relative;
-    color: #fafafa;
+    color: var(--dashboard-menu);
     padding: 8px 8px 8px 0;
 }
 
@@ -1158,7 +1158,7 @@ transform: translateX(34px);
 }
 
 .navbar .navbar-item .nav-item.user-profile-dropdown .dropdown-toggle svg {
-    color: #d3d3d3;
+    color: var(--dashboard-menu);
     width: 15px;
     height: 15px;
     align-self: center;
@@ -1446,6 +1446,12 @@ transform: translateX(34px);
 @media (max-width: 480px) {
     .mobilelite {
         display: inline;
+    }
+    .page-title h3 span {
+        padding-left: 0px;
+    }
+    .page-title h3 svg {
+        display: none;
     }
     .mobile_panduan {
         display: none;
@@ -1903,12 +1909,12 @@ transform: translateX(34px);
     }
     #topbar .theme-brand li.theme-text a {
         font-size: 13px !important;
-        color: #fafafa !important;
+        color: var(--dashboard-menu) !important;
         line-height: 2.75rem;
         padding: 0 0.8rem;
         text-transform: initial;
         position: unset;
-        font-weight: 600;
+        /* font-weight: 600; */
     }
     #topbar ul.menu-categories {
         position: relative;
@@ -1919,6 +1925,7 @@ transform: translateX(34px);
     }
     .topbar-nav.header nav#topbar {
         height: 100vh !important;
+        z-index: 9999999 !important;
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu {
         position: relative;
@@ -1926,10 +1933,10 @@ transform: translateX(34px);
         margin: 0px 15px 3px 15px;
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu.active>.dropdown-toggle {
-        background: #506690;
+        /* background: #506690; */
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu.active>.dropdown-toggle svg.feather-chevron-down {
-        color: #fff;
+        color: #ff0000;
         stroke-width: 2px;
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu>a {
@@ -1938,7 +1945,7 @@ transform: translateX(34px);
         cursor: pointer;
         font-size: 13px;
         color: #3b3f5c;
-        padding: 14px 10px;
+        padding: 10px;
         font-weight: 600;
         transition: .600s;
         border-radius: 6px;
@@ -1955,10 +1962,11 @@ transform: translateX(34px);
         transition: all .2s ease-in-out;
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu a>div span {
-        font-size: 16px;
-        font-weight: 600;
-        color: #888ea8;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--dashboard-menu);
         vertical-align: middle;
+        text-transform: uppercase;
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu>.dropdown-toggle svg.feather-chevron-down {
         color: #888ea8;
@@ -1984,7 +1992,7 @@ transform: translateX(34px);
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu.active a[aria-expanded="false"]>div span,
     .topbar-nav.header nav#topbar ul.menu-categories li.menu.active a[aria-expanded="true"]>div span {
-        color: #fff;
+        color: #fff000;
         border-radius: 12px;
         font-weight: 600;
         position: relative;
@@ -1994,10 +2002,11 @@ transform: translateX(34px);
         position: relative;
         display: flex;
         padding: 12px 11px 12px 24px;
-        margin-left: 40px;
+        /* margin-left: 40px; */
         font-size: 13px;
         font-weight: 500;
-        color: #fafafa;
+        text-transform: uppercase;
+        color: var(--dashboard-text);
     }
     .topbar-nav.header nav#topbar ul.menu-categories li.menu .submenu li a:before {
         content: '';

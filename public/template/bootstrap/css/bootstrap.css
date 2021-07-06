@@ -3163,6 +3163,7 @@ pre code {
   display: block;
   width: 100%;
   overflow-x: auto;
+  z-index: 999;
   -webkit-overflow-scrolling: touch;
 }
 

@@ -9,6 +9,262 @@
   --title-popup: #ebedf2;
 }
 
+.a,
+            .aa,
+            .ab,
+            .ac,
+            .ad,
+            .ae,
+            .af,
+            .ag,
+            .ah,
+            .ai,
+            .aj,
+            .ak,
+            .al,
+            .am,
+            .an,
+            .ao,
+            .ap,
+            .aq,
+            .b,
+            .e,
+            .f,
+            .g,
+            .h,
+            .i,
+            .j,
+            .l,
+            .n,
+            .o,
+            .p,
+            .q,
+            .r,
+            .s,
+            .t,
+            .u,
+            .v,
+            .w,
+            .x,
+            .y,
+            .z {
+                fill: var(--title-popup);
+            }
+            .a {
+                stroke: rgba(0, 0, 0, 0);
+            }
+            .a,
+            .d,
+            .m {
+                stroke-miterlimit: 10;
+            }
+            .a,
+            .c {
+                opacity: 0.5;
+            }
+            .d,
+            .m {
+                fill: none;
+            }
+            .d {
+                stroke: var(--title-popup);
+                stroke-width: 2px;
+            }
+            .e,
+            .f,
+            .g,
+            .h,
+            .i,
+            .j,
+            .l,
+            .m {
+                stroke: var(--title-popup);
+            }
+            .ab,
+            .e {
+                opacity: 0.79;
+            }
+            .f,
+            .t {
+                opacity: 0.84;
+            }
+            .aq,
+            .g {
+                opacity: 0.66;
+            }
+            .aj,
+            .h {
+                opacity: 0.7;
+            }
+            .i,
+            .k {
+                opacity: 0.83;
+            }
+            .al,
+            .j {
+                opacity: 0.59;
+            }
+            .aa,
+            .l {
+                opacity: 0.68;
+            }
+            .m {
+                stroke-width: 0.5px;
+            }
+            .n {
+                opacity: 0.69;
+            }
+            .o {
+                opacity: 0.55;
+            }
+            .p {
+                opacity: 0.72;
+            }
+            .q {
+                opacity: 0.64;
+            }
+            .r {
+                opacity: 0.63;
+            }
+            .s {
+                opacity: 0.54;
+            }
+            .u {
+                opacity: 0.78;
+            }
+            .v {
+                opacity: 0.9;
+            }
+            .w {
+                opacity: 0.65;
+            }
+            .x {
+                opacity: 0.86;
+            }
+            .y {
+                opacity: 0.62;
+            }
+            .z {
+                opacity: 0.71;
+            }
+            .ac {
+                opacity: 0.73;
+            }
+            .ad {
+                opacity: 0.56;
+            }
+            .ae {
+                opacity: 0.67;
+            }
+            .af {
+                opacity: 0.76;
+            }
+            .ag {
+                opacity: 0.61;
+            }
+            .ah {
+                opacity: 0.74;
+            }
+            .ai {
+                opacity: 0.58;
+            }
+            .ak {
+                opacity: 0.8;
+            }
+            .am {
+                opacity: 0.57;
+            }
+            .an {
+                opacity: 0.85;
+            }
+            .ao {
+                opacity: 0.82;
+            }
+            .ap {
+                opacity: 0.75;
+            }
+            .ar {
+                opacity: 0.2;
+            }
+            .as {
+                fill: var(--title-popup);
+            }
+            .at {
+                filter: url(#aw);
+            }
+            .au {
+                filter: url(#au);
+            }
+            .av {
+                filter: url(#as);
+            }
+            .aw {
+                filter: url(#aq);
+            }
+            .ax {
+                filter: url(#ao);
+            }
+            .ay {
+                filter: url(#am);
+            }
+            .az {
+                filter: url(#ak);
+            }
+            .ba {
+                filter: url(#ai);
+            }
+            .bb {
+                filter: url(#ag);
+            }
+            .bc {
+                filter: url(#ae);
+            }
+            .bd {
+                filter: url(#ac);
+            }
+            .be {
+                filter: url(#aa);
+            }
+            .bf {
+                filter: url(#y);
+            }
+            .bg {
+                filter: url(#w);
+            }
+            .bh {
+                filter: url(#u);
+            }
+            .bi {
+                filter: url(#s);
+            }
+            .bj {
+                filter: url(#q);
+            }
+            .bk {
+                filter: url(#o);
+            }
+            .bl {
+                filter: url(#m);
+            }
+            .bm {
+                filter: url(#k);
+            }
+            .bn {
+                filter: url(#i);
+            }
+            .bo {
+                filter: url(#g);
+            }
+            .bp {
+                filter: url(#e);
+            }
+            .bq {
+                filter: url(#c);
+            }
+            .br {
+                filter: url(#a);
+            }
+
 .popbox-no-overflow {
   overflow: hidden !important;
   outline: none;
@@ -122,5 +378,31 @@
     width: 550px;
     margin-top: -150px;
     
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cicrlepop {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 500px;
+   height: 500px;
+   margin-top: -250px; /* Half the height */
+   margin-left: -250px;
+   opacity: 0.3;
+  }
+  .popbox .workarea {
+    position: absolute;
+    top: 30%;
+    background-color: rgba(0, 173, 239, 0);
+    border: none;
+    text-align: center;
+  }
+  .popbox .workarea h3 {
+    color: #fff;
+  }
+  .polwan{
+    display: none;    
   }
 }

@@ -322,7 +322,8 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 
 @media (max-width: 767px) {
     div.dataTables_wrapper div.dataTables_info {
-        margin-bottom: 40px;
+        /* margin-bottom: 40px; */
+        position: absolute;
     }
 }
 

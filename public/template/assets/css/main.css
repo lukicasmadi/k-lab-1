@@ -37,6 +37,7 @@ body {
     --opacity-popup: 1;
     --border-form: 1px solid #00adef; 
     --input-operasi: rgba(0, 173, 239, 0.3);
+    --filter-bg : drop-shadow(5px 5px 10px rgba(0, 173, 239, 0.4));
 }
 
 .theme-dark {
@@ -49,6 +50,14 @@ body {
     --opacity-popup: 0.3;
     --border-form: 1px solid rgba(16, 92, 124, 0.3);
     --input-operasi: rgba(0, 173, 239, 0.5);
+    --filter-bg : drop-shadow(5px 5px 10px rgba(225, 225, 225, 0.8));
+}
+
+.manuals {
+    background: #fff;
+    padding: 5px;
+    color: #00adef;
+    border-bottom: double 2px #00adef;
 }
 
 .searh-on {
@@ -76,8 +85,8 @@ body {
 .blendingimg img.imgdetail-polda{
     width: 90%;
     padding-bottom: 125px;
-    -webkit-filter: drop-shadow(5px 5px 10px rgba(0, 173, 239, 0.4) );
-    filter: drop-shadow(5px 5px 10px rgba(0, 173, 239, 0.4));
+    -webkit-filter: var(--filter-bg);
+    filter: var(--filter-bg);
 }
 
 /* .blendingimg::after {

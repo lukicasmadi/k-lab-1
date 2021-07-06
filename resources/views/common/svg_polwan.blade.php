@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" class="cicrlepop" xmlns:xlink="http://www.w3.org/1999/xlink" height="600" viewBox="0 0 1232.83 1175.846">
     <defs>
-        <style>
+        <!-- <style>
             .a,
             .aa,
             .ab,
@@ -256,7 +256,7 @@
             .br {
                 filter: url(#a);
             }
-        </style>
+        </style> -->
         <filter id="a" x="652.467" y="118.196" width="454.296" height="380.655" filterUnits="userSpaceOnUse">
             <feOffset input="SourceAlpha" />
             <feGaussianBlur stdDeviation="5" result="b" />

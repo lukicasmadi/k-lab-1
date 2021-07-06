@@ -44,8 +44,14 @@ body.swal2-iosfix {
     background-color: rgba(0, 0, 0, 0.4); }
 
 .swal2-modal {
-  background-color: #0e1726 !important;
-  border-radius: 5px;
+  background-color: #fff !important;
+    border: 12px solid transparent;
+    border-image: url(/img/border.png);
+    border-image-slice: 30;
+    border-image-repeat: stretch;
+    margin: 10px 0 20px 0;
+    box-shadow: 0 0 8px 0 rgba(81, 203, 238, 0.2), 0 0 20px 0 rgba(81, 203, 238, 0.19);
+  /* border-radius: 0px !important; */
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-align: center;
