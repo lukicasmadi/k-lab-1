@@ -2,11 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/infoin', function () {
-    return view('info');
-});
-
 Route::get('/home', 'HomeController@welcomePage')->name('home');
+
+Route::get('/infoin', function () {
+       return view('info');
+});    
 
 Auth::routes(['register' => false]);
 

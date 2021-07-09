@@ -2,11 +2,13 @@
 .theme-light {
   --line-popup: solid 1px #00adef;
   --title-popup: #00adef;
+  --bg-popup: rgba(0, 173, 239, 0.1);
 }
 
 .theme-dark {
   --line-popup: solid 1px #ebedf2;
   --title-popup: #ebedf2;
+  --bg-popup: rgba(255, 255, 255, 0.1);
 }
 
 .a,
@@ -314,7 +316,7 @@
 .popbox .workarea {
   position: relative;
     padding: 3em;
-    background-color: rgba(0, 173, 239, 0.1);
+    background-color: var(--bg-popup);
     border-radius: 0px;
     box-shadow: 0px 10px 30px rgba(0, 173, 239, 0.);
     border: var(--line-popup);
@@ -366,7 +368,7 @@
   .popbox .workarea {
     position: relative;
     padding: 3em;
-    background-color: rgba(0, 173, 239, 0.1);
+    background-color: var(--bg-popup);
     border-radius: 0px;
     box-shadow: 0px 10px 30px rgba(0, 173, 239, 0.);
     border: var(--line-popup);
@@ -395,8 +397,9 @@
   .popbox .workarea {
     position: absolute;
     top: 30%;
-    background-color: rgba(0, 173, 239, 0);
-    border: none;
+    background-color: var(--bg-popup);
+    border: var(--line-popup);
+    margin: 0 25px;
     text-align: center;
   }
   .popbox .workarea h3 {
