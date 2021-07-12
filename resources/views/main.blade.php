@@ -93,11 +93,7 @@
 
         @role('access_pusat|administrator')
             @if (!empty(operationPlans()))
-                @if (authUser()->id == 1)
-                    @include('home_tabs.tab')
-                @else
-                    @include('home_tabs.tab')
-                @endif
+                @include('home_tabs.tab')
             @endif
         @endrole
 
