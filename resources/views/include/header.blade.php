@@ -376,12 +376,6 @@
                                     <li class="{{ request()->is('polda/*') || request()->is('polda') ? 'active' : '' }}">
                                         <a href="{{ route('polda_index') }}"> Master Polda </a>
                                     </li>
-                                    {{-- <li class="{{ request()->is('unit/*') || request()->is('unit') ? 'active' : '' }}">
-                                        <a href="{{ route('unit_index') }}"> Master Kesatuan </a>
-                                    </li> --}}
-                                    {{-- <li class="{{ request()->is('violation/*') || request()->is('violation') ? 'active' : '' }}">
-                                        <a href="{{ route('violation_index') }}"> Master Pelanggaran </a>
-                                    </li> --}}
                                 </ul>
                             </li>
                         @endrole
