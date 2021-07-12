@@ -38,11 +38,13 @@
 .theme-light {
   --input-formwrap : #00adef;
   --txt-popups: #fff;
+  --txt-bar: #fff;
  }
 
 .theme-dark {
   --input-formwrap : #7aa2ac;
   --txt-popups: #105c7c;
+  --txt-bar: #00adef;
 }
 
 *,
@@ -3163,6 +3165,7 @@ pre code {
   display: block;
   width: 100%;
   overflow-x: auto;
+  z-index: 999;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -5488,11 +5491,13 @@ input[type="button"].btn-block {
   display: block;
   padding: 0.5rem 1rem;
   border: 1px solid #00ADEF;
+  color: var(--txt-bar);
   text-transform: uppercase;
   font-size: 11.3px;
 }
 
 .nav-link2:hover, .nav-link2:focus {
+  color: var(--txt-bar);
   text-decoration: none;
 }
 

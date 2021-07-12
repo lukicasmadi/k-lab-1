@@ -36,7 +36,8 @@ body {
     --searhligh-table: none;
     --opacity-popup: 1;
     --border-form: 1px solid #00adef; 
-    --input-operasi: #1b2e4b;
+    --input-operasi: rgba(0, 173, 239, 0.3);
+    --filter-bg : drop-shadow(5px 5px 10px rgba(0, 173, 239, 0.4));
 }
 
 .theme-dark {
@@ -48,7 +49,17 @@ body {
     --searhligh-table: block;
     --opacity-popup: 0.3;
     --border-form: 1px solid rgba(16, 92, 124, 0.3);
-    --input-operasi: #fefefe;
+    --input-operasi: rgba(0, 173, 239, 0.3);
+    --filter-bg : drop-shadow(5px 5px 10px rgba(225, 225, 225, 0.8));
+}
+
+.manuals {
+    padding: 0 13px;
+    color: #fff000;
+    border-bottom: double 2px #fff000;
+    font-size: 11px;
+    float: right;
+    margin-top: -15px;
 }
 
 .searh-on {
@@ -76,8 +87,8 @@ body {
 .blendingimg img.imgdetail-polda{
     width: 90%;
     padding-bottom: 125px;
-    -webkit-filter: drop-shadow(5px 5px 10px rgba(0, 173, 239, 0.4) );
-    filter: drop-shadow(5px 5px 10px rgba(0, 173, 239, 0.4));
+    -webkit-filter: var(--filter-bg);
+    filter: var(--filter-bg);
 }
 
 /* .blendingimg::after {
@@ -3350,5 +3361,16 @@ table .badge-dark {
     .add-operasi {
         width: 100%;
         margin: 35px 0 0 0;
+    }
+
+    .blendingimg img.imgdetail-polda{
+        width: 50%;
+        padding-bottom: 0;
+        -webkit-filter: var(--filter-bg);
+        filter: var(--filter-bg);
+    }
+
+    .add-none {
+        margin: 21px 0 0 0;
     }
 }

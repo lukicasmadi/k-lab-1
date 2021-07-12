@@ -268,6 +268,18 @@ body .overflow {
   width: 100%;
 }
 
+.thumb-text{
+  position: absolute;
+  bottom:0;
+  display: block;
+  /* background: rgba(0, 0, 0, 0.7); */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0) 100%);
+  width: 100%;
+  padding: 20px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
 .sidebar-article::before {
   background: var(--glassmor-article);;
   background-size: 100%;
@@ -305,6 +317,7 @@ body .overflow {
   padding: 0;
   margin: 0px 10px 0px -15px;
   width: 135px;
+  height: 90px;
 }
 
 .sidebar-article p {

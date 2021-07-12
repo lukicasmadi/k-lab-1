@@ -15,7 +15,7 @@
 <div class="layout-px-spacing">
     <div class="row layout-top-spacing">
 
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-4">
             @foreach ($poldaAtas as $key => $val)
                 <a href="{{ route('korlantas_open_polda', $val->short_name) }}">
                     <div class="cols-sm-1">
@@ -31,7 +31,7 @@
         <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-1 mb-n2"> -->
             @foreach ($poldaBawah as $key => $val)
                 <a href="{{ route('korlantas_open_polda', $val->short_name) }}">
-                    <div class="cols-sm-1">
+                    <div class="cols-sm-1 mt-1">
                         <div id="{{ $val->short_name }}" class="grid-polda line glowred">
                             <p>{{ $val->short_name }}</p>
                             <img src="{{ asset('/img/polda/'.$val->logo) }}">
@@ -96,7 +96,7 @@
                 @if (authUser()->id == 1)
                     @include('home_tabs.tab')
                 @else
-                    @include('home_tabs.tab_absensi')
+                    @include('home_tabs.tab')
                 @endif
             @endif
         @endrole
@@ -111,7 +111,7 @@
                 </h5>
             </div>
 
-            <div class="widget-content mt-4">
+            <div class="widget-content mt-4 mb-5">
                 <div class="table-responsive">
                     <table id="tbl_daily_submited" class="table">
                         <thead>
@@ -141,7 +141,10 @@
                                     <td>
                                         @if (!empty($daily->dailyInput))
                                             <div class="text-center icon-container">
-                                                <a href="{{ route('previewPhroDashboard', $daily->uuid) }}" class="previewPhro" data-id="{{ $daily->uuid }}"><i class="far fa-eye"></i></a>
+                                                <a href="{{ route('previewPhroDashboard', $daily->uuid) }}" class="previewPhro" data-id="{{ $daily->uuid }}">
+                                                    <img src="{{ asset('/img/search.png') }}" class="searh-on" width="22px">
+                                                    <img src="{{ asset('/img/searchoff.png') }}" class="searh-off" width="22px">
+                                                </a>
                                             </div>
                                         @else
                                         <div class="text-center">-</div>
@@ -150,7 +153,7 @@
                                     <td>
                                         @if (!empty($daily->dailyInput))
                                             <div class="text-center icon-container">
-                                                <a href="{{ route('downloadPrho', $daily->uuid) }}"><i class="far fa-download"></i></a>
+                                                <a href="{{ route('downloadPrho', $daily->uuid) }}">Unduh</a>
                                             </div>
                                         @else
                                             <div class="text-center">-</div>
@@ -236,9 +239,22 @@
 }
 .widget.widget-activity-three .timeline-line .item-timeline .t-content .t-uppercontent span {
     margin-bottom: 0;
-    font-size: 12px;
+    font-size: 10px !important;
     font-weight: 500;
     color: #888ea8;
+}
+.icon-container a {
+    color: var(--piechart-color);
+}
+.icon-container a i {
+    font-size: 16px;
+}
+tbody tr:nth-child(odd){
+  /* opacity: 0.05; */
+  background-color: rgba(0, 173, 239, 0.05);
+  border-top: solid 1px rgba(17, 62, 81, 0.1);
+  border-bottom: solid 1px rgba(17, 62, 81, 0.1);
+  color: #105c7c;
 }
 </style>
 @endpush

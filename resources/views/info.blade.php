@@ -17,8 +17,8 @@
                 <div class="workarea">
                     <div class="center">
                         <img class="polwan" src="{{ asset('/img/polwan.png') }}" />
-                        <h3>SELAMAT DATANG DI SISTEM</h3>
-                        <h3>PELAPORAN OPERASI ONLINE BIDANG</h3>
+                        <h3>SELAMAT DATANG DI SISTEM PELAPORAN</h3>
+                        <h3>APLIKASI OPERASI ONLINE BIDANG</h3>
                         <h3>LALU LINTAS KORLANTAS POLRI</h3>
                     </div>
                     @if (is_null(operationPlans()))

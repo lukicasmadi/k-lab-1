@@ -8,6 +8,14 @@
 			@Import	Mixins
 	===============================
 */
+.theme-light {
+  --popup-success: #11394a;
+}
+
+.theme-dark {
+  --popup-success: #fff;
+}
+
 body.swal2-shown {
   overflow-y: hidden; }
 
@@ -44,8 +52,14 @@ body.swal2-iosfix {
     background-color: rgba(0, 0, 0, 0.4); }
 
 .swal2-modal {
-  background-color: #0e1726 !important;
-  border-radius: 5px;
+  background-color: var(--popup-success) !important;
+    border: 12px solid transparent;
+    border-image: url(/img/border.png);
+    border-image-slice: 30;
+    border-image-repeat: stretch;
+    margin: 10px 0 20px 0;
+    box-shadow: 0 0 8px 0 rgba(81, 203, 238, 0.2), 0 0 20px 0 rgba(81, 203, 238, 0.19);
+  /* border-radius: 0px !important; */
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-align: center;
@@ -189,7 +203,7 @@ body.swal2-iosfix {
   background: #1b2e4b; }
 
 pre {
-  color: #009688; }
+  color: #00ADEF; }
 
 .swal2-modal .swal2-input.swal2-inputerror, .swal2-modal .swal2-file.swal2-inputerror, .swal2-modal .swal2-textarea.swal2-inputerror {
   border-color: #e7515a !important;
@@ -424,7 +438,7 @@ pre {
   .swal2-icon.swal2-success .swal2-success-ring {
     width: 80px;
     height: 80px;
-    border: 5px solid #1b2e4b !important;
+    border: 5px solid #00adef !important;
     border-radius: 50%;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
@@ -443,7 +457,7 @@ pre {
     transform: rotate(-45deg); }
   .swal2-icon.swal2-success [class^='swal2-success-line'] {
     height: 5px;
-    background-color: #009688 !important;
+    background-color: #00ADEF !important;
     display: block;
     border-radius: 2px;
     position: absolute;
