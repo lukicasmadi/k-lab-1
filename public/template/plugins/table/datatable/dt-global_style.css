@@ -325,6 +325,10 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
         /* margin-bottom: 40px; */
         position: absolute;
     }
+
+    div.dataTables_wrapper div.dataTables_filter img{
+        margin-top: 41px;
+    }
 }
 
 @media (max-width: 575.98px) {

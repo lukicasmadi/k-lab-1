@@ -22,6 +22,7 @@
                 <div class="col-sm-12 style-3">
                     <div class="row">
                         <img src="{{ asset('/img/article/'.$article->small_img) }}">
+                        <div class="thumb-text">{!! $article->topic !!}</div>
                     </div>
                 </div>
                 <div class="show-more">

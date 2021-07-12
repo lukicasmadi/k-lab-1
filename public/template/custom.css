@@ -456,7 +456,7 @@ hr.dashed {
 }
 
 .swal2-modal .swal2-title {
-    color: #bfc9d4 !important;
+    color: var(--table-tdhome) !important;
     font-size: 18px !important;
     text-align: center;
     font-weight: normal;

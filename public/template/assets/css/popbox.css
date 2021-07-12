@@ -400,6 +400,7 @@
     background-color: var(--bg-popup);
     border: var(--line-popup);
     margin: 0 25px;
+    padding: 3em 1em;
     text-align: center;
   }
   .popbox .workarea h3 {

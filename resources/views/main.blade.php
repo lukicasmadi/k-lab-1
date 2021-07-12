@@ -15,7 +15,7 @@
 <div class="layout-px-spacing">
     <div class="row layout-top-spacing">
 
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-4">
             @foreach ($poldaAtas as $key => $val)
                 <a href="{{ route('korlantas_open_polda', $val->short_name) }}">
                     <div class="cols-sm-1">
@@ -31,7 +31,7 @@
         <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-1 mb-n2"> -->
             @foreach ($poldaBawah as $key => $val)
                 <a href="{{ route('korlantas_open_polda', $val->short_name) }}">
-                    <div class="cols-sm-1">
+                    <div class="cols-sm-1 mt-1">
                         <div id="{{ $val->short_name }}" class="grid-polda line glowred">
                             <p>{{ $val->short_name }}</p>
                             <img src="{{ asset('/img/polda/'.$val->logo) }}">
@@ -96,7 +96,7 @@
                 @if (authUser()->id == 1)
                     @include('home_tabs.tab')
                 @else
-                    @include('home_tabs.tab_absensi')
+                    @include('home_tabs.tab')
                 @endif
             @endif
         @endrole
@@ -239,7 +239,7 @@
 }
 .widget.widget-activity-three .timeline-line .item-timeline .t-content .t-uppercontent span {
     margin-bottom: 0;
-    font-size: 12px;
+    font-size: 10px !important;
     font-weight: 500;
     color: #888ea8;
 }
