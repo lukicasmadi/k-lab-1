@@ -53,6 +53,11 @@ class RencanaOperasi extends Model
         return $this->hasMany(PoldaSubmited::class, 'rencana_operasi_id', 'id');
     }
 
+    public function countDown()
+    {
+        return $this->hasMany(CountDown::class, 'rencana_operasi_id', 'id');
+    }
+
     public static function boot() {
         parent::boot();
 
@@ -62,6 +67,7 @@ class RencanaOperasi extends Model
              $rencanaOperasi->operationEkstrakDate()->delete();
              $rencanaOperasi->poldaAlias()->delete();
              $rencanaOperasi->poldaSubmited()->delete();
+             $rencanaOperasi->countDown()->delete();
         });
     }
 }

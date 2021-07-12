@@ -97,6 +97,14 @@
             @endif
         @endrole
 
+        {{-- @role('access_pusat|administrator')
+            @if (!empty(operationPlans()))
+                @if (authUser()->id == 1)
+                    @include('home_tabs.tab')
+                @endif
+            @endif
+        @endrole --}}
+
         <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
             <div class="widget-heading mt-2">
                 <h5 class="">
