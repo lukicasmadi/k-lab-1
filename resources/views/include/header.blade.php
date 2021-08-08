@@ -215,6 +215,10 @@
                                 if(isPolda()) {
                                     echo "<img src='".asset('img/polda/'.poldaImage()->polda->logo)."' class='img-fluid' alt='admin-profile' />";
                                 }
+
+                                if(isMonitoring()) {
+                                    echo "<img src='".asset('img/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";
+                                }
                             }
                         @endphp
                     </div>

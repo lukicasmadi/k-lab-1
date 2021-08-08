@@ -229,6 +229,16 @@ if (! function_exists('operationPlans')) {
     }
 }
 
+if (! function_exists('isMonitoring')) {
+    function isMonitoring() {
+        $user = auth()->user();
+        if($user->hasRole('access_dashboard')) {
+            return true;
+        }
+        return false;
+    }
+}
+
 if (! function_exists('isAdmin')) {
     function isAdmin() {
         $user = auth()->user();
