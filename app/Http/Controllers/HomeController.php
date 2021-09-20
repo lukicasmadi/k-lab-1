@@ -117,6 +117,11 @@ class HomeController extends Controller
 
         $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$firstDate, $lastDate])->where("polda_id", poldaId())->count();
 
+        // logger("NOW TODAY : ".nowToday());
+        // logger("COUNT : ".$count);
+        // logger("DAYS : ".$days);
+        logger("POLDA NAME : ".poldaName());
+
         if(empty($count_polda_input_daily) || $count_polda_input_daily <= 0) {
             $data = [
                 "filled" => 0,
