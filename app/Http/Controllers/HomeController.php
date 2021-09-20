@@ -111,6 +111,7 @@ class HomeController extends Controller
     {
         $count = CountDown::where("tanggal", nowToday())->first();
         $days = CountDown::select('id', 'tanggal', 'week')->where("week", $count->week)->orderBy('id', 'asc')->get()->toArray();
+        $daysGet = CountDown::select('id', 'tanggal', 'week')->where("week", $count->week)->orderBy('id', 'asc')->get();
         $allDaysAWeek = count($days);
         $firstDate = Arr::first($days)['tanggal'];
         $lastDate = Arr::last($days)['tanggal'];
@@ -120,6 +121,7 @@ class HomeController extends Controller
         if(poldaName() == "Riau") {
             logger("NOW TODAY : ".nowToday());
             logger("COUNT : ".$count);
+            logger("DAYS GET : ".$daysGet);
             logger("ALL DAYS WEEKS : ".$allDaysAWeek);
             logger("FIRST DATE : ".$firstDate);
             logger("LAST DATE : ".$lastDate);
