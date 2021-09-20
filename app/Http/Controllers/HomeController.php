@@ -120,7 +120,6 @@ class HomeController extends Controller
         if(poldaName() == "Riau") {
             logger("NOW TODAY : ".nowToday());
             logger("COUNT : ".$count);
-            logger("DAYS : ".$days);
         }
 
         if(empty($count_polda_input_daily) || $count_polda_input_daily <= 0) {
