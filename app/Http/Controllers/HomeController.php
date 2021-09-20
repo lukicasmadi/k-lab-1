@@ -173,7 +173,7 @@ class HomeController extends Controller
     public function weeklyPoldaById($id)
     {
         $count = CountDown::where("tanggal", nowToday())->first();
-        $days = CountDown::select('id', 'tanggal', 'week')->where("week", $count->week)->orderBy('id', 'asc')->get()->toArray();
+        $days = CountDown::select('id', 'tanggal', 'week')->where("week", $count->week)->where("rencana_operasi_id", operationPlans()->id)->orderBy('id', 'asc')->get()->toArray();
         $allDaysAWeek = count($days);
         $firstDate = Arr::first($days)['tanggal'];
         $lastDate = Arr::last($days)['tanggal'];
