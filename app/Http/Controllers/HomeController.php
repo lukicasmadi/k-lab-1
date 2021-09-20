@@ -110,24 +110,24 @@ class HomeController extends Controller
     public function weeklyPolda()
     {
         $count = CountDown::where("tanggal", nowToday())->first();
-        $days = CountDown::select('id', 'tanggal', 'week')->where("week", $count->week)->orderBy('id', 'asc')->get()->toArray();
-        $daysGet = CountDown::select('id', 'tanggal', 'week', 'rencana_operasi_id')->where("week", $count->week)->where("rencana_operasi_id", operationPlans()->id)->orderBy('id', 'asc')->get();
+        $days = CountDown::select('id', 'tanggal', 'week', 'rencana_operasi_id')->where("week", $count->week)->where("rencana_operasi_id", operationPlans()->id)->orderBy('id', 'asc')->get()->toArray();
+        // $daysGet = CountDown::select('id', 'tanggal', 'week', 'rencana_operasi_id')->where("week", $count->week)->where("rencana_operasi_id", operationPlans()->id)->orderBy('id', 'asc')->get();
         $allDaysAWeek = count($days);
         $firstDate = Arr::first($days)['tanggal'];
         $lastDate = Arr::last($days)['tanggal'];
 
         $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$firstDate, $lastDate])->where("polda_id", poldaId())->count();
 
-        if(poldaName() == "Riau") {
-            logger("NOW TODAY : ".nowToday());
-            logger("COUNT : ".$count);
-            logger("DAYS GET : ".$daysGet);
-            logger("ALL DAYS WEEKS : ".$allDaysAWeek);
-            logger("FIRST DATE : ".$firstDate);
-            logger("LAST DATE : ".$lastDate);
-            logger("COUNT WEEK : ".$count->week);
-            logger("OPERATION PLAN : ".operationPlans());
-        }
+        // if(poldaName() == "Riau") {
+        //     logger("NOW TODAY : ".nowToday());
+        //     logger("COUNT : ".$count);
+        //     logger("DAYS GET : ".$daysGet);
+        //     logger("ALL DAYS WEEKS : ".$allDaysAWeek);
+        //     logger("FIRST DATE : ".$firstDate);
+        //     logger("LAST DATE : ".$lastDate);
+        //     logger("COUNT WEEK : ".$count->week);
+        //     logger("OPERATION PLAN : ".operationPlans());
+        // }
 
         if(empty($count_polda_input_daily) || $count_polda_input_daily <= 0) {
             $data = [
