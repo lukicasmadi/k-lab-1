@@ -125,6 +125,7 @@ class HomeController extends Controller
             logger("ALL DAYS WEEKS : ".$allDaysAWeek);
             logger("FIRST DATE : ".$firstDate);
             logger("LAST DATE : ".$lastDate);
+            logger("OPERATION PLAN : ".$operationPlans());
         }
 
         if(empty($count_polda_input_daily) || $count_polda_input_daily <= 0) {
