@@ -277,6 +277,8 @@ class HomeController extends Controller
             return view('empty_project');
         }
 
+        operationShowStartEnd();
+
         if(isPolda()) {
             return view('polda');
         } else {
@@ -416,7 +418,8 @@ class HomeController extends Controller
             return response()->json([
                 'rangeDate' => $rangeDateReformat,
                 'totalPerDate' => $totalPerDate,
-                'projectName' => $dateCountDown->deskripsi
+                'projectName' => $dateCountDown->deskripsi,
+                'totalSum' => array_sum($totalPerDate),
             ], 200);
         }
     }

@@ -311,7 +311,7 @@ jQuery(function() {
 
     rightLaphar.render()
 
-    //=================================================================================================================================================
+    //====================================================================
 
     var optionLapHarAllLeft = {
         chart: {
@@ -429,7 +429,7 @@ jQuery(function() {
 
     rightLapharAll.render()
 
-    //=================================================================================================================================================
+    //====================================================================
 
     var configAnevChartPelanggaran = {
         chart: {
@@ -521,7 +521,7 @@ jQuery(function() {
 
     anevRightChart.render()
 
-    //=================================================================================================================================================
+    //====================================================================
 
     var optionAnivAllLeft = {
         chart: {
@@ -620,6 +620,7 @@ jQuery(function() {
             var rangeDate = data.rangeDate
             var totalPerDate = data.totalPerDate
             var projectName = data.projectName
+            var totalSum = data.totalSum
 
             if (!_.isEmpty(rangeDate) && !_.isEmpty(totalPerDate)) {
 
@@ -644,6 +645,9 @@ jQuery(function() {
                     name: 'Total',
                     data: totalPerDate
                 }])
+
+                $("#tab_laphar_total_pelanggaran_lalin").html(totalSum + " laporan")
+                $("#tab_laphar_total_kecelakaan_lalin").html(totalSum + " laporan")
 
             }
         })

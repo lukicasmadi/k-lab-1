@@ -84,6 +84,21 @@ if (! function_exists('humanDateRead')) {
     }
 }
 
+if (! function_exists('operationShowStartEnd')) {
+    function operationShowStartEnd() {
+        $now = now()->format('Y-m-d');
+        $checkOperasi = RencanaOperasi::where("start_date", "<=", $now)->where("end_date", ">=", $now)->first();
+        if(empty($checkOperasi)) {
+            return null;
+        } else {
+            return [
+                indonesiaShortDayAndDate($checkOperasi->start_date),
+                indonesiaShortDayAndDate($checkOperasi->end_date)
+            ];
+        }
+    }
+}
+
 if (! function_exists('dayNameIndonesia')) {
     function dayNameIndonesia($timestamp) {
         return Carbon::parse($timestamp)->isoFormat('dddd');
@@ -106,6 +121,12 @@ if (! function_exists('indonesianFullDayAndDate')) {
 if (! function_exists('indonesiaDayAndDate')) {
     function indonesiaDayAndDate($timestamp) {
         return Carbon::parse($timestamp)->isoFormat('dddd, D MMMM Y');
+    }
+}
+
+if (! function_exists('indonesiaShortDayAndDate')) {
+    function indonesiaShortDayAndDate($timestamp) {
+        return Carbon::parse($timestamp)->isoFormat('D MMM Y');
     }
 }
 
