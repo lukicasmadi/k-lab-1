@@ -12,7 +12,7 @@
                                 <span>DATA LAPORAN HARIAN</span> <span class="dash_data">{{ operationShowStartEnd()[0] }} - {{ operationShowStartEnd()[1] }}</span>
                                 {{ indonesiaDayAndDate(date("Y-m-d")) }}
                                 <p class="mar20 ml-n1">pelanggaran lalu lintas</p>
-                                <b class="ml-n1" id="tab_laphar_total_pelanggaran_lalin"></b>
+                                <b class="ml-n1 data_total_laporan"></b>
                             </h5>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                                 <span>DATA LAPORAN HARIAN</span> <span class="dash_data">{{ operationShowStartEnd()[0] }} - {{ operationShowStartEnd()[1] }}</span>
                                 {{ indonesiaDayAndDate(date("Y-m-d")) }}
                                 <p class="mar20 ml-n1">kecelakaan lalu lintas</p>
-                                <b class="ml-n1" id="tab_laphar_total_kecelakaan_lalin"></b>
+                                <b class="ml-n1 data_total_laporan"></b>
                             </h5>
                         </div>
                     </div>

@@ -12,7 +12,7 @@
                                 <span>DATA TOTAL LAPORAN HARIAN</span> <span class="dash_data">{{ operationShowStartEnd()[0] }} - {{ operationShowStartEnd()[1] }}</span>
                                 <!-- <span>[ {{ indonesiaDayAndDate(operationPlans()->start_date) }} S/D {{ indonesiaDayAndDate(operationPlans()->end_date) }} ]</span> -->
                                 <p class="mar20 ml-n1">pelanggaran lalu lintas</p>
-                                <b class="ml-n1">34 laporan</b>
+                                <b class="ml-n1 data_total_laporan"></b>
                             </h5>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                                 <span>DATA TOTAL LAPORAN HARIAN</span> <span class="dash_data">{{ operationShowStartEnd()[0] }} - {{ operationShowStartEnd()[1] }}</span>
                                 <!-- <span>[ {{ indonesiaDayAndDate(operationPlans()->start_date) }} S/D {{ indonesiaDayAndDate(operationPlans()->end_date) }} ]</span> -->
                                 <p class="mar20 ml-n1">kecelakaan lalu lintas</p>
-                                <b class="ml-n1">95 laporan</b>
+                                <b class="ml-n1 data_total_laporan"></b>
                             </h5>
                         </div>
                     </div>

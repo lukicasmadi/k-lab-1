@@ -230,6 +230,9 @@ jQuery(function() {
                 fontFamily: "Quicksand, sans-serif",
             },
         },
+        grid: { borderColor: "#12455C", strokeDashArray: 0, xaxis: { lines: { show: false } }, yaxis: { lines: { show: true } }, padding: { top: 0, right: 0, bottom: 0, left: 10 } },
+        tooltip: { theme: "dark", marker: { show: !0 }, x: { show: !1 } },
+        fill: { type: "gradient", gradient: { type: "vertical", inverseColors: false, shadeIntensity: 0.8, opacityFrom: 0.9, opacityTo: 0.9, stops: [0, 190, 100] } },
         stroke: {
             show: true,
             width: 2,
@@ -285,6 +288,9 @@ jQuery(function() {
                 fontFamily: "Quicksand, sans-serif",
             },
         },
+        grid: { borderColor: "#12455C", strokeDashArray: 0, xaxis: { lines: { show: false } }, yaxis: { lines: { show: true } }, padding: { top: 0, right: 0, bottom: 0, left: 10 } },
+        tooltip: { theme: "dark", marker: { show: !0 }, x: { show: !1 } },
+        fill: { type: "gradient", gradient: { type: "vertical", inverseColors: false, shadeIntensity: 0.8, opacityFrom: 0.9, opacityTo: 0.9, stops: [0, 190, 100] } },
         stroke: {
             show: true,
             width: 2,
@@ -298,9 +304,6 @@ jQuery(function() {
             title: {
                 text: 'Total'
             }
-        },
-        fill: {
-            opacity: 1
         },
     }
 
@@ -345,6 +348,9 @@ jQuery(function() {
                 fontFamily: "Quicksand, sans-serif",
             },
         },
+        grid: { borderColor: "#12455C", strokeDashArray: 0, xaxis: { lines: { show: false } }, yaxis: { lines: { show: true } }, padding: { top: 0, right: 0, bottom: 0, left: 10 } },
+        tooltip: { theme: "dark", marker: { show: !0 }, x: { show: !1 } },
+        fill: { type: "gradient", gradient: { type: "vertical", inverseColors: false, shadeIntensity: 0.8, opacityFrom: 0.9, opacityTo: 0.9, stops: [0, 190, 100] } },
         stroke: {
             show: true,
             width: 2,
@@ -358,9 +364,6 @@ jQuery(function() {
             title: {
                 text: 'Total'
             }
-        },
-        fill: {
-            opacity: 1
         },
     }
 
@@ -403,6 +406,9 @@ jQuery(function() {
                 fontFamily: "Quicksand, sans-serif",
             },
         },
+        grid: { borderColor: "#12455C", strokeDashArray: 0, xaxis: { lines: { show: false } }, yaxis: { lines: { show: true } }, padding: { top: 0, right: 0, bottom: 0, left: 10 } },
+        tooltip: { theme: "dark", marker: { show: !0 }, x: { show: !1 } },
+        fill: { type: "gradient", gradient: { type: "vertical", inverseColors: false, shadeIntensity: 0.8, opacityFrom: 0.9, opacityTo: 0.9, stops: [0, 190, 100] } },
         stroke: {
             show: true,
             width: 2,
@@ -416,9 +422,6 @@ jQuery(function() {
             title: {
                 text: 'Total'
             }
-        },
-        fill: {
-            opacity: 1
         },
     }
 
@@ -447,6 +450,9 @@ jQuery(function() {
                 endingShape: 'rounded'
             },
         },
+        grid: { borderColor: "#12455C", strokeDashArray: 0, xaxis: { lines: { show: false } }, yaxis: { lines: { show: true } }, padding: { top: 0, right: 0, bottom: 0, left: 10 } },
+        tooltip: { theme: "dark", marker: { show: !0 }, x: { show: !1 } },
+        fill: { type: "gradient", gradient: { type: "vertical", inverseColors: false, shadeIntensity: 0.8, opacityFrom: 0.9, opacityTo: 0.9, stops: [0, 190, 100] } },
         dataLabels: {
             enabled: false
         },
@@ -463,9 +469,6 @@ jQuery(function() {
             title: {
                 text: 'Total'
             }
-        },
-        fill: {
-            opacity: 1
         },
     }
 
@@ -495,6 +498,9 @@ jQuery(function() {
         dataLabels: {
             enabled: false
         },
+        grid: { borderColor: "#12455C", strokeDashArray: 0, xaxis: { lines: { show: false } }, yaxis: { lines: { show: true } }, padding: { top: 0, right: 0, bottom: 0, left: 10 } },
+        tooltip: { theme: "dark", marker: { show: !0 }, x: { show: !1 } },
+        fill: { type: "gradient", gradient: { type: "vertical", inverseColors: false, shadeIntensity: 0.8, opacityFrom: 0.9, opacityTo: 0.9, stops: [0, 190, 100] } },
         stroke: {
             show: true,
             width: 2,
@@ -508,9 +514,6 @@ jQuery(function() {
             title: {
                 text: 'Total'
             }
-        },
-        fill: {
-            opacity: 1
         },
     }
 
@@ -547,6 +550,9 @@ jQuery(function() {
             width: 2,
             colors: ['transparent']
         },
+        grid: { borderColor: "#12455C", strokeDashArray: 0, xaxis: { lines: { show: false } }, yaxis: { lines: { show: true } }, padding: { top: 0, right: 0, bottom: 0, left: 10 } },
+        tooltip: { theme: "dark", marker: { show: !0 }, x: { show: !1 } },
+        fill: { type: "gradient", gradient: { type: "vertical", inverseColors: false, shadeIntensity: 0.8, opacityFrom: 0.9, opacityTo: 0.9, stops: [0, 190, 100] } },
         series: [],
         xaxis: {
             categories: [],
@@ -555,9 +561,6 @@ jQuery(function() {
             title: {
                 text: 'Total'
             }
-        },
-        fill: {
-            opacity: 1
         },
     }
 
@@ -584,6 +587,9 @@ jQuery(function() {
                 endingShape: 'rounded'
             },
         },
+        grid: { borderColor: "#12455C", strokeDashArray: 0, xaxis: { lines: { show: false } }, yaxis: { lines: { show: true } }, padding: { top: 0, right: 0, bottom: 0, left: 10 } },
+        tooltip: { theme: "dark", marker: { show: !0 }, x: { show: !1 } },
+        fill: { type: "gradient", gradient: { type: "vertical", inverseColors: false, shadeIntensity: 0.8, opacityFrom: 0.9, opacityTo: 0.9, stops: [0, 190, 100] } },
         dataLabels: {
             enabled: false
         },
@@ -600,9 +606,6 @@ jQuery(function() {
             title: {
                 text: 'Total'
             }
-        },
-        fill: {
-            opacity: 1
         },
     }
 
@@ -646,8 +649,7 @@ jQuery(function() {
                     data: totalPerDate
                 }])
 
-                $("#tab_laphar_total_pelanggaran_lalin").html(totalSum + " laporan")
-                $("#tab_laphar_total_kecelakaan_lalin").html(totalSum + " laporan")
+                $(".data_total_laporan").html(totalSum + " laporan")
 
             }
         })
