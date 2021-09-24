@@ -293,6 +293,8 @@
     height: 325px;
     overflow: auto;
     padding: 0 12px 0 12px;
+    scrollbar-width: thin;          /* "auto" or "thin" */
+    scrollbar-color: #00adef #105c7c;   /* scroll thumb and track */
 }
 
 .widget.widget-activity-three .timeline-line .item-timeline {
