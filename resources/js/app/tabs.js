@@ -649,7 +649,7 @@ jQuery(function() {
                     data: totalPerDate
                 }])
 
-                // $(".data_total_laporan").html(totalSum + " laporan")
+                $(".data_total_laporan").html(totalSum + " laporan")
 
             }
         })

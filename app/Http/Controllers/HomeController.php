@@ -415,11 +415,13 @@ class HomeController extends Controller
                 array_push($rangeDateReformat, indonesianStandart($rd));
             }
 
+            $todaySubmited =  DB::table('polda_submiteds')->where('submited_date', nowToday())->count();
+
             return response()->json([
                 'rangeDate' => $rangeDateReformat,
                 'totalPerDate' => $totalPerDate,
                 'projectName' => $dateCountDown->deskripsi,
-                'totalSum' => array_sum($totalPerDate),
+                'totalSum' => $todaySubmited,
             ], 200);
         }
     }
