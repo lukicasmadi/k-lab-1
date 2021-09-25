@@ -10,6 +10,18 @@ jQuery(function() {
         }
     })
 
+    $(document).on('change', '#pilihan_operasi', function(e) {
+        e.preventDefault()
+        if ($(this).val() != "") {
+            window.location.replace(route('dashboard_filtered', {
+                projectSlug: $(this).val()
+            }))
+        } else {
+            window.location.replace(route('dashboard'))
+        }
+    })
+
+
     $(document).on('click', '#filterOperasi', function(e) {
         e.preventDefault()
     })
@@ -860,6 +872,8 @@ jQuery(function() {
     }, $('meta[name=reload_time]').attr('content'))
 
     // https://lodash.com/docs/#isEmpty
+
+    $('#pilihan_operasi option[value=' + $("#pilihan_operasi_flag").val() + ']').attr('selected', 'selected');
 })
 
 function changePoldaClass() {

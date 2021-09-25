@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/home', 'HomeController@welcomePage')->name('home');  
+Route::get('/home', 'HomeController@welcomePage')->name('home');
 
 Auth::routes(['register' => false]);
 
@@ -14,6 +14,7 @@ Route::get('/news-update/{slug}', 'HomeController@newsDetail')->name('news_detai
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index')->name('index');
     Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+    Route::get('/dashboard/filter/{projectSlug}', 'HomeController@dashboardFiltered')->name('dashboard_filtered');
     Route::get('/preview/{uuid}/report', 'HomeController@previewReport')->name('previewReport');
     Route::get('/forgot-password/request', 'UserController@forgot_password_request')->name('forgot_password_request');
     Route::get('/dashboard/{uuid}/preview', 'PoldaHasRencanaOperasiController@previewPhroDashboard')->name('previewPhroDashboard');
@@ -204,6 +205,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/display/excel/anev-date-compare', 'ReportController@showExcelToViewAnevDateCompare')->name('show_excel_to_view_anev');
         Route::get('/rencana-operasi/date-range/{id}', 'ReportController@getDateRangeRencanaOperasi')->name('get_rencana_operasi_date_range');
         Route::get('/totalinputan/bychart/{indexData}', 'HomeController@viewInputFromChart')->name('viewInputFromChart');
+
         Route::get('/chart/laphar', 'HomeController@chart_laphar')->name('chart_laphar');
         Route::get('/chart/laphar/all', 'HomeController@chart_laphar_all_project')->name('chart_laphar_all_project');
         Route::get('/chart/anev', 'HomeController@chart_anev')->name('chart_anev');

@@ -9,6 +9,7 @@ use App\Models\CountDown;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use App\Models\PoldaSubmited;
+use App\Models\RencanaOperasi;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -265,7 +266,7 @@ class HomeController extends Controller
         return $polda;
     }
 
-    public function dashboard()
+    public function dashboardFiltered($projectSlug)
     {
         if(isPolda()) {
             if(checkUserHasAssign() == "belum") {
@@ -278,6 +279,18 @@ class HomeController extends Controller
         }
 
         operationShowStartEnd();
+
+        $checkOperasi = RencanaOperasi::where("slug_name", $projectSlug)->first();
+
+        if(empty($checkOperasi)) {
+            return redirect()->route('dashboard');
+        }
+
+        $allOperations = RencanaOperasi::orderBy('id', 'desc')->get();
+
+        session()->forget(['filter_operation']);
+        session(['filter_operation' => $projectSlug]);
+        $filter_operation = $projectSlug;
 
         if(isPolda()) {
             return view('polda');
@@ -296,7 +309,48 @@ class HomeController extends Controller
                 $query->where(DB::raw('DATE(created_at)'), nowToday());
             }])->orderBy("name", "asc")->get();
 
-            return view('main', compact('poldaAtas', 'poldaBawah', 'dailyInput'));
+            return view('main_with_filter', compact('poldaAtas', 'poldaBawah', 'dailyInput', 'allOperations', 'filter_operation'));
+        }
+    }
+
+    public function dashboard()
+    {
+        if(isPolda()) {
+            if(checkUserHasAssign() == "belum") {
+                return redirect()->route('notAssign');
+            }
+        }
+
+        if(empty(operationPlans())) {
+            return view('empty_project');
+        }
+
+        operationShowStartEnd();
+
+        session()->forget(['filter_operation']);
+        session(['filter_operation' => '']);
+        $filter_operation = "";
+
+        $allOperations = RencanaOperasi::orderBy('id', 'desc')->get();
+
+        if(isPolda()) {
+            return view('polda');
+        } else {
+            $poldaAtas = Polda::select("id", "uuid", "name", "short_name", "logo")
+                ->orderBy("name", "asc")
+                ->skip(0)->take(17)
+                ->get();
+
+            $poldaBawah = Polda::select("id", "uuid", "name", "short_name", "logo")
+                ->orderBy("name", "asc")
+                ->skip(17)->take(17)
+                ->get();
+
+            $dailyInput = Polda::with(['dailyInput' => function($query) {
+                $query->where(DB::raw('DATE(created_at)'), nowToday());
+            }])->orderBy("name", "asc")->get();
+
+            return view('main', compact('poldaAtas', 'poldaBawah', 'dailyInput', 'allOperations', 'filter_operation'));
         }
     }
 
