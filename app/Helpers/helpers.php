@@ -87,7 +87,13 @@ if (! function_exists('humanDateRead')) {
 if (! function_exists('operationShowStartEnd')) {
     function operationShowStartEnd() {
         $now = now()->format('Y-m-d');
-        $checkOperasi = RencanaOperasi::where("start_date", "<=", $now)->where("end_date", ">=", $now)->first();
+
+        if(empty(session('filter_operation'))) {
+            $checkOperasi = RencanaOperasi::where("start_date", "<=", $now)->where("end_date", ">=", $now)->first();
+        } else {
+            $checkOperasi = RencanaOperasi::where("slug_name", session('filter_operation'))->first();
+        }
+
         if(empty($checkOperasi)) {
             return null;
         } else {
