@@ -27,7 +27,7 @@
 
                     <ul class="list-unstyled menu-categories" id="topAccordion">
 
-                        <li class="menu single-menu {{ request()->is('dashboard') || request()->is('polda-data/*') ? 'active' : '' }}">
+                        <li class="menu single-menu {{ request()->is('dashboard') || request()->is('dashboard/filter/*') || request()->is('polda-data/*') ? 'active' : '' }}">
                             <a href="{{ route('dashboard') }}">
                                 <div data-step="1" data-intro="Menu Dashboard untuk melihat keseluruhan data polda yang sudah terkirim secara list, grafik dan download data <br /><br /> <a href='#' class='manuals'>Unduh Panduan </a>">
                                     <span>Beranda</span>
@@ -276,7 +276,7 @@
 
                     <ul class="list-unstyled menu-categories" id="topAccordion">
 
-                        <li class="menu single-menu {{ request()->is('dashboard') || request()->is('polda-data/*') ? 'active' : '' }}">
+                        <li class="menu single-menu {{ request()->is('dashboard') || request()->is('dashboard/filter/*') || request()->is('polda-data/*') ? 'active' : '' }}">
                             <a href="{{ route('dashboard') }}">
                                 <div>
                                     <span>Beranda</span>
