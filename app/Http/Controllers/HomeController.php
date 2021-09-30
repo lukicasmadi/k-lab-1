@@ -329,7 +329,7 @@ class HomeController extends Controller
 
         session()->forget(['filter_operation']);
         session(['filter_operation' => '']);
-        $filter_operation = "";
+        $filter_operation = "current";
 
         $allOperations = RencanaOperasi::orderBy('id', 'desc')->get();
 

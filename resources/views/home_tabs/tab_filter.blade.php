@@ -27,6 +27,11 @@
             <div class="tab-pane fade" id="total-laporan-anev" role="tabpanel" aria-labelledby="tab_link_data_total_laporan_anev">
                 @include('home_tabs.tab_total_laporan_anev')
             </div>
+
+            {{-- TAB NOT SHOW IN UI --}}
+            @include('home_tabs.tab_laphar')
+            @include('home_tabs.tab_laporan_anev')
+            {{-- TAB NOT SHOW IN UI --}}
         </div>
     </div>
 </div>

@@ -1,6 +1,7 @@
 <?php
 use App\Models\DailyInput;
 use App\Models\DailyInputPrev;
+use App\Models\RencanaOperasi;
 
 if (! function_exists('basedQueryPrev')) {
     function basedQueryPrev() {
@@ -677,6 +678,18 @@ if (! function_exists('chartCurrent')) {
 
 if (! function_exists('chartLapharFullProject')) {
     function chartLapharFullProject() {
+        // $output = DailyInput::selectRaw('
+        //     sum(pelanggaran_lalu_lintas_tilang) as tilang,
+        //     sum(pelanggaran_lalu_lintas_teguran) as teguran,
+        //     sum(kecelakaan_lalin_jumlah_kejadian) as jumlah_kejadian,
+        //     sum(kecelakaan_lalin_jumlah_korban_meninggal) as jumlah_korban_meninggal,
+        //     sum(kecelakaan_lalin_jumlah_korban_luka_berat) as jumlah_korban_luka_berat,
+        //     sum(kecelakaan_lalin_jumlah_korban_luka_ringan) as jumlah_korban_luka_ringan')
+        //     ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [dateOnly(operationPlans()->start_date), dateOnly(operationPlans()->end_date)])
+        //     ->first();
+
+        // return $output;
+
         $output = DailyInput::selectRaw('
             sum(pelanggaran_lalu_lintas_tilang) as tilang,
             sum(pelanggaran_lalu_lintas_teguran) as teguran,
@@ -684,7 +697,13 @@ if (! function_exists('chartLapharFullProject')) {
             sum(kecelakaan_lalin_jumlah_korban_meninggal) as jumlah_korban_meninggal,
             sum(kecelakaan_lalin_jumlah_korban_luka_berat) as jumlah_korban_luka_berat,
             sum(kecelakaan_lalin_jumlah_korban_luka_ringan) as jumlah_korban_luka_ringan')
-            ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [dateOnly(operationPlans()->start_date), dateOnly(operationPlans()->end_date)])
+            ->when(empty(session('filter_operation')), function ($query) {
+                return $query->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [dateOnly(operationPlans()->start_date), dateOnly(operationPlans()->end_date)]);
+            })
+            ->when(!empty(session('filter_operation')), function ($query) {
+                $checkOperasi = RencanaOperasi::where("slug_name", session('filter_operation'))->first();
+                return $query->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [dateOnly($checkOperasi->start_date), dateOnly($checkOperasi->end_date)]);
+            })
             ->first();
 
         return $output;
