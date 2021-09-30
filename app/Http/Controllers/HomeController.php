@@ -286,7 +286,7 @@ class HomeController extends Controller
             return redirect()->route('dashboard');
         }
 
-        $allOperations = RencanaOperasi::orderBy('id', 'desc')->get();
+        $allOperations = RencanaOperasi::where('slug_name', '!=', operationPlans()->slug_name)->orderBy('id', 'desc')->get();
 
         session()->forget(['filter_operation']);
         session(['filter_operation' => $projectSlug]);
@@ -331,7 +331,7 @@ class HomeController extends Controller
         session(['filter_operation' => '']);
         $filter_operation = "current";
 
-        $allOperations = RencanaOperasi::orderBy('id', 'desc')->get();
+        $allOperations = RencanaOperasi::where('slug_name', '!=', operationPlans()->slug_name)->orderBy('id', 'desc')->get();
 
         if(isPolda()) {
             return view('polda');
