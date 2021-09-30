@@ -94,7 +94,7 @@
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
             <input type="hidden" name="pilihan_operasi_flag" id="pilihan_operasi_flag" value="{{ $filter_operation }}">
             <select class="form-control form-custom height-form" id="pilihan_operasi" name="pilihan_operasi">
-                <option selected="selected" value="">-   PILIH OPERASI   -</option>
+                <option selected="selected" value="">OPERASI YG SEDANG BERJALAN</option>
                 @foreach($allOperations as $key => $val)
                     <option value="{{$val->slug_name}}">{{$val->name}}</option>
                 @endforeach
@@ -107,7 +107,7 @@
 
         @role('access_pusat|administrator')
             @if (!empty(operationPlans()))
-                @include('home_tabs.tab')
+                @include('home_tabs.tab_filter')
             @endif
         @endrole
 
