@@ -440,44 +440,48 @@ class HomeController extends Controller
 
     public function dashboardChart()
     {
-        $projectRunning = operationPlans();
-
-        if(!empty($projectRunning)) {
-            $dateCountDown = CountDown::where('rencana_operasi_id', $projectRunning->id)->where('tanggal', nowToday())->first();
-
-            $period = CarbonPeriod::create($projectRunning->start_date, $projectRunning->end_date);
-
-            $rangeDate = [];
-            $rangeDateReformat = [];
-            $totalPerDate = [];
-
-            foreach ($period as $date) {
-                array_push($rangeDate, $date->format('Y-m-d'));
-            }
-
-            foreach($rangeDate as $d) {
-                $total =  DB::table('polda_submiteds')->where('submited_date', $d)->count();
-
-                if($total == 0) {
-                    array_push($totalPerDate, 0);
-                } else {
-                    array_push($totalPerDate, $total);
-                }
-            }
-
-            foreach($rangeDate as $rd) {
-                array_push($rangeDateReformat, indonesianStandart($rd));
-            }
-
-            $todaySubmited =  DB::table('polda_submiteds')->where('submited_date', nowToday())->count();
-
-            return response()->json([
-                'rangeDate' => $rangeDateReformat,
-                'totalPerDate' => $totalPerDate,
-                'projectName' => $dateCountDown->deskripsi,
-                'totalSum' => $todaySubmited,
-            ], 200);
+        if(empty(session('filter_operation'))) {
+            $projectRunning = operationPlans();
+        } else {
+            $checkOperasi = RencanaOperasi::where("slug_name", session('filter_operation'))->first();
+            $projectRunning = $checkOperasi;
         }
+
+        $projectNowRunning = operationPlans();
+        $dateCountDown = CountDown::where('rencana_operasi_id', $projectNowRunning->id)->where('tanggal', nowToday())->first();
+
+        $period = CarbonPeriod::create($projectRunning->start_date, $projectRunning->end_date);
+
+        $rangeDate = [];
+        $rangeDateReformat = [];
+        $totalPerDate = [];
+
+        foreach ($period as $date) {
+            array_push($rangeDate, $date->format('Y-m-d'));
+        }
+
+        foreach($rangeDate as $d) {
+            $total =  DB::table('polda_submiteds')->where('submited_date', $d)->count();
+
+            if($total == 0) {
+                array_push($totalPerDate, 0);
+            } else {
+                array_push($totalPerDate, $total);
+            }
+        }
+
+        foreach($rangeDate as $rd) {
+            array_push($rangeDateReformat, indonesianStandart($rd));
+        }
+
+        $todaySubmited =  DB::table('polda_submiteds')->where('submited_date', nowToday())->count();
+
+        return response()->json([
+            'rangeDate' => $rangeDateReformat,
+            'totalPerDate' => $totalPerDate,
+            'projectName' => $dateCountDown->deskripsi,
+            'totalSum' => $todaySubmited,
+        ], 200);
     }
 
     public function openPoldaData($short_name)
