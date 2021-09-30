@@ -278,5 +278,5 @@ tbody tr:nth-child(odd){
 @endpush
 
 @push('page_js')
-<script src="{{ asset('js/tabs.js') }}"></script>
+<script src="{{ asset('js/tabs_filtered.js') }}"></script>
 @endpush
