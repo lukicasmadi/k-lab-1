@@ -678,17 +678,6 @@ if (! function_exists('chartCurrent')) {
 
 if (! function_exists('chartLapharFullProject')) {
     function chartLapharFullProject() {
-        // $output = DailyInput::selectRaw('
-        //     sum(pelanggaran_lalu_lintas_tilang) as tilang,
-        //     sum(pelanggaran_lalu_lintas_teguran) as teguran,
-        //     sum(kecelakaan_lalin_jumlah_kejadian) as jumlah_kejadian,
-        //     sum(kecelakaan_lalin_jumlah_korban_meninggal) as jumlah_korban_meninggal,
-        //     sum(kecelakaan_lalin_jumlah_korban_luka_berat) as jumlah_korban_luka_berat,
-        //     sum(kecelakaan_lalin_jumlah_korban_luka_ringan) as jumlah_korban_luka_ringan')
-        //     ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [dateOnly(operationPlans()->start_date), dateOnly(operationPlans()->end_date)])
-        //     ->first();
-
-        // return $output;
 
         $output = DailyInput::selectRaw('
             sum(pelanggaran_lalu_lintas_tilang) as tilang,
@@ -712,22 +701,6 @@ if (! function_exists('chartLapharFullProject')) {
 
 if (! function_exists('chartAnevCurrent')) {
     function chartAnevCurrent($full=false) {
-        // $output = DailyInput::selectRaw('
-        //     sum(pelanggaran_lalu_lintas_tilang) as tilang,
-        //     sum(pelanggaran_lalu_lintas_teguran) as teguran,
-        //     sum(kecelakaan_lalin_jumlah_kejadian) as jumlah_kejadian,
-        //     sum(kecelakaan_lalin_jumlah_korban_meninggal) as jumlah_korban_meninggal,
-        //     sum(kecelakaan_lalin_jumlah_korban_luka_berat) as jumlah_korban_luka_berat,
-        //     sum(kecelakaan_lalin_jumlah_korban_luka_ringan) as jumlah_korban_luka_ringan')
-        //     ->when($full == true, function ($q) {
-        //         return $q->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [dateOnly(operationPlans()->start_date), dateOnly(operationPlans()->end_date)]);
-        //     })
-        //     ->when($full == false, function ($q) {
-        //         return $q->whereRaw("DATE(created_at) = ?", [date("Y-m-d")]);
-        //     })
-        //     ->first();
-
-        // return $output;
 
         if(empty(session('filter_operation'))) {
             $output = DailyInput::selectRaw('
