@@ -2,6 +2,8 @@ jQuery(function() {
     var DateTime = luxon.DateTime;
     DateTime.now().setZone('Asia/Jakarta')
     var now = DateTime.now().setLocale("id")
+
+    console.log("Mode")
     $(document).on('change', '#changeTheme', function(e) {
         if ($(this).is(":checked")) {
             console.log("mode terang")

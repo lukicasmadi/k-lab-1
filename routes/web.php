@@ -45,7 +45,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/report/daily/id/{uuid}', 'ReportController@byId')->name('report_daily_by_id');
     Route::get('/submited/document/{uuid}', 'PoldaHasRencanaOperasiController@downloadDocument')->name('download_document');
 
-    // Route Hanya Bisa Diakses Oleh Administrator atau Korlantas Pusat
+    // ROUTE HANYA BISA DIAKSES OLEH ADMINISTRATOR, KORLANTAS PUSAT DAN LAPORAN
+    Route::group(['middleware' => 'access-laporan'], function () {
+        Route::get('/report/daily', 'ReportController@dailyAllPolda')->name('report_daily_all_polda');
+        Route::post('/report/daily/process', 'ReportController@dailyProcess')->name('report_daily_process');
+        Route::get('/report/anev-compare', 'ReportController@comparison')->name('report_comparison');
+        Route::post('/report/anev-compare/process', 'ReportController@comparisonProcess')->name('report_comparison_process');
+        Route::get('/report/anev-date-compare', 'ReportController@anevDateCompare')->name('report_anev_daily');
+        Route::post('/report/anev-date-compare/process', 'ReportController@anevDateCompareProcess')->name('report_anev_daily_process');
+        Route::get('/report/daily/polda/{poldaUuid}', 'ReportController@poldaUuid')->name('report_bypolda');
+        Route::get('/polda-data/{short_name}', 'HomeController@openPoldaData')->name('korlantas_open_polda');
+    });
+
+    // ROUTE HANYA BISA DIAKSES OLEH ADMINISTRATOR ATAU KORLANTAS PUSAT
     Route::group(['middleware' => 'admin-or-pusat-only'], function () {
 
         Route::get('/today', 'ReportController@downloadReportToday')->name('report_today');
@@ -68,15 +80,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/operation-plan/download/{filePath}', 'RencanaOperasiController@download')->name('downloadOperationPlan');
         Route::post('/operation-plan/create-new', 'RencanaOperasiController@store')->name('create_rencana_operasi_new');
         Route::post('/operation-plan/update-new', 'RencanaOperasiController@update')->name('edit_rencana_operasi_new');
-
-        Route::get('/report/daily', 'ReportController@dailyAllPolda')->name('report_daily_all_polda');
-        Route::post('/report/daily/process', 'ReportController@dailyProcess')->name('report_daily_process');
-        Route::get('/report/anev-compare', 'ReportController@comparison')->name('report_comparison');
-        Route::post('/report/anev-compare/process', 'ReportController@comparisonProcess')->name('report_comparison_process');
-        Route::get('/report/anev-date-compare', 'ReportController@anevDateCompare')->name('report_anev_daily');
-        Route::post('/report/anev-date-compare/process', 'ReportController@anevDateCompareProcess')->name('report_anev_daily_process');
-        Route::get('/report/daily/polda/{poldaUuid}', 'ReportController@poldaUuid')->name('report_bypolda');
-        Route::get('/polda-data/{short_name}', 'HomeController@openPoldaData')->name('korlantas_open_polda');
 
         Route::resource('unit', 'UnitController', [
             'names' => [
