@@ -141,6 +141,37 @@
                             </li>
                         @endrole
 
+                        @role('access_laporan')
+                            <li class="menu single-menu {{
+                                request()->is('report/*') ? 'active' : ''
+                                }}">
+                                <a href="#reportpusat" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
+                                    <div>
+                                        <span>Laporan</span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </a>
+                                <ul class="collapse submenu list-unstyled" id="reportpusat" data-parent="#topAccordion">
+                                    <li class="{{ request()->is('report/daily') ? 'active' : '' }}">
+                                        <a href="{{ route('report_daily_all_polda') }}"> Laporan Rekap Harian </a>
+                                    </li>
+                                    <li class="{{ request()->is('report/anev-compare') ? 'active' : '' }}">
+                                        <a href="{{ route('report_comparison') }}"> Laporan Anev </a>
+                                    </li>
+                                    <li class="{{ request()->is('report/anev-date-compare') ? 'active' : '' }}">
+                                        <a href="{{ route('report_anev_daily') }}"> Laporan Anev Harian </a>
+                                    </li>
+                                    @if (!empty(operationPlans()))
+                                        @if (authUser()->id == 1)
+                                            <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
+                                                <a href="{{ route('report_all_polda_compare') }}"> Laporan Perbandingan Harian </a>
+                                            </li>
+                                        @endif
+                                    @endif
+                                </ul>
+                            </li>
+                        @endrole
+
                         <li class="menu single-menu">
                             <a href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress', true).start();">
                                 <div>
@@ -207,16 +238,13 @@
                                         echo "<img src='".asset('storage/upload/profile/'.$user->avatar)."' class='img-fluid' alt='admin-profile' />";
                                     }
                                 }
-
-                                if(isPusat()) {
+                                else if(isPusat()) {
                                     echo "<img src='".asset('img/polda/mabes.png')."' class='img-fluid' alt='admin-profile' />";
                                 }
-
-                                if(isPolda()) {
+                                else if(isPolda()) {
                                     echo "<img src='".asset('img/polda/'.poldaImage()->polda->logo)."' class='img-fluid' alt='admin-profile' />";
                                 }
-
-                                if(isMonitoring()) {
+                                else {
                                     echo "<img src='".asset('img/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";
                                 }
                             }
@@ -256,6 +284,9 @@
         </ul>
     </header>
 </div>
+
+
+{{-- MENU MOBILE --}}
 <div class="main-container mobilelite" id="container">
 
         <div class="overlay"></div>
@@ -384,6 +415,37 @@
                             </li>
                         @endrole
 
+                        @role('access_laporan')
+                            <li class="menu single-menu {{
+                                request()->is('report/*') ? 'active' : ''
+                                }}">
+                                <a href="#reportpusat" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle autodroprown">
+                                    <div>
+                                        <span>Laporan</span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </a>
+                                <ul class="collapse submenu list-unstyled" id="reportpusat" data-parent="#topAccordion">
+                                    <li class="{{ request()->is('report/daily') ? 'active' : '' }}">
+                                        <a href="{{ route('report_daily_all_polda') }}"> Laporan Rekap Harian </a>
+                                    </li>
+                                    <li class="{{ request()->is('report/anev-compare') ? 'active' : '' }}">
+                                        <a href="{{ route('report_comparison') }}"> Laporan Anev </a>
+                                    </li>
+                                    <li class="{{ request()->is('report/anev-date-compare') ? 'active' : '' }}">
+                                        <a href="{{ route('report_anev_daily') }}"> Laporan Anev Harian </a>
+                                    </li>
+                                    @if (!empty(operationPlans()))
+                                        @if (authUser()->id == 1)
+                                            <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
+                                                <a href="{{ route('report_all_polda_compare') }}"> Laporan Perbandingan Harian </a>
+                                            </li>
+                                        @endif
+                                    @endif
+                                </ul>
+                            </li>
+                        @endrole
+
                         <li class="menu single-menu mobile_panduan">
                             <a href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress', true).start();">
                                 <div>
@@ -430,6 +492,8 @@
             </div>
 
 </div>
+
+
 <div class="layout-px-spacing">
     <div class="page-header">
         @stack('page_title')

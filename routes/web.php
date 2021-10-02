@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/home', 'HomeController@welcomePage')->name('home');  
+Route::get('/home', 'HomeController@welcomePage')->name('home');
 
 Auth::routes(['register' => false]);
 
@@ -44,7 +44,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/report/daily/id/{uuid}', 'ReportController@byId')->name('report_daily_by_id');
     Route::get('/submited/document/{uuid}', 'PoldaHasRencanaOperasiController@downloadDocument')->name('download_document');
 
-    // Route Hanya Bisa Diakses Oleh Administrator atau Korlantas Pusat
+    // ROUTE HANYA BISA DIAKSES OLEH ADMINISTRATOR ATAU KORLANTAS PUSAT
     Route::group(['middleware' => 'admin-or-pusat-only'], function () {
 
         Route::get('/today', 'ReportController@downloadReportToday')->name('report_today');
