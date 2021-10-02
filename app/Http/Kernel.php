@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'user-has-polda' => \App\Http\Middleware\UserHasPolda::class,
         'can-create-plan' => \App\Http\Middleware\CreateOperationPlan::class,
         'admin-or-pusat-only' => \App\Http\Middleware\AdminOrPusatOnly::class,
+        'access-laporan' => \App\Http\Middleware\AccessLaporan::class,
     ];
 }
