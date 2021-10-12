@@ -107,20 +107,6 @@ class DailyRekapController extends Controller
         $currentYear = $rencana_operartion_year_created;
         $prevYear = $rencana_operartion_year_created - 1;
 
-        // $dailyRekap = DailyRekap::with(['rencanaOperasi', 'poldaData'])->where('uuid', $uuid)->first();
-
-        // $polda = $dailyRekap->polda;
-
-        // $currentYear = $dailyRekap->year;
-        // $prevYear = $currentYear - 1;
-
-        // $rencana_operartion_id = $dailyRekap->rencana_operasi_id;
-
-        // $config_date = $dailyRekap->config_date;
-
-        // $start_date = $dailyRekap->operation_date_start;
-        // $end_date = $dailyRekap->operation_date_end;
-
         $prev = reportPrevToDisplayByRencanaOperasi($prevYear, $rencana_operartion_id);
         $current = reportCurrentToDisplayByRencanaOperasi($currentYear, $rencana_operartion_id);
 
