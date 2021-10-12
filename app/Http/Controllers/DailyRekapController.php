@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Exports\NewExport;
 use App\Models\DailyRekap;
 use Illuminate\Http\Request;
@@ -87,6 +88,41 @@ class DailyRekapController extends Controller
 
         $prev = reportPrevToDisplayByPoldaId($prevYear, $rencana_operartion_id, $start_date, $end_date, $polda);
         $current = reportCurrentToDisplayByPoldaId($currentYear, $rencana_operartion_id, $start_date, $end_date, $polda);
+
+        return excelTemplateDisplay(
+            $prev,
+            $current,
+            $prevYear,
+            $currentYear
+        );
+    }
+
+    public function all_rekap_by_rencana_operasi($uuid)
+    {
+
+        $rencanaOperasi = RencanaOperasi::where('uuid', $uuid)->firstOrFail();
+        $rencana_operartion_id = $rencanaOperasi->id;
+        $rencana_operartion_year_created = Carbon::createFromFormat('Y-m-d H:i:s', $rencanaOperasi->created_at)->year;
+
+        $currentYear = $rencana_operartion_year_created;
+        $prevYear = $rencana_operartion_year_created - 1;
+
+        // $dailyRekap = DailyRekap::with(['rencanaOperasi', 'poldaData'])->where('uuid', $uuid)->first();
+
+        // $polda = $dailyRekap->polda;
+
+        // $currentYear = $dailyRekap->year;
+        // $prevYear = $currentYear - 1;
+
+        // $rencana_operartion_id = $dailyRekap->rencana_operasi_id;
+
+        // $config_date = $dailyRekap->config_date;
+
+        // $start_date = $dailyRekap->operation_date_start;
+        // $end_date = $dailyRekap->operation_date_end;
+
+        $prev = reportPrevToDisplayByRencanaOperasi($prevYear, $rencana_operartion_id);
+        $current = reportCurrentToDisplayByRencanaOperasi($currentYear, $rencana_operartion_id);
 
         return excelTemplateDisplay(
             $prev,

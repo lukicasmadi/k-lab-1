@@ -213,5 +213,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/chart/laphar/all', 'HomeController@chart_laphar_all_project')->name('chart_laphar_all_project');
         Route::get('/chart/anev', 'HomeController@chart_anev')->name('chart_anev');
         Route::get('/chart/anev/all', 'HomeController@chart_anev_all')->name('chart_anev_all');
+
+        Route::get('/rekap/by/rencana-operasi/{uuid}', 'DailyRekapController@all_rekap_by_rencana_operasi')->name('all_rekap_by_rencana_operasi');
     });
 });

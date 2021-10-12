@@ -85,6 +85,28 @@ if (! function_exists('reportCurrentToDisplay')) {
 
 //================================================================================================================
 
+if (! function_exists('reportPrevToDisplayByRencanaOperasi')) {
+    function reportPrevToDisplayByRencanaOperasi($year, $rencana_operation_id) {
+        $outputLaporanPrev = basedQueryPrev()->where('year', $year)
+        ->where('rencana_operasi_id', $rencana_operation_id)
+        ->first();
+
+        return $outputLaporanPrev;
+    }
+}
+
+if (! function_exists('reportCurrentToDisplayByRencanaOperasi')) {
+    function reportCurrentToDisplayByRencanaOperasi($year, $rencana_operation_id) {
+        $outputLaporanCurrent = basedQueryCurrent()->where('year', $year)
+        ->where('rencana_operasi_id', $rencana_operation_id)
+        ->first();
+
+        return $outputLaporanCurrent;
+    }
+}
+
+//================================================================================================================
+
 if (! function_exists('reportDailyPrev')) {
     function reportDailyPrev($polda, $year, $rencana_operation_id, $config_date, $start_date, $end_date) {
 
