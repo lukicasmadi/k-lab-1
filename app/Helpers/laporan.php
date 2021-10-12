@@ -247,7 +247,7 @@ if (! function_exists('excelTemplate')) {
         if(is_null($customFileName) || empty($customFileName)) {
             $filename = 'report-'.$now;
         } else {
-            $filename = 'report-'.$customFileName;
+            $filename = $customFileName;
         }
 
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
