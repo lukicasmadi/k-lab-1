@@ -266,6 +266,16 @@ class HomeController extends Controller
         return $polda;
     }
 
+    public function downloadFilePanduan()
+    {
+        $headers = [
+            'Content-Type' => 'application/pdf',
+        ];
+
+        $fileName = "panduan_web.pdf";
+        return response()->download(public_path('document-upload/pdf/'.$fileName), $fileName, $headers);
+    }
+
     public function dashboardFiltered($projectSlug)
     {
         if(isPolda()) {

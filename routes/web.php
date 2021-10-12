@@ -10,6 +10,7 @@ Route::get('/forgot-password', 'UserController@forgot_password_index')->name('fo
 Route::post('/forgot-password/process', 'UserController@forgot_password_process')->name('forgot_password_process');
 Route::get('/not-assign', 'HomeController@notAssign')->name('notAssign');
 Route::get('/news-update/{slug}', 'HomeController@newsDetail')->name('news_detail');
+Route::get('/download/panduan', 'HomeController@downloadFilePanduan')->name('download_file_panduan');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index')->name('index');
