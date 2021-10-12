@@ -273,7 +273,7 @@ class HomeController extends Controller
         ];
 
         $fileName = "panduan_web.pdf";
-        return response()->download(public_path('document-upload/pdf/'.$fileName), $fileName, $headers);
+        return response()->download(public_path('pdf/'.$fileName), $fileName, $headers);
     }
 
     public function dashboardFiltered($projectSlug)
