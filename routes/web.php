@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/home', 'HomeController@welcomePage')->name('home');
+Route::get('/lihat-panduan', 'HomeController@lihatPanduan')->name('lihat_panduan');
 
 Auth::routes(['register' => false]);
 

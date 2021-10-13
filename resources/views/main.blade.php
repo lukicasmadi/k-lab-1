@@ -31,7 +31,7 @@
         <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing mt-1 mb-n2"> -->
             @foreach ($poldaBawah as $key => $val)
                 <a href="{{ route('korlantas_open_polda', $val->short_name) }}">
-                    <div class="cols-sm-1 mt-1">
+                    <div class="cols-sm-1">
                         <div id="{{ $val->short_name }}" class="grid-polda line glowred">
                             <p>{{ $val->short_name }}</p>
                             <img src="{{ asset('/img/polda/'.$val->logo) }}">
@@ -91,10 +91,10 @@
             <img class="linetoplight-dashboard" src="{{ asset('/img/line-polda-light.png') }}" width="100%">
         </div>
 
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
             <input type="hidden" name="pilihan_operasi_flag" id="pilihan_operasi_flag" value="{{ $filter_operation }}">
             <select class="form-control form-custom height-form" id="pilihan_operasi" name="pilihan_operasi">
-                <option selected="selected" value="current">OPERASI YG SEDANG BERJALAN</option>
+                <option selected="selected" value="current">OPERASI SAAT INI</option>
                 @foreach($allOperations as $key => $val)
                     <option value="{{$val->slug_name}}">{{$val->name}}</option>
                 @endforeach

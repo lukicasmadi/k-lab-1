@@ -84,6 +84,7 @@ h6 {
     --dashboard-tour : #b8fb3c;
     --dashboard-login: #00adef;
     --dashboard-title : #bfc9d4;
+    --dashboard-title2 : #79859b;
     --dashboard-polda : #fff;
     --dashboard-linetop: block;
     --dashboard-linetoplight: none;
@@ -100,6 +101,7 @@ h6 {
     --dashboard-tour : #00adef;
     --dashboard-login : #105c7c;
     --dashboard-title : #00adef;
+    --dashboard-title2 : #00adef;
     --dashboard-polda : #105c7c;
     --dashboard-linetop: none;
     --dashboard-linetoplight: block;
@@ -318,6 +320,7 @@ code {
 .page-header .toggle-switch {
     display: flex;
     margin-right: 7px;
+    margin-top: 13px;
 }
 
 .page-header .switch {
@@ -575,7 +578,7 @@ transform: translateX(34px);
 .navbar .nav-logo a.navbar-brand img {
     /* width: 40px;
     height: 40px; */
-    width: 55px;
+    width: 75px;
     border-radius: 5px;
 }
 
@@ -1173,7 +1176,7 @@ transform: translateX(34px);
 
 .navbar .navbar-item .nav-item.user-profile-dropdown a.user .media img {
     /* width: 37px; */
-    height: 37px;
+    height: 50px;
     border-radius: 6px;
     /* box-shadow: 0 0px 0.9px rgba(0, 0, 0, 0.07), 0 0px 7px rgba(0, 0, 0, 0.14); */
     margin-right: 18px;
@@ -1318,8 +1321,23 @@ transform: translateX(34px);
     text-transform: uppercase;
 }
 
+.page-title h3 p.tutor {
+    margin-bottom: 0;
+    margin: 0;
+    font-size: 11px;
+    color: var(--dashboard-title2);
+    font-weight: normal;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
 .page-title h3 span {
     padding-left: 20px;
+}
+
+.page-title h3 p.tutor {
+    margin-top: 3px;
+    padding-left: 42px;
 }
 
 .page-header {

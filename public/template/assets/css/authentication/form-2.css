@@ -455,12 +455,11 @@ svg.right-kurung path.a {
 }
 
 .head-logo img {
-  /* bottom: 0; */
   top: 0;
   float: left;
   padding: 0;
   margin: 0px 8px 5px 0;
-  width: 55px;
+  width: 75px;
   /* width: 33px; */
   /* margin-bottom: 35px; */
 }
@@ -579,9 +578,9 @@ svg.right-kurung path.a {
 
 .head-logo h3 {
   margin: 0;
-  padding-top: 8px;
+  padding-top: 18px;
   line-height: 1.39;
-  font-size: 13px;
+  font-size: 15px;
   text-transform: uppercase;
   /* text-align: center; */
 }

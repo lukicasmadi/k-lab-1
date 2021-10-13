@@ -249,6 +249,11 @@ class HomeController extends Controller
         return view('info');
     }
 
+    public function lihatPanduan()
+    {
+        return view('panduan');
+    }
+
     public function notAssign()
     {
         return view('not_assign');
