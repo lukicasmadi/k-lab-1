@@ -455,6 +455,7 @@ svg.right-kurung path.a {
 }
 
 .head-logo img {
+  /* bottom: 0; */
   top: 0;
   float: left;
   padding: 0;
