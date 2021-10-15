@@ -89,15 +89,34 @@ class DailyRekapController extends Controller
         $start_date = $dailyRekap->operation_date_start;
         $end_date = $dailyRekap->operation_date_end;
 
+        if($config_date == "all") {
+            $hari = "SEMUA";
+        } else {
+            $hari = indonesianDate($start_date)." S/D ".indonesianDate($end_date);
+        }
+
         $prev = reportPrevToDisplayByPoldaId($prevYear, $rencana_operartion_id, $start_date, $end_date, $polda);
         $current = reportCurrentToDisplayByPoldaId($currentYear, $rencana_operartion_id, $start_date, $end_date, $polda);
 
-        return excelTemplateDisplay(
+        excelTemplateNew(
+            'polda_all',
             $prev,
             $current,
-            $prevYear,
-            $currentYear
+            'KESATUAN : '.$dailyRekap->kesatuan,
+            $hari,
+            'NAMA : ATASAN',
+            'PANGKAT NRP',
+            'JABATAN',
+            'REPORT NAME',
+            'TESTING'
         );
+
+        // return excelTemplateDisplay(
+        //     $prev,
+        //     $current,
+        //     $prevYear,
+        //     $currentYear
+        // );
     }
 
     public function all_rekap_by_rencana_operasi($uuid)

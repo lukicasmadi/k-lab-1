@@ -5,7 +5,9 @@ use App\Models\DailyInput;
 use App\Models\DailyInputPrev;
 use Illuminate\Support\Facades\DB;
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Style\Color;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Style\Border;
 
 //================================================================================================================
 
@@ -1222,6 +1224,8 @@ if (! function_exists('excelTemplate')) {
 
         $sheet->setCellValue('C424', applyZero($prev->rapid_test_antigen_positif));
         $sheet->setCellValue('D424', applyZero($current->rapid_test_antigen_positif));
+
+        // $spreadsheet->getActiveSheet()->getStyle('A1:G8')->getBorders()->getAllBorders()->setBorderStyle(Border::BORDER_NONE);
 
 
         //write it again to Filesystem with the same name (=replace)

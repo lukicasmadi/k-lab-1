@@ -53,7 +53,8 @@
         "files": [
             "app/Helpers/helpers.php",
             "app/Helpers/laporan.php",
-            "app/Helpers/based_query.php"
+            "app/Helpers/based_query.php",
+            "app/Helpers/laporan_new.php"
         ]
     },
     "autoload-dev": {

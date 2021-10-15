@@ -124,6 +124,30 @@ $(document).ready(function () {
         $('#modalForm').modal('show')
     })
 
+    $('#tanggal_mulai').datepicker({
+        format: 'dd-mm-yyyy',
+        todayHighlight: true,
+        autoclose: true,
+    })
+
+    $('#tanggal_selesai').datepicker({
+        format: 'dd-mm-yyyy',
+        todayHighlight: true,
+        autoclose: true,
+    })
+
+    $('#tanggal_mulai_edit').datepicker({
+        format: 'dd-mm-yyyy',
+        todayHighlight: true,
+        autoclose: true,
+    })
+
+    $('#tanggal_selesai_edit').datepicker({
+        format: 'dd-mm-yyyy',
+        todayHighlight: true,
+        autoclose: true,
+    })
+
     $("#config_date").change(function (e) {
         e.preventDefault()
         $("#tanggal_mulai").val('')
