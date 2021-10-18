@@ -98,25 +98,25 @@ class DailyRekapController extends Controller
         $prev = reportPrevToDisplayByPoldaId($prevYear, $rencana_operartion_id, $start_date, $end_date, $polda);
         $current = reportCurrentToDisplayByPoldaId($currentYear, $rencana_operartion_id, $start_date, $end_date, $polda);
 
-        // excelTemplateNew(
-        //     'polda_all',
-        //     $prev,
-        //     $current,
-        //     'KESATUAN : '.$dailyRekap->kesatuan,
-        //     $hari,
-        //     'NAMA : ATASAN',
-        //     'PANGKAT NRP',
-        //     'JABATAN',
-        //     'REPORT NAME',
-        //     'TESTING'
-        // );
-
-        return excelTemplateDisplay(
+        excelTemplateNew(
+            'polda_all',
             $prev,
             $current,
-            $prevYear,
-            $currentYear
+            'KESATUAN : '.$dailyRekap->kesatuan,
+            $hari,
+            'NAMA : ATASAN',
+            'PANGKAT NRP',
+            'JABATAN',
+            'REPORT NAME',
+            'TESTING'
         );
+
+        // return excelTemplateDisplay(
+        //     $prev,
+        //     $current,
+        //     $prevYear,
+        //     $currentYear
+        // );
     }
 
     public function all_rekap_by_rencana_operasi($uuid)
