@@ -153,7 +153,7 @@ class ReportController extends Controller
             $firstData,
             $secondData,
             'KESATUAN : Korlantas',
-            "Seluruh Polda, ".$start_date.' S/D '.$end_date,
+            "Seluruh Polda, ".$start_date.' s/d '.$end_date,
             'NAMA : ',
             '',
             '',
@@ -349,11 +349,20 @@ class ReportController extends Controller
         $prev = reportPrevToDisplay($yearPrev, $rencana_operation_id, $start_date, $end_date);
         $current = reportCurrentToDisplay($yearCurrent, $rencana_operation_id, $start_date, $end_date);
 
-        return excelTemplateDisplay(
+        $rencanaOperasi = RencanaOperasi::find($rencana_operation_id);
+
+        excelTemplateNew(
+            'polda_all',
             $prev,
             $current,
-            $yearPrev,
-            $yearCurrent
+            'KESATUAN : Korlantas',
+            'Seluruh Polda, '.$start_date.' s/d '.$end_date,
+            null,
+            null,
+            null,
+            'Anev '.$start_date.' s/d '.$end_date,
+            $rencanaOperasi->name,
+            null
         );
     }
 
