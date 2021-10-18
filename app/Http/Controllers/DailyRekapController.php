@@ -39,6 +39,7 @@ class DailyRekapController extends Controller
         $end_date = $dailyRekap->operation_date_end;
         $prevYear = $year - 1;
         $file_name = $dailyRekap->report_name;
+        $operationName = $dailyRekap->rencanaOperasi->name;
 
         $prev = reportDailyPrev($polda, $prevYear, $rencana_operartion_id, $config_date, $start_date, $end_date);
         $current = reportDailyCurrent($polda, $year, $rencana_operartion_id, $config_date, $start_date, $end_date);
@@ -55,7 +56,8 @@ class DailyRekapController extends Controller
                 $poldaSubmited->pangkat_dan_nrp,
                 $poldaSubmited->jabatan,
                 $poldaSubmited->nama_laporan,
-                $file_name
+                $file_name,
+                $operationName
             );
         } else {
             excelTemplate(
@@ -68,7 +70,8 @@ class DailyRekapController extends Controller
                 $dailyRekap->pangkat_nrp,
                 $dailyRekap->jabatan,
                 $dailyRekap->report_name,
-                $file_name
+                $file_name,
+                $operationName
             );
         }
     }

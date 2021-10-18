@@ -302,7 +302,7 @@ class ReportController extends Controller
                 $poldaSubmited->pangkat_dan_nrp,
                 $poldaSubmited->jabatan,
                 $poldaSubmited->nama_laporan,
-                'polda-'.poldaName().'-'.indonesianStandart($submited_date)
+                'POLDA-'.poldaName().'-'.indonesianStandart($submited_date)
             );
 
         } else {
@@ -319,7 +319,7 @@ class ReportController extends Controller
                 $poldaSubmited->pangkat_dan_nrp,
                 $poldaSubmited->jabatan,
                 $poldaSubmited->nama_laporan,
-                'polda-'.session('polda_short_name').'-'.indonesianStandart($submited_date)
+                'POLDA-'.session('polda_short_name').'-'.indonesianStandart($submited_date)
             );
         }
     }
