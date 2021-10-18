@@ -94,18 +94,20 @@ class ReportController extends Controller
         $prev = reportPrevToDisplayAnevDateCompare($rencana_operation_id, $start_date, $start_date);
         $current = reportCurrentToDisplayAnevDateCompare($rencana_operation_id, $end_date, $end_date);
 
-        excelTemplateDateCompare(
+        $rencanaOperasi = RencanaOperasi::find($rencana_operation_id);
+
+        excelTemplateNew(
+            'polda_all',
             $prev,
             $current,
             'KESATUAN : Korlantas',
+            $start_date." s/d".$end_date,
+            null,
+            null,
+            null,
             "PERBANDINGAN TANGGAL ".indonesianStandart($request->tanggal_pembanding_1).' DAN '.indonesianStandart($request->tanggal_pembanding_2),
-            '',
-            '',
-            '',
-            '',
-            'Anev Daily Compare '.indonesianStandart($request->tanggal_pembanding_1).' and '.indonesianStandart($request->tanggal_pembanding_2),
-            indonesianStandart($request->tanggal_pembanding_1),
-            indonesianStandart($request->tanggal_pembanding_2)
+            $rencanaOperasi->name,
+            null
         );
     }
 
@@ -375,11 +377,20 @@ class ReportController extends Controller
         $prev = reportPrevToDisplayAnevDateCompare($rencana_operation_id, $start_date, $start_date);
         $current = reportCurrentToDisplayAnevDateCompare($rencana_operation_id, $end_date, $end_date);
 
-        return excelTemplateDisplayDateCompare(
+        $rencanaOperasi = RencanaOperasi::find($rencana_operation_id);
+
+        excelTemplateNew(
+            'polda_all',
             $prev,
             $current,
-            indonesianStandart($start_date),
-            indonesianStandart($end_date)
+            'KESATUAN : Korlantas',
+            'Seluruh Polda, '.$start_date.' s/d '.$end_date,
+            null,
+            null,
+            null,
+            'Anev '.$start_date.' s/d '.$end_date,
+            $rencanaOperasi->name,
+            null
         );
     }
 
