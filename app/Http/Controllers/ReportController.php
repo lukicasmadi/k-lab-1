@@ -120,6 +120,8 @@ class ReportController extends Controller
         $prev = reportPrevToDisplay($yearPrev, $rencana_operation_id, $start_date, $end_date);
         $current = reportCurrentToDisplay($yearCurrent, $rencana_operation_id, $start_date, $end_date);
 
+        $rencanaOperasi = RencanaOperasi::find($rencana_operation_id);
+
         excelTemplate(
             'per_polda',
             $prev,
@@ -130,7 +132,8 @@ class ReportController extends Controller
             '',
             '',
             '',
-            'Anev '.indonesianStandart($request->tanggal_pembanding_pertama).'-'.indonesianStandart($request->tanggal_pembanding_kedua)
+            'Anev '.indonesianStandart($request->tanggal_pembanding_pertama).'-'.indonesianStandart($request->tanggal_pembanding_kedua),
+            $rencanaOperasi->name
         );
     }
 
@@ -143,6 +146,8 @@ class ReportController extends Controller
         $firstData = laporanAnevDateCompareFirst($operation_id, $start_date, $start_date);
         $secondData = laporanAnevDateCompareSecond($operation_id, $end_date, $end_date);
 
+        $rencanaOperasi = RencanaOperasi::find($operation_id);
+
         excelTemplate(
             'per_polda',
             $firstData,
@@ -153,7 +158,8 @@ class ReportController extends Controller
             '',
             '',
             '',
-            'Anev Date Compare'.$start_date.'-'.$end_date
+            'Anev Date Compare'.$start_date.'-'.$end_date,
+            $rencanaOperasi
         );
     }
 
@@ -179,7 +185,8 @@ class ReportController extends Controller
             '',
             '',
             '',
-            'REPORT ALL POLDA'
+            'REPORT ALL POLDA',
+            operationPlans()->name
         );
     }
 
@@ -252,7 +259,9 @@ class ReportController extends Controller
         $prev = prevPerPolda(poldaId(), $tanggal_mulai, $tanggal_selesai);
         $current = currentPerPolda(poldaId(), $tanggal_mulai, $tanggal_selesai);
 
-        $poldaSubmited = PoldaSubmited::where('polda_id', poldaId())->orderBy('id', 'desc')->first();
+        $poldaSubmited = PoldaSubmited::with('rencanaOperasi')->where('polda_id', poldaId())->orderBy('id', 'desc')->first();
+
+        $operationName = $poldaSubmited->rencanaOperasi->name;
 
         if(empty($poldaSubmited)) {
             flash('Data inputan polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
@@ -269,13 +278,14 @@ class ReportController extends Controller
             $poldaSubmited->pangkat_dan_nrp,
             $poldaSubmited->jabatan,
             $poldaSubmited->nama_laporan,
-            'polda-'.poldaName().'-'.$request->tanggal_mulai.'-'.$request->tanggal_selesai
+            'polda-'.poldaName().'-'.$request->tanggal_mulai.'-'.$request->tanggal_selesai,
+            $operationName
         );
     }
 
     public function byId($uuid)
     {
-        $poldaSubmited = PoldaSubmited::whereUuid($uuid)->first();
+        $poldaSubmited = PoldaSubmited::with('rencanaOperasi')->whereUuid($uuid)->first();
 
         if(empty($poldaSubmited)) {
             flash('Inputan polda tidak ditemukan. Silakan refresh halaman dan coba lagi')->error();
@@ -287,6 +297,8 @@ class ReportController extends Controller
         $submited_date = dateOnly($poldaSubmited->submited_date);
         $submited_year = yearOnly($poldaSubmited->submited_date);
         $submited_year_prev = yearOnly($poldaSubmited->submited_date) - 1;
+
+        $operationName = $poldaSubmited->rencanaOperasi->name;
 
         if(isPolda()) {
             $prev = reportDailyPrev($polda_id, $submited_year_prev, $rencana_operasi_id, null, $submited_date, $submited_date);
@@ -302,7 +314,8 @@ class ReportController extends Controller
                 $poldaSubmited->pangkat_dan_nrp,
                 $poldaSubmited->jabatan,
                 $poldaSubmited->nama_laporan,
-                'POLDA-'.poldaName().'-'.indonesianStandart($submited_date)
+                'POLDA-'.poldaName().'-'.indonesianStandart($submited_date),
+                $operationName
             );
 
         } else {
@@ -319,7 +332,8 @@ class ReportController extends Controller
                 $poldaSubmited->pangkat_dan_nrp,
                 $poldaSubmited->jabatan,
                 $poldaSubmited->nama_laporan,
-                'POLDA-'.session('polda_short_name').'-'.indonesianStandart($submited_date)
+                'POLDA-'.session('polda_short_name').'-'.indonesianStandart($submited_date),
+                $operationName
             );
         }
     }
