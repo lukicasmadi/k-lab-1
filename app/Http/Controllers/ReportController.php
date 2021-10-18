@@ -96,7 +96,7 @@ class ReportController extends Controller
 
         $rencanaOperasi = RencanaOperasi::find($rencana_operation_id);
 
-        excelTemplateNew(
+        excelTemplate(
             'polda_all',
             $prev,
             $current,
@@ -105,7 +105,7 @@ class ReportController extends Controller
             null,
             null,
             null,
-            "PERBANDINGAN TANGGAL ".indonesianStandart($request->tanggal_pembanding_1).' DAN '.indonesianStandart($request->tanggal_pembanding_2),
+            "Anev ".indonesianStandart($request->tanggal_pembanding_1).' DAN '.indonesianStandart($request->tanggal_pembanding_2),
             $rencanaOperasi->name,
             null
         );
@@ -134,7 +134,7 @@ class ReportController extends Controller
             '',
             '',
             '',
-            'Anev '.indonesianStandart($request->tanggal_pembanding_pertama).'-'.indonesianStandart($request->tanggal_pembanding_kedua),
+            "Anev ".indonesianStandart($request->tanggal_pembanding_pertama).' DAN '.indonesianStandart($request->tanggal_pembanding_kedua),
             $rencanaOperasi->name
         );
     }
@@ -160,7 +160,7 @@ class ReportController extends Controller
             '',
             '',
             '',
-            'Anev Date Compare'.$start_date.'-'.$end_date,
+            "PERBANDINGAN TANGGAL ".indonesianStandart($start_date).' s/d '.indonesianStandart($end_date),
             $rencanaOperasi
         );
     }
