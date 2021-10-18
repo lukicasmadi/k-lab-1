@@ -115,13 +115,6 @@ class DailyRekapController extends Controller
             $operationName,
             null
         );
-
-        // return excelTemplateDisplay(
-        //     $prev,
-        //     $current,
-        //     $prevYear,
-        //     $currentYear
-        // );
     }
 
     public function all_rekap_by_rencana_operasi($uuid)
@@ -137,11 +130,18 @@ class DailyRekapController extends Controller
         $prev = reportPrevToDisplayByRencanaOperasi($prevYear, $rencana_operartion_id);
         $current = reportCurrentToDisplayByRencanaOperasi($currentYear, $rencana_operartion_id);
 
-        return excelTemplateDisplay(
+        excelTemplateNew(
+            'polda_all',
             $prev,
             $current,
-            $prevYear,
-            $currentYear
+            'KESATUAN : Korlantas',
+            $rencanaOperasi->start_date." s/d ".$rencanaOperasi->end_date,
+            null,
+            null,
+            null,
+            null,
+            $rencanaOperasi->name,
+            null
         );
     }
 
