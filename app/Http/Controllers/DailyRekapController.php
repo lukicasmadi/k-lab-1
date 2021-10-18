@@ -83,6 +83,7 @@ class DailyRekapController extends Controller
         $prevYear = $currentYear - 1;
 
         $rencana_operartion_id = $dailyRekap->rencana_operasi_id;
+        $operationName = $dailyRekap->rencanaOperasi->name;
 
         $config_date = $dailyRekap->config_date;
 
@@ -107,8 +108,9 @@ class DailyRekapController extends Controller
             'NAMA : ATASAN',
             'PANGKAT NRP',
             'JABATAN',
-            'REPORT NAME',
-            'TESTING'
+            $dailyRekap->report_name,
+            $operationName,
+            null
         );
 
         // return excelTemplateDisplay(
