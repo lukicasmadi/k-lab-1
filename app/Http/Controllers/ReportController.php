@@ -396,12 +396,30 @@ class ReportController extends Controller
 
     public function reportAllPoldaDetail()
     {
-        if(!empty(authUser())) {
-            $polda = Polda::with('poldaInputCurrentToday', 'poldaInputPrevToday')->select('id', 'uuid', 'name', 'short_name')->orderBy('id', 'desc')->get();
+        // if(!empty(authUser())) {
+        //     $polda = Polda::with('poldaInputCurrentToday', 'poldaInputPrevToday')->select('id', 'uuid', 'name', 'short_name')->orderBy('id', 'desc')->get();
 
-            return dailyReportDetail($polda);
-        } else {
-            abort(404);
-        }
+        //     return dailyReportDetail($polda);
+        // } else {
+        //     abort(404);
+        // }
+
+        $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");
+
+        $currentYear = array_unique(DailyInput::pluck('year')->toArray());
+        $prevYear = array_unique(DailyInputPrev::pluck('year')->toArray());
+
+        return view('report.comparison_all', compact('rencanaOperasi', 'currentYear', 'prevYear'));
+    }
+
+    public function reportAllPoldaDetailProcess(ReportAnevDisplay $request)
+    {
+        $operation_id = $request->operation_id;
+        $tahun_pembanding_pertama = $request->tahun_pembanding_pertama;
+        $tahun_pembanding_kedua = $request->tahun_pembanding_kedua;
+        $tanggal_pembanding_pertama = $request->tanggal_pembanding_pertama;
+        $tanggal_pembanding_kedua = $request->tanggal_pembanding_kedua;
+
+
     }
 }

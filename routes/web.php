@@ -57,6 +57,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/report/anev-date-compare/process', 'ReportController@anevDateCompareProcess')->name('report_anev_daily_process');
         Route::get('/report/daily/polda/{poldaUuid}', 'ReportController@poldaUuid')->name('report_bypolda');
         Route::get('/polda-data/{short_name}', 'HomeController@openPoldaData')->name('korlantas_open_polda');
+        Route::post('/report/daily-compare/process', 'ReportController@reportAllPoldaDetailProcess')->name('report_all_polda_detail_process');
     });
 
     // ROUTE HANYA BISA DIAKSES OLEH ADMINISTRATOR ATAU KORLANTAS PUSAT

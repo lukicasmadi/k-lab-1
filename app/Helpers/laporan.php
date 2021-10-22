@@ -3276,7 +3276,6 @@ if (! function_exists('excelViewAbsensi')) {
     }
 }
 
-
 if (! function_exists('laporanPrev')) {
     function laporanPrev($operation_id, $year, $start_date, $end_date) {
         $outputLaporanPrev = basedQueryPrev()->where('year', $year)
@@ -3318,7 +3317,6 @@ if (! function_exists('laporanAnevDateCompareSecond')) {
         return $outputLaporanCurrent;
     }
 }
-
 
 if (! function_exists('dailyReportDetail')) {
     function dailyReportDetail($poldaYangKe)

@@ -1010,3 +1010,167 @@ if (! function_exists('excelTemplateNew')) {
         return $message;
     }
 }
+
+if (! function_exists('newDailyReportDetail')) {
+    function newDailyReportDetail($poldaYangKe)
+    {
+        $excelPath = public_path('template/excel');
+        $excelTemplate = $excelPath."/format_laporan_detail_daily.xlsx";
+        $spreadsheet = IOFactory::load($excelTemplate);
+        $now = now()->format("Y-m-d");
+        $filename = 'Report All Polda '.$now;
+
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="'.$filename.'.xlsx"');
+
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $sheet->setCellValue('A5', 'LAPORAN HARIAN '.upperCase(operationPlans()->name));
+        $sheet->setCellValue('A6', 'KESATUAN : KORLANTAS');
+        $sheet->setCellValue('A7', 'HARI/TGL : '.indonesianFullDayAndDate(date("Y-m-d H:i:s")));
+
+        $sheet->setCellValue('C10', nowYearMinusOne());
+        $sheet->setCellValue('D10', nowYear());
+
+        $skip = [
+            '16',
+            '17',
+            '18',
+            '36',
+            '37',
+            '55',
+            '56',
+            '58',
+            '59',
+            '63',
+            '64',
+            '70',
+            '71',
+            '79',
+            '80',
+            '92',
+            '93',
+            '104',
+            '105',
+            '106',
+            '112',
+            '113',
+            '118',
+            '119',
+            '124',
+            '125',
+            '126',
+            '132',
+            '136',
+            '137',
+            '145',
+            '146',
+            '158',
+            '159',
+            '170',
+            '171',
+            '178',
+            '179',
+            '190',
+            '191',
+            '199',
+            '200',
+            '212',
+            '213',
+            '224',
+            '225',
+            '226',
+            '233',
+            '234',
+            '239',
+            '240',
+            '245',
+            '246',
+            '247',
+            '268',
+            '269',
+            '278',
+            '279',
+            '285',
+            '291',
+            '297',
+            '303',
+            '309',
+            '315',
+            '321',
+            '329',
+            '333',
+            '334',
+            '335',
+            '336',
+            '343',
+            '344',
+            '349',
+            '350',
+            '355',
+            '356',
+            '364',
+            '365',
+            '366',
+            '371',
+            '372',
+            '373',
+            '374',
+            '384',
+            '388',
+            '408',
+            '409',
+            '414',
+        ];
+
+
+        foreach($poldaYangKe as $polda) {
+
+            if(!is_null($polda->poldaInputCurrentToday)) {
+
+                $temp = [];
+
+                foreach($polda->poldaInputCurrentToday->toArray() as $key=>$value) {
+                    array_push($temp, $value);
+                }
+
+                $start = 5;
+
+                for($i=14; $i<=413; $i++) {
+                    if (in_array($i, $skip)) {
+                        continue;
+                    } else {
+                        $flagName = poldaFlag($polda->name);
+
+                        $sheet->setCellValue($flagName[0].$i, $temp[$start++]);
+                    }
+                }
+            }
+
+            if(!is_null($polda->poldaInputPrevToday)) {
+
+                $temp = [];
+
+                foreach($polda->poldaInputPrevToday->toArray() as $key=>$value) {
+                    array_push($temp, $value);
+                }
+
+                $start = 5;
+
+                for($i=14; $i<=413; $i++) {
+                    if (in_array($i, $skip)) {
+                        continue;
+                    } else {
+                        $flagName = poldaFlag($polda->name);
+
+                        $sheet->setCellValue($flagName[1].$i, $temp[$start++]);
+                    }
+                }
+            }
+        }
+
+
+        $writer = new Xlsx($spreadsheet);
+        $writer->save('php://output');
+    }
+}
