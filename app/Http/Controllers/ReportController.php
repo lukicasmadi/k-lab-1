@@ -15,6 +15,7 @@ use App\Exports\DailyInputExport;
 use App\Exports\FilterComparison;
 use App\Exports\PoldaByUuidExport;
 use Illuminate\Support\Facades\DB;
+use App\Models\SortablePoldaReport;
 use App\Exports\NewComparisonExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\DailyInputPrevExport;
@@ -404,12 +405,17 @@ class ReportController extends Controller
         //     abort(404);
         // }
 
-        $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");
 
-        $currentYear = array_unique(DailyInput::pluck('year')->toArray());
-        $prevYear = array_unique(DailyInputPrev::pluck('year')->toArray());
 
-        return view('report.comparison_all', compact('rencanaOperasi', 'currentYear', 'prevYear'));
+
+        logger(prevDailyInputWithSum());
+
+        // $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");
+
+        // $currentYear = array_unique(DailyInput::pluck('year')->toArray());
+        // $prevYear = array_unique(DailyInputPrev::pluck('year')->toArray());
+
+        // return view('report.comparison_all', compact('rencanaOperasi', 'currentYear', 'prevYear'));
     }
 
     public function reportAllPoldaDetailProcess(ReportAnevDisplay $request)
@@ -419,7 +425,5 @@ class ReportController extends Controller
         $tahun_pembanding_kedua = $request->tahun_pembanding_kedua;
         $tanggal_pembanding_pertama = $request->tanggal_pembanding_pertama;
         $tanggal_pembanding_kedua = $request->tanggal_pembanding_kedua;
-
-
     }
 }

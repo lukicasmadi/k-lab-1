@@ -440,13 +440,13 @@ if (! function_exists('excelTemplate')) {
         $sheet->setCellValue('C87', applyZero($prev->usia_pelaku_pelanggaran_36_40_tahun));
         $sheet->setCellValue('D87', applyZero($current->usia_pelaku_pelanggaran_36_40_tahun));
 
-        $sheet->setCellValue('C88', applyZero($prev->uusia_pelaku_pelanggaran_41_45_tahun));
+        $sheet->setCellValue('C88', applyZero($prev->usia_pelaku_pelanggaran_41_45_tahun));
         $sheet->setCellValue('D88', applyZero($current->usia_pelaku_pelanggaran_41_45_tahun));
 
         $sheet->setCellValue('C89', applyZero($prev->usia_pelaku_pelanggaran_46_50_tahunn));
         $sheet->setCellValue('D89', applyZero($current->usia_pelaku_pelanggaran_46_50_tahun));
 
-        $sheet->setCellValue('C90', applyZero($prev->usia_pelaku_pelanggaran_51_55_tahunn));
+        $sheet->setCellValue('C90', applyZero($prev->usia_pelaku_pelanggaran_51_55_tahun));
         $sheet->setCellValue('D90', applyZero($current->usia_pelaku_pelanggaran_51_55_tahun));
 
         $sheet->setCellValue('C91', applyZero($prev->usia_pelaku_pelanggaran_56_60_tahun));
@@ -590,7 +590,7 @@ if (! function_exists('excelTemplate')) {
         $sheet->setCellValue('C154', applyZero($prev->usia_korban_kecelakaan_41_45));
         $sheet->setCellValue('D154', applyZero($current->usia_korban_kecelakaan_41_45));
 
-        $sheet->setCellValue('C155', applyZero($prev->usia_korban_kecelakaan_45_50));
+        $sheet->setCellValue('C155', applyZero($prev->usia_korban_kecelakaan_45_50));   // NOTE : INI SALAH MUNGKIN HARUSNYA 46-50
         $sheet->setCellValue('D155', applyZero($current->usia_korban_kecelakaan_45_50));
 
         $sheet->setCellValue('C156', applyZero($prev->usia_korban_kecelakaan_51_55));
@@ -3449,6 +3449,12 @@ if (! function_exists('dailyReportDetail')) {
                         $flagName = poldaFlag($polda->name);
 
                         $sheet->setCellValue($flagName[0].$i, $temp[$start++]);
+
+                        // $flagName[0].$i ADALAH LOOPING DARI ROW
+                        // C14
+                        // C15
+                        // C19
+                        // DST....
                     }
                 }
             }
