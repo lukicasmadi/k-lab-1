@@ -408,22 +408,25 @@ class ReportController extends Controller
 
 
 
-        logger(prevDailyInputWithSum());
+        // logger(currentDailyInputWithSum());
 
-        // $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");
+        $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");
 
-        // $currentYear = array_unique(DailyInput::pluck('year')->toArray());
-        // $prevYear = array_unique(DailyInputPrev::pluck('year')->toArray());
+        $currentYear = array_unique(DailyInput::pluck('year')->toArray());
+        $prevYear = array_unique(DailyInputPrev::pluck('year')->toArray());
 
-        // return view('report.comparison_all', compact('rencanaOperasi', 'currentYear', 'prevYear'));
+        return view('report.comparison_all', compact('rencanaOperasi', 'currentYear', 'prevYear'));
     }
 
     public function reportAllPoldaDetailProcess(ReportAnevDisplay $request)
     {
         $operation_id = $request->operation_id;
-        $tahun_pembanding_pertama = $request->tahun_pembanding_pertama;
-        $tahun_pembanding_kedua = $request->tahun_pembanding_kedua;
-        $tanggal_pembanding_pertama = $request->tanggal_pembanding_pertama;
-        $tanggal_pembanding_kedua = $request->tanggal_pembanding_kedua;
+        $prev_year = $request->tahun_pembanding_pertama;
+        $current_year = $request->tahun_pembanding_kedua;
+        $start_date = date('Y-m-d', strtotime($request->tanggal_pembanding_pertama));
+        $end_date = date('Y-m-d', strtotime($request->tanggal_pembanding_kedua));
+
+        $prev = prevDailyInputWithSum($operation_id, $prev_year, $start_date, $end_date);
+        $current = currentDailyInputWithSum($operation_id, $current_year, $start_date, $end_date);
     }
 }
