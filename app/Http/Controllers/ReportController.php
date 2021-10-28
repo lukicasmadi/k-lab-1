@@ -396,14 +396,6 @@ class ReportController extends Controller
 
     public function reportAllPoldaDetail()
     {
-        // if(!empty(authUser())) {
-        //     $polda = Polda::with('poldaInputCurrentToday', 'poldaInputPrevToday')->select('id', 'uuid', 'name', 'short_name')->orderBy('id', 'desc')->get();
-
-        //     return dailyReportDetail($polda);
-        // } else {
-        //     abort(404);
-        // }
-
         $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");
 
         $currentYear = array_unique(DailyInput::pluck('year')->toArray());
