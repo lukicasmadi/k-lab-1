@@ -1174,3 +1174,135 @@ if (! function_exists('newDailyReportDetail')) {
         $writer->save('php://output');
     }
 }
+
+if (! function_exists('compareAllPoldaInput')) {
+    function compareAllPoldaInput($data_prev, $data_current, $start_date, $end_date, $prev_year, $current_year) {
+
+        $excelPath = public_path('template/excel');
+        $excelTemplate = $excelPath."/format_laporan_detail_daily.xlsx";
+        $spreadsheet = IOFactory::load($excelTemplate);
+        $now = now()->format("Y-m-d");
+        $filename = 'Laporan Perbandingan Harian Tanggal '.$start_date.' sampai '.$end_date;
+
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="'.$filename.'.xlsx"');
+
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $sheet->setCellValue('A5', 'LAPORAN HARIAN '.upperCase(operationPlans()->name));
+        $sheet->setCellValue('A7', 'HARI/TGL : '.indonesianFullDayAndDate(date("Y-m-d H:i:s")));
+
+        $skip = [
+            '16',
+            '17',
+            '18',
+            '36',
+            '37',
+            '55',
+            '56',
+            '58',
+            '59',
+            '63',
+            '64',
+            '70',
+            '71',
+            '79',
+            '80',
+            '92',
+            '93',
+            '104',
+            '105',
+            '106',
+            '112',
+            '113',
+            '118',
+            '119',
+            '124',
+            '125',
+            '126',
+            '132',
+            '136',
+            '137',
+            '145',
+            '146',
+            '158',
+            '159',
+            '170',
+            '171',
+            '178',
+            '179',
+            '190',
+            '191',
+            '199',
+            '200',
+            '212',
+            '213',
+            '224',
+            '225',
+            '226',
+            '233',
+            '234',
+            '239',
+            '240',
+            '245',
+            '246',
+            '247',
+            '268',
+            '269',
+            '278',
+            '279',
+            '285',
+            '291',
+            '297',
+            '303',
+            '309',
+            '315',
+            '321',
+            '329',
+            '333',
+            '334',
+            '335',
+            '336',
+            '343',
+            '344',
+            '349',
+            '350',
+            '355',
+            '356',
+            '364',
+            '365',
+            '366',
+            '371',
+            '372',
+            '373',
+            '374',
+            '384',
+            '388',
+            '408',
+            '409',
+            '414',
+        ];
+
+        $flagRowTahun = 10;
+
+        foreach($data_prev as $prev) {
+            $flag = poldaFlag($prev->polda_name);
+            $sheet->setCellValue($flag[0].$flagRowTahun, $prev_year);
+            $sheet->setCellValue($flag[1].$flagRowTahun, $current_year);
+        }
+
+        $sheet->setCellValue("BS".$flagRowTahun, $prev_year);
+        $sheet->setCellValue("BT".$flagRowTahun, $current_year);
+
+
+
+
+        // foreach($data_current as $current) {
+        //     logger(poldaFlag($current->polda_name)[1]);
+        // }
+
+
+        $writer = new Xlsx($spreadsheet);
+        $writer->save('php://output');
+    }
+}

@@ -15,7 +15,6 @@ use App\Exports\DailyInputExport;
 use App\Exports\FilterComparison;
 use App\Exports\PoldaByUuidExport;
 use Illuminate\Support\Facades\DB;
-use App\Models\SortablePoldaReport;
 use App\Exports\NewComparisonExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\DailyInputPrevExport;
@@ -405,11 +404,6 @@ class ReportController extends Controller
         //     abort(404);
         // }
 
-
-
-
-        // logger(currentDailyInputWithSum());
-
         $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");
 
         $currentYear = array_unique(DailyInput::pluck('year')->toArray());
@@ -428,5 +422,7 @@ class ReportController extends Controller
 
         $prev = prevDailyInputWithSum($operation_id, $prev_year, $start_date, $end_date);
         $current = currentDailyInputWithSum($operation_id, $current_year, $start_date, $end_date);
+
+        compareAllPoldaInput($prev, $current, $start_date, $end_date, $prev_year, $current_year);
     }
 }
