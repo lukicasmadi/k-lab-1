@@ -170,6 +170,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/daily-rekap/create', 'DailyRekapController@store')->name('daily_rekap_store');
     Route::post('/daily-rekap/update', 'DailyRekapController@update')->name('daily_rekap_update');
     Route::get('/daily-rekap/excel/{uuid}', 'DailyRekapController@dailyRekapExcel')->name('daily_dowmload_excel');
+    Route::get('/report/operasi/{uuid}', 'ReportController@reportByOperation')->name('report_by_operation');
 
     Route::group(['prefix' => 'data'], function () {
         Route::get('/operation-plan/show/{id}', 'RencanaOperasiController@byId')->name('operation_plan_show');

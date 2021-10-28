@@ -27,7 +27,8 @@
                                 <th width="15%">Tgl Mulai</th>
                                 <th width="15%">Tgl Selesai</th>
                                 <th width="3%">Lihat</th>
-                                <th width="10%">Pilihan</th>
+                                <th width="3%">Download</th>
+                                <th width="3%">Detail</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -159,29 +160,33 @@
                     data: 'uuid',
                     render: function(data, type, row) {
                         return `
-                        <div class="ubah-change">
-                            <a class="editData" idval="`+data+`" href="#">Ubah</a>
+                        <div class="icon-container">
+                            <a href="`+route('report_by_operation', data)+`" class="downloadData" idval="`+data+`">
+                                <img src="{{ asset('/img/search.png') }}" class="searh-on" width="22px">
+                            </a>
                         </div>
                         `;
                     },
                     searchable: false,
-                    visible: false,
+                    visible: true,
+                    sortable: false,
+                },
+                {
+                    data: 'uuid',
+                    render: function(data, type, row) {
+                        return `
+                        <div class="icon-container">
+                            <a href="`+route('report_all_polda_compare')+`" class="redirect">
+                                <img src="{{ asset('/img/search.png') }}" class="searh-on" width="22px">
+                            </a>
+                        </div>
+                        `;
+                    },
+                    searchable: false,
+                    visible: true,
                     sortable: false,
                 }
             ]
-        })
-
-        $('#tbl_operation tbody').on('click', 'a.viewData', function(e) {
-            e.preventDefault()
-            var uuid = $(this).attr("idval")
-
-            popupCenter({
-                url: route('all_rekap_by_rencana_operasi', {
-                    uuid: uuid,
-                }),
-                title: 'Detail',
-                w: 1000, h: 600
-            })
         })
     })
     </script>
