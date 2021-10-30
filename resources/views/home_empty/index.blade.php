@@ -60,134 +60,147 @@
 @push('page_js')
 <script>
 
-    $("#btn-add-notes").click(function (e) {
-        e.preventDefault();
-        // $('#modalCreateRencanaOperasi').modal('show');
-    });
+$("#btn-add-notes").click(function (e) {
+    e.preventDefault();
+    // $('#modalCreateRencanaOperasi').modal('show');
+});
 
-    $(document).ready(function () {
-        $('#tanggal_mulai').datepicker({
-            format: 'dd-mm-yyyy',
-            todayHighlight: true,
-            autoclose: true,
-        })
-
-        $('#tanggal_selesai').datepicker({
-            format: 'dd-mm-yyyy',
-            todayHighlight: true,
-            autoclose: true,
-        })
-
-        $('#edit_tanggal_mulai').datepicker({
-            format: 'dd-mm-yyyy',
-            todayHighlight: true,
-            autoclose: true,
-        })
-
-        $('#edit_tanggal_selesai').datepicker({
-            format: 'dd-mm-yyyy',
-            todayHighlight: true,
-            autoclose: true,
-        })
-
-        $('#notesMailModal').on('hidden.bs.modal', function () {
-            $("#nama_operasi").val('')
-            $("#jenis_operasi").val('')
-            $("#tanggal_mulai").val('')
-            $("#tanggal_selesai").val('')
-        })
-
-        var table = $('#tbl_operation').DataTable({
-            processing: true,
-            serverSide: true,
-            columnDefs: [
-                {
-                    className: "tengah", "targets": [6]
-                }
-            ],
-            ajax: route('operation_plan_data'),
-            "oLanguage": {
-                "oPaginate": {
-                    "sPrevious": '<i class="fas fa-chevron-left dtIconSize"></i>',
-                    "sNext": '<i class="fas fa-chevron-right dtIconSize"></i>'
-                },
-                "sInfo": "Menampilkan halaman _PAGE_ dari _PAGES_",
-                "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
-                "sSearchPlaceholder": "CARI DATA...",
-                "sLengthMenu": " _MENU_ ",
-                "sProcessing": '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>',
-            },
-            order: [
-                [0, "desc"]
-            ],
-            columns: [
-                {
-                    data: 'id',
-                    visible: false,
-                    searchable: false
-                },
-                {
-                    data: 'name',
-                },
-                {
-                    data: 'operation_type',
-                    render: function(data, type, row) {
-                        return ifEmptyData(data);
-                    },
-                },
-                {
-                    data: 'start_date',
-                },
-                {
-                    data: 'end_date',
-                },
-                {
-                    data: 'uuid',
-                    render: function(data, type, row) {
-                        return `
-                        <div class="icon-container">
-                            <a href="#" class="viewData" idval="`+data+`">
-                                <img src="{{ asset('/img/search.png') }}" class="searh-on" width="22px">
-                                <img src="{{ asset('/img/searchoff.png') }}" class="searh-off" width="22px">
-                            </a>
-                        </div>
-                        `;
-                    },
-                    searchable: false,
-                    sortable: false,
-                },
-                {
-                    data: 'uuid',
-                    render: function(data, type, row) {
-                        return `
-                        <div class="ubah-change">
-                            <a href="`+route('report_by_operation', data)+`" idval="`+data+`">
-                                Unduh
-                            </a>
-                        </div>
-                        `;
-                    },
-                    searchable: false,
-                    visible: true,
-                    sortable: false,
-                },
-                {
-                    data: 'uuid',
-                    render: function(data, type, row) {
-                        return `
-                        <div class="ubah-change">
-                            <a href="`+route('report_all_polda_compare')+`" class="redirect">
-                                Detil
-                            </a>
-                        </div>
-                        `;
-                    },
-                    searchable: false,
-                    visible: true,
-                    sortable: false,
-                }
-            ]
-        })
+$(document).ready(function () {
+    $('#tanggal_mulai').datepicker({
+        format: 'dd-mm-yyyy',
+        todayHighlight: true,
+        autoclose: true,
     })
-    </script>
+
+    $('#tanggal_selesai').datepicker({
+        format: 'dd-mm-yyyy',
+        todayHighlight: true,
+        autoclose: true,
+    })
+
+    $('#edit_tanggal_mulai').datepicker({
+        format: 'dd-mm-yyyy',
+        todayHighlight: true,
+        autoclose: true,
+    })
+
+    $('#edit_tanggal_selesai').datepicker({
+        format: 'dd-mm-yyyy',
+        todayHighlight: true,
+        autoclose: true,
+    })
+
+    $('#notesMailModal').on('hidden.bs.modal', function () {
+        $("#nama_operasi").val('')
+        $("#jenis_operasi").val('')
+        $("#tanggal_mulai").val('')
+        $("#tanggal_selesai").val('')
+    })
+
+    var table = $('#tbl_operation').DataTable({
+        processing: true,
+        serverSide: true,
+        columnDefs: [
+            {
+                className: "tengah", "targets": [6]
+            }
+        ],
+        ajax: route('operation_plan_data'),
+        "oLanguage": {
+            "oPaginate": {
+                "sPrevious": '<i class="fas fa-chevron-left dtIconSize"></i>',
+                "sNext": '<i class="fas fa-chevron-right dtIconSize"></i>'
+            },
+            "sInfo": "Menampilkan halaman _PAGE_ dari _PAGES_",
+            "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
+            "sSearchPlaceholder": "CARI DATA...",
+            "sLengthMenu": " _MENU_ ",
+            "sProcessing": '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>',
+        },
+        order: [
+            [0, "desc"]
+        ],
+        columns: [
+            {
+                data: 'id',
+                visible: false,
+                searchable: false
+            },
+            {
+                data: 'name',
+            },
+            {
+                data: 'operation_type',
+                render: function(data, type, row) {
+                    return ifEmptyData(data);
+                },
+            },
+            {
+                data: 'start_date',
+            },
+            {
+                data: 'end_date',
+            },
+            {
+                data: 'uuid',
+                render: function(data, type, row) {
+                    return `
+                    <div class="icon-container">
+                        <a href="#" class="viewData" idval="`+data+`">
+                            <img src="{{ asset('/img/search.png') }}" class="searh-on" width="22px">
+                            <img src="{{ asset('/img/searchoff.png') }}" class="searh-off" width="22px">
+                        </a>
+                    </div>
+                    `;
+                },
+                searchable: false,
+                sortable: false,
+            },
+            {
+                data: 'uuid',
+                render: function(data, type, row) {
+                    return `
+                    <div class="ubah-change">
+                        <a href="`+route('report_by_operation', data)+`">
+                            Unduh
+                        </a>
+                    </div>
+                    `;
+                },
+                searchable: false,
+                visible: true,
+                sortable: false,
+            },
+            {
+                data: 'uuid',
+                render: function(data, type, row) {
+                    return `
+                    <div class="ubah-change">
+                        <a href="`+route('report_all_polda_compare')+`" class="redirect">
+                            Detil
+                        </a>
+                    </div>
+                    `;
+                },
+                searchable: false,
+                visible: true,
+                sortable: false,
+            }
+        ]
+    })
+})
+
+$('body').on('click', '.viewData', function(e) {
+    e.preventDefault()
+    var uuid = $(this).attr('idval')
+
+    popupCenter({
+        url: route('daily_rekap_popup_laporan_operasi', {
+            uuid: uuid,
+        }),
+        title: 'Detail',
+        w: 1000, h: 600
+    })
+})
+</script>
 @endpush

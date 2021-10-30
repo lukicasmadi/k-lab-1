@@ -289,7 +289,7 @@ $('body').on('click', '#btnView', function(e) {
     var uuid = $(this).attr('data-id')
 
     popupCenter({
-        url: route('daily_rekap_show_with_input', {
+        url: route('daily_rekap_popup', {
             uuid: uuid,
         }),
         title: 'Detail',

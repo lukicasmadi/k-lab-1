@@ -33,7 +33,7 @@ class DailyRekapController extends Controller
 
         $polda = $dailyRekap->polda;
         $year = $dailyRekap->year;
-        $rencana_operartion_id = $dailyRekap->rencana_operasi_id;
+        $rencana_operation_id = $dailyRekap->rencana_operasi_id;
         $config_date = $dailyRekap->config_date;
         $start_date = $dailyRekap->operation_date_start;
         $end_date = $dailyRekap->operation_date_end;
@@ -41,11 +41,11 @@ class DailyRekapController extends Controller
         $file_name = $dailyRekap->report_name;
         $operationName = $dailyRekap->rencanaOperasi->name;
 
-        $prev = reportDailyPrev($polda, $prevYear, $rencana_operartion_id, $config_date, $start_date, $end_date);
-        $current = reportDailyCurrent($polda, $year, $rencana_operartion_id, $config_date, $start_date, $end_date);
+        $prev = reportDailyPrev($polda, $prevYear, $rencana_operation_id, $config_date, $start_date, $end_date);
+        $current = reportDailyCurrent($polda, $year, $rencana_operation_id, $config_date, $start_date, $end_date);
 
         if($polda != "polda_all") {
-            $poldaSubmited = PoldaSubmited::where('polda_id', $polda)->where('rencana_operasi_id', $rencana_operartion_id)->first();
+            $poldaSubmited = PoldaSubmited::where('polda_id', $polda)->where('rencana_operasi_id', $rencana_operation_id)->first();
             excelTemplate(
                 'per_polda',
                 $prev,
@@ -89,7 +89,7 @@ class DailyRekapController extends Controller
         $currentYear = $dailyRekap->year;
         $prevYear = $currentYear - 1;
 
-        $rencana_operartion_id = $dailyRekap->rencana_operasi_id;
+        $rencana_operation_id = $dailyRekap->rencana_operasi_id;
         $operationName = $dailyRekap->rencanaOperasi->name;
 
         $config_date = $dailyRekap->config_date;
@@ -105,8 +105,8 @@ class DailyRekapController extends Controller
 
         $hari = indonesiaDayAndDate(date("Y-m-d"));
 
-        $prev = reportPrevToDisplayByPoldaId($prevYear, $rencana_operartion_id, $start_date, $end_date, $polda);
-        $current = reportCurrentToDisplayByPoldaId($currentYear, $rencana_operartion_id, $start_date, $end_date, $polda);
+        $prev = reportPrevToDisplayByPoldaId($prevYear, $rencana_operation_id, $start_date, $end_date, $polda);
+        $current = reportCurrentToDisplayByPoldaId($currentYear, $rencana_operation_id, $start_date, $end_date, $polda);
 
         excelTemplateNew(
             'polda_all',
@@ -125,18 +125,49 @@ class DailyRekapController extends Controller
         );
     }
 
+    public function dailyRekapPopUpByOperation($uuid)
+    {
+        $rencanaOperasi = RencanaOperasi::where('uuid', $uuid)->firstOrFail();
+        $rencana_operation_id = $rencanaOperasi->id;
+        $rencana_operation_year_created = Carbon::createFromFormat('Y-m-d H:i:s', $rencanaOperasi->created_at)->year;
+
+        $currentYear = $rencana_operation_year_created;
+        $prevYear = $rencana_operation_year_created - 1;
+
+        $hari = indonesiaDayAndDate(date("Y-m-d"));
+
+        $prev = reportPrevToDisplay($prevYear, $rencana_operation_id, $rencanaOperasi->start_date, $rencanaOperasi->end_date);
+        $current = reportCurrentToDisplay($currentYear, $rencana_operation_id, $rencanaOperasi->start_date, $rencanaOperasi->end_date);
+
+        excelTemplateNew(
+            'polda_all',
+            $prev,
+            $current,
+            'KESATUAN : Korlantas',
+            $hari,
+            null, //NAMA ATASAN
+            null, //PANGKAT
+            null, //JABATAN
+            $rencanaOperasi->name, //NAMA LAPORAN
+            $rencanaOperasi->name, //CUSTOM FILE NAME
+            null, //OPERATION NAME
+            null, //CUSTOM COMBINE NAME
+            null, //CITY NAME
+        );
+    }
+
     public function all_rekap_by_rencana_operasi($uuid)
     {
 
         $rencanaOperasi = RencanaOperasi::where('uuid', $uuid)->firstOrFail();
-        $rencana_operartion_id = $rencanaOperasi->id;
-        $rencana_operartion_year_created = Carbon::createFromFormat('Y-m-d H:i:s', $rencanaOperasi->created_at)->year;
+        $rencana_operation_id = $rencanaOperasi->id;
+        $rencana_operation_year_created = Carbon::createFromFormat('Y-m-d H:i:s', $rencanaOperasi->created_at)->year;
 
-        $currentYear = $rencana_operartion_year_created;
-        $prevYear = $rencana_operartion_year_created - 1;
+        $currentYear = $rencana_operation_year_created;
+        $prevYear = $rencana_operation_year_created - 1;
 
-        $prev = reportPrevToDisplayByRencanaOperasi($prevYear, $rencana_operartion_id);
-        $current = reportCurrentToDisplayByRencanaOperasi($currentYear, $rencana_operartion_id);
+        $prev = reportPrevToDisplayByRencanaOperasi($prevYear, $rencana_operation_id);
+        $current = reportCurrentToDisplayByRencanaOperasi($currentYear, $rencana_operation_id);
 
         excelTemplateNew(
             'polda_all',
