@@ -21,8 +21,10 @@ if (! function_exists('excelTemplateNew')) {
         $pangkat=null,
         $jabatan=null,
         $nama_laporan=null,
+        $customFileName=null,
         $operationName=null,
-        $customFileName=null
+        $customCombineName=null,
+        $cityName=null
         )
     {
 
@@ -40,6 +42,15 @@ if (! function_exists('excelTemplateNew')) {
         $sheet->setCellValue('B6', $combineName);
         $sheet->setCellValue('B7', $kesatuan);
         $sheet->setCellValue('B8', 'HARI/TGL : '.$hari_tanggal);
+
+        if(is_null($cityName)) {
+            $sheet->setCellValue('E428', indonesiaDate(date("Y-m-d"))); // TEMPAT, TANGGAL
+        } else {
+            $sheet->setCellValue('E428', $cityName.", ".indonesiaDate(date("Y-m-d"))); // TEMPAT, TANGGAL
+        }
+        $sheet->setCellValue('E434', $nama_atasan); // NAMA ATASAN UNTUK TANDA TANGAN
+        $sheet->setCellValue('E435', $pangkat); //PANGKAT & NRP
+        $sheet->setCellValue('E429', $jabatan); //JABATAN
 
         $sheet->setCellValue('C15', applyZero($prev->pelanggaran_lalu_lintas_tilang));
         $sheet->setCellValue('D15', applyZero($current->pelanggaran_lalu_lintas_tilang));

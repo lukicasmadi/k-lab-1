@@ -114,12 +114,14 @@ class DailyRekapController extends Controller
             $current,
             'KESATUAN : '.$dailyRekap->kesatuan,
             $hari,
-            'NAMA : ATASAN',
-            'PANGKAT NRP',
-            'JABATAN',
-            $dailyRekap->report_name,
-            $operationName,
-            null
+            null, //NAMA ATASAN
+            null, //PANGKAT
+            null, //JABATAN
+            $dailyRekap->report_name, //NAMA LAPORAN
+            $operationName, //CUSTOM FILE NAME
+            null, //OPERATION NAME
+            null, //CUSTOM COMBINE NAME
+            null, //CITY NAME
         );
     }
 
