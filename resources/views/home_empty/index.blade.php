@@ -175,9 +175,9 @@
                     data: 'uuid',
                     render: function(data, type, row) {
                         return `
-                        <div class="icon-container">
+                        <div class="ubah-change">
                             <a href="`+route('report_all_polda_compare')+`" class="redirect">
-                                <img src="{{ asset('/img/search.png') }}" class="searh-on" width="22px">
+                                Detil
                             </a>
                         </div>
                         `;

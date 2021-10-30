@@ -985,7 +985,7 @@ class PoldaHasRencanaOperasiController extends Controller
             $current,
             'KESATUAN : '.$poldaSubmited->nama_kesatuan,
             $poldaSubmited->nama_kota.", ".indonesianDate(date("Y-m-d")),
-            'NAMA : '.$poldaSubmited->nama_atasan,
+            $poldaSubmited->nama_atasan,
             $poldaSubmited->pangkat_dan_nrp,
             $poldaSubmited->jabatan,
             $poldaSubmited->nama_laporan
