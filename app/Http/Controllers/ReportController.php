@@ -101,7 +101,7 @@ class ReportController extends Controller
             $prev,
             $current,
             'KESATUAN : Korlantas',
-            $start_date." s/d".$end_date,
+            $start_date." s/d ".$end_date,
             null,
             null,
             null,
@@ -129,7 +129,7 @@ class ReportController extends Controller
             $prev,
             $current,
             'KESATUAN : Korlantas',
-            "Seluruh Polda, ".indonesianStandart($request->tanggal_pembanding_pertama).' S/D '.indonesianStandart($request->tanggal_pembanding_kedua),
+            "Seluruh Polda, ".indonesianStandart($request->tanggal_pembanding_pertama).' s/d '.indonesianStandart($request->tanggal_pembanding_kedua),
             'NAMA : ',
             '',
             '',
@@ -161,7 +161,7 @@ class ReportController extends Controller
             '',
             '',
             "PERBANDINGAN TANGGAL ".indonesianStandart($start_date).' s/d '.indonesianStandart($end_date),
-            $rencanaOperasi
+            $rencanaOperasi->name
         );
     }
 
@@ -275,7 +275,7 @@ class ReportController extends Controller
             $prev,
             $current,
             'KESATUAN : '.$poldaSubmited->nama_kesatuan,
-            $poldaSubmited->nama_kota.", ".$request->tanggal_mulai.' S/D '.$request->tanggal_selesai,
+            $poldaSubmited->nama_kota.", ".$request->tanggal_mulai.' s/d '.$request->tanggal_selesai,
             'NAMA : '.$poldaSubmited->nama_atasan,
             $poldaSubmited->pangkat_dan_nrp,
             $poldaSubmited->jabatan,
@@ -340,6 +340,29 @@ class ReportController extends Controller
         }
     }
 
+    public function reportByOperation($uuid)
+    {
+        $find = RencanaOperasi::whereUuid($uuid)->firstOrFail();
+
+        $prev = allPoldaPrevByDate($find->start_date, $find->end_date);
+        $current = allPoldaCurrentByDate($find->start_date, $find->end_date);
+
+        excelTemplate(
+            'polda_all',
+            $prev,
+            $current,
+            'KESATUAN : Korlantas',
+            $find->start_date." s/d ".$find->end_date,
+            null,
+            null,
+            null,
+            $find->name,
+            'Laporan '.$find->name,
+            'Laporan '.$find->name,
+            'Laporan Giat Operasi '.$find->name
+        );
+    }
+
     public function showExcelToView(ReportAnevDisplay $request)
     {
         $yearPrev = $request->tahun_pembanding_pertama;
@@ -379,18 +402,18 @@ class ReportController extends Controller
 
         $rencanaOperasi = RencanaOperasi::find($rencana_operation_id);
 
-        excelTemplateNew(
-            'polda_all',
+        excelTemplate(
+            'per_polda',
             $prev,
             $current,
-            'KESATUAN : Korlantas',
-            'Seluruh Polda, '.$start_date.' s/d '.$end_date,
-            null,
-            null,
-            null,
-            'Anev '.$start_date.' s/d '.$end_date,
-            $rencanaOperasi->name,
-            null
+            'KESATUAN : '.$poldaSubmited->nama_kesatuan,
+            $poldaSubmited->nama_kota.", ".indonesiaDayAndDate(date("Y-m-d")),
+            'NAMA : '.$poldaSubmited->nama_atasan,
+            $poldaSubmited->pangkat_dan_nrp,
+            $poldaSubmited->jabatan,
+            $poldaSubmited->nama_laporan,
+            $file_name,
+            $operationName
         );
     }
 

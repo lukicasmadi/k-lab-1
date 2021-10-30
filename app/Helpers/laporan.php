@@ -234,7 +234,7 @@ if (! function_exists('allPoldaPrevByDate')) {
 //==============================================================================================================================================
 
 if (! function_exists('excelTemplate')) {
-    function excelTemplate($template, $prev, $current, $kesatuan, $hari_tanggal, $nama_atasan, $pangkat, $jabatan, $nama_laporan, $customFileName=null, $operationName=null)
+    function excelTemplate($template, $prev, $current, $kesatuan, $hari_tanggal, $nama_atasan, $pangkat, $jabatan, $nama_laporan, $customFileName=null, $operationName=null, $customCombineName=null)
     {
 
         $excelPath = public_path('template/excel');
@@ -256,7 +256,12 @@ if (! function_exists('excelTemplate')) {
 
         $sheet = $spreadsheet->getActiveSheet();
 
-        $combineName = $nama_laporan." Giat Operasi ".$operationName;
+        if(is_null($customCombineName)) {
+            $combineName = $nama_laporan." Giat Operasi ".$operationName;
+        } else {
+            $combineName = $customCombineName;
+        }
+
 
         $sheet->setCellValue('B6', $combineName);
         $sheet->setCellValue('B7', $kesatuan); //NAMA KESATUAN
