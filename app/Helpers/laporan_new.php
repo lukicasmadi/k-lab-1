@@ -184,8 +184,8 @@ if (! function_exists('excelTemplateNew')) {
         $sheet->setCellValue('C69', applyZero($prev->kendaraan_yang_terlibat_pelanggaran_mobil_barang));
         $sheet->setCellValue('D69', applyZero($current->kendaraan_yang_terlibat_pelanggaran_mobil_barang));
 
-        $sheet->setCellValue('C69', applyZero($prev->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus));
-        $sheet->setCellValue('D69', applyZero($current->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus));
+        $sheet->setCellValue('C70', applyZero($prev->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus));
+        $sheet->setCellValue('D70', applyZero($current->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus));
 
         $sheet->setCellValue('C73', applyZero($prev->profesi_pelaku_pelanggaran_pns));
         $sheet->setCellValue('D73', applyZero($current->profesi_pelaku_pelanggaran_pns));
@@ -226,13 +226,13 @@ if (! function_exists('excelTemplateNew')) {
         $sheet->setCellValue('C87', applyZero($prev->usia_pelaku_pelanggaran_36_40_tahun));
         $sheet->setCellValue('D87', applyZero($current->usia_pelaku_pelanggaran_36_40_tahun));
 
-        $sheet->setCellValue('C88', applyZero($prev->uusia_pelaku_pelanggaran_41_45_tahun));
+        $sheet->setCellValue('C88', applyZero($prev->usia_pelaku_pelanggaran_41_45_tahun));
         $sheet->setCellValue('D88', applyZero($current->usia_pelaku_pelanggaran_41_45_tahun));
 
-        $sheet->setCellValue('C89', applyZero($prev->usia_pelaku_pelanggaran_46_50_tahunn));
+        $sheet->setCellValue('C89', applyZero($prev->usia_pelaku_pelanggaran_46_50_tahun));
         $sheet->setCellValue('D89', applyZero($current->usia_pelaku_pelanggaran_46_50_tahun));
 
-        $sheet->setCellValue('C90', applyZero($prev->usia_pelaku_pelanggaran_51_55_tahunn));
+        $sheet->setCellValue('C90', applyZero($prev->usia_pelaku_pelanggaran_51_55_tahun));
         $sheet->setCellValue('D90', applyZero($current->usia_pelaku_pelanggaran_51_55_tahun));
 
         $sheet->setCellValue('C91', applyZero($prev->usia_pelaku_pelanggaran_56_60_tahun));
@@ -317,7 +317,7 @@ if (! function_exists('excelTemplateNew')) {
         $sheet->setCellValue('D129', applyZero($current->kecelakaan_lalin_jumlah_korban_meninggal));
 
         $sheet->setCellValue('C130', applyZero($prev->kecelakaan_lalin_jumlah_korban_luka_berat));
-        $sheet->setCellValue('D130', applyZero($current->kecelakaan_lalin_jumlah_korban_luka_beratn));
+        $sheet->setCellValue('D130', applyZero($current->kecelakaan_lalin_jumlah_korban_luka_berat));
 
         $sheet->setCellValue('C131', applyZero($prev->kecelakaan_lalin_jumlah_korban_luka_ringan));
         $sheet->setCellValue('D131', applyZero($current->kecelakaan_lalin_jumlah_korban_luka_ringan));
@@ -541,7 +541,7 @@ if (! function_exists('excelTemplateNew')) {
         $sheet->setCellValue('C221', applyZero($prev->sim_pelaku_kecelakaan_sim_c));
         $sheet->setCellValue('D221', applyZero($current->sim_pelaku_kecelakaan_sim_c));
 
-        $sheet->setCellValue('C222', applyZero($prev->sim_pelaku_kecelakaan_sim_dn));
+        $sheet->setCellValue('C222', applyZero($prev->sim_pelaku_kecelakaan_sim_d));
         $sheet->setCellValue('D222', applyZero($current->sim_pelaku_kecelakaan_sim_d));
 
         $sheet->setCellValue('C223', applyZero($prev->sim_pelaku_kecelakaan_sim_internasional));
@@ -749,7 +749,7 @@ if (! function_exists('excelTemplateNew')) {
         $sheet->setCellValue('D307', applyZero($current->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_berat));
 
         $sheet->setCellValue('C308', applyZero($prev->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_ringan));
-        $sheet->setCellValue('D308', applyZero($current->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_ringanl));
+        $sheet->setCellValue('D308', applyZero($current->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_ringan));
 
         $sheet->setCellValue('C309', applyZero($prev->kecelakaan_lalin_tabrak_sepeda_motor_materiil));
         $sheet->setCellValue('D309', applyZero($current->kecelakaan_lalin_tabrak_sepeda_motor_materiil));
@@ -814,8 +814,8 @@ if (! function_exists('excelTemplateNew')) {
         $sheet->setCellValue('C333', applyZero($prev->kecelakaan_transportasi_udara));
         $sheet->setCellValue('D333', applyZero($current->kecelakaan_transportasi_udara));
 
-        $sheet->setCellValue('C337', applyZero($prev->penlu_melalui_media_cetak));
-        $sheet->setCellValue('D337', applyZero($current->penlu_melalui_media_cetak));
+        $sheet->setCellValue('C338', applyZero($prev->penlu_melalui_media_cetak));
+        $sheet->setCellValue('D338', applyZero($current->penlu_melalui_media_cetak));
 
         $sheet->setCellValue('C339', applyZero($prev->penlu_melalui_media_elektronik));
         $sheet->setCellValue('D339', applyZero($current->penlu_melalui_media_elektronik));
@@ -979,8 +979,8 @@ if (! function_exists('excelTemplateNew')) {
         $sheet->setCellValue('C408', applyZero($prev->arus_mudik_bandara_total_penumpang_kedatangan));
         $sheet->setCellValue('D408', applyZero($current->arus_mudik_bandara_total_penumpang_kedatangan));
 
-        $sheet->setCellValue('C409', applyZero($prev->prokes_covid_teguran_gar_prokes));
-        $sheet->setCellValue('D409', applyZero($current->prokes_covid_teguran_gar_prokes));
+        $sheet->setCellValue('C411', applyZero($prev->prokes_covid_teguran_gar_prokes));
+        $sheet->setCellValue('D411', applyZero($current->prokes_covid_teguran_gar_prokes));
 
         $sheet->setCellValue('C412', applyZero($prev->prokes_covid_pembagian_masker));
         $sheet->setCellValue('D412', applyZero($current->prokes_covid_pembagian_masker));
