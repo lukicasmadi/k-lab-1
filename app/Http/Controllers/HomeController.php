@@ -339,7 +339,6 @@ class HomeController extends Controller
 
         if(empty(operationPlans())) {
             return view('home_empty.index');
-            // return view('empty_project');
         }
 
         operationShowStartEnd();
