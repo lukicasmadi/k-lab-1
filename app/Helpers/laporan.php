@@ -66,6 +66,9 @@ if (! function_exists('reportCurrentToDisplayByPoldaId')) {
 if (! function_exists('reportPrevToDisplay')) {
     function reportPrevToDisplay($year, $rencana_operation_id, $start_date, $end_date) {
         $outputLaporanPrev = basedQueryPrev()->where('year', $year)
+        ->when(isPolda(), function ($query) {
+            return $query->where('polda_id', poldaId());
+        })
         ->where('rencana_operasi_id', $rencana_operation_id)
         ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
         ->first();
@@ -77,6 +80,9 @@ if (! function_exists('reportPrevToDisplay')) {
 if (! function_exists('reportCurrentToDisplay')) {
     function reportCurrentToDisplay($year, $rencana_operation_id, $start_date, $end_date) {
         $outputLaporanCurrent = basedQueryCurrent()->where('year', $year)
+        ->when(isPolda(), function ($query) {
+            return $query->where('polda_id', poldaId());
+        })
         ->where('rencana_operasi_id', $rencana_operation_id)
         ->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
         ->first();
