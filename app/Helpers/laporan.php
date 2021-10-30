@@ -221,7 +221,9 @@ if (! function_exists('currentPerPolda')) {
 
 if (! function_exists('allPoldaCurrentByDate')) {
     function allPoldaCurrentByDate($start_date, $end_date) {
-        $outputLaporanCurrent = basedQueryCurrent()->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
+        $outputLaporanCurrent = basedQueryCurrent()->when(isPolda(), function ($query) {
+            return $query->where('polda_id', poldaId());
+        })->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
         ->first();
 
         return $outputLaporanCurrent;
@@ -230,7 +232,9 @@ if (! function_exists('allPoldaCurrentByDate')) {
 
 if (! function_exists('allPoldaPrevByDate')) {
     function allPoldaPrevByDate($start_date, $end_date) {
-        $outputLaporanPrev = basedQueryPrev()->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
+        $outputLaporanPrev = basedQueryPrev()->when(isPolda(), function ($query) {
+            return $query->where('polda_id', poldaId());
+        })->whereRaw("DATE(created_at) >= ? and DATE(created_at) <= ?", [$start_date, $end_date])
         ->first();
 
         return $outputLaporanPrev;
