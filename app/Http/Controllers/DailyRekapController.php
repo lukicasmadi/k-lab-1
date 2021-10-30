@@ -80,7 +80,7 @@ class DailyRekapController extends Controller
         }
     }
 
-    public function dailyRekapShowWithInput($uuid)
+    public function dailyRekapPopUp($uuid)
     {
         $dailyRekap = DailyRekap::with(['rencanaOperasi', 'poldaData'])->where('uuid', $uuid)->first();
 
@@ -97,11 +97,13 @@ class DailyRekapController extends Controller
         $start_date = $dailyRekap->operation_date_start;
         $end_date = $dailyRekap->operation_date_end;
 
-        if($config_date == "all") {
-            $hari = "SEMUA";
-        } else {
-            $hari = indonesianDate($start_date)." S/D ".indonesianDate($end_date);
-        }
+        // if($config_date == "all") {
+        //     $hari = "SEMUA";
+        // } else {
+        //     $hari = indonesianDate($start_date)." s/d ".indonesianDate($end_date);
+        // }
+
+        $hari = indonesiaDayAndDate(date("Y-m-d"));
 
         $prev = reportPrevToDisplayByPoldaId($prevYear, $rencana_operartion_id, $start_date, $end_date, $polda);
         $current = reportCurrentToDisplayByPoldaId($currentYear, $rencana_operartion_id, $start_date, $end_date, $polda);

@@ -207,7 +207,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/polda/custom-name/{uuid}', 'KorlantasRekapController@getCustomName')->name('get_data_polda_custom_name');
         Route::get('/korlantas-rekap/{uuid}', 'KorlantasRekapController@korlantas_rekap')->name('korlantas_rekap');
         Route::get('/rekap/daily/{uuid}', 'DailyRekapController@dailyRekapShow')->name('daily_rekap_show');
-        Route::get('/rekap/daily/input/{uuid}', 'DailyRekapController@dailyRekapShowWithInput')->name('daily_rekap_show_with_input');
+        Route::get('/rekap/daily/input/{uuid}', 'DailyRekapController@dailyRekapPopUp')->name('daily_rekap_show_with_input');
         Route::get('/display/excel', 'ReportController@showExcelToView')->name('show_excel_to_view');
         Route::get('/display/excel/anev-date-compare', 'ReportController@showExcelToViewAnevDateCompare')->name('show_excel_to_view_anev');
         Route::get('/rencana-operasi/date-range/{id}', 'ReportController@getDateRangeRencanaOperasi')->name('get_rencana_operasi_date_range');

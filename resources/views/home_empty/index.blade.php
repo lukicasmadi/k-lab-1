@@ -160,9 +160,9 @@
                     data: 'uuid',
                     render: function(data, type, row) {
                         return `
-                        <div class="icon-container">
-                            <a href="`+route('report_by_operation', data)+`" class="downloadData" idval="`+data+`">
-                                <img src="{{ asset('/img/search.png') }}" class="searh-on" width="22px">
+                        <div class="ubah-change">
+                            <a href="`+route('report_by_operation', data)+`" idval="`+data+`">
+                                Unduh
                             </a>
                         </div>
                         `;
