@@ -51,13 +51,15 @@ class DailyRekapController extends Controller
                 $prev,
                 $current,
                 'KESATUAN : '.$poldaSubmited->nama_kesatuan,
-                $poldaSubmited->nama_kota.", ".indonesiaDayAndDate(date("Y-m-d")),
-                'NAMA : '.$poldaSubmited->nama_atasan,
+                indonesiaDayAndDate(date("Y-m-d")),
+                $poldaSubmited->nama_atasan,
                 $poldaSubmited->pangkat_dan_nrp,
                 $poldaSubmited->jabatan,
                 $poldaSubmited->nama_laporan,
                 $file_name,
-                $operationName
+                $operationName,
+                null,
+                $poldaSubmited->nama_kota
             );
         } else {
             excelTemplate(
@@ -66,12 +68,14 @@ class DailyRekapController extends Controller
                 $current,
                 'KESATUAN : '.$dailyRekap->kesatuan,
                 indonesiaDayAndDate(date("Y-m-d")),
-                'NAMA : '.$dailyRekap->atasan,
+                $dailyRekap->atasan,
                 $dailyRekap->pangkat_nrp,
                 $dailyRekap->jabatan,
                 $dailyRekap->report_name,
                 $file_name,
-                $operationName
+                $operationName,
+                null,
+                null
             );
         }
     }

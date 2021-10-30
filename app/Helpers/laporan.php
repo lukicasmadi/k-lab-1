@@ -234,7 +234,7 @@ if (! function_exists('allPoldaPrevByDate')) {
 //==============================================================================================================================================
 
 if (! function_exists('excelTemplate')) {
-    function excelTemplate($template, $prev, $current, $kesatuan, $hari_tanggal, $nama_atasan, $pangkat, $jabatan, $nama_laporan, $customFileName=null, $operationName=null, $customCombineName=null)
+    function excelTemplate($template, $prev, $current, $kesatuan, $hari_tanggal, $nama_atasan, $pangkat, $jabatan, $nama_laporan, $customFileName=null, $operationName=null, $customCombineName=null, $cityName=null)
     {
 
         $excelPath = public_path('template/excel');
@@ -262,14 +262,17 @@ if (! function_exists('excelTemplate')) {
             $combineName = $customCombineName;
         }
 
-
         $sheet->setCellValue('B6', $combineName);
         $sheet->setCellValue('B7', $kesatuan); //NAMA KESATUAN
-        $sheet->setCellValue('E428', indonesiaDayAndDate(date("Y-m-d"))); // TEMPAT, TANGGAL
+        $sheet->setCellValue('B8', 'HARI/TGL : '.$hari_tanggal); // DIISI HARI TGL
+        if(is_null($cityName)) {
+            $sheet->setCellValue('E428', indonesiaDate(date("Y-m-d"))); // TEMPAT, TANGGAL
+        } else {
+            $sheet->setCellValue('E428', $cityName.", ".indonesiaDate(date("Y-m-d"))); // TEMPAT, TANGGAL
+        }
         $sheet->setCellValue('E434', $nama_atasan); // NAMA ATASAN UNTUK TANDA TANGAN
         $sheet->setCellValue('E435', $pangkat); //PANGKAT & NRP
         $sheet->setCellValue('E429', $jabatan); //JABATAN
-        $sheet->setCellValue('B8', 'HARI/TGL : '.$hari_tanggal); // DIISI HARI TGL
 
         $sheet->setCellValue('C15', applyZero($prev->pelanggaran_lalu_lintas_tilang));
         $sheet->setCellValue('D15', applyZero($current->pelanggaran_lalu_lintas_tilang));
@@ -1267,7 +1270,7 @@ if (! function_exists('excelTemplateDateCompare')) {
         $sheet = $spreadsheet->getActiveSheet();
 
         $sheet->setCellValue('B6', $kesatuan); //NAMA KESATUAN
-        $sheet->setCellValue('E428', indonesiaDayAndDate(date("Y-m-d"))); // TEMPAT, TANGGAL
+        $sheet->setCellValue('E428', indonesiaDate(date("Y-m-d"))); // TEMPAT, TANGGAL
         $sheet->setCellValue('E435', $nama_atasan); // NAMA ATASAN UNTUK TANDA TANGAN
         $sheet->setCellValue('E430', $pangkat); //PANGKAT & NRP
         $sheet->setCellValue('E436', $jabatan); //JABATAN

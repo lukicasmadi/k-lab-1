@@ -128,7 +128,13 @@ if (! function_exists('indonesianFullDayAndDate')) {
 
 if (! function_exists('indonesiaDayAndDate')) {
     function indonesiaDayAndDate($timestamp) {
-        return Carbon::parse($timestamp)->isoFormat('dddd, D MMMM Y');
+        return Carbon::parse($timestamp)->isoFormat('dddd, D MMMM Y'); //Sabtu, 30 Oktober 2021
+    }
+}
+
+if (! function_exists('indonesiaDate')) {
+    function indonesiaDate($timestamp) {
+        return Carbon::parse($timestamp)->isoFormat('D MMMM Y'); //30 Oktober 2021
     }
 }
 
@@ -138,11 +144,11 @@ if (! function_exists('indonesiaShortDayAndDate')) {
     }
 }
 
-if (! function_exists('IdFullDateOnly')) {
-    function IdFullDateOnly($timestamp) {
-        return Carbon::parse($timestamp)->isoFormat('dddd, D MMMM Y');
-    }
-}
+// if (! function_exists('IdFullDateOnly')) {
+//     function IdFullDateOnly($timestamp) {
+//         return Carbon::parse($timestamp)->isoFormat('dddd, D MMMM Y');
+//     }
+// }
 
 if (! function_exists('indonesianDateTime')) {
     function indonesianDateTime($timestamp) {
