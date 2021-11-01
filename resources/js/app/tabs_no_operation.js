@@ -85,7 +85,7 @@ jQuery(function() {
         yaxis: {
             labels: {
                 formatter: function(value, index) {
-                    return value
+                    return Math.floor(value)
                 },
                 offsetX: -10,
                 offsetY: 0,
