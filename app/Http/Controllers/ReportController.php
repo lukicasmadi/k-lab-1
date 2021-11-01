@@ -438,6 +438,8 @@ class ReportController extends Controller
         $prev = prevDailyInputWithSum($operation_id, $prev_year, $start_date, $end_date);
         $current = currentDailyInputWithSum($operation_id, $current_year, $start_date, $end_date);
 
-        compareAllPoldaInput($prev, $current, $start_date, $end_date, $prev_year, $current_year);
+        $rencanaOperasi = RencanaOperasi::find($request->operation_id);
+
+        compareAllPoldaInput($prev, $current, $start_date, $end_date, $prev_year, $current_year, $rencanaOperasi->name);
     }
 }

@@ -1187,7 +1187,7 @@ if (! function_exists('newDailyReportDetail')) {
 }
 
 if (! function_exists('compareAllPoldaInput')) {
-    function compareAllPoldaInput($data_prev, $data_current, $start_date, $end_date, $prev_year, $current_year) {
+    function compareAllPoldaInput($data_prev, $data_current, $start_date, $end_date, $prev_year, $current_year, $operationName) {
 
         $excelPath = public_path('template/excel');
         $excelTemplate = $excelPath."/format_laporan_detail_daily.xlsx";
@@ -1200,7 +1200,8 @@ if (! function_exists('compareAllPoldaInput')) {
 
         $sheet = $spreadsheet->getActiveSheet();
 
-        $sheet->setCellValue('A5', 'LAPORAN HARIAN '.upperCase(operationPlans()->name));
+        $sheet->setCellValue('A5', 'LAPORAN HARIAN '.upperCase($operationName));
+        $sheet->setCellValue('A6', 'KESATUAN : Korlantas');
         $sheet->setCellValue('A7', 'HARI/TGL : '.indonesianFullDayAndDate(date("Y-m-d H:i:s")));
 
         $skip = [
