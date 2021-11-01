@@ -112,23 +112,11 @@ class HomeController extends Controller
     {
         $count = CountDown::where("tanggal", nowToday())->first();
         $days = CountDown::select('id', 'tanggal', 'week', 'rencana_operasi_id')->where("week", $count->week)->where("rencana_operasi_id", operationPlans()->id)->orderBy('id', 'asc')->get()->toArray();
-        // $daysGet = CountDown::select('id', 'tanggal', 'week', 'rencana_operasi_id')->where("week", $count->week)->where("rencana_operasi_id", operationPlans()->id)->orderBy('id', 'asc')->get();
         $allDaysAWeek = count($days);
         $firstDate = Arr::first($days)['tanggal'];
         $lastDate = Arr::last($days)['tanggal'];
 
         $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$firstDate, $lastDate])->where("polda_id", poldaId())->count();
-
-        // if(poldaName() == "Riau") {
-        //     logger("NOW TODAY : ".nowToday());
-        //     logger("COUNT : ".$count);
-        //     logger("DAYS GET : ".$daysGet);
-        //     logger("ALL DAYS WEEKS : ".$allDaysAWeek);
-        //     logger("FIRST DATE : ".$firstDate);
-        //     logger("LAST DATE : ".$lastDate);
-        //     logger("COUNT WEEK : ".$count->week);
-        //     logger("OPERATION PLAN : ".operationPlans());
-        // }
 
         if(empty($count_polda_input_daily) || $count_polda_input_daily <= 0) {
             $data = [
@@ -180,11 +168,6 @@ class HomeController extends Controller
         $lastDate = Arr::last($days)['tanggal'];
 
         $count_polda_input_daily = PoldaSubmited::whereBetween('submited_date', [$firstDate, $lastDate])->where("polda_id", $id)->count();
-
-        // logger("HARI PERTAMA DALAM MINGGU : ".$firstDate);
-        // logger("HARI TERAKHIR DALAM MINGGU : ".$lastDate);
-        // logger("YANG SUDAH DIINPUT : ".$count_polda_input_daily);
-        // logger("TOTAL HARI SEMINGGU : ".$allDaysAWeek);
 
         if(empty($count_polda_input_daily) || $count_polda_input_daily <= 0) {
             $data = [
@@ -290,7 +273,6 @@ class HomeController extends Controller
         }
 
         if(empty(operationPlans())) {
-            // return view('empty_project');
             return view('home_empty.index');
         }
 
@@ -338,35 +320,45 @@ class HomeController extends Controller
         }
 
         if(empty(operationPlans())) {
-            return view('home_empty.index');
-        }
 
-        operationShowStartEnd();
+            if(!empty(session('filter_operation'))) {
+                $operations = RencanaOperasi::orderBy('id', 'desc')->get();
+                $allOperations = moveFirst($operations, 'name', session('filter_operation'));
+            } else {
+                $allOperations = RencanaOperasi::orderBy('id', 'desc')->get();
+            }
 
-        session()->forget(['filter_operation']);
-        session(['filter_operation' => '']);
-        $filter_operation = "current";
+            $filter_operation = "current";
 
-        $allOperations = RencanaOperasi::where('slug_name', '!=', operationPlans()->slug_name)->orderBy('id', 'desc')->get();
-
-        if(isPolda()) {
-            return view('polda');
+            return view('home_empty.index', compact('allOperations', 'filter_operation'));
         } else {
-            $poldaAtas = Polda::select("id", "uuid", "name", "short_name", "logo")
-                ->orderBy("name", "asc")
-                ->skip(0)->take(17)
-                ->get();
+            operationShowStartEnd();
 
-            $poldaBawah = Polda::select("id", "uuid", "name", "short_name", "logo")
-                ->orderBy("name", "asc")
-                ->skip(17)->take(17)
-                ->get();
+            session()->forget(['filter_operation']);
+            session(['filter_operation' => '']);
+            $filter_operation = "current";
 
-            $dailyInput = Polda::with(['dailyInput' => function($query) {
-                $query->where(DB::raw('DATE(created_at)'), nowToday());
-            }])->orderBy("name", "asc")->get();
+            $allOperations = RencanaOperasi::where('slug_name', '!=', operationPlans()->slug_name)->orderBy('id', 'desc')->get();
 
-            return view('main', compact('poldaAtas', 'poldaBawah', 'dailyInput', 'allOperations', 'filter_operation'));
+            if(isPolda()) {
+                return view('polda');
+            } else {
+                $poldaAtas = Polda::select("id", "uuid", "name", "short_name", "logo")
+                    ->orderBy("name", "asc")
+                    ->skip(0)->take(17)
+                    ->get();
+
+                $poldaBawah = Polda::select("id", "uuid", "name", "short_name", "logo")
+                    ->orderBy("name", "asc")
+                    ->skip(17)->take(17)
+                    ->get();
+
+                $dailyInput = Polda::with(['dailyInput' => function($query) {
+                    $query->where(DB::raw('DATE(created_at)'), nowToday());
+                }])->orderBy("name", "asc")->get();
+
+                return view('main', compact('poldaAtas', 'poldaBawah', 'dailyInput', 'allOperations', 'filter_operation'));
+            }
         }
     }
 
@@ -454,6 +446,48 @@ class HomeController extends Controller
         excelViewAbsensi($polda, indonesiaDayAndDate($whereDate));
     }
 
+    public function dashboardChartWithoutOperation()
+    {
+        if(empty(session('filter_operation'))) {
+            $checkOperasi = RencanaOperasi::latest()->first();
+            $projectRunning = $checkOperasi;
+        } else {
+            $checkOperasi = RencanaOperasi::where("name", session('filter_operation'))->first();
+            $projectRunning = $checkOperasi;
+        }
+
+        $period = CarbonPeriod::create($projectRunning->start_date, $projectRunning->end_date);
+
+        $rangeDate = [];
+        $rangeDateReformat = [];
+        $totalPerDate = [];
+
+        foreach ($period as $date) {
+            array_push($rangeDate, $date->format('Y-m-d'));
+        }
+
+        foreach($rangeDate as $d) {
+            $total =  DB::table('polda_submiteds')->where('submited_date', $d)->count();
+
+            if($total == 0) {
+                array_push($totalPerDate, 0);
+            } else {
+                array_push($totalPerDate, $total);
+            }
+        }
+
+        foreach($rangeDate as $rd) {
+            array_push($rangeDateReformat, indonesianStandart($rd));
+        }
+
+        return response()->json([
+            'rangeDate' => $rangeDateReformat,
+            'totalPerDate' => $totalPerDate,
+            'projectName' => $projectRunning->name,
+            'totalSum' => 0
+        ], 200);
+    }
+
     public function dashboardChart()
     {
         if(empty(session('filter_operation'))) {
@@ -463,8 +497,7 @@ class HomeController extends Controller
             $projectRunning = $checkOperasi;
         }
 
-        $projectNowRunning = operationPlans();
-        $dateCountDown = CountDown::where('rencana_operasi_id', $projectNowRunning->id)->where('tanggal', nowToday())->first();
+        $dateCountDown = CountDown::where('rencana_operasi_id', operationPlans()->id)->where('tanggal', nowToday())->first();
 
         $period = CarbonPeriod::create($projectRunning->start_date, $projectRunning->end_date);
 
@@ -496,7 +529,7 @@ class HomeController extends Controller
             'rangeDate' => $rangeDateReformat,
             'totalPerDate' => $totalPerDate,
             'projectName' => $dateCountDown->deskripsi,
-            'totalSum' => $todaySubmited,
+            'totalSum' => $todaySubmited
         ], 200);
     }
 
@@ -544,5 +577,15 @@ class HomeController extends Controller
         }
 
         return response()->download(public_path('document-upload/polda/'.$poldaSubmited->document_upload));
+    }
+
+    public function changeOperation($operation)
+    {
+        session()->forget(['filter_operation']);
+        session(['filter_operation' => $operation]);
+
+        return [
+            'msg' => 'Operation Changed'
+        ];
     }
 }

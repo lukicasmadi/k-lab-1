@@ -7,8 +7,73 @@ use Illuminate\Support\Str;
 use App\Models\UserHasPolda;
 use App\Models\PoldaSubmited;
 use App\Models\RencanaOperasi;
+use Illuminate\Support\Collection;
 use App\Models\SortablePoldaReport;
 use Illuminate\Database\Eloquent\Builder;
+
+if (! function_exists('moveItemToLast')) {
+    function moveItemToLast($collection, $fieldName, $item) {
+
+        $collectionData = $collection->reject(function($value) use ($fieldName, $item) {
+            return $value[$fieldName] == $item;
+        })
+        ->merge($collection->filter(function($value) use ($fieldName, $item) {
+                return $value[$fieldName] == $item;
+            })
+        );
+
+        return $collectionData;
+    }
+}
+
+if (! function_exists('moveItemToFirst')) {
+    function moveItemToFirst($collection, $fieldName, $item) {
+
+        $collectionData = $collection->reject(function($value) use ($fieldName, $item) {
+            return $value[$fieldName] == $item;
+        })
+        ->prepend($collection->filter(function($value) use ($fieldName, $item) {
+                return $value[$fieldName] == $item;
+            })
+        );
+
+        return $collectionData;
+    }
+}
+
+if (! function_exists('moveFirst')) {
+    function moveFirst($collection, $key, $value) {
+        $item_to_first = null;
+
+        // Search element to top
+        foreach ($collection as $item) {
+            if ($item->$key == $value){
+                $item_to_first = $item;
+                break;
+            }
+        }
+        // If element not found, return original collection
+        if (!$item_to_first){
+            return $collection;
+        }
+
+
+        // Element to top, first remove of collection, then insert to top
+        return $collection->reject(function ($value) use ($item_to_first){
+            return $value == $item_to_first;
+        })->prepend($item_to_first);
+    }
+}
+
+if (! function_exists('moveOnly')) {
+    function moveOnly($collection, $key, $item) {
+        return $collection->reject(function ($value) use ($key, $item){
+            return $value[$key] == $item;
+        })->prepend($collection->filter(function ($value) use ($key, $item) {
+            return $value[$key] == $item;
+        })[$item]);
+    }
+}
 
 if (! function_exists('datePassed')) {
     function datePassed($targetDate) {

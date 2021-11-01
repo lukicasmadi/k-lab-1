@@ -191,6 +191,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/polda/phro', 'HomeController@data')->name('phro_polda_data');
         Route::get('/polda/phro/id/{polda_id}', 'HomeController@dataSpesificPolda')->name('phro_polda_data_id');
         Route::get('/totalinputan', 'HomeController@dashboardChart')->name('dashboardChart');
+        Route::get('/totalinputan/nooperation', 'HomeController@dashboardChartWithoutOperation')->name('dashboard_chart_without_operation');
         Route::get('/phro/{uuid}/preview', 'PoldaHasRencanaOperasiController@preview')->name('phro_preview');
         Route::get('/phro/dailycheck', 'HomeController@dailycheck')->name('dailycheck');
         Route::get('/dashboard/donut', 'HomeController@donut')->name('donut');
@@ -220,5 +221,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/chart/anev/all', 'HomeController@chart_anev_all')->name('chart_anev_all');
 
         Route::get('/rekap/by/rencana-operasi/{uuid}', 'DailyRekapController@all_rekap_by_rencana_operasi')->name('all_rekap_by_rencana_operasi');
+        Route::get('/change-operation/{operation}', 'HomeController@changeOperation')->name('change_operation');
     });
 });

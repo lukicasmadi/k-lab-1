@@ -15,6 +15,19 @@
 <div class="layout-px-spacing">
     @include('flash::message')
     <div class="row layout-top-spacing" id="cancel-row">
+
+        @if (isAdmin() || isPusat() || isMonitoring())
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+                <input type="hidden" name="pilihan_operasi_flag" id="pilihan_operasi_flag" value="{{ $filter_operation }}">
+                <select class="form-control form-custom height-form" id="pilihan_operasi" name="pilihan_operasi">
+                    @foreach($allOperations as $key => $val)
+                        <option value="{{$val->slug_name}}">{{$val->name}}</option>
+                    @endforeach
+                </select>
+            </div>
+            @include('home_tabs.tab_no_operation')
+        @endif
+
         <div class="col-xl-12 col-lg-12 col-sm-12 mb-25 layout-spacing">
             <div class="widget-content">
                 <div class="table-responsive mb-5">
@@ -42,6 +55,7 @@
 @endsection
 
 @push('library_css')
+<link rel="stylesheet" type="text/css" href="{{ asset('template/assets/css/dashboard/dash_2.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/table/datatable/datatables.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/table/datatable/dt-global_style.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('template/plugins/sweetalerts/sweetalert2.min.css') }}" />
@@ -50,14 +64,79 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('template/datepicker/css/bootstrap-datepicker.min.css') }}">
 @endpush
 
+@push('page_css')
+<style>
+    .theme-light {
+        --piechart-color: #fff;
+        --piechart-legend: #fff;
+    }
+
+    .theme-dark {
+        --piechart-color: #105c7c;
+        --piechart-legend: #105c7c;
+    }
+    .apexcharts-canvas {
+        margin: 0 auto;
+    }
+
+    .apexcharts-title-text {
+        fill: #ffffff;
+    }
+    .apexcharts-yaxis-label {
+        fill: #ffffff;
+    }
+    .apexcharts-xaxis-label {
+        fill: #ffffff;
+    }
+    .apexcharts-legend-text {
+        color: var(--piechart-legend) !important;
+        padding-right: 20px;
+    }
+    .apexcharts-radialbar-track.apexcharts-track .apexcharts-radialbar-area {
+        stroke: #191e3a;
+    }
+    .apexcharts-datalabel, .apexcharts-datalabel-label, .apexcharts-datalabel-value {
+        fill: var(--piechart-color);
+    }
+.widget.widget-activity-three .timeline-line .item-timeline .t-content p {
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #00adef;
+}
+.widget.widget-activity-three .timeline-line .item-timeline .t-content .t-uppercontent span {
+    margin-bottom: 0;
+    font-size: 10px !important;
+    font-weight: 500;
+    color: #888ea8;
+}
+.icon-container a {
+    color: var(--piechart-color);
+}
+.icon-container a i {
+    font-size: 16px;
+}
+tbody tr:nth-child(odd){
+  /* opacity: 0.05; */
+  background-color: rgba(0, 173, 239, 0.05);
+  border-top: solid 1px rgba(17, 62, 81, 0.1);
+  border-bottom: solid 1px rgba(17, 62, 81, 0.1);
+  color: #105c7c;
+}
+</style>
+@endpush
+
 @push('library_js')
+<script src="{{ asset('template/plugins/dist-apex/apexcharts.min.js') }}"></script>
 <script src="{{ asset('template/plugins/table/datatable/datatables.js') }}"></script>
 <script src="{{ asset('template/plugins/sweetalerts/sweetalert2.min.js') }}"></script>
 <script src="{{ asset('template/datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
 <script src="{{ asset('js/popup.js') }}"></script>
 @endpush
 
 @push('page_js')
+<script src="{{ asset('js/tabs_no_operation.js') }}"></script>
 <script>
 
 $("#btn-add-notes").click(function (e) {
