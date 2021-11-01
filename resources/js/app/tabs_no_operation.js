@@ -229,7 +229,7 @@ jQuery(function() {
                         callGraph()
                         swal.insertQueueStep({
                             type: 'success',
-                            text: "Data grafik akan memuat data sesuai operasi yg dipilih",
+                            text: "Data grafik berhasil diperbaharui",
                         })
                     })
                     .then(function(data) {

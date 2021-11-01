@@ -27,22 +27,7 @@ if (! function_exists('moveItemToLast')) {
 }
 
 if (! function_exists('moveItemToFirst')) {
-    function moveItemToFirst($collection, $fieldName, $item) {
-
-        $collectionData = $collection->reject(function($value) use ($fieldName, $item) {
-            return $value[$fieldName] == $item;
-        })
-        ->prepend($collection->filter(function($value) use ($fieldName, $item) {
-                return $value[$fieldName] == $item;
-            })
-        );
-
-        return $collectionData;
-    }
-}
-
-if (! function_exists('moveFirst')) {
-    function moveFirst($collection, $key, $value) {
+    function moveItemToFirst($collection, $key, $value) {
         $item_to_first = null;
 
         // Search element to top
@@ -62,16 +47,6 @@ if (! function_exists('moveFirst')) {
         return $collection->reject(function ($value) use ($item_to_first){
             return $value == $item_to_first;
         })->prepend($item_to_first);
-    }
-}
-
-if (! function_exists('moveOnly')) {
-    function moveOnly($collection, $key, $item) {
-        return $collection->reject(function ($value) use ($key, $item){
-            return $value[$key] == $item;
-        })->prepend($collection->filter(function ($value) use ($key, $item) {
-            return $value[$key] == $item;
-        })[$item]);
     }
 }
 

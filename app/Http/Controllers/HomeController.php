@@ -323,7 +323,7 @@ class HomeController extends Controller
 
             if(!empty(session('filter_operation'))) {
                 $operations = RencanaOperasi::orderBy('id', 'desc')->get();
-                $allOperations = moveFirst($operations, 'name', session('filter_operation'));
+                $allOperations = moveItemToFirst($operations, 'name', session('filter_operation'));
             } else {
                 $allOperations = RencanaOperasi::orderBy('id', 'desc')->get();
             }
