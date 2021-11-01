@@ -120,7 +120,7 @@ jQuery(function() {
         yaxis: {
             labels: {
                 formatter: function(value, index) {
-                    return value
+                    return Math.round(value)
                 },
                 offsetX: -10,
                 offsetY: 0,
