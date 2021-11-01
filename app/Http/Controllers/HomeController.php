@@ -417,33 +417,53 @@ class HomeController extends Controller
             abort(404);
         }
 
-        $projectRunning = operationPlans();
+        if(empty(operationPlans())) {
 
-        if(empty($projectRunning)) {
-            return [];
+            if(empty(session('filter_operation'))) {
+                $operation = RencanaOperasi::latest()->first();
+            } else {
+                $operation = RencanaOperasi::where('name', session('filter_operation'))->first();
+            }
+
+            $period = CarbonPeriod::create($operation->start_date, $operation->end_date);
+
+            $rangeDate = [];
+
+            foreach ($period as $date) {
+                array_push($rangeDate, $date->format('Y-m-d'));
+            }
+
+            $whereDate = $rangeDate[$indexData];
+
+            $polda = Polda::with(['dailyInput' => function($q) use($whereDate) {
+                $q->select('id', 'polda_id', 'status', 'submited_date', 'rencana_operasi_id')->where('submited_date', '=', $whereDate);
+            }])->select('id', 'name')->get();
+
+            excelViewAbsensi($polda, indonesiaDayAndDate($whereDate));
+
+        } else {
+            $period = CarbonPeriod::create(operationPlans()->start_date, operationPlans()->end_date);
+
+            $rangeDate = [];
+
+            foreach ($period as $date) {
+                array_push($rangeDate, $date->format('Y-m-d'));
+            }
+
+            $countData = count($rangeDate) - 1;
+
+            if($indexData > $countData) {
+                abort(404);
+            }
+
+            $whereDate = $rangeDate[$indexData]; // HITUNG INDEX BERDASARKAN DATA YG DIKLIK USER
+
+            $polda = Polda::with(['dailyInput' => function($q) use($whereDate) {
+                $q->select('id', 'polda_id', 'status', 'submited_date', 'rencana_operasi_id')->where('submited_date', '=', $whereDate);
+            }])->select('id', 'name')->get();
+
+            excelViewAbsensi($polda, indonesiaDayAndDate($whereDate));
         }
-
-        $period = CarbonPeriod::create($projectRunning->start_date, $projectRunning->end_date);
-
-        $rangeDate = [];
-
-        foreach ($period as $date) {
-            array_push($rangeDate, $date->format('Y-m-d'));
-        }
-
-        $countData = count($rangeDate) - 1;
-
-        if($indexData > $countData) {
-            abort(404);
-        }
-
-        $whereDate = $rangeDate[$indexData];
-
-        $polda = Polda::with(['dailyInput' => function($q) use($whereDate) {
-            $q->select('id', 'polda_id', 'status', 'submited_date', 'rencana_operasi_id')->where('submited_date', '=', $whereDate);
-        }])->select('id', 'name')->get();
-
-        excelViewAbsensi($polda, indonesiaDayAndDate($whereDate));
     }
 
     public function dashboardChartWithoutOperation()
