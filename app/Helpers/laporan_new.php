@@ -2051,16 +2051,28 @@ if (! function_exists('compareAllPoldaInput')) {
     }
 }
 
-// if (! function_exists('pelanggaranLaluLintas')) {
-//     function pelanggaranLaluLintas($operationId, $year, $config) {
-//         if($config == 'current') {
-//             return DailyInput::withSum(['pelanggaran_lalu_lintas_tilang,pelanggaran_lalu_lintas_teguran' => function (Builder $query) use ($operationId, $year) {
-//                 $query->where('rencana_operasi_id', $operationId);
-//             }])->get();
-//         } else {
-//             return DailyInputPrev::withSum(['pelanggaran_lalu_lintas_tilang_p,pelanggaran_lalu_lintas_teguran_p' => function (Builder $query) use ($operationId, $year) {
-//                 $query->where('rencana_operasi_id', $operationId);
-//             }])->get();
-//         }
-//     }
-// }
+if (! function_exists('pelanggaranLalinPrev')) {
+    function pelanggaranLalinPrev($index) {
+        $data = session('report_daily_loop');
+
+        $temp = [];
+
+        array_push($temp, $data->dailyInputPrev[$index]->pelanggaran_lalu_lintas_tilang_p);
+        array_push($temp, $data->dailyInputPrev[$index]->pelanggaran_lalu_lintas_teguran_p);
+
+        return array_sum($temp);
+    }
+}
+
+if (! function_exists('pelanggaranLalinCurrent')) {
+    function pelanggaranLalinCurrent($index) {
+        $data = session('report_daily_loop');
+
+        $temp = [];
+
+        array_push($temp, $data->dailyInputCurrent[$index]->pelanggaran_lalu_lintas_tilang);
+        array_push($temp, $data->dailyInputCurrent[$index]->pelanggaran_lalu_lintas_teguran);
+
+        return array_sum($temp);
+    }
+}

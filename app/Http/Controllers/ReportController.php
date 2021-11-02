@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Polda;
+use App\Models\CountDown;
 use App\Models\DailyInput;
 use Illuminate\Http\Request;
 use App\Models\PoldaSubmited;
@@ -447,22 +448,39 @@ class ReportController extends Controller
     {
         $sortDirection = 'asc';
 
-        $rencanaOperasi = RencanaOperasi::with(['dailyInputCurrent' => function ($query) use ($sortDirection) {
+        $ro = RencanaOperasi::with(['dailyInputCurrent' => function ($query) use ($sortDirection) {
             $query->orderBy('id', $sortDirection);
         }, 'dailyInputPrev' => function ($query) use ($sortDirection) {
             $query->orderBy('id', $sortDirection);
         }])->where('uuid', $uuid)->firstOrFail();
 
-        $currentYear    = $rencanaOperasi->dailyInputCurrent[0]->year;
+        if(empty($ro->dailyInputCurrent)) {
+            return "Tidak ada data yang diinput di operasi ini";
+        }
+
+        $currentYear    = $ro->dailyInputCurrent[0]->year;
         $prevYear       = $currentYear - 1;
-        $total          = count($rencanaOperasi->dailyInputCurrent);
+
+        $total          = count($ro->dailyInputCurrent);
+
         $totalPlusJumlah = ($total + 1) * 2;
         $labelNumber = $totalPlusJumlah + 2;
         $beforeLast = $labelNumber - 1;
 
-        $operationId = $rencanaOperasi->id;
-        $year = Carbon::parse($rencanaOperasi->start_date)->year;
+        $operationId = $ro->id;
+        $year = Carbon::parse($ro->start_date)->year;
 
-        return view('exports.report_rekap_by_operation', compact('rencanaOperasi', 'currentYear', 'prevYear', 'total', 'totalPlusJumlah', 'labelNumber', 'beforeLast'));
+        session()->forget(['report_daily_loop']);
+        session(['report_daily_loop' => $ro]);
+
+        return view('exports.report_rekap_by_operation', compact('ro', 'currentYear', 'prevYear', 'total', 'totalPlusJumlah', 'labelNumber', 'beforeLast'));
     }
+
+    // public function reportAllPolda($uuid)
+    // {
+    //     $rencanaOperasi = RencanaOperasi::where('uuid', $uuid)->firstOrFail();
+    //     $loopDays = CountDown::with('dailyInputCurrent')->where('rencana_operasi_id', $rencanaOperasi->id)->orderBy('id', 'asc')->get();
+
+    //     return $loopDays;
+    // }
 }
