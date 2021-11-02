@@ -2049,3 +2049,9 @@ if (! function_exists('compareAllPoldaInput')) {
         $writer->save('php://output');
     }
 }
+
+if (! function_exists('calculateExcelCol')) {
+    function calculateExcelCol($payload) {
+        //
+    }
+}

@@ -27,10 +27,20 @@ $(document).ready(function() {
 
             $(data).each(function() {
                 var option = $('<option />');
-                option.attr('value', this.id).text(this.name);
-                $('#poldaList').append(option);
-            });
+                option.attr('value', this.uuid).text(this.name);
+                $('#operation_uuid').append(option);
+            })
         })
     }
+
+    $('body').on('click', '#btnViewReportHTML', function(e) {
+        e.preventDefault()
+        var url = route('all_polda_by_operation', $('#operation_uuid').val())
+        if ($('#operation_uuid').val() == '') {
+            alert("Anda belum memilih operasi")
+        } else {
+            window.open(url, '_blank').focus()
+        }
+    })
 
 });
