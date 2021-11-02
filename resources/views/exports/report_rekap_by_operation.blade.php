@@ -46,15 +46,51 @@
         </tr>
     </thead>
     <tbody>
+
         <tr>
             <td class="tg-n1r7">1</td>
             <td class="tg-n1r7">2</td>
             @php
                 for ($i = 3; $i <= $labelNumber; $i++) {
-                    echo '<th class="tg-n1r7">'.$i.'</th>';
+                    echo '<td class="tg-n1r7">'.$i.'</td>';
                 }
+                echo '<td class="tg-n1r7">'.$i.'</td>';
             @endphp
         </tr>
+
+        <tr>
+            <td class="tg-n1r7">I</td>
+            <td class="tg-o5n3">DATA TERKAIT MASALAH PELANGGARAN LALU LINTAS</td>
+            @php
+                for ($i = 3; $i <= $labelNumber; $i++) {
+                    echo '<td class="tg-n1r7"></td>';
+                }
+            @endphp
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-o5n3">1</td>
+            <td class="tg-o5n3">PELANGGARAN LALU LINTAS</td>
+            @php
+                for ($i = 3; $i <= $labelNumber; $i++) {
+                    echo '<td class="tg-n1r7"></td>';
+                }
+            @endphp
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">a. Tilang = (2a+2b+2c)</td>
+            @php
+                for ($i = 3; $i <= $labelNumber; $i++) {
+                    echo '<td class="tg-4bam">10</td>';
+                }
+            @endphp
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
     </tbody>
 </table>
 @endsection

@@ -451,7 +451,7 @@ class ReportController extends Controller
         $prevYear       = $currentYear - 1;
         $total          = count($rencanaOperasi->dailyInputCurrent);
         $totalPlusJumlah = ($total + 1) * 2;
-        $labelNumber = $totalPlusJumlah + 3;
+        $labelNumber = $totalPlusJumlah + 2;
 
         return view('exports.report_rekap_by_operation', compact('rencanaOperasi', 'currentYear', 'prevYear', 'total', 'totalPlusJumlah', 'labelNumber'));
     }
