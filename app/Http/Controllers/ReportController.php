@@ -447,8 +447,12 @@ class ReportController extends Controller
     {
         $rencanaOperasi = RencanaOperasi::with('dailyInputCurrent')->where('uuid', $uuid)->firstOrFail();
 
-        dump($rencanaOperasi);
+        $currentYear    = $rencanaOperasi->dailyInputCurrent[0]->year;
+        $prevYear       = $currentYear - 1;
+        $total          = count($rencanaOperasi->dailyInputCurrent);
+        $totalPlusJumlah = ($total + 1) * 2;
+        $labelNumber = $totalPlusJumlah + 3;
 
-        return view('exports.report_rekap_by_operation', compact('rencanaOperasi'));
+        return view('exports.report_rekap_by_operation', compact('rencanaOperasi', 'currentYear', 'prevYear', 'total', 'totalPlusJumlah', 'labelNumber'));
     }
 }
