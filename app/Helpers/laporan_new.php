@@ -4,6 +4,7 @@ use Carbon\Carbon;
 use App\Models\DailyInput;
 use App\Models\DailyInputPrev;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Query\Builder;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
 use PhpOffice\PhpSpreadsheet\Style\Color;
@@ -2050,8 +2051,16 @@ if (! function_exists('compareAllPoldaInput')) {
     }
 }
 
-if (! function_exists('calculateExcelCol')) {
-    function calculateExcelCol($payload) {
-        //
-    }
-}
+// if (! function_exists('pelanggaranLaluLintas')) {
+//     function pelanggaranLaluLintas($operationId, $year, $config) {
+//         if($config == 'current') {
+//             return DailyInput::withSum(['pelanggaran_lalu_lintas_tilang,pelanggaran_lalu_lintas_teguran' => function (Builder $query) use ($operationId, $year) {
+//                 $query->where('rencana_operasi_id', $operationId);
+//             }])->get();
+//         } else {
+//             return DailyInputPrev::withSum(['pelanggaran_lalu_lintas_tilang_p,pelanggaran_lalu_lintas_teguran_p' => function (Builder $query) use ($operationId, $year) {
+//                 $query->where('rencana_operasi_id', $operationId);
+//             }])->get();
+//         }
+//     }
+// }

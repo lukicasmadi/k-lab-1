@@ -460,6 +460,9 @@ class ReportController extends Controller
         $labelNumber = $totalPlusJumlah + 2;
         $beforeLast = $labelNumber - 1;
 
+        $operationId = $rencanaOperasi->id;
+        $year = Carbon::parse($rencanaOperasi->start_date)->year;
+
         return view('exports.report_rekap_by_operation', compact('rencanaOperasi', 'currentYear', 'prevYear', 'total', 'totalPlusJumlah', 'labelNumber', 'beforeLast'));
     }
 }
