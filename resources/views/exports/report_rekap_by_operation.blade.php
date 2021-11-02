@@ -58,10 +58,6 @@
             @endphp
         </tr>
 
-        @php
-            // logger($ro->dailyInputCurrent);
-        @endphp
-
         <tr>
             <td class="tg-n1r7">I</td>
             <td class="tg-o5n3">DATA TERKAIT MASALAH PELANGGARAN LALU LINTAS</td>
