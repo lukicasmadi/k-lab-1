@@ -445,14 +445,21 @@ class ReportController extends Controller
 
     public function reportAllPoldaByOperation($uuid)
     {
-        $rencanaOperasi = RencanaOperasi::with('dailyInputCurrent')->where('uuid', $uuid)->firstOrFail();
+        $sortDirection = 'asc';
+
+        $rencanaOperasi = RencanaOperasi::with(['dailyInputCurrent' => function ($query) use ($sortDirection) {
+            $query->orderBy('id', $sortDirection);
+        }, 'dailyInputPrev' => function ($query) use ($sortDirection) {
+            $query->orderBy('id', $sortDirection);
+        }])->where('uuid', $uuid)->firstOrFail();
 
         $currentYear    = $rencanaOperasi->dailyInputCurrent[0]->year;
         $prevYear       = $currentYear - 1;
         $total          = count($rencanaOperasi->dailyInputCurrent);
         $totalPlusJumlah = ($total + 1) * 2;
         $labelNumber = $totalPlusJumlah + 2;
+        $beforeLast = $labelNumber - 1;
 
-        return view('exports.report_rekap_by_operation', compact('rencanaOperasi', 'currentYear', 'prevYear', 'total', 'totalPlusJumlah', 'labelNumber'));
+        return view('exports.report_rekap_by_operation', compact('rencanaOperasi', 'currentYear', 'prevYear', 'total', 'totalPlusJumlah', 'labelNumber', 'beforeLast'));
     }
 }

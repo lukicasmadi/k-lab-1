@@ -84,9 +84,19 @@
             <td class="tg-ktyi"></td>
             <td class="tg-kcps">a. Tilang = (2a+2b+2c)</td>
             @php
-                for ($i = 3; $i <= $labelNumber; $i++) {
-                    echo '<td class="tg-4bam">10</td>';
+                $currentSum = [];
+                $prevSum = [];
+
+                for ($i = 0; $i < $total; $i++) {
+                    echo '<td class="tg-4bam">'.$rencanaOperasi->dailyInputPrev[$i]->pelanggaran_lalu_lintas_tilang_p.'</td>';
+                    echo '<td class="tg-4bam">'.$rencanaOperasi->dailyInputCurrent[$i]->pelanggaran_lalu_lintas_tilang.'</td>';
+
+                    array_push($prevSum, $rencanaOperasi->dailyInputPrev[$i]->pelanggaran_lalu_lintas_tilang_p);
+                    array_push($currentSum, $rencanaOperasi->dailyInputCurrent[$i]->pelanggaran_lalu_lintas_tilang);
                 }
+
+                echo '<td class="tg-4bam">'.array_sum($prevSum).'</td>';
+                echo '<td class="tg-4bam">'.array_sum($currentSum).'</td>';
             @endphp
             <td class="tg-4bam">Perkara</td>
         </tr>
