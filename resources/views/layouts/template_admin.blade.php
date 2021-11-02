@@ -50,6 +50,7 @@
 
             @yield('content')
             @include('include.footer_wrapper')
+            @include('popup.filter_operation')
         </div>
         <!--  END CONTENT PART  -->
 
@@ -69,11 +70,7 @@
     <script src="{{ asset('template/assets/js/components/ui-accordions.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
     <script src="{{ asset('template/assets/js/intro.min.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            App.init();
-        });
-    </script>
+    <script src="{{ asset('js/template_admin.js') }}"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
     @stack('library_js')

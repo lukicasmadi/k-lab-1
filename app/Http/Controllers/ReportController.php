@@ -442,4 +442,9 @@ class ReportController extends Controller
 
         compareAllPoldaInput($prev, $current, $start_date, $end_date, $prev_year, $current_year, $rencanaOperasi->name);
     }
+
+    public function reportAllPoldaByOperation(Request $request)
+    {
+        //
+    }
 }

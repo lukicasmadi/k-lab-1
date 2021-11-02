@@ -15,4 +15,5 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/app/tabs.js', 'public/js')
     .js('resources/js/app/tabs_no_operation.js', 'public/js')
     .js('resources/js/app/tabs_filtered.js', 'public/js')
+    .js('resources/js/app/template_admin.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');

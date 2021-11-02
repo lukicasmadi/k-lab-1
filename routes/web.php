@@ -171,8 +171,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/daily-rekap/update', 'DailyRekapController@update')->name('daily_rekap_update');
     Route::get('/daily-rekap/excel/{uuid}', 'DailyRekapController@dailyRekapExcel')->name('daily_dowmload_excel');
     Route::get('/report/operasi/{uuid}', 'ReportController@reportByOperation')->name('report_by_operation');
+    Route::post('/view-report-all-polda', 'ReportController@reportAllPoldaByOperation')->name('all_polda_by_operation');
 
     Route::group(['prefix' => 'data'], function () {
+        Route::get('/operation-plan/all', 'RencanaOperasiController@getAllOperation')->name('get_all_operation');
         Route::get('/operation-plan/show/{id}', 'RencanaOperasiController@byId')->name('operation_plan_show');
         Route::get('/category', 'CategoryController@data')->name('category_data');
         Route::get('/article', 'ArticleController@data')->name('article_data');

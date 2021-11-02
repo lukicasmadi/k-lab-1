@@ -72,6 +72,9 @@
                                     <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
                                         <a href="{{ route('report_all_polda_compare') }}"> Laporan Perbandingan Harian </a>
                                     </li>
+                                    <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
+                                        <a href="#" id="report_polda_all"> Laporan Operasi </a>
+                                    </li>
                                 </ul>
                             </li>
                         @endrole
@@ -335,11 +338,12 @@
                                     <li class="{{ request()->is('report/anev-date-compare') ? 'active' : '' }}">
                                         <a href="{{ route('report_anev_daily') }}"> Laporan Anev Harian </a>
                                     </li>
-                                    @if (!empty(operationPlans()))
-                                        <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
-                                            <a href="{{ route('report_all_polda_compare') }}"> Laporan Perbandingan Harian </a>
-                                        </li>
-                                    @endif
+                                    <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
+                                        <a href="{{ route('report_all_polda_compare') }}"> Laporan Perbandingan Harian </a>
+                                    </li>
+                                    <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
+                                        <a href="#" id="report_polda_all"> Laporan Operasi </a>
+                                    </li>
                                 </ul>
                             </li>
                         @endrole
