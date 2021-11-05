@@ -17,6 +17,5 @@ class SqlFileSeeder extends Seeder
         $path = public_path('template/sortable_polda.sql');
         $sql = file_get_contents($path);
         DB::unprepared($sql);
-        return "Done";
     }
 }
