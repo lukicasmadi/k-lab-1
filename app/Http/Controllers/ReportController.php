@@ -476,11 +476,38 @@ class ReportController extends Controller
         return view('exports.report_rekap_by_operation', compact('ro', 'currentYear', 'prevYear', 'total', 'totalPlusJumlah', 'labelNumber', 'beforeLast'));
     }
 
-    // public function reportAllPolda($uuid)
-    // {
-    //     $rencanaOperasi = RencanaOperasi::where('uuid', $uuid)->firstOrFail();
-    //     $loopDays = CountDown::with('dailyInputCurrent')->where('rencana_operasi_id', $rencanaOperasi->id)->orderBy('id', 'asc')->get();
+    public function reportAllPolda($uuid)
+    {
+        session()->forget(['report_daily_loop', 'loopDays']);
 
-    //     return $loopDays;
-    // }
+        $rencanaOperasi = RencanaOperasi::where('uuid', $uuid)->firstOrFail();
+        $loopDays = CountDown::with(['dailyInputCurrent', 'dailyInputPrev'])
+        ->where('rencana_operasi_id', $rencanaOperasi->id)
+        ->take(2)
+        ->orderBy('id', 'asc')->get();
+
+        $hari = 1;
+        $operasiHariKe = [];
+        $xxx = [];
+
+        $total          = count($loopDays);
+        $currentYear    = date("Y", strtotime($rencanaOperasi->start_date));
+        $prevYear       = $currentYear - 1;
+
+        foreach($loopDays as $key => $loop) {
+            array_push($operasiHariKe, "H-".$hari);
+
+            foreach($loop->dailyInputCurrent as $current) {
+                array_push($xxx, $current->id);
+            }
+
+            $hari++;
+        }
+
+        session([
+            'operasiHariKe' => $operasiHariKe,
+        ]);
+
+        return view('exports.all', compact('loopDays', 'total', 'currentYear', 'prevYear'));
+    }
 }
