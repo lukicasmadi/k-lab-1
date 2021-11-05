@@ -38,24 +38,58 @@
         </tr>
         <tr>
             @php
-                for ($i = 0; $i <= $total; $i++) {
+                for ($i = 0; $i <= $totalLoopDays; $i++) {
                     echo '<th class="tg-2g1l">'.$prevYear.'</th>';
                     echo '<th class="tg-2g1l">'.$currentYear.'</th>';
                 }
             @endphp
         </tr>
-    </thead>
-    <tbody>
-        {{-- <tr>
+        <tr>
             <td class="tg-n1r7">1</td>
             <td class="tg-n1r7">2</td>
-            @foreach ($loopDays as $days)
-                <td class="tg-n1r7">xxx</td>
-                <td class="tg-n1r7">xxx</td>
+            @php
+                for ($i = 3; $i <= $labelNumber; $i++) {
+                    echo '<td class="tg-n1r7">'.$i.'</td>';
+                }
+                echo '<td class="tg-n1r7">'.$i.'</td>';
+            @endphp
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td class="tg-n1r7">I</td>
+            <td class="tg-o5n3">DATA TERKAIT MASALAH PELANGGARAN LALU LINTAS</td>
+                @foreach ($loopDays as $current)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-o5n3">1</td>
+            <td class="tg-o5n3">PELANGGARAN LALU LINTAS</td>
+            @php
+                for ($i = 3; $i <= $labelNumber; $i++) {
+                    echo '<td class="tg-n1r7"></td>';
+                }
+            @endphp
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">a. Tilang = (2a+2b+2c)</td>
+            @foreach ($loopDays as $ld)
+                {{ logger($ld->dailyInputCurrent) }}
+                {{-- <td class="tg-n1r7">{{ $ld->dailyInputPrev->pelanggaran_lalu_lintas_tilang_p }}</td>
+                <td class="tg-n1r7">{{ $ld->dailyInputCurrent->pelanggaran_lalu_lintas_tilang }}</td> --}}
             @endforeach
-            <th class="tg-2g1l" colspan="2">Jumlah</th>
-            <th class="tg-2g1l" rowspan="2">KET</th>
-        </tr> --}}
+            <td class="tg-4bam">Perkara</td>
+        </tr>
     </tbody>
 </table>
 @endsection
