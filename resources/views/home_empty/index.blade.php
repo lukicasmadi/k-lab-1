@@ -35,13 +35,12 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th width="17%">Laporan Operasi</th>
-                                <th width="16%">Jenis Operasi</th>
+                                <th width="25%">Laporan Operasi</th>
+                                <th width="25%">Jenis Operasi</th>
                                 <th width="15%">Tgl Mulai</th>
                                 <th width="15%">Tgl Selesai</th>
-                                <th width="3%">Lihat</th>
-                                <th width="3%">Download</th>
-                                <th width="3%">Detail</th>
+                                <th width="5%">Lihat</th>
+                                <th width="15%">Action</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -243,18 +242,7 @@ $(document).ready(function () {
                         <a href="`+route('report_by_operation', data)+`">
                             Unduh
                         </a>
-                    </div>
-                    `;
-                },
-                searchable: false,
-                visible: true,
-                sortable: false,
-            },
-            {
-                data: 'uuid',
-                render: function(data, type, row) {
-                    return `
-                    <div class="ubah-change">
+                        |
                         <a href="`+route('report_all_polda_compare')+`" class="redirect">
                             Detil
                         </a>
