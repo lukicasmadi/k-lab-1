@@ -668,6 +668,18 @@ select.form-control.form-custom {
     appearance: none;
 }
 
+select.form-control.form-custom option {
+    background-color: transparent;
+}
+
+select.form-control.form-custom option:after {
+    background-color: #fff;
+}
+
+select.form-control.form-custom option:before {
+    background-color: #fff;
+}
+
 
 /*      Form Control Custom File       */
 
