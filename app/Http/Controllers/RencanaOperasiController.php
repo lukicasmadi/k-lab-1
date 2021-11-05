@@ -257,4 +257,11 @@ class RencanaOperasiController extends Controller
             'output' => 'Rencana operasi telah dihapus!',
         ], 200);
     }
+
+    public function getAllOperation()
+    {
+        $data = RencanaOperasi::latest()->get();
+
+        return $data;
+    }
 }

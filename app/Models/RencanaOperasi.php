@@ -5,11 +5,14 @@ namespace App\Models;
 use App\Models\PoldaHasRencanaOperasi;
 use Illuminate\Database\Eloquent\Model;
 
+use Rennokki\QueryCache\Traits\QueryCacheable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class RencanaOperasi extends Model
 {
-    use HasFactory;
+    use HasFactory, QueryCacheable;
+
+    public $cacheFor = 86400; // IN SECONDS (CACHE FOR 1 DAY)
 
     protected $guarded = ['id'];
 

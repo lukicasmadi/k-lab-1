@@ -35,9 +35,9 @@ body {
     --searh-table: block;
     --searhligh-table: none;
     --opacity-popup: 1;
-    --border-form: 1px solid #00adef; 
+    --border-form: 1px solid #00adef;
     --input-operasi: rgba(0, 173, 239, 0.3);
-    --filter-bg : drop-shadow(5px 5px 10px rgba(0, 173, 239, 0.4));
+    --filter-bg: drop-shadow(5px 5px 10px rgba(0, 173, 239, 0.4));
 }
 
 .theme-dark {
@@ -50,7 +50,7 @@ body {
     --opacity-popup: 0.3;
     --border-form: 1px solid rgba(16, 92, 124, 0.3);
     --input-operasi: rgba(0, 173, 239, 0.3);
-    --filter-bg : drop-shadow(5px 5px 10px rgba(225, 225, 225, 0.8));
+    --filter-bg: drop-shadow(5px 5px 10px rgba(225, 225, 225, 0.8));
 }
 
 .manuals {
@@ -65,7 +65,7 @@ body {
 .searh-on {
     display: var(--searh-table);
 }
-  
+
 .searh-off {
     display: var(--searhligh-table);
 }
@@ -84,12 +84,13 @@ body {
     max-width: 100%;
 }
 
-.blendingimg img.imgdetail-polda{
+.blendingimg img.imgdetail-polda {
     width: 90%;
     padding-bottom: 125px;
     -webkit-filter: var(--filter-bg);
     filter: var(--filter-bg);
 }
+
 
 /* .blendingimg::after {
     content: "";
@@ -394,6 +395,7 @@ label {
 .text-artikel .form-group label {
     color: var(--txt-popups);
 }
+
 
 /*  Disable forms     */
 
@@ -851,6 +853,11 @@ select.form-control.form-custom {
 }
 
 #btn-n-add {
+    background-color: #00adef;
+    color: #fff;
+}
+
+.btn-biru {
     background-color: #00adef;
     color: #fff;
 }
@@ -3362,14 +3369,12 @@ table .badge-dark {
         width: 100%;
         margin: 35px 0 0 0;
     }
-
-    .blendingimg img.imgdetail-polda{
+    .blendingimg img.imgdetail-polda {
         width: 50%;
         padding-bottom: 0;
         -webkit-filter: var(--filter-bg);
         filter: var(--filter-bg);
     }
-
     .add-none {
         margin: 21px 0 0 0;
     }

@@ -4,6 +4,7 @@ use Carbon\Carbon;
 use App\Models\DailyInput;
 use App\Models\DailyInputPrev;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Query\Builder;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
 use PhpOffice\PhpSpreadsheet\Style\Color;
@@ -1187,7 +1188,7 @@ if (! function_exists('newDailyReportDetail')) {
 }
 
 if (! function_exists('compareAllPoldaInput')) {
-    function compareAllPoldaInput($data_prev, $data_current, $start_date, $end_date, $prev_year, $current_year) {
+    function compareAllPoldaInput($data_prev, $data_current, $start_date, $end_date, $prev_year, $current_year, $operationName) {
 
         $excelPath = public_path('template/excel');
         $excelTemplate = $excelPath."/format_laporan_detail_daily.xlsx";
@@ -1200,7 +1201,8 @@ if (! function_exists('compareAllPoldaInput')) {
 
         $sheet = $spreadsheet->getActiveSheet();
 
-        $sheet->setCellValue('A5', 'LAPORAN HARIAN '.upperCase(operationPlans()->name));
+        $sheet->setCellValue('A5', 'LAPORAN HARIAN '.upperCase($operationName));
+        $sheet->setCellValue('A6', 'KESATUAN : Korlantas');
         $sheet->setCellValue('A7', 'HARI/TGL : '.indonesianFullDayAndDate(date("Y-m-d H:i:s")));
 
         $skip = [
@@ -2046,5 +2048,31 @@ if (! function_exists('compareAllPoldaInput')) {
 
         $writer = new Xlsx($spreadsheet);
         $writer->save('php://output');
+    }
+}
+
+if (! function_exists('pelanggaranLalinPrev')) {
+    function pelanggaranLalinPrev($index) {
+        $data = session('report_daily_loop');
+
+        $temp = [];
+
+        array_push($temp, $data->dailyInputPrev[$index]->pelanggaran_lalu_lintas_tilang_p);
+        array_push($temp, $data->dailyInputPrev[$index]->pelanggaran_lalu_lintas_teguran_p);
+
+        return array_sum($temp);
+    }
+}
+
+if (! function_exists('pelanggaranLalinCurrent')) {
+    function pelanggaranLalinCurrent($index) {
+        $data = session('report_daily_loop');
+
+        $temp = [];
+
+        array_push($temp, $data->dailyInputCurrent[$index]->pelanggaran_lalu_lintas_tilang);
+        array_push($temp, $data->dailyInputCurrent[$index]->pelanggaran_lalu_lintas_teguran);
+
+        return array_sum($temp);
     }
 }
