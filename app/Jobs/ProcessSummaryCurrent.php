@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use Illuminate\Bus\Batchable;
 use Illuminate\Bus\Queueable;
 use App\Models\DailyNoticeCurrent;
 use Illuminate\Support\Facades\DB;
@@ -13,7 +14,7 @@ use Illuminate\Contracts\Queue\ShouldBeUnique;
 
 class ProcessSummaryCurrent implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels, Batchable;
 
     protected $operation_id;
     protected $submited_date;
@@ -24,21 +25,10 @@ class ProcessSummaryCurrent implements ShouldQueue
         $this->submited_date = $submited_date;
     }
 
-    /**
-     * Execute the job.
-     *
-     * @return void
-     */
     public function handle()
     {
         $data = DB::select('CALL summaryDataCurrent(?,?)', [$this->operation_id, $this->submited_date]);
         $inserted = $data[0];
-
-        $output = DailyNoticeCurrent::where('submited_date', $this->submited_date)->where('operation_id', $this->operation_id)->first();
-
-        if(!empty($output)) {
-            $output->delete();
-        }
 
         DailyNoticeCurrent::insert([
             "operation_id" => $inserted->rencana_operasi_id,

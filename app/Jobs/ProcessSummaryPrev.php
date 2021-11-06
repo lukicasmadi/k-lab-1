@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Models\DailyNotice;
+use Illuminate\Bus\Batchable;
 use Illuminate\Bus\Queueable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Queue\SerializesModels;
@@ -13,13 +14,8 @@ use Illuminate\Contracts\Queue\ShouldBeUnique;
 
 class ProcessSummaryPrev implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels, Batchable;
 
-    /**
-     * Create a new job instance.
-     *
-     * @return void
-     */
     protected $operation_id;
     protected $submited_date;
 
@@ -33,12 +29,6 @@ class ProcessSummaryPrev implements ShouldQueue
     {
         $data = DB::select('CALL summaryDataPrev(?,?)', [$this->operation_id, $this->submited_date]);
         $inserted = $data[0];
-
-        $output = DailyNotice::where('submited_date', $this->submited_date)->where('operation_id', $this->operation_id)->first();
-
-        if(!empty($output)) {
-            $output->delete();
-        }
 
         DailyNotice::insert([
             "operation_id" => $inserted->rencana_operasi_id,
