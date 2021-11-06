@@ -31,4 +31,9 @@ class CountDown extends Model
     {
         return $this->hasMany(DailyInputPrev::class, 'rencana_operasi_id', 'rencana_operasi_id');
     }
+
+    public function current()
+    {
+        return $this->hasMany(DailyInput::class, 'rencana_operasi_id', 'rencana_operasi_id');
+    }
 }

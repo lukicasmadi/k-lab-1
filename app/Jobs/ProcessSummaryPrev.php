@@ -29,11 +29,6 @@ class ProcessSummaryPrev implements ShouldQueue
         $this->submited_date = $submited_date;
     }
 
-    /**
-     * Execute the job.
-     *
-     * @return void
-     */
     public function handle()
     {
         $data = DB::select('CALL summaryDataPrev(?,?)', [$this->operation_id, $this->submited_date]);
