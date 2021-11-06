@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/help', 'HelperController@dailyProcess')->name('daily_process');
 Route::get('/home', 'HomeController@welcomePage')->name('home');
 Route::get('/lihat-panduan', 'HomeController@lihatPanduan')->name('lihat_panduan');
 

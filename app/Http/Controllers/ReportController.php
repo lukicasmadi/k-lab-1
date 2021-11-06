@@ -483,14 +483,14 @@ class ReportController extends Controller
         $rencanaOperasi = RencanaOperasi::where('uuid', $uuid)->firstOrFail();
         $loopDays = CountDown::with(['dailyInputCurrent', 'dailyInputPrev'])
             ->where('rencana_operasi_id', $rencanaOperasi->id)
-            ->take(2)
-            ->orderBy('id', 'asc')->get();
+            ->take(2) // HAPUS INI
+            ->orderBy('id', 'desc')->get(); // GANTI KE ASC
 
         $hari = 1;
         $operasiHariKe = [];
         $xxx = [];
 
-        $totalLoopDays          = count($loopDays);
+        $totalLoopDays  = count($loopDays);
         $currentYear    = date("Y", strtotime($rencanaOperasi->start_date));
         $prevYear       = $currentYear - 1;
 
@@ -501,9 +501,8 @@ class ReportController extends Controller
         foreach($loopDays as $key => $loop) {
             array_push($operasiHariKe, "H-".$hari);
 
-            foreach($loop->dailyInputCurrent as $current) {
-                array_push($xxx, $current->id);
-            }
+            // prevDaily($loop->tanggal, $loop->rencana_operasi_id);
+            // prevDaily($loop->rencana_operasi_id, '2021-06-01');
 
             $hari++;
         }

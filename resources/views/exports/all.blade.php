@@ -84,7 +84,12 @@
             <td class="tg-ktyi"></td>
             <td class="tg-kcps">a. Tilang = (2a+2b+2c)</td>
             @foreach ($loopDays as $ld)
-                {{ logger($ld->dailyInputCurrent) }}
+                {{-- @php
+                    logger(prevReport(date("Y-m-d", strtotime($ld->created_at))));
+                @endphp --}}
+                {{-- @foreach ($ld->dailyInputCurrent as $current)
+
+                @endforeach --}}
                 {{-- <td class="tg-n1r7">{{ $ld->dailyInputPrev->pelanggaran_lalu_lintas_tilang_p }}</td>
                 <td class="tg-n1r7">{{ $ld->dailyInputCurrent->pelanggaran_lalu_lintas_tilang }}</td> --}}
             @endforeach
