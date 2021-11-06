@@ -8,6 +8,7 @@ use App\Models\DailyNotice;
 use Illuminate\Http\Request;
 use App\Models\DailyInputPrev;
 use App\Models\RencanaOperasi;
+use App\Jobs\ProcessSummaryPrev;
 use Illuminate\Support\Facades\DB;
 
 class HelperController extends Controller
@@ -345,5 +346,16 @@ class HelperController extends Controller
         ]);
 
         return "DONE";
+    }
+
+    public function runDispatch()
+    {
+        $countDown = CountDown::orderBy('tanggal', 'asc')->get();
+
+        foreach($countDown as $cd) {
+            dispatch(new ProcessSummaryPrev($cd->rencana_operasi_id, $cd->tanggal));
+        }
+
+        return "DISPACTH DONE";
     }
 }

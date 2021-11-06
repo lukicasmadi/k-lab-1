@@ -681,3 +681,13 @@ if (! function_exists('prevDaily')) {
         ->get();
     }
 }
+
+if (! function_exists('zeroIfNull')) {
+    function zeroIfNull($data) {
+        if(empty($data) || is_null($data)) {
+            return 0;
+        } else {
+            return $data;
+        }
+    }
+}
