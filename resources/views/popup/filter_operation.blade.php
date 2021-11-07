@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <input type="submit" name="submit" class="btn btn-biru" value="LIHAT" id="btnViewReportHTML">
+                <input type="submit" name="submit" class="btn btn-biru" value="PROSES" id="btnViewReportHTML">
             </div>
         </div>
     </div>

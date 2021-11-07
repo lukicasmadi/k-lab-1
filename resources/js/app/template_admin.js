@@ -39,7 +39,8 @@ $(document).ready(function() {
         if ($('#operation_uuid').val() == '') {
             alert("Anda belum memilih operasi")
         } else {
-            window.open(url, '_blank').focus()
+            // window.open(url)
+            window.location.href = url
         }
     })
 

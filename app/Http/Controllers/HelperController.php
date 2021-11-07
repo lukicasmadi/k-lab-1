@@ -12,19 +12,53 @@ use App\Jobs\ProcessSummaryPrev;
 use App\Models\DailyNoticeCurrent;
 use Illuminate\Support\Facades\DB;
 use App\Jobs\ProcessSummaryCurrent;
+use Illuminate\Support\Facades\Bus;
 
 class HelperController extends Controller
 {
+
+    public function queueCheck($bacthId)
+    {
+        $id = $bacthId;
+        $batch = Bus::findBatch($id);
+
+        return $batch;
+    }
+
+    public function reportAllPolda($uuid)
+    {
+        $rencanaOperasi = RencanaOperasi::where('uuid', $uuid)->firstOrFail();
+        $operationId = $rencanaOperasi->id;
+
+        $countDown = CountDown::where('rencana_operasi_id', $operationId)->orderBy('tanggal', 'asc')->get();
+
+        DailyNoticeCurrent::where('operation_id', $operationId)->delete();
+        DailyNotice::where('operation_id', $operationId)->delete();
+
+        $jobsPrev = [];
+        $jobsCurrent = [];
+
+        foreach($countDown as $cd) {
+            $jobsPrev[] = new ProcessSummaryPrev($cd->rencana_operasi_id, $cd->tanggal);
+            $jobsCurrent[] = new ProcessSummaryCurrent($cd->rencana_operasi_id, $cd->tanggal);
+        }
+
+        Bus::batch($jobsPrev)->dispatch();
+        $batch = Bus::batch($jobsCurrent)->dispatch();
+
+        return redirect()->route('batch_progress', $batch->id);
+    }
+
     public function dailyProcess($operationId)
     {
-        // $data = currentDaily(3, '2021-10-02');
-        // $data = DB::select('CALL summaryDataCurrent(?,?)', [3, '2021-10-02']);
+        $data = currentDaily(3, '2021-10-02');
+        $data = DB::select('CALL summaryDataCurrent(?,?)', [3, '2021-10-02']);
 
-        // return $data;
+        return $data;
 
-        // $countDown = CountDown::where('rencana_operasi_id', $operationId)->orderBy('tanggal', 'asc')->get();
+        $countDown = CountDown::where('rencana_operasi_id', $operationId)->orderBy('tanggal', 'asc')->get();
 
-        // return $countDown;
+        return $countDown;
     }
 
     public function runDispatch($operationId)
@@ -34,11 +68,30 @@ class HelperController extends Controller
         DailyNoticeCurrent::where('operation_id', $operationId)->delete();
         DailyNotice::where('operation_id', $operationId)->delete();
 
+        $jobsPrev = [];
+        $jobsCurrent = [];
+
         foreach($countDown as $cd) {
-            dispatch(new ProcessSummaryPrev($cd->rencana_operasi_id, $cd->tanggal));
-            dispatch(new ProcessSummaryCurrent($cd->rencana_operasi_id, $cd->tanggal));
+            $jobsPrev[] = new ProcessSummaryPrev($cd->rencana_operasi_id, $cd->tanggal);
+            $jobsCurrent[] = new ProcessSummaryCurrent($cd->rencana_operasi_id, $cd->tanggal);
         }
 
-        return "DISPACTH DONE";
+        Bus::batch($jobsPrev)->dispatch();
+        $batch = Bus::batch($jobsCurrent)->dispatch();
+
+        return redirect()->route('batch_progress', $batch->id);
+    }
+
+    public function loopData($operationId)
+    {
+        $prev = DailyNotice::orderBy('submited_date', 'asc')->get();
+        $current = DailyNoticeCurrent::orderBy('submited_date', 'asc')->get();
+    }
+
+    public function batchProgress($batchId)
+    {
+        $batch = Bus::findBatch($batchId);
+
+        return view('report.progress', compact('batch'));
     }
 }
