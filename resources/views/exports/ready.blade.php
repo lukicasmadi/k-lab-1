@@ -93,7 +93,7 @@
             <td class="tg-4bam">Perkara</td>
         </tr>
 
-        {{-- <tr>
+        <tr>
             <td class="tg-ktyi"></td>
             <td class="tg-kcps">b. Teguran</td>
             @for ($i = 0; $i < $totalLoopDays; $i++)
@@ -103,7 +103,7 @@
             <td class="tg-o5n3">{{ App\Models\DailyNotice::where('operation_id', $operationId)->sum('pelanggaran_lalu_lintas_teguran_p') }}</td>
             <td class="tg-o5n3">{{ App\Models\DailyNoticeCurrent::where('operation_id', $operationId)->sum('pelanggaran_lalu_lintas_teguran') }}</td>
             <td class="tg-4bam">Perkara</td>
-        </tr> --}}
+        </tr>
 
     </tbody>
 </table>
