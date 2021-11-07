@@ -129,8 +129,6 @@ class HelperController extends Controller
 
         $operationId = $rencanaOperasi->id;
 
-        logger($dailyNoticePrev);
-
         return view('exports.ready', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'operationId'));
     }
 }

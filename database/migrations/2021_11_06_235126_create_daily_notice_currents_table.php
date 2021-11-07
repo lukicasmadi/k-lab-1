@@ -18,6 +18,9 @@ class CreateDailyNoticeCurrentsTable extends Migration
             $table->string('operation_id');
             $table->date('submited_date');
 
+            $table->float("pelanggaran_lalu_lintas_tilang", 8, 0)->default(0);
+            $table->float("pelanggaran_lalu_lintas_teguran", 8, 0)->default(0);
+
             $table->float("pelanggaran_sepeda_motor_kecepatan", 8, 0)->default(0);
             $table->float("pelanggaran_sepeda_motor_helm", 8, 0)->default(0);
             $table->float("pelanggaran_sepeda_motor_bonceng_lebih_dari_satu", 8, 0)->default(0);

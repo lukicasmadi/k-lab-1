@@ -33,6 +33,8 @@ class ProcessSummaryCurrent implements ShouldQueue
         DailyNoticeCurrent::insert([
             "operation_id" => $inserted->rencana_operasi_id,
             "submited_date" => $inserted->tanggal,
+            "pelanggaran_lalu_lintas_tilang" => zeroIfNull($inserted->current_pelanggaran_lalu_lintas_tilang_sum),
+            "pelanggaran_lalu_lintas_teguran" => zeroIfNull($inserted->current_pelanggaran_lalu_lintas_teguran_sum),
             "pelanggaran_sepeda_motor_kecepatan" => zeroIfNull($inserted->current_pelanggaran_sepeda_motor_kecepatan_sum),
             "pelanggaran_sepeda_motor_helm" => zeroIfNull($inserted->current_pelanggaran_sepeda_motor_helm_sum),
             "pelanggaran_sepeda_motor_bonceng_lebih_dari_satu" => zeroIfNull($inserted->current_pelanggaran_sepeda_motor_bonceng_lebih_dari_satu_sum),

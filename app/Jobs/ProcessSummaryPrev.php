@@ -33,6 +33,9 @@ class ProcessSummaryPrev implements ShouldQueue
         DailyNotice::insert([
             "operation_id" => $inserted->rencana_operasi_id,
             "submited_date" => $inserted->tanggal,
+
+            "pelanggaran_lalu_lintas_tilang_p" => zeroIfNull($inserted->prev_pelanggaran_lalu_lintas_tilang_p_sum),
+            "pelanggaran_lalu_lintas_teguran_p" => zeroIfNull($inserted->prev_pelanggaran_lalu_lintas_teguran_p_sum),
             "pelanggaran_sepeda_motor_kecepatan_p" => zeroIfNull($inserted->prev_pelanggaran_sepeda_motor_kecepatan_p_sum),
             "pelanggaran_sepeda_motor_helm_p" => zeroIfNull($inserted->prev_pelanggaran_sepeda_motor_helm_p_sum),
             "pelanggaran_sepeda_motor_bonceng_lebih_dari_satu_p" => zeroIfNull($inserted->prev_pelanggaran_sepeda_motor_bonceng_lebih_dari_satu_p_sum),
