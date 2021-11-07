@@ -350,6 +350,14 @@ class CreateDailyNoticeCurrentsTable extends Migration
             $table->float("prokes_covid_pembagian_masker", 8, 0)->default(0);
             $table->float("prokes_covid_sosialisasi_tentang_prokes", 8, 0)->default(0);
             $table->float("prokes_covid_giat_baksos", 8, 0)->default(0);
+
+            $table->float('penyekatan_motor', 8, 0)->default(0);
+            $table->float('penyekatan_mobil_penumpang', 8, 0)->default(0);
+            $table->float('penyekatan_mobil_bus', 8, 0)->default(0);
+            $table->float('penyekatan_mobil_barang', 8, 0)->default(0);
+            $table->float('penyekatan_kendaraan_khusus', 8, 0)->default(0);
+            $table->float('rapid_test_antigen_positif', 8, 0)->default(0);
+            $table->float('rapid_test_antigen_negatif', 8, 0)->default(0);
         });
     }
 

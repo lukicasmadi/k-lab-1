@@ -101,7 +101,7 @@ class HelperController extends Controller
 
     public function openReadyReport($operationUuid)
     {
-        $limit = null;
+        $limit = 3;
 
         $rencanaOperasi = RencanaOperasi::where('uuid', $operationUuid)->firstOrFail();
         $countDown = CountDown::where('rencana_operasi_id', $rencanaOperasi->id)->get();

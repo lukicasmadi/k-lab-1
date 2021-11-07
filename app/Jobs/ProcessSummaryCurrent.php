@@ -346,6 +346,13 @@ class ProcessSummaryCurrent implements ShouldQueue
             "prokes_covid_pembagian_masker" => zeroIfNull($inserted->current_prokes_covid_pembagian_masker_sum),
             "prokes_covid_sosialisasi_tentang_prokes" => zeroIfNull($inserted->current_prokes_covid_sosialisasi_tentang_prokes_sum),
             "prokes_covid_giat_baksos" => zeroIfNull($inserted->current_prokes_covid_giat_baksos_sum),
+            "penyekatan_motor" => zeroIfNull($inserted->current_penyekatan_motor_sum),
+            "penyekatan_mobil_penumpang" => zeroIfNull($inserted->current_penyekatan_mobil_penumpang_sum),
+            "penyekatan_mobil_bus" => zeroIfNull($inserted->current_penyekatan_mobil_bus_sum),
+            "penyekatan_mobil_barang" => zeroIfNull($inserted->current_penyekatan_mobil_barang_sum),
+            "penyekatan_kendaraan_khusus" => zeroIfNull($inserted->current_penyekatan_kendaraan_khusus_sum),
+            "rapid_test_antigen_positif" => zeroIfNull($inserted->current_rapid_test_antigen_positif_sum),
+            "rapid_test_antigen_negatif" => zeroIfNull($inserted->current_rapid_test_antigen_negatif_sum),
         ]);
     }
 }
