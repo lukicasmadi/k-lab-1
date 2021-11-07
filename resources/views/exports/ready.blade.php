@@ -105,6 +105,78 @@
             <td class="tg-4bam">Perkara</td>
         </tr>
 
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">Jumlah</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7">2</td>
+            <td class="tg-o5n3">JENIS PELANGGARAN   LALU LINTAS</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7">2</td>
+            <td class="tg-o5n3">a. Sepeda Motor (psl   47)</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">1) Kecepatan</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_kecepatan_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_kecepatan }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ App\Models\DailyNotice::where('operation_id', $operationId)->sum('pelanggaran_sepeda_motor_kecepatan_p') }}</td>
+            <td class="tg-o5n3">{{ App\Models\DailyNoticeCurrent::where('operation_id', $operationId)->sum('pelanggaran_sepeda_motor_kecepatan') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">2) Helm</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_helm_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_helm }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ App\Models\DailyNotice::where('operation_id', $operationId)->sum('pelanggaran_sepeda_motor_helm_p') }}</td>
+            <td class="tg-o5n3">{{ App\Models\DailyNoticeCurrent::where('operation_id', $operationId)->sum('pelanggaran_sepeda_motor_helm') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">3) Boncengan Lebih   Dari 1 (satu) Orang</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_bonceng_lebih_dari_satu_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_bonceng_lebih_dari_satu }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ App\Models\DailyNotice::where('operation_id', $operationId)->sum('pelanggaran_sepeda_motor_bonceng_lebih_dari_satu_p') }}</td>
+            <td class="tg-o5n3">{{ App\Models\DailyNoticeCurrent::where('operation_id', $operationId)->sum('pelanggaran_sepeda_motor_bonceng_lebih_dari_satu') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
     </tbody>
 </table>
 @endsection
