@@ -101,7 +101,7 @@ class HelperController extends Controller
 
     public function openReadyReport($operationUuid)
     {
-        $limit = 3;
+        $limit = null;
 
         $rencanaOperasi = RencanaOperasi::where('uuid', $operationUuid)->firstOrFail();
         $countDown = CountDown::where('rencana_operasi_id', $rencanaOperasi->id)->get();
@@ -128,6 +128,8 @@ class HelperController extends Controller
         $labelNumber = $totalPlusJumlah + 2;
 
         $operationId = $rencanaOperasi->id;
+
+        summaryTotalPrev($operationId);
 
         return view('exports.ready', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'operationId'));
     }

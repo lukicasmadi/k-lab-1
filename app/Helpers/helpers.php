@@ -704,31 +704,21 @@ if (! function_exists('zeroIfNull')) {
     }
 }
 
-if (! function_exists('groupingPrev')) {
-    function groupingPrev($data) {
-        $groupPertama = [
-            'pelanggaran_lalu_lintas_tilang_p',
-            'pelanggaran_lalu_lintas_teguran_p'
-        ];
+if (! function_exists('summary')) {
+    function summary($data) {
+        return array_sum($data);
+    }
+}
 
-        $groupKedua = [
-            'pelanggaran_sepeda_motor_kecepatan_p',
-            'pelanggaran_sepeda_motor_helm_p',
-            'pelanggaran_sepeda_motor_bonceng_lebih_dari_satu_p',
-            'pelanggaran_sepeda_motor_marka_menerus_menyalip_p',
-            'pelanggaran_sepeda_motor_melawan_arus_p',
-            'pelanggaran_sepeda_motor_melanggar_lampu_lalin_p',
-            'pelanggaran_sepeda_motor_mengemudikan_tidak_wajar_p',
-            'pelanggaran_sepeda_motor_syarat_teknis_layak_jalan_p',
-            'pelanggaran_sepeda_motor_tidak_nyala_lampu_siang_malam_p',
-            'pelanggaran_sepeda_motor_berbelok_tanpa_isyarat_p',
-            'pelanggaran_sepeda_motor_berbalapan_di_jalan_raya_p',
-            'pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkir_p',
-            'pelanggaran_sepeda_motor_melanggar_marka_berhenti_p',
-            'pelanggaran_sepeda_motor_tidak_patuh_perintah_petugas_p',
-            'pelanggaran_sepeda_motor_surat_surat_p',
-            'pelanggaran_sepeda_motor_kelengkapan_kendaraan_p',
-            'pelanggaran_sepeda_motor_lain_lain_p',
-        ];
+if (! function_exists('summaryTotalPrev')) {
+    function summaryTotalPrev($operationId) {
+        return RencanaOperasi::withSum(['prev:pelanggaran_lalu_lintas_tilang_p,pelanggaran_lalu_lintas_teguran_p'])->where('id', $operationId)->get();
+    }
+}
+
+if (! function_exists('summaryTotalCurrent')) {
+    function summaryTotalCurrent($data) {
+        $empty = [];
+        array_push($empty, $data);
     }
 }

@@ -85,11 +85,11 @@
             <td class="tg-ktyi"></td>
             <td class="tg-kcps">a. Tilang = (2a+2b+2c)</td>
             @for ($i = 0; $i < $totalLoopDays; $i++)
-                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_kecepatan_p }}</td>
-                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_kecepatan }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_tilang_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_tilang }}</td>
             @endfor
-            <td class="tg-o5n3">{{ App\Models\DailyNotice::where('operation_id', $operationId)->sum('pelanggaran_sepeda_motor_kecepatan_p') }}</td>
-            <td class="tg-o5n3">{{ App\Models\DailyNoticeCurrent::where('operation_id', $operationId)->sum('pelanggaran_sepeda_motor_kecepatan') }}</td>
+            <td class="tg-o5n3">{{ App\Models\DailyNotice::where('operation_id', $operationId)->sum('pelanggaran_lalu_lintas_tilang_p') }}</td>
+            <td class="tg-o5n3">{{ App\Models\DailyNoticeCurrent::where('operation_id', $operationId)->sum('pelanggaran_lalu_lintas_tilang') }}</td>
             <td class="tg-4bam">Perkara</td>
         </tr>
 
@@ -108,13 +108,13 @@
         <tr>
             <td class="tg-n1r7"></td>
             <td class="tg-o5n3">Jumlah</td>
-                @foreach ($dailyNoticePrev as $prev)
-                    <td class="tg-n1r7"></td>
-                    <td class="tg-n1r7"></td>
-                @endforeach
+                @for ($i = 0; $i < $totalLoopDays; $i++)
+                    <td class="tg-n1r7">{{ summary([$dailyNoticePrev[$i]->pelanggaran_lalu_lintas_tilang_p, $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_teguran_p]) }}</td>
+                    <td class="tg-n1r7">{{ summary([$dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_tilang, $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_teguran]) }}</td>
+                @endfor
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
+            <td class="tg-n1r7">Perkara</td>
         </tr>
 
         <tr>

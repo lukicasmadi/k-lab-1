@@ -2,17 +2,19 @@
 
 namespace App\Models;
 
+use App\Models\DailyNotice;
 use App\Models\PoldaHasRencanaOperasi;
-use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Database\Eloquent\Model;
 use Rennokki\QueryCache\Traits\QueryCacheable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Alexmg86\LaravelSubQuery\Traits\LaravelSubQueryTrait;
 
 class RencanaOperasi extends Model
 {
-    use HasFactory, QueryCacheable;
+    use HasFactory, LaravelSubQueryTrait;
 
-    public $cacheFor = 86400; // IN SECONDS (CACHE FOR 1 DAY)
+    // public $cacheFor = 86400; // IN SECONDS (CACHE FOR 1 DAY)
 
     protected $guarded = ['id'];
 
@@ -59,6 +61,11 @@ class RencanaOperasi extends Model
     public function countDown()
     {
         return $this->hasMany(CountDown::class, 'rencana_operasi_id', 'id');
+    }
+
+    public function prev()
+    {
+        return $this->hasMany(DailyNotice::class, 'operation_id', 'id');
     }
 
     public static function boot() {
