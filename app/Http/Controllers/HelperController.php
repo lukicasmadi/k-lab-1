@@ -113,8 +113,7 @@ class HelperController extends Controller
 
         $totalPlusJumlah = ($totalLoopDays + 1) * 2;
         $labelNumber = $totalPlusJumlah + 2;
-        $beforeLast = $labelNumber - 1;
 
-        return view('exports.ready', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'beforeLast'));
+        return view('exports.ready', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber'));
     }
 }
