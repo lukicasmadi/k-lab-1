@@ -709,26 +709,3 @@ if (! function_exists('summary')) {
         return array_sum($data);
     }
 }
-
-if (! function_exists('summaryTotalPrev')) {
-    function summaryTotalPrev($key, $val) {
-        // if(empty(session('group_satu'))) {
-        //     $bulkData = [];
-        //     array_push($bulkData, $data);
-        //     session(['group_satu' => $bulkData]);
-        //     logger("KOSONG DAN ISI : ".$data);
-        // } else {
-        //     $existingSession = session('group_satu');
-        //     array_push($existingSession, $data);
-        //     logger("ADA DAN ISI : ".$data);
-        // }
-        // session('group_satu', $data);
-    }
-}
-
-if (! function_exists('summaryTotalCurrent')) {
-    function summaryTotalCurrent($data) {
-        $empty = [];
-        array_push($empty, $data);
-    }
-}
