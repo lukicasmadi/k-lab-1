@@ -4,6 +4,7 @@ use Carbon\Carbon;
 use App\Models\User;
 use Carbon\CarbonPeriod;
 use App\Models\CountDown;
+use App\Models\DailyNotice;
 use Illuminate\Support\Str;
 use App\Models\UserHasPolda;
 use App\Models\PoldaSubmited;
@@ -700,5 +701,34 @@ if (! function_exists('zeroIfNull')) {
         } else {
             return $data;
         }
+    }
+}
+
+if (! function_exists('groupingPrev')) {
+    function groupingPrev($data) {
+        $groupPertama = [
+            'pelanggaran_lalu_lintas_tilang_p',
+            'pelanggaran_lalu_lintas_teguran_p'
+        ];
+
+        $groupKedua = [
+            'pelanggaran_sepeda_motor_kecepatan_p',
+            'pelanggaran_sepeda_motor_helm_p',
+            'pelanggaran_sepeda_motor_bonceng_lebih_dari_satu_p',
+            'pelanggaran_sepeda_motor_marka_menerus_menyalip_p',
+            'pelanggaran_sepeda_motor_melawan_arus_p',
+            'pelanggaran_sepeda_motor_melanggar_lampu_lalin_p',
+            'pelanggaran_sepeda_motor_mengemudikan_tidak_wajar_p',
+            'pelanggaran_sepeda_motor_syarat_teknis_layak_jalan_p',
+            'pelanggaran_sepeda_motor_tidak_nyala_lampu_siang_malam_p',
+            'pelanggaran_sepeda_motor_berbelok_tanpa_isyarat_p',
+            'pelanggaran_sepeda_motor_berbalapan_di_jalan_raya_p',
+            'pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkir_p',
+            'pelanggaran_sepeda_motor_melanggar_marka_berhenti_p',
+            'pelanggaran_sepeda_motor_tidak_patuh_perintah_petugas_p',
+            'pelanggaran_sepeda_motor_surat_surat_p',
+            'pelanggaran_sepeda_motor_kelengkapan_kendaraan_p',
+            'pelanggaran_sepeda_motor_lain_lain_p',
+        ];
     }
 }

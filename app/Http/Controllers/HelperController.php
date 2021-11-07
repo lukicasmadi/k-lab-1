@@ -101,11 +101,24 @@ class HelperController extends Controller
 
     public function openReadyReport($operationUuid)
     {
+        $limit = 3;
+
         $rencanaOperasi = RencanaOperasi::where('uuid', $operationUuid)->firstOrFail();
         $countDown = CountDown::where('rencana_operasi_id', $rencanaOperasi->id)->get();
 
-        $dailyNoticePrev = DailyNotice::where('operation_id', $rencanaOperasi->id)->take(3)->orderBy('submited_date', 'asc')->get();
-        $dailyNoticeCurrent = DailyNoticeCurrent::where('operation_id', $rencanaOperasi->id)->take(3)->orderBy('submited_date', 'asc')->get();
+        $dailyNoticePrev = DailyNotice::where('operation_id', $rencanaOperasi->id)
+            ->when(!is_null($limit), function ($q) use ($limit) {
+                return $q->take($limit);
+            })
+            ->orderBy('submited_date', 'asc')
+            ->get();
+
+        $dailyNoticeCurrent = DailyNoticeCurrent::where('operation_id', $rencanaOperasi->id)
+            ->when(!is_null($limit), function ($q) use ($limit) {
+                return $q->take($limit);
+            })
+            ->orderBy('submited_date', 'asc')
+            ->get();
 
         $totalLoopDays  = count($dailyNoticePrev);
         $currentYear    = date("Y", strtotime($rencanaOperasi->start_date));
@@ -114,6 +127,10 @@ class HelperController extends Controller
         $totalPlusJumlah = ($totalLoopDays + 1) * 2;
         $labelNumber = $totalPlusJumlah + 2;
 
-        return view('exports.ready', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber'));
+        $operationId = $rencanaOperasi->id;
+
+        logger($dailyNoticePrev);
+
+        return view('exports.ready', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'operationId'));
     }
 }
