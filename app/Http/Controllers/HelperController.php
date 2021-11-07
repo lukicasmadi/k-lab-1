@@ -17,11 +17,6 @@ use Illuminate\Support\Facades\Bus;
 class HelperController extends Controller
 {
 
-    public function openReadyReport($operationUuid)
-    {
-        return $operationUuid;
-    }
-
     public function queueCheck($bacthId)
     {
         $id = $bacthId;
@@ -102,5 +97,25 @@ class HelperController extends Controller
         $batch = Bus::findBatch($batchId);
 
         return view('report.progress', compact('batch'));
+    }
+
+    public function openReadyReport($operationUuid)
+    {
+        $rencanaOperasi = RencanaOperasi::where('uuid', $operationUuid)->firstOrFail();
+        $countDown = CountDown::where('rencana_operasi_id', $rencanaOperasi->id)->get();
+
+        $dailyNoticePrev = DailyNotice::where('operation_id', $rencanaOperasi->id)->take(3)->orderBy('submited_date', 'asc')->get();
+
+        $totalLoopDays  = count($dailyNoticePrev);
+        $currentYear    = date("Y", strtotime($rencanaOperasi->start_date));
+        $prevYear       = $currentYear - 1;
+
+        $totalPlusJumlah = ($totalLoopDays + 1) * 2;
+        $labelNumber = $totalPlusJumlah + 2;
+        $beforeLast = $labelNumber - 1;
+
+        $hari = 1;
+
+        return view('exports.ready', compact('dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'beforeLast'));
     }
 }
