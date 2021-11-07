@@ -57,6 +57,42 @@
     </thead>
     <tbody>
 
+        <tr>
+            <td class="tg-n1r7">I</td>
+            <td class="tg-o5n3">DATA TERKAIT MASALAH PELANGGARAN LALU LINTAS</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7">1</td>
+            <td class="tg-o5n3">PELANGGARAN LALU LINTAS</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">a. Tilang = (2a+2b+2c)</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_kecepatan_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_kecepatan }}</td>
+            @endfor
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
     </tbody>
 </table>
 @endsection

@@ -105,6 +105,7 @@ class HelperController extends Controller
         $countDown = CountDown::where('rencana_operasi_id', $rencanaOperasi->id)->get();
 
         $dailyNoticePrev = DailyNotice::where('operation_id', $rencanaOperasi->id)->take(3)->orderBy('submited_date', 'asc')->get();
+        $dailyNoticeCurrent = DailyNoticeCurrent::where('operation_id', $rencanaOperasi->id)->take(3)->orderBy('submited_date', 'asc')->get();
 
         $totalLoopDays  = count($dailyNoticePrev);
         $currentYear    = date("Y", strtotime($rencanaOperasi->start_date));
@@ -114,8 +115,6 @@ class HelperController extends Controller
         $labelNumber = $totalPlusJumlah + 2;
         $beforeLast = $labelNumber - 1;
 
-        $hari = 1;
-
-        return view('exports.ready', compact('dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'beforeLast'));
+        return view('exports.ready', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'beforeLast'));
     }
 }
