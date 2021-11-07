@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\DailyInputPrev;
 use App\Models\RencanaOperasi;
 use App\Jobs\ProcessSummaryPrev;
+use App\Models\LoopTotalSummary;
 use App\Models\DailyNoticeCurrent;
 use Illuminate\Support\Facades\DB;
 use App\Jobs\ProcessSummaryCurrent;
@@ -101,10 +102,12 @@ class HelperController extends Controller
 
     public function openReadyReport($operationUuid)
     {
-        $limit = 3;
+        $limit = null;
 
         $rencanaOperasi = RencanaOperasi::where('uuid', $operationUuid)->firstOrFail();
         $countDown = CountDown::where('rencana_operasi_id', $rencanaOperasi->id)->get();
+
+        LoopTotalSummary::truncate();
 
         $dailyNoticePrev = DailyNotice::where('operation_id', $rencanaOperasi->id)
             ->when(!is_null($limit), function ($q) use ($limit) {
@@ -128,8 +131,6 @@ class HelperController extends Controller
         $labelNumber = $totalPlusJumlah + 2;
 
         $operationId = $rencanaOperasi->id;
-
-        summaryTotalPrev($operationId);
 
         return view('exports.ready', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'operationId'));
     }
