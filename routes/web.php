@@ -6,7 +6,6 @@ Route::get('/view-report/{uuid}', 'HelperController@reportAllPolda')->name('all_
 Route::get('/help/{operationId}', 'HelperController@runDispatch')->name('daily_process');
 Route::get('/home', 'HomeController@welcomePage')->name('home');
 Route::get('/lihat-panduan', 'HomeController@lihatPanduan')->name('lihat_panduan');
-Route::get('/view-report/progress/{batchId}', 'HelperController@batchProgress')->name('batch_progress');
 
 Auth::routes(['register' => false]);
 
@@ -17,6 +16,10 @@ Route::get('/news-update/{slug}', 'HomeController@newsDetail')->name('news_detai
 Route::get('/download/panduan', 'HomeController@downloadFilePanduan')->name('download_file_panduan');
 
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/view-report/progress/{batchId}', 'HelperController@batchProgress')->name('batch_progress');
+    Route::get('/view-report/ready/{operationUuid}', 'HelperController@openReadyReport')->name('open_ready_report');
+
     Route::get('/', 'HomeController@index')->name('index');
     Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
     Route::get('/dashboard/filter/{projectSlug}', 'HomeController@dashboardFiltered')->name('dashboard_filtered');

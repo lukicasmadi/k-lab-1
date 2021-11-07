@@ -17,6 +17,11 @@ use Illuminate\Support\Facades\Bus;
 class HelperController extends Controller
 {
 
+    public function openReadyReport($operationUuid)
+    {
+        return $operationUuid;
+    }
+
     public function queueCheck($bacthId)
     {
         $id = $bacthId;
@@ -29,6 +34,8 @@ class HelperController extends Controller
     {
         $rencanaOperasi = RencanaOperasi::where('uuid', $uuid)->firstOrFail();
         $operationId = $rencanaOperasi->id;
+
+        session()->forget(['progres_report_id']);
 
         $countDown = CountDown::where('rencana_operasi_id', $operationId)->orderBy('tanggal', 'asc')->get();
 
@@ -45,6 +52,8 @@ class HelperController extends Controller
 
         Bus::batch($jobsPrev)->dispatch();
         $batch = Bus::batch($jobsCurrent)->dispatch();
+
+        session(['progres_report_id' => $rencanaOperasi->uuid]);
 
         return redirect()->route('batch_progress', $batch->id);
     }

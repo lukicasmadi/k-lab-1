@@ -22,6 +22,7 @@
                     <p><h3><span id="processJob">{{ $batch->processedJobs() }}</span> selesai dari total <span id="totalJobs">{{ $batch->totalJobs }}</span> data yg diproses</h3></p>
                     <p><h3>Proses <span id="progress">{{ $batch->progress() }}</span>%</h3></p>
                 </div>
+                <a href="{{ route('open_ready_report', session("progres_report_id")) }}" id="visitBtn" class="btn btn-success invisible">View Report</a>
             </div>
         </div>
 
@@ -72,6 +73,12 @@ function getAllData() {
         $("#processJob").html(processedJobs)
         $("#totalJobs").html(totalJobs)
         $("#progress").html(progress)
+
+        if(progress == 100) {
+            $("#visitBtn").removeClass('invisible')
+        } else {
+            $("#visitBtn").addClass('invisible')
+        }
     })
 }
 </script>
