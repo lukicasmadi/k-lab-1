@@ -54,7 +54,7 @@
                         <div class="">
                             <p class="task-left"><span id="progress">{{ $batch->progress() }}</span> %</p>
                             <p class="task-completed"><span id="processJob">{{ $batch->processedJobs() }}</span> Done</p>
-                            <p class="task-hight-priority"><span>Total <span id="totalJobs">{{ $batch->totalJobs }}</span> Task</span> with High priotity</p>
+                            <p class="task-hight-priority"><span>Total <span id="totalJobs">{{ $batch->totalJobs }}</span> Task</span> with High priority</p>
                             <span id="visitBtn" class="invisible">
                                 <br>
                                 <p><a href="{{ route('open_ready_report', session("progres_report_id")) }}" class="btn btn-info">View Report</a></p>
@@ -90,16 +90,16 @@
 }
 .widget-five .w-content div .task-left {
     margin-bottom: 0;
-    font-size: 30px;
+    font-size: 40px;
     color: #25d5e4;
     background: #060818;
     font-weight: 600;
     border-radius: 50%;
     display: inline-flex;
-    height: 86px;
-    width: 86px;
+    height: 106px;
+    width: 106px;
     justify-content: center;
-    padding: 17px 0px;
+    padding: 20px 0px;
     border: 5px solid #191e3a;
     margin-bottom: 20px;
     -webkit-box-shadow: 0px 0px 8px 2px #e0e6ed;

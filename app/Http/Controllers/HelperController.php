@@ -82,7 +82,7 @@ class HelperController extends Controller
         }
 
         Bus::batch($jobsPrev)->dispatch();
-        $batch = Bus::batch($jobsCurrent)->dispatch();
+        $batch = Bus::batch($jobsCurrent)->name('Calculate Summary Data')->dispatch();
 
         return redirect()->route('batch_progress', $batch->id);
     }
