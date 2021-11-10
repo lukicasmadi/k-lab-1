@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use App\Models\UserHasPolda;
 use App\Models\PoldaSubmited;
 use App\Models\RencanaOperasi;
+use App\Models\SumLoopEveryday;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use App\Models\SortablePoldaReport;
@@ -707,5 +708,29 @@ if (! function_exists('zeroIfNull')) {
 if (! function_exists('summary')) {
     function summary($data) {
         return array_sum($data);
+    }
+}
+
+if (! function_exists('sumGroupOne')) {
+    function sumGroupOne($data) {
+
+        $data->each(function ($item, $key) {
+            $sum = $item->pelanggaran_lalu_lintas_tilang + $item->pelanggaran_lalu_lintas_teguran;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_1',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->pelanggaran_sepeda_motor_kecepatan + $item->pelanggaran_sepeda_motor_helm + $item->pelanggaran_sepeda_motor_bonceng_lebih_dari_satu + $item->pelanggaran_sepeda_motor_marka_menerus_menyalip + $item->pelanggaran_sepeda_motor_melawan_arus + $item->pelanggaran_sepeda_motor_melanggar_lampu_lalin + $item->pelanggaran_sepeda_motor_mengemudikan_tidak_wajar + $item->pelanggaran_sepeda_motor_syarat_teknis_layak_jalan + $item->pelanggaran_sepeda_motor_tidak_nyala_lampu_siang_malam + $item->pelanggaran_sepeda_motor_berbelok_tanpa_isyarat + $item->pelanggaran_sepeda_motor_berbalapan_di_jalan_raya + $item->pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkir + $item->pelanggaran_sepeda_motor_melanggar_marka_berhenti + $item->pelanggaran_sepeda_motor_tidak_patuh_perintah_petugas + $item->pelanggaran_sepeda_motor_surat_surat + $item->pelanggaran_sepeda_motor_kelengkapan_kendaraan + $item->pelanggaran_sepeda_motor_lain_lain;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_2',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
     }
 }

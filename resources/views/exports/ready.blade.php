@@ -112,17 +112,29 @@
                     @php
                         App\Models\LoopTotalSummary::create([
                             'type' => 'pelanggaran_lalu_lintas_tilang_p',
-                            'val' => summary([$dailyNoticePrev[$i]->pelanggaran_lalu_lintas_tilang_p, $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_teguran_p]),
+                            'val' => summary([
+                                $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_tilang_p,
+                                $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_teguran_p
+                            ]),
                         ]);
 
                         App\Models\LoopTotalSummary::create([
                             'type' => 'pelanggaran_lalu_lintas_tilang',
-                            'val' => summary([$dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_tilang, $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_teguran]),
+                            'val' => summary([
+                                $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_tilang,
+                                $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_teguran
+                            ]),
                         ]);
                     @endphp
 
-                    <td class="tg-n1r7">{{ summary([$dailyNoticePrev[$i]->pelanggaran_lalu_lintas_tilang_p, $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_teguran_p]) }}</td>
-                    <td class="tg-n1r7">{{ summary([$dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_tilang, $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_teguran]) }}</td>
+                    <td class="tg-n1r7">{{ summary([
+                        $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_tilang_p,
+                        $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_teguran_p
+                    ]) }}</td>
+                    <td class="tg-n1r7">{{ summary([
+                        $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_tilang,
+                        $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_teguran
+                    ]) }}</td>
                 @endfor
             <td class="tg-o5n3">{{ App\Models\LoopTotalSummary::where('type', 'pelanggaran_lalu_lintas_tilang_p')->sum('val'); }}</td>
             <td class="tg-o5n3">{{ App\Models\LoopTotalSummary::where('type', 'pelanggaran_lalu_lintas_tilang')->sum('val'); }}</td>
@@ -191,7 +203,7 @@
 
         <tr>
             <td class="tg-ktyi"></td>
-            <td class="tg-kcps">3) Marka menerus /   Rambu menyalip</td>
+            <td class="tg-kcps">4) Marka menerus /   Rambu menyalip</td>
             @for ($i = 0; $i < $totalLoopDays; $i++)
                 <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_marka_menerus_menyalip_p }}</td>
                 <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_marka_menerus_menyalip }}</td>
@@ -202,7 +214,7 @@
         </tr>
         <tr>
             <td class="tg-ktyi"></td>
-            <td class="tg-kcps">3) Melawan Arus</td>
+            <td class="tg-kcps">5) Melawan Arus</td>
             @for ($i = 0; $i < $totalLoopDays; $i++)
                 <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_melawan_arus_p }}</td>
                 <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_melawan_arus }}</td>
@@ -213,7 +225,7 @@
         </tr>
         <tr>
             <td class="tg-ktyi"></td>
-            <td class="tg-kcps">3) Melanggar Lampu   Lalu Lintas</td>
+            <td class="tg-kcps">6) Melanggar Lampu   Lalu Lintas</td>
             @for ($i = 0; $i < $totalLoopDays; $i++)
                 <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_melanggar_lampu_lalin_p }}</td>
                 <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_melanggar_lampu_lalin }}</td>
@@ -225,7 +237,7 @@
 
         <tr>
             <td class="tg-ktyi"></td>
-            <td class="tg-kcps">3) Mengemudikan   kendaraan dengan tidak wajar(psl 283)</td>
+            <td class="tg-kcps">7) Mengemudikan   kendaraan dengan tidak wajar(psl 283)</td>
             @for ($i = 0; $i < $totalLoopDays; $i++)
                 <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_mengemudikan_tidak_wajar_p }}</td>
                 <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_mengemudikan_tidak_wajar }}</td>
@@ -237,7 +249,7 @@
 
         <tr>
             <td class="tg-ktyi"></td>
-            <td class="tg-kcps">3) Syarat teknis dan   layak jalan</td>
+            <td class="tg-kcps">8) Syarat teknis dan   layak jalan</td>
             @for ($i = 0; $i < $totalLoopDays; $i++)
                 <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_syarat_teknis_layak_jalan_p }}</td>
                 <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_syarat_teknis_layak_jalan }}</td>
@@ -249,7 +261,7 @@
 
         <tr>
             <td class="tg-ktyi"></td>
-            <td class="tg-kcps">3) Tidak menyalakan   lampu utama siang/malam</td>
+            <td class="tg-kcps">9) Tidak menyalakan   lampu utama siang/malam</td>
             @for ($i = 0; $i < $totalLoopDays; $i++)
                 <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_tidak_nyala_lampu_siang_malam_p }}</td>
                 <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_tidak_nyala_lampu_siang_malam }}</td>
@@ -261,7 +273,7 @@
 
         <tr>
             <td class="tg-ktyi"></td>
-            <td class="tg-kcps">3) Berbelok tanpa   isyarat</td>
+            <td class="tg-kcps">10) Berbelok tanpa   isyarat</td>
             @for ($i = 0; $i < $totalLoopDays; $i++)
                 <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_berbelok_tanpa_isyarat_p }}</td>
                 <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_berbelok_tanpa_isyarat }}</td>
@@ -273,7 +285,7 @@
 
         <tr>
             <td class="tg-ktyi"></td>
-            <td class="tg-kcps">3) Berbalapan di   jalan raya (psl 297)</td>
+            <td class="tg-kcps">11) Berbalapan di   jalan raya (psl 297)</td>
             @for ($i = 0; $i < $totalLoopDays; $i++)
                 <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_berbalapan_di_jalan_raya_p }}</td>
                 <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_berbalapan_di_jalan_raya }}</td>
@@ -285,7 +297,7 @@
 
         <tr>
             <td class="tg-ktyi"></td>
-            <td class="tg-kcps">3) Melanggar Rambu   berhenti dan parkir</td>
+            <td class="tg-kcps">12) Melanggar Rambu   berhenti dan parkir</td>
             @for ($i = 0; $i < $totalLoopDays; $i++)
                 <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkir_p }}</td>
                 <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkir }}</td>
@@ -298,7 +310,7 @@
 
         <tr>
             <td class="tg-ktyi"></td>
-            <td class="tg-kcps">3) Melanggar marka   berhenti</td>
+            <td class="tg-kcps">13) Melanggar marka   berhenti</td>
             @for ($i = 0; $i < $totalLoopDays; $i++)
                 <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_melanggar_marka_berhenti_p }}</td>
                 <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_melanggar_marka_berhenti }}</td>
@@ -310,7 +322,7 @@
 
         <tr>
             <td class="tg-ktyi"></td>
-            <td class="tg-kcps">3) tidak mematuhi   perintah petugas Polri(psl 104)</td>
+            <td class="tg-kcps">14) tidak mematuhi   perintah petugas Polri(psl 104)</td>
             @for ($i = 0; $i < $totalLoopDays; $i++)
                 <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_tidak_patuh_perintah_petugas_p }}</td>
                 <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_tidak_patuh_perintah_petugas }}</td>
@@ -323,7 +335,7 @@
 
         <tr>
             <td class="tg-ktyi"></td>
-            <td class="tg-kcps">3) Surat-surat</td>
+            <td class="tg-kcps">15) Surat-surat</td>
             @for ($i = 0; $i < $totalLoopDays; $i++)
                 <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_surat_surat_p }}</td>
                 <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_surat_surat }}</td>
@@ -335,7 +347,7 @@
 
         <tr>
             <td class="tg-ktyi"></td>
-            <td class="tg-kcps">3) Kelengkapan   Kendaraan</td>
+            <td class="tg-kcps">16) Kelengkapan   Kendaraan</td>
             @for ($i = 0; $i < $totalLoopDays; $i++)
                 <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_kelengkapan_kendaraan_p }}</td>
                 <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_kelengkapan_kendaraan }}</td>
@@ -347,7 +359,7 @@
 
         <tr>
             <td class="tg-ktyi"></td>
-            <td class="tg-kcps">3) Lain-Lain</td>
+            <td class="tg-kcps">17) Lain-Lain</td>
             @for ($i = 0; $i < $totalLoopDays; $i++)
                 <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_sepeda_motor_lain_lain_p }}</td>
                 <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_sepeda_motor_lain_lain }}</td>
@@ -357,6 +369,41 @@
             <td class="tg-4bam">Perkara</td>
         </tr>
 
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">Jumlah</td>
+                @for ($i = 0; $i < $totalLoopDays; $i++)
+                    @php
+                        App\Models\LoopTotalSummary::create([
+                            'type' => 'pelanggaran_lalu_lintas_tilang_p',
+                            'val' => summary([
+                                $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_tilang_p,
+                                $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_teguran_p
+                            ]),
+                        ]);
+
+                        App\Models\LoopTotalSummary::create([
+                            'type' => 'pelanggaran_lalu_lintas_tilang',
+                            'val' => summary([
+                                $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_tilang,
+                                $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_teguran
+                            ]),
+                        ]);
+                    @endphp
+
+                    <td class="tg-n1r7">{{ summary([
+                        $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_tilang_p,
+                        $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_teguran_p
+                    ]) }}</td>
+                    <td class="tg-n1r7">{{ summary([
+                        $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_tilang,
+                        $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_teguran
+                    ]) }}</td>
+                @endfor
+            <td class="tg-o5n3">{{ App\Models\LoopTotalSummary::where('type', 'pelanggaran_lalu_lintas_tilang_p')->sum('val'); }}</td>
+            <td class="tg-o5n3">{{ App\Models\LoopTotalSummary::where('type', 'pelanggaran_lalu_lintas_tilang')->sum('val'); }}</td>
+            <td class="tg-n1r7">Perkara</td>
+        </tr>
 
     </tbody>
 </table>

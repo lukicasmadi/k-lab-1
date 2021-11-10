@@ -8,6 +8,7 @@ use App\Models\DailyNotice;
 use Illuminate\Http\Request;
 use App\Models\DailyInputPrev;
 use App\Models\RencanaOperasi;
+use App\Models\SumLoopEveryday;
 use App\Jobs\ProcessSummaryPrev;
 use App\Models\LoopTotalSummary;
 use App\Models\DailyNoticeCurrent;
@@ -108,6 +109,7 @@ class HelperController extends Controller
         $countDown = CountDown::where('rencana_operasi_id', $rencanaOperasi->id)->get();
 
         LoopTotalSummary::truncate();
+        SumLoopEveryday::truncate();
 
         $dailyNoticePrev = DailyNotice::where('operation_id', $rencanaOperasi->id)
             ->when(!is_null($limit), function ($q) use ($limit) {
@@ -131,6 +133,8 @@ class HelperController extends Controller
         $labelNumber = $totalPlusJumlah + 2;
 
         $operationId = $rencanaOperasi->id;
+
+        sumGroupOne($dailyNoticeCurrent);
 
         return view('exports.ready', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'operationId'));
     }
