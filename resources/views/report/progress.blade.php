@@ -82,6 +82,12 @@
     margin-bottom: 4px;
     color: #009688;
 }
+.widget-five .w-content div .task-waiting {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: goldenrod;
+}
 .widget-five .w-content div .task-hight-priority {
     color: #acb0c3;
     font-weight: 500;

@@ -15,6 +15,7 @@ use App\Models\RencanaOperasi;
 use App\Models\SumLoopEveryday;
 use App\Jobs\ProcessSummaryPrev;
 use App\Models\LoopTotalSummary;
+use App\Jobs\QueueSumLoopEveryday;
 use App\Models\DailyNoticeCurrent;
 use Illuminate\Support\Facades\DB;
 use App\Jobs\ProcessSummaryCurrent;
@@ -45,7 +46,8 @@ class HelperController extends Controller
 
         $batch = Bus::batch([
             new QueuePrev($countDown),
-            new QueueCurrent($countDown)
+            new QueueCurrent($countDown),
+            new QueueSumLoopEveryday($rencanaOperasi),
         ])->then(function (Batch $batch) {
             // All jobs completed successfully...
         })->catch(function (Batch $batch, Throwable $e) {
@@ -125,7 +127,6 @@ class HelperController extends Controller
         $countDown = CountDown::where('rencana_operasi_id', $rencanaOperasi->id)->get();
 
         LoopTotalSummary::truncate();
-        // SumLoopEveryday::truncate();
 
         $dailyNoticePrev = DailyNotice::where('operation_id', $rencanaOperasi->id)
             ->when(!is_null($limit), function ($q) use ($limit) {
@@ -149,9 +150,6 @@ class HelperController extends Controller
         $labelNumber = $totalPlusJumlah + 2;
 
         $operationId = $rencanaOperasi->id;
-
-        // sumGroupPrev($dailyNoticePrev);
-        // sumGroupCurrent($dailyNoticeCurrent);
 
         return view('exports.ready_new', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'operationId'));
     }
