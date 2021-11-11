@@ -134,7 +134,8 @@ class HelperController extends Controller
 
         $operationId = $rencanaOperasi->id;
 
-        sumGroupOne($dailyNoticeCurrent);
+        sumGroupPrev($dailyNoticePrev);
+        sumGroupCurrent($dailyNoticeCurrent);
 
         return view('exports.ready', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'operationId'));
     }
