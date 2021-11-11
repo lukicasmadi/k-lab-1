@@ -22,6 +22,13 @@
 @endpush
 
 @section('content')
+
+@php
+use App\Models\LoopTotalSummary;
+use App\Models\DailyNotice;
+use App\Models\DailyNoticeCurrent;
+@endphp
+
 <table class="tg">
 
     <thead>
@@ -88,8 +95,8 @@
                 <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_tilang_p }}</td>
                 <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_tilang }}</td>
             @endfor
-            <td class="tg-o5n3">{{ App\Models\DailyNotice::where('operation_id', $operationId)->sum('pelanggaran_lalu_lintas_tilang_p') }}</td>
-            <td class="tg-o5n3">{{ App\Models\DailyNoticeCurrent::where('operation_id', $operationId)->sum('pelanggaran_lalu_lintas_tilang') }}</td>
+            <td class="tg-o5n3">{{ DailyNotice::where('operation_id', $operationId)->sum('pelanggaran_lalu_lintas_tilang_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::where('operation_id', $operationId)->sum('pelanggaran_lalu_lintas_tilang') }}</td>
             <td class="tg-4bam">Perkara</td>
         </tr>
 
@@ -100,8 +107,8 @@
                 <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_teguran_p }}</td>
                 <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_teguran }}</td>
             @endfor
-            <td class="tg-o5n3">{{ App\Models\DailyNotice::where('operation_id', $operationId)->sum('pelanggaran_lalu_lintas_teguran_p') }}</td>
-            <td class="tg-o5n3">{{ App\Models\DailyNoticeCurrent::where('operation_id', $operationId)->sum('pelanggaran_lalu_lintas_teguran') }}</td>
+            <td class="tg-o5n3">{{ DailyNotice::where('operation_id', $operationId)->sum('pelanggaran_lalu_lintas_teguran_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::where('operation_id', $operationId)->sum('pelanggaran_lalu_lintas_teguran') }}</td>
             <td class="tg-4bam">Perkara</td>
         </tr>
 
@@ -111,7 +118,7 @@
                 @for ($i = 0; $i < $totalLoopDays; $i++)
 
                     @php
-                        App\Models\LoopTotalSummary::create([
+                        LoopTotalSummary::create([
                             'type' => 'pelanggaran_lalu_lintas_tilang_p',
                             'val' => summary([
                                 $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_tilang_p,
@@ -119,7 +126,7 @@
                             ]),
                         ]);
 
-                        App\Models\LoopTotalSummary::create([
+                        LoopTotalSummary::create([
                             'type' => 'pelanggaran_lalu_lintas_tilang',
                             'val' => summary([
                                 $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_tilang,
@@ -132,8 +139,8 @@
                     <td class="tg-n1r7">-</td>
 
                 @endfor
-            <td class="tg-o5n3">{{ App\Models\LoopTotalSummary::where('type', 'pelanggaran_lalu_lintas_tilang_p')->sum('val'); }}</td>
-            <td class="tg-o5n3">{{ App\Models\LoopTotalSummary::where('type', 'pelanggaran_lalu_lintas_tilang')->sum('val'); }}</td>
+            <td class="tg-o5n3">{{ LoopTotalSummary::where('type', 'pelanggaran_lalu_lintas_tilang_p')->sum('val'); }}</td>
+            <td class="tg-o5n3">{{ LoopTotalSummary::where('type', 'pelanggaran_lalu_lintas_tilang')->sum('val'); }}</td>
             <td class="tg-n1r7">Perkara</td>
         </tr>
 
