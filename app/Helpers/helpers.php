@@ -732,5 +732,365 @@ if (! function_exists('sumGroupOne')) {
             ]);
         });
 
+        $data->each(function ($item, $key) {
+            $sum = $item->pelanggaran_mobil_kecepatan + $item->pelanggaran_mobil_safety_belt + $item->pelanggaran_mobil_muatan_overload + $item->pelanggaran_mobil_marka_menerus_menyalip + $item->pelanggaran_mobil_melawan_arus + $item->pelanggaran_mobil_melanggar_lampu_lalin + $item->pelanggaran_mobil_mengemudi_tidak_wajar + $item->pelanggaran_mobil_syarat_teknis_layak_jalan + $item->pelanggaran_mobil_tidak_nyala_lampu_malam + $item->pelanggaran_mobil_berbelok_tanpa_isyarat + $item->pelanggaran_mobil_berbalapan_di_jalan_raya + $item->pelanggaran_mobil_melanggar_rambu_berhenti_dan_parkir + $item->pelanggaran_mobil_melanggar_marka_berhenti + $item->pelanggaran_mobil_tidak_patuh_perintah_petugas + $item->pelanggaran_mobil_surat_surat + $item->pelanggaran_mobil_kelengkapan_kendaraan + $item->pelanggaran_mobil_lain_lain;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_3',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->pelanggaran_pejalan_kaki_menyeberang_tidak_pada_tempat;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_4',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->barang_bukti_yg_disita_sim + $item->barang_bukti_yg_disita_stnk + $item->barang_bukti_yg_disita_kendaraan;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_5',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->kendaraan_yang_terlibat_pelanggaran_sepeda_motor + $item->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang + $item->kendaraan_yang_terlibat_pelanggaran_mobil_bus + $item->kendaraan_yang_terlibat_pelanggaran_mobil_barang + $item->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_6',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->profesi_pelaku_pelanggaran_pns + $item->profesi_pelaku_pelanggaran_karyawan_swasta + $item->profesi_pelaku_pelanggaran_pelajar_mahasiswa + $item->profesi_pelaku_pelanggaran_pengemudi_supir + $item->profesi_pelaku_pelanggaran_tni + $item->profesi_pelaku_pelanggaran_polri + $item->profesi_pelaku_pelanggaran_lain_lain;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_7',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->usia_pelaku_pelanggaran_kurang_dari_15_tahun + $item->usia_pelaku_pelanggaran_16_20_tahun + $item->usia_pelaku_pelanggaran_21_25_tahun + $item->usia_pelaku_pelanggaran_26_30_tahun + $item->usia_pelaku_pelanggaran_31_35_tahun + $item->usia_pelaku_pelanggaran_36_40_tahun + $item->usia_pelaku_pelanggaran_41_45_tahun + $item->usia_pelaku_pelanggaran_46_50_tahun + $item->usia_pelaku_pelanggaran_51_55_tahun + $item->usia_pelaku_pelanggaran_56_60_tahun + $item->usia_pelaku_pelanggaran_diatas_60_tahun;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_8',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->sim_pelaku_pelanggaran_sim_a + $item->sim_pelaku_pelanggaran_sim_a_umum + $item->sim_pelaku_pelanggaran_sim_b1 + $item->sim_pelaku_pelanggaran_sim_b1_umum + $item->sim_pelaku_pelanggaran_sim_b2 + $item->sim_pelaku_pelanggaran_sim_b2_umum + $item->sim_pelaku_pelanggaran_sim_c + $item->sim_pelaku_pelanggaran_sim_d + $item->sim_pelaku_pelanggaran_sim_internasional + $item->sim_pelaku_pelanggaran_tanpa_sim;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_9',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->lokasi_pelanggaran_pemukiman + $item->lokasi_pelanggaran_perbelanjaan + $item->lokasi_pelanggaran_perkantoran + $item->lokasi_pelanggaran_wisata + $item->lokasi_pelanggaran_industri;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_10',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->lokasi_pelanggaran_status_jalan_nasional + $item->lokasi_pelanggaran_status_jalan_propinsi + $item->lokasi_pelanggaran_status_jalan_kab_kota + $item->lokasi_pelanggaran_status_jalan_desa_lingkungan;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_11',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->lokasi_pelanggaran_fungsi_jalan_arteri + $item->lokasi_pelanggaran_fungsi_jalan_kolektor + $item->lokasi_pelanggaran_fungsi_jalan_lokal + $item->lokasi_pelanggaran_fungsi_jalan_lingkungan;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_12',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->kecelakaan_lalin_jumlah_kejadian + $item->kecelakaan_lalin_jumlah_korban_meninggal + $item->kecelakaan_lalin_jumlah_korban_luka_berat + $item->kecelakaan_lalin_jumlah_korban_luka_ringan + $item->kecelakaan_lalin_jumlah_kerugian_materiil;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_13',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->kecelakaan_barang_bukti_yg_disita_sim + $item->kecelakaan_barang_bukti_yg_disita_stnk + $item->kecelakaan_barang_bukti_yg_disita_kendaraan;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_14',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->profesi_korban_kecelakaan_lalin_pns + $item->profesi_korban_kecelakaan_lalin_karwayan_swasta + $item->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa + $item->profesi_korban_kecelakaan_lalin_pengemudi + $item->profesi_korban_kecelakaan_lalin_tni + $item->profesi_korban_kecelakaan_lalin_polri + $item->profesi_korban_kecelakaan_lalin_lain_lain;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_15',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->usia_korban_kecelakaan_kurang_15 + $item->usia_korban_kecelakaan_16_20 + $item->usia_korban_kecelakaan_21_25 + $item->usia_korban_kecelakaan_26_30 + $item->usia_korban_kecelakaan_31_35 + $item->usia_korban_kecelakaan_36_40 + $item->usia_korban_kecelakaan_41_45 + $item->usia_korban_kecelakaan_45_50 + $item->usia_korban_kecelakaan_51_55 + $item->usia_korban_kecelakaan_56_60 + $item->usia_korban_kecelakaan_diatas_60;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_16',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->sim_korban_kecelakaan_sim_a + $item->sim_korban_kecelakaan_sim_a_umum + $item->sim_korban_kecelakaan_sim_b1 + $item->sim_korban_kecelakaan_sim_b1_umum + $item->sim_korban_kecelakaan_sim_b2 + $item->sim_korban_kecelakaan_sim_b2_umum + $item->sim_korban_kecelakaan_sim_c + $item->sim_korban_kecelakaan_sim_d + $item->sim_korban_kecelakaan_sim_internasional + $item->sim_korban_kecelakaan_tanpa_sim;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_17',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->kendaraan_yg_terlibat_kecelakaan_sepeda_motor + $item->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang + $item->kendaraan_yg_terlibat_kecelakaan_mobil_bus + $item->kendaraan_yg_terlibat_kecelakaan_mobil_barang + $item->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus + $item->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_18',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->jenis_kecelakaan_tunggal_ooc + $item->jenis_kecelakaan_depan_depan + $item->jenis_kecelakaan_depan_belakang + $item->jenis_kecelakaan_depan_samping + $item->jenis_kecelakaan_beruntun + $item->jenis_kecelakaan_pejalan_kaki + $item->jenis_kecelakaan_tabrak_lari + $item->jenis_kecelakaan_tabrak_hewan + $item->jenis_kecelakaan_samping_samping + $item->jenis_kecelakaan_lainnya;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_19',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->profesi_pelaku_kecelakaan_lalin_pns + $item->profesi_pelaku_kecelakaan_lalin_karyawan_swasta + $item->profesi_pelaku_kecelakaan_lalin_mahasiswa_pelajar + $item->profesi_pelaku_kecelakaan_lalin_pengemudi + $item->profesi_pelaku_kecelakaan_lalin_tni + $item->profesi_pelaku_kecelakaan_lalin_polri + $item->profesi_pelaku_kecelakaan_lalin_lain_lain;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_20',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->usia_pelaku_kecelakaan_kurang_dari_15_tahun + $item->usia_pelaku_kecelakaan_16_20_tahun + $item->usia_pelaku_kecelakaan_21_25_tahun + $item->usia_pelaku_kecelakaan_26_30_tahun + $item->usia_pelaku_kecelakaan_31_35_tahun + $item->usia_pelaku_kecelakaan_36_40_tahun + $item->usia_pelaku_kecelakaan_41_45_tahun + $item->usia_pelaku_kecelakaan_46_50_tahun + $item->usia_pelaku_kecelakaan_51_55_tahun + $item->usia_pelaku_kecelakaan_56_60_tahun + $item->usia_pelaku_kecelakaan_diatas_60_tahun;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_21',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->sim_pelaku_kecelakaan_sim_a + $item->sim_pelaku_kecelakaan_sim_a_umum + $item->sim_pelaku_kecelakaan_sim_b1 + $item->sim_pelaku_kecelakaan_sim_b1_umum + $item->sim_pelaku_kecelakaan_sim_b2 + $item->sim_pelaku_kecelakaan_sim_b2_umum + $item->sim_pelaku_kecelakaan_sim_c + $item->sim_pelaku_kecelakaan_sim_d + $item->sim_pelaku_kecelakaan_sim_internasional + $item->sim_pelaku_kecelakaan_tanpa_sim;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_22',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->lokasi_kecelakaan_lalin_pemukiman + $item->lokasi_kecelakaan_lalin_perbelanjaan + $item->lokasi_kecelakaan_lalin_perkantoran + $item->lokasi_kecelakaan_lalin_wisata + $item->lokasi_kecelakaan_lalin_industri + $item->lokasi_kecelakaan_lalin_lain_lain;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_23',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->lokasi_kecelakaan_status_jalan_nasional + $item->lokasi_kecelakaan_status_jalan_propinsi + $item->lokasi_kecelakaan_status_jalan_kab_kota + $item->lokasi_kecelakaan_status_jalan_desa_lingkungan;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_24',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->lokasi_kecelakaan_fungsi_jalan_arteri + $item->lokasi_kecelakaan_fungsi_jalan_kolektor + $item->lokasi_kecelakaan_fungsi_jalan_lokal + $item->lokasi_kecelakaan_fungsi_jalan_lingkungan;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_25',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->faktor_penyebab_kecelakaan_manusia + $item->faktor_penyebab_kecelakaan_ngantuk_lelah + $item->faktor_penyebab_kecelakaan_mabuk_obat + $item->faktor_penyebab_kecelakaan_sakit + $item->faktor_penyebab_kecelakaan_handphone_elektronik + $item->faktor_penyebab_kecelakaan_menerobos_lampu_merah + $item->faktor_penyebab_kecelakaan_melanggar_batas_kecepatan + $item->faktor_penyebab_kecelakaan_tidak_menjaga_jarak + $item->faktor_penyebab_kecelakaan_mendahului_berbelok_pindah_jalur + $item->faktor_penyebab_kecelakaan_berpindah_jalur + $item->faktor_penyebab_kecelakaan_tidak_memberikan_lampu_isyarat + $item->faktor_penyebab_kecelakaan_tidak_mengutamakan_pejalan_kaki + $item->faktor_penyebab_kecelakaan_lainnya + $item->faktor_penyebab_kecelakaan_alam + $item->faktor_penyebab_kecelakaan_kelaikan_kendaraan + $item->faktor_penyebab_kecelakaan_kondisi_jalan + $item->faktor_penyebab_kecelakaan_prasarana_jalan + $item->faktor_penyebab_kecelakaan_rambu + $item->faktor_penyebab_kecelakaan_marka + $item->faktor_penyebab_kecelakaan_apil + $item->faktor_penyebab_kecelakaan_perlintasan_ka_palang_pintu;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_26',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->waktu_kejadian_kecelakaan_00_03 + $item->waktu_kejadian_kecelakaan_03_06 + $item->waktu_kejadian_kecelakaan_06_09 + $item->waktu_kejadian_kecelakaan_09_12 + $item->waktu_kejadian_kecelakaan_12_15 + $item->waktu_kejadian_kecelakaan_15_18 + $item->waktu_kejadian_kecelakaan_18_21 + $item->waktu_kejadian_kecelakaan_21_24;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_27',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->kecelakaan_lalin_menonjol_jumlah_kejadian + $item->kecelakaan_lalin_menonjol_korban_meninggal + $item->kecelakaan_lalin_menonjol_korban_luka_berat + $item->kecelakaan_lalin_menonjol_korban_luka_ringan + $item->kecelakaan_lalin_menonjol_materiil;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_28',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->kecelakaan_lalin_tunggal_jumlah_kejadian + $item->kecelakaan_lalin_tunggal_korban_meninggal + $item->kecelakaan_lalin_tunggal_korban_luka_berat + $item->kecelakaan_lalin_tunggal_korban_luka_ringan + $item->kecelakaan_lalin_tunggal_materiil;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_29',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->kecelakaan_lalin_tabrak_pejalan_kaki_jumlah_kejadian + $item->kecelakaan_lalin_tabrak_pejalan_kaki_korban_meninggal + $item->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_berat + $item->kecelakaan_lalin_tabrak_pejalan_kaki_korban_luka_ringan + $item->kecelakaan_lalin_tabrak_pejalan_kaki_materiil;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_30',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->kecelakaan_lalin_tabrak_lari_jumlah_kejadian + $item->kecelakaan_lalin_tabrak_lari_korban_meninggal + $item->kecelakaan_lalin_tabrak_lari_korban_luka_berat + $item->kecelakaan_lalin_tabrak_lari_korban_luka_ringan + $item->kecelakaan_lalin_tabrak_lari_materiil;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_31',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->kecelakaan_lalin_tabrak_sepeda_motor_jumlah_kejadian + $item->kecelakaan_lalin_tabrak_sepeda_motor_korban_meninggal + $item->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_berat + $item->kecelakaan_lalin_tabrak_sepeda_motor_korban_luka_ringan + $item->kecelakaan_lalin_tabrak_sepeda_motor_materiil;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_32',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->kecelakaan_lalin_tabrak_roda_empat_jumlah_kejadian + $item->kecelakaan_lalin_tabrak_roda_empat_korban_meninggal + $item->kecelakaan_lalin_tabrak_roda_empat_korban_luka_berat + $item->kecelakaan_lalin_tabrak_roda_empat_korban_luka_ringan + $item->kecelakaan_lalin_tabrak_roda_empat_materiil;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_33',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->kecelakaan_lalin_tabrak_tidak_bermotor_jumlah_kejadian + $item->kecelakaan_lalin_tabrak_tidak_bermotor_korban_meninggal + $item->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_berat + $item->kecelakaan_lalin_tabrak_tidak_bermotor_korban_luka_ringan + $item->kecelakaan_lalin_tabrak_tidak_bermotor_materiil;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_34',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->kecelakaan_lalin_perlintasan_ka_jumlah_kejadian + $item->kecelakaan_lalin_perlintasan_ka_berpalang_pintu + $item->kecelakaan_lalin_perlintasan_ka_tidak_berpalang_pintu + $item->kecelakaan_lalin_perlintasan_ka_korban_luka_ringan + $item->kecelakaan_lalin_perlintasan_ka_korban_luka_berat + $item->kecelakaan_lalin_perlintasan_ka_korban_meninggal + $item->kecelakaan_lalin_perlintasan_ka_materiil;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_35',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->kecelakaan_transportasi_kereta_api + $item->kecelakaan_transportasi_laut_perairan + $item->kecelakaan_transportasi_udara;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_36',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->penlu_melalui_media_cetak + $item->penlu_melalui_media_elektronik + $item->penlu_melalui_media_sosial + $item->penlu_melalui_tempat_keramaian + $item->penlu_melalui_tempat_istirahat + $item->penlu_melalui_daerah_rawan_laka_dan_langgar;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_37',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->penyebaran_pemasangan_spanduk + $item->penyebaran_pemasangan_leaflet + $item->penyebaran_pemasangan_sticker + $item->penyebaran_pemasangan_bilboard;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_38',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->polisi_sahabat_anak + $item->cara_aman_sekolah + $item->patroli_keamanan_sekolah + $item->pramuka_bhayangkara_krida_lalu_lintas;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_39',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->police_goes_to_campus + $item->safety_riding_driving + $item->forum_lalu_lintas_angkutan_umum + $item->kampanye_keselamatan + $item->sekolah_mengemudi + $item->taman_lalu_lintas + $item->global_road_safety_partnership_action;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_40',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->giat_lantas_pengaturan + $item->giat_lantas_penjagaan + $item->giat_lantas_pengawalan + $item->giat_lantas_patroli;
+            SumLoopEveryday::insert([
+                'group' => 'GROUP_41',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        // $data->each(function ($item, $key) {
+        //     $sum = $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX;
+        //     SumLoopEveryday::insert([
+        //         'group' => 'GROUP_XX',
+        //         'summary' => $sum,
+        //         'year_flag' => 'CURRENT'
+        //     ]);
+        // });
+
     }
 }
