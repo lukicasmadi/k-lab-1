@@ -31,7 +31,7 @@
 
                     <div class="header">
                         <div class="header-body">
-                            <h6>Pending Tasks ID</h6>
+                            <h6>Processing Tasks ID</h6>
                             <p class="meta-date">{{ $batch->id }}</p>
                         </div>
                         {{-- <div class="task-action">
@@ -53,7 +53,7 @@
                     <div class="w-content">
                         <div class="">
                             <p class="task-left"><span id="progress">{{ $batch->progress() }}</span> %</p>
-                            <p class="task-completed"><span id="processJob">{{ $batch->processedJobs() }}</span> Done</p>
+                            <p class="task-completed"><span id="processJob">{{ $batch->processedJobs() }}</span> done and <span id="pendingJobs">{{ $batch->pendingJobs }}</span> waiting</p>
                             <p class="task-hight-priority"><span>Total <span id="totalJobs">{{ $batch->totalJobs }}</span> Task</span> with High priority</p>
                             <span id="visitBtn" class="invisible">
                                 <br>
@@ -105,6 +105,12 @@
     -webkit-box-shadow: 0px 0px 8px 2px #e0e6ed;
     box-shadow: 0px 0px 8px 2px rgba(172, 176, 195, 0.23921568627450981);
 }
+.widget-five .widget-content .header-body h6 {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0;
+    margin-bottom: 0;
+}
 </style>
 @endpush
 
@@ -147,6 +153,7 @@ function getAllData() {
         $("#processJob").html(processedJobs)
         $("#totalJobs").html(totalJobs)
         $("#progress").html(progress)
+        $("#pendingJobs").html(pendingJobs)
 
         if(progress == 100) {
             $("#visitBtn").removeClass('invisible')

@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Throwable;
+use App\Jobs\QueuePrev;
 use App\Models\CountDown;
+use Illuminate\Bus\Batch;
+use App\Jobs\QueueCurrent;
 use App\Models\DailyInput;
 use App\Models\DailyNotice;
 use Illuminate\Http\Request;
@@ -39,16 +43,16 @@ class HelperController extends Controller
         DailyNoticeCurrent::where('operation_id', $operationId)->delete();
         DailyNotice::where('operation_id', $operationId)->delete();
 
-        $jobsPrev = [];
-        $jobsCurrent = [];
-
-        foreach($countDown as $cd) {
-            $jobsPrev[] = new ProcessSummaryPrev($cd->rencana_operasi_id, $cd->tanggal);
-            $jobsCurrent[] = new ProcessSummaryCurrent($cd->rencana_operasi_id, $cd->tanggal);
-        }
-
-        Bus::batch($jobsPrev)->dispatch();
-        $batch = Bus::batch($jobsCurrent)->dispatch();
+        $batch = Bus::batch([
+            new QueuePrev($countDown),
+            new QueueCurrent($countDown)
+        ])->then(function (Batch $batch) {
+            // All jobs completed successfully...
+        })->catch(function (Batch $batch, Throwable $e) {
+            // First batch job failure detected...
+        })->finally(function (Batch $batch) {
+            // The batch has finished executing...
+        })->dispatch();
 
         session(['progres_report_id' => $rencanaOperasi->uuid]);
 
@@ -74,16 +78,28 @@ class HelperController extends Controller
         DailyNoticeCurrent::where('operation_id', $operationId)->delete();
         DailyNotice::where('operation_id', $operationId)->delete();
 
-        $jobsPrev = [];
-        $jobsCurrent = [];
+        // $jobsPrev = [];
+        // $jobsCurrent = [];
 
-        foreach($countDown as $cd) {
-            $jobsPrev[] = new ProcessSummaryPrev($cd->rencana_operasi_id, $cd->tanggal);
-            $jobsCurrent[] = new ProcessSummaryCurrent($cd->rencana_operasi_id, $cd->tanggal);
-        }
+        // foreach($countDown as $cd) {
+        //     $jobsPrev[] = new ProcessSummaryPrev($cd->rencana_operasi_id, $cd->tanggal);
+        //     $jobsCurrent[] = new ProcessSummaryCurrent($cd->rencana_operasi_id, $cd->tanggal);
+        // }
 
-        Bus::batch($jobsPrev)->dispatch();
-        $batch = Bus::batch($jobsCurrent)->name('Calculate Summary Data')->dispatch();
+        // $countAble = count($jobsPrev) + count($jobsCurrent);
+
+        // Bus::batch($jobsPrev)->dispatch();
+        // $batch = Bus::batch($jobsCurrent)->dispatch();
+
+        $batch = Bus::batch([
+            new QueuePrev($countDown)
+        ])->then(function (Batch $batch) {
+            // All jobs completed successfully...
+        })->catch(function (Batch $batch, Throwable $e) {
+            // First batch job failure detected...
+        })->finally(function (Batch $batch) {
+            // The batch has finished executing...
+        })->dispatch();
 
         return redirect()->route('batch_progress', $batch->id);
     }
@@ -109,7 +125,7 @@ class HelperController extends Controller
         $countDown = CountDown::where('rencana_operasi_id', $rencanaOperasi->id)->get();
 
         LoopTotalSummary::truncate();
-        SumLoopEveryday::truncate();
+        // SumLoopEveryday::truncate();
 
         $dailyNoticePrev = DailyNotice::where('operation_id', $rencanaOperasi->id)
             ->when(!is_null($limit), function ($q) use ($limit) {
@@ -137,6 +153,6 @@ class HelperController extends Controller
         // sumGroupPrev($dailyNoticePrev);
         // sumGroupCurrent($dailyNoticeCurrent);
 
-        return view('exports.ready', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'operationId'));
+        return view('exports.ready_new', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'operationId'));
     }
 }
