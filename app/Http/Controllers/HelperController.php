@@ -19,6 +19,7 @@ use App\Jobs\QueueSumLoopEveryday;
 use App\Models\DailyNoticeCurrent;
 use Illuminate\Support\Facades\DB;
 use App\Jobs\ProcessSummaryCurrent;
+use App\Jobs\QueueLoopTotalSummary;
 use Illuminate\Support\Facades\Bus;
 
 class HelperController extends Controller
@@ -48,6 +49,7 @@ class HelperController extends Controller
             new QueuePrev($countDown),
             new QueueCurrent($countDown),
             new QueueSumLoopEveryday($rencanaOperasi),
+            new QueueLoopTotalSummary($rencanaOperasi),
         ])->then(function (Batch $batch) {
             // All jobs completed successfully...
         })->catch(function (Batch $batch, Throwable $e) {
@@ -73,12 +75,6 @@ class HelperController extends Controller
         return $countDown;
     }
 
-    public function loopData($operationId)
-    {
-        $prev = DailyNotice::orderBy('submited_date', 'asc')->get();
-        $current = DailyNoticeCurrent::orderBy('submited_date', 'asc')->get();
-    }
-
     public function batchProgress($batchId)
     {
         $batch = Bus::findBatch($batchId);
@@ -92,8 +88,6 @@ class HelperController extends Controller
 
         $rencanaOperasi = RencanaOperasi::where('uuid', $operationUuid)->firstOrFail();
         $countDown = CountDown::where('rencana_operasi_id', $rencanaOperasi->id)->get();
-
-        LoopTotalSummary::truncate();
 
         $dailyNoticePrev = DailyNotice::where('operation_id', $rencanaOperasi->id)
             ->when(!is_null($limit), function ($q) use ($limit) {

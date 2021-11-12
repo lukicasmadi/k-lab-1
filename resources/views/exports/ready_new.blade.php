@@ -115,24 +115,6 @@ use App\Models\DailyNoticeCurrent;
             <td class="tg-n1r7"></td>
             <td class="tg-o5n3">Jumlah</td>
                 @for ($i = 0; $i < $totalLoopDays; $i++)
-                    @php
-                        LoopTotalSummary::create([
-                            'type' => 'pelanggaran_lalu_lintas_tilang_p',
-                            'val' => summary([
-                                $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_tilang_p,
-                                $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_teguran_p
-                            ]),
-                        ]);
-
-                        LoopTotalSummary::create([
-                            'type' => 'pelanggaran_lalu_lintas_tilang',
-                            'val' => summary([
-                                $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_tilang,
-                                $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_teguran
-                            ]),
-                        ]);
-                    @endphp
-
                     <td class="tg-n1r7">{{ summary([$dailyNoticePrev[$i]->pelanggaran_lalu_lintas_tilang_p, $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_teguran_p]) }}</td>
                     <td class="tg-n1r7">{{ summary([$dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_tilang, $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_teguran]) }}</td>
                 @endfor
