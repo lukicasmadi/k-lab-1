@@ -1363,6 +1363,376 @@ class HelperController extends Controller
                     'val' => zeroIfNull($data[0]->current_kecelakaan_lalin_perlintasan_ka_berpalang_pintu_sum),
                     'date_loop' => $cd->tanggal,
                 ],
+                [
+                    'type' => 'kecelakaan_lalin_perlintasan_ka_tidak_berpalang_pintu',
+                    'val' => zeroIfNull($data[0]->current_kecelakaan_lalin_perlintasan_ka_tidak_berpalang_pintu_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kecelakaan_lalin_perlintasan_ka_korban_luka_ringan',
+                    'val' => zeroIfNull($data[0]->current_kecelakaan_lalin_perlintasan_ka_korban_luka_ringan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kecelakaan_lalin_perlintasan_ka_korban_luka_berat',
+                    'val' => zeroIfNull($data[0]->current_kecelakaan_lalin_perlintasan_ka_korban_luka_berat_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kecelakaan_lalin_perlintasan_ka_korban_meninggal',
+                    'val' => zeroIfNull($data[0]->current_kecelakaan_lalin_perlintasan_ka_korban_meninggal_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kecelakaan_lalin_perlintasan_ka_materiil',
+                    'val' => zeroIfNull($data[0]->current_kecelakaan_lalin_perlintasan_ka_materiil_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kecelakaan_transportasi_kereta_api',
+                    'val' => zeroIfNull($data[0]->current_kecelakaan_transportasi_kereta_api_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kecelakaan_transportasi_laut_perairan',
+                    'val' => zeroIfNull($data[0]->current_kecelakaan_transportasi_laut_perairan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kecelakaan_transportasi_udara',
+                    'val' => zeroIfNull($data[0]->current_kecelakaan_transportasi_udara_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'penlu_melalui_media_cetak',
+                    'val' => zeroIfNull($data[0]->current_penlu_melalui_media_cetak_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'penlu_melalui_media_elektronik',
+                    'val' => zeroIfNull($data[0]->current_penlu_melalui_media_elektronik_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'penlu_melalui_media_sosial',
+                    'val' => zeroIfNull($data[0]->current_penlu_melalui_media_sosial_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'penlu_melalui_tempat_keramaian',
+                    'val' => zeroIfNull($data[0]->current_penlu_melalui_tempat_keramaian_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'penlu_melalui_tempat_istirahat',
+                    'val' => zeroIfNull($data[0]->current_penlu_melalui_tempat_istirahat_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'penlu_melalui_daerah_rawan_laka_dan_langgar',
+                    'val' => zeroIfNull($data[0]->current_penlu_melalui_daerah_rawan_laka_dan_langgar_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'penyebaran_pemasangan_spanduk',
+                    'val' => zeroIfNull($data[0]->current_penyebaran_pemasangan_spanduk_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'penyebaran_pemasangan_leaflet',
+                    'val' => zeroIfNull($data[0]->current_penyebaran_pemasangan_leaflet_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'penyebaran_pemasangan_sticker',
+                    'val' => zeroIfNull($data[0]->current_penyebaran_pemasangan_sticker_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'penyebaran_pemasangan_bilboard',
+                    'val' => zeroIfNull($data[0]->current_penyebaran_pemasangan_bilboard_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'polisi_sahabat_anak',
+                    'val' => zeroIfNull($data[0]->current_polisi_sahabat_anak_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'cara_aman_sekolah',
+                    'val' => zeroIfNull($data[0]->current_cara_aman_sekolah_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'patroli_keamanan_sekolah',
+                    'val' => zeroIfNull($data[0]->current_patroli_keamanan_sekolah_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pramuka_bhayangkara_krida_lalu_lintas',
+                    'val' => zeroIfNull($data[0]->current_pramuka_bhayangkara_krida_lalu_lintas_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'police_goes_to_campus',
+                    'val' => zeroIfNull($data[0]->current_police_goes_to_campus_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'safety_riding_driving',
+                    'val' => zeroIfNull($data[0]->current_safety_riding_driving_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'forum_lalu_lintas_angkutan_umum',
+                    'val' => zeroIfNull($data[0]->current_forum_lalu_lintas_angkutan_umum_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kampanye_keselamatan',
+                    'val' => zeroIfNull($data[0]->current_kampanye_keselamatan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'sekolah_mengemudi',
+                    'val' => zeroIfNull($data[0]->current_sekolah_mengemudi_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'taman_lalu_lintas',
+                    'val' => zeroIfNull($data[0]->current_taman_lalu_lintas_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'global_road_safety_partnership_action',
+                    'val' => zeroIfNull($data[0]->current_global_road_safety_partnership_action_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'giat_lantas_pengaturan',
+                    'val' => zeroIfNull($data[0]->current_giat_lantas_pengaturan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'giat_lantas_penjagaan',
+                    'val' => zeroIfNull($data[0]->current_giat_lantas_penjagaan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'giat_lantas_pengawalan',
+                    'val' => zeroIfNull($data[0]->current_giat_lantas_pengawalan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'giat_lantas_patroli',
+                    'val' => zeroIfNull($data[0]->current_giat_lantas_patroli_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_jumlah_bus_keberangkatan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_jumlah_bus_keberangkatan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_jumlah_penumpang_keberangkatan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_jumlah_penumpang_keberangkatan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_jumlah_bus_kedatangan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_jumlah_bus_kedatangan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_jumlah_penumpang_kedatangan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_jumlah_penumpang_kedatangan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_total_terminal',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_total_terminal_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_total_bus_keberangkatan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_total_bus_keberangkatan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_penumpang_keberangkatan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_penumpang_keberangkatan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_total_bus_kedatangan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_total_bus_kedatangan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_penumpang_kedatangan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_penumpang_kedatangan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_kereta_api_total_stasiun',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_kereta_api_total_stasiun_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_kereta_api_total_penumpang_keberangkatan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_kereta_api_total_penumpang_keberangkatan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_kereta_api_total_penumpang_kedatangan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_kereta_api_total_penumpang_kedatangan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r4_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_pelabuhan_jumlah_kendaraan_keberangkatan_r2_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_pelabuhan_jumlah_penumpang_keberangkatan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r4_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_pelabuhan_jumlah_kendaraan_kedatangan_r2_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_pelabuhan_jumlah_penumpang_kedatangan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_pelabuhan_jumlah_penumpang_kedatangan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_total_pelabuhan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_total_pelabuhan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_pelabuhan_kendaraan_keberangkatan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_pelabuhan_kendaraan_keberangkatan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_pelabuhan_kendaraan_kedatangan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_pelabuhan_kendaraan_kedatangan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_pelabuhan_total_penumpang_keberangkatan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_pelabuhan_total_penumpang_keberangkatan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_pelabuhan_total_penumpang_kedatangan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_pelabuhan_total_penumpang_kedatangan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_bandara_jumlah_penumpang_keberangkatan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_bandara_jumlah_penumpang_keberangkatan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_bandara_jumlah_penumpang_kedatangan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_bandara_jumlah_penumpang_kedatangan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_total_bandara',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_total_bandara_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_bandara_total_penumpang_keberangkatan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_bandara_total_penumpang_keberangkatan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'arus_mudik_bandara_total_penumpang_kedatangan',
+                    'val' => zeroIfNull($data[0]->current_arus_mudik_bandara_total_penumpang_kedatangan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'prokes_covid_teguran_gar_prokes',
+                    'val' => zeroIfNull($data[0]->current_prokes_covid_teguran_gar_prokes_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'prokes_covid_pembagian_masker',
+                    'val' => zeroIfNull($data[0]->current_prokes_covid_pembagian_masker_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'prokes_covid_sosialisasi_tentang_prokes',
+                    'val' => zeroIfNull($data[0]->current_prokes_covid_sosialisasi_tentang_prokes_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'prokes_covid_giat_baksos',
+                    'val' => zeroIfNull($data[0]->current_prokes_covid_giat_baksos_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'penyekatan_motor',
+                    'val' => zeroIfNull($data[0]->current_penyekatan_motor_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'penyekatan_mobil_penumpang',
+                    'val' => zeroIfNull($data[0]->current_penyekatan_mobil_penumpang_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'penyekatan_mobil_bus',
+                    'val' => zeroIfNull($data[0]->current_penyekatan_mobil_bus_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'penyekatan_mobil_barang',
+                    'val' => zeroIfNull($data[0]->current_penyekatan_mobil_barang_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'penyekatan_kendaraan_khusus',
+                    'val' => zeroIfNull($data[0]->current_penyekatan_kendaraan_khusus_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'rapid_test_antigen_positif',
+                    'val' => zeroIfNull($data[0]->current_rapid_test_antigen_positif_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'rapid_test_antigen_positif',
+                    'val' => zeroIfNull($data[0]->current_rapid_test_antigen_positif_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
             );
         }
 
