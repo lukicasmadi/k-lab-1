@@ -73,13 +73,6 @@ class HelperController extends Controller
         return $countDown;
     }
 
-    public function runDispatch($operationId)
-    {
-        $countDown = CountDown::where('rencana_operasi_id', $operationId)->orderBy('tanggal', 'asc')->get();
-
-        return $countDown;
-    }
-
     public function loopData($operationId)
     {
         $prev = DailyNotice::orderBy('submited_date', 'asc')->get();
@@ -126,5 +119,561 @@ class HelperController extends Controller
         $operationId = $rencanaOperasi->id;
 
         return view('exports.ready_new', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'operationId'));
+    }
+
+    public function runDispatch($operationId)
+    {
+        $countDown = CountDown::where('rencana_operasi_id', $operationId)->orderBy('tanggal', 'asc')->get();
+
+        $bulkData = [];
+
+        LoopTotalSummary::truncate();
+
+        foreach($countDown as $cd) {
+            $data = DB::select('CALL summaryDataCurrent(?,?)', [$cd->rencana_operasi_id, $cd->tanggal]);
+
+            array_push($bulkData,
+                [
+                    'type' => 'pelanggaran_lalu_lintas_tilang',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_lalu_lintas_tilang_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_lalu_lintas_teguran',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_lalu_lintas_teguran_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_sepeda_motor_kecepatan',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_sepeda_motor_kecepatan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_sepeda_motor_helm',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_sepeda_motor_kecepatan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_sepeda_motor_bonceng_lebih_dari_satu',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_sepeda_motor_bonceng_lebih_dari_satu_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_sepeda_motor_marka_menerus_menyalip',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_sepeda_motor_marka_menerus_menyalip_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_sepeda_motor_melawan_arus',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_sepeda_motor_melawan_arus_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_sepeda_motor_melanggar_lampu_lalin',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_sepeda_motor_melanggar_lampu_lalin_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_sepeda_motor_mengemudikan_tidak_wajar',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_sepeda_motor_mengemudikan_tidak_wajar_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_sepeda_motor_syarat_teknis_layak_jalan',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_sepeda_motor_syarat_teknis_layak_jalan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_sepeda_motor_tidak_nyala_lampu_siang_malam',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_sepeda_motor_tidak_nyala_lampu_siang_malam_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_sepeda_motor_berbelok_tanpa_isyarat',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_sepeda_motor_berbelok_tanpa_isyarat_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_sepeda_motor_berbalapan_di_jalan_raya',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_sepeda_motor_berbalapan_di_jalan_raya_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkir',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkir_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_sepeda_motor_melanggar_marka_berhenti',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_sepeda_motor_melanggar_marka_berhenti_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_sepeda_motor_tidak_patuh_perintah_petugas',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_sepeda_motor_tidak_patuh_perintah_petugas_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_sepeda_motor_surat_surat',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_sepeda_motor_surat_surat_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_sepeda_motor_kelengkapan_kendaraan',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_sepeda_motor_kelengkapan_kendaraan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_sepeda_motor_lain_lain',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_sepeda_motor_lain_lain_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_mobil_kecepatan',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_mobil_kecepatan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_mobil_safety_belt',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_mobil_safety_belt_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_mobil_muatan_overload',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_mobil_muatan_overload_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_mobil_marka_menerus_menyalip',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_mobil_marka_menerus_menyalip_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_mobil_melawan_arus',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_mobil_melawan_arus_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_mobil_melanggar_lampu_lalin',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_mobil_melanggar_lampu_lalin_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_mobil_mengemudi_tidak_wajar',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_mobil_mengemudi_tidak_wajar_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_mobil_syarat_teknis_layak_jalan',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_mobil_syarat_teknis_layak_jalan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_mobil_tidak_nyala_lampu_malam',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_mobil_tidak_nyala_lampu_malam_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_mobil_berbelok_tanpa_isyarat',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_mobil_berbelok_tanpa_isyarat_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_mobil_berbalapan_di_jalan_raya',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_mobil_berbalapan_di_jalan_raya_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_mobil_melanggar_rambu_berhenti_dan_parkir',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_mobil_melanggar_rambu_berhenti_dan_parkir_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_mobil_melanggar_marka_berhenti',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_mobil_melanggar_marka_berhenti_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_mobil_tidak_patuh_perintah_petugas',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_mobil_tidak_patuh_perintah_petugas_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_mobil_surat_surat',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_mobil_surat_surat_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_mobil_kelengkapan_kendaraan',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_mobil_kelengkapan_kendaraan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_mobil_lain_lain',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_mobil_lain_lain_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'pelanggaran_pejalan_kaki_menyeberang_tidak_pada_tempat',
+                    'val' => zeroIfNull($data[0]->current_pelanggaran_pejalan_kaki_menyeberang_tidak_pada_tempat_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'barang_bukti_yg_disita_sim',
+                    'val' => zeroIfNull($data[0]->current_barang_bukti_yg_disita_sim_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'barang_bukti_yg_disita_stnk',
+                    'val' => zeroIfNull($data[0]->current_barang_bukti_yg_disita_stnk_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'barang_bukti_yg_disita_kendaraan',
+                    'val' => zeroIfNull($data[0]->current_barang_bukti_yg_disita_kendaraan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kendaraan_yang_terlibat_pelanggaran_sepeda_motor',
+                    'val' => zeroIfNull($data[0]->current_kendaraan_yang_terlibat_pelanggaran_sepeda_motor_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kendaraan_yang_terlibat_pelanggaran_mobil_penumpang',
+                    'val' => zeroIfNull($data[0]->current_kendaraan_yang_terlibat_pelanggaran_mobil_penumpang_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kendaraan_yang_terlibat_pelanggaran_mobil_bus',
+                    'val' => zeroIfNull($data[0]->current_kendaraan_yang_terlibat_pelanggaran_mobil_bus_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kendaraan_yang_terlibat_pelanggaran_mobil_barang',
+                    'val' => zeroIfNull($data[0]->current_kendaraan_yang_terlibat_pelanggaran_mobil_barang_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus',
+                    'val' => zeroIfNull($data[0]->current_kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'profesi_pelaku_pelanggaran_pns',
+                    'val' => zeroIfNull($data[0]->current_profesi_pelaku_pelanggaran_pns_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'profesi_pelaku_pelanggaran_karyawan_swasta',
+                    'val' => zeroIfNull($data[0]->current_profesi_pelaku_pelanggaran_karyawan_swasta_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'profesi_pelaku_pelanggaran_pelajar_mahasiswa',
+                    'val' => zeroIfNull($data[0]->current_profesi_pelaku_pelanggaran_pelajar_mahasiswa_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'profesi_pelaku_pelanggaran_pengemudi_supir',
+                    'val' => zeroIfNull($data[0]->current_profesi_pelaku_pelanggaran_pengemudi_supir_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'profesi_pelaku_pelanggaran_tni',
+                    'val' => zeroIfNull($data[0]->current_profesi_pelaku_pelanggaran_tni_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'profesi_pelaku_pelanggaran_polri',
+                    'val' => zeroIfNull($data[0]->current_profesi_pelaku_pelanggaran_polri_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'profesi_pelaku_pelanggaran_lain_lain',
+                    'val' => zeroIfNull($data[0]->current_profesi_pelaku_pelanggaran_lain_lain_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'usia_pelaku_pelanggaran_kurang_dari_15_tahun',
+                    'val' => zeroIfNull($data[0]->current_usia_pelaku_pelanggaran_kurang_dari_15_tahun_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'usia_pelaku_pelanggaran_16_20_tahun',
+                    'val' => zeroIfNull($data[0]->current_usia_pelaku_pelanggaran_16_20_tahun_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'usia_pelaku_pelanggaran_21_25_tahun',
+                    'val' => zeroIfNull($data[0]->current_usia_pelaku_pelanggaran_21_25_tahun_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'usia_pelaku_pelanggaran_26_30_tahun',
+                    'val' => zeroIfNull($data[0]->current_usia_pelaku_pelanggaran_26_30_tahun_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'usia_pelaku_pelanggaran_31_35_tahun',
+                    'val' => zeroIfNull($data[0]->current_usia_pelaku_pelanggaran_31_35_tahun_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'usia_pelaku_pelanggaran_36_40_tahun',
+                    'val' => zeroIfNull($data[0]->current_usia_pelaku_pelanggaran_36_40_tahun_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'usia_pelaku_pelanggaran_41_45_tahun',
+                    'val' => zeroIfNull($data[0]->current_usia_pelaku_pelanggaran_41_45_tahun_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'usia_pelaku_pelanggaran_46_50_tahun',
+                    'val' => zeroIfNull($data[0]->current_usia_pelaku_pelanggaran_46_50_tahun_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'usia_pelaku_pelanggaran_51_55_tahun',
+                    'val' => zeroIfNull($data[0]->current_usia_pelaku_pelanggaran_51_55_tahun_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'usia_pelaku_pelanggaran_56_60_tahun',
+                    'val' => zeroIfNull($data[0]->current_usia_pelaku_pelanggaran_56_60_tahun_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'usia_pelaku_pelanggaran_diatas_60_tahun',
+                    'val' => zeroIfNull($data[0]->current_usia_pelaku_pelanggaran_diatas_60_tahun_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'sim_pelaku_pelanggaran_sim_a',
+                    'val' => zeroIfNull($data[0]->current_sim_pelaku_pelanggaran_sim_a_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'sim_pelaku_pelanggaran_sim_a_umum',
+                    'val' => zeroIfNull($data[0]->current_sim_pelaku_pelanggaran_sim_a_umum_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'sim_pelaku_pelanggaran_sim_b1',
+                    'val' => zeroIfNull($data[0]->current_sim_pelaku_pelanggaran_sim_b1_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'sim_pelaku_pelanggaran_sim_b1_umum',
+                    'val' => zeroIfNull($data[0]->current_sim_pelaku_pelanggaran_sim_b1_umum_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'sim_pelaku_pelanggaran_sim_b2',
+                    'val' => zeroIfNull($data[0]->current_sim_pelaku_pelanggaran_sim_b2_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'sim_pelaku_pelanggaran_sim_b2_umum',
+                    'val' => zeroIfNull($data[0]->current_sim_pelaku_pelanggaran_sim_b2_umum_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'sim_pelaku_pelanggaran_sim_c',
+                    'val' => zeroIfNull($data[0]->current_sim_pelaku_pelanggaran_sim_c_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'sim_pelaku_pelanggaran_sim_d',
+                    'val' => zeroIfNull($data[0]->current_sim_pelaku_pelanggaran_sim_d_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'sim_pelaku_pelanggaran_sim_internasional',
+                    'val' => zeroIfNull($data[0]->current_sim_pelaku_pelanggaran_sim_internasional_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'sim_pelaku_pelanggaran_tanpa_sim',
+                    'val' => zeroIfNull($data[0]->current_sim_pelaku_pelanggaran_tanpa_sim_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'lokasi_pelanggaran_pemukiman',
+                    'val' => zeroIfNull($data[0]->current_lokasi_pelanggaran_pemukiman_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'lokasi_pelanggaran_perbelanjaan',
+                    'val' => zeroIfNull($data[0]->current_lokasi_pelanggaran_perbelanjaan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'lokasi_pelanggaran_perkantoran',
+                    'val' => zeroIfNull($data[0]->current_lokasi_pelanggaran_perkantoran_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'lokasi_pelanggaran_wisata',
+                    'val' => zeroIfNull($data[0]->current_lokasi_pelanggaran_wisata_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'lokasi_pelanggaran_industri',
+                    'val' => zeroIfNull($data[0]->current_lokasi_pelanggaran_industri_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'lokasi_pelanggaran_status_jalan_nasional',
+                    'val' => zeroIfNull($data[0]->current_lokasi_pelanggaran_status_jalan_nasional_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'lokasi_pelanggaran_status_jalan_propinsi',
+                    'val' => zeroIfNull($data[0]->current_lokasi_pelanggaran_status_jalan_propinsi_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'lokasi_pelanggaran_status_jalan_kab_kota',
+                    'val' => zeroIfNull($data[0]->current_lokasi_pelanggaran_status_jalan_kab_kota_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'lokasi_pelanggaran_status_jalan_desa_lingkungan',
+                    'val' => zeroIfNull($data[0]->current_lokasi_pelanggaran_status_jalan_desa_lingkungan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'lokasi_pelanggaran_fungsi_jalan_arteri',
+                    'val' => zeroIfNull($data[0]->current_lokasi_pelanggaran_fungsi_jalan_arteri_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'lokasi_pelanggaran_fungsi_jalan_kolektor',
+                    'val' => zeroIfNull($data[0]->current_lokasi_pelanggaran_fungsi_jalan_kolektor_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'lokasi_pelanggaran_fungsi_jalan_lokal',
+                    'val' => zeroIfNull($data[0]->current_lokasi_pelanggaran_fungsi_jalan_lokal_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'lokasi_pelanggaran_fungsi_jalan_lingkungan',
+                    'val' => zeroIfNull($data[0]->current_lokasi_pelanggaran_fungsi_jalan_lingkungan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kecelakaan_lalin_jumlah_kejadian',
+                    'val' => zeroIfNull($data[0]->current_kecelakaan_lalin_jumlah_kejadian_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kecelakaan_lalin_jumlah_korban_meninggal',
+                    'val' => zeroIfNull($data[0]->current_kecelakaan_lalin_jumlah_korban_meninggal_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kecelakaan_lalin_jumlah_korban_luka_berat',
+                    'val' => zeroIfNull($data[0]->current_kecelakaan_lalin_jumlah_korban_luka_berat_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kecelakaan_lalin_jumlah_korban_luka_ringan',
+                    'val' => zeroIfNull($data[0]->current_kecelakaan_lalin_jumlah_korban_luka_ringan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kecelakaan_lalin_jumlah_kerugian_materiil',
+                    'val' => zeroIfNull($data[0]->current_kecelakaan_lalin_jumlah_kerugian_materiil_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kecelakaan_barang_bukti_yg_disita_sim',
+                    'val' => zeroIfNull($data[0]->current_kecelakaan_barang_bukti_yg_disita_sim_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kecelakaan_barang_bukti_yg_disita_stnk',
+                    'val' => zeroIfNull($data[0]->current_kecelakaan_barang_bukti_yg_disita_stnk_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'kecelakaan_barang_bukti_yg_disita_kendaraan',
+                    'val' => zeroIfNull($data[0]->current_kecelakaan_barang_bukti_yg_disita_kendaraan_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'profesi_korban_kecelakaan_lalin_pns',
+                    'val' => zeroIfNull($data[0]->current_profesi_korban_kecelakaan_lalin_pns_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'profesi_korban_kecelakaan_lalin_karwayan_swasta',
+                    'val' => zeroIfNull($data[0]->current_profesi_korban_kecelakaan_lalin_karwayan_swasta_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'profesi_korban_kecelakaan_lalin_pelajar_mahasiswa',
+                    'val' => zeroIfNull($data[0]->current_profesi_korban_kecelakaan_lalin_pelajar_mahasiswa_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'profesi_korban_kecelakaan_lalin_pengemudi',
+                    'val' => zeroIfNull($data[0]->current_profesi_korban_kecelakaan_lalin_pengemudi_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'profesi_korban_kecelakaan_lalin_tni',
+                    'val' => zeroIfNull($data[0]->current_profesi_korban_kecelakaan_lalin_tni_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'profesi_korban_kecelakaan_lalin_polri',
+                    'val' => zeroIfNull($data[0]->current_profesi_korban_kecelakaan_lalin_polri_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'profesi_korban_kecelakaan_lalin_lain_lain',
+                    'val' => zeroIfNull($data[0]->current_profesi_korban_kecelakaan_lalin_lain_lain_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'usia_korban_kecelakaan_kurang_15',
+                    'val' => zeroIfNull($data[0]->current_usia_korban_kecelakaan_kurang_15_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'usia_korban_kecelakaan_16_20',
+                    'val' => zeroIfNull($data[0]->current_usia_korban_kecelakaan_16_20_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+                [
+                    'type' => 'usia_korban_kecelakaan_21_25',
+                    'val' => zeroIfNull($data[0]->current_usia_korban_kecelakaan_21_25_sum),
+                    'date_loop' => $cd->tanggal,
+                ],
+            );
+        }
+
+        LoopTotalSummary::insert($bulkData);
+
+        return "DONE";
+
+        // LoopTotalSummary::create([
+        //     'type' => 'pelanggaran_lalu_lintas_tilang',
+        //     'val' => summary([
+        //         $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_tilang,
+        //         $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_teguran
+        //     ]),
+        // ]);
+
+        // LoopTotalSummary::create([
+        //     'type' => 'pelanggaran_lalu_lintas_tilang_p',
+        //     'val' => summary([
+        //         $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_tilang_p,
+        //         $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_teguran_p
+        //     ]),
+        // ]);
     }
 }

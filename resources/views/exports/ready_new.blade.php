@@ -136,8 +136,8 @@ use App\Models\DailyNoticeCurrent;
                     <td class="tg-n1r7">{{ summary([$dailyNoticePrev[$i]->pelanggaran_lalu_lintas_tilang_p, $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_teguran_p]) }}</td>
                     <td class="tg-n1r7">{{ summary([$dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_tilang, $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_teguran]) }}</td>
                 @endfor
-            <td class="tg-o5n3">{{ LoopTotalSummary::where('type', 'pelanggaran_lalu_lintas_tilang_p')->sum('val'); }}</td>
-            <td class="tg-o5n3">{{ LoopTotalSummary::where('type', 'pelanggaran_lalu_lintas_tilang')->sum('val'); }}</td>
+            <td class="tg-o5n3">{{ LoopTotalSummary::where('type', 'pelanggaran_lalu_lintas_tilang_p')->sum('val') }}</td>
+            <td class="tg-o5n3">{{ LoopTotalSummary::where('type', 'pelanggaran_lalu_lintas_tilang')->sum('val') }}</td>
             <td class="tg-n1r7">Perkara</td>
         </tr>
 

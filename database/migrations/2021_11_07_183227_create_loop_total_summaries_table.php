@@ -17,6 +17,7 @@ class CreateLoopTotalSummariesTable extends Migration
             $table->id();
             $table->string("type");
             $table->string("val");
+            $table->date("date_loop");
         });
     }
 
