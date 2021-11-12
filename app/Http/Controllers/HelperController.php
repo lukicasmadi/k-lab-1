@@ -54,7 +54,7 @@ class HelperController extends Controller
             // First batch job failure detected...
         })->finally(function (Batch $batch) {
             // The batch has finished executing...
-        })->dispatch();
+        })->name('Reporting '.ucwords(strtolower($rencanaOperasi->name)))->dispatch();
 
         session(['progres_report_id' => $rencanaOperasi->uuid]);
 

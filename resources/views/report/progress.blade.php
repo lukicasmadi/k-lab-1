@@ -31,7 +31,7 @@
 
                     <div class="header">
                         <div class="header-body">
-                            <h6>Processing Tasks ID</h6>
+                            <h6>Processing Tasks {{ $batch->name }}</h6>
                             <p class="meta-date">{{ $batch->id }}</p>
                         </div>
                         {{-- <div class="task-action">

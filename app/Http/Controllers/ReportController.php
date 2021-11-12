@@ -500,10 +500,6 @@ class ReportController extends Controller
 
         foreach($loopDays as $key => $loop) {
             array_push($operasiHariKe, "H-".$hari);
-
-            // prevDaily($loop->tanggal, $loop->rencana_operasi_id);
-            // prevDaily($loop->rencana_operasi_id, '2021-06-01');
-
             $hari++;
         }
 
