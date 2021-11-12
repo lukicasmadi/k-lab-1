@@ -670,6 +670,1350 @@ use App\Models\DailyNoticeCurrent;
             <td class="tg-4bam">Perkara</td>
         </tr>
 
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">(2.c)     Jumlah</td>
+            <td class="tg-n1r7">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7">4</td>
+            <td class="tg-o5n3">KENDARAAN YANG TERLIBAT PELANGGARAN</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">a. Sepeda Motor</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kendaraan_yang_terlibat_pelanggaran_sepeda_motor_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kendaraan_yang_terlibat_pelanggaran_sepeda_motor}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kendaraan_yang_terlibat_pelanggaran_sepeda_motor_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kendaraan_yang_terlibat_pelanggaran_sepeda_motor') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">b. Mobil Penumpang</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kendaraan_yang_terlibat_pelanggaran_mobil_penumpang}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kendaraan_yang_terlibat_pelanggaran_mobil_penumpang_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kendaraan_yang_terlibat_pelanggaran_mobil_penumpang') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">c. Mobil Bus</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kendaraan_yang_terlibat_pelanggaran_mobil_bus_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kendaraan_yang_terlibat_pelanggaran_mobil_bus}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kendaraan_yang_terlibat_pelanggaran_mobil_bus_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kendaraan_yang_terlibat_pelanggaran_mobil_bus') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">d. Mobil Barang</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kendaraan_yang_terlibat_pelanggaran_mobil_barang_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kendaraan_yang_terlibat_pelanggaran_mobil_barang}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kendaraan_yang_terlibat_pelanggaran_mobil_barang_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kendaraan_yang_terlibat_pelanggaran_mobil_barang') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">e. Kendaraan Khusus</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kendaraan_yang_terlibat_pelanggaran_kendaraan_khusus') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">(2.c)     Jumlah</td>
+            <td class="tg-n1r7">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7">5</td>
+            <td class="tg-o5n3">PROFESI PELAKU PELANGGARAN</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">a. Pegawai Negeri Sipil</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->profesi_pelaku_pelanggaran_pns_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->profesi_pelaku_pelanggaran_pns}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_pelaku_pelanggaran_pns_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_pelaku_pelanggaran_pns') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">b. Karyawan / Swasta</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->profesi_pelaku_pelanggaran_karyawan_swasta_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->profesi_pelaku_pelanggaran_karyawan_swasta}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_pelaku_pelanggaran_karyawan_swasta_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_pelaku_pelanggaran_karyawan_swasta') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">c. Pelajar / Mahasiswa</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->profesi_pelaku_pelanggaran_pelajar_mahasiswa_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->profesi_pelaku_pelanggaran_pelajar_mahasiswa}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_pelaku_pelanggaran_pelajar_mahasiswa_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_pelaku_pelanggaran_pelajar_mahasiswa') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">d. Pengemudi (supir)</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->profesi_pelaku_pelanggaran_pengemudi_supir_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->profesi_pelaku_pelanggaran_pengemudi_supir}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_pelaku_pelanggaran_pengemudi_supir_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_pelaku_pelanggaran_pengemudi_supir') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">e.TNI</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->profesi_pelaku_pelanggaran_tni_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->profesi_pelaku_pelanggaran_tni}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_pelaku_pelanggaran_tni_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_pelaku_pelanggaran_tni') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">f.Polri</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->profesi_pelaku_pelanggaran_polri_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->profesi_pelaku_pelanggaran_polri}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_pelaku_pelanggaran_polri_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_pelaku_pelanggaran_polri') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+         <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">g. Lain-Lain</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->profesi_pelaku_pelanggaran_lain_lain_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->profesi_pelaku_pelanggaran_lain_lain}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_pelaku_pelanggaran_lain_lain_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_pelaku_pelanggaran_lain_lain') }}</td>
+            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">(2.c)     Jumlah</td>
+            <td class="tg-n1r7">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7">6</td>
+            <td class="tg-o5n3">USIA PELAKU PELANGGARAN</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">a. 0 - 15 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_pelaku_pelanggaran_kurang_dari_15_tahun_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_pelaku_pelanggaran_kurang_dari_15_tahun}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_pelaku_pelanggaran_kurang_dari_15_tahun_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_pelaku_pelanggaran_kurang_dari_15_tahun') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">b. 16-20 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_pelaku_pelanggaran_16_20_tahun_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_pelaku_pelanggaran_16_20_tahun}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_pelaku_pelanggaran_16_20_tahun_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_pelaku_pelanggaran_16_20_tahun') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">c. 21-25 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_pelaku_pelanggaran_21_25_tahun_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_pelaku_pelanggaran_21_25_tahun}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_pelaku_pelanggaran_21_25_tahun_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_pelaku_pelanggaran_21_25_tahun') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">d. 26-30 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_pelaku_pelanggaran_26_30_tahun_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_pelaku_pelanggaran_26_30_tahun}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_pelaku_pelanggaran_26_30_tahun_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_pelaku_pelanggaran_26_30_tahun') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">e. 31-35 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_pelaku_pelanggaran_31_35_tahun_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_pelaku_pelanggaran_31_35_tahun}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_pelaku_pelanggaran_31_35_tahun_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_pelaku_pelanggaran_31_35_tahun') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">f. 36-40 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_pelaku_pelanggaran_36_40_tahun_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_pelaku_pelanggaran_36_40_tahun}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_pelaku_pelanggaran_36_40_tahun_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_pelaku_pelanggaran_36_40_tahun') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">g. 41-45 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_pelaku_pelanggaran_41_45_tahun_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_pelaku_pelanggaran_41_45_tahun}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_pelaku_pelanggaran_41_45_tahun_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_pelaku_pelanggaran_41_45_tahun') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">h. 46-50 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_pelaku_pelanggaran_46_50_tahun_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_pelaku_pelanggaran_46_50_tahun}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_pelaku_pelanggaran_46_50_tahun_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_pelaku_pelanggaran_46_50_tahun') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">i. 51-55 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_pelaku_pelanggaran_51_55_tahun_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_pelaku_pelanggaran_51_55_tahun}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_pelaku_pelanggaran_51_55_tahun_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_pelaku_pelanggaran_51_55_tahun') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">j. 56-60 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_pelaku_pelanggaran_56_60_tahun_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_pelaku_pelanggaran_56_60_tahun}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_pelaku_pelanggaran_56_60_tahun_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_pelaku_pelanggaran_56_60_tahun') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">k. > 60 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_pelaku_pelanggaran_diatas_60_tahun_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_pelaku_pelanggaran_diatas_60_tahun}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_pelaku_pelanggaran_diatas_60_tahun_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_pelaku_pelanggaran_diatas_60_tahun') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">(2.c)     Jumlah</td>
+            <td class="tg-n1r7">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7">7</td>
+            <td class="tg-o5n3">SIM PELAKU PELANGGARAN</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">a. A</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_pelaku_pelanggaran_sim_a_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_pelaku_pelanggaran_sim_a}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_pelaku_pelanggaran_sim_a_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_pelaku_pelanggaran_sim_a') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">b. A UMUM</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_pelaku_pelanggaran_sim_a_umum_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_pelaku_pelanggaran_sim_a_umum}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_pelaku_pelanggaran_sim_a_umum_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_pelaku_pelanggaran_sim_a_umum') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">c. B1</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_pelaku_pelanggaran_sim_b1_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_pelaku_pelanggaran_sim_b1}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_pelaku_pelanggaran_sim_b1_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_pelaku_pelanggaran_sim_b1') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">d. B1 UMUM</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_pelaku_pelanggaran_sim_b1_umum_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_pelaku_pelanggaran_sim_b1_umum}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_pelaku_pelanggaran_sim_b1_umum_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_pelaku_pelanggaran_sim_b1_umum') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">e. BII</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_pelaku_pelanggaran_sim_b2_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_pelaku_pelanggaran_sim_b2}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_pelaku_pelanggaran_sim_b2_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_pelaku_pelanggaran_sim_b2') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">f. B II UMUM</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_pelaku_pelanggaran_sim_b2_umum_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_pelaku_pelanggaran_sim_b2_umum}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_pelaku_pelanggaran_sim_b2_umum_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_pelaku_pelanggaran_sim_b2_umum') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">g. C</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_pelaku_pelanggaran_sim_c_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_pelaku_pelanggaran_sim_c}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_pelaku_pelanggaran_sim_c_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_pelaku_pelanggaran_sim_c') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">h. D</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_pelaku_pelanggaran_sim_d_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_pelaku_pelanggaran_sim_d}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_pelaku_pelanggaran_sim_d_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_pelaku_pelanggaran_sim_d') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">i. SIM Internasional</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_pelaku_pelanggaran_sim_internasional_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_pelaku_pelanggaran_sim_internasional}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_pelaku_pelanggaran_sim_internasional_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_pelaku_pelanggaran_sim_internasional') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">j. Tanpa SIM</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_pelaku_pelanggaran_tanpa_sim_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_pelaku_pelanggaran_tanpa_sim}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_pelaku_pelanggaran_tanpa_sim_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_pelaku_pelanggaran_tanpa_sim') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">(2.c)     Jumlah</td>
+            <td class="tg-n1r7">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7">8</td>
+            <td class="tg-o5n3">LOKASI PELANGGARAN LALU LINTAS</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">a. Berdasarkan   Kawasan</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps"> 1). Kawasan Pemukiman</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->lokasi_pelanggaran_pemukiman_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->lokasi_pelanggaran_pemukiman}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'lokasi_pelanggaran_pemukiman_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'lokasi_pelanggaran_pemukiman') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">  2). Kawasan Perbelanjaan</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->lokasi_pelanggaran_perbelanjaan_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->lokasi_pelanggaran_perbelanjaan}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'lokasi_pelanggaran_perbelanjaan_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'lokasi_pelanggaran_perbelanjaan') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">  3). Perkantoran</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->lokasi_pelanggaran_perkantoran_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->lokasi_pelanggaran_perkantoran}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'lokasi_pelanggaran_perkantoran_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'lokasi_pelanggaran_perkantoran') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">  4). Kawasan Wisata</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->lokasi_pelanggaran_wisata_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->lokasi_pelanggaran_wisata}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'lokasi_pelanggaran_wisata_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'lokasi_pelanggaran_wisata') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">  5). Kawasan Indutri</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->lokasi_pelanggaran_industri_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->lokasi_pelanggaran_industri}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'lokasi_pelanggaran_industri_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'lokasi_pelanggaran_industri') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">(2.a)   Jumlah </td>
+            <td class="tg-n1r7">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">b. Berdasarkan Status   Jalan</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">  1). Nasional</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->lokasi_pelanggaran_status_jalan_nasional_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->lokasi_pelanggaran_status_jalan_nasional}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'lokasi_pelanggaran_status_jalan_nasional_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'lokasi_pelanggaran_status_jalan_nasional') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">  2). Propinsi</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->lokasi_pelanggaran_status_jalan_propinsi_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->lokasi_pelanggaran_status_jalan_propinsi}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'lokasi_pelanggaran_status_jalan_propinsi_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'lokasi_pelanggaran_status_jalan_propinsi') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">  3). Kab/Kota</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->lokasi_pelanggaran_status_jalan_kab_kota_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->lokasi_pelanggaran_status_jalan_kab_kota}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'lokasi_pelanggaran_status_jalan_kab_kota_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'lokasi_pelanggaran_status_jalan_kab_kota') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">   4). Desa / Lingkungan</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->lokasi_pelanggaran_status_jalan_desa_lingkungan_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->lokasi_pelanggaran_status_jalan_desa_lingkungan}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'lokasi_pelanggaran_status_jalan_desa_lingkungan_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'lokasi_pelanggaran_status_jalan_desa_lingkungan') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">(2.a)   Jumlah </td>
+            <td class="tg-n1r7">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">c. Berdasarkan Fungsi   Jalan</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">   1). Arteri</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->lokasi_pelanggaran_fungsi_jalan_arteri_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->lokasi_pelanggaran_fungsi_jalan_arteri}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'lokasi_pelanggaran_fungsi_jalan_arteri_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'lokasi_pelanggaran_fungsi_jalan_arteri') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">   2). Kolektor</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->lokasi_pelanggaran_fungsi_jalan_kolektor_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->lokasi_pelanggaran_fungsi_jalan_kolektor}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'lokasi_pelanggaran_fungsi_jalan_kolektor_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'lokasi_pelanggaran_fungsi_jalan_kolektor') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">   3). Lokal</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->lokasi_pelanggaran_fungsi_jalan_lokal_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->lokasi_pelanggaran_fungsi_jalan_lokal}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'lokasi_pelanggaran_fungsi_jalan_lokal_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'lokasi_pelanggaran_fungsi_jalan_lokal') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">   4). Lingkungan</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->lokasi_pelanggaran_fungsi_jalan_lingkungan_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->lokasi_pelanggaran_fungsi_jalan_lingkungan}}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'lokasi_pelanggaran_fungsi_jalan_lingkungan_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'lokasi_pelanggaran_fungsi_jalan_lingkungan') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">(2.a)   Jumlah </td>
+            <td class="tg-n1r7">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7">II</td>
+            <td class="tg-o5n3">DATA TERKAIT MASALAH   KECELAKAAN LALU LINTAS</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7">9</td>
+            <td class="tg-o5n3">KECELAKAAN LALU   LINTAS</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">a. Jumlah Kejadian</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kecelakaan_lalin_jumlah_kejadian_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kecelakaan_lalin_jumlah_kejadian }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kecelakaan_lalin_jumlah_kejadian_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kecelakaan_lalin_jumlah_kejadian') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">b. Korban Meninggal   Dunia</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kecelakaan_lalin_jumlah_korban_meninggal_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kecelakaan_lalin_jumlah_korban_meninggal }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kecelakaan_lalin_jumlah_korban_meninggal_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kecelakaan_lalin_jumlah_korban_meninggal') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">c. Korban Luka Berat</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kecelakaan_lalin_jumlah_korban_luka_berat_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kecelakaan_lalin_jumlah_korban_luka_berat }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kecelakaan_lalin_jumlah_korban_luka_berat_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kecelakaan_lalin_jumlah_korban_luka_berat') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">d. Korban Luka Ringan</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kecelakaan_lalin_jumlah_korban_luka_ringan_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kecelakaan_lalin_jumlah_korban_luka_ringan }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kecelakaan_lalin_jumlah_korban_luka_ringan_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kecelakaan_lalin_jumlah_korban_luka_ringan') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">e. Kerugian Materiil</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kecelakaan_lalin_jumlah_kerugian_materiil_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kecelakaan_lalin_jumlah_kerugian_materiil }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kecelakaan_lalin_jumlah_kerugian_materiil_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kecelakaan_lalin_jumlah_kerugian_materiil') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+        <tr>
+            <td class="tg-n1r7">10</td>
+            <td class="tg-o5n3">BARANGBUKTI YANG DISITA</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">a. SIM</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kecelakaan_barang_bukti_yg_disita_sim_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kecelakaan_barang_bukti_yg_disita_sim }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kecelakaan_barang_bukti_yg_disita_sim_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kecelakaan_barang_bukti_yg_disita_sim') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">b. STNK</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kecelakaan_barang_bukti_yg_disita_stnk_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kecelakaan_barang_bukti_yg_disita_stnk }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kecelakaan_barang_bukti_yg_disita_stnk_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kecelakaan_barang_bukti_yg_disita_stnk') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">c. KENDARAAN</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kecelakaan_barang_bukti_yg_disita_kendaraan_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kecelakaan_barang_bukti_yg_disita_kendaraan }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kecelakaan_barang_bukti_yg_disita_kendaraan_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kecelakaan_barang_bukti_yg_disita_kendaraan') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">(2.a)   Jumlah </td>
+            <td class="tg-n1r7">Perkara</td>
+        </tr>
+        <tr>
+            <td class="tg-n1r7">11</td>
+            <td class="tg-o5n3">PROFESI KORBAN KECELAKAAN LALU LINTAS  </td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">a. Pegawai Negeri Sipil</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->profesi_korban_kecelakaan_lalin_pns_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->profesi_korban_kecelakaan_lalin_pns }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_korban_kecelakaan_lalin_pns_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_korban_kecelakaan_lalin_pns') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">b. Karyawan / Swasta</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->profesi_korban_kecelakaan_lalin_karwayan_swasta_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->profesi_korban_kecelakaan_lalin_karwayan_swasta }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_korban_kecelakaan_lalin_karwayan_swasta_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_korban_kecelakaan_lalin_karwayan_swasta') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">c. Mahasiswa / Pelajar</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->profesi_korban_kecelakaan_lalin_pelajar_mahasiswa }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_korban_kecelakaan_lalin_pelajar_mahasiswa_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_korban_kecelakaan_lalin_pelajar_mahasiswa') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">d. Pengemudi</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->profesi_korban_kecelakaan_lalin_pengemudi_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->profesi_korban_kecelakaan_lalin_pengemudi }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_korban_kecelakaan_lalin_pengemudi_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_korban_kecelakaan_lalin_pengemudi') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">e. TNI</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->profesi_korban_kecelakaan_lalin_tni_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->profesi_korban_kecelakaan_lalin_tni }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_korban_kecelakaan_lalin_tni_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_korban_kecelakaan_lalin_tni') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">f. Polri</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->profesi_korban_kecelakaan_lalin_polri_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->profesi_korban_kecelakaan_lalin_polri }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_korban_kecelakaan_lalin_polri_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_korban_kecelakaan_lalin_polri') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">g. Lain-Lain</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->profesi_korban_kecelakaan_lalin_lain_lain_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->profesi_korban_kecelakaan_lalin_lain_lain }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_korban_kecelakaan_lalin_lain_lain_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_korban_kecelakaan_lalin_lain_lain') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">(2.a)   Jumlah </td>
+            <td class="tg-n1r7">Perkara</td>
+        </tr>
+        <tr>
+            <td class="tg-n1r7">12</td>
+            <td class="tg-o5n3">USIA KORBAN KECELAKAAN LALU LINTAS</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">a. 0 - 15 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_korban_kecelakaan_kurang_15_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_korban_kecelakaan_kurang_15 }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_kurang_15_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_kurang_15') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">b. 16-20 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_korban_kecelakaan_16_20_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_korban_kecelakaan_16_20 }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_16_20_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_16_20') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">c. 21-25 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_korban_kecelakaan_21_25_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_korban_kecelakaan_21_25 }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_21_25_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_21_25') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">d. 26-30 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_korban_kecelakaan_26_30_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_korban_kecelakaan_26_30 }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_26_30_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_26_30') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">e. 31-35 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_korban_kecelakaan_31_35_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_korban_kecelakaan_31_35 }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_31_35_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_31_35') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">f. 36-40 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_korban_kecelakaan_36_40_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_korban_kecelakaan_36_40 }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_36_40_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_36_40') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">g. 41-45 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_korban_kecelakaan_41_45_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_korban_kecelakaan_41_45 }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_41_45_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_41_45') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">h. 46-50 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_korban_kecelakaan_45_50_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_korban_kecelakaan_45_50 }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_45_50_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_45_50') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">i. 51-55 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_korban_kecelakaan_51_55_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_korban_kecelakaan_51_55 }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_51_55_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_51_55') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">j. 56-60 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_korban_kecelakaan_56_60_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_korban_kecelakaan_56_60 }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_56_60_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_56_60') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">k. > 60 Tahun</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->usia_korban_kecelakaan_diatas_60_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->usia_korban_kecelakaan_diatas_60 }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_diatas_60_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_diatas_60') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">(2.a)   Jumlah </td>
+            <td class="tg-n1r7">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7">13</td>
+            <td class="tg-o5n3">SIM KORBAN KECELAKAAN LALU LINTAS</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">a. A</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_korban_kecelakaan_sim_a_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_korban_kecelakaan_sim_a }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_a_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_a') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">b. A UMUM</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_korban_kecelakaan_sim_a_umum_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_korban_kecelakaan_sim_a_umum }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_a_umum_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_a_umum') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">c. B1</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_korban_kecelakaan_sim_b1_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_korban_kecelakaan_sim_b1 }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_b1_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_b1') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">d. B1 UMUM</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_korban_kecelakaan_sim_b1_umum_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_korban_kecelakaan_sim_b1_umum }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_b1_umum_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_b1_umum') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">e. BII</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_korban_kecelakaan_sim_b2_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_korban_kecelakaan_sim_b2 }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_b2_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_b2') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">f. BII UMUM</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_korban_kecelakaan_sim_b2_umum_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_korban_kecelakaan_sim_b2_umum }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_b2_umum_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_b2_umum') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">g. C</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_korban_kecelakaan_sim_c_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_korban_kecelakaan_sim_c }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_c_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_c') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">h. D</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_korban_kecelakaan_sim_d_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_korban_kecelakaan_sim_d }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_d_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_d') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">i. SIM Internasional</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_korban_kecelakaan_sim_internasional_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_korban_kecelakaan_sim_internasional }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_internasional_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_internasional') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">j. Tanpa SIM</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->sim_korban_kecelakaan_tanpa_sim_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->sim_korban_kecelakaan_tanpa_sim }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_tanpa_sim_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_tanpa_sim') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">(2.a)   Jumlah </td>
+            <td class="tg-n1r7">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7">14</td>
+            <td class="tg-o5n3">KENDARAAN YANG TERLIBAT KECELAKAAN LALU LINTAS</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">a. Sepeda Motor</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kendaraan_yg_terlibat_kecelakaan_sepeda_motor_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kendaraan_yg_terlibat_kecelakaan_sepeda_motor }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kendaraan_yg_terlibat_kecelakaan_sepeda_motor_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kendaraan_yg_terlibat_kecelakaan_sepeda_motor') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">b. Mobil Penumpang</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kendaraan_yg_terlibat_kecelakaan_mobil_penumpang }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kendaraan_yg_terlibat_kecelakaan_mobil_penumpang_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kendaraan_yg_terlibat_kecelakaan_mobil_penumpang') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">c. Mobil Bus</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kendaraan_yg_terlibat_kecelakaan_mobil_bus_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kendaraan_yg_terlibat_kecelakaan_mobil_bus }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kendaraan_yg_terlibat_kecelakaan_mobil_bus_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kendaraan_yg_terlibat_kecelakaan_mobil_bus') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">d. Mobil Barang</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kendaraan_yg_terlibat_kecelakaan_mobil_barang_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kendaraan_yg_terlibat_kecelakaan_mobil_barang }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kendaraan_yg_terlibat_kecelakaan_mobil_barang_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kendaraan_yg_terlibat_kecelakaan_mobil_barang') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">e. Kendaraan Khusus</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kendaraan_yg_terlibat_kecelakaan_kendaraan_khusus') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">f. Kendaraan Tidak Bermotor</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'kendaraan_yg_terlibat_kecelakaan_kendaraan_tidak_bermotor') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7"></td>
+            <td class="tg-o5n3">(2.a)   Jumlah </td>
+            <td class="tg-n1r7">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-n1r7">15</td>
+            <td class="tg-o5n3">JENIS KECELAKAAN LALU LINTAS</td>
+                @foreach ($dailyNoticePrev as $prev)
+                    <td class="tg-n1r7"></td>
+                    <td class="tg-n1r7"></td>
+                @endforeach
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+            <td class="tg-o5n3"></td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">a. Tunggal / Out of   control</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->jenis_kecelakaan_tunggal_ooc_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->jenis_kecelakaan_tunggal_ooc }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'jenis_kecelakaan_tunggal_ooc_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'jenis_kecelakaan_tunggal_ooc') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">b. Depan-Depan</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->jenis_kecelakaan_depan_depan_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->jenis_kecelakaan_depan_depan }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'jenis_kecelakaan_depan_depan_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'jenis_kecelakaan_depan_depan') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
+        <tr>
+            <td class="tg-ktyi"></td>
+            <td class="tg-kcps">c. Depan-Belakang</td>
+            @for ($i = 0; $i < $totalLoopDays; $i++)
+                <td class="tg-n1r7">{{ $dailyNoticePrev[$i]->jenis_kecelakaan_depan_belakang_p }}</td>
+                <td class="tg-n1r7">{{ $dailyNoticeCurrent[$i]->jenis_kecelakaan_depan_belakang }}</td>
+            @endfor
+            <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'jenis_kecelakaan_depan_belakang_p') }}</td>
+            <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'jenis_kecelakaan_depan_belakang') }}</td>
+            <td class="tg-4bam">Perkara</td>
+        </tr>
+
     </tbody>
 </table>
 @endsection

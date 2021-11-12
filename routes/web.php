@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/test', 'TestController@test')->name('test');
 Route::get('/view-report/{uuid}', 'HelperController@reportAllPolda')->name('all_polda_by_operation');
 Route::get('/help/{operationId}', 'HelperController@runDispatch')->name('daily_process');
 Route::get('/home', 'HomeController@welcomePage')->name('home');
@@ -170,7 +171,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/change-password/process', 'UserController@change_password_process')->name('change_password_process');
     Route::get('/custom-name', 'KorlantasRekapController@polda_custom_name')->name('polda_custom_name');
     Route::post('/custom-name/store', 'KorlantasRekapController@storeCustomName')->name('post_data_polda_custom_name');
-    Route::get('/test', 'TestController@custom')->name('test');
 
     //UPGRADE BRANCH
     Route::post('/daily-rekap/create', 'DailyRekapController@store')->name('daily_rekap_store');

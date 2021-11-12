@@ -7,15 +7,12 @@ use App\Models\Polda;
 use App\Models\UserHasPolda;
 use Illuminate\Http\Request;
 use App\Models\RencanaOperasi;
+use App\Models\DailyNoticeCurrent;
 
 class TestController extends Controller
 {
-    public function custom()
+    public function test()
     {
-        $model = RencanaOperasi::with(['poldaAlias' => function($query) {
-            $query->where('polda_id', 2);
-        }])->get();
-
-        return "OK";
+        return DailyNoticeCurrent::where('operation_id', 4)->sum('profesi_pelaku_pelanggaran_lain_lain_p');
     }
 }
