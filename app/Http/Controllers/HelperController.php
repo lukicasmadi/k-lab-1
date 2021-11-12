@@ -77,33 +77,7 @@ class HelperController extends Controller
     {
         $countDown = CountDown::where('rencana_operasi_id', $operationId)->orderBy('tanggal', 'asc')->get();
 
-        DailyNoticeCurrent::where('operation_id', $operationId)->delete();
-        DailyNotice::where('operation_id', $operationId)->delete();
-
-        // $jobsPrev = [];
-        // $jobsCurrent = [];
-
-        // foreach($countDown as $cd) {
-        //     $jobsPrev[] = new ProcessSummaryPrev($cd->rencana_operasi_id, $cd->tanggal);
-        //     $jobsCurrent[] = new ProcessSummaryCurrent($cd->rencana_operasi_id, $cd->tanggal);
-        // }
-
-        // $countAble = count($jobsPrev) + count($jobsCurrent);
-
-        // Bus::batch($jobsPrev)->dispatch();
-        // $batch = Bus::batch($jobsCurrent)->dispatch();
-
-        $batch = Bus::batch([
-            new QueuePrev($countDown)
-        ])->then(function (Batch $batch) {
-            // All jobs completed successfully...
-        })->catch(function (Batch $batch, Throwable $e) {
-            // First batch job failure detected...
-        })->finally(function (Batch $batch) {
-            // The batch has finished executing...
-        })->dispatch();
-
-        return redirect()->route('batch_progress', $batch->id);
+        return $countDown;
     }
 
     public function loopData($operationId)

@@ -11,4 +11,9 @@ class LoopTotalSummary extends Model
 
     protected $guarded = ['id'];
     public $timestamps = false;
+
+    public function scopeSummary($query, $type)
+    {
+        return $query->where('type', $type)->sum('val');
+    }
 }
