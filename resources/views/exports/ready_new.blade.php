@@ -114,12 +114,16 @@ use App\Models\DailyNoticeCurrent;
         <tr>
             <td class="tg-n1r7"></td>
             <td class="tg-o5n3">Jumlah</td>
-                @for ($i = 0; $i < $totalLoopDays; $i++)
+                {{-- @for ($i = 0; $i < $totalLoopDays; $i++)
                     <td class="tg-n1r7">{{ summary([$dailyNoticePrev[$i]->pelanggaran_lalu_lintas_tilang_p, $dailyNoticePrev[$i]->pelanggaran_lalu_lintas_teguran_p]) }}</td>
                     <td class="tg-n1r7">{{ summary([$dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_tilang, $dailyNoticeCurrent[$i]->pelanggaran_lalu_lintas_teguran]) }}</td>
+                @endfor --}}
+                @for ($i = 0; $i < $totalLoopDays; $i++)
+                    <td class="tg-n1r7">XXX</td>
+                    <td class="tg-n1r7">ZZZ</td>
                 @endfor
-            <td class="tg-o5n3">{{ LoopTotalSummary::where('type', 'pelanggaran_lalu_lintas_tilang_p')->sum('val') }}</td>
-            <td class="tg-o5n3">{{ LoopTotalSummary::where('type', 'pelanggaran_lalu_lintas_tilang')->sum('val') }}</td>
+            <td class="tg-o5n3">{{ LoopTotalSummary::summary('pelanggaran_lalu_lintas_tilang_p') }}</td>
+            <td class="tg-o5n3">{{ LoopTotalSummary::summary('pelanggaran_lalu_lintas_tilang') }}</td>
             <td class="tg-n1r7">Perkara</td>
         </tr>
 
