@@ -18,6 +18,6 @@ class SumLoopEveryday extends Model
 
     public function scopeSummary($query, $groupName, $yearFlag)
     {
-        return number_format($query->where('group_name', $groupName)->where('year_flag', $yearFlag)->sum('summary'), 0, ".", ".");
+        return $query->where('group_name', $groupName)->where('year_flag', $yearFlag)->sum('summary');
     }
 }

@@ -13,6 +13,6 @@ class DailyNotice extends Model
 
     public function scopeSummary($query, $operation_id, $sumParam)
     {
-        return number_format($query->where('operation_id', $operation_id)->sum($sumParam), 0, ".", ".");
+        return $query->where('operation_id', $operation_id)->sum($sumParam);
     }
 }

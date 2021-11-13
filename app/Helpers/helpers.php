@@ -1522,3 +1522,9 @@ if (! function_exists('sumGroupPrev')) {
         });
     }
 }
+
+if (! function_exists('numberFormat')) {
+    function numberFormat($data) {
+        return number_format($data, 0, ".", ".");
+    }
+}
