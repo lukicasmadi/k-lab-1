@@ -71,6 +71,11 @@
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
     <script src="{{ asset('template/assets/js/intro.min.js') }}"></script>
     <script src="{{ asset('js/template_admin.js') }}"></script>
+    <script>
+        var ss = $(".form-custom").select2({
+            tags: true,
+        });
+    </script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
     @stack('library_js')
