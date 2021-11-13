@@ -1649,7 +1649,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_korban_kecelakaan_lalin_pns_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_korban_kecelakaan_lalin_pns') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
 
         <tr>
@@ -1661,8 +1661,9 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_korban_kecelakaan_lalin_karwayan_swasta_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_korban_kecelakaan_lalin_karwayan_swasta') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
+
         <tr>
             <td class="tg-ktyi"></td>
             <td class="tg-kcps">c. Mahasiswa / Pelajar</td>
@@ -1672,8 +1673,9 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_korban_kecelakaan_lalin_pelajar_mahasiswa_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_korban_kecelakaan_lalin_pelajar_mahasiswa') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
+
         <tr>
             <td class="tg-ktyi"></td>
             <td class="tg-kcps">d. Pengemudi</td>
@@ -1683,8 +1685,9 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_korban_kecelakaan_lalin_pengemudi_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_korban_kecelakaan_lalin_pengemudi') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
+
         <tr>
             <td class="tg-ktyi"></td>
             <td class="tg-kcps">e. TNI</td>
@@ -1694,8 +1697,9 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_korban_kecelakaan_lalin_tni_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_korban_kecelakaan_lalin_tni') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
+
         <tr>
             <td class="tg-ktyi"></td>
             <td class="tg-kcps">f. Polri</td>
@@ -1705,8 +1709,9 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_korban_kecelakaan_lalin_polri_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_korban_kecelakaan_lalin_polri') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
+
         <tr>
             <td class="tg-ktyi"></td>
             <td class="tg-kcps">g. Lain-Lain</td>
@@ -1716,13 +1721,25 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'profesi_korban_kecelakaan_lalin_lain_lain_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'profesi_korban_kecelakaan_lalin_lain_lain') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
+
         <tr>
             <td class="tg-n1r7"></td>
-            <td class="tg-o5n3">(2.a)   Jumlah </td>
-            <td class="tg-n1r7">Perkara</td>
+            <td class="tg-o5n3">Jumlah = (9b + 9c + 9d)</td>
+                @php
+                    $prev = SumLoopEveryday::group('GROUP_14', 'PREV')->get();
+                    $current = SumLoopEveryday::group('GROUP_14', 'CURRENT')->get();
+                @endphp
+                @for ($i = 0; $i < $totalLoopDays; $i++)
+                    <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
+                    <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
+                @endfor
+            <td class="tg-o5n3">xxx</td>
+            <td class="tg-o5n3">yyy</td>
+            <td class="tg-n1r7">Orang</td>
         </tr>
+
         <tr>
             <td class="tg-n1r7">12</td>
             <td class="tg-o5n3">USIA KORBAN KECELAKAAN LALU LINTAS</td>
@@ -1744,7 +1761,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_kurang_15_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_kurang_15') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
 
         <tr>
@@ -1756,7 +1773,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_16_20_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_16_20') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
 
         <tr>
@@ -1768,7 +1785,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_21_25_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_21_25') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
 
         <tr>
@@ -1780,7 +1797,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_26_30_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_26_30') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
 
         <tr>
@@ -1792,7 +1809,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_31_35_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_31_35') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
 
         <tr>
@@ -1804,7 +1821,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_36_40_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_36_40') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
 
         <tr>
@@ -1816,7 +1833,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_41_45_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_41_45') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
 
         <tr>
@@ -1828,7 +1845,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_45_50_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_45_50') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
 
         <tr>
@@ -1840,7 +1857,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_51_55_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_51_55') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
 
         <tr>
@@ -1852,7 +1869,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_56_60_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_56_60') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
 
         <tr>
@@ -1864,13 +1881,23 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'usia_korban_kecelakaan_diatas_60_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'usia_korban_kecelakaan_diatas_60') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Orang</td>
         </tr>
 
         <tr>
             <td class="tg-n1r7"></td>
-            <td class="tg-o5n3">(2.a)   Jumlah </td>
-            <td class="tg-n1r7">Perkara</td>
+            <td class="tg-o5n3">d. Jumlah</td>
+                @php
+                    $prev = SumLoopEveryday::group('GROUP_15', 'PREV')->get();
+                    $current = SumLoopEveryday::group('GROUP_15', 'CURRENT')->get();
+                @endphp
+                @for ($i = 0; $i < $totalLoopDays; $i++)
+                    <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
+                    <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
+                @endfor
+            <td class="tg-o5n3">xxx</td>
+            <td class="tg-o5n3">yyy</td>
+            <td class="tg-n1r7">Orang</td>
         </tr>
 
         <tr>
@@ -1894,7 +1921,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_a_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_a') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Buah</td>
         </tr>
 
         <tr>
@@ -1906,7 +1933,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_a_umum_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_a_umum') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Buah</td>
         </tr>
 
         <tr>
@@ -1918,7 +1945,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_b1_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_b1') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Buah</td>
         </tr>
 
         <tr>
@@ -1930,7 +1957,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_b1_umum_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_b1_umum') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Buah</td>
         </tr>
 
         <tr>
@@ -1942,7 +1969,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_b2_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_b2') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Buah</td>
         </tr>
 
         <tr>
@@ -1954,7 +1981,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_b2_umum_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_b2_umum') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Buah</td>
         </tr>
 
         <tr>
@@ -1966,7 +1993,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_c_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_c') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Buah</td>
         </tr>
 
         <tr>
@@ -1978,7 +2005,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_d_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_d') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Buah</td>
         </tr>
 
         <tr>
@@ -1990,7 +2017,7 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_sim_internasional_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_sim_internasional') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Buah</td>
         </tr>
 
         <tr>
@@ -2002,13 +2029,23 @@ use App\Models\SumLoopEveryday;
             @endfor
             <td class="tg-o5n3">{{ DailyNotice::summary($operationId, 'sim_korban_kecelakaan_tanpa_sim_p') }}</td>
             <td class="tg-o5n3">{{ DailyNoticeCurrent::summary($operationId, 'sim_korban_kecelakaan_tanpa_sim') }}</td>
-            <td class="tg-4bam">Perkara</td>
+            <td class="tg-4bam">Buah</td>
         </tr>
 
         <tr>
             <td class="tg-n1r7"></td>
-            <td class="tg-o5n3">(2.a)   Jumlah </td>
-            <td class="tg-n1r7">Perkara</td>
+            <td class="tg-o5n3">Jumlah = (9b + 9c + 9d)</td>
+                @php
+                    $prev = SumLoopEveryday::group('GROUP_16', 'PREV')->get();
+                    $current = SumLoopEveryday::group('GROUP_16', 'CURRENT')->get();
+                @endphp
+                @for ($i = 0; $i < $totalLoopDays; $i++)
+                    <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
+                    <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
+                @endfor
+            <td class="tg-o5n3">xxx</td>
+            <td class="tg-o5n3">yyy</td>
+            <td class="tg-n1r7">Orang</td>
         </tr>
 
         <tr>
@@ -2097,8 +2134,18 @@ use App\Models\SumLoopEveryday;
 
         <tr>
             <td class="tg-n1r7"></td>
-            <td class="tg-o5n3">(2.a)   Jumlah </td>
-            <td class="tg-n1r7">Perkara</td>
+            <td class="tg-o5n3">(2.a) Jumlah</td>
+                @php
+                    $prev = SumLoopEveryday::group('GROUP_17', 'PREV')->get();
+                    $current = SumLoopEveryday::group('GROUP_17', 'CURRENT')->get();
+                @endphp
+                @for ($i = 0; $i < $totalLoopDays; $i++)
+                    <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
+                    <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
+                @endfor
+            <td class="tg-o5n3">xxx</td>
+            <td class="tg-o5n3">yyy</td>
+            <td class="tg-n1r7">Orang</td>
         </tr>
 
         <tr>
