@@ -15,7 +15,7 @@ class CreateSumLoopEverydaysTable extends Migration
     {
         Schema::create('sum_loop_everydays', function (Blueprint $table) {
             $table->id();
-            $table->string("group");
+            $table->string("group_name");
             $table->string("summary");
             $table->string("year_flag");
         });

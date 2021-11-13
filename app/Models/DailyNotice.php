@@ -13,7 +13,6 @@ class DailyNotice extends Model
 
     public function scopeSummary($query, $operation_id, $sumParam)
     {
-        logger($sumParam);
         return $query->where('operation_id', $operation_id)->sum($sumParam);
     }
 }
