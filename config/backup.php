@@ -117,8 +117,10 @@ return [
              */
             'disks' => [
                 // 'local',
-                'dropbox',
-                'authorization_token' => env('DROPBOX_AUTH_TOKEN'),
+                'dropbox' => [
+                    'driver' => 'dropbox',
+                    'authorization_token' => env('DROPBOX_AUTH_TOKEN'),
+                ],
             ],
         ],
 
