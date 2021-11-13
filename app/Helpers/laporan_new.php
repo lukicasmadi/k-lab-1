@@ -17,7 +17,7 @@ if (! function_exists('excelTemplateNew')) {
         $prev,
         $current,
         $kesatuan=null,
-        $hari_tanggal,
+        $hari_tanggal=null,
         $nama_atasan=null,
         $pangkat=null,
         $jabatan=null,
