@@ -17,6 +17,8 @@ Route::get('/download/panduan', 'HomeController@downloadFilePanduan')->name('dow
 
 Route::group(['middleware' => 'auth'], function () {
 
+    Route::get('/view-report/{uuid}', 'HelperController@reportAllPolda')->name('all_polda_by_operation');
+
     Route::get('/view-report/progress/{batchId}', 'HelperController@batchProgress')->name('batch_progress');
     Route::get('/view-report/ready/{operationUuid}', 'HelperController@openReadyReport')->name('open_ready_report');
 
