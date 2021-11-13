@@ -123,10 +123,8 @@ use App\Models\SumLoopEveryday;
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            {{-- <td class="tg-o5n3">{{ LoopTotalSummary::summary('pelanggaran_lalu_lintas_tilang_p') }}</td>
-            <td class="tg-o5n3">{{ LoopTotalSummary::summary('pelanggaran_lalu_lintas_tilang') }}</td> --}}
-            <td class="tg-o5n3">xxx</td>
-            <td class="tg-o5n3">yyy</td>
+            <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_1', 'PREV') }}</td>
+            <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_1', 'CURRENT') }}</td>
             <td class="tg-n1r7">Perkara</td>
         </tr>
 
@@ -371,8 +369,8 @@ use App\Models\SumLoopEveryday;
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            <td class="tg-o5n3">xxx</td>
-            <td class="tg-o5n3">yyy</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_2', 'PREV') }}</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_2', 'CURRENT') }}</td>
             <td class="tg-n1r7">Perkara</td>
         </tr>
 
@@ -609,8 +607,8 @@ use App\Models\SumLoopEveryday;
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            <td class="tg-o5n3">xxx</td>
-            <td class="tg-o5n3">yyy</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_3', 'PREV') }}</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_3', 'CURRENT') }}</td>
             <td class="tg-n1r7">Perkara</td>
         </tr>
 
@@ -650,8 +648,8 @@ use App\Models\SumLoopEveryday;
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            <td class="tg-o5n3">xxx</td>
-            <td class="tg-o5n3">yyy</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_4', 'PREV') }}</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_4', 'CURRENT') }}</td>
             <td class="tg-n1r7">Perkara</td>
         </tr>
 
@@ -715,8 +713,8 @@ use App\Models\SumLoopEveryday;
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            <td class="tg-o5n3">xxx</td>
-            <td class="tg-o5n3">yyy</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_5', 'PREV') }}</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_5', 'CURRENT') }}</td>
             <td class="tg-n1r7">Unit</td>
         </tr>
 
@@ -803,8 +801,8 @@ use App\Models\SumLoopEveryday;
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            <td class="tg-o5n3">xxx</td>
-            <td class="tg-o5n3">yyy</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_6', 'PREV') }}</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_6', 'CURRENT') }}</td>
             <td class="tg-n1r7">Unit</td>
         </tr>
 
@@ -915,8 +913,8 @@ use App\Models\SumLoopEveryday;
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            <td class="tg-o5n3">xxx</td>
-            <td class="tg-o5n3">yyy</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_7', 'PREV') }}</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_7', 'CURRENT') }}</td>
             <td class="tg-n1r7">Perkara</td>
         </tr>
 
@@ -1075,8 +1073,8 @@ use App\Models\SumLoopEveryday;
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            <td class="tg-o5n3">xxx</td>
-            <td class="tg-o5n3">yyy</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_8', 'PREV') }}</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_8', 'CURRENT') }}</td>
             <td class="tg-n1r7">Orang</td>
         </tr>
 
@@ -1223,8 +1221,8 @@ use App\Models\SumLoopEveryday;
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            <td class="tg-o5n3">xxx</td>
-            <td class="tg-o5n3">yyy</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_9', 'PREV') }}</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_9', 'CURRENT') }}</td>
             <td class="tg-n1r7">Buah</td>
         </tr>
 
@@ -1323,8 +1321,8 @@ use App\Models\SumLoopEveryday;
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            <td class="tg-o5n3">xxx</td>
-            <td class="tg-o5n3">yyy</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_10', 'PREV') }}</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_10', 'CURRENT') }}</td>
             <td class="tg-n1r7">Lokasi</td>
         </tr>
 
@@ -1399,8 +1397,8 @@ use App\Models\SumLoopEveryday;
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            <td class="tg-o5n3">xxx</td>
-            <td class="tg-o5n3">yyy</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_11', 'PREV') }}</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_11', 'CURRENT') }}</td>
             <td class="tg-n1r7">Lokasi</td>
         </tr>
 
@@ -1475,8 +1473,8 @@ use App\Models\SumLoopEveryday;
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            <td class="tg-o5n3">xxx</td>
-            <td class="tg-o5n3">yyy</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_12', 'PREV') }}</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_12', 'CURRENT') }}</td>
             <td class="tg-n1r7">Lokasi</td>
         </tr>
 
@@ -1623,8 +1621,8 @@ use App\Models\SumLoopEveryday;
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            <td class="tg-o5n3">xxx</td>
-            <td class="tg-o5n3">yyy</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_14', 'PREV') }}</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_14', 'CURRENT') }}</td>
             <td class="tg-n1r7">Perkara</td>
         </tr>
 
@@ -1728,15 +1726,15 @@ use App\Models\SumLoopEveryday;
             <td class="tg-n1r7"></td>
             <td class="tg-o5n3">Jumlah = (9b + 9c + 9d)</td>
                 @php
-                    $prev = SumLoopEveryday::group('GROUP_14', 'PREV')->get();
-                    $current = SumLoopEveryday::group('GROUP_14', 'CURRENT')->get();
+                    $prev = SumLoopEveryday::group('GROUP_15', 'PREV')->get();
+                    $current = SumLoopEveryday::group('GROUP_15', 'CURRENT')->get();
                 @endphp
                 @for ($i = 0; $i < $totalLoopDays; $i++)
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            <td class="tg-o5n3">xxx</td>
-            <td class="tg-o5n3">yyy</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_15', 'PREV') }}</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_15', 'CURRENT') }}</td>
             <td class="tg-n1r7">Orang</td>
         </tr>
 
@@ -1888,15 +1886,15 @@ use App\Models\SumLoopEveryday;
             <td class="tg-n1r7"></td>
             <td class="tg-o5n3">d. Jumlah</td>
                 @php
-                    $prev = SumLoopEveryday::group('GROUP_15', 'PREV')->get();
-                    $current = SumLoopEveryday::group('GROUP_15', 'CURRENT')->get();
+                    $prev = SumLoopEveryday::group('GROUP_16', 'PREV')->get();
+                    $current = SumLoopEveryday::group('GROUP_16', 'CURRENT')->get();
                 @endphp
                 @for ($i = 0; $i < $totalLoopDays; $i++)
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            <td class="tg-o5n3">xxx</td>
-            <td class="tg-o5n3">yyy</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_16', 'PREV') }}</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_16', 'CURRENT') }}</td>
             <td class="tg-n1r7">Orang</td>
         </tr>
 
@@ -2036,15 +2034,15 @@ use App\Models\SumLoopEveryday;
             <td class="tg-n1r7"></td>
             <td class="tg-o5n3">Jumlah = (9b + 9c + 9d)</td>
                 @php
-                    $prev = SumLoopEveryday::group('GROUP_16', 'PREV')->get();
-                    $current = SumLoopEveryday::group('GROUP_16', 'CURRENT')->get();
+                    $prev = SumLoopEveryday::group('GROUP_17', 'PREV')->get();
+                    $current = SumLoopEveryday::group('GROUP_17', 'CURRENT')->get();
                 @endphp
                 @for ($i = 0; $i < $totalLoopDays; $i++)
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            <td class="tg-o5n3">xxx</td>
-            <td class="tg-o5n3">yyy</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_17', 'PREV') }}</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_17', 'CURRENT') }}</td>
             <td class="tg-n1r7">Buah</td>
         </tr>
 
@@ -2136,15 +2134,15 @@ use App\Models\SumLoopEveryday;
             <td class="tg-n1r7"></td>
             <td class="tg-o5n3">Jumlah ≥ (9a)</td>
                 @php
-                    $prev = SumLoopEveryday::group('GROUP_17', 'PREV')->get();
-                    $current = SumLoopEveryday::group('GROUP_17', 'CURRENT')->get();
+                    $prev = SumLoopEveryday::group('GROUP_18', 'PREV')->get();
+                    $current = SumLoopEveryday::group('GROUP_18', 'CURRENT')->get();
                 @endphp
                 @for ($i = 0; $i < $totalLoopDays; $i++)
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            <td class="tg-o5n3">xxx</td>
-            <td class="tg-o5n3">yyy</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_18', 'PREV') }}</td>
+                <td class="tg-o5n3">{{ SumLoopEveryday::summary('GROUP_18', 'CURRENT') }}</td>
             <td class="tg-n1r7">Unit</td>
         </tr>
 

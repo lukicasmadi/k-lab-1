@@ -15,4 +15,9 @@ class SumLoopEveryday extends Model
     {
         return $query->where('group_name', $groupName)->where('year_flag', $yearFlag)->orderBy('id', 'asc');
     }
+
+    public function scopeSummary($query, $groupName, $yearFlag)
+    {
+        return $query->where('group_name', $groupName)->where('year_flag', $yearFlag)->sum('summary');
+    }
 }
