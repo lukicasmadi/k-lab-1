@@ -20,7 +20,7 @@
 
                     <div class="header">
                         <div class="header-body">
-                            <h6>Processing Tasks {{ $batch->name }}</h6>
+                            <h6>Processing : {{ $batch->name }}</h6>
                             <p class="meta-date">ID Task : {{ $batch->id }}</p>
                         </div>
                     </div>
