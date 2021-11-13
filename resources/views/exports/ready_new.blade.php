@@ -123,8 +123,10 @@ use App\Models\SumLoopEveryday;
                     <td class="tg-n1r7">{{ $prev[$i]->summary }}</td>
                     <td class="tg-n1r7">{{ $current[$i]->summary }}</td>
                 @endfor
-            <td class="tg-o5n3">{{ LoopTotalSummary::summary('pelanggaran_lalu_lintas_tilang_p') }}</td>
-            <td class="tg-o5n3">{{ LoopTotalSummary::summary('pelanggaran_lalu_lintas_tilang') }}</td>
+            {{-- <td class="tg-o5n3">{{ LoopTotalSummary::summary('pelanggaran_lalu_lintas_tilang_p') }}</td>
+            <td class="tg-o5n3">{{ LoopTotalSummary::summary('pelanggaran_lalu_lintas_tilang') }}</td> --}}
+            <td class="tg-o5n3">xxx</td>
+            <td class="tg-o5n3">yyy</td>
             <td class="tg-n1r7">Perkara</td>
         </tr>
 
