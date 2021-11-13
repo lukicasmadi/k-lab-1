@@ -10,4 +10,9 @@ class SumLoopEveryday extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function scopeGroup($query, $groupName, $yearFlag)
+    {
+        return $query->where('group_name', $groupName)->where('year_flag', $yearFlag)->orderBy('id', 'asc');
+    }
 }
