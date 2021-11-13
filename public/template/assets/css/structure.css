@@ -1441,6 +1441,7 @@ transform: translateX(34px);
     background: #113e51;
     width: 100%;
     text-align: center;
+    z-index: 9;
 }
 
 .footer-wrapper .footer-section p {
