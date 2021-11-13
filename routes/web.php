@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/test', 'TestController@test')->name('test');
-Route::get('/view-report/{uuid}', 'HelperController@reportAllPolda')->name('all_polda_by_operation');
 Route::get('/help/{operationId}', 'HelperController@runDispatch')->name('daily_process');
 Route::get('/home', 'HomeController@welcomePage')->name('home');
 Route::get('/lihat-panduan', 'HomeController@lihatPanduan')->name('lihat_panduan');

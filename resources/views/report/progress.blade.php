@@ -32,7 +32,7 @@
                             <p class="task-hight-priority"><span>Total <span id="totalJobs">{{ $batch->totalJobs }}</span> Task</span> with High priority</p>
                             <span id="visitBtn" class="invisible">
                                 <br>
-                                <p><a href="{{ route('open_ready_report', session("progres_report_id")) }}" class="btn btn-info">View Report</a></p>
+                                <p><a href="{{ route('open_ready_report', session("progres_report_id")) }}" class="btn btn-info" target="_blank">View Report</a></p>
                             </span>
                         </div>
                     </div>
@@ -106,10 +106,6 @@ $(document).ready(function() {
         getAllData()
     }, 2000)
 })
-
-function loadTrus() {
-
-}
 
 function ajax(dataURL) {
     respObj = $.ajax({
