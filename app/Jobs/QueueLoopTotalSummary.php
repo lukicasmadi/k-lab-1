@@ -1641,8 +1641,6 @@ class QueueLoopTotalSummary implements ShouldQueue
             );
         }
 
-        LoopTotalSummary::insert($bulkData);
-
         foreach($countDown as $cd) {
             $data = DB::select('CALL summaryDataPrev(?,?)', [$cd->rencana_operasi_id, $cd->tanggal]);
             $insertedPrev = $data[0];
@@ -3251,6 +3249,9 @@ class QueueLoopTotalSummary implements ShouldQueue
             );
         }
 
-        LoopTotalSummary::insert($bulkDataPrev);
+        DB::transaction(function () use ($bulkData, $bulkDataPrev) {
+            LoopTotalSummary::insert($bulkData);
+            LoopTotalSummary::insert($bulkDataPrev);
+        });
     }
 }

@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/test', 'TestController@test')->name('test');
-Route::get('/view-report/{uuid}', 'HelperController@reportAllPolda')->name('all_polda_by_operation');
 Route::get('/help/{operationId}', 'HelperController@runDispatch')->name('daily_process');
 Route::get('/home', 'HomeController@welcomePage')->name('home');
 Route::get('/lihat-panduan', 'HomeController@lihatPanduan')->name('lihat_panduan');
@@ -17,6 +16,8 @@ Route::get('/news-update/{slug}', 'HomeController@newsDetail')->name('news_detai
 Route::get('/download/panduan', 'HomeController@downloadFilePanduan')->name('download_file_panduan');
 
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/view-report/{uuid}', 'HelperController@reportAllPolda')->name('all_polda_by_operation');
 
     Route::get('/view-report/progress/{batchId}', 'HelperController@batchProgress')->name('batch_progress');
     Route::get('/view-report/ready/{operationUuid}', 'HelperController@openReadyReport')->name('open_ready_report');

@@ -475,38 +475,4 @@ class ReportController extends Controller
 
         return view('exports.report_rekap_by_operation', compact('ro', 'currentYear', 'prevYear', 'total', 'totalPlusJumlah', 'labelNumber', 'beforeLast'));
     }
-
-    public function reportAllPolda($uuid)
-    {
-        session()->forget(['report_daily_loop', 'loopDays']);
-
-        $rencanaOperasi = RencanaOperasi::where('uuid', $uuid)->firstOrFail();
-        $loopDays = CountDown::with(['dailyInputCurrent', 'dailyInputPrev'])
-            ->where('rencana_operasi_id', $rencanaOperasi->id)
-            ->take(2) // HAPUS INI
-            ->orderBy('id', 'desc')->get(); // GANTI KE ASC
-
-        $hari = 1;
-        $operasiHariKe = [];
-        $xxx = [];
-
-        $totalLoopDays  = count($loopDays);
-        $currentYear    = date("Y", strtotime($rencanaOperasi->start_date));
-        $prevYear       = $currentYear - 1;
-
-        $totalPlusJumlah = ($totalLoopDays + 1) * 2;
-        $labelNumber = $totalPlusJumlah + 2;
-        $beforeLast = $labelNumber - 1;
-
-        foreach($loopDays as $key => $loop) {
-            array_push($operasiHariKe, "H-".$hari);
-            $hari++;
-        }
-
-        session([
-            'operasiHariKe' => $operasiHariKe,
-        ]);
-
-        return view('exports.all', compact('loopDays', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'beforeLast'));
-    }
 }

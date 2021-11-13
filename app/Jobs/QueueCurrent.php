@@ -357,6 +357,8 @@ class QueueCurrent implements ShouldQueue
             ]);
         }
 
-        DailyNoticeCurrent::insert($displayData);
+        DB::transaction(function () use ($displayData) {
+            DailyNoticeCurrent::insert($displayData);
+        });
     }
 }

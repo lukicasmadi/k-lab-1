@@ -14,13 +14,13 @@
     <div class="row layout-top-spacing">
         <input type="hidden" name="batch_id" id="batch_id" value="{{ $batch->id }}">
 
-        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+        <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
             <div class="widget widget-five">
                 <div class="widget-content">
 
                     <div class="header">
                         <div class="header-body">
-                            <h6>Processing Tasks {{ $batch->name }}</h6>
+                            <h6>Processing : {{ $batch->name }}</h6>
                             <p class="meta-date">ID Task : {{ $batch->id }}</p>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                             <p class="task-hight-priority"><span>Total <span id="totalJobs">{{ $batch->totalJobs }}</span> Task</span> with High priority</p>
                             <span id="visitBtn" class="invisible">
                                 <br>
-                                <p><a href="{{ route('open_ready_report', session("progres_report_id")) }}" class="btn btn-info">View Report</a></p>
+                                <p><a href="{{ route('open_ready_report', session("progres_report_id")) }}" class="btn btn-info" target="_blank">View Report</a></p>
                             </span>
                         </div>
                     </div>
@@ -106,10 +106,6 @@ $(document).ready(function() {
         getAllData()
     }, 2000)
 })
-
-function loadTrus() {
-
-}
 
 function ajax(dataURL) {
     respObj = $.ajax({

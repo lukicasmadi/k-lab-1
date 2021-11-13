@@ -357,6 +357,8 @@ class QueuePrev implements ShouldQueue
             ]);
         }
 
-        DailyNotice::insert($displayData);
+        DB::transaction(function () use ($displayData) {
+            DailyNotice::insert($displayData);
+        });
     }
 }
