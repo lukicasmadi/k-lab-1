@@ -63,7 +63,13 @@ return [
             ]) : [],
             'dump' => [
                 'timeout' => 60 * 5, // 5 minute timeout
-                'exclude_tables' => ['telescope_entries', 'telescope_entries_tags', 'telescope_monitoring'],
+                'exclude_tables' => [
+                    'telescope_entries',
+                    'telescope_entries_tags',
+                    'telescope_monitoring',
+                    'jobs',
+                    'job_batches',
+                ],
              ]
         ],
 
