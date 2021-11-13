@@ -116,7 +116,9 @@ return [
              * The disk names on which the backups will be stored.
              */
             'disks' => [
-                'local',
+                // 'local',
+                'dropbox',
+                'authorization_token' => env('DROPBOX_AUTH_TOKEN'),
             ],
         ],
 
