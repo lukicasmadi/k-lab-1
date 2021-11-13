@@ -29,12 +29,12 @@
         "spatie/laravel-permission": "^3.18",
         "spatie/laravel-searchable": "^1.10",
         "tightenco/ziggy": "^1.0",
-        "yajra/laravel-datatables-oracle": "^9.15"
+        "yajra/laravel-datatables-oracle": "^9.15",
+        "laravel/telescope": "^4.6"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
         "laravel/sail": "^1.0.1",
-        "laravel/telescope": "^4.6",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
         "nunomaduro/larastan": "^0.7.1",
