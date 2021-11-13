@@ -1082,6 +1082,33 @@ if (! function_exists('sumGroupCurrent')) {
             ]);
         });
 
+        $data->each(function ($item, $key) {
+            $sum = $item->prokes_covid_teguran_gar_prokes + $item->prokes_covid_pembagian_masker + $item->prokes_covid_sosialisasi_tentang_prokes + $item->prokes_covid_giat_baksos_p;
+            SumLoopEveryday::insert([
+                'group_name' => 'GROUP_42',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->penyekatan_motor + $item->penyekatan_mobil_penumpang + $item->penyekatan_mobil_bus + $item->penyekatan_mobil_barang + $item->penyekatan_kendaraan_khusus_p;
+            SumLoopEveryday::insert([
+                'group_name' => 'GROUP_43',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->rapid_test_antigen_positif + $item->rapid_test_antigen_positif_p;
+            SumLoopEveryday::insert([
+                'group_name' => 'GROUP_44',
+                'summary' => $sum,
+                'year_flag' => 'CURRENT'
+            ]);
+        });
+
         // $data->each(function ($item, $key) {
         //     $sum = $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX + $item->XXXXX;
         //     SumLoopEveryday::insert([
@@ -1461,6 +1488,33 @@ if (! function_exists('sumGroupPrev')) {
             $sum = $item->giat_lantas_pengaturan_p + $item->giat_lantas_penjagaan_p + $item->giat_lantas_pengawalan_p + $item->giat_lantas_patroli_p;
             SumLoopEveryday::insert([
                 'group_name' => 'GROUP_41',
+                'summary' => $sum,
+                'year_flag' => 'PREV'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->prokes_covid_teguran_gar_prokes_p + $item->prokes_covid_pembagian_masker_p + $item->prokes_covid_sosialisasi_tentang_prokes_p + $item->prokes_covid_giat_baksos_p;
+            SumLoopEveryday::insert([
+                'group_name' => 'GROUP_42',
+                'summary' => $sum,
+                'year_flag' => 'PREV'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->penyekatan_motor_p + $item->penyekatan_mobil_penumpang_p + $item->penyekatan_mobil_bus_p + $item->penyekatan_mobil_barang_p + $item->penyekatan_kendaraan_khusus_p;
+            SumLoopEveryday::insert([
+                'group_name' => 'GROUP_43',
+                'summary' => $sum,
+                'year_flag' => 'PREV'
+            ]);
+        });
+
+        $data->each(function ($item, $key) {
+            $sum = $item->rapid_test_antigen_positif_p + $item->rapid_test_antigen_positif_p;
+            SumLoopEveryday::insert([
+                'group_name' => 'GROUP_44',
                 'summary' => $sum,
                 'year_flag' => 'PREV'
             ]);
