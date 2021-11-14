@@ -9,6 +9,7 @@ use Illuminate\Bus\Batch;
 use App\Jobs\QueueCurrent;
 use App\Models\DailyInput;
 use App\Models\DailyNotice;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\DailyInputPrev;
 use App\Models\RencanaOperasi;
@@ -111,8 +112,9 @@ class HelperController extends Controller
         $labelNumber = $totalPlusJumlah + 2;
 
         $operationId = $rencanaOperasi->id;
+        $operationName = Str::slug($rencanaOperasi->name, '-');
 
-        return view('exports.ready_new', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'operationId'));
+        return view('exports.ready_new', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'operationId', 'operationName'));
     }
 
     public function runDispatch($operationId)
