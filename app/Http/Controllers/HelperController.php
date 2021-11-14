@@ -85,10 +85,6 @@ class HelperController extends Controller
 
     public function openReadyReport($operationUuid)
     {
-        if(is_null($operationUuid)) {
-            abort(404);
-        }
-
         $limit = null;
 
         $rencanaOperasi = RencanaOperasi::where('uuid', $operationUuid)->firstOrFail();
