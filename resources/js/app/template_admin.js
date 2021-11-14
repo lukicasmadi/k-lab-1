@@ -18,6 +18,11 @@ $(document).ready(function() {
         $('#modalReportAllPoldaByOperation').modal('show')
     })
 
+    $('body').on('click', '.report_polda_all_no_operation', function(e) {
+        e.preventDefault()
+        $('#modalReportAllPoldaByOperation').modal('show')
+    })
+
     function getAllData() {
         all_operation = callAjaxGet(route('get_all_operation'))
         all_operation.done(function(data, statusText, jqXHR) {

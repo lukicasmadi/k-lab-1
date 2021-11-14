@@ -39,8 +39,8 @@
                                 <th width="25%">Jenis Operasi</th>
                                 <th width="15%">Tgl Mulai</th>
                                 <th width="15%">Tgl Selesai</th>
-                                <th width="5%">Lihat</th>
-                                <th width="15%">Action</th>
+                                <th width="3%">Lihat</th>
+                                <th width="25%">Laporan</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -240,11 +240,15 @@ $(document).ready(function () {
                     return `
                     <div class="ubah-change">
                         <a href="`+route('report_by_operation', data)+`">
-                            Unduh
+                            Baku
                         </a>
                         |
                         <a href="`+route('report_all_polda_compare')+`" class="redirect">
-                            Detil
+                            Perpolda
+                        </a>
+                        |
+                        <a href="`+route('report_all_polda_compare')+`" class="redirect report_polda_all_no_operation">
+                            Perhari
                         </a>
                     </div>
                     `;
