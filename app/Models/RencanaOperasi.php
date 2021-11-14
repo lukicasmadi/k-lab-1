@@ -6,7 +6,6 @@ use App\Models\DailyNotice;
 use App\Models\PoldaHasRencanaOperasi;
 
 use Illuminate\Database\Eloquent\Model;
-use Rennokki\QueryCache\Traits\QueryCacheable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Alexmg86\LaravelSubQuery\Traits\LaravelSubQueryTrait;
 
