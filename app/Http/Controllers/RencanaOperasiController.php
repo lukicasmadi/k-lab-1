@@ -105,6 +105,13 @@ class RencanaOperasiController extends Controller
             return redirect()->route('rencana_operasi_index');
         }
 
+        $findName = RencanaOperasi::where('name', strtoupper(request('nama_operasi')))->first();
+
+        if(!empty($findName)) {
+            flash('Nama operasi sudah pernah dibuat')->error();
+            return redirect()->route('rencana_operasi_index');
+        }
+
         DB::beginTransaction();
 
         try {
@@ -182,6 +189,13 @@ class RencanaOperasiController extends Controller
             'start_date' => dateOnly($request->edit_tanggal_mulai),
             'end_date' => dateOnly($request->edit_tanggal_selesai),
         ];
+
+        $findName = RencanaOperasi::where('name', strtoupper(request('edit_nama_operasi')))->first();
+
+        if(!empty($findName)) {
+            flash('Nama operasi sudah pernah dibuat')->error();
+            return redirect()->route('rencana_operasi_index');
+        }
 
         DB::beginTransaction();
 
