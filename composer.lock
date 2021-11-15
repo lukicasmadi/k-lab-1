@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ded2910fa0b1f1b3211f1bfe0becabb9",
+    "content-hash": "cb3e2607a0b25c02f8f02461552298b4",
     "packages": [
         {
             "name": "alexmg86/laravel-sub-query",
