@@ -185,11 +185,10 @@ $(document).ready(function () {
                 searchable: false
             },
             {
-                data: 'name'
+                data: 'name',
             },
             {
                 data: 'alias_name',
-                name: 'polda.name'
             },
             {
                 data: 'operation_type',
