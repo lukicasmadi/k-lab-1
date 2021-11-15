@@ -403,8 +403,10 @@ class ReportController extends Controller
 
         $rencanaOperasi = RencanaOperasi::find($rencana_operation_id);
 
+        $poldaSubmited = PoldaSubmited::where('rencana_operasi_id', $rencana_operation_id)->first();
+
         excelTemplate(
-            'per_polda',
+            'polda_all',
             $prev,
             $current,
             'KESATUAN : '.$poldaSubmited->nama_kesatuan,
@@ -413,8 +415,8 @@ class ReportController extends Controller
             $poldaSubmited->pangkat_dan_nrp,
             $poldaSubmited->jabatan,
             $poldaSubmited->nama_laporan,
-            $file_name,
-            $operationName
+            $rencanaOperasi->name,
+            null
         );
     }
 
