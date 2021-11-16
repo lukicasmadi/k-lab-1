@@ -988,6 +988,7 @@ class PoldaHasRencanaOperasiController extends Controller
             $poldaSubmited->nama_atasan,
             $poldaSubmited->pangkat_dan_nrp,
             $poldaSubmited->jabatan,
+            $poldaSubmited->nama_laporan,
             $poldaSubmited->nama_laporan
         );
     }
