@@ -34,12 +34,7 @@ class MailSuccessfulDatabaseBackup
     public function mailBackupFile($path)
     {
         try {
-            // Mail::raw('You have a new database backup file.',   function ($message) use ($path) {
-            //     $message->to(env('MAIL_FROM_ADDRESS'))
-            //         ->subject('DB Auto-backup Done')
-            //         ->attach($path);
-            // });
-            Mail::to('berthojoris@gmail.com')->send(new NotifEmail());
+            Mail::to(env('MAIL_RECEIVER'))->send(new NotifEmail($path));
         } catch (\Exception $exception) {
             throw $exception;
         }

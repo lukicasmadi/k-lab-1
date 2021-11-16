@@ -16,9 +16,11 @@ class NotifEmail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    private $path;
+
+    public function __construct($path)
     {
-        //
+        $this->path = $path;
     }
 
     /**
@@ -28,6 +30,6 @@ class NotifEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.notif-email');
+        return $this->view('mail.notif-email')->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'))->subject('DB Auto-backup')->attach($this->path);
     }
 }
