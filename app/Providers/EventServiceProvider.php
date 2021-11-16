@@ -12,6 +12,8 @@ use App\Models\PoldaHasRencanaOperasi;
 use Illuminate\Auth\Events\Registered;
 use App\Observers\RencanaOperasiObserver;
 use App\Observers\JenisPelanggaranObserver;
+use Spatie\Backup\Events\BackupZipWasCreated;
+use App\Listeners\MailSuccessfulDatabaseBackup;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -25,6 +27,9 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+        ],
+        BackupZipWasCreated::class => [
+            MailSuccessfulDatabaseBackup::class
         ],
     ];
 
