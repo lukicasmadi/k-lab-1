@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+use App\Mail\NotifEmail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -33,14 +34,14 @@ class MailSuccessfulDatabaseBackup
     public function mailBackupFile($path)
     {
         try {
-            Mail::raw('You have a new database backup file.',   function ($message) use ($path) {
-                $message->to(env('MAIL_FROM_ADDRESS'))
-                    ->subject('DB Auto-backup Done')
-                    ->attach($path);
-            });
+            // Mail::raw('You have a new database backup file.',   function ($message) use ($path) {
+            //     $message->to(env('MAIL_FROM_ADDRESS'))
+            //         ->subject('DB Auto-backup Done')
+            //         ->attach($path);
+            // });
+            Mail::to('berthojoris@gmail.com')->send(new NotifEmail());
         } catch (\Exception $exception) {
             throw $exception;
         }
-
     }
 }
