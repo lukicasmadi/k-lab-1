@@ -413,10 +413,6 @@ class HomeController extends Controller
 
     public function viewInputFromChart($indexData)
     {
-        if (str_contains($indexData, '-')) {
-            abort(404);
-        }
-
         if(empty(operationPlans())) {
 
             if(empty(session('filter_operation'))) {
