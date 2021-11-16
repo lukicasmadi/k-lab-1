@@ -630,7 +630,8 @@ jQuery(function() {
 
     anevAllRight.render()
 
-    function showOne() {
+    setInterval(function() {
+
         dashboardChart = wrapAjax(route('dashboardChart'))
         dashboardChart.done(function(data, statusText, jqXHR) {
             var rangeDate = data.rangeDate
@@ -663,11 +664,10 @@ jQuery(function() {
                 }])
 
                 $(".data_total_laporan").html(totalSum + " laporan")
+
             }
         })
-    }
 
-    function showTwo() {
         chart_laphar = wrapAjax(route('chart_laphar'))
         chart_laphar.done(function(data, statusText, jqXHR) {
             leftLaphar.updateOptions({
@@ -708,9 +708,7 @@ jQuery(function() {
                 }
             ])
         })
-    }
 
-    function showThree() {
         chart_laphar_all_project = wrapAjax(route('chart_laphar_all_project'))
         chart_laphar_all_project.done(function(data, statusText, jqXHR) {
             leftLapharAll.updateOptions({
@@ -752,9 +750,7 @@ jQuery(function() {
                 }
             ])
         })
-    }
 
-    function showFour() {
         chart_anev = wrapAjax(route('chart_anev'))
         chart_anev.done(function(data, statusText, jqXHR) {
             anevLeftChart.updateOptions({
@@ -812,9 +808,7 @@ jQuery(function() {
                 ]
             )
         })
-    }
 
-    function showFive() {
         chart_anev_all = wrapAjax(route('chart_anev_all'))
         chart_anev_all.done(function(data, statusText, jqXHR) {
             anevAllleft.updateOptions({
@@ -872,28 +866,11 @@ jQuery(function() {
                 ]
             )
         })
-    }
-
-    showOne()
-    showTwo()
-    showThree()
-    showFour()
-    showFive()
-
-    donutChart()
-    changePoldaClass()
-    notificationLoad()
-
-    setInterval(function() {
-        showOne()
-        showTwo()
-        showThree()
-        showFour()
-        showFive()
 
         donutChart()
         changePoldaClass()
         notificationLoad()
+
     }, $('meta[name=reload_time]').attr('content'))
 
     // https://lodash.com/docs/#isEmpty
