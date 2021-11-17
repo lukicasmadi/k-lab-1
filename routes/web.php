@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/scandir', 'TestController@scandir')->name('scandir');
-Route::get('/scandir/download', 'TestController@downloadBackup')->name('download_backup');
 Route::get('/help/{operationId}', 'HelperController@runDispatch')->name('daily_process');
 Route::get('/home', 'HomeController@welcomePage')->name('home');
 Route::get('/lihat-panduan', 'HomeController@lihatPanduan')->name('lihat_panduan');
@@ -67,6 +65,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/report/daily/polda/{poldaUuid}', 'ReportController@poldaUuid')->name('report_bypolda');
         Route::get('/polda-data/{short_name}', 'HomeController@openPoldaData')->name('korlantas_open_polda');
         Route::post('/report/daily-compare/process', 'ReportController@reportAllPoldaDetailProcess')->name('report_all_polda_detail_process');
+
+        Route::get('/scandir', 'TestController@scandir')->name('scandir');
+        Route::get('/scandir/download', 'TestController@downloadBackup')->name('download_backup');
     });
 
     // ROUTE HANYA BISA DIAKSES OLEH ADMINISTRATOR ATAU KORLANTAS PUSAT
