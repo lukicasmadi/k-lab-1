@@ -16,7 +16,7 @@ class NotifEmail extends Mailable
      *
      * @return void
      */
-    private $path;
+    public $path;
 
     public function __construct($path)
     {
