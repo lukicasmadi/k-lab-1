@@ -24,4 +24,12 @@ class TestController extends Controller
         print_r($links);
 
     }
+
+    public function scandir()
+    {
+        $dir    = storage_path('app/Korlantas-Polri');
+        $files  = scandir($dir, 1);
+        logger($files);
+        return "Done";
+    }
 }
