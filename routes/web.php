@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/scandir', 'TestController@scandir')->name('scandir');
+Route::get('/scandir/download', 'TestController@downloadBackup')->name('download_backup');
 Route::get('/help/{operationId}', 'HelperController@runDispatch')->name('daily_process');
 Route::get('/home', 'HomeController@welcomePage')->name('home');
 Route::get('/lihat-panduan', 'HomeController@lihatPanduan')->name('lihat_panduan');

@@ -32,4 +32,11 @@ class TestController extends Controller
         logger($files);
         return "Done";
     }
+
+    public function downloadBackup()
+    {
+        $dir    = storage_path('app/Korlantas-Polri');
+        $files  = scandir($dir, 1);
+        return response()->download($dir."/".$files[0]);
+    }
 }
