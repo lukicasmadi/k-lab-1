@@ -144,20 +144,22 @@
 
             $("#panelLoading").removeClass("d-none")
 
-            if(operation_id != "" && startDate != "") {
-                popupCenter({
-                    url: route('show_excel_to_view_anev', {
-                        operation_id: operation_id,
-                        tanggal_pembanding_1: startDate,
-                        tanggal_pembanding_2: endDate,
-                    }),
-                    title: 'Detail',
-                    w: 1000, h: 600
-                })
+            $("#panelLoading").addClass("d-none")
+            $("#btnUnduhData").prop('disabled', false)
 
-                $("#panelLoading").addClass("d-none")
-                $("#btnUnduhData").prop('disabled', false)
-            }
+            // if(operation_id != "" && startDate != "") {
+            //     popupCenter({
+            //         url: route('show_excel_to_view_anev', {
+            //             operation_id: operation_id,
+            //             tanggal_pembanding_1: startDate,
+            //             tanggal_pembanding_2: endDate,
+            //         }),
+            //         title: 'Detail',
+            //         w: 1000, h: 600
+            //     })
+
+
+            // }
         }
     })
 

@@ -44,6 +44,32 @@ class ReportController extends Controller
         return view('report.anev_harian', compact('rencanaOperasi', 'currentYear', 'prevYear'));
     }
 
+    public function anevDateCompareProcess(ReportAnevDateCompareDisplay $request)
+    {
+        $rencana_operation_id = $request->operation_id;
+        $start_date = dateOnly($request->tanggal_pembanding_1);
+        $end_date = dateOnly($request->tanggal_pembanding_2);
+
+        $prev = reportPrevToDisplayAnevDateCompare($rencana_operation_id, $start_date, $start_date);
+        $current = reportCurrentToDisplayAnevDateCompare($rencana_operation_id, $end_date, $end_date);
+
+        $rencanaOperasi = RencanaOperasi::find($rencana_operation_id);
+
+        excelTemplate(
+            'polda_all',
+            $prev,
+            $current,
+            'KESATUAN : Korlantas',
+            $start_date." s/d ".$end_date,
+            null,
+            null,
+            null,
+            "Anev ".indonesianStandart($request->tanggal_pembanding_1).' DAN '.indonesianStandart($request->tanggal_pembanding_2),
+            $rencanaOperasi->name,
+            null
+        );
+    }
+
     public function dailyAllPolda()
     {
         $listPolda = Polda::orderBy('id', 'asc')->pluck("name", "id");
@@ -84,32 +110,6 @@ class ReportController extends Controller
         $prevYear = array_unique(DailyInputPrev::pluck('year')->toArray());
 
         return view('report.comparison', compact('rencanaOperasi', 'currentYear', 'prevYear'));
-    }
-
-    public function anevDateCompareProcess(ReportAnevDateCompareDisplay $request)
-    {
-        $rencana_operation_id = $request->operation_id;
-        $start_date = dateOnly($request->tanggal_pembanding_1);
-        $end_date = dateOnly($request->tanggal_pembanding_2);
-
-        $prev = reportPrevToDisplayAnevDateCompare($rencana_operation_id, $start_date, $start_date);
-        $current = reportCurrentToDisplayAnevDateCompare($rencana_operation_id, $end_date, $end_date);
-
-        $rencanaOperasi = RencanaOperasi::find($rencana_operation_id);
-
-        excelTemplate(
-            'polda_all',
-            $prev,
-            $current,
-            'KESATUAN : Korlantas',
-            $start_date." s/d ".$end_date,
-            null,
-            null,
-            null,
-            "Anev ".indonesianStandart($request->tanggal_pembanding_1).' DAN '.indonesianStandart($request->tanggal_pembanding_2),
-            $rencanaOperasi->name,
-            null
-        );
     }
 
     public function comparisonProcess(ReportAnevDisplay $request)
