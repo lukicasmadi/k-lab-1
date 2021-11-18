@@ -4528,8 +4528,8 @@ use App\Models\SumLoopEveryday;
     </tbody>
 </table>
 
-@php
+{{-- @php
 header("Content-type: application/vnd-ms-excel");
 header("Content-Disposition: attachment; filename=".$operationName.".xls");
-@endphp
+@endphp --}}
 @endsection
