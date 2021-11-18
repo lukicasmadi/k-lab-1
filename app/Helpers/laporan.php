@@ -3239,7 +3239,7 @@ if (! function_exists('excelTemplateDisplay')) {
 }
 
 if (! function_exists('excelViewAbsensi')) {
-    function excelViewAbsensi($data, $tanggal)
+    function excelViewAbsensi($data, $tanggal, $operationName=null)
     {
         $excelPath = public_path('template/excel');
 
@@ -3250,42 +3250,45 @@ if (! function_exists('excelViewAbsensi')) {
 
         $sheet = $spreadsheet->getActiveSheet();
 
-        $sheet->setCellValue('A1', $tanggal);
+        $sheet->setCellValue('A7', 'TANGGAL '.$tanggal);
 
-        $sheet->setCellValue('C3', (is_null($data[0]->dailyInput)) ? 'Belum Mengirimkan' : $data[0]->dailyInput->status);
-        $sheet->setCellValue('C4', (is_null($data[1]->dailyInput)) ? 'Belum Mengirimkan' : $data[1]->dailyInput->status);
-        $sheet->setCellValue('C5', (is_null($data[2]->dailyInput)) ? 'Belum Mengirimkan' : $data[2]->dailyInput->status);
-        $sheet->setCellValue('C6', (is_null($data[3]->dailyInput)) ? 'Belum Mengirimkan' : $data[3]->dailyInput->status);
-        $sheet->setCellValue('C7', (is_null($data[4]->dailyInput)) ? 'Belum Mengirimkan' : $data[4]->dailyInput->status);
-        $sheet->setCellValue('C8', (is_null($data[5]->dailyInput)) ? 'Belum Mengirimkan' : $data[5]->dailyInput->status);
-        $sheet->setCellValue('C9', (is_null($data[6]->dailyInput)) ? 'Belum Mengirimkan' : $data[6]->dailyInput->status);
-        $sheet->setCellValue('C10', (is_null($data[7]->dailyInput)) ? 'Belum Mengirimkan' : $data[7]->dailyInput->status);
-        $sheet->setCellValue('C11', (is_null($data[8]->dailyInput)) ? 'Belum Mengirimkan' : $data[8]->dailyInput->status);
-        $sheet->setCellValue('C12', (is_null($data[9]->dailyInput)) ? 'Belum Mengirimkan' : $data[9]->dailyInput->status);
-        $sheet->setCellValue('C13', (is_null($data[10]->dailyInput)) ? 'Belum Mengirimkan' : $data[10]->dailyInput->status);
-        $sheet->setCellValue('C14', (is_null($data[11]->dailyInput)) ? 'Belum Mengirimkan' : $data[11]->dailyInput->status);
-        $sheet->setCellValue('C15', (is_null($data[12]->dailyInput)) ? 'Belum Mengirimkan' : $data[12]->dailyInput->status);
-        $sheet->setCellValue('C16', (is_null($data[13]->dailyInput)) ? 'Belum Mengirimkan' : $data[13]->dailyInput->status);
-        $sheet->setCellValue('C17', (is_null($data[14]->dailyInput)) ? 'Belum Mengirimkan' : $data[14]->dailyInput->status);
-        $sheet->setCellValue('C18', (is_null($data[15]->dailyInput)) ? 'Belum Mengirimkan' : $data[15]->dailyInput->status);
-        $sheet->setCellValue('C19', (is_null($data[16]->dailyInput)) ? 'Belum Mengirimkan' : $data[16]->dailyInput->status);
-        $sheet->setCellValue('C20', (is_null($data[17]->dailyInput)) ? 'Belum Mengirimkan' : $data[17]->dailyInput->status);
-        $sheet->setCellValue('C21', (is_null($data[18]->dailyInput)) ? 'Belum Mengirimkan' : $data[18]->dailyInput->status);
-        $sheet->setCellValue('C22', (is_null($data[19]->dailyInput)) ? 'Belum Mengirimkan' : $data[19]->dailyInput->status);
-        $sheet->setCellValue('C23', (is_null($data[20]->dailyInput)) ? 'Belum Mengirimkan' : $data[20]->dailyInput->status);
-        $sheet->setCellValue('C24', (is_null($data[21]->dailyInput)) ? 'Belum Mengirimkan' : $data[21]->dailyInput->status);
-        $sheet->setCellValue('C25', (is_null($data[22]->dailyInput)) ? 'Belum Mengirimkan' : $data[22]->dailyInput->status);
-        $sheet->setCellValue('C26', (is_null($data[23]->dailyInput)) ? 'Belum Mengirimkan' : $data[23]->dailyInput->status);
-        $sheet->setCellValue('C27', (is_null($data[24]->dailyInput)) ? 'Belum Mengirimkan' : $data[24]->dailyInput->status);
-        $sheet->setCellValue('C28', (is_null($data[25]->dailyInput)) ? 'Belum Mengirimkan' : $data[25]->dailyInput->status);
-        $sheet->setCellValue('C29', (is_null($data[26]->dailyInput)) ? 'Belum Mengirimkan' : $data[26]->dailyInput->status);
-        $sheet->setCellValue('C30', (is_null($data[27]->dailyInput)) ? 'Belum Mengirimkan' : $data[27]->dailyInput->status);
-        $sheet->setCellValue('C31', (is_null($data[28]->dailyInput)) ? 'Belum Mengirimkan' : $data[28]->dailyInput->status);
-        $sheet->setCellValue('C32', (is_null($data[29]->dailyInput)) ? 'Belum Mengirimkan' : $data[29]->dailyInput->status);
-        $sheet->setCellValue('C33', (is_null($data[30]->dailyInput)) ? 'Belum Mengirimkan' : $data[30]->dailyInput->status);
-        $sheet->setCellValue('C34', (is_null($data[31]->dailyInput)) ? 'Belum Mengirimkan' : $data[31]->dailyInput->status);
-        $sheet->setCellValue('C35', (is_null($data[32]->dailyInput)) ? 'Belum Mengirimkan' : $data[32]->dailyInput->status);
-        $sheet->setCellValue('C36', (is_null($data[33]->dailyInput)) ? 'Belum Mengirimkan' : $data[33]->dailyInput->status);
+        $sheet->setCellValue('C9', (is_null($data[0]->dailyInput)) ? 'Belum Mengirimkan' : $data[0]->dailyInput->status);
+        $sheet->setCellValue('C10', (is_null($data[1]->dailyInput)) ? 'Belum Mengirimkan' : $data[1]->dailyInput->status);
+        $sheet->setCellValue('C11', (is_null($data[2]->dailyInput)) ? 'Belum Mengirimkan' : $data[2]->dailyInput->status);
+        $sheet->setCellValue('C12', (is_null($data[3]->dailyInput)) ? 'Belum Mengirimkan' : $data[3]->dailyInput->status);
+        $sheet->setCellValue('C13', (is_null($data[4]->dailyInput)) ? 'Belum Mengirimkan' : $data[4]->dailyInput->status);
+        $sheet->setCellValue('C14', (is_null($data[5]->dailyInput)) ? 'Belum Mengirimkan' : $data[5]->dailyInput->status);
+        $sheet->setCellValue('C15', (is_null($data[6]->dailyInput)) ? 'Belum Mengirimkan' : $data[6]->dailyInput->status);
+        $sheet->setCellValue('C16', (is_null($data[7]->dailyInput)) ? 'Belum Mengirimkan' : $data[7]->dailyInput->status);
+        $sheet->setCellValue('C17', (is_null($data[8]->dailyInput)) ? 'Belum Mengirimkan' : $data[8]->dailyInput->status);
+        $sheet->setCellValue('C18', (is_null($data[9]->dailyInput)) ? 'Belum Mengirimkan' : $data[9]->dailyInput->status);
+        $sheet->setCellValue('C19', (is_null($data[10]->dailyInput)) ? 'Belum Mengirimkan' : $data[10]->dailyInput->status);
+        $sheet->setCellValue('C20', (is_null($data[11]->dailyInput)) ? 'Belum Mengirimkan' : $data[11]->dailyInput->status);
+        $sheet->setCellValue('C21', (is_null($data[12]->dailyInput)) ? 'Belum Mengirimkan' : $data[12]->dailyInput->status);
+        $sheet->setCellValue('C22', (is_null($data[13]->dailyInput)) ? 'Belum Mengirimkan' : $data[13]->dailyInput->status);
+        $sheet->setCellValue('C23', (is_null($data[14]->dailyInput)) ? 'Belum Mengirimkan' : $data[14]->dailyInput->status);
+        $sheet->setCellValue('C24', (is_null($data[15]->dailyInput)) ? 'Belum Mengirimkan' : $data[15]->dailyInput->status);
+        $sheet->setCellValue('C25', (is_null($data[16]->dailyInput)) ? 'Belum Mengirimkan' : $data[16]->dailyInput->status);
+        $sheet->setCellValue('C26', (is_null($data[17]->dailyInput)) ? 'Belum Mengirimkan' : $data[17]->dailyInput->status);
+        $sheet->setCellValue('C27', (is_null($data[18]->dailyInput)) ? 'Belum Mengirimkan' : $data[18]->dailyInput->status);
+        $sheet->setCellValue('C28', (is_null($data[19]->dailyInput)) ? 'Belum Mengirimkan' : $data[19]->dailyInput->status);
+        $sheet->setCellValue('C29', (is_null($data[20]->dailyInput)) ? 'Belum Mengirimkan' : $data[20]->dailyInput->status);
+        $sheet->setCellValue('C30', (is_null($data[21]->dailyInput)) ? 'Belum Mengirimkan' : $data[21]->dailyInput->status);
+        $sheet->setCellValue('C31', (is_null($data[22]->dailyInput)) ? 'Belum Mengirimkan' : $data[22]->dailyInput->status);
+        $sheet->setCellValue('C32', (is_null($data[23]->dailyInput)) ? 'Belum Mengirimkan' : $data[23]->dailyInput->status);
+        $sheet->setCellValue('C33', (is_null($data[24]->dailyInput)) ? 'Belum Mengirimkan' : $data[24]->dailyInput->status);
+        $sheet->setCellValue('C34', (is_null($data[25]->dailyInput)) ? 'Belum Mengirimkan' : $data[25]->dailyInput->status);
+        $sheet->setCellValue('C35', (is_null($data[26]->dailyInput)) ? 'Belum Mengirimkan' : $data[26]->dailyInput->status);
+        $sheet->setCellValue('C36', (is_null($data[27]->dailyInput)) ? 'Belum Mengirimkan' : $data[27]->dailyInput->status);
+        $sheet->setCellValue('C37', (is_null($data[28]->dailyInput)) ? 'Belum Mengirimkan' : $data[28]->dailyInput->status);
+        $sheet->setCellValue('C38', (is_null($data[29]->dailyInput)) ? 'Belum Mengirimkan' : $data[29]->dailyInput->status);
+        $sheet->setCellValue('C39', (is_null($data[30]->dailyInput)) ? 'Belum Mengirimkan' : $data[30]->dailyInput->status);
+        $sheet->setCellValue('C40', (is_null($data[31]->dailyInput)) ? 'Belum Mengirimkan' : $data[31]->dailyInput->status);
+        $sheet->setCellValue('C41', (is_null($data[32]->dailyInput)) ? 'Belum Mengirimkan' : $data[32]->dailyInput->status);
+        $sheet->setCellValue('C42', (is_null($data[33]->dailyInput)) ? 'Belum Mengirimkan' : $data[33]->dailyInput->status);
+
+        $sheet->setCellValue('C44', 'Jakarta, '.$tanggal);
+        $sheet->setCellValue('C45', 'KAPOSKO '.strtoupper($operationName));
 
         $writer = IOFactory::createWriter($spreadsheet, 'Html');
         $message = $writer->save('php://output');

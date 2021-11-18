@@ -438,6 +438,7 @@ class HomeController extends Controller
             excelViewAbsensi($polda, indonesiaDayAndDate($whereDate));
 
         } else {
+
             $period = CarbonPeriod::create(operationPlans()->start_date, operationPlans()->end_date);
 
             $rangeDate = [];
@@ -454,11 +455,13 @@ class HomeController extends Controller
 
             $whereDate = $rangeDate[$indexData]; // HITUNG INDEX BERDASARKAN DATA YG DIKLIK USER
 
+            $cd = CountDown::with('rencanaOperasi')->where('tanggal', $whereDate)->first();
+
             $polda = Polda::with(['dailyInput' => function($q) use($whereDate) {
                 $q->select('id', 'polda_id', 'status', 'submited_date', 'rencana_operasi_id')->where('submited_date', '=', $whereDate);
             }])->select('id', 'name')->get();
 
-            excelViewAbsensi($polda, indonesiaDayAndDate($whereDate));
+            excelViewAbsensi($polda, strtoupper(indonesiaDate($whereDate)), $cd->rencanaOperasi->name);
         }
     }
 
