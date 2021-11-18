@@ -72,7 +72,7 @@
                                     <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
                                         <a href="{{ route('report_all_polda_compare') }}"> Laporan Operasi Perpolda </a>
                                     </li>
-                                    <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
+                                    <li>
                                         <a href="#" id="report_polda_all"> Laporan Operasi Perhari </a>
                                     </li>
                                 </ul>
@@ -341,7 +341,7 @@
                                     <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
                                         <a href="{{ route('report_all_polda_compare') }}"> Laporan Operasi Perpolda </a>
                                     </li>
-                                    <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
+                                    <li>
                                         <a href="#" id="report_polda_all"> Laporan Operasi Perhari </a>
                                     </li>
                                 </ul>
