@@ -35,7 +35,6 @@ class MailSuccessfulDatabaseBackup
     {
         try {
             Mail::to(env('MAIL_RECEIVER'))->send(new NotifEmail($path));
-            logger("Email backup sent with path : ".$path);
         } catch (\Exception $exception) {
             throw $exception;
         }
