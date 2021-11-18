@@ -3287,8 +3287,14 @@ if (! function_exists('excelViewAbsensi')) {
         $sheet->setCellValue('C41', (is_null($data[32]->dailyInput)) ? 'Belum Mengirimkan' : $data[32]->dailyInput->status);
         $sheet->setCellValue('C42', (is_null($data[33]->dailyInput)) ? 'Belum Mengirimkan' : $data[33]->dailyInput->status);
 
+        if(is_null($operationName)) {
+            $opn = '-';
+        } else {
+            $opn = strtoupper($operationName);
+        }
+
         $sheet->setCellValue('C44', 'Jakarta, '.$tanggal);
-        $sheet->setCellValue('C45', 'KAPOSKO '.strtoupper($operationName));
+        $sheet->setCellValue('C45', 'KAPOSKO '.$opn);
 
         $writer = IOFactory::createWriter($spreadsheet, 'Html');
         $message = $writer->save('php://output');
