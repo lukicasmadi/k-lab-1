@@ -468,7 +468,12 @@ class ReportController extends Controller
 
         $rencanaOperasi = RencanaOperasi::find($request->operation_id);
 
-        compareAllPoldaInput($prev, $current, $start_date, $end_date, $prev_year, $current_year, $rencanaOperasi->name);
+        $dr = DailyRekap::whereRaw("DATE(operation_date_start) >= ? and DATE(operation_date_end) <= ?", [$start_date, $end_date])
+        ->where('rencana_operasi_id', $request->operation_id)
+        ->where('polda', 'polda_all')
+        ->first();
+
+        compareAllPoldaInput($prev, $current, $start_date, $end_date, $prev_year, $current_year, $rencanaOperasi, $dr);
     }
 
     public function reportAllPoldaByOperation($uuid)

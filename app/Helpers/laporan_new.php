@@ -176,7 +176,7 @@ if (! function_exists('newDailyReportDetail')) {
 }
 
 if (! function_exists('compareAllPoldaInput')) {
-    function compareAllPoldaInput($data_prev, $data_current, $start_date, $end_date, $prev_year, $current_year, $operationName) {
+    function compareAllPoldaInput($data_prev, $data_current, $start_date, $end_date, $prev_year, $current_year, $operration, $dr=null) {
 
         $excelPath = public_path('template/excel');
         $excelTemplate = $excelPath."/format_laporan_detail_daily.xlsx";
@@ -189,9 +189,8 @@ if (! function_exists('compareAllPoldaInput')) {
 
         $sheet = $spreadsheet->getActiveSheet();
 
-        $sheet->setCellValue('A5', 'LAPORAN HARIAN '.upperCase($operationName));
-        $sheet->setCellValue('A6', 'KESATUAN : Korlantas');
-        $sheet->setCellValue('A7', 'HARI/TGL : '.indonesianFullDayAndDate(date("Y-m-d H:i:s")));
+        $sheet->setCellValue('A5', 'REKAPITULASI LAPORAN PERPOLDA '.upperCase($operration->name));
+        $sheet->setCellValue('A6', 'TANGGAL '.indonesiaDate($start_date).' s.d. '.indonesiaDate($end_date));
 
         $skip = [
             '16',
@@ -1033,6 +1032,17 @@ if (! function_exists('compareAllPoldaInput')) {
 
         $sheet->setCellValue("BS".$flagRowTahun, $prev_year);
         $sheet->setCellValue("BT".$flagRowTahun, $current_year);
+
+        if(is_null($dr)) {
+            $sheet->setCellValue("BT417", indonesiaDate(now()->format('Y-m-d')));
+            $sheet->setCellValue("BT418", gedein($operration->name));
+        } else {
+            $sheet->setCellValue("BT417", $dr->kota.", ".indonesiaDate(now()->format('Y-m-d')));
+            $sheet->setCellValue("BT418", gedein($dr->jabatan)." ".gedein($operration->name).' - '.$dr->year);
+            $sheet->setCellValue("BT422", gedein($dr->atasan));
+            $sheet->setCellValue("BT423", gedein($dr->pangkat_nrp));
+        }
+
 
         $writer = new Xlsx($spreadsheet);
         $writer->save('php://output');

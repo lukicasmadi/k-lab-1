@@ -389,6 +389,12 @@ if (! function_exists('poldaAlreadyInputToday')) {
     }
 }
 
+if (! function_exists('gedein')) {
+    function gedein($string) {
+        return strtoupper($string);
+    }
+}
+
 if (! function_exists('poldaAlreadyInputTodayById')) {
     function poldaAlreadyInputTodayById($polda_id) {
         $now = now()->format('Y-m-d');
