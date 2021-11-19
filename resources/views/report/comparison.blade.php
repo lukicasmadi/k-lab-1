@@ -34,6 +34,7 @@
                             <div class="col-md-12">
                                 <label class="text-popup">Pilih Operasi</label>
                                 <select class="form-control form-custom height-form" name="operation_id" id="operation_id">
+                                    <option value=""> - Pilih Nama Operasi</option>
                                     @foreach($rencanaOperasi as $key => $val)
                                         <option value="{{$key}}">{{$val}}</option>
                                     @endforeach
@@ -58,12 +59,12 @@
                                 </select>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 pembanding d-none">
                                 <label class="text-popup">Pilih Range Hari Awal</label>
                                 <input id="tanggal_pembanding_pertama" name="tanggal_pembanding_pertama" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -" autocomplete="off">
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 pembanding d-none">
                                 <label class="text-popup">Pilih Range Hari Akhir</label>
                                 <input id="tanggal_pembanding_kedua" name="tanggal_pembanding_kedua" class="form-control popoups inp-icon active form-control-lg" type="text" placeholder="- Pilih Tanggal -" autocomplete="off">
                             </div>
@@ -110,9 +111,7 @@
                                 <img src="{{ asset('/img/line_popbottom.png') }}">
                             </div>
                         </div>
-                        <div class="row" id="panelData">
-
-                        </div>
+                        <div class="row" id="panelData"></div>
                     </div>
                 </div>
             </div>
@@ -142,21 +141,49 @@
 @push('page_js')
 <script>
 
-    $(document).on('change', '#operation_id, #tahun_pembanding_pertama, #tahun_pembanding_kedua, #tanggal_pembanding_pertama', function() {
+    $(document).on('change', '#tahun_pembanding_pertama, #tahun_pembanding_kedua, #tanggal_pembanding_pertama', function() {
         $("#btnUnduhData").prop('disabled', true)
         $("#panelData").empty().addClass("d-none")
+    })
+
+    $(document).on('change', '#operation_id', function(e) {
+        e.preventDefault()
+        $(".pembanding").addClass("d-none")
+        $('#tanggal_pembanding_pertama').val('')
+        $('#tanggal_pembanding_kedua').val('')
+        $("#btnUnduhData").prop('disabled', true)
+
+        if($(this).val()) {
+            axios.get(route('operation_plan_show', $(this).val()))
+            .then(function (response) {
+
+                var startDate = response.data.start_date
+                var endDate = response.data.end_date
+
+                $(".pembanding").removeClass("d-none")
+
+                var minDate = new Date(startDate)
+                var maxDate = new Date(endDate)
+
+                $('#tanggal_pembanding_pertama').datepicker('setStartDate', minDate)
+                $('#tanggal_pembanding_pertama').datepicker('setEndDate', maxDate)
+
+                $('#tanggal_pembanding_kedua').datepicker('setStartDate', minDate)
+                $('#tanggal_pembanding_kedua').datepicker('setEndDate', maxDate)
+            })
+            .catch(function (error) {
+                $(".pembanding").addClass("d-none")
+                swal("Data tidak ditemukan. Silakan periksa data yang akan diproses", null, "error")
+            })
+        }
     })
 
     $(document).ready(function () {
 
         $("#tanggal_pembanding_pertama").datepicker({
-            todayBtn:  1,
-            autoclose: true,
             todayHighlight: true,
             format: 'dd-mm-yyyy',
-        }).on('changeDate', function (selected) {
-            var minDate = new Date(selected.date.valueOf())
-            $('#tanggal_pembanding_kedua').datepicker('setStartDate', minDate)
+            autoclose: true,
         })
 
         $("#tanggal_pembanding_kedua").datepicker({
