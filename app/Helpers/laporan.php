@@ -122,9 +122,11 @@ if (! function_exists('reportDailyPrev')) {
         $check = DailyInputPrev::where('rencana_operasi_id', $rencana_operation_id)->where('year', $year)->where('polda_id', $polda)->first();
 
         if(empty($check)) {
+            logger("IF FIRST");
             $secondCheck = DailyInput::where('rencana_operasi_id', $rencana_operation_id)->where('year', $year)->where('polda_id', $polda)->first();
 
             if(empty($secondCheck)) {
+                logger("IF SECOND");
                 $outputLaporanPrev = basedQueryPrev()->when($polda != 'polda_all', function ($query) use ($polda) {
                     return $query->where('polda_id', $polda);
                 })
@@ -135,6 +137,7 @@ if (! function_exists('reportDailyPrev')) {
 
                 return $outputLaporanPrev;
             } else {
+                logger("ELSE SECOND");
                 $outputLaporanCurrent = basedQueryCurrent()->when($polda != 'polda_all', function ($query) use ($polda) {
                     return $query->where('polda_id', $polda);
                 })
@@ -146,6 +149,7 @@ if (! function_exists('reportDailyPrev')) {
                 return $outputLaporanCurrent;
             }
         } else {
+            logger("ELSE FIRST");
             $outputLaporanPrev = basedQueryPrev()->when($polda != 'polda_all', function ($query) use ($polda) {
                 return $query->where('polda_id', $polda);
             })
@@ -245,9 +249,8 @@ if (! function_exists('allPoldaPrevByDate')) {
 //==============================================================================================================================================
 
 if (! function_exists('excelTemplate')) {
-    function excelTemplate($template, $prev, $current, $kesatuan, $hari_tanggal, $nama_atasan, $pangkat, $jabatan, $nama_laporan, $customFileName=null, $operationName=null, $customCombineName=null, $cityName=null)
+    function excelTemplate($template, $prev, $current, $kesatuan, $hari_tanggal, $nama_atasan, $pangkat, $jabatan, $nama_laporan, $customFileName=null, $operationName=null, $customCombineName=null, $cityName=null, $prevYear=null, $currentYear=null)
     {
-
         $excelPath = public_path('template/excel');
 
         $excelTemplate = $excelPath."/format_laporan_operasi_2021_new.xlsx";
@@ -276,15 +279,20 @@ if (! function_exists('excelTemplate')) {
         $sheet->setCellValue('B6', $combineName);
         $sheet->setCellValue('B7', $kesatuan); //NAMA KESATUAN
         $sheet->setCellValue('B8', 'HARI/TGL : '.$hari_tanggal); // DIISI HARI TGL
-        if(is_null($cityName)) {
-            $sheet->setCellValue('E428', indonesiaDate(date("Y-m-d"))); // TEMPAT, TANGGAL
-        } else {
-            $sheet->setCellValue('E428', $cityName.", ".indonesiaDate(date("Y-m-d"))); // TEMPAT, TANGGAL
-        }
-        $sheet->setCellValue('E434', $nama_atasan); // NAMA ATASAN UNTUK TANDA TANGAN
-        $sheet->setCellValue('E435', $pangkat); //PANGKAT & NRP
-        $sheet->setCellValue('E429', $jabatan); //JABATAN
 
+        if(is_null($cityName)) {
+            $sheet->setCellValue('D428', indonesiaDate(date("Y-m-d")));
+        } else {
+            $sheet->setCellValue('D428', ucfirst(strtolower($cityName)).", ".indonesiaDate(date("Y-m-d")));
+        }
+
+        $sheet->setCellValue('C11', $prevYear);
+        $sheet->setCellValue('D11', $currentYear);
+
+        $sheet->setCellValue('D429', $jabatan." ".$operationName." - ".$currentYear);
+
+        $sheet->setCellValue('D433', $nama_atasan);
+        $sheet->setCellValue('D434', $pangkat);
 
         $sheet->setCellValue('D15', applyZero($current->pelanggaran_lalu_lintas_tilang));
 

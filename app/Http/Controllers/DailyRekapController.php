@@ -56,10 +56,12 @@ class DailyRekapController extends Controller
                 $poldaSubmited->pangkat_dan_nrp,
                 $poldaSubmited->jabatan,
                 $poldaSubmited->nama_laporan,
-                $file_name,
-                $operationName,
-                null,
-                $poldaSubmited->nama_kota
+                $file_name, //Custom File name
+                $operationName, //Operation Name
+                null, //Custom Combine Name
+                $poldaSubmited->nama_kota, //City Name
+                $prevYear, //Prev Year Header
+                $year //Current Year Header
             );
         } else {
             excelTemplate(
@@ -72,10 +74,12 @@ class DailyRekapController extends Controller
                 $dailyRekap->pangkat_nrp,
                 $dailyRekap->jabatan,
                 $dailyRekap->report_name,
-                $file_name,
-                $operationName,
-                null,
-                null
+                $file_name, //Custom File name
+                $operationName, //Operation Name
+                null, //Custom Combine Name
+                $dailyRekap->kota, //City Name
+                $prevYear, //Prev Year Header
+                $year //Current Year Header
             );
         }
     }
