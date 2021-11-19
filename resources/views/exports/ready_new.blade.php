@@ -18,6 +18,24 @@
     .tg .tg-9hzb{background-color:#FFF;font-weight:bold;text-align:center;vertical-align:top}
     .tg .tg-7yig{background-color:#FFF;text-align:center;vertical-align:top}
     .tg .tg-661g{background-color:#FFF;font-style:italic;font-weight:bold;text-align:center;vertical-align:bottom}
+    .centerPage {
+        text-align: center;
+    }
+    .customTextCenter {
+        font-family:Arial, sans-serif;font-size:14px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .customTextRight {
+        font-family:Arial, sans-serif;font-size:14px;
+        text-align: right;
+    }
+    .center {
+        text-align: center;
+    }
+    .right {
+        text-align: right;
+    }
 </style>
 @endpush
 
@@ -28,6 +46,26 @@ use App\Models\DailyNotice;
 use App\Models\DailyNoticeCurrent;
 use App\Models\SumLoopEveryday;
 @endphp
+
+<table>
+    <tr>
+        <td colspan="5" class="customTextCenter">MARKAS BESAR</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="customTextCenter">KEPOLISIAN NEGARA REPUBLIK INDONESIA</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="customTextCenter">KORPS LALU LINTAS</td>
+    </tr>
+</table>
+
+<br>
+
+<div class="center">
+    <span>REKAPITULASI LAPORAN PERHARI {{ gedein($rencanaOperasi->name) }} {{ date('Y') }}</span>
+    <br>
+    <span>TANGGAL {{ gedein(indonesiaDate($rencanaOperasi->start_date)) }} s.d. {{ gedein(indonesiaDate($rencanaOperasi->end_date)) }}</span>
+</div>
 
 <table class="tg">
 
@@ -4524,12 +4562,18 @@ use App\Models\SumLoopEveryday;
                 <td class="tg-o5n3">{{ numberFormat(SumLoopEveryday::summary('GROUP_41', 'CURRENT')) }}</td>
             <td class="tg-n1r7">Kali</td>
         </tr>
-
     </tbody>
 </table>
 
-{{-- @php
-header("Content-type: application/vnd-ms-excel");
-header("Content-Disposition: attachment; filename=".$operationName.".xls");
-@endphp --}}
+<br>
+
+<div class="right">
+    <span>Jakarta, 18 November 2021</span><br>
+    <span>KAPOSKO OPERASI ZEBRA - 2021</span>
+</div>
+<br><br><br><br>
+<div class="right">
+    <span>DHAFI, S.IK, M.Si.</span><br>
+    <span>AKBP NRP 76010110010</span>
+</div>
 @endsection

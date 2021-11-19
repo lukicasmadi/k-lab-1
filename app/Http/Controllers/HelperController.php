@@ -8,6 +8,7 @@ use App\Models\CountDown;
 use Illuminate\Bus\Batch;
 use App\Jobs\QueueCurrent;
 use App\Models\DailyInput;
+use App\Models\DailyRekap;
 use App\Models\DailyNotice;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -114,7 +115,16 @@ class HelperController extends Controller
         $operationId = $rencanaOperasi->id;
         $operationName = Str::slug($rencanaOperasi->name, '-');
 
-        return view('exports.ready_new', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'operationId', 'operationName'));
+        $headerWidth = $totalLoopDays + 12;
+
+        $dr = DailyRekap::where('operation_date_start', $rencanaOperasi->start_date)->where('operation_date_end', $rencanaOperasi->end_date)->where('polda', 'polda_all')->first();
+
+        dump($dr);
+
+        header("Content-type: application/vnd-ms-excel");
+        header("Content-Disposition: attachment; filename=".$operationName.".xls");
+
+        return view('exports.ready_new', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'operationId', 'operationName', 'rencanaOperasi', 'headerWidth', 'dr'));
     }
 
     public function runDispatch($operationId)
