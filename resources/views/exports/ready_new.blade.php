@@ -4568,12 +4568,12 @@ use App\Models\SumLoopEveryday;
 <br>
 
 <div class="right">
-    <span>Jakarta, 18 November 2021</span><br>
-    <span>KAPOSKO OPERASI ZEBRA - 2021</span>
+    <span>{{ firstUpper(optional($dr)->kota) }}, {{ indonesiaDate(date('Y-m-d')) }}</span><br>
+    <span><b>{{ gedein(optional($dr)->jabatan) }} {{ gedein($rencanaOperasi->name) }} - {{ date('Y') }}</b></span>
 </div>
 <br><br><br><br>
 <div class="right">
-    <span>DHAFI, S.IK, M.Si.</span><br>
-    <span>AKBP NRP 76010110010</span>
+    <span><b>{{ optional($dr)->atasan }}</b></span><br>
+    <span><b>{{ optional($dr)->pangkat_nrp }}</b></span>
 </div>
 @endsection

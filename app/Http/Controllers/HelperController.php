@@ -120,7 +120,7 @@ class HelperController extends Controller
         $dr = DailyRekap::where('operation_date_start', $rencanaOperasi->start_date)->where('operation_date_end', $rencanaOperasi->end_date)->where('polda', 'polda_all')->first();
 
         header("Content-type: application/vnd-ms-excel");
-        header("Content-Disposition: attachment; filename=".$operationName.".xls");
+        header("Content-Disposition: attachment; filename=".upperCase($operationName)."-".date('Y').".xls");
 
         return view('exports.ready_new', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'operationId', 'operationName', 'rencanaOperasi', 'headerWidth', 'dr'));
     }

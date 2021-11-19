@@ -124,6 +124,18 @@ if (! function_exists('upperCase')) {
     }
 }
 
+if (! function_exists('lowerCase')) {
+    function lowerCase($string) {
+        return Str::lower($string);
+    }
+}
+
+if (! function_exists('firstUpper')) {
+    function firstUpper($string) {
+        return Str::ucfirst(Str::lower($string));
+    }
+}
+
 if (! function_exists('humanDateRead')) {
     function humanDateRead($date) {
         return Carbon::createFromTimeStamp(strtotime($date))->diffForHumans();
