@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Service Unavailable</title>
+        <title>Under Maintenance</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
