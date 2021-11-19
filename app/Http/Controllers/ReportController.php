@@ -61,7 +61,7 @@ class ReportController extends Controller
         $yearCurrent = yearOnly($rencanaOperasi->start_date);
         $yearPrev = $yearCurrent - 1;
 
-        avenExcel(
+        avenDailyExcel(
             'polda_all',
             $prev,
             $current,

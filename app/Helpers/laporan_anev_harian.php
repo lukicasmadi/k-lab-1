@@ -26,7 +26,7 @@ if (! function_exists('avenDailyExcel')) {
 
         $excelPath = public_path('template/excel');
 
-        $excelTemplate = $excelPath."/format_laporan_anev_html.xlsx";
+        $excelTemplate = $excelPath."/format_laporan_anev_harian.xlsx";
 
         $spreadsheet = IOFactory::load($excelTemplate);
 
