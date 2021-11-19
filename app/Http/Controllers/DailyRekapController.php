@@ -221,6 +221,15 @@ class DailyRekapController extends Controller
 
     public function store(DailyRekapRequest $request)
     {
+        if($request->config_date == "all") {
+            $rencanaOperasi = RencanaOperasi::findOrfail($request->rencana_operasi_id);
+            $op_start_date = $rencanaOperasi->start_date;
+            $op_end_date = $rencanaOperasi->end_date;
+        } else {
+            $op_start_date = dateOnly($request->tanggal_mulai);
+            $op_end_date = dateOnly($request->tanggal_selesai);
+        }
+
         $model = DailyRekap::create([
             'uuid' => genUuid(),
             'report_name' => $request->report_name,
@@ -228,8 +237,8 @@ class DailyRekapController extends Controller
             'year' => $request->year,
             'rencana_operasi_id' => $request->rencana_operasi_id,
             'config_date' => $request->config_date,
-            'operation_date_start' => dateOnly($request->tanggal_mulai),
-            'operation_date_end' => dateOnly($request->tanggal_selesai),
+            'operation_date_start' => $op_start_date,
+            'operation_date_end' => $op_end_date,
             'kesatuan' => $request->kesatuan,
             'atasan' => $request->atasan,
             'pangkat_nrp' => $request->pangkat_nrp,
