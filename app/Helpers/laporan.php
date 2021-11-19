@@ -122,11 +122,9 @@ if (! function_exists('reportDailyPrev')) {
         $check = DailyInputPrev::where('rencana_operasi_id', $rencana_operation_id)->where('year', $year)->where('polda_id', $polda)->first();
 
         if(empty($check)) {
-            logger("IF FIRST");
             $secondCheck = DailyInput::where('rencana_operasi_id', $rencana_operation_id)->where('year', $year)->where('polda_id', $polda)->first();
 
             if(empty($secondCheck)) {
-                logger("IF SECOND");
                 $outputLaporanPrev = basedQueryPrev()->when($polda != 'polda_all', function ($query) use ($polda) {
                     return $query->where('polda_id', $polda);
                 })
@@ -137,7 +135,6 @@ if (! function_exists('reportDailyPrev')) {
 
                 return $outputLaporanPrev;
             } else {
-                logger("ELSE SECOND");
                 $outputLaporanCurrent = basedQueryCurrent()->when($polda != 'polda_all', function ($query) use ($polda) {
                     return $query->where('polda_id', $polda);
                 })
@@ -149,7 +146,6 @@ if (! function_exists('reportDailyPrev')) {
                 return $outputLaporanCurrent;
             }
         } else {
-            logger("ELSE FIRST");
             $outputLaporanPrev = basedQueryPrev()->when($polda != 'polda_all', function ($query) use ($polda) {
                 return $query->where('polda_id', $polda);
             })
