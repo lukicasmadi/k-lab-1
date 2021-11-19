@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Polda;
 use App\Models\CountDown;
 use App\Models\DailyInput;
+use App\Models\DailyRekap;
 use Illuminate\Http\Request;
 use App\Models\PoldaSubmited;
 use App\Models\DailyInputPrev;
@@ -377,18 +378,25 @@ class ReportController extends Controller
 
         $rencanaOperasi = RencanaOperasi::find($rencana_operation_id);
 
-        excelTemplateNew(
+        $dr = DailyRekap::whereRaw("DATE(operation_date_start) >= ? and DATE(operation_date_end) <= ?", [$start_date, $end_date])->where('polda', 'polda_all')->first();
+
+        previewExcelToHTML(
             'polda_all',
             $prev,
             $current,
-            'KESATUAN : Korlantas',
-            'Seluruh Polda, '.$start_date.' s/d '.$end_date,
-            null,
-            null,
-            null,
-            'Anev '.$start_date.' s/d '.$end_date,
-            $rencanaOperasi->name,
-            null
+            'KESATUAN', //KESATUAN
+            strtoupper(indonesiaDate($start_date)).' s.d. '.strtoupper(indonesiaDate($end_date)), //HARI TANGGAL
+            (!empty($dr)) ? $dr->atasan : '', //NAMA ATASAN
+            (!empty($dr)) ? $dr->pangkat_nrp : '', //PANGKAT
+            (!empty($dr)) ? strtoupper($dr->jabatan) : '', //JABATAN
+            null, //NAMA LAPORAN
+            $rencanaOperasi->name, //CUSTOM FILE NAME
+            strtoupper($rencanaOperasi->name), //NAMA OPERASI
+            null, //CUSTOM COMBINE
+            (!empty($dr)) ? $dr->kota : '', //CITY NAME
+            $yearPrev,
+            $yearCurrent,
+            $dr
         );
     }
 

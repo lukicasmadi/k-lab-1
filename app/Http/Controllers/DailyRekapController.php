@@ -112,7 +112,7 @@ class DailyRekapController extends Controller
         $prev = reportPrevToDisplayByPoldaId($prevYear, $rencana_operation_id, $start_date, $end_date, $polda);
         $current = reportCurrentToDisplayByPoldaId($currentYear, $rencana_operation_id, $start_date, $end_date, $polda);
 
-        excelTemplateNew(
+        previewExcelToHTML(
             'polda_all',
             $prev,
             $current,
@@ -143,7 +143,7 @@ class DailyRekapController extends Controller
         $prev = reportPrevToDisplay($prevYear, $rencana_operation_id, $rencanaOperasi->start_date, $rencanaOperasi->end_date);
         $current = reportCurrentToDisplay($currentYear, $rencana_operation_id, $rencanaOperasi->start_date, $rencanaOperasi->end_date);
 
-        excelTemplateNew(
+        previewExcelToHTML(
             'polda_all',
             $prev,
             $current,
@@ -173,7 +173,7 @@ class DailyRekapController extends Controller
         $prev = reportPrevToDisplayByRencanaOperasi($prevYear, $rencana_operation_id);
         $current = reportCurrentToDisplayByRencanaOperasi($currentYear, $rencana_operation_id);
 
-        excelTemplateNew(
+        previewExcelToHTML(
             'polda_all',
             $prev,
             $current,
