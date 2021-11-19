@@ -3305,6 +3305,8 @@ if (! function_exists('excelViewAbsensi')) {
             $sheet->setCellValue('C45', $dr->jabatan." ".$opn." - ".$dr->year);
             $sheet->setCellValue('C49', $dr->atasan);
             $sheet->setCellValue('C50', $dr->pangkat_nrp);
+        } else {
+            $sheet->setCellValue('C44', $tanggal);
         }
 
         $writer = IOFactory::createWriter($spreadsheet, 'Html');
