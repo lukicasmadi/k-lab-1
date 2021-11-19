@@ -56,18 +56,28 @@ class ReportController extends Controller
 
         $rencanaOperasi = RencanaOperasi::find($rencana_operation_id);
 
-        excelTemplate(
+        $dr = DailyRekap::whereRaw("DATE(operation_date_start) >= ? and DATE(operation_date_end) <= ?", [$start_date, $end_date])->where('polda', 'polda_all')->first();
+
+        $yearCurrent = yearOnly($rencanaOperasi->start_date);
+        $yearPrev = $yearCurrent - 1;
+
+        avenExcel(
             'polda_all',
             $prev,
             $current,
-            'KESATUAN : Korlantas',
-            $start_date." s/d ".$end_date,
+            null, //KESATUAN
+            strtoupper(indonesiaDate($start_date)).' s.d. '.strtoupper(indonesiaDate($end_date)),  //HARI TANGGAL
+            (!empty($dr)) ? $dr->atasan : '', //NAMA ATASAN
+            (!empty($dr)) ? $dr->pangkat_nrp : '', //PANGKAT
+            (!empty($dr)) ? strtoupper($dr->jabatan) : '', //JABATAN
             null,
+            strtoupper($rencanaOperasi->name)." ".$start_date."-".$end_date, //CUSTOM FILE NAME
+            strtoupper($rencanaOperasi->name), //NAMA OPERASI
             null,
-            null,
-            "Anev ".indonesianStandart($request->tanggal_pembanding_1).' DAN '.indonesianStandart($request->tanggal_pembanding_2),
-            $rencanaOperasi->name,
-            null
+            (!empty($dr)) ? $dr->kota : '', //CITY NAME
+            $yearPrev,
+            $yearCurrent,
+            $dr
         );
     }
 
