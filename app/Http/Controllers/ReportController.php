@@ -61,6 +61,19 @@ class ReportController extends Controller
         $yearCurrent = yearOnly($rencanaOperasi->start_date);
         $yearPrev = $yearCurrent - 1;
 
+        $pem1 = CountDown::where('rencana_operasi_id', $rencana_operation_id)->whereTanggal($start_date)->first();
+        $pem2 = CountDown::where('rencana_operasi_id', $rencana_operation_id)->whereTanggal($end_date)->first();
+
+        if(empty($pem1)) {
+            flash('Pembanding hari pertama tidak ditemukan dengan nama operasi yang dipilih')->error();
+            return redirect()->back();
+        }
+
+        if(empty($pem2)) {
+            flash('Pembanding hari kedua tidak ditemukan dengan nama operasi yang dipilih')->error();
+            return redirect()->back();
+        }
+
         avenDailyExcel(
             'polda_all',
             $prev,
@@ -75,8 +88,8 @@ class ReportController extends Controller
             strtoupper($rencanaOperasi->name), //NAMA OPERASI
             null,
             (!empty($dr)) ? $dr->kota : '', //CITY NAME
-            $yearPrev,
-            $yearCurrent,
+            "H-".substr($pem1->deskripsi, -1),
+            "H-".substr($pem2->deskripsi, -1),
             $dr
         );
     }

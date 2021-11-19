@@ -18,8 +18,8 @@ if (! function_exists('avenDailyExcel')) {
         $operationName=null,
         $customCombineName=null,
         $cityName=null,
-        $prevYear=null,
-        $currentYear=null,
+        $datePrev=null,
+        $dateCurrent=null,
         $dr=null
         )
     {
@@ -32,11 +32,11 @@ if (! function_exists('avenDailyExcel')) {
 
         $sheet = $spreadsheet->getActiveSheet();
 
-        $sheet->setCellValue('A6', 'LAPORAN HARIAN '.$operationName.' '.$currentYear);
+        $sheet->setCellValue('A6', 'LAPORAN HARIAN '.$operationName.' '.date('Y'));
         $sheet->setCellValue('A7', 'TANGGAL '.$hari_tanggal);
 
-        $sheet->setCellValue('C11', $prevYear);
-        $sheet->setCellValue('D11', $currentYear);
+        $sheet->setCellValue('C11', $datePrev);
+        $sheet->setCellValue('D11', $dateCurrent);
 
         if(is_null($cityName)) {
             $sheet->setCellValue('D428', indonesiaDate(date("Y-m-d")));
@@ -44,7 +44,7 @@ if (! function_exists('avenDailyExcel')) {
             $sheet->setCellValue('D428', ucfirst(strtolower($cityName)).", ".indonesiaDate(date("Y-m-d")));
         }
 
-        $sheet->setCellValue('D429', $jabatan." ".$operationName." - ".$currentYear);
+        $sheet->setCellValue('D429', $jabatan." ".$operationName." - ".date('Y'));
 
         if(!empty($dr)) {
             $sheet->setCellValue('D433', $nama_atasan);
