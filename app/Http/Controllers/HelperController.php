@@ -119,8 +119,6 @@ class HelperController extends Controller
 
         $dr = DailyRekap::where('operation_date_start', $rencanaOperasi->start_date)->where('operation_date_end', $rencanaOperasi->end_date)->where('polda', 'polda_all')->first();
 
-        dump($dr);
-
         header("Content-type: application/vnd-ms-excel");
         header("Content-Disposition: attachment; filename=".$operationName.".xls");
 
