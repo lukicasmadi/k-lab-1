@@ -435,7 +435,7 @@ class HomeController extends Controller
                 $q->select('id', 'polda_id', 'status', 'submited_date', 'rencana_operasi_id')->where('submited_date', '=', $whereDate);
             }])->select('id', 'name')->get();
 
-            excelViewAbsensi($polda, indonesiaDayAndDate($whereDate));
+            excelViewAbsensi($polda, indonesiaDayAndDate($whereDate), $whereDate);
 
         } else {
 
@@ -461,7 +461,7 @@ class HomeController extends Controller
                 $q->select('id', 'polda_id', 'status', 'submited_date', 'rencana_operasi_id')->where('submited_date', '=', $whereDate);
             }])->select('id', 'name')->get();
 
-            excelViewAbsensi($polda, strtoupper(indonesiaDate($whereDate)), $cd->rencanaOperasi->name);
+            excelViewAbsensi($polda, strtoupper(indonesiaDate($whereDate)), $whereDate, $cd->rencanaOperasi->name);
         }
     }
 

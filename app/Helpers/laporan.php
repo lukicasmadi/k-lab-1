@@ -2,6 +2,7 @@
 
 use Carbon\Carbon;
 use App\Models\DailyInput;
+use App\Models\DailyRekap;
 use App\Models\DailyInputPrev;
 use Illuminate\Support\Facades\DB;
 use PhpOffice\PhpSpreadsheet\IOFactory;
@@ -3239,7 +3240,7 @@ if (! function_exists('excelTemplateDisplay')) {
 }
 
 if (! function_exists('excelViewAbsensi')) {
-    function excelViewAbsensi($data, $tanggal, $operationName=null)
+    function excelViewAbsensi($data, $tanggal, $whereDate, $operationName=null)
     {
         $excelPath = public_path('template/excel');
 
@@ -3251,6 +3252,8 @@ if (! function_exists('excelViewAbsensi')) {
         $sheet = $spreadsheet->getActiveSheet();
 
         $sheet->setCellValue('A7', 'TANGGAL '.$tanggal);
+
+        $dr = DailyRekap::where('operation_date_start', $whereDate)->where('operation_date_end', $whereDate)->where('polda', 'polda_all')->first();
 
         $sheet->setCellValue('C9', (is_null($data[0]->dailyInput)) ? 'Belum Mengirimkan' : $data[0]->dailyInput->status);
         $sheet->setCellValue('C10', (is_null($data[1]->dailyInput)) ? 'Belum Mengirimkan' : $data[1]->dailyInput->status);
@@ -3288,13 +3291,17 @@ if (! function_exists('excelViewAbsensi')) {
         $sheet->setCellValue('C42', (is_null($data[33]->dailyInput)) ? 'Belum Mengirimkan' : $data[33]->dailyInput->status);
 
         if(is_null($operationName)) {
-            $opn = '-';
+            $opn = '';
         } else {
             $opn = strtoupper($operationName);
         }
 
-        $sheet->setCellValue('C44', 'Jakarta, '.$tanggal);
-        $sheet->setCellValue('C45', 'KAPOSKO '.$opn);
+        if(!empty($dr)) {
+            $sheet->setCellValue('C44', $dr->kota.', '.$tanggal);
+            $sheet->setCellValue('C45', $dr->jabatan." ".$opn." - ".$dr->year);
+            $sheet->setCellValue('C49', $dr->atasan);
+            $sheet->setCellValue('C50', $dr->pangkat_nrp);
+        }
 
         $writer = IOFactory::createWriter($spreadsheet, 'Html');
         $message = $writer->save('php://output');
