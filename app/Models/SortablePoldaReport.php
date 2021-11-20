@@ -36,4 +36,9 @@ class SortablePoldaReport extends Model
     {
         return $this->hasMany(DailyInputPrev::class, 'polda_id', 'polda_id');
     }
+
+    public function today()
+    {
+        return $this->hasOne(DailyInput::class, 'polda_id', 'polda_id')->whereRaw("DATE(created_at) = ?", [date('Y-m-d')]);
+    }
 }

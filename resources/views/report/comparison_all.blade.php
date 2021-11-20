@@ -70,7 +70,9 @@
                             </div>
 
                             <div class="col-md-12">
-                                <input type="submit" name="btnUnduhData" id="btnUnduhData" class="mt-4 mb-4 btn btn-primary" value="Unduh Data" disabled>
+                                <input type="submit" name="btnUnduhData" id="btnUnduhData" class="mt-4 mb-4 btn btn-primary" value="Unduh Laporan Perpolda" disabled>
+                                &nbsp;&nbsp;&nbsp;
+                                <a href="" class="mt-4 mb-4 btn btn-primary disabled" id="btnUnduhLaporanPerpoldaPerhari">Unduh Laporan Perpolda Perhari</a>
                             </div>
                         </div>
 
@@ -106,6 +108,9 @@
 #sheet0 {
     width: 100%;
 }
+.spaceButton {
+    margin-left: 10px;
+}
 </style>
 @endpush
 
@@ -125,10 +130,14 @@
 
     $(document).on('change', '#operation_id', function(e) {
         e.preventDefault()
+
         $(".pembanding").addClass("d-none")
         $('#tanggal_pembanding_pertama').val('')
         $('#tanggal_pembanding_kedua').val('')
         $("#btnUnduhData").prop('disabled', true)
+
+        $("a#btnUnduhLaporanPerpoldaPerhari").prop("href", "")
+        $("a#btnUnduhLaporanPerpoldaPerhari").addClass('disabled')
 
         if($(this).val()) {
             axios.get(route('operation_plan_show', $(this).val()))
@@ -136,6 +145,7 @@
 
                 var startDate = response.data.start_date
                 var endDate = response.data.end_date
+                var uuid = response.data.uuid
 
                 $(".pembanding").removeClass("d-none")
 
@@ -147,9 +157,13 @@
 
                 $('#tanggal_pembanding_kedua').datepicker('setStartDate', minDate)
                 $('#tanggal_pembanding_kedua').datepicker('setEndDate', maxDate)
+
+                $("a#btnUnduhLaporanPerpoldaPerhari").removeClass('disabled')
+                $("a#btnUnduhLaporanPerpoldaPerhari").prop("href", route('report_polda_perday', uuid))
             })
             .catch(function (error) {
                 $(".pembanding").addClass("d-none")
+                $("a#btnUnduhLaporanPerpoldaPerhari").prop("href", "")
                 swal("Data tidak ditemukan. Silakan periksa data yang akan diproses", null, "error")
             })
         }

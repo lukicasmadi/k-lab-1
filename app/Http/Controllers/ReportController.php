@@ -17,6 +17,7 @@ use App\Exports\DailyInputExport;
 use App\Exports\FilterComparison;
 use App\Exports\PoldaByUuidExport;
 use Illuminate\Support\Facades\DB;
+use App\Models\SortablePoldaReport;
 use App\Exports\NewComparisonExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\DailyInputPrevExport;
@@ -456,6 +457,16 @@ class ReportController extends Controller
             $rencanaOperasi->name,
             null
         );
+    }
+
+    public function reportPoldaPerday(Request $request, $uuid)
+    {
+        $todayDate = date('Y-m-d');
+        $rencanaOperasi = RencanaOperasi::where('uuid', $uuid)->firstOrFail();
+        $polda = SortablePoldaReport::with('today')->get();
+        $dailyRekap = DailyRekap::whereRaw("DATE(operation_date_start) >= ? and DATE(operation_date_end) <= ?", [$todayDate, $todayDate])->first();
+
+        lapoanPerpoldaPerhari($polda, $rencanaOperasi, $dailyRekap);
     }
 
     public function reportAllPoldaDetail()

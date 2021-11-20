@@ -64,7 +64,8 @@
             "app/Helpers/based_query.php",
             "app/Helpers/laporan_new.php",
             "app/Helpers/laporan_anev.php",
-            "app/Helpers/laporan_anev_harian.php"
+            "app/Helpers/laporan_anev_harian.php",
+            "app/Helpers/laporan_perpolda_perhari.php"
         ]
     },
     "autoload-dev": {

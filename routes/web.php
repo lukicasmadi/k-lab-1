@@ -65,6 +65,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/report/daily/polda/{poldaUuid}', 'ReportController@poldaUuid')->name('report_bypolda');
         Route::get('/polda-data/{short_name}', 'HomeController@openPoldaData')->name('korlantas_open_polda');
         Route::post('/report/daily-compare/process', 'ReportController@reportAllPoldaDetailProcess')->name('report_all_polda_detail_process');
+        Route::get('/report/polda/daily/{uuid}', 'ReportController@reportPoldaPerday')->name('report_polda_perday');
 
         Route::get('/scandir', 'TestController@scandir')->name('scandir');
         Route::get('/scandir/download', 'TestController@downloadBackup')->name('download_backup');
