@@ -34,6 +34,24 @@ if (! function_exists('lapoanPerpoldaPerhari')) {
             $sheet->setCellValue($arraylabel[$key].'12', applyZero($value->current_pelanggaran_lalu_lintas_tilang_sum));
             $sheet->setCellValue($arraylabel[$key].'13', applyZero($value->current_pelanggaran_lalu_lintas_teguran_sum));
 
+            $sheet->setCellValue($arraylabel[$key].'17', applyZero($value->current_pelanggaran_sepeda_motor_kecepatan_sum));
+            $sheet->setCellValue($arraylabel[$key].'18', applyZero($value->current_pelanggaran_sepeda_motor_helm_sum));
+            $sheet->setCellValue($arraylabel[$key].'19', applyZero($value->current_pelanggaran_sepeda_motor_bonceng_lebih_dari_satu_sum));
+            $sheet->setCellValue($arraylabel[$key].'20', applyZero($value->current_pelanggaran_sepeda_motor_marka_menerus_menyalip_sum));
+            $sheet->setCellValue($arraylabel[$key].'21', applyZero($value->current_pelanggaran_sepeda_motor_melawan_arus_sum));
+            $sheet->setCellValue($arraylabel[$key].'22', applyZero($value->current_pelanggaran_sepeda_motor_melanggar_lampu_lalin_sum));
+            $sheet->setCellValue($arraylabel[$key].'23', applyZero($value->current_pelanggaran_sepeda_motor_mengemudikan_tidak_wajar_sum));
+            $sheet->setCellValue($arraylabel[$key].'24', applyZero($value->current_pelanggaran_sepeda_motor_syarat_teknis_layak_jalan_sum));
+            $sheet->setCellValue($arraylabel[$key].'25', applyZero($value->current_pelanggaran_sepeda_motor_tidak_nyala_lampu_siang_malam_sum));
+            $sheet->setCellValue($arraylabel[$key].'26', applyZero($value->current_pelanggaran_sepeda_motor_berbelok_tanpa_isyarat_sum));
+            $sheet->setCellValue($arraylabel[$key].'27', applyZero($value->current_pelanggaran_sepeda_motor_berbalapan_di_jalan_raya_sum));
+            $sheet->setCellValue($arraylabel[$key].'28', applyZero($value->current_pelanggaran_sepeda_motor_melanggar_rambu_berhenti_dan_parkir_sum));
+            $sheet->setCellValue($arraylabel[$key].'29', applyZero($value->current_pelanggaran_sepeda_motor_melanggar_marka_berhenti_sum));
+            $sheet->setCellValue($arraylabel[$key].'30', applyZero($value->current_pelanggaran_sepeda_motor_tidak_patuh_perintah_petugas_sum));
+            $sheet->setCellValue($arraylabel[$key].'31', applyZero($value->current_pelanggaran_sepeda_motor_surat_surat_sum));
+            $sheet->setCellValue($arraylabel[$key].'32', applyZero($value->current_pelanggaran_sepeda_motor_kelengkapan_kendaraan_sum));
+            $sheet->setCellValue($arraylabel[$key].'33', applyZero($value->current_pelanggaran_sepeda_motor_lain_lain_sum));
+
             // TAMBAHKAN DISINI KEBAWAH.....
         }
 

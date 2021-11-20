@@ -163,7 +163,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -172,7 +171,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -369,7 +367,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -572,7 +569,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
 
@@ -606,7 +602,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -662,7 +657,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -737,7 +731,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -832,7 +825,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -969,7 +961,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -1094,7 +1085,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -1103,7 +1093,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -1180,7 +1169,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -1243,7 +1231,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -1310,7 +1297,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -1319,7 +1305,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -1382,7 +1367,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -1435,7 +1419,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -1530,7 +1513,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -1667,7 +1649,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -1792,7 +1773,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -1875,7 +1855,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -2002,7 +1981,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -2095,7 +2073,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -2232,7 +2209,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -2357,7 +2333,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -2366,7 +2341,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -2453,7 +2427,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -2518,7 +2491,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -2581,7 +2553,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -2819,7 +2790,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -2924,7 +2894,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -2983,7 +2952,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -3046,7 +3014,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -3105,7 +3072,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -3168,7 +3134,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -3227,7 +3192,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -3290,7 +3254,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -3349,7 +3312,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -3433,7 +3395,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -3488,7 +3449,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -3499,7 +3459,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -3508,7 +3467,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -3595,7 +3553,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -3660,7 +3617,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
         <tr>
@@ -3723,7 +3679,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -3820,7 +3775,6 @@ use App\Models\SumLoopEveryday;
                 @endforeach
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
-            <td class="tg-o5n3"></td>
         </tr>
 
 
@@ -3830,7 +3784,6 @@ use App\Models\SumLoopEveryday;
                 @foreach ($dailyNoticeCurrent as $current)
                     <td class="tg-n1r7"></td>
                 @endforeach
-            <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
             <td class="tg-o5n3"></td>
         </tr>
@@ -3894,8 +3847,13 @@ use App\Models\SumLoopEveryday;
 <br>
 
 <div class="right">
-    <span>{{ firstUpper(optional($dr)->kota) }}, {{ indonesiaDate(date('Y-m-d')) }}</span><br>
-    <span><b>{{ gedein(optional($dr)->jabatan) }} {{ gedein($rencanaOperasi->name) }} - {{ date('Y') }}</b></span>
+    @if (empty($dr))
+        <span>{{ indonesiaDate(date('Y-m-d')) }}</span><br>
+        <span><b>{{ gedein($rencanaOperasi->name) }} - {{ date('Y') }}</b></span>
+    @else
+        <span>{{ firstUpper(optional($dr)->kota) }}, {{ indonesiaDate(date('Y-m-d')) }}</span><br>
+        <span><b>{{ gedein(optional($dr)->jabatan) }} {{ gedein($rencanaOperasi->name) }} - {{ date('Y') }}</b></span>
+    @endif
 </div>
 <br><br><br><br>
 <div class="right">
