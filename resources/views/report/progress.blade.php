@@ -26,10 +26,14 @@
                     </div>
 
                     <div class="w-content">
-                        <div class="">
+                        <div>
                             <p class="task-left"><span id="progress">{{ $batch->progress() }}</span> %</p>
-                            <p class="task-completed">Total <span id="processJob">{{ $batch->processedJobs() }}</span> task yg telah selesai dan menunggu <span id="pendingJobs">{{ $batch->pendingJobs }}</span></p>
-                            <p class="task-hight-priority"><span>Total <span id="totalJobs">{{ $batch->totalJobs }}</span> task</span> dengan priorotas</p>
+
+                            <div class="process_running">
+                                <p class="task-completed"><span id="processJob">{{ $batch->processedJobs() }}</span> task yg telah selesai dan menunggu <span id="pendingJobs">{{ $batch->pendingJobs }}</span> sedang diproses</p>
+                                <p class="task-hight-priority">Total <span id="totalJobs">{{ $batch->totalJobs }}</span> task yang akan diproses</p>
+                            </div>
+
                             <span id="visitBtn" class="invisible">
                                 <br>
                                 <a href="{{ route('open_ready_report', session("progres_report_id")) }}" class="btn btn-info" target="_blank">Laporan Perbandingan Perhari</a>
@@ -38,6 +42,7 @@
                             </span>
                         </div>
                     </div>
+
                 </div>
             </div>
 
@@ -64,6 +69,12 @@
     font-weight: 700;
     margin-bottom: 4px;
     color: goldenrod;
+}
+span#totalJobs, span#status {
+    color: #acb0c3;
+    font-weight: 500;
+    margin-bottom: 0;
+    font-size: 18px;
 }
 .widget-five .w-content div .task-hight-priority {
     color: #acb0c3;
@@ -136,6 +147,7 @@ function getAllData() {
 
         if(progress == 100) {
             $("#visitBtn").removeClass('invisible')
+            $(".task-hight-priority").html("Semua task telah selesai diproses")
         } else {
             $("#visitBtn").addClass('invisible')
         }

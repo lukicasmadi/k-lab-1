@@ -133,13 +133,6 @@ class HelperController extends Controller
         $rencanaOperasi = RencanaOperasi::where('uuid', $operationUuid)->firstOrFail();
         $countDown = CountDown::where('rencana_operasi_id', $rencanaOperasi->id)->get();
 
-        $dailyNoticePrev = DailyNotice::where('operation_id', $rencanaOperasi->id)
-            ->when(!is_null($limit), function ($q) use ($limit) {
-                return $q->take($limit);
-            })
-            ->orderBy('submited_date', 'asc')
-            ->get();
-
         $dailyNoticeCurrent = DailyNoticeCurrent::where('operation_id', $rencanaOperasi->id)
             ->when(!is_null($limit), function ($q) use ($limit) {
                 return $q->take($limit);
@@ -147,7 +140,7 @@ class HelperController extends Controller
             ->orderBy('submited_date', 'asc')
             ->get();
 
-        $totalLoopDays  = count($dailyNoticePrev);
+        $totalLoopDays  = count($dailyNoticeCurrent);
         $currentYear    = date("Y", strtotime($rencanaOperasi->start_date));
         $prevYear       = $currentYear - 1;
 
@@ -162,10 +155,10 @@ class HelperController extends Controller
 
         $dr = DailyRekap::where('operation_date_start', $rencanaOperasi->start_date)->where('operation_date_end', $rencanaOperasi->end_date)->where('polda', 'polda_all')->first();
 
-        // header("Content-type: application/vnd-ms-excel");
-        // header("Content-Disposition: attachment; filename=".upperCase($fileName)."-".date('Y').".xls");
+        header("Content-type: application/vnd-ms-excel");
+        header("Content-Disposition: attachment; filename=".upperCase($fileName)."-".date('Y').".xls");
 
-        return view('exports.report_perday', compact('dailyNoticeCurrent', 'dailyNoticePrev', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'operationId', 'operationName', 'rencanaOperasi', 'headerWidth', 'dr'));
+        return view('exports.report_perday', compact('dailyNoticeCurrent', 'totalLoopDays', 'currentYear', 'prevYear', 'totalPlusJumlah', 'labelNumber', 'operationId', 'operationName', 'rencanaOperasi', 'headerWidth', 'dr'));
     }
 
     public function runDispatch($operationId)
