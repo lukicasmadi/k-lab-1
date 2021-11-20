@@ -96,6 +96,9 @@
             </div>
         </div>
     </div>
+    <input type="hidden" name="stdate" id="stdate" value="">
+    <input type="hidden" name="endate" id="endate" value="">
+    <input type="hidden" name="uuid" id="uuid" value="">
 </div>
 
 @endsection
@@ -123,9 +126,26 @@
 @push('page_js')
 <script>
 
-    $(document).on('change', '#tahun_pembanding_pertama, #tahun_pembanding_kedua, #tanggal_pembanding_pertama', function() {
+    $(document).on('change', '#tahun_pembanding_pertama, #tahun_pembanding_kedua', function() {
+        $("#panelData").empty().addClass("d-none")
+    })
+
+    $(document).on('change', '#tanggal_pembanding_pertama', function() {
+        $("#stdate").val(this.value)
+    })
+
+    $(document).on('change', '#tanggal_pembanding_kedua', function() {
+        $("#endate").val(this.value)
         $("#btnUnduhData").prop('disabled', true)
         $("#panelData").empty().addClass("d-none")
+
+        $("a#btnUnduhLaporanPerpoldaPerhari").prop("href", route('report_polda_perday', [
+            $('#uuid').val(),
+            $('#stdate').val(),
+            $('#endate').val()
+        ]))
+
+        $("a#btnUnduhLaporanPerpoldaPerhari").removeClass('disabled')
     })
 
     $(document).on('change', '#operation_id', function(e) {
@@ -139,6 +159,10 @@
         $("a#btnUnduhLaporanPerpoldaPerhari").prop("href", "")
         $("a#btnUnduhLaporanPerpoldaPerhari").addClass('disabled')
 
+        $('#uuid').val(''),
+        $('#stdate').val(''),
+        $('#endate').val('')
+
         if($(this).val()) {
             axios.get(route('operation_plan_show', $(this).val()))
             .then(function (response) {
@@ -149,6 +173,8 @@
 
                 $(".pembanding").removeClass("d-none")
 
+                $('#uuid').val(uuid)
+
                 var minDate = new Date(startDate)
                 var maxDate = new Date(endDate)
 
@@ -157,9 +183,6 @@
 
                 $('#tanggal_pembanding_kedua').datepicker('setStartDate', minDate)
                 $('#tanggal_pembanding_kedua').datepicker('setEndDate', maxDate)
-
-                $("a#btnUnduhLaporanPerpoldaPerhari").removeClass('disabled')
-                $("a#btnUnduhLaporanPerpoldaPerhari").prop("href", route('report_polda_perday', uuid))
             })
             .catch(function (error) {
                 $(".pembanding").addClass("d-none")

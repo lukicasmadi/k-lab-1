@@ -459,14 +459,38 @@ class ReportController extends Controller
         );
     }
 
-    public function reportPoldaPerday(Request $request, $uuid)
+    public function reportPoldaPerdaySummary(Request $request, $uuid, $tglStart, $tglEnd)
     {
         $todayDate = date('Y-m-d');
         $rencanaOperasi = RencanaOperasi::where('uuid', $uuid)->firstOrFail();
-        $polda = SortablePoldaReport::with('today')->get();
+
+        $startDate = dateOnly($tglStart);
+        $endDate = dateOnly($tglEnd);
+
+        // $data = sumByPoldaId($rencanaOperasi->id, date('Y'), $startDate, $endDate, 1);
+
+        // dispatch(new App\Jobs\QueuePerpoldaPerday($rencanaOperasi->id, $startDate, $endDate));
+
+        logger(currentDailyInputWithSum($rencanaOperasi->id, date('Y'), $startDate, $endDate));
+
+        return "OK";
+    }
+
+    public function reportPoldaPerday(Request $request, $uuid, $tglStart, $tglEnd)
+    {
+        $todayDate = date('Y-m-d');
+        $rencanaOperasi = RencanaOperasi::where('uuid', $uuid)->firstOrFail();
+
+        $polda = SortablePoldaReport::with('today')->get();  //AMBIL YG HARI INI SAJA
+
         $dailyRekap = DailyRekap::whereRaw("DATE(operation_date_start) >= ? and DATE(operation_date_end) <= ?", [$todayDate, $todayDate])->first();
 
-        lapoanPerpoldaPerhari($polda, $rencanaOperasi, $dailyRekap);
+        $startDate = dateOnly($tglStart);
+        $endDate = dateOnly($tglEnd);
+
+        $data = currentDailyInputWithSum($rencanaOperasi->id, date('Y'), $startDate, $endDate);
+
+        lapoanPerpoldaPerhari($data, $rencanaOperasi, $startDate, $endDate, $dailyRekap);
     }
 
     public function reportAllPoldaDetail()

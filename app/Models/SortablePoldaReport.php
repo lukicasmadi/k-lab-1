@@ -32,6 +32,11 @@ class SortablePoldaReport extends Model
         return $this->hasMany(DailyInput::class, 'polda_id', 'polda_id');
     }
 
+    public function bypoldaid()
+    {
+        return $this->hasOne(DailyInput::class, 'polda_id', 'polda_id');
+    }
+
     public function prev()
     {
         return $this->hasMany(DailyInputPrev::class, 'polda_id', 'polda_id');
