@@ -4568,10 +4568,17 @@ use App\Models\SumLoopEveryday;
 <br>
 
 <div class="right">
-    <span>{{ firstUpper(optional($dr)->kota) }}, {{ indonesiaDate(date('Y-m-d')) }}</span><br>
-    <span><b>{{ gedein(optional($dr)->jabatan) }} {{ gedein($rencanaOperasi->name) }} - {{ date('Y') }}</b></span>
+    @if (empty($dr))
+        <span>Jakarta, {{ indonesiaDate(date('Y-m-d')) }}</span><br>
+        <span><b>{{ gedein($rencanaOperasi->name) }} - {{ date('Y') }}</b></span>
+    @else
+        <span>{{ firstUpper(optional($dr)->kota) }}, {{ indonesiaDate(date('Y-m-d')) }}</span><br>
+        <span><b>{{ gedein(optional($dr)->jabatan) }} {{ gedein($rencanaOperasi->name) }} - {{ date('Y') }}</b></span>
+    @endif
 </div>
+
 <br><br><br><br>
+
 <div class="right">
     <span><b>{{ optional($dr)->atasan }}</b></span><br>
     <span><b>{{ optional($dr)->pangkat_nrp }}</b></span>

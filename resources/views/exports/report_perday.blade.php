@@ -71,22 +71,15 @@ use App\Models\SumLoopEveryday;
 
     <thead>
         <tr>
-            <th class="tg-2g1l" rowspan="2">NO</th>
-            <th class="tg-2g1l" rowspan="2" width="50%">URAIAN</th>
+            <th class="tg-2g1l">NO</th>
+            <th class="tg-2g1l" width="50%">URAIAN</th>
 
             @foreach ($dailyNoticeCurrent as $days)
                 <td class="tg-2g1l">H{{ numberFormat($loop->index+1) }}</td>
             @endforeach
 
             <th class="tg-2g1l">Jumlah</th>
-            <th class="tg-2g1l" rowspan="2">KET</th>
-        </tr>
-        <tr>
-            @php
-                for ($i = 0; $i <= $totalLoopDays; $i++) {
-                    echo '<th class="tg-2g1l">'.$currentYear.'</th>';
-                }
-            @endphp
+            <th class="tg-2g1l">KET</th>
         </tr>
         <tr>
             <td class="tg-n1r7">1</td>
@@ -3848,14 +3841,16 @@ use App\Models\SumLoopEveryday;
 
 <div class="right">
     @if (empty($dr))
-        <span>{{ indonesiaDate(date('Y-m-d')) }}</span><br>
+        <span>Jakarta, {{ indonesiaDate(date('Y-m-d')) }}</span><br>
         <span><b>{{ gedein($rencanaOperasi->name) }} - {{ date('Y') }}</b></span>
     @else
         <span>{{ firstUpper(optional($dr)->kota) }}, {{ indonesiaDate(date('Y-m-d')) }}</span><br>
         <span><b>{{ gedein(optional($dr)->jabatan) }} {{ gedein($rencanaOperasi->name) }} - {{ date('Y') }}</b></span>
     @endif
 </div>
+
 <br><br><br><br>
+
 <div class="right">
     <span><b>{{ optional($dr)->atasan }}</b></span><br>
     <span><b>{{ optional($dr)->pangkat_nrp }}</b></span>
