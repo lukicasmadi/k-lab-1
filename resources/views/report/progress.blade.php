@@ -28,11 +28,13 @@
                     <div class="w-content">
                         <div class="">
                             <p class="task-left"><span id="progress">{{ $batch->progress() }}</span> %</p>
-                            <p class="task-completed"><span id="processJob">{{ $batch->processedJobs() }}</span> done and <span id="pendingJobs">{{ $batch->pendingJobs }}</span> waiting</p>
-                            <p class="task-hight-priority"><span>Total <span id="totalJobs">{{ $batch->totalJobs }}</span> Task</span> with High priority</p>
+                            <p class="task-completed">Total <span id="processJob">{{ $batch->processedJobs() }}</span> task yg telah selesai dan menunggu <span id="pendingJobs">{{ $batch->pendingJobs }}</span></p>
+                            <p class="task-hight-priority"><span>Total <span id="totalJobs">{{ $batch->totalJobs }}</span> task</span> dengan priorotas</p>
                             <span id="visitBtn" class="invisible">
                                 <br>
-                                <p><a href="{{ route('open_ready_report', session("progres_report_id")) }}" class="btn btn-info" target="_blank">View Report</a></p>
+                                <a href="{{ route('open_ready_report', session("progres_report_id")) }}" class="btn btn-info" target="_blank">Laporan Perbandingan Perhari</a>
+                                &nbsp;&nbsp;
+                                <a href="{{ route('open_ready_report_perday', session("progres_report_id")) }}" class="btn btn-info" target="_blank">Laporan Perhari</a>
                             </span>
                         </div>
                     </div>

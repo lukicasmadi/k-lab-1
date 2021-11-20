@@ -20,6 +20,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/view-report/progress/{batchId}', 'HelperController@batchProgress')->name('batch_progress');
     Route::get('/view-report/ready/{operationUuid}', 'HelperController@openReadyReport')->name('open_ready_report')->whereUuid('operationUuid');
+    Route::get('/view-report/ready/{operationUuid}/perday', 'HelperController@openReadyReportPerhari')->name('open_ready_report_perday')->whereUuid('operationUuid');
 
     Route::get('/', 'HomeController@index')->name('index');
     Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
