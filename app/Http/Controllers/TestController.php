@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Polda;
+use App\Models\CountDown;
 use Spatie\Dropbox\Client;
 use App\Models\UserHasPolda;
 use Illuminate\Http\Request;
@@ -38,5 +39,12 @@ class TestController extends Controller
         $dir    = storage_path('app/Korlantas-Polri');
         $files  = scandir($dir, 1);
         return response()->download($dir."/".$files[0]);
+    }
+
+    public function loadAndShow()
+    {
+        $operationDate = CountDown::with(['poldaSubmited'])->where('rencana_operasi_id', operationPlans()->id)->get();
+
+        return $operationDate;
     }
 }

@@ -81,7 +81,7 @@ $(document).ready(function () {
     if($('meta[name=env_var]').attr('content') == "local") {
         let randomNum = Math.floor((Math.random() * 10) + 1)
         $("input[type=number]").val(randomNum)
-        $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
+        // $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, "fast")
         $("#nama_kesatuan").val("LANTAS")
         $("#nama_atasan").val("BRIAN")
         $("#pangkat_dan_nrp").val("AKP NRP 12345")

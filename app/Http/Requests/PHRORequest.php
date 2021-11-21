@@ -44,6 +44,7 @@ class PHRORequest extends FormRequest
             'jabatan' => 'required',
             'nama_laporan' => 'required',
             'nama_kota' => 'required',
+            'resubmit_date' => 'required|date_format:Y-m-d',
 
             'document_upload' => $requiredOnCreate,
 

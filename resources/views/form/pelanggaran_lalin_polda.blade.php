@@ -6,13 +6,6 @@
                 <li>Inputan anda belum lengkap. Silakan diperiksa lagi</li>
             </ul>
         </div>
-        {{-- <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div> --}}
     @endif
 
     @include('flash::message')
@@ -24,6 +17,21 @@
             <a href="{{ route('phro_index') }}"><span class="seehow">lihat data</span></a>
         </div>
     </blockquote>
+
+    @if (empty(session('polda_resubmit_form_status')))
+        <input type="hidden" name="resubmit_date" value="{{ date('Y-m-d') }}">
+    @else
+        <blockquote class="blockquote mb-4">
+            <p class="d-inline" style="color: #FF5151;">KETERLAMBATAN INPUT</p>
+            <span class="sub-inline">DATA YG DIKIRIM MENYESUAIKAN DENGAN TANGGAL YANG DIPILIH</span>
+            <br>
+            <select class="form-control form-custom height-form" id="resubmit_date" name="resubmit_date">
+                @foreach($resubmitDate as $key => $val)
+                    <option value="{{$val}}">{{$val}}</option>
+                @endforeach
+            </select>
+        </blockquote>
+    @endif
 
     <blockquote class="blockquote mb-4">
         <div class="row mt-3">

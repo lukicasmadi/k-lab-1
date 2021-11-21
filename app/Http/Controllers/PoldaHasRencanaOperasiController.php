@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Polda;
+use App\Models\CountDown;
 use App\Models\DailyInput;
 use Illuminate\Support\Str;
 use App\Models\UserHasPolda;
@@ -10,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\PoldaSubmited;
 use App\Models\DailyInputPrev;
 use Illuminate\Support\Carbon;
+use App\Models\PoldaResubmitForm;
 use App\Http\Requests\PHRORequest;
 use Illuminate\Support\Facades\DB;
 use App\Exports\NewComparisonExport;
@@ -66,6 +68,7 @@ class PoldaHasRencanaOperasiController extends Controller
 
     public function index()
     {
+        session()->forget(['polda_resubmit_form_status']);
         return view('phro.index_polda');
     }
 
@@ -89,12 +92,47 @@ class PoldaHasRencanaOperasiController extends Controller
 
         $todayInsert = PoldaSubmited::where("polda_id", $poldaId)->where("submited_date", date("Y-m-d"))->first();
 
-        if(!empty($todayInsert)) {
+        $operationDate = CountDown::where('rencana_operasi_id', operationPlans()->id)->orderBy('tanggal', 'asc')->get();
+        PoldaResubmitForm::where('rencana_operasi_id', operationPlans()->id)->where('polda_id', poldaId())->delete();
+
+        $dataResubmit = [];
+        $nowDate = date("Y-m-d");
+
+        session()->forget(['polda_resubmit_form_status']);
+
+        foreach($operationDate as $data) {
+            $find = PoldaSubmited::where('submited_date', $data->tanggal)->first();
+
+            if(empty($find) && $data->tanggal < $nowDate) {
+                array_push($dataResubmit, [
+                    'rencana_operasi_id' => operationPlans()->id,
+                    'polda_id' => poldaId(),
+                    'submit_date_missed' => $data->tanggal,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ]);
+            }
+        }
+
+        PoldaResubmitForm::insert($dataResubmit);
+
+        if(!empty($todayInsert) && count($dataResubmit) == 0) {
+            //TIDAK BISA INPUT LAGI KARENA HARI INI SUDAH INPUT DAN POLDA TIDAK MEMILIKI KETERLAMBATAN
             flash('Maaf, anda sudah menginput laporan hari ini! Silakan gunakan menu ubah')->error();
             return redirect()->route('phro_index');
         }
 
-        return view('phro.create', compact('op'));
+        if(count($dataResubmit) != 0) {
+            session(['polda_resubmit_form_status' => 'yes']);
+            $resubmitDate = PoldaResubmitForm::where('rencana_operasi_id', operationPlans()->id)
+                ->where('polda_id', poldaId())
+                ->orderBy('submit_date_missed', 'asc')
+                ->pluck('submit_date_missed');
+        } else {
+            $resubmitDate = null;
+        }
+
+        return view('phro.create', compact('op', 'resubmitDate'));
     }
 
     public function store(PHRORequest $request)
@@ -108,7 +146,7 @@ class PoldaHasRencanaOperasiController extends Controller
 
         $todayInsert = PoldaSubmited::where("polda_id", poldaId())->where("submited_date", date("Y-m-d"))->first();
 
-        if(!empty($todayInsert)) {
+        if(!empty($todayInsert) && session('polda_resubmit_form_status') != "yes") {
             flash('Maaf, Anda sudah menginput laporan hari ini! Silakan gunakan menu ubah')->error();
             return redirect()->route('phro_index');
         }
@@ -127,6 +165,12 @@ class PoldaHasRencanaOperasiController extends Controller
                 $data['document_upload'] = '';
             }
 
+            if(empty(session('polda_resubmit_form_status'))) {
+                $submitedDate = date("Y-m-d");
+            } else {
+                $submitedDate = $request->resubmit_date;
+            }
+
             $poldaSubmit = PoldaSubmited::create([
                 'uuid' => genUuid(),
                 'polda_id' => poldaId(),
@@ -139,7 +183,7 @@ class PoldaHasRencanaOperasiController extends Controller
                 'nama_laporan' => upperCase($request->nama_laporan),
                 'nama_kota' => upperCase($request->nama_kota),
                 'document_upload' => $data['document_upload'],
-                'submited_date' => date("Y-m-d")
+                'submited_date' => $submitedDate
             ]);
 
             $payload = $request->except(['_token', 'submit']);
@@ -159,6 +203,9 @@ class PoldaHasRencanaOperasiController extends Controller
             DailyInputPrev::create($payloadPrev);
 
             DB::commit();
+
+            session()->forget(['polda_resubmit_form_status']);
+
             flash('Seluruh data berhasil dikirim ke pusat')->success();
 
             return redirect()->route('phro_index');

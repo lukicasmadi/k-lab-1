@@ -36,4 +36,9 @@ class CountDown extends Model
     {
         return $this->hasMany(DailyInput::class, 'rencana_operasi_id', 'rencana_operasi_id');
     }
+
+    public function poldaSubmited()
+    {
+        return $this->hasOne(PoldaSubmited::class, 'submited_date', 'tanggal');
+    }
 }
