@@ -3255,7 +3255,7 @@ if (! function_exists('excelViewAbsensi')) {
 
         $sheet = $spreadsheet->getActiveSheet();
 
-        $sheet->setCellValue('A7', 'TANGGAL '.$tanggal);
+        $sheet->setCellValue('A7', $tanggal);
 
         $dr = DailyRekap::where('operation_date_start', $whereDate)->where('operation_date_end', $whereDate)->where('polda', 'polda_all')->first();
 
@@ -3301,7 +3301,7 @@ if (! function_exists('excelViewAbsensi')) {
         }
 
         if(!empty($dr)) {
-            $sheet->setCellValue('C44', $dr->kota.', '.$tanggal);
+            $sheet->setCellValue('C44', ucfirst(strtolower($dr->kota)).', '.$tanggal);
             $sheet->setCellValue('C45', $dr->jabatan." ".$opn." - ".$dr->year);
             $sheet->setCellValue('C49', $dr->atasan);
             $sheet->setCellValue('C50', $dr->pangkat_nrp);
