@@ -30,7 +30,7 @@
                             <p class="task-left"><span id="progress">{{ $batch->progress() }}</span> %</p>
 
                             <div class="process_running">
-                                <p class="task-completed"><span id="processJob">{{ $batch->processedJobs() }}</span> task yg telah selesai dan menunggu <span id="pendingJobs">{{ $batch->pendingJobs }}</span> sedang diproses</p>
+                                <p class="task-completed"><span id="processJob">{{ $batch->processedJobs() }}</span> task yang telah selesai dan menunggu <span id="pendingJobs">{{ $batch->pendingJobs }}</span> sedang diproses</p>
                                 <p class="task-hight-priority">Total <span id="totalJobs">{{ $batch->totalJobs }}</span> task yang akan diproses</p>
                             </div>
 
