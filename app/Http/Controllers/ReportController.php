@@ -89,8 +89,8 @@ class ReportController extends Controller
             strtoupper($rencanaOperasi->name), //NAMA OPERASI
             null,
             (!empty($dr)) ? $dr->kota : '', //CITY NAME
-            "H-".substr($pem1->deskripsi, -1),
-            "H-".substr($pem2->deskripsi, -1),
+            "H".substr($pem1->deskripsi, -1),
+            "H".substr($pem2->deskripsi, -1),
             $dr
         );
     }
