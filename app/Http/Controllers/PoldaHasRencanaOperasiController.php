@@ -101,7 +101,7 @@ class PoldaHasRencanaOperasiController extends Controller
         session()->forget(['polda_resubmit_form_status']);
 
         foreach($operationDate as $data) {
-            $find = PoldaSubmited::where('submited_date', $data->tanggal)->first();
+            $find = PoldaSubmited::where('submited_date', $data->tanggal)->where('polda_id', poldaId())->first();
 
             if(empty($find) && $data->tanggal < $nowDate) {
                 array_push($dataResubmit, [
