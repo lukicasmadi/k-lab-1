@@ -37,7 +37,7 @@ if (! function_exists('previewExcelToHTML')) {
         $combineName = $nama_laporan." Giat Operasi ".$operationName;
 
         $sheet->setCellValue('A6', 'LAPORAN HARIAN '.$operationName.' '.$currentYear);
-        $sheet->setCellValue('A7', "TANGGAL ".gedein($hari_tanggal));
+        $sheet->setCellValue('A7', "TANGGAL ".$hari_tanggal);
 
         $sheet->setCellValue('C11', $prevYear);
         $sheet->setCellValue('D11', $currentYear);
