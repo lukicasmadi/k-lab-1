@@ -225,6 +225,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/rekap/operation/{uuid}', 'DailyRekapController@dailyRekapPopUpByOperation')->name('daily_rekap_popup_laporan_operasi');
         Route::get('/display/excel', 'ReportController@showExcelToView')->name('show_excel_to_view');
         Route::get('/display/excel/anev-daily', 'ReportController@anevDateCompareHTML')->name('show_anev_daily_excel_to_view');
+        Route::get('/display/excel/operation-per-polda', 'ReportController@operationPerPoldaHTML')->name('show_operation_perpolda');
         Route::get('/display/excel/anev-date-compare', 'ReportController@showExcelToViewAnevDateCompare')->name('show_excel_to_view_anev');
         Route::get('/rencana-operasi/date-range/{id}', 'ReportController@getDateRangeRencanaOperasi')->name('get_rencana_operasi_date_range');
         Route::get('/totalinputan/bychart/{indexData}', 'HomeController@viewInputFromChart')->where('indexData', '[0-9]+')->name('viewInputFromChart');

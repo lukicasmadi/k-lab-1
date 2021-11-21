@@ -543,6 +543,27 @@ class ReportController extends Controller
         return view('report.comparison_all', compact('rencanaOperasi', 'currentYear', 'prevYear'));
     }
 
+    public function operationPerPoldaHTML(ReportAnevDisplay $request)
+    {
+        $operation_id = $request->operation_id;
+        $prev_year = $request->tahun_pembanding_pertama;
+        $current_year = $request->tahun_pembanding_kedua;
+        $start_date = date('Y-m-d', strtotime($request->tanggal_pembanding_pertama));
+        $end_date = date('Y-m-d', strtotime($request->tanggal_pembanding_kedua));
+
+        $prev = prevDailyInputWithSum($operation_id, $prev_year, $start_date, $end_date);
+        $current = currentDailyInputWithSum($operation_id, $current_year, $start_date, $end_date);
+
+        $rencanaOperasi = RencanaOperasi::find($request->operation_id);
+
+        $dr = DailyRekap::whereRaw("DATE(operation_date_start) >= ? and DATE(operation_date_end) <= ?", [$start_date, $end_date])
+        ->where('rencana_operasi_id', $request->operation_id)
+        ->where('polda', 'polda_all')
+        ->first();
+
+        compareAllPoldaInputHTML($prev, $current, $start_date, $end_date, $prev_year, $current_year, $rencanaOperasi, $dr);
+    }
+
     public function reportAllPoldaDetailProcess(ReportAnevDisplay $request)
     {
         $operation_id = $request->operation_id;
