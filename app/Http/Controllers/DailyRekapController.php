@@ -107,25 +107,27 @@ class DailyRekapController extends Controller
         //     $hari = indonesianDate($start_date)." s/d ".indonesianDate($end_date);
         // }
 
-        $hari = indonesiaDayAndDate(date("Y-m-d"));
+        $hari = indonesiaDate(date("Y-m-d"));
 
         $prev = reportPrevToDisplayByPoldaId($prevYear, $rencana_operation_id, $start_date, $end_date, $polda);
         $current = reportCurrentToDisplayByPoldaId($currentYear, $rencana_operation_id, $start_date, $end_date, $polda);
+
 
         previewExcelToHTML(
             'polda_all',
             $prev,
             $current,
-            'KESATUAN : '.$dailyRekap->kesatuan,
+            $dailyRekap->kesatuan,
             $hari,
             null, //NAMA ATASAN
             null, //PANGKAT
             null, //JABATAN
             $dailyRekap->report_name, //NAMA LAPORAN
             $operationName, //CUSTOM FILE NAME
-            null, //OPERATION NAME
-            null, //CUSTOM COMBINE NAME
             null, //CITY NAME
+            $prevYear, //PREV YEAR
+            $currentYear, //CURRENT YEAR
+            null, //DAILY REKAP
         );
     }
 
