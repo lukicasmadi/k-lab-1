@@ -136,7 +136,7 @@
 
     $(document).on('change', '#tanggal_pembanding_kedua', function() {
         $("#endate").val(this.value)
-        $("#btnUnduhData").prop('disabled', true)
+        $("#btnUnduhData").prop('disabled', false)
         $("#panelData").empty().addClass("d-none")
 
         $("a#btnUnduhLaporanPerpoldaPerhari").prop("href", route('report_polda_perday', [
