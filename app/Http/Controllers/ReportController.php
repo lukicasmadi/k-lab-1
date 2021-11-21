@@ -24,6 +24,7 @@ use App\Exports\DailyInputPrevExport;
 use App\Exports\PoldaDailyComparison;
 use App\Http\Requests\ReportAnevDisplay;
 use App\Http\Requests\ComparisonExcelRequest;
+use App\Http\Requests\ReportAnevDailyDisplay;
 use App\Http\Requests\ReportAnevDateCompareDisplay;
 
 class ReportController extends Controller
@@ -95,11 +96,11 @@ class ReportController extends Controller
         );
     }
 
-    public function anevDateCompareHTML(ReportAnevDateCompareDisplay $request)
+    public function anevDateCompareHTML(Request $request)
     {
         $rencana_operation_id = $request->operation_id;
-        $start_date = dateOnly($request->tanggal_pembanding_1);
-        $end_date = dateOnly($request->tanggal_pembanding_2);
+        $start_date = dateOnly($request->tanggal_pembanding_pertama);
+        $end_date = dateOnly($request->tanggal_pembanding_kedua);
 
         $prev = reportPrevToDisplayAnevDateCompare($rencana_operation_id, $start_date, $start_date);
         $current = reportCurrentToDisplayAnevDateCompare($rencana_operation_id, $end_date, $end_date);
@@ -114,17 +115,7 @@ class ReportController extends Controller
         $pem1 = CountDown::where('rencana_operasi_id', $rencana_operation_id)->whereTanggal($start_date)->first();
         $pem2 = CountDown::where('rencana_operasi_id', $rencana_operation_id)->whereTanggal($end_date)->first();
 
-        if(empty($pem1)) {
-            flash('Pembanding hari pertama tidak ditemukan dengan nama operasi yang dipilih')->error();
-            return redirect()->back();
-        }
-
-        if(empty($pem2)) {
-            flash('Pembanding hari kedua tidak ditemukan dengan nama operasi yang dipilih')->error();
-            return redirect()->back();
-        }
-
-        avenDailyExcelHTML(
+        previewHTMLAnevDailyExcel(
             'polda_all',
             $prev,
             $current,

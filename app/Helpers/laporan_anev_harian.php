@@ -1020,8 +1020,8 @@ if (! function_exists('avenDailyExcel')) {
     }
 }
 
-if (! function_exists('avenDailyExcelHTML')) {
-    function avenDailyExcelHTML(
+if (! function_exists('previewHTMLAnevDailyExcel')) {
+    function previewHTMLAnevDailyExcel(
         $template,
         $prev,
         $current,
@@ -1045,7 +1045,8 @@ if (! function_exists('avenDailyExcelHTML')) {
 
         $excelTemplate = $excelPath."/format_laporan_anev_harian.xlsx";
 
-        $spreadsheet = IOFactory::load($excelTemplate);
+        $reader = IOFactory::createReader('Xlsx');
+        $spreadsheet = $reader->load($excelTemplate);
 
         $sheet = $spreadsheet->getActiveSheet();
 
@@ -2028,11 +2029,9 @@ if (! function_exists('avenDailyExcelHTML')) {
         $sheet->setCellValue('C425', applyZero($prev->rapid_test_antigen_positif));
         $sheet->setCellValue('D425', applyZero($current->rapid_test_antigen_positif));
 
-        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-        header('Content-Disposition: attachment;filename="'.$customFileName.'.xlsx"');
+        $writer = IOFactory::createWriter($spreadsheet, 'Html');
+        $message = $writer->save('php://output');
 
-        $writer = new Xlsx($spreadsheet);
-
-        $writer->save('php://output');
+        return $message;
     }
 }

@@ -67,7 +67,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/polda-data/{short_name}', 'HomeController@openPoldaData')->name('korlantas_open_polda');
         Route::post('/report/daily-compare/process', 'ReportController@reportAllPoldaDetailProcess')->name('report_all_polda_detail_process');
         Route::get('/report/polda/daily/{uuid}/{tglStart}/{tglEnd}', 'ReportController@reportPoldaPerday')->name('report_polda_perday');
-        Route::get('/report/anev-date-compare/html', 'ReportController@anevDateCompareHTML')->name('anev_date_compare_html');
 
         // Route::get('/processing/each-polda', 'TestController@scandir')->name('scandir');
         // Route::get('/scandir', 'TestController@scandir')->name('scandir');
@@ -225,6 +224,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/rekap/daily/input/{uuid}', 'DailyRekapController@dailyRekapPopUp')->name('daily_rekap_popup');
         Route::get('/rekap/operation/{uuid}', 'DailyRekapController@dailyRekapPopUpByOperation')->name('daily_rekap_popup_laporan_operasi');
         Route::get('/display/excel', 'ReportController@showExcelToView')->name('show_excel_to_view');
+        Route::get('/display/excel/anev-daily', 'ReportController@anevDateCompareHTML')->name('show_anev_daily_excel_to_view');
         Route::get('/display/excel/anev-date-compare', 'ReportController@showExcelToViewAnevDateCompare')->name('show_excel_to_view_anev');
         Route::get('/rencana-operasi/date-range/{id}', 'ReportController@getDateRangeRencanaOperasi')->name('get_rencana_operasi_date_range');
         Route::get('/totalinputan/bychart/{indexData}', 'HomeController@viewInputFromChart')->where('indexData', '[0-9]+')->name('viewInputFromChart');
