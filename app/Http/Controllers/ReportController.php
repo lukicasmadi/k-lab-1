@@ -95,6 +95,55 @@ class ReportController extends Controller
         );
     }
 
+    public function anevDateCompareHTML(ReportAnevDateCompareDisplay $request)
+    {
+        $rencana_operation_id = $request->operation_id;
+        $start_date = dateOnly($request->tanggal_pembanding_1);
+        $end_date = dateOnly($request->tanggal_pembanding_2);
+
+        $prev = reportPrevToDisplayAnevDateCompare($rencana_operation_id, $start_date, $start_date);
+        $current = reportCurrentToDisplayAnevDateCompare($rencana_operation_id, $end_date, $end_date);
+
+        $rencanaOperasi = RencanaOperasi::find($rencana_operation_id);
+
+        $dr = DailyRekap::whereRaw("DATE(operation_date_start) >= ? and DATE(operation_date_end) <= ?", [$start_date, $end_date])->where('polda', 'polda_all')->first();
+
+        $yearCurrent = yearOnly($rencanaOperasi->start_date);
+        $yearPrev = $yearCurrent - 1;
+
+        $pem1 = CountDown::where('rencana_operasi_id', $rencana_operation_id)->whereTanggal($start_date)->first();
+        $pem2 = CountDown::where('rencana_operasi_id', $rencana_operation_id)->whereTanggal($end_date)->first();
+
+        if(empty($pem1)) {
+            flash('Pembanding hari pertama tidak ditemukan dengan nama operasi yang dipilih')->error();
+            return redirect()->back();
+        }
+
+        if(empty($pem2)) {
+            flash('Pembanding hari kedua tidak ditemukan dengan nama operasi yang dipilih')->error();
+            return redirect()->back();
+        }
+
+        avenDailyExcelHTML(
+            'polda_all',
+            $prev,
+            $current,
+            null, //KESATUAN
+            strtoupper(indonesiaDate($start_date)).' DAN '.strtoupper(indonesiaDate($end_date)),  //HARI TANGGAL
+            (!empty($dr)) ? $dr->atasan : '', //NAMA ATASAN
+            (!empty($dr)) ? $dr->pangkat_nrp : '', //PANGKAT
+            (!empty($dr)) ? strtoupper($dr->jabatan) : '', //JABATAN
+            null,
+            strtoupper($rencanaOperasi->name)." ".$start_date."-".$end_date, //CUSTOM FILE NAME
+            strtoupper($rencanaOperasi->name), //NAMA OPERASI
+            null,
+            (!empty($dr)) ? $dr->kota : '', //CITY NAME
+            "H".substr($pem1->deskripsi, -1),
+            "H".substr($pem2->deskripsi, -1),
+            $dr
+        );
+    }
+
     public function dailyAllPolda()
     {
         $listPolda = Polda::orderBy('id', 'asc')->pluck("name", "id");

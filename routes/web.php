@@ -67,9 +67,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/polda-data/{short_name}', 'HomeController@openPoldaData')->name('korlantas_open_polda');
         Route::post('/report/daily-compare/process', 'ReportController@reportAllPoldaDetailProcess')->name('report_all_polda_detail_process');
         Route::get('/report/polda/daily/{uuid}/{tglStart}/{tglEnd}', 'ReportController@reportPoldaPerday')->name('report_polda_perday');
+        Route::get('/report/anev-date-compare/html', 'ReportController@anevDateCompareHTML')->name('anev_date_compare_html');
 
-        Route::get('/processing/each-polda', 'TestController@scandir')->name('scandir');
-
+        // Route::get('/processing/each-polda', 'TestController@scandir')->name('scandir');
         // Route::get('/scandir', 'TestController@scandir')->name('scandir');
         // Route::get('/scandir/download', 'TestController@downloadBackup')->name('download_backup');
     });

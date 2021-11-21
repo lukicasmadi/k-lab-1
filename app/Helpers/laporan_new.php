@@ -1037,7 +1037,7 @@ if (! function_exists('compareAllPoldaInput')) {
             $sheet->setCellValue("BT417", indonesiaDate(now()->format('Y-m-d')));
             $sheet->setCellValue("BT418", gedein($operration->name));
         } else {
-            $sheet->setCellValue("BT417", $dr->kota.", ".indonesiaDate(now()->format('Y-m-d')));
+            $sheet->setCellValue("BT417", ucfirst(strtolower($dr->kota)).", ".indonesiaDate(now()->format('Y-m-d')));
             $sheet->setCellValue("BT418", gedein($dr->jabatan)." ".gedein($operration->name).' - '.$dr->year);
             $sheet->setCellValue("BT422", gedein($dr->atasan));
             $sheet->setCellValue("BT423", gedein($dr->pangkat_nrp));

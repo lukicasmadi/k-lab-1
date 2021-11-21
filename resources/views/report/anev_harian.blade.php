@@ -139,6 +139,16 @@
 
             $("#panelLoading").addClass("d-none")
             $("#btnUnduhData").prop('disabled', false)
+
+            popupCenter({
+                url: route('anev_date_compare_html', {
+                    operation_id: $("#operation_id").val(),
+                    tanggal_pembanding_pertama: $("#tanggal_pembanding_pertama").val(),
+                    tanggal_pembanding_kedua: $("#tanggal_pembanding_kedua").val(),
+                }),
+                title: 'Detail',
+                w: 1000, h: 600
+            })
         }
     })
 
