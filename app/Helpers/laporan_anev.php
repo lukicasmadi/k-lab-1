@@ -42,15 +42,10 @@ if (! function_exists('previewExcelToHTML')) {
         $sheet->setCellValue('C11', $prevYear);
         $sheet->setCellValue('D11', $currentYear);
 
-        if(is_null($cityName)) {
-            $sheet->setCellValue('D428', indonesiaDate(date("Y-m-d")));
-        } else {
-            $sheet->setCellValue('D428', ucfirst(strtolower($cityName)).", ".indonesiaDate(date("Y-m-d")));
-        }
-
-        $sheet->setCellValue('D429', $jabatan." ".$operationName." - ".$currentYear);
 
         if(!empty($dr)) {
+            $sheet->setCellValue('D428', ucfirst(strtolower($dr->kota)).", ".indonesiaDate(date("Y-m-d")));
+            $sheet->setCellValue('D429', $dr->jabatan." ".$operationName." - ".$currentYear);
             $sheet->setCellValue('D433', $dr->atasan);
             $sheet->setCellValue('D434', $dr->pangkat_nrp);
         }
