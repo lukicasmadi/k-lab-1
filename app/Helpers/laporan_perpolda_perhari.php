@@ -25,7 +25,7 @@ if (! function_exists('lapoanPerpoldaPerhari')) {
         $sheet = $spreadsheet->getActiveSheet();
 
         $sheet->setCellValue('A5', 'REKAPITULASI LAPORAN PERPOLDA '.gedein($rencanaOperasi->name).' '.date('Y'));
-        $sheet->setCellValue('A6', 'TANGGAL '.indonesiaDate($startDate).' s.d. '.indonesiaDate($endDate));
+        $sheet->setCellValue('A6', 'TANGGAL '.strtoupper(indonesiaDate($startDate)).' s.d. '.strtoupper(indonesiaDate($endDate)));
 
         foreach($data as $key=>$value) {
             $poldaName  = $value->polda_name;
@@ -353,7 +353,7 @@ if (! function_exists('lapoanPerpoldaPerhari')) {
             $sheet->setCellValue('AI415', indonesiaDate(date("Y-m-d")));
             $sheet->setCellValue('AI416', $rencanaOperasi->name." - ".date("Y"));
         } else {
-            $sheet->setCellValue('AI415', $dailyRekap->kota.", ".indonesiaDate(date("Y-m-d")));
+            $sheet->setCellValue('AI415', ucfirst(strtolower($dailyRekap->kota)).", ".indonesiaDate(date("Y-m-d")));
             $sheet->setCellValue('AI416', $dailyRekap->jabatan." ".$rencanaOperasi->name." - ".date("Y"));
             $sheet->setCellValue('AI420', $dailyRekap->atasan);
             $sheet->setCellValue('AI421', $dailyRekap->pangkat_nrp);
