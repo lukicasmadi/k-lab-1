@@ -190,7 +190,7 @@ if (! function_exists('compareAllPoldaInput')) {
         $sheet = $spreadsheet->getActiveSheet();
 
         $sheet->setCellValue('A5', 'REKAPITULASI LAPORAN PERPOLDA '.upperCase($operration->name)." ".date('Y'));
-        $sheet->setCellValue('A6', 'TANGGAL '.indonesiaDate($start_date).' s.d. '.indonesiaDate($end_date));
+        $sheet->setCellValue('A6', 'TANGGAL '.strtoupper(indonesiaDate($start_date)).' s.d. '.strtoupper(indonesiaDate($end_date)));
 
         $skip = [
             '16',
