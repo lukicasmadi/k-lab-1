@@ -112,8 +112,8 @@ class DailyRekapController extends Controller
         $prev = reportPrevToDisplayByPoldaId($prevYear, $rencana_operation_id, $start_date, $end_date, $polda);
         $current = reportCurrentToDisplayByPoldaId($currentYear, $rencana_operation_id, $start_date, $end_date, $polda);
 
-        $dr = DailyRekap::where('operation_date_start', $dailyRekap->rencanaOperasi->start_date)
-            ->where('operation_date_end', $dailyRekap->rencanaOperasi->end_date)
+        $dr = DailyRekap::where('operation_date_start', $dailyRekap->operation_date_start)
+            ->where('operation_date_end', $dailyRekap->operation_date_end)
             ->where('polda', 'polda_all')->first();
 
         previewExcelToHTML(
