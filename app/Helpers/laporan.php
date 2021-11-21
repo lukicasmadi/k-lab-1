@@ -3301,7 +3301,7 @@ if (! function_exists('excelViewAbsensi')) {
         }
 
         if(!empty($dr)) {
-            $sheet->setCellValue('C44', ucfirst(strtolower($dr->kota)).', '.$tanggal);
+            $sheet->setCellValue('C44', ucfirst(strtolower($dr->kota)).', '.ucfirst(strtolower($tanggal)));
             $sheet->setCellValue('C45', $dr->jabatan." ".$opn." - ".$dr->year);
             $sheet->setCellValue('C49', $dr->atasan);
             $sheet->setCellValue('C50', $dr->pangkat_nrp);
