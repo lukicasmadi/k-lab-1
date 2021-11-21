@@ -124,6 +124,8 @@ class DailyRekapController extends Controller
             null, //JABATAN
             $dailyRekap->report_name, //NAMA LAPORAN
             $operationName, //CUSTOM FILE NAME
+            $operationName, //OPERATION NAME
+            null, //CUSTOM COMBINE NAME
             null, //CITY NAME
             $prevYear, //PREV YEAR
             $currentYear, //CURRENT YEAR
