@@ -62,9 +62,9 @@ use App\Models\SumLoopEveryday;
 <br>
 
 <div class="center">
-    <span>REKAPITULASI LAPORAN PERHARI {{ gedein($rencanaOperasi->name) }} {{ date('Y') }}</span>
+    <span><b>REKAPITULASI LAPORAN PERHARI {{ gedein($rencanaOperasi->name) }} {{ date('Y') }}</b></span>
     <br>
-    <span>TANGGAL {{ gedein(indonesiaDate($rencanaOperasi->start_date)) }} s.d. {{ gedein(indonesiaDate($rencanaOperasi->end_date)) }}</span>
+    <span><b>TANGGAL {{ gedein(indonesiaDate($rencanaOperasi->start_date)) }} s.d. {{ gedein(indonesiaDate($rencanaOperasi->end_date)) }}</b></span>
 </div>
 
 <table class="tg">
