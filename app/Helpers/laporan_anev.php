@@ -51,8 +51,8 @@ if (! function_exists('previewExcelToHTML')) {
         $sheet->setCellValue('D429', $jabatan." ".$operationName." - ".$currentYear);
 
         if(!empty($dr)) {
-            $sheet->setCellValue('D433', $nama_atasan);
-            $sheet->setCellValue('D434', $pangkat);
+            $sheet->setCellValue('D433', $dr->atasan);
+            $sheet->setCellValue('D434', $dr->pangkat_nrp);
         }
 
         $sheet->setCellValue('C15', applyZero($prev->pelanggaran_lalu_lintas_tilang));
