@@ -107,11 +107,11 @@ class DailyRekapController extends Controller
         $start_date = $dailyRekap->operation_date_start;
         $end_date = $dailyRekap->operation_date_end;
 
-        // if($config_date == "all") {
-        //     $hari = "SEMUA";
-        // } else {
-        //     $hari = indonesianDate($start_date)." s/d ".indonesianDate($end_date);
-        // }
+        if($start_date == $end_date) {
+            $formatHari = 'TANGGAL '.gedein(indonesiaDate($start_date));
+        } else {
+            $formatHari = 'TANGGAL '.gedein(indonesiaDate($start_date)).' s.d. '.gedein(indonesiaDate($end_date));
+        }
 
         $hari = indonesiaDate(date("Y-m-d"));
 
@@ -127,7 +127,7 @@ class DailyRekapController extends Controller
             $prev,
             $current,
             $dailyRekap->kesatuan,
-            gedein($hari),
+            $formatHari,
             null, //NAMA ATASAN
             null, //PANGKAT
             null, //JABATAN
