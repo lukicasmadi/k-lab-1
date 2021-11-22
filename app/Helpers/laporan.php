@@ -245,7 +245,23 @@ if (! function_exists('allPoldaPrevByDate')) {
 //==============================================================================================================================================
 
 if (! function_exists('excelTemplate')) {
-    function excelTemplate($template, $prev, $current, $kesatuan, $hari_tanggal, $nama_atasan, $pangkat, $jabatan, $nama_laporan, $customFileName=null, $operationName=null, $customCombineName=null, $cityName=null, $prevYear=null, $currentYear=null)
+    function excelTemplate(
+        $template,
+        $prev,
+        $current,
+        $kesatuan,
+        $hari_tanggal,
+        $nama_atasan,
+        $pangkat,
+        $jabatan,
+        $nama_laporan,
+        $customFileName=null,
+        $operationName=null,
+        $customCombineName=null,
+        $cityName=null,
+        $prevYear=null,
+        $currentYear=null
+        )
     {
         $excelPath = public_path('template/excel');
 
@@ -272,9 +288,8 @@ if (! function_exists('excelTemplate')) {
             $combineName = $customCombineName;
         }
 
-        $sheet->setCellValue('B6', $combineName);
-        $sheet->setCellValue('B7', $kesatuan); //NAMA KESATUAN
-        $sheet->setCellValue('B8', 'HARI/TGL : '.$hari_tanggal); // DIISI HARI TGL
+        // $sheet->setCellValue('B6', $combineName);
+        // $sheet->setCellValue('B7', $kesatuan);
 
         if(is_null($cityName)) {
             $sheet->setCellValue('D428', indonesiaDate(date("Y-m-d")));
@@ -282,6 +297,7 @@ if (! function_exists('excelTemplate')) {
             $sheet->setCellValue('D428', ucfirst(strtolower($cityName)).", ".indonesiaDate(date("Y-m-d")));
         }
 
+        $sheet->setCellValue('A7', $hari_tanggal);
         $sheet->setCellValue('C11', $prevYear);
         $sheet->setCellValue('D11', $currentYear);
 
@@ -1260,7 +1276,19 @@ if (! function_exists('excelTemplate')) {
 }
 
 if (! function_exists('excelTemplateDateCompare')) {
-    function excelTemplateDateCompare($prev, $current, $kesatuan, $hari_tanggal, $nama_atasan, $pangkat, $jabatan, $nama_laporan, string $customFileName = null, $start_date, $end_date)
+    function excelTemplateDateCompare(
+        $prev,
+        $current,
+        $kesatuan,
+        $hari_tanggal,
+        $nama_atasan,
+        $pangkat,
+        $jabatan,
+        $nama_laporan,
+        $customFileName=null,
+        $start_date,
+        $end_date
+    )
     {
 
         $excelPath = public_path('template/excel');
@@ -1284,6 +1312,7 @@ if (! function_exists('excelTemplateDateCompare')) {
         //change it
         $sheet = $spreadsheet->getActiveSheet();
 
+        $sheet->setCellValue('A7', 'TANGGAL 18 NOVEMBER 2021');
         $sheet->setCellValue('B6', $kesatuan); //NAMA KESATUAN
         $sheet->setCellValue('E428', indonesiaDate(date("Y-m-d"))); // TEMPAT, TANGGAL
         $sheet->setCellValue('E435', $nama_atasan); // NAMA ATASAN UNTUK TANDA TANGAN

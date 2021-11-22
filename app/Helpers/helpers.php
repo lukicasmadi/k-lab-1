@@ -178,7 +178,7 @@ if (! function_exists('indonesianDate')) {
 if (! function_exists('indonesianFullDayAndDate')) {
     function indonesianFullDayAndDate($timestamp) {
         // return Carbon::parse($timestamp)->isoFormat('dddd').", ".Carbon::parse($timestamp)->format('d M Y');
-        return Carbon::parse($timestamp)->isoFormat('dddd, D MMMM Y')." ".Carbon::parse($timestamp)->format('g:i:s A');
+        return Carbon::parse($timestamp)->isoFormat('dddd, D MMMM Y')." ".Carbon::parse($timestamp)->format('g:i:s A'); //Sabtu, 30 Oktober 2021 13:05:01
     }
 }
 

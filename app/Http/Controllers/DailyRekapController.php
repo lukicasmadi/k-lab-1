@@ -44,14 +44,20 @@ class DailyRekapController extends Controller
         $prev = reportDailyPrev($polda, $prevYear, $rencana_operation_id, $config_date, $start_date, $end_date);
         $current = reportDailyCurrent($polda, $year, $rencana_operation_id, $config_date, $start_date, $end_date);
 
+        if($start_date == $end_date) {
+            $formatHari = 'TANGGAL '.gedein(indonesiaDate($start_date));
+        } else {
+            $formatHari = 'TANGGAL '.gedein(indonesiaDate($start_date)).' s.d. '.gedein(indonesiaDate($end_date));
+        }
+
         if($polda != "polda_all") {
             $poldaSubmited = PoldaSubmited::where('polda_id', $polda)->where('rencana_operasi_id', $rencana_operation_id)->first();
             excelTemplate(
                 'per_polda',
                 $prev,
                 $current,
-                'KESATUAN : '.$poldaSubmited->nama_kesatuan,
-                indonesiaDayAndDate(date("Y-m-d")),
+                $poldaSubmited->nama_kesatuan,
+                $formatHari,
                 $poldaSubmited->nama_atasan,
                 $poldaSubmited->pangkat_dan_nrp,
                 $poldaSubmited->jabatan,
@@ -68,8 +74,8 @@ class DailyRekapController extends Controller
                 'polda_all',
                 $prev,
                 $current,
-                'KESATUAN : '.$dailyRekap->kesatuan,
-                indonesiaDayAndDate(date("Y-m-d")),
+                $dailyRekap->kesatuan,
+                $formatHari,
                 $dailyRekap->atasan,
                 $dailyRekap->pangkat_nrp,
                 $dailyRekap->jabatan,
