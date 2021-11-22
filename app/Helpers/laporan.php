@@ -3284,6 +3284,14 @@ if (! function_exists('excelViewAbsensi')) {
 
         $sheet = $spreadsheet->getActiveSheet();
 
+        logger($operationName);
+
+        if(is_null($operationName)) {
+            $sheet->setCellValue('A6', "DATA ABSENSI POLDA");
+        } else {
+            $sheet->setCellValue('A6', "DATA ABSENSI POLDA ".$operationName);
+        }
+
         $sheet->setCellValue('A7', "TANGGAL ".gedein($tanggal));
 
         $dr = DailyRekap::where('operation_date_start', $whereDate)->where('operation_date_end', $whereDate)->where('polda', 'polda_all')->first();
