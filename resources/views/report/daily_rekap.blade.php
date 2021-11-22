@@ -325,7 +325,9 @@ $('body').on('click', '#btnEdit', function(e) {
         $('#rencana_operasi_id_edit option[value='+response.data.rencana_operasi_id+']').prop("selected", true)
 
         if(response.data.config_date == "custom") {
-            $('#config_date_edit option[value="custom"]').prop("selected", true)
+
+            $("#config_date_edit").select2().val("custom").trigger("change")
+
             $(".custom_hari").removeClass("d-none")
             $("#tanggal_mulai_edit").val(DateTime.fromISO(response.data.operation_date_start).toFormat('dd-MM-yyyy'))
             $("#tanggal_selesai_edit").val(DateTime.fromISO(response.data.operation_date_end).toFormat('dd-MM-yyyy'))
@@ -346,7 +348,8 @@ $('body').on('click', '#btnEdit', function(e) {
                 // endDate: DateTime.fromISO(response.data.operation_date_end).toFormat('dd-MM-yyyy'),
             })
         } else {
-            $('#config_date_edit option[value="all"]').prop("selected", true)
+            $("#config_date_edit").select2().val("all").trigger("change")
+
             $(".custom_hari").addClass("d-none")
             $("#tanggal_mulai_edit").val('')
             $("#tanggal_selesai_edit").val('')
