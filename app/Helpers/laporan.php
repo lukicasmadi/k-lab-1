@@ -3284,8 +3284,6 @@ if (! function_exists('excelViewAbsensi')) {
 
         $sheet = $spreadsheet->getActiveSheet();
 
-        logger($operationName);
-
         if(is_null($operationName)) {
             $sheet->setCellValue('A6', "DATA ABSENSI POLDA");
         } else {
