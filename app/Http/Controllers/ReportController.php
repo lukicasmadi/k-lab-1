@@ -449,13 +449,18 @@ class ReportController extends Controller
 
         $rencanaOperasi = RencanaOperasi::find($rencana_operation_id);
 
-        $dr = DailyRekap::whereRaw("DATE(operation_date_start) >= ? and DATE(operation_date_end) <= ?", [$start_date, $end_date])->where('polda', 'polda_all')->first();
+        // $dr = DailyRekap::whereRaw("DATE(operation_date_start) >= ? and DATE(operation_date_end) <= ?", [$start_date, $end_date])->where('polda', 'polda_all')->first();
+
+        $dr = DailyRekap::where('polda', 'polda_all')
+            ->where('operation_date_start', $end_date)
+            ->where('operation_date_end', $end_date)
+            ->first();
 
         previewExcelToHTML(
             'polda_all',
             $prev,
             $current,
-            'KESATUAN', //KESATUAN
+            null, //KESATUAN
             strtoupper(indonesiaDate($start_date)).' s.d. '.strtoupper(indonesiaDate($end_date)), //HARI TANGGAL
             (!empty($dr)) ? $dr->atasan : '', //NAMA ATASAN
             (!empty($dr)) ? $dr->pangkat_nrp : '', //PANGKAT
