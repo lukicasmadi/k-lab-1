@@ -58,7 +58,12 @@ class ReportController extends Controller
 
         $rencanaOperasi = RencanaOperasi::find($rencana_operation_id);
 
-        $dr = DailyRekap::whereRaw("DATE(operation_date_start) >= ? and DATE(operation_date_end) <= ?", [$start_date, $end_date])->where('polda', 'polda_all')->first();
+        // $dr = DailyRekap::whereRaw("DATE(operation_date_start) >= ? and DATE(operation_date_end) <= ?", [$start_date, $end_date])->where('polda', 'polda_all')->first();
+
+        $dr = DailyRekap::where('polda', 'polda_all')
+            ->where('operation_date_start', $end_date)
+            ->where('operation_date_end', $end_date)
+            ->first();
 
         $yearCurrent = yearOnly($rencanaOperasi->start_date);
         $yearPrev = $yearCurrent - 1;
@@ -107,7 +112,12 @@ class ReportController extends Controller
 
         $rencanaOperasi = RencanaOperasi::find($rencana_operation_id);
 
-        $dr = DailyRekap::whereRaw("DATE(operation_date_start) >= ? and DATE(operation_date_end) <= ?", [$start_date, $end_date])->where('polda', 'polda_all')->first();
+        // $dr = DailyRekap::whereRaw("DATE(operation_date_start) >= ? and DATE(operation_date_end) <= ?", [$start_date, $end_date])->where('polda', 'polda_all')->first();
+
+        $dr = DailyRekap::where('polda', 'polda_all')
+            ->where('operation_date_start', $end_date)
+            ->where('operation_date_end', $end_date)
+            ->first();
 
         $yearCurrent = yearOnly($rencanaOperasi->start_date);
         $yearPrev = $yearCurrent - 1;
