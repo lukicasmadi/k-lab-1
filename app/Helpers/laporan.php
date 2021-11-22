@@ -3273,7 +3273,7 @@ if (! function_exists('excelTemplateDisplay')) {
 }
 
 if (! function_exists('excelViewAbsensi')) {
-    function excelViewAbsensi($data, $tanggal, $whereDate, $operationName=null)
+    function excelViewAbsensi($data, $tanggal, $whereDate, $operationName=null, $rencanaOperationYear=null)
     {
         $excelPath = public_path('template/excel');
 
@@ -3287,7 +3287,7 @@ if (! function_exists('excelViewAbsensi')) {
         if(is_null($operationName)) {
             $sheet->setCellValue('A6', "DATA ABSENSI POLDA");
         } else {
-            $sheet->setCellValue('A6', "DATA ABSENSI POLDA ".$operationName);
+            $sheet->setCellValue('A6', "DATA ABSENSI POLDA ".$operationName." ".$rencanaOperationYear);
         }
 
         $sheet->setCellValue('A7', "TANGGAL ".gedein($tanggal));
