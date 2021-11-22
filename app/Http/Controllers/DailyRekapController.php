@@ -121,7 +121,7 @@ class DailyRekapController extends Controller
             $prev,
             $current,
             $dailyRekap->kesatuan,
-            $hari,
+            gedein($hari),
             null, //NAMA ATASAN
             null, //PANGKAT
             null, //JABATAN
