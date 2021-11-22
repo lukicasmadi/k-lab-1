@@ -234,13 +234,26 @@ class DailyRekapController extends Controller
 
     public function store(DailyRekapRequest $request)
     {
+        $rencanaOperasi = RencanaOperasi::findOrfail($request->rencana_operasi_id);
+
         if($request->config_date == "all") {
-            $rencanaOperasi = RencanaOperasi::findOrfail($request->rencana_operasi_id);
             $op_start_date = $rencanaOperasi->start_date;
             $op_end_date = $rencanaOperasi->end_date;
         } else {
             $op_start_date = dateOnly($request->tanggal_mulai);
             $op_end_date = dateOnly($request->tanggal_selesai);
+        }
+
+        $find = DailyRekap::where('polda', 'polda_all')
+            ->where('year', $request->year)
+            ->where('rencana_operasi_id', $request->rencana_operasi_id)
+            ->where('operation_date_start', $op_start_date)
+            ->where('operation_date_end', $op_end_date)
+            ->first();
+
+        if(!empty($find)) {
+            flash('Data yang akan Anda tambahkan sudah pernah dibuat! Silakan diperiksa kembali')->error();
+            return redirect()->back();
         }
 
         $model = DailyRekap::create([
@@ -269,6 +282,18 @@ class DailyRekapController extends Controller
         if($request->config_date_edit == "all") {
             $ro = RencanaOperasi::where('id', $request->rencana_operasi_id_edit)->first();
 
+            $find = DailyRekap::where('polda', 'polda_all')
+                ->where('year', $request->year_edit)
+                ->where('rencana_operasi_id', $request->rencana_operasi_id_edit)
+                ->where('operation_date_start', dateOnly($ro->tanggal_mulai_edit))
+                ->where('operation_date_end', dateOnly($ro->tanggal_selesai_edit))
+                ->first();
+
+            if(!empty($find)) {
+                flash('Data yang akan Anda ubah sudah pernah dibuat! Silakan diperiksa kembali')->error();
+                return redirect()->back();
+            }
+
             $model = DailyRekap::updateOrCreate(
                 ['uuid' => request('uuid_edit')],
                 [
@@ -287,6 +312,19 @@ class DailyRekapController extends Controller
                 ]
             );
         } else {
+
+            $find = DailyRekap::where('polda', 'polda_all')
+                ->where('year', $request->year_edit)
+                ->where('rencana_operasi_id', $request->rencana_operasi_id_edit)
+                ->where('operation_date_start', dateOnly($request->tanggal_mulai_edit))
+                ->where('operation_date_end', dateOnly($request->tanggal_selesai_edit))
+                ->first();
+
+            if(!empty($find)) {
+                flash('Data yang akan Anda ubah sudah pernah dibuat! Silakan diperiksa kembali')->error();
+                return redirect()->back();
+            }
+
             $model = DailyRekap::updateOrCreate(
                 ['uuid' => request('uuid_edit')],
                 [
