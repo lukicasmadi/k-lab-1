@@ -299,7 +299,7 @@
                         <li class="menu single-menu {{ request()->is('dashboard') || request()->is('dashboard/filter/*') || request()->is('polda-data/*') ? 'active' : '' }}">
                             <a href="{{ route('dashboard') }}">
                                 <div>
-                                    <span>Beranda Korlantas Polri</span>
+                                    <span>Beranda</span>
                                 </div>
                             </a>
                         </li>
