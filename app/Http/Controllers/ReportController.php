@@ -466,7 +466,7 @@ class ReportController extends Controller
             $prev,
             $current,
             null, //KESATUAN
-            strtoupper(indonesiaDate($start_date)).' s.d. '.strtoupper(indonesiaDate($end_date)), //HARI TANGGAL
+            "TANGGAL ".strtoupper(indonesiaDate($start_date)).' s.d. '.strtoupper(indonesiaDate($end_date)), //HARI TANGGAL
             (!empty($dr)) ? $dr->atasan : '', //NAMA ATASAN
             (!empty($dr)) ? $dr->pangkat_nrp : '', //PANGKAT
             (!empty($dr)) ? strtoupper($dr->jabatan) : '', //JABATAN
