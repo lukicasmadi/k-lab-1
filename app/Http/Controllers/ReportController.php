@@ -553,6 +553,23 @@ class ReportController extends Controller
         lapoanPerpoldaPerhari($data, $rencanaOperasi, $startDate, $endDate, $dailyRekap);
     }
 
+    public function reportPoldaPerdayHTML(Request $request, $uuid, $tglStart, $tglEnd)
+    {
+        $todayDate = date('Y-m-d');
+        $rencanaOperasi = RencanaOperasi::where('uuid', $uuid)->firstOrFail();
+
+        $polda = SortablePoldaReport::with('today')->get();  //AMBIL YG HARI INI SAJA
+
+        $dailyRekap = DailyRekap::whereRaw("DATE(operation_date_start) >= ? and DATE(operation_date_end) <= ?", [$todayDate, $todayDate])->first();
+
+        $startDate = dateOnly($tglStart);
+        $endDate = dateOnly($tglEnd);
+
+        $data = currentDailyInputWithSum($rencanaOperasi->id, date('Y'), $startDate, $endDate);
+
+        lapoanPerpoldaPerhariHTML($data, $rencanaOperasi, $startDate, $endDate, $dailyRekap);
+    }
+
     public function reportAllPoldaDetail()
     {
         $rencanaOperasi = RencanaOperasi::orderBy('id', 'desc')->pluck("name", "id");

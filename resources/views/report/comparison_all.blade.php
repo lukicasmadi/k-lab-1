@@ -147,17 +147,36 @@
 
         $("a#btnUnduhLaporanPerpoldaPerhari").removeClass('disabled')
 
-        popupCenter({
-            url: route('show_operation_perpolda', {
+        var locs = [
+            route('report_polda_perday_html', {
+                uuid: $("#uuid").val(),
+                tglStart: $("#stdate").val(),
+                tglEnd: $("#endate").val(),
+            }),
+            route('show_operation_perpolda', {
                 operation_id: $("#operation_id").val(),
                 tahun_pembanding_pertama: $("#tahun_pembanding_pertama").val(),
                 tahun_pembanding_kedua: $("#tahun_pembanding_kedua").val(),
                 tanggal_pembanding_pertama: $("#tanggal_pembanding_pertama").val(),
                 tanggal_pembanding_kedua: $("#tanggal_pembanding_kedua").val(),
-            }),
-            title: 'Detail',
-            w: 1000, h: 600
-        })
+            })
+        ];
+
+        for (let i = 0; i < locs.length; i++) {
+            window.open(locs[i])
+        }
+
+        // popupCenter({
+        //     url: route('show_operation_perpolda', {
+        //         operation_id: $("#operation_id").val(),
+        //         tahun_pembanding_pertama: $("#tahun_pembanding_pertama").val(),
+        //         tahun_pembanding_kedua: $("#tahun_pembanding_kedua").val(),
+        //         tanggal_pembanding_pertama: $("#tanggal_pembanding_pertama").val(),
+        //         tanggal_pembanding_kedua: $("#tanggal_pembanding_kedua").val(),
+        //     }),
+        //     title: 'Detail',
+        //     w: 1000, h: 600
+        // })
     })
 
     $(document).on('change', '#operation_id', function(e) {
