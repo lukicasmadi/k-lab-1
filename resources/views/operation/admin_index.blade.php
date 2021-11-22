@@ -356,7 +356,7 @@
                         swal('Sukses!', response.data.output, 'success')
                     })
                     .catch(function(error) {
-                        swal("Gagal", "Data gagal dihapus! Silahkan hubungi admin", "error")
+                        swal("Gagal", "Data gagal dihapus! Silakan hubungi admin", "error")
                     })
                 }
             })

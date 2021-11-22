@@ -90,7 +90,7 @@
 
             <div class="col-md-12">
                 <blockquote class="blockquote">
-                    <p class="d-inline">Dokumen form ini pernah diupload. Jika anda ingin menggantinya silahkan gunakan menu upload dibawah. Jika tidak, biarkan kosong</p>
+                    <p class="d-inline">Dokumen form ini pernah diupload. Jika anda ingin menggantinya Silakan gunakan menu upload dibawah. Jika tidak, biarkan kosong</p>
                 </blockquote>
             </div>
 

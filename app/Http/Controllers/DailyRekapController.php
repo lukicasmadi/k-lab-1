@@ -27,7 +27,7 @@ class DailyRekapController extends Controller
         }
 
         if(empty($dailyRekap->kesatuan) || empty($dailyRekap->atasan) || empty($dailyRekap->pangkat_nrp) || empty($dailyRekap->jabatan) || empty($dailyRekap->kota)) {
-            flash('Data laphar belum lengkap. Silahkan gunakan menu ubah untuk memperbaharui data')->warning();
+            flash('Data laphar belum lengkap. Silakan gunakan menu ubah untuk memperbaharui data')->warning();
             return redirect()->back();
         }
 

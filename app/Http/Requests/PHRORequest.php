@@ -27,8 +27,8 @@ class PHRORequest extends FormRequest
             '*.required' => 'Data tidak boleh kosong!',
             '*.integer' => 'Inputan hanya diijinkan numerik 0-9!',
             'document_upload.file' => 'File harus diupload',
-            'document_upload.mimes' => 'File harus berekstensi pdf, ppt, word, atau zip. Silahkan pilih kembali file anda',
-            'document_upload.max' => 'Ukuran file yang diijinkan maksimal 50 MB. Silahkan pilih kembali file anda',
+            'document_upload.mimes' => 'File harus berekstensi pdf, ppt, word, atau zip. Silakan pilih kembali file anda',
+            'document_upload.max' => 'Ukuran file yang diijinkan maksimal 50 MB. Silakan pilih kembali file anda',
         ];
     }
 

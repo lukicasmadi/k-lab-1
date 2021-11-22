@@ -238,7 +238,7 @@ jQuery(function() {
                     .catch(function() {
                         swal.insertQueueStep({
                             type: 'error',
-                            title: 'Gagal memuat data terbaru. Silahkan refresh halaman secara manual'
+                            title: 'Gagal memuat data terbaru. Silakan refresh halaman secara manual'
                         })
                     })
             }
