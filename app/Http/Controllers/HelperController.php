@@ -118,7 +118,12 @@ class HelperController extends Controller
 
         $headerWidth = $totalLoopDays + 12;
 
-        $dr = DailyRekap::where('operation_date_start', $rencanaOperasi->start_date)->where('operation_date_end', $rencanaOperasi->end_date)->where('polda', 'polda_all')->first();
+        // $dr = DailyRekap::where('operation_date_start', $rencanaOperasi->start_date)->where('operation_date_end', $rencanaOperasi->end_date)->where('polda', 'polda_all')->first();
+
+        $dr = DailyRekap::where('polda', 'polda_all')
+            ->where('rencana_operasi_id', $rencanaOperasi->id)
+            ->latest()
+            ->first();
 
         header("Content-type: application/vnd-ms-excel");
         header("Content-Disposition: attachment; filename=".upperCase($fileName)."-".date('Y').".xls");
