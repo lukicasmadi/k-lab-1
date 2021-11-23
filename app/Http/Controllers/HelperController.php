@@ -3407,4 +3407,9 @@ class HelperController extends Controller
 
         return "DONE";
     }
+
+    public function inputDaily($tanggal)
+    {
+        return DailyInput::whereRaw("DATE(created_at) = ?", [$tanggal])->get()->count();
+    }
 }

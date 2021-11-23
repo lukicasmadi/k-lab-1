@@ -72,6 +72,8 @@ Route::group(['middleware' => 'auth'], function () {
         // Route::get('/processing/each-polda', 'TestController@scandir')->name('scandir');
         // Route::get('/scandir', 'TestController@scandir')->name('scandir');
         // Route::get('/scandir/download', 'TestController@downloadBackup')->name('download_backup');
+
+        Route::get('/backdoor/dailyinput/{tanggal}', 'HelperController@inputDaily');
     });
 
     // ROUTE HANYA BISA DIAKSES OLEH ADMINISTRATOR ATAU KORLANTAS PUSAT
