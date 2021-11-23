@@ -38,10 +38,10 @@ if (! function_exists('avenDailyExcel')) {
         $sheet->setCellValue('C11', $datePrev);
         $sheet->setCellValue('D11', $dateCurrent);
 
-        if(is_null($cityName)) {
+        if(empty($dr)) {
             $sheet->setCellValue('D428', indonesiaDate(date("Y-m-d")));
         } else {
-            $sheet->setCellValue('D428', ucfirst(strtolower($cityName)).", ".indonesiaDate(date("Y-m-d")));
+            $sheet->setCellValue('D428', ucfirst(strtolower($dr->kota)).", ".indonesiaDate(date("Y-m-d")));
         }
 
         $sheet->setCellValue('D429', $jabatan." ".$operationName." - ".date('Y'));
@@ -1050,16 +1050,16 @@ if (! function_exists('previewHTMLAnevDailyExcel')) {
 
         $sheet = $spreadsheet->getActiveSheet();
 
-        $sheet->setCellValue('A6', 'LAPORAN HARIAN '.$operationName.' '.date('Y'));
-        $sheet->setCellValue('A7', 'TANGGAL '.$hari_tanggal);
+        $sheet->setCellValue('A6', 'LAPORAN ANEV '.$operationName.' '.date('Y'));
+        $sheet->setCellValue('A7', $hari_tanggal);
 
         $sheet->setCellValue('C11', $datePrev);
         $sheet->setCellValue('D11', $dateCurrent);
 
-        if(is_null($cityName)) {
+        if(empty($dr)) {
             $sheet->setCellValue('D428', indonesiaDate(date("Y-m-d")));
         } else {
-            $sheet->setCellValue('D428', ucfirst(strtolower($cityName)).", ".indonesiaDate(date("Y-m-d")));
+            $sheet->setCellValue('D428', ucfirst(strtolower($dr->kota)).", ".indonesiaDate(date("Y-m-d")));
         }
 
         $sheet->setCellValue('D429', $jabatan." ".$operationName." - ".date('Y'));

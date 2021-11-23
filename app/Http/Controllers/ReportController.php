@@ -71,6 +71,9 @@ class ReportController extends Controller
         $pem1 = CountDown::where('rencana_operasi_id', $rencana_operation_id)->whereTanggal($start_date)->first();
         $pem2 = CountDown::where('rencana_operasi_id', $rencana_operation_id)->whereTanggal($end_date)->first();
 
+        $leftHariKe     = explode("-", $pem1->deskripsi);
+        $rightHariKe    = explode("-", $pem2->deskripsi);
+
         if(empty($pem1)) {
             flash('Pembanding hari pertama tidak ditemukan dengan nama operasi yang dipilih')->error();
             return redirect()->back();
@@ -86,7 +89,7 @@ class ReportController extends Controller
             $prev,
             $current,
             null, //KESATUAN
-            strtoupper(indonesiaDate($start_date)).' DAN '.strtoupper(indonesiaDate($end_date)),  //HARI TANGGAL
+            'PEMBANDINGAN H'.$leftHariKe[1].' DAN H'.$rightHariKe[1],  //HARI TANGGAL
             (!empty($dr)) ? $dr->atasan : '', //NAMA ATASAN
             (!empty($dr)) ? $dr->pangkat_nrp : '', //PANGKAT
             (!empty($dr)) ? strtoupper($dr->jabatan) : '', //JABATAN
@@ -95,8 +98,8 @@ class ReportController extends Controller
             strtoupper($rencanaOperasi->name), //NAMA OPERASI
             null,
             (!empty($dr)) ? $dr->kota : '', //CITY NAME
-            "H".substr($pem1->deskripsi, -1),
-            "H".substr($pem2->deskripsi, -1),
+            "H".$leftHariKe[1],
+            "H".$rightHariKe[1],
             $dr
         );
     }
@@ -125,12 +128,15 @@ class ReportController extends Controller
         $pem1 = CountDown::where('rencana_operasi_id', $rencana_operation_id)->whereTanggal($start_date)->first();
         $pem2 = CountDown::where('rencana_operasi_id', $rencana_operation_id)->whereTanggal($end_date)->first();
 
+        $leftHariKe     = explode("-", $pem1->deskripsi);
+        $rightHariKe    = explode("-", $pem2->deskripsi);
+
         previewHTMLAnevDailyExcel(
             'polda_all',
             $prev,
             $current,
             null, //KESATUAN
-            strtoupper(indonesiaDate($start_date)).' DAN '.strtoupper(indonesiaDate($end_date)),  //HARI TANGGAL
+            'PEMBANDINGAN H'.$leftHariKe[1].' DAN H'.$rightHariKe[1],  //HARI TANGGAL
             (!empty($dr)) ? $dr->atasan : '', //NAMA ATASAN
             (!empty($dr)) ? $dr->pangkat_nrp : '', //PANGKAT
             (!empty($dr)) ? strtoupper($dr->jabatan) : '', //JABATAN
@@ -139,8 +145,8 @@ class ReportController extends Controller
             strtoupper($rencanaOperasi->name), //NAMA OPERASI
             null,
             (!empty($dr)) ? $dr->kota : '', //CITY NAME
-            "H".substr($pem1->deskripsi, -1),
-            "H".substr($pem2->deskripsi, -1),
+            "H".$leftHariKe[1],
+            "H".$rightHariKe[1],
             $dr
         );
     }
