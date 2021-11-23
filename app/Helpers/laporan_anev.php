@@ -36,7 +36,7 @@ if (! function_exists('previewExcelToHTML')) {
 
         $combineName = $nama_laporan." Giat Operasi ".$operationName;
 
-        $sheet->setCellValue('A6', 'LAPORAN HARIAN '.$operationName.' '.$currentYear);
+        $sheet->setCellValue('A6', 'LAPORAN ANEV '.$operationName.' '.$currentYear);
         $sheet->setCellValue('A7', $hari_tanggal);
 
         $sheet->setCellValue('C11', $prevYear);
@@ -1046,7 +1046,7 @@ if (! function_exists('avenExcel')) {
 
         $sheet = $spreadsheet->getActiveSheet();
 
-        $sheet->setCellValue('A6', 'LAPORAN HARIAN '.$operationName.' '.$currentYear);
+        $sheet->setCellValue('A6', 'LAPORAN ANEV '.$operationName.' '.$currentYear);
         $sheet->setCellValue('A7', 'TANGGAL '.$hari_tanggal);
 
         $sheet->setCellValue('C11', $prevYear);
