@@ -224,14 +224,23 @@
                                     if(empty($user->avatar)) {
                                         echo "<img src='".asset('img/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";
                                     } else {
-                                        echo "<img src='".asset('storage/upload/profile/'.$user->avatar)."' class='img-fluid' alt='admin-profile' />";
+                                        echo "<img src='".asset('document-upload/avatar/'.$user->avatar)."' class='img-fluid' alt='admin-profile' />";
                                     }
                                 }
                                 else if(isPusat()) {
-                                    // echo "<img src='".asset('img/polda/mabes.png')."' class='img-fluid' alt='admin-profile' />";
+                                    if(empty($user->avatar)) {
+                                        // echo "<img src='".asset('img/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";
+                                        echo "<img src='".asset('img/polda/mabes.png')."' class='img-fluid' alt='admin-profile' />";
+                                    } else {
+                                        echo "<img src='".asset('document-upload/avatar/'.$user->avatar)."' class='img-fluid' alt='admin-profile' />";
+                                    }
                                 }
                                 else if(isPolda()) {
-                                    echo "<img src='".asset('img/polda/'.poldaImage()->polda->logo)."' class='img-fluid' alt='admin-profile' />";
+                                    if(empty($user->avatar)) {
+                                        echo "<img src='".asset('img/polda/'.poldaImage()->polda->logo)."' class='img-fluid' alt='admin-profile' />";
+                                    } else {
+                                        echo "<img src='".asset('document-upload/avatar/'.$user->avatar)."' class='img-fluid' alt='admin-profile' />";
+                                    }
                                 }
                                 else {
                                     echo "<img src='".asset('img/profile/default.jpg')."' class='img-fluid' alt='admin-profile' />";

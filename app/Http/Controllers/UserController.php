@@ -70,11 +70,21 @@ class UserController extends Controller
             'profile' => request('profile'),
         ];
 
-        if(request()->hasFile('avatar')) {
+        // if(request()->hasFile('avatar')) {
+        //     $file = $request->file('avatar');
+        //     $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
+        //     Storage::put("/public/upload/profile/".$randomName, File::get($file));
+        //     $data['avatar'] = $randomName;
+        // }
+
+        if($request->hasFile('avatar')) {
             $file = $request->file('avatar');
             $randomName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-            Storage::put("/public/upload/profile/".$randomName, File::get($file));
+            $destinationPath = public_path('document-upload/avatar/');
+            $file->move($destinationPath, $randomName);
             $data['avatar'] = $randomName;
+        } else {
+            $data['avatar'] = '';
         }
 
         User::whereId(myUserId())->first()->update($data);
