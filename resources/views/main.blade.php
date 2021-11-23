@@ -59,7 +59,7 @@
                 </div>
                 <div class="widget-content" style="margin-top: 5%;">
                     <div class="mx-auto">
-                        <img class="poldametro" src="{{ asset('/img/polda/mabes.png') }}">
+                        {{-- <img class="poldametro" src="{{ asset('/img/polda/mabes.png') }}"> --}}
                         <div id="donut-chart" class=""></div>
                     </div>
                 </div>

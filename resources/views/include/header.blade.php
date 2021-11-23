@@ -228,7 +228,7 @@
                                     }
                                 }
                                 else if(isPusat()) {
-                                    echo "<img src='".asset('img/polda/mabes.png')."' class='img-fluid' alt='admin-profile' />";
+                                    // echo "<img src='".asset('img/polda/mabes.png')."' class='img-fluid' alt='admin-profile' />";
                                 }
                                 else if(isPolda()) {
                                     echo "<img src='".asset('img/polda/'.poldaImage()->polda->logo)."' class='img-fluid' alt='admin-profile' />";
