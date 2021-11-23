@@ -19,8 +19,10 @@
     </blockquote>
 
     @if (empty(session('polda_resubmit_form_status')))
+        <input type="hidden" name="late_input_valid" id="late_input_valid" value="no">
         <input type="hidden" name="resubmit_date" value="{{ date('Y-m-d') }}">
     @else
+        <input type="hidden" name="late_input_valid" id="late_input_valid" value="yes">
         <blockquote class="blockquote mb-4">
             <p class="d-inline" style="color: #FF5151;">KETERLAMBATAN INPUT</p>
             <span class="sub-inline">DATA YG DIKIRIM MENYESUAIKAN DENGAN TANGGAL YANG DIPILIH</span>

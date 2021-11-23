@@ -91,6 +91,10 @@ $(document).ready(function () {
     } else {
         $("input[type=number]").val('0')
     }
+
+    if($("#late_input_valid").val() == "yes") {
+        swal("Anda memiliki laporan yang belum diinput di hari sebelumnya", "", "error")
+    }
 })
 </script>
 @endpush
