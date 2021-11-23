@@ -274,6 +274,10 @@ tbody tr:nth-child(odd){
   border-bottom: solid 1px rgba(17, 62, 81, 0.1);
   color: #105c7c;
 }
+.arrow_box {
+    background-color: #105c7c;
+    padding: 5px 8px 5px 8px;
+}
 </style>
 @endpush
 

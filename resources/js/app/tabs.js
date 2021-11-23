@@ -173,13 +173,23 @@ jQuery(function() {
                 vertical: 20
             }
         },
+        // tooltip: {
+        //     theme: 'dark',
+        //     marker: {
+        //         show: true,
+        //     },
+        //     x: {
+        //         show: false,
+        //     },
+        // },
+        // https://apexcharts.com/docs/options/tooltip/
         tooltip: {
-            theme: 'dark',
-            marker: {
-                show: true,
-            },
-            x: {
-                show: false,
+            custom: function({ series, seriesIndex, dataPointIndex, w }) {
+                return (
+                    '<div class="arrow_box">' +
+                    "<span>" + series[seriesIndex][dataPointIndex] + " Polda</span>" +
+                    "</div>"
+                );
             }
         },
         fill: {
@@ -638,6 +648,8 @@ jQuery(function() {
             var totalPerDate = data.totalPerDate
             var projectName = data.projectName
             var totalSum = data.totalSum
+
+            console.log(totalPerDate)
 
             if (!_.isEmpty(rangeDate) && !_.isEmpty(totalPerDate)) {
 

@@ -171,13 +171,14 @@ jQuery(function() {
                 vertical: 20
             }
         },
+        // https://apexcharts.com/docs/options/tooltip/
         tooltip: {
-            theme: 'dark',
-            marker: {
-                show: true,
-            },
-            x: {
-                show: false,
+            custom: function({ series, seriesIndex, dataPointIndex, w }) {
+                return (
+                    '<div class="arrow_box">' +
+                    "<span>" + series[seriesIndex][dataPointIndex] + " Polda</span>" +
+                    "</div>"
+                );
             }
         },
         fill: {
