@@ -86,6 +86,11 @@
 @push('page_css')
 <link rel="stylesheet" href="{{ asset('template/custom.css') }}">
 <link rel="stylesheet" href="{{ asset('template/plugins/file-upload/file-upload-with-preview.min.css') }}">
+<style>
+    .invalid-feedback {
+        font-size: 14px;
+    }
+</style>
 @endpush
 
 @push('page_js')
