@@ -30,7 +30,7 @@
                         <li class="menu single-menu {{ request()->is('dashboard') || request()->is('dashboard/filter/*') || request()->is('polda-data/*') ? 'active' : '' }}">
                             <a href="{{ route('dashboard') }}">
                                 <div data-step="1" data-intro="Menu Dashboard untuk melihat keseluruhan data polda yang sudah terkirim secara list, grafik dan download data <br /><br /> <a href='{{ route('download_file_panduan') }}' class='manuals'>Unduh </a> <a href='{{ route('lihat_panduan') }}' class='manuals'>Lihat  </a>">
-                                    <span>Beranda Korlantas Polri</span>
+                                    <span>Beranda</span>
                                 </div>
                             </a>
                         </li>
