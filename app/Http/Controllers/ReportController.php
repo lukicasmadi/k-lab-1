@@ -89,7 +89,7 @@ class ReportController extends Controller
             $prev,
             $current,
             null, //KESATUAN
-            'PEMBANDINGAN H'.$leftHariKe[1].' DAN H'.$rightHariKe[1],  //HARI TANGGAL
+            'PERBANDINGAN H'.$leftHariKe[1].' DAN H'.$rightHariKe[1],  //HARI TANGGAL
             (!empty($dr)) ? $dr->atasan : '', //NAMA ATASAN
             (!empty($dr)) ? $dr->pangkat_nrp : '', //PANGKAT
             (!empty($dr)) ? strtoupper($dr->jabatan) : '', //JABATAN
@@ -136,7 +136,7 @@ class ReportController extends Controller
             $prev,
             $current,
             null, //KESATUAN
-            'PEMBANDINGAN H'.$leftHariKe[1].' DAN H'.$rightHariKe[1],  //HARI TANGGAL
+            'PERBANDINGAN H'.$leftHariKe[1].' DAN H'.$rightHariKe[1],  //HARI TANGGAL
             (!empty($dr)) ? $dr->atasan : '', //NAMA ATASAN
             (!empty($dr)) ? $dr->pangkat_nrp : '', //PANGKAT
             (!empty($dr)) ? strtoupper($dr->jabatan) : '', //JABATAN
