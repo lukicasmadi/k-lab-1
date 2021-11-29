@@ -64,13 +64,13 @@
                                         <a href="{{ route('report_daily_all_polda') }}"> Laporan Rekap Harian </a>
                                     </li>
                                     <li class="{{ request()->is('report/anev-compare') ? 'active' : '' }}">
-                                        <a href="{{ route('report_comparison') }}"> REKAPITULASI LAPORAN ANEV PERBANDINGAN TAHUN OPERASI </a>
+                                        <a href="{{ route('report_comparison') }}"> Laporan Anev </a>
                                     </li>
                                     <li class="{{ request()->is('report/anev-date-compare') ? 'active' : '' }}">
-                                        <a href="{{ route('report_anev_daily') }}"> REKAPITULASI LAPORAN ANEV PERBANDINGAN HARI OPERASI </a>
+                                        <a href="{{ route('report_anev_daily') }}"> Laporan Anev Harian </a>
                                     </li>
                                     <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
-                                        <a href="{{ route('report_all_polda_compare') }}"> REKAPITULASI LAPORAN HARIAN 34 POLDA </a>
+                                        <a href="{{ route('report_all_polda_compare') }}"> Laporan Operasi Perpolda </a>
                                     </li>
                                     <li>
                                         <a href="#" id="report_polda_all"> Laporan Operasi Perhari </a>
@@ -149,13 +149,13 @@
                                         <a href="{{ route('report_daily_all_polda') }}"> Laporan Rekap Harian </a>
                                     </li>
                                     <li class="{{ request()->is('report/anev-compare') ? 'active' : '' }}">
-                                        <a href="{{ route('report_comparison') }}"> REKAPITULASI LAPORAN ANEV PERBANDINGAN TAHUN OPERASI </a>
+                                        <a href="{{ route('report_comparison') }}"> Laporan Anev </a>
                                     </li>
                                     <li class="{{ request()->is('report/anev-date-compare') ? 'active' : '' }}">
-                                        <a href="{{ route('report_anev_daily') }}"> REKAPITULASI LAPORAN ANEV PERBANDINGAN HARI OPERASI </a>
+                                        <a href="{{ route('report_anev_daily') }}"> Laporan Anev Harian </a>
                                     </li>
                                     <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
-                                        <a href="{{ route('report_all_polda_compare') }}"> REKAPITULASI LAPORAN HARIAN 34 POLDA </a>
+                                        <a href="{{ route('report_all_polda_compare') }}"> Laporan Operasi Perpolda </a>
                                     </li>
                                 </ul>
                             </li>
@@ -342,13 +342,13 @@
                                         <a href="{{ route('report_daily_all_polda') }}"> Laporan Rekap Harian </a>
                                     </li>
                                     <li class="{{ request()->is('report/anev-compare') ? 'active' : '' }}">
-                                        <a href="{{ route('report_comparison') }}"> REKAPITULASI LAPORAN ANEV PERBANDINGAN TAHUN OPERASI </a>
+                                        <a href="{{ route('report_comparison') }}"> Laporan Anev </a>
                                     </li>
                                     <li class="{{ request()->is('report/anev-date-compare') ? 'active' : '' }}">
-                                        <a href="{{ route('report_anev_daily') }}"> REKAPITULASI LAPORAN ANEV PERBANDINGAN HARI OPERASI </a>
+                                        <a href="{{ route('report_anev_daily') }}"> Laporan Anev Harian </a>
                                     </li>
                                     <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
-                                        <a href="{{ route('report_all_polda_compare') }}"> REKAPITULASI LAPORAN HARIAN 34 POLDA </a>
+                                        <a href="{{ route('report_all_polda_compare') }}"> Laporan Operasi Perpolda </a>
                                     </li>
                                     <li>
                                         <a href="#" id="report_polda_all"> Laporan Operasi Perhari </a>
@@ -427,13 +427,13 @@
                                         <a href="{{ route('report_daily_all_polda') }}"> Laporan Rekap Harian </a>
                                     </li>
                                     <li class="{{ request()->is('report/anev-compare') ? 'active' : '' }}">
-                                        <a href="{{ route('report_comparison') }}"> REKAPITULASI LAPORAN ANEV PERBANDINGAN TAHUN OPERASI </a>
+                                        <a href="{{ route('report_comparison') }}"> Laporan Anev </a>
                                     </li>
                                     <li class="{{ request()->is('report/anev-date-compare') ? 'active' : '' }}">
-                                        <a href="{{ route('report_anev_daily') }}"> REKAPITULASI LAPORAN ANEV PERBANDINGAN HARI OPERASI </a>
+                                        <a href="{{ route('report_anev_daily') }}"> Laporan Anev Harian </a>
                                     </li>
                                     <li class="{{ request()->is('report/polda/all/daily-compare') ? 'active' : '' }}">
-                                        <a href="{{ route('report_all_polda_compare') }}"> REKAPITULASI LAPORAN HARIAN 34 POLDA </a>
+                                        <a href="{{ route('report_all_polda_compare') }}"> Laporan Operasi Perpolda </a>
                                     </li>
                                 </ul>
                             </li>
