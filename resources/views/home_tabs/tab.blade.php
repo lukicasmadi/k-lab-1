@@ -7,19 +7,19 @@
             </li>
 
             <li class="nav-item mr-3">
-                <a class="nav-link2" id="tab_link_data_laphar" data-toggle="pill" href="#laphar" role="tab" aria-controls="laphar" aria-selected="false">Data Laporan Harian</a>
+                <a class="nav-link2" id="tab_link_data_laphar" data-toggle="pill" href="#laphar" role="tab" aria-controls="laphar" aria-selected="false">Data Laporan Hari Ini</a>
             </li>
 
             <li class="nav-item mr-3">
-                <a class="nav-link2" id="tab_link_data_total_laphar" data-toggle="pill" href="#total-laphar" role="tab" aria-controls="total-laphar" aria-selected="false">Data Total Laporan Harian</a>
+                <a class="nav-link2" id="tab_link_data_total_laphar" data-toggle="pill" href="#total-laphar" role="tab" aria-controls="total-laphar" aria-selected="false">Data Laporan S.D. Hari Ini</a>
             </li>
 
             <li class="nav-item mr-3">
-                <a class="nav-link2" id="tab_link_data_laporan_anev" data-toggle="pill" href="#laporan-anev" role="tab" aria-controls="laporan-anev" aria-selected="false">Data Laporan Anev</a>
+                <a class="nav-link2" id="tab_link_data_laporan_anev" data-toggle="pill" href="#laporan-anev" role="tab" aria-controls="laporan-anev" aria-selected="false">Data Laporan Anev Hari Ini</a>
             </li>
 
             <li class="nav-item mr-3">
-                <a class="nav-link2" id="tab_link_data_total_laporan_anev" data-toggle="pill" href="#total-laporan-anev" role="tab" aria-controls="total-laporan-anev" aria-selected="false">Data Total Laporan Anev</a>
+                <a class="nav-link2" id="tab_link_data_total_laporan_anev" data-toggle="pill" href="#total-laporan-anev" role="tab" aria-controls="total-laporan-anev" aria-selected="false">Data Laporan Anev S.D. Hari Ini</a>
             </li>
         </ul>
 
