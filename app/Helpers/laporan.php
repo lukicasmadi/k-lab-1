@@ -1286,8 +1286,8 @@ if (! function_exists('excelTemplateDateCompare')) {
         $jabatan,
         $nama_laporan,
         $customFileName=null,
-        $start_date,
-        $end_date
+        $start_date=null,
+        $end_date=null
     )
     {
 

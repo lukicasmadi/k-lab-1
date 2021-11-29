@@ -15,11 +15,11 @@ if (! function_exists('previewExcelToHTML')) {
         $jabatan=null,
         $nama_laporan=null,
         $customFileName=null,
-        $operationName,
+        $operationName=null,
         $customCombineName=null,
         $cityName=null,
-        $prevYear,
-        $currentYear,
+        $prevYear=null,
+        $currentYear=null,
         $dr=null
         )
     {
