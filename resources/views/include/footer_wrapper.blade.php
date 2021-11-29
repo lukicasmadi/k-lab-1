@@ -1,5 +1,6 @@
 <div class="footer-wrapper">
     <div class="footer-section f-section-1">
-        <p class="">Sistem pelaporan aplikasi operasi online LALU LINTAS | Korlantas Polri &copy; {{ date('Y') }}, All rights reserved.</p>
+        <p class="">KORPS LALU LINTAS KEPOLISIAN NEGERA REPUBLIK INDONESIA</p>
+        <p class="">COPYRIGHT &copy; {{ date('Y') }} SISTEM PELAPORAN OPERASI ONLINE</p>
     </div>
 </div>
