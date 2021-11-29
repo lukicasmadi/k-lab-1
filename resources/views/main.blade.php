@@ -73,7 +73,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="20.002" height="25.002" viewBox="0 0 20.002 25.002">
                             <path id="notification_outline" d="M14,27a2.5,2.5,0,0,1-2.5-2.5h5A2.5,2.5,0,0,1,14,27Zm10-3.75H4v-2.5L6.5,19.5V12.626c0-4.328,1.776-7.134,5-7.9V2h5V4.725c3.224.765,5,3.57,5,7.9V19.5l2.5,1.25ZM14,6.688A4.5,4.5,0,0,0,10.094,8.5,7.116,7.116,0,0,0,9,12.626v8.126H19V12.626A7.117,7.117,0,0,0,17.907,8.5,4.5,4.5,0,0,0,14,6.688Z" transform="translate(-4 -2)" fill="#00adef"/>
                         </svg>
-                        <span>Notifikasi</span> <span class="dash_operasi" id="nowDate">{{ indonesiaDayAndDate(date('Y-m-d')) }}</span>
+                        <span>Notifikasi</span> <span class="nowDate">{{ indonesiaDayAndDate(date('Y-m-d')) }}</span>
                         <p>info laporan harian setiap polda</p>
                     </h5>
                 </div>
