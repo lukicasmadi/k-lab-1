@@ -160,8 +160,8 @@ class DailyRekapController extends Controller
             'polda_all',
             $prev,
             $current,
-            'KESATUAN : Korlantas',
-            $hari,
+            null, //KESATUAN
+            $hari, //FORMAT HARI TANGGAL
             null, //NAMA ATASAN
             null, //PANGKAT
             null, //JABATAN
@@ -170,6 +170,9 @@ class DailyRekapController extends Controller
             null, //OPERATION NAME
             null, //CUSTOM COMBINE NAME
             null, //CITY NAME
+            $prevYear, //PREV YEAR
+            $currentYear, //CURRENT YEAR
+            null //DAILY REKAP
         );
     }
 
@@ -190,14 +193,19 @@ class DailyRekapController extends Controller
             'polda_all',
             $prev,
             $current,
-            'KESATUAN : Korlantas',
-            $rencanaOperasi->start_date." s/d ".$rencanaOperasi->end_date,
-            null,
-            null,
-            null,
-            null,
-            $rencanaOperasi->name,
-            null
+            null, //KESATUAN
+            $rencanaOperasi->start_date." s/d ".$rencanaOperasi->end_date, //FORMAT HARI TANGGAL
+            null, //NAMA ATASAN
+            null, //PANGKAT
+            null, //JABATAN
+            $rencanaOperasi->name, //NAMA LAPORAN
+            $rencanaOperasi->name, //CUSTOM FILE NAME
+            null, //OPERATION NAME
+            null, //CUSTOM COMBINE NAME
+            null, //CITY NAME
+            $prevYear, //PREV YEAR
+            $currentYear, //CURRENT YEAR
+            null //DAILY REKAP
         );
     }
 
