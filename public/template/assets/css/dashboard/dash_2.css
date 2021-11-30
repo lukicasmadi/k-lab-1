@@ -205,6 +205,16 @@
     padding-left: 20px;
 }
 
+.widget-heading span.nowDate {
+    position: absolute;
+    font-size: 12px;
+    float: right;
+    margin-top: 3px;
+    right: 15px;
+    background-color: rgba(0, 173, 239, 0.1);
+    padding: 7px 9px;
+}
+
 .widget-heading p {
     padding-left: 42px;
     font-size: 10px;
